@@ -7,8 +7,8 @@ site_description: "Sitio Web del Curso Introducción a la Bioinformática"
 
 # repository
 # --- si el sitio está alojado en un repo, describirlo acá 
-repo_name: 'cursos-unsam-mkdocs-template'
-repo_url: https://github.com/trypanosomatics/cursos-unsam-mkdocs-template
+repo_name: '2022_introduccion_bioinformatica'
+repo_url: https://github.com/bioinformatica-iib/2022_introduccion_bioinformatica
 
 # theme 
 # --- customizar apariencia editando palette 
