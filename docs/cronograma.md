@@ -43,13 +43,13 @@ tags:
 | Martes, 01 Noviembre 2022 | 9:00 hs |	:material-google-classroom: Online | P13. Visualizando genomas con Artemis | :fontawesome-solid-hammer: Práctica |	J. Glavina |
 | Jueves, 03 Noviembre 2022 | 9:00 hs |	:material-google-classroom: Online | P14. Genómica comparativa | :fontawesome-solid-hammer: Práctica |	J. Glavina |
 | Martes, 08 Noviembre 2022 | 9:00 hs |	:material-google-classroom: Online | Repaso | :fontawesome-solid-brain: Teórica |	F. Agüero<br>L. Chemes<br> M. Nielsen |
-| Jueves, 10 Noviembre 2022 | 9:00 hs |	A definir | Examen | :fontawesome-solid-brain: Teórica |	F. Agüero<br>L. Chemes<br> M. Nielsen |
+| Jueves, 10 Noviembre 2022 | 9:00 hs |	A definir | Examen | |	F. Agüero<br>L. Chemes<br> M. Nielsen |
 | Martes, 15 Noviembre 2022 | 9:00 hs |	 | LIBRE | | |
-| Jueves, 17 Noviembre 2022 | 9:00 hs |	:material-google-classroom: Online | Revisión examen | :fontawesome-solid-brain: Teórica |	F. Agüero<br>L. Chemes<br> M. Nielsen |
+| Jueves, 17 Noviembre 2022 | 9:00 hs |	:material-google-classroom: Online | Revisión examen | |	F. Agüero<br>L. Chemes<br> M. Nielsen |
 | Martes, 22 Noviembre 2022 | 9:00 hs |	 | LIBRE | | |
 | Jueves, 24 Noviembre 2022 | 9:00 hs |	 | LIBRE | | |
 | Martes, 29 Noviembre 2022 | 9:00 hs |	A definir | Recuperatorio | |	F. Agüero<br>L. Chemes<br> M. Nielsen |
-| Jueves, 1 Diciembre 2022 | 9:00 hs |	:material-google-classroom: Online | Revisión examen | :fontawesome-solid-brain: Teórica |	F. Agüero<br>L. Chemes<br> M. Nielsen |
+| Jueves, 1 Diciembre 2022 | 9:00 hs |	:material-google-classroom: Online | Revisión examen | |	F. Agüero<br>L. Chemes<br> M. Nielsen |
  <!-- 
 
 | Fecha  { data-sort-method='none' }     | Hora  { data-sort-method='none' }   | Donde  { data-sort-method='none' }                                 | Clase  { data-sort-method='none' }      | Tipo  { data-sort-method='none' }                              | Docente { data-sort-method='none' } | 
