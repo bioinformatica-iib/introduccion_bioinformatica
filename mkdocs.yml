@@ -7,8 +7,8 @@ site_url: https://bioinformatica-iib.github.io/2022_introduccion_bioinformatica/
 
 # repository
 # --- si el sitio está alojado en un repo, describirlo acá 
-repo_name: '2022_introduccion_bioinformatica'
-repo_url: https://github.com/bioinformatica-iib/2022_introduccion_bioinformatica
+# repo_name: '2022_introduccion_bioinformatica'
+# repo_url: https://github.com/bioinformatica-iib/2022_introduccion_bioinformatica
 
 # theme 
 # --- customizar apariencia editando palette 
