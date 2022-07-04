@@ -53,4 +53,9 @@ Esto activa el entorno python con todas las dependencias y luego corre mkdocs
 para generar el sitio. Pueden navegarlo en http://127.0.0.1:8000. 
 
 Netlify usa `requirements.txt` y `netlify.toml` (además del resto) para poder
-generar el sitio. 
+generar el sitio.
+
+## Para actualizar la web
+Una vez que se hace un cambio y se realiza un commit en la web hay que hacer el deploynment corriendo en el root:
+`mkdocs gh-deploy`
+
