@@ -3,7 +3,7 @@
 site_name: Introducción a la Bioinformática
 site_description: "Sitio Web del Curso Introducción a la Bioinformática"
 #site_author: "Nombre Apellido"
-#site_url: https://curso.unsam.edu.ar
+site_url: https://bioinformatica-iib.github.io/2022_introduccion_bioinformatica/
 
 # repository
 # --- si el sitio está alojado en un repo, describirlo acá 
