@@ -23,19 +23,20 @@ tags:
 
 * **Alumnos de Grado UNSAM:** Gratis.
 * **Alumnos de Post-Grado UNSAM:** Gratis.
-* **Alumnos de Post-Grado de otras Universidades Públicas:** $3500
-* **Docentes Universidades Nacionales:** $3500
-* **Alumnos de Posgrado Universidades Privadas:** $5000
-* **Empresas/Profesionales Independientes:** $7500
-* **Alumnos / Docentes / Profesionales Internacionales:** USD $250
+* **Alumnos de Post-Grado de otras Universidades Públicas:** $5500
+* **Docentes Universidades Nacionales:** $5500
+* **Alumnos de Posgrado Universidades Privadas:** $7500
+* **Empresas/Profesionales Independientes:** $11500
+* **Alumnos / Docentes / Profesionales Internacionales:** USD $300
 
+## Horarios 2do Cuatrimestre 2022 (Virtual)
 
-## Horarios 2do Cuatrimestre 2021 (Virtual)
+* **Virtual:** Martes y Jueves 9 a 13hs.
 
-Jueves 9 a 18hs. Divido en:
-
-* **Teóricos:** 9 a 13hs
-* **Prácticos:** 14 a 18 hs. (aunque algunos prácticos son todo el día y ese día no hay teórica).
+* **Presencial:** Aula a confirmar!
+    * Jueves 18 de Agosto: 14 a 18 hs
+    * Jueves 22 de Septiembre: 14 a 18 hs
+    * Jueves 13 de Octubre: 14 a 18 hs
 
 ## Asistencia
 
@@ -64,10 +65,10 @@ Para inscribirte vas a necesitar:
     * [x] Tu número de legajo
 - Si sos posgrado, investigador o trabajas en la industria:
     * [x] Breve descripción de tu línea de trabajo
+    * [x] Carta de motivación
 <!--
 - Si vas a solicitar beca:
 -->
-    * [x] Carta de motivación
 
 [Inscribirse](https://forms.gle/9J1XHYxFHot4VKJa7){ .md-button .md-button--primary }
 
