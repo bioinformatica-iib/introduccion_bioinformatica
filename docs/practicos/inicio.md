@@ -11,13 +11,11 @@ Esta es la página de inicio de los prácticos de este curso. A continuación un
 
 ## Consultas y Canales de Comunicación 
 
- * :material-email: Por email a esta dirección <email@domain>
- * :fontawesome-brands-discord: en Discord pueden chatear y conectarse entre Uds y con los docentes en este server
- * :fontawesome-brands-slack: en Slack pueden mandar mensajes a todo el grupo en distintos canales
+ * :material-email: Por email a la dirección de la JTP.
+  * :fontawesome-brands-slack: en Slack pueden mandar mensajes a todo el grupo en los distintos canales.
 
 ## Informes
 
-Sobre los informes ... 
-
+Algunos de los trabajos prácticos incluyen informes. En breve actualizaremos con los detalles sobre los mismos!
 
 
