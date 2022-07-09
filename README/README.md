@@ -18,7 +18,7 @@ curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poet
 ```
 source $HOME/.poetry/env
 ```
-* Una vez instalado Poetry, ir a la carpeta del repositorio de GIT y correr:
+* Una vez instalado Poetry, ir a la carpeta del repositorio de GIT (`2022_introduccion_bioinformatica`) y correr:
 ```
 poetry install 
 ```
