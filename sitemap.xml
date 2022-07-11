@@ -2,87 +2,102 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://bioinformatica-iib.github.io/2022_introduccion_bioinformatica/</loc>
-         <lastmod>2022-07-04</lastmod>
+         <lastmod>2022-07-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bioinformatica-iib.github.io/2022_introduccion_bioinformatica/acerca/</loc>
-         <lastmod>2022-07-04</lastmod>
+         <lastmod>2022-07-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bioinformatica-iib.github.io/2022_introduccion_bioinformatica/contenidos/</loc>
-         <lastmod>2022-07-04</lastmod>
+         <lastmod>2022-07-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bioinformatica-iib.github.io/2022_introduccion_bioinformatica/cronograma/</loc>
-         <lastmod>2022-07-04</lastmod>
+         <lastmod>2022-07-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bioinformatica-iib.github.io/2022_introduccion_bioinformatica/docentes/</loc>
-         <lastmod>2022-07-04</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://bioinformatica-iib.github.io/2022_introduccion_bioinformatica/instructivos/</loc>
-         <lastmod>2022-07-04</lastmod>
+         <lastmod>2022-07-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bioinformatica-iib.github.io/2022_introduccion_bioinformatica/tags/</loc>
-         <lastmod>2022-07-04</lastmod>
+         <lastmod>2022-07-11</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://bioinformatica-iib.github.io/2022_introduccion_bioinformatica/instructivos/inicio/</loc>
+         <lastmod>2022-07-11</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://bioinformatica-iib.github.io/2022_introduccion_bioinformatica/instructivos/maquina_virtual/</loc>
+         <lastmod>2022-07-11</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://bioinformatica-iib.github.io/2022_introduccion_bioinformatica/instructivos/problemasVM/</loc>
+         <lastmod>2022-07-11</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://bioinformatica-iib.github.io/2022_introduccion_bioinformatica/instructivos/tipsVM/</loc>
+         <lastmod>2022-07-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bioinformatica-iib.github.io/2022_introduccion_bioinformatica/practicos/inicio/</loc>
-         <lastmod>2022-07-04</lastmod>
+         <lastmod>2022-07-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bioinformatica-iib.github.io/2022_introduccion_bioinformatica/practicos/resumen/</loc>
-         <lastmod>2022-07-04</lastmod>
+         <lastmod>2022-07-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bioinformatica-iib.github.io/2022_introduccion_bioinformatica/practicos/1-Trabajo-Practico-Uno/</loc>
-         <lastmod>2022-07-04</lastmod>
+         <lastmod>2022-07-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bioinformatica-iib.github.io/2022_introduccion_bioinformatica/practicos/2-Trabajo-Practico-Dos/</loc>
-         <lastmod>2022-07-04</lastmod>
+         <lastmod>2022-07-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bioinformatica-iib.github.io/2022_introduccion_bioinformatica/practicos/3-Trabajo-Practico-Tres/</loc>
-         <lastmod>2022-07-04</lastmod>
+         <lastmod>2022-07-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bioinformatica-iib.github.io/2022_introduccion_bioinformatica/teoricas/inicio/</loc>
-         <lastmod>2022-07-04</lastmod>
+         <lastmod>2022-07-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bioinformatica-iib.github.io/2022_introduccion_bioinformatica/teoricas/resumen/</loc>
-         <lastmod>2022-07-04</lastmod>
+         <lastmod>2022-07-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bioinformatica-iib.github.io/2022_introduccion_bioinformatica/teoricas/1-Teorica-Uno/</loc>
-         <lastmod>2022-07-04</lastmod>
+         <lastmod>2022-07-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bioinformatica-iib.github.io/2022_introduccion_bioinformatica/teoricas/2-Teorica-Dos/</loc>
-         <lastmod>2022-07-04</lastmod>
+         <lastmod>2022-07-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bioinformatica-iib.github.io/2022_introduccion_bioinformatica/teoricas/3-Teorica-Tres/</loc>
-         <lastmod>2022-07-04</lastmod>
+         <lastmod>2022-07-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
