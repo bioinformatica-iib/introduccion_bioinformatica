@@ -118,12 +118,15 @@ nav:
         #- Resumen: teoricas/resumen.md
     - Practicos: 
         - 'practicos/inicio.md'
-        #- TP1: 'practicos/1-Trabajo-Practico-Uno/index.md'
+        - TP1: 'practicos/1-Trabajo-Practico-Uno/index.md'
         #- TP2: 'practicos/2-Trabajo-Practico-Dos/index.md'
         #- TP3: 'practicos/3-Trabajo-Practico-Tres/index.md'
         #- Resumen: 'practicos/resumen.md'
     - Instructivos:
-    	- 'instructivos/instructivos.md'
+        - instructivos/inicio.md
+        - Máquina Virtual: 'instructivos/maquina_virtual/index.md'
+        - Problemas instalando la Máquina Virtual: 'instructivos/problemasVM/index.md'
+        - Tips and Tricks para usar la Máquina Virtual más cómodos: 'instructivos/tipsVM/index.md'
 
 # copyright
 # --- editar y ajustar de acuerdo al curso
