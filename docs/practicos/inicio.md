@@ -5,6 +5,21 @@ tags:
   - practicos
 ---
 
+## Grid test
+
+<table>
+  <tr>
+    <td style="text-align:center"><a href="../1-Trabajo-Practico-Uno"><img src="../img/tp_1.jpg" alt="TP 1"></a><b><a href="../1-Trabajo-Practico-Uno">TP 1</a></b></td>
+    <td style="text-align:center"><a href="../1-Trabajo-Practico-Uno"><img src="../img/tp_1.jpg" alt="TP 1"></a><b><a href="../1-Trabajo-Practico-Uno">TP 1</a></b></td>
+    <td style="text-align:center"><a href="../1-Trabajo-Practico-Uno"><img src="../img/tp_1.jpg" alt="TP 1"></a><b><a href="../1-Trabajo-Practico-Uno">TP 1</a></b></td>
+  </tr>
+  <tr>
+    <td style="text-align:center"><a href="../1-Trabajo-Practico-Uno"><img src="../img/tp_1.jpg" alt="TP 1"></a><b><a href="../1-Trabajo-Practico-Uno">TP 1</a></b></td>
+    <td style="text-align:center"><a href="../1-Trabajo-Practico-Uno"><img src="../img/tp_1.jpg" alt="TP 1"></a><b><a href="../1-Trabajo-Practico-Uno">TP 1</a></b></td>
+    <td style="text-align:center"><a href="../1-Trabajo-Practico-Uno"><img src="../img/tp_1.jpg" alt="TP 1"></a><b><a href="../1-Trabajo-Practico-Uno">TP 1</a></b></td>
+  </tr>
+</table>
+
 ## Hola! :material-star-outline:
 
 Esta es la página de inicio de los prácticos de este curso. A continuación una lista de datos útiles.
