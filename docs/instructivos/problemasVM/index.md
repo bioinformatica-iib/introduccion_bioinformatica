@@ -15,6 +15,10 @@
 
 ## Sigue sin funcionar
 
+* *Habilitar PAE/NX* está tildado y la máquina virtual se queda congelada en una pantalla similar a la siguiente:
+
+![ERROR1b](./img/error1b.png){ width="400", align=center }
+
 !!! info "Solución:"
 
     * Click derecho en la máquina virtual --> *Configuración* --> *Sistema* --> *Procesador*
