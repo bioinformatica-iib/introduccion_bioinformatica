@@ -1,3 +1,35 @@
+## Instalación 2022 en Ubuntu
+
+Acabo de instalar esto siguiendo los pasos de abajo y estan bastante bien, pero lo pongo detallado por si ayuda:
+
+* Clonar el repositorio en una carpeta de tu PC (nombre por defecto: `2022_introduccion_bioinformatica`)
+* Instalar Poetry segun las instrucciones de su [página](https://python-poetry.org/docs/). En Linux el comando por defecto es:
+
+```
+curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
+```
+* En mi caso tuve que instalar *curl* antes siguiendo las instrucciones de la consola de Ubuntu y en el comando anterior tuve que reemplazar **python** por **python3**, que era la versión que tenía en la PC
+```
+#Estas dos lineas hay que correrlas solo si son necesarias. En un principio la de arriba deberia alcanzar
+sudo apt install curl
+curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python3 -
+```
+* Poetry me pidió que corrá un comando para agregar poetry al *environment* asi que lo hice
+```
+source $HOME/.poetry/env
+```
+* Una vez instalado Poetry, ir a la carpeta del repositorio de GIT (`2022_introduccion_bioinformatica`) y correr:
+```
+poetry install 
+```
+* Esto va a instalar todos los requisitos de nuestra página en el sistema
+* Luego cada vez que se quiera probar el sitio localmente ir a la misma carpeta y correr:
+```
+poetry shell 
+mkdocs serve
+``` 
+* La página web ahora está en http://127.0.0.1:8000 y se updatea en tiempo real si cambias cualquier archivo del GIT (sin tener que hacer nada).
+
 ## Template / Molde Mkdocs para cursos UNSAM
 
 Este es un esqueleto más o menos organizado (casi listo) para armar y publicar
