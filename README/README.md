@@ -14,7 +14,7 @@ curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poet
 sudo apt install curl
 curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python3 -
 ```
-* Poetry me pidió que corrá un comando para agregar poetry al *environment* asi que lo hice
+* Poetry me pidió que corrá un comando para agregar poetry al *environment* asi que lo hice (esto hay que hacerlo cada vez que abris una consola nueva hasta que reinicias la compu, ahi ya es automático)
 ```
 source $HOME/.poetry/env
 ```
