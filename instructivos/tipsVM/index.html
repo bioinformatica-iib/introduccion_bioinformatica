@@ -643,6 +643,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#copiar-y-pegar-de-maquina-host-a-maquina-virtual-y-viceversa" class="md-nav__link">
+    Copiar y pegar de máquina host a máquina virtual y viceversa
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compartir-una-carpeta-con-la-maquina-host" class="md-nav__link">
+    Compartir una carpeta con la máquina host
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -775,6 +789,56 @@
 </li>
 </ol>
 <p><strong>Enable Network Adapter</strong> tiene que estar tildado.</p>
+<h2 id="copiar-y-pegar-de-maquina-host-a-maquina-virtual-y-viceversa">Copiar y pegar de máquina host a máquina virtual y viceversa</h2>
+<p>Para copiar y pegar de la máquina host (es decir, SUS compus físicas) a la máquina virtual (la de la materia) tienen que:</p>
+<ol>
+<li>Con la máquina virtual abierta</li>
+<li>
+<p>Van a <em>Devices</em>/<em>Dispositivos</em> --&gt; <em>Shared Clipboard</em>/<em>Portapapeles Compartido</em> y seleccionan <em>Bidirectional</em>/<em>Bidireccional</em></p>
+<p><img _="," align="center" alt="TIP11" src="img/tip11.png" width="400" /></p>
+</li>
+</ol>
+<h2 id="compartir-una-carpeta-con-la-maquina-host">Compartir una carpeta con la máquina host</h2>
+<p>Una manera simple de compartir archivos entre la máquina <em>host</em> (es decir, SUS compus físicas) y la máquina virtual o viceversa es crear una carpeta compartida, para esto:</p>
+<ol>
+<li>Con la máquina virtual abierta</li>
+<li>
+<p>Van a <em>Devices</em>/<em>Dispositivos</em> --&gt; <em>Shared Folder</em>/<em>Carpetas Compartidas</em> y seleccionan <em>Shared Folders Settings</em>/<em>Preferencias de carpetas compartidas</em>.</p>
+<p>Se les abrirá una ventana, donde deben elegir la carpetita con el símbolo más que está a la derecha para agregar una carpeta compartida y se les abrirá una nueva ventana.</p>
+<p><img _="," align="center" alt="TIP12b" src="img/tip12b.png" width="400" /></p>
+<ul>
+<li><strong>Folder Path:</strong> Indican la ruta a la carpeta que van a compartir en la máquina <em>host</em> (SU computadora).</li>
+<li><strong>Folder Name:</strong> El nombre con el que aparecerá la carpeta en la máquina virtual</li>
+<li><strong>Auto-mount:</strong> Tiene que estar tickeado.</li>
+<li><strong>Make Permanent:</strong> Tiene que estar tickeado.</li>
+</ul>
+</li>
+<li>
+<p>Click en Ok.</p>
+</li>
+<li>
+<p>Deberían ver algo similar a lo siguiente:</p>
+<p><img _="," align="center" alt="TIP12a" src="img/tip12a.png" width="400" /></p>
+</li>
+<li>
+<p>Click en Ok.</p>
+</li>
+<li>
+<p>Se les debe haber creado un ícono en el escritorio de la máquina virtual con el nombre que eligieron en <strong>Folder Name</strong></p>
+</li>
+<li>
+<p>Si hacen click, deberían poder acceder a la carpeta. Si aparece un cartel donde dice que no tienen los permisos necesarios, entonces hacen lo siguiente.</p>
+<ol>
+<li>Abren una terminal utilizando las teclas: <span class="keys"><kbd class="key-control">Ctrl</kbd></span> + <span class="keys"><kbd class="key-alt">Alt</kbd></span> + <span class="keys"><kbd class="key-t">T</kbd></span></li>
+<li>
+<p>Escriben lo siguiente en la terminal:</p>
+<div class="highlight"><pre><span></span><code>sudo usermod -a -G vboxsf <span class="k">$(</span>whoami<span class="k">)</span>
+</code></pre></div>
+<p>Si les pide una clave es <strong>unsam</strong></p>
+</li>
+</ol>
+</li>
+</ol>
 
               
             </article>
