@@ -25,7 +25,7 @@ theme:
     - header.autohide
     - navigaion.tracking
     - navigation.tabs
- #   - navigation.sections
+#    - navigation.sections
 #    - navigation.tabs.sticky # --> hace que la navigation bar baje cuando se escrolea.
 #    - navigation.indexes # Si se saca, cada section del index se puede ampliar INCOMPATIBLE CON toc.integrate y creo que con navigation tracking
     - toc.integrate # Integra la table of contents a la navigation
@@ -122,7 +122,8 @@ nav:
         #- TP2: 'practicos/2-Trabajo-Practico-Dos/index.md'
         #- TP3: 'practicos/3-Trabajo-Practico-Tres/index.md'
         #- Resumen: 'practicos/resumen.md'
-    - Instructivos: instructivos.md
+    - Instructivos:
+    	- 'instructivos/instructivos.md'
 
 # copyright
 # --- editar y ajustar de acuerdo al curso
