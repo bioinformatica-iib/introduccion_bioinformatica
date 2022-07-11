@@ -30,7 +30,7 @@ Por defecto, la resolución de la VM es 800x600. Si el monitor o pantalla nos da
 
         ![TIP3](./img/tip3.png){ width="400", align=center }
 
-## Maximizar la ventana.
+## Maximizar la ventana
 Si maximizamos la ventana a *pantalla completa*, será como estar usando la máquina virtual solamente. Esto para algunos puede resultar más cómodo. Pueden probarlo presionando las teclas ++ctrl++ derecho + ++f++ juntas.
 
 ![TIP4](./img/tip4.png){ width="400", align=center }
@@ -83,3 +83,17 @@ Para cambiar el layout del teclado:
     ![TIP9](./img/tip9.png){ width="400", align=center }
 
 **8.** Si dejaste más de una configuración, haciendo click sobre la banderita en el panel podés cambiar a las distintas configuraciones (va cambiando la etiqueta).
+
+## Acceso a Internet
+
+Es necesario que la máquina virtual tenga acceso a internet.
+
+Para configurarlo:
+
+1. Van a *Settings*/*Configuración* --> *Network*/*Red* 
+
+2. Habilitan en la pestaña *Adapter 1* la opción **Enable Network Adapter**
+
+    ![TIP10](./img/tip10.png){ width="400", align=center }
+
+**Enable Network Adapter** tiene que estar tildado.
