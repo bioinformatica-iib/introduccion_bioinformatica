@@ -41,18 +41,18 @@ Durante la cursada deberán ir entregando de forma individual los ejercicios cor
 
 Los informes deben constar de:
 
-1. 1 hoja de Carátula. En esta hoja se incluirá:
-  1. Número y título del trabajo práctico (respetar el número que figura en la guía)
-  2. Número de grupo
-  3. Nombre y Apellido y dirección de correo electrónico de cada uno de los integrantes del grupo
-  4. Fecha de entrega
+1. **1 hoja de Carátula.** En esta hoja se incluirá:
+    1. Número y título del trabajo práctico (respetar el número que figura en la guía)
+    2. Número de grupo
+    3. Nombre y Apellido y dirección de correo electrónico de cada uno de los integrantes del grupo
+    4. Fecha de entrega
 2. 5 hojas máximo. En estas 5 hojas se debe incluir:
-  1. Introducción: 1 hoja máximo y NO debe ser la que se utiliza en el trabajo práctico que entregan los docentes.
-  2. Objetivo general y objetivos específicos
-  3. Métodos y resultados
-  4. Discusión.
-  5. Bibliografía (10 referencias máximo)
-3. Anexo. No hay límite de hojas pero se tendrá en cuenta si es referenciado en el cuerpo del informe o no (no pongan cosas innecesarias)
+    1. **Introducción:** 1 hoja máximo y NO debe ser la que se utiliza en el trabajo práctico que entregan los docentes.
+    2. **Objetivo general y objetivos específicos**
+    3. **Métodos y resultados**
+    4. **Discusión**
+    5. **Bibliografía** (10 referencias máximo)
+3. **Anexo.** No hay límite de hojas pero se tendrá en cuenta si es referenciado o no en el cuerpo del informe (es decir, no pongan cosas innecesarias)
 
 Respecto del formato:
 
@@ -62,6 +62,9 @@ Respecto del formato:
 * Interlineado: 1.15
 * Letra y tamaño de letra: Arial 11pts
 
-* El formato será considerado en la puntuación final.
+!!! warning "Aviso"
+
+    El formato será considerado en la puntuación final del trabajo práctico
+
 
 * Consulten siempre que tengan dudas !!
