@@ -34,7 +34,7 @@ Es UNA entrega por grupo. Esta entrega deberá ser realizada en tiempo y forma, 
     Cuando envían el correo. El asunto del correo debe ser:
     **Entrega Informe TP01 - Grupo 01**
 
-Durante la cursada deberán ir entregando de forma individual los ejercicios correspondientes a cada trabajo práctico, los cuales serán aprobados o desaprobados. En caso de estar desaprobado deberán re-hacerlo para la semana siguiente.
+Durante la cursada deberán ir entregando de forma individual los ejercicios correspondientes a cada trabajo práctico, los cuales serán aprobados o desaprobados. En caso de estar desaprobado tendrán una semana después de la devolución para re-entregarlo.
 
 
 ### Formato a respetar para los informes
@@ -58,9 +58,9 @@ Respecto del formato:
 
 * Se deberán entregar en archivos PDFs nombrados de la siguiente manera: `TPXX_GRUPO_XX.pdf` (por ejemplo, `TP08_GRUPO_01.pdf`)
 * Tamaño de hoja: A4
-* Margen: 2 cm
 * Interlineado: 1.15
 * Letra y tamaño de letra: Arial 11pts
+* Margen: 2 cm
 
 !!! warning "Aviso"
 
