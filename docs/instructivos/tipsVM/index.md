@@ -97,3 +97,51 @@ Para configurarlo:
     ![TIP10](./img/tip10.png){ width="400", align=center }
 
 **Enable Network Adapter** tiene que estar tildado.
+
+
+## Copiar y pegar de máquina host a máquina virtual y viceversa
+
+Para copiar y pegar de la máquina host (es decir, SUS compus físicas) a la máquina virtual (la de la materia) tienen que:
+
+1. Con la máquina virtual abierta
+2. Van a *Devices*/*Dispositivos* --> *Shared Clipboard*/*Portapapeles Compartido* y seleccionan *Bidirectional*/*Bidireccional*
+
+    ![TIP11](./img/tip11.png){ width="400", align=center }
+
+
+## Compartir una carpeta con la máquina host
+
+Una manera simple de compartir archivos entre la máquina *host* (es decir, SUS compus físicas) y la máquina virtual o viceversa es crear una carpeta compartida, para esto:
+
+1. Con la máquina virtual abierta
+2. Van a *Devices*/*Dispositivos* --> *Shared Folder*/*Carpetas Compartidas* y seleccionan *Shared Folders Settings*/*Preferencias de carpetas compartidas*.
+
+    Se les abrirá una ventana, donde deben elegir la carpetita con el símbolo más que está a la derecha para agregar una carpeta compartida y se les abrirá una nueva ventana.
+
+    ![TIP12b](./img/tip12b.png){ width="400", align=center }
+
+    * **Folder Path:** Indican la ruta a la carpeta que van a compartir en la máquina *host* (SU computadora).
+    * **Folder Name:** El nombre con el que aparecerá la carpeta en la máquina virtual
+    * **Auto-mount:** Tiene que estar tickeado.
+    * **Make Permanent:** Tiene que estar tickeado.
+
+3. Click en Ok.
+
+4. Deberían ver algo similar a lo siguiente:
+
+    ![TIP12a](./img/tip12a.png){ width="400", align=center }
+
+5. Click en Ok.
+
+6. Se les debe haber creado un ícono en el escritorio de la máquina virtual con el nombre que eligieron en **Folder Name**
+
+7. Si hacen click, deberían poder acceder a la carpeta. Si aparece un cartel donde dice que no tienen los permisos necesarios, entonces hacen lo siguiente.
+
+    1. Abren una terminal utilizando las teclas: ++ctrl++ + ++alt++ + ++t++
+    2. Escriben lo siguiente en la terminal:
+
+        ``` bash
+        sudo usermod -a -G vboxsf $(whoami)
+        ```
+        
+        Si les pide una clave es **unsam**
