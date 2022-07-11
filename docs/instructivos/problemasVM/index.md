@@ -13,7 +13,13 @@
 
     * *Habilitar PAE/NX* tiene que estar con el tick
 
-![ERROR1](./img/error1.png){ width="400", align=center }
+## Sigue sin funcionar
+
+!!! info "Solución:"
+
+    * Click derecho en la máquina virtual --> *Configuración* --> *Sistema* --> *Procesador*
+
+    * Prueben con 2 o 4 procesadores en la barra que dice Procesador(es), siempre manejándose dentro del rango verde.
 
 ## Mensaje de Error: "This computer does not have hardware-assisted virtualization"
 
