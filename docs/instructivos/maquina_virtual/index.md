@@ -99,7 +99,7 @@ Virtual Box es un virtualizador de entornos. Nos permite generar *máquinas virt
     * **Name o Nombre:** Es el nombre que queremos darle a la máquina virtual. Elijan el que quieran.
     * **Machine Folder o Carpeta de Máquina:** Es la ubicación de la máquina virtual. Elijan la que quieran.
     * **Type o Tipo:** Es el tipo de virtualización. Elijan Linux.
-    * **Version o Versión:** Es la versión del sistema operativo. Ubuntu 32 o 64 bits.
+    * **Version o Versión:** Es la versión del sistema operativo. Ubuntu 32 bits.
 
     ![VM1](./img/vm01.png){ width="400", align=center }
 
