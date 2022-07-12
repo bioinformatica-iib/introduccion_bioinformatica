@@ -118,7 +118,8 @@ nav:
         #- Resumen: teoricas/resumen.md
     - Practicos: 
         - 'practicos/inicio.md'
-        - TP1: 'practicos/1-Trabajo-Practico-Uno/index.md'
+        #- TPs: 'practicos/tpsGrid.md'
+        #- TP1: 'practicos/1-Trabajo-Practico-Uno/index.md'
         #- TP2: 'practicos/2-Trabajo-Practico-Dos/index.md'
         #- TP3: 'practicos/3-Trabajo-Practico-Tres/index.md'
         #- Resumen: 'practicos/resumen.md'
