@@ -60,9 +60,10 @@ Los docentes ya hemos ensamblado, para la materia, un disco de máquina virtual 
 
 * Pueden usar este link, que tiene la máquina que usamos en los TPs (es un link a Dropbox).
 
+**Próximamente Link de Descarga**
+<!--
 [:fontawesome-solid-download: Máquina Virtual](#){ .md-button .md-button--primary }
-
-!! AGREGAR LINK DE DESCARGA DE DROPBOX
+-->
 
 !!! warning "Atención"
 
