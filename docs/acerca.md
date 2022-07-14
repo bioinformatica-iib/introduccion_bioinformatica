@@ -69,6 +69,15 @@ Para inscribirte vas a necesitar:
 <!--
 - Si vas a solicitar beca:
 -->
+### Cierre de Inscripción
+
+25 de Julio, 2022
+
+### Notificación de Aceptación
+
+Los cupos para estudiantes de posgrado, investigadores y trabajadores de la industria son limitados.
+
+Aquellas personas que sean aceptadas para el curso serán notficadas el 29 de Julio, 2022
 
 [Inscribirse](https://forms.gle/9J1XHYxFHot4VKJa7){ .md-button .md-button--primary }
 

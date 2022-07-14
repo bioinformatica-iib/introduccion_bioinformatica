@@ -7,5 +7,5 @@ hide:
 <!--
 ## Curso Teórico - Práctico Hygge Lagom Shouganai
 -->
-
-![Banner](img/banner.svg){ width="650" }
+#
+![Banner](img/banner.png){ width="650" }
