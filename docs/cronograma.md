@@ -14,7 +14,7 @@ tags:
 | Martes, 02 Agosto 2022 | 9:00 hs |	:material-google-classroom: Online | T1. Presentación de la materia | :fontawesome-solid-brain: Teórica |	F. Agüero |
 | Jueves, 04 Agosto 2022 | 9:00 hs |	:material-google-classroom: Online | P1. Introducción a UNIX | :fontawesome-solid-hammer: Práctica |	A. Ricci |
 | Martes, 09 Agosto 2022 | 9:00 hs |	:material-google-classroom: Online | T2. Bases de datos y ontologías | :fontawesome-solid-brain: Teórica |	F. Agüero |
-| Jueves, 08 Agosto 2022 | 9:00 hs |	:material-google-classroom: Online | P2. EMBOSS Suite | :fontawesome-solid-hammer: Práctica |	A. Ricci |
+| Jueves, 11 Agosto 2022 | 9:00 hs |	:material-google-classroom: Online | P2. EMBOSS Suite | :fontawesome-solid-hammer: Práctica |	A. Ricci |
 | Martes, 16 Agosto 2022 | 9:00 hs |	:material-google-classroom: Online | T3. Alineamientos de a pares y Búsqueda de secuencias por Similitud | :fontawesome-solid-brain: Teórica |	F. Agüero |
 | Jueves, 18 Agosto 2022 | 9:00 hs |	:material-google-classroom: Online | T4. Alineamientos múltiples | :fontawesome-solid-brain: Teórica |	F. Agüero |
 | Jueves, 18 Agosto 2022 | 14:00 hs |	:fontawesome-solid-map-location: Aula a definir | TE1. Teórica Extra 1 | :fontawesome-solid-brain: Teórica |	F. Agüero |

@@ -1,6 +1,6 @@
 ![Image](img/featured.png){ width="250", align=left }
 # TP 1. Introducción a Lubuntu, Bash y Programación { markdown data-toc-label = 'TP 1' }
-[:fontawesome-solid-download: Materiales](#){ .md-button .md-button--primary }
+[:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1O8PaR0AoIzyUgPwLl-nNUalnH-VLwoY3/view?usp=sharing){ .md-button .md-button--primary }
 <!--
 Este es el botón para decargar materiales, en (#) hay que agregar el link correspondiente.
 --->
@@ -15,20 +15,16 @@ Este es el botón para decargar materiales, en (#) hay que agregar el link corre
 
 ## TO DO Docente
 
-* Hacer Ej 4 (ver si hacerlo opcional)
-* Hacer algun Ej opcional mas alla del 4
-* Ver donde van los materiales, subirlos y poner link
+* Rehacer Ej 3
 * Cambiar imagen TP
-* Ver si esta todo bien
-* Ver como referirnos a nosotros ("yo", "nosotros")
-* Ver como referirme a ellos ("vos", "ustedes")
-* Ver como hablar de las acciones ("corremos", "corramos", "corran")
-* Ver ortografia? (acentos basicametne)
+* Ver ortografia? (acentos basicamente)
 
 ### Recursos Online
 * [Command-line bootcamp](https://cli-boot.camp/)
 * [Programando en Bash](https://atareao.es/tutorial/scripts-en-bash/)
 * [Comando AWK](https://www.tutorialspoint.com/awk/index.htm)
+* [Consola de Linux online](https://bellard.org/jslinux/vm.html?url=alpine-x86.cfg&mem=192) (y [otra](https://copy.sh/v86/?profile=linux26))
+* [Compilador de Bash online](https://replit.com/languages/bash) (y [otro](https://www.onlinegdb.com/online_bash_shell))
 
 ### Objetivos
 
@@ -36,13 +32,13 @@ Este es el botón para decargar materiales, en (#) hay que agregar el link corre
 * Familiarizarse con el uso básico de los comandos de Bash
 * Familiarizarse con los bloques lógicos básicos de la programación
 
-## Introduccion al Tema
+## **Introduccion al Tema**
 En este trabajo práctico vamos a aprender a usar la **línea de comando** de Lubuntu (también referida como *terminal*, *consola* o *shell*). Para muchos de nosotros, que estamos acostumbrados a la interfaz gráfica de sistemas operativos como los de Windows o *GUI* (por las siglas en ingles: *Graphic User Interface*), la linea de comando puede parecer un desafío, pero con práctica y algo de paciencia descubrirán que puede resultar amena. Su uso tiene dos ventajas destacables para nuestro campo:
 
 * Nos permitirá trabajar en entornos o programas sin interfaz gráfica (GUI)
 * Mediante el uso de programas o *scripts*, nos permitirá automatizar procesos, acelerando el trabajo y minimizando la cantidad de errores que podemos cometer con tareas repetitivas
 
-## ¿Unix? ¿Linux? ¿Ubuntu? ¿Lubuntu? { markdown data-toc-label='¿Unix? ¿Linux? ¿Lubuntu?' }  
+## **¿Unix? ¿Linux? ¿Ubuntu? ¿Lubuntu?** { markdown data-toc-label='¿Unix? ¿Linux? ¿Lubuntu?' }  
 
 Dependiendo que tan familiares esten con Linux, todos estos nombres pueden resultar un poco confusos. Vamos por partes:
 
@@ -58,14 +54,14 @@ Dependiendo que tan familiares esten con Linux, todos estos nombres pueden resul
 
 * **Lubuntu** es una distribución de Linux creada en 2009 basada Ubuntu. Es bastante similar a Ubuntu en todo lo que es consola, pero tiene una interfaz gráfica que consume menos recursos, haciendolo ideal para maquinas más viejas (o en nuestro caso, maquinas virtuales que pesen lo menos posible).
 
-## Estructura de directorios de Lubuntu { markdown data-toc-label='Estructura de directorios' }  
+## **Estructura de directorios de Lubuntu** { markdown data-toc-label='Estructura de directorios' }  
 
 La organización de archivos en Ubuntu y Lubuntu es bastante diferente a la de Windows. Si bien no vamos a detallar completamente toda la estructura y que es cada carpeta (porque el 95% no lo van a usar en esta materia), es importante tener una idea de lo básico:
 
 * **/** :material-arrow-right: Carpeta raiz, o *root*. Contiene al resto de las carpetas
-    * **/etc** :material-arrow-right: Configuraciones del sistema para todos los usuarios **(mucho cuidado al tocar)**
+    * **/etc** :material-arrow-right: Configuraciones del sistema para todos los usuarios (mucho cuidado al tocar)
     * **/home** :material-arrow-right: Ubicación de los directorios de los diferentes usuarios (o en este caso el único usuario)
-        * **/home/ibioinfo** :material-arrow-right: Directorio del usuario *ibioinfo*. Es el lugar donde van a trabajar la mayoría del tiempo (incluye tanto el Escritorio como Documentos) y donde se abre por defecto la terminal (más sobre esto en un ratito). Comunmente referida como *home* del usuario *ibioinfo*
+        * **/home/ibioinfo** :material-arrow-right: Directorio del usuario *ibioinfo*. Es el lugar donde van a trabajar la mayoría del tiempo (incluye tanto el Escritorio como Documentos) y donde se abre por defecto la terminal (más sobre esto en un ratito). Comunmente referida como *home directory* o *home* del usuario *ibioinfo*
     * **/media** :material-arrow-right: Si fuera una computadora normal (no VM) aca aparecerían los pendrives. En nuestro caso aca aparecen por defecto las carpetas compartidas con la PC host
     * **/tmp** :material-arrow-right: Ubicación de los archivos temporales de los programas
     * **/var** :material-arrow-right: Ubicación de los archivos variables de los programas, como logs, bases de datos, paginas webs, etc
@@ -73,9 +69,9 @@ La organización de archivos en Ubuntu y Lubuntu es bastante diferente a la de W
 
 Esto es simplemente un vistazo rápido. Si quieren la lista completa de subdirectorios de Lubuntu la pueden encontrar en [esta página](https://help.ubuntu.com/community/LinuxFilesystemTreeOverview), pero tengan en cuenta que tocar cualquier cosa fuera de **/home** conlleva la posibilidad de arruinar la computadora. En esta materia vamos a usar principalmente **/home** y **/media**.
 
-## Línea de comando
+## **Línea de comando**
 
-Como ya dijimos en la introducción la línea de comando tiene varios nombres, pero en esta guia nos vamos a referir a ella como *terminal*. Hay varias formas de abrir la terminal:
+Como ya dijimos en la introducción la línea de comando tiene varios nombres, y en esta guia nos vamos a referir a ella como *terminal* o *consola*. Hay varias formas de abrir la terminal:
 
 * Desde cualquier lado: ++ctrl+alt+t++
 * Desde cualquier lado: **Inicio** *(menu de abajo a la izquierda)* :material-arrow-right: **Herramientas del sistema** :material-arrow-right: **LXterminal**
@@ -101,8 +97,8 @@ Donde **ibioinfo** es el nombre del usuario actual e **ibioinfo-VirtualBox** el 
     * Para pegar texto en la terminal hay que usar ++ctrl+shift+v++. En en resto de Lubuntu es normal (++ctrl+v++).
     * De apretar ++ctrl+c++ en la terminal le estan diciendo que corte forzosamente el programa que está corriendo. Si bien hay que tener cuidado con no cortar un proceso importante a la mitad, este atajo del teclado es util si un programa se te quedó colgado o similar.
 
-## Bash: Ubicarse en la terminal
-La terminal acepta una variedad de comandos en lenguaje **Bash**, que es (el lenguaje de la terminal de GNU). El formato general de los comandos es:
+## **Bash: Ubicarse en la terminal**
+La terminal acepta una variedad de comandos en lenguaje **Bash**, que es el lenguaje de la terminal de GNU. El formato general de los comandos es:
 
 ``` bash
 comando -opciones parametro1 parametro2 etc
@@ -117,7 +113,7 @@ Al ser la terminal básicamente un explorador de archivos, es necesario saber en
 ``` bash
 pwd
 ```
-Bien, ahora que gane su confianza, vean que hay adentro de esa carpeta usando `ls`:
+Bien, ahora que ganamos su confianza, vean que hay adentro de esa carpeta usando `ls`:
 
 ``` bash
 ls
@@ -182,28 +178,41 @@ cd
 
 ### Paths relativos y absolutos
 
-¿Recuerdan cuando corrimos `cd ls /etc/perl/Net`? En ese momento estaban ubicados en su *home* (**/home/ibioinfo**) y si vemos las carpetas dentro de *home* resulta que no existe ninguna llamada **/etc**. ¿Dónde está la carpeta **/etc** en relación a **/home/ibioinfo**? (ver **Estructura de directorio de Lubuntu** arriba si no se acuerdan). ¿Cómo pudimos acceder a **/etc/perl/Net** si la terminal estaba ubicada en una carpeta sin ninguna relación? La respuesta a todo esto son los paths relativos y absolutos.
+Cuando corrimos `cd ls /etc/perl/Net` estaban ubicados en su *home* (**/home/ibioinfo**) y si vemos las carpetas dentro de *home* resulta que no existe ninguna llamada **/etc**.
 
-El path **/etc/perl/Net** es lo que se llama un **path absoluto**; no importa donde esté en la terminal en ese momento, **/etc/perl/Net** va a siempre apuntar al mismo lugar y el comando `ls /etc/perl/Net` va a siempre andar bien. Una forma fácil de identificar paths absolutos es que siempre empiezan en el *root* o **/** (con una excepción de la que hablaremos dentro de poco).
+* ¿Dónde está la carpeta **/etc** en relación a **/home/ibioinfo**? (ver **Estructura de directorio de Lubuntu** arriba si no se acuerdan)
+* ¿Cómo pudimos acceder a **/etc/perl/Net** si la terminal estaba ubicada en una carpeta sin ninguna relación?
 
-Ahora bien, cuando nosotros estabamos ubicados en *home* y corrimos `cd Escritorio` pudimos entrar a **/home/ibioinfo/Escritorio**, pero si volvieramos a correr `cd Escritorio` el comando no funcionaría, ya que no existe la carpeta **/home/ibioinfo/Escritorio/Escritorio**. Esto se debe a que en este caso **Escritorio** es un **path relativo** a la ubicación actual de la terminal. Otra foram de escribir paths relativos en Ubuntu es empezar con `.`, simbolo que indica "la carpeta actual". Volviendo al ejemplo anterior, es equivalente escribir `cd Escritorio` o `cd ./Escritorio`.
+La respuesta a todo esto son los paths relativos y absolutos:
 
-Como les mencioné antes hay un caso de path absoluto que no empieza en **/**, y eso se debe a que Lubuntu tiene un símbolo especial para su *home*, que es **\~** y en nuestro caso apunta a **/home/ibioinfo**. Esto quiere decir que el comando `cd ~/Escritorio` está usando un path absoluto, ya que sin importar de donde se use va a funcionar y va a ir a **/home/ibioinfo/Escritorio**.
+#### Paths absolutos
+
+El path **/etc/perl/Net** es lo que se llama un **path absoluto**; no importa donde esté en la terminal en ese momento, **/etc/perl/Net** va a siempre apuntar al mismo lugar y el comando `ls /etc/perl/Net` va a siempre andar bien. Una forma fácil de identificar paths absolutos es que siempre empiezan en el *root* o **/**.
+
+Recuerden que **\~** apunta a **/home/ibioinfo**, y por lo tanto el comando `cd ~/Escritorio` está usando un path absoluto, ya que sin importar de donde se use va a funcionar y va a ir a **/home/ibioinfo/Escritorio**.
+
+#### Paths relativos
+
+Ahora bien, cuando nosotros estabamos ubicados en *home* y corrimos `cd Escritorio` pudimos entrar a **/home/ibioinfo/Escritorio**, pero si volvieramos a correr `cd Escritorio` el comando no funcionaría, ya que no existe la carpeta **/home/ibioinfo/Escritorio/Escritorio**. Esto se debe a que en este caso **Escritorio** es un **path relativo** a la ubicación actual de la terminal. Otra forma de escribir paths relativos en Ubuntu es empezar con `.`, simbolo que indica "la carpeta actual". Volviendo al ejemplo anterior, es equivalente escribir `cd Escritorio` o `cd ./Escritorio`.
+
+Otro caso de path relativo que ya vimos es `cd ..`, donde apunta a la "carpeta de arriba" de la posición actual de la terminal.
+
+<br>
 
 Ambos tipos de paths tienen sus ventajas y desventajas. Los paths absolutos tienen la ventaja de funcionar siempre, pero al usar toda la estructura toman más tiempo de escribir y son mas suceptibles a cambios de directorios (si muevo un archivo de lugar tengo que reescribir el comando). Por otro lado los paths relativos son mucho más rápidos de escribir y en muchos casos funcionan en diferentes ubicaciones (o computadoras), pero al depender de la ubicación de la terminal esto puede causar problemas si pienso que estoy en una carpeta pero estoy realmente en otra. En esta cursada vamos a usar ambos para diferentes casos.
 
-## Ejercicio 1. Ubicarse en la terminal { markdown data-toc-label='Ejercicio 1' }  
+## **Ejercicio 1. Ubicarse en la terminal** { markdown data-toc-label='Ejercicio 1' }  
 
 1. Identifique cual o cuales de los siguientes comandos te llevarían desde cualquier carpeta al *home* del usuario **ibioinfo**.
 
     1. `cd ~`
-    1. `cd home/pareto`
-    1. `cd home / pareto`
-    1. `cd / home / pareto`
-    1. `cd /home/pareto`
-    1. `cd /pareto/home`
-    1. `cd ././pareto`
-    1. `cd ./home/pareto`
+    1. `cd home/ibioinfo`
+    1. `cd home / ibioinfo`
+    1. `cd / home / ibioinfo`
+    1. `cd /home/ibioinfo`
+    1. `cd /ibioinfo/home`
+    1. `cd ././ibioinfo`
+    1. `cd ./home/ibioinfo`
 
 1. ¿Cambiarian la respuesta en algunos de los puntos anteriores si el usuario logueado actualmente en la computadora no es **ibioinfo**? ¿Por qué?
 
@@ -218,20 +227,23 @@ Ambos tipos de paths tienen sus ventajas y desventajas. Los paths absolutos tien
     1. `./Descargas/tom_jerry_cap1.torrent`
     1. `/home/tom/Descargas/tom_jerry_cap1.torrent`
 
-## Bash: Crear y eliminar
+## **Bash: Crear y eliminar**
 
-!!! info
-
-    Todo lo que es crear, copiar, mover y eliminar archivos y directorios se puede hacer usando la interfaz gráfica como lo harían en cualquier otro sistema operativo, sin embargo hay situaciones (por ejemplo dentro de un *script*) donde es necesario hacerlo mediante la consola. Si bien en esta guia le vamos a pedir que usen los siguientes comandos para prácticarlos, en el día a día hagan lo que les sea más comodo.
+Todo lo que es crear, copiar, mover y eliminar archivos y directorios se puede hacer usando la interfaz gráfica como lo harían en cualquier otro sistema operativo, sin embargo hay situaciones (por ejemplo dentro de un *script*) donde es necesario hacerlo mediante la consola. Si bien en esta guia le vamos a pedir que usen los siguientes comandos para prácticarlos, en el día a día hagan lo que les sea más cómodo.
 
 ### Crear y eliminar directorios
 
 Los directorios se pueden crear con:
 
 ``` bash
-mkdir PATH
+mkdir FOLDER
 ``` 
-Donde **PATH** es un path absoluto o relativo con el nombre de la carpeta. Prueben ir en su terminal a **/home/ibioinfo/Documentos** y usar el comando:
+
+!!! info
+    
+    En el resto de la guia van a aparecer ciertas palabras en mayúscula en los códigos, como por ejemplo **FOLDER**. Estas palabras son *variables* o *placeholders* que tienen que ser reemplazadas por lo que corresponda.
+
+Donde **FOLDER** es un path absoluto o relativo con el nombre de la carpeta. Prueben ir en su terminal a **/home/ibioinfo/Documentos** y usar el comando:
 ``` bash
 mkdir testfolder
 ``` 
@@ -241,17 +253,17 @@ Y vean si efectivamente apareció una carpeta nueva. Luego usen el comando de nu
 Para eliminar directorios se puede usar:
 
 ``` bash
-rmdir PATH
+rmdir FOLDER
 ```
 
-Por defecto este comando solo puede eliminar directorios vacios (lo cual puede no ser muy util, pero a la vez es seguro). Usen el comando anterior y borren la carpeta que acaban de crear (reemplacen **PATH** por lo que corresponda). Prueben correr el comando una vez más a ver que pasa.
+Por defecto este comando solo puede eliminar directorios vacios (lo cual puede no ser muy util, pero a la vez es seguro). Usen el comando anterior y borren la carpeta que acaban de crear (reemplacen **FOLDER** por lo que corresponda). Prueben correr el comando una vez más a ver que pasa.
 
-!!! tip
+!!! danger "Tip muy importante"
 
     Este es un buen momento para hablar de que nombres ponerles a las cosas que uno crea un Lubuntu. Si bien cualquier nombre funciona en un principio, por un tema de compatibilidad entre los diferentes programas que pueden llegar a usar se recomienda:
 
-    * Muy recomendado: No usar comillas o apóstrofes
-    * Recomendado: No usar espacios, paréntesis, Ñ, acentos, diéresis u otros diacríticos (el espacio comunmente se remplaza por un guión o guión bajo)
+    * **Muy recomendado:** No usar comillas dobles, simples o apóstrofes
+    * **Recomendado:** No usar espacios, paréntesis, Ñ, acentos, diéresis u otros diacríticos (el espacio comunmente se remplaza por un guión o guión bajo)
 
 ### Crear y eliminar archivos
 
@@ -262,13 +274,13 @@ touch Documentos/testfile
 ```
 Aca estoy usando un path relativo para crear el archivo. Se van a dar cuenta que el archivo no tiene extensión (por ejemplo **.txt**). En Lubuntu van a ver muchos archivos de texto sin extensión, pero se la pueden agregar sin problema si quieren. Entren a **Documentos** y vean si el archivo realmente existe.
 
-Voy a serles honestos, si pudiera no enseñarles el próximo comando no se los enseñaria. `rm` es el comando usado para eliminar archivos (o carpetas, o discos enteros) y es la base de cientos de historias en internet de como alguien se quedó sin trabajo. El comando se usa:
+Lo que le vamos a enseñar a continuación es probablemente uno de los comandos más peligrosos de Bash si se usa incorrectamente. `rm` es el comando usado para eliminar archivos (o carpetas, o discos enteros) y es la base de cientos de historias en internet de como alguien se quedó sin trabajo. El comando se usa:
 
 ```bash
 rm FILE
 ```
 
-Donde **FILE** es el archivo a eliminar. `rm` no les va a pedir confirmación y el archivo va a ser borrado permanentemente (si borran archivos desde la interfaz gráfica si hay confirmación y si van a la papelera). Entonces, con cuidado, asegurense que estan en **Documentos** y borren el archivo **testfile**.
+Donde **FILE** es el archivo a eliminar. `rm` no les va a pedir confirmación y el archivo va a ser borrado permanentemente (si borran archivos desde la interfaz gráfica sí hay confirmación y sí van a la papelera). Entonces, con cuidado, asegurense que estan en **Documentos** y borren el archivo **testfile**.
 
 !!! danger
     
@@ -281,10 +293,14 @@ Adentro de **Documentos** creen una carpeta llamada **testfolder2** y dos archiv
 Los archivos se mueven con `mv` y se copian con `cp` y ambos tienen un formato similar que es
 
 ```bash
-mv ARCHIVO_ORIGEN PATH_DESTINO
+mv ARCHIVO_ORIGEN FOLDER_DESTINO
 ```
 
-Donde en este caso **ARCHIVO_ORIGEN** es el archivo a mover y **PATH_DESTINO** el path a donde moverlo. Prueben entonces mover **testfile_mv** y copiar **testfile_cp** adentro de la carpeta **testfolder2** (solo por las dudas, agreguen la opción `-i` al comando, que les va a pedir confirmación si el archivo de destino ya existe, cosa que aca no debería pasar).
+Donde en este caso **ARCHIVO_ORIGEN** es el archivo a mover y **FOLDER_DESTINO** el path a donde moverlo. Prueben entonces mover **testfile_mv** y copiar **testfile_cp** adentro de la carpeta **testfolder2**.
+
+!!! tip
+
+    Usando la opción `-i` al comando, les va a pedir confirmación si el archivo de destino ya existe. Recuerden que pueden usar `man mv` o `man cp` para ver mas opciones.
 
 Estos dos comandos también pueden ser usados como:
 
@@ -292,7 +308,7 @@ Estos dos comandos también pueden ser usados como:
 mv ARCHIVO_ORIGEN ARCHIVO_DESTINO
 ```
 
-En este caso **ARCHIVO_DESTINO** no es una carpeta, sino un archivo adentro del **PATH_DESTINO**, lo que permite renombrar el **ARCHIVO_ORIGEN** al copiarlo / moverlo. Para que se entienda mejor este uso, ubiquensé en **Documentos** y corran:
+En este caso **ARCHIVO_DESTINO** no es una carpeta, sino un archivo adentro del **FOLDER_DESTINO**, lo que permite renombrar el **ARCHIVO_ORIGEN** al copiarlo / moverlo. Para que se entienda mejor este uso, ubiquensé en **Documentos** y corran:
 
 ```bash
 cp testfile_cp testfolder2/testfile_cp_nuevo
@@ -303,19 +319,19 @@ Con lo cual acabo de copiar **testfile_cp** de nuevo a la carpeta **testfolder2*
 ```bash
 mv testfile_cp_nuevo testfile_cp_otroNombre
 ```
-Y vean que pasó. Una vez que todo haya funcionado bien, usen `rm` para eliminar todos los **testfile** y luego usen rmdir para eliminar **testfolder2**.
+Y vean que pasó. Una vez que todo haya funcionado bien, usen `rm` para eliminar todos los **testfile** uno a uno y luego usen `rmdir` para eliminar **testfolder2**.
 
 Ambos comandos funcionan también para copiar, mover y renombrar carpetas, en cuyo caso el formato es:
 
 ```bash
-mv PATH_ORIGEN PATH_DESTINO
+mv FOLDER_ORIGEN FOLDER_DESTINO
 ```
 
 !!! danger
     
     Hay que ser cuidadosos al usar `mv` y `cp` ya que si el archivo de destino ya existe lo van a sobreescribir sin preguntar antes. A ambos comandos se le puede agregar la opción `-i` para que pregunte antes de sobreescribir de ya existir el archivo de destino.
 
-## Bash: Archivos de texto
+## **Bash: Archivos de texto**
 
 ### Escribir archivos de texto
 
@@ -333,21 +349,15 @@ ls -l > Documentos/output_de_ls
 
 Verán que en un principio parece que no paso nada. Entren ahora a **Documentos** y van a ver que hay un nuevo archivo con el nombre **output_de_ls**.
 
-En este momento nos damos cuenta que no sabemos como abrir un archivo de texto en la terminal. Si bien hay varias formas de las que vamos a hablar en la próxima sección y nos ván a resultar más útiles a largo plazo, voy a aprovechar este momento para presentarles a **Nano**, el editor de texto que viene por defecto con la terminal de Lubuntu. Asegurandose que estan adentro de **Documentos**, corran:
+Vamos a abir el archivo usando **Leafpad**, el editor de texto de la interfaz ǵráfica de Lubuntu. Asegurandose que estan **Documentos**, en la consola escriban:
 
 ```bash
-nano output_de_ls
+leafpad output_de_ls
 ```
 
-Funciona como un editor de texto bastante normal, solo que los atajos de teclado son completamente diferentes a cualquier cosa que conozcan. En la parte de abajo **Nano** les muestra algunos de los atajos de teclado mas comunes (^ es ++ctrl++).
+Van a ver que se abre el editor de texto de igual forma que si ubieran hecho doble click en el ícono en el explorador de archivos de la GUI. Puede ser que aparezca un *warning* o advertencia en la consola, pero la podemos ignorar.
 
-Agreguen una nueva linea abajo de todo (con cualquier cosa) y guarden el archivo apretando ++ctrl+o++. Les va a preguntar el nombre del archivo a guardar y solo aprieten ++enter++ para guardar los cambios en **output_de_ls**. Luego salgan de **Nano** apretando ++ctrl+x++.
-
-!!! info
-
-    **Nano** tambien puede ser usado para crear archivos de cero, en cuyo caso hay que correr el comando `nano` en la carpeta deseada y luego al guardar el archivo elegir el nombre de archivo, que será creado.
-
-    Dicho esto, editar archivos de texto manualmente es mucho mas simple usando el editor de texto de la interfaz gráfica, pero son preferencias.
+**Leafpad** funciona como un editor de texto bastante normal. Agreguen una nueva linea abajo de todo (con cualquier texto) y guarden el archivo.
 
 Al momento sabemos como guardar en un archivo de texto cualquier salida de un comando de Lubuntu, pero, ¿cómo hacemos para poner lo que nosotros queremos en un archivo de texto? Simple, ¡con otro comando de Lubuntu!
 
@@ -369,14 +379,14 @@ Confirmen que se escribió el archivo y que tiene el texto adentro. ¿Qué piens
 echo Quiero agregar otra linea al documento > mi_documento
 ```
 
-Usen **Nano** para leer el documento. Van a ver que la primera linea que agregamos desapareció. Esto es porque cada uso de `>` sobreescribe el archivo. Si queremos agregar otra linea a un documento que ya tiene información tenemos que usar el comando `>>` quien agrega el texto al archivo en una nueva linea al final sin modificar el contenido anterior. Así que ahora que sabemos esto podemos correr estos dos comandos:
+Usen **Leafpad** para leer el documento. Van a ver que la primera linea que agregamos desapareció. Esto es porque cada uso de `>` sobreescribe el archivo. Si queremos agregar otra linea a un documento que ya tiene información tenemos que usar el comando `>>` quien agrega el texto al archivo en una nueva linea al final sin modificar el contenido anterior. Así que ahora que sabemos esto podemos correr estos dos comandos:
 
 ```bash
 echo Esta es la primera linea del documento > mi_documento
 echo Esta es la segunda linea del documento >> mi_documento
 ```
 
-Y ver con **Nano** si funcionó como queríamos.
+Y vean con **Leafpad** si funcionó como queríamos.
 
 !!! danger
     
@@ -384,15 +394,27 @@ Y ver con **Nano** si funcionó como queríamos.
 
 ### Leer archivos de texto
 
-Que comando usar al leer archivos de texto depende mucho de que tan largo es el archivo y que me interesa de él.
+Qué comando usar al leer archivos de texto en la consola depende mucho de que tan largo es el archivo y que me interesa de él:
 
-¿Tiene solo pocas lineas de texto? `cat` va a abrir el archivo y escribirlo todo en la terminal.
+* ¿Tiene solo pocas lineas de texto?
 
-¿Tiene muchas lineas de texto y quiero ver las primeras páginas a ver de que se trata? `less` va a abrir el archivo y mostrar solo el texto que entra en la terminal. Aprentando ++space++ pasa a la próxima página y apretando ++q++ deja de leerlo.
+    `cat` va a abrir el archivo y escribirlo todo en la terminal.
 
-¿Tiene muchas lineas de texto y quiero ver solo las primeras lineas? `head` te muestra las primeras 10 lineas del archivo. Se puede especificar la cantidad de lineas agregando una opción, por ejemplo, `head -3` muestra solo las primeras 3 líneas.
+* ¿Tiene muchas lineas de texto y quiero ver las primeras páginas a ver de que se trata?
 
-¿Tiene muchas lineas de texto y quiero ver solo las últimas lineas? `less` te muestra las últimas 10 líneas del archivo. Este número se puede cambiar de la misma forma que para `head`.
+    `less` va a abrir el archivo y mostrar solo el texto que entra en la terminal. Aprentando ++space++ pasa a la próxima página y apretando ++q++ deja de leerlo.
+
+* ¿Tiene muchas lineas de texto y quiero ver solo las primeras lineas?
+
+    `head` te muestra las primeras 10 lineas del archivo. Se puede especificar la cantidad de lineas agregando una opción, por ejemplo, `head -3` muestra solo las primeras 3 líneas.
+
+* ¿Tiene muchas lineas de texto y quiero ver solo las últimas lineas?
+
+    `tail` te muestra las últimas 10 líneas del archivo. Este número se puede cambiar de la misma forma que para `head`.
+
+* ¿No saben que tan largo es un archivo dado?
+
+    Pueden averiguarlo con el comando `wc`, que devuelve el numero de lineas, palabras y letras (en ese orden) en el archivo. De pasarle la opción `-l`, el comando devuelve solo el número de lineas.
 
 Todos estos funcionan de la forma:
 
@@ -400,11 +422,7 @@ Todos estos funcionan de la forma:
 comando FILE
 ```
 
-Usando el archivo **martin_fierro** que se encuentra en los materiales del TP (boton al principio de todo), prueben los 4 comandos anteriores.
-
-!!! tip
-
-    De no saber que tan largo es un archivo dado, puedo averiguarlo con el comando `wc FILE`, que devuelve el numero de lineas, palabras y letras (en ese orden) en el archivo. `wc -l` devuelve solo el número de lineas.
+Usando el archivo **martin_fierro** que se encuentra en los materiales del TP (boton al principio de todo), prueben los 5 comandos anteriores.
 
 ### Buscar palabras en archivos de texto { markdown data-toc-label='Buscar palabras' }  
 
@@ -442,11 +460,11 @@ head -10 martin_fierro | grep cantar
 
 Fijense que en este caso parecería que a `grep` no le estoy pasando ningun **FILE**, pero lo que pasa es que va usar como entrada la salida de `head`. De esta forma se puede concatenar cualquier cantidad de comandos que seran ejecutados de izquierda a derecha.
 
-## Ejercicio 2. Archivos de texto { markdown data-toc-label='Ejercicio 2' }  
+## **Ejercicio 2. Archivos de texto** { markdown data-toc-label='Ejercicio 2' }  
 
 Para este ejercicio vamos a seguir usando el archivo **martin_fierro**. 
 
-1. ¿Cuántas líneas tiene el archivo? (Tip: recuerde el comando `wc`)
+1. ¿Cuántas líneas tiene el archivo?
 
 1. ¿Cuántas líneas contienen la palabra "cantar"?
 
@@ -467,7 +485,7 @@ echo "José Hernández" >> martin_fierro_sinA
 grep -v o martin_fierro | grep -c i
 -->
 
-## Bash: Programación y Scripts
+## **Bash: Programación y Scripts**
 
 !!! info
 
@@ -475,11 +493,9 @@ grep -v o martin_fierro | grep -c i
 
 ### Scripts
 
-Los *scripts* de Bash son básicamente una lista de muchos de los comandos que nosotros corrimos en la terminal, pero escritos dentro de un archivo. Al ejecutar ese archivo todos los comandos dentro de él serán corridos uno a uno de arriba a abajo. Vayan a **Documentos** y creen un archivo llamado **primer_programa.sh**. Luego editen el archivo y escriban lo siguiente:
+Los *scripts* de Bash son básicamente una lista de muchos de los comandos que nosotros corrimos en la terminal, pero escritos dentro de un archivo. Al ejecutar ese archivo todos los comandos dentro de él serán corridos uno a uno de arriba a abajo.
 
-!!! tip
-
-    A partir de aca sientanse libres de usar el explorador de archivos y el editor de texto de la interfaz gráfica si lo prefieren.
+Para simplificar un poco la tarea y enfocarnos en lo que importa en esta sección vamos a utilizar la interfaz gráfica de Lubuntu. Vayan a **Documentos** y creen un archivo llamado **primer_programa.sh** (Boton derecho :material-arrow-right: Crear nuevo... :material-arrow-right: Archivo vacío). Luego abran el archivo en **Leafpad** (doble click) y escriban lo siguiente:
 
 ```bash
 echo "----------------"
@@ -487,7 +503,7 @@ echo "| Hello world! |"
 echo "----------------"
 ```
 
-Ahora salven en archivo, vayan a la terminal y vamos a ejecutar el script con:
+Ahora salven en archivo, abran la terminal en esa carpeta (++f4++) y vamos a ejecutar el script con:
 
 ```bash
 bash primer_programa.sh
@@ -525,7 +541,11 @@ Las variables son *palabras* que guardan dentro de ellas un número o un *string
 
 ¿Qué piensan que va a pasar de correr este código en un script? Pruebenló.
 
-En este momento algunos de ustedes tiene que estar pensando que hubiera sido mucho más fácil poner solo `echo "Hola Unsamer, ¿todo bien?"` y ahorrarme el tema de la variable. Tienen razón. Por ahora.
+!!! info
+
+    Desgraciadamente Bash es muy estricto al momento de programar y perdona bastante poco (como por ejemplo el tema de tener un espacio más o menos). Más adelante vamos a usar el lenguaje **R** que va a ser una de nuestras principales herramientas al momento de analizar y plotear datos y es mucho más amigable.
+
+En este momento pueden estar pensando que hubiera sido mucho más fácil poner solo `echo "Hola Unsamer, ¿todo bien?"` y ahorrarme el tema de la variable. Tienen razón. Por ahora.
 
 ¿Se acuerdan de los **parametros** de los comandos de Bash? Al pasarle parámetros a un script de Bash estos se asignan automaticamente a variables llamadas `$1`, `$2`, etc. Editemos ahora nuestro código anterior:
 
@@ -610,7 +630,7 @@ Copien este código a un script y prueben pasarle números menores y mayores a 1
 
 !!! info
 
-    Desgraciadamente Bash es muy estricto al momento de programar y perdona bastante poco (como por ejemplo el tema de tener un espacio más o menos). Más adelante vamos a usar el lenguaje **R** que va a ser una de nuestras principales herramientas al momento de analizar y plotear datos y es mucho más amigable.
+    Es importante remarcar que la condición del *if* (lo que en este caso se encuentra entre los corchetes) es básicamente una pregunta que puede tener solo una de dos respuestas posibles: **Sí** (llamada en programación **Verdadero** o **True**) ó **No** (llamada en programación **Falso** o **False**)
 
 Como dije antes a un condicional se le puede poner también que pase algo cuando no es verdad, por ejemplo:
 
@@ -703,7 +723,9 @@ Hay otra versión del *for* que comunmente se denomina *for each*. En este caso 
 
 Hay bastante más para hablar de los *ciclos*. Se pueden hacer ciclos que aumenten de 2 en 2 o hacer ciclos que disminuyan. Hay otros dos tipos de ciclos comunmente denóminados *while* y *until* (tambien llamado *do*) y hay formas de forzar salir del ciclo o pasar a la próxima iteración con *break* y *continue* (tambien llamado *next*). Sin embargo, lo que acabamos de aprender es la base y va a ser suficiente por ahora. Más información sobre los ciclos en Bash se puede ver en [esta página](https://atareao.es/tutorial/scripts-en-bash/bucles-en-bash/).
 
-## Ejercicio 3. Programación en Bash { markdown data-toc-label='Ejercicio 3' }
+## **Ejercicio 3. Programación en Bash** { markdown data-toc-label='Ejercicio 3' }
+
+### REHACER
 
 El objetivo de este Ejercicio va a ser hacer un script que reciba un número por consola y escriba todos los números pares entre 1 y dicho número. Para hacerla simple vamos a asumir que el numero que le pasamos por consola va a ser un número entero entre 1 y 1000. Dos cosas que van a necesitar para hacer esto son:
 
@@ -734,7 +756,7 @@ En este momento tenemos todos los elementos necesarios andando, pero hay que bor
 ??? info "Spoilers"
     1. Borren la linea que imprime `$resto` y la linea que imprime `$numero` (no nos interesa esta salida)
     1. Muevan la declaración de `$resto` y el *if* adentro del *for* (ya que tengo que ver si cada uno de los números del for es par)
-    1. Cambien la declararción de `$resto` para que calcule el resto de dividir `$i` por 2 y no `$numero`
+    1. Cambien la declaración de `$resto` para que calcule el resto de dividir `$i` por 2 y no `$numero`
     1. Muevan la linea que imprime `$i` adentro del *if* (que ahora está a su vez adentro del *for*) y borren la linea que imprime "es par" (porque yo quería los números)
     1. Cambien la declaración de `$numero` al principio de todo para que tome el primer parámetro pasado en la consola
 
@@ -753,11 +775,15 @@ do
 done
 -->
 
-## Tablas
+## **Bash: Tablas**
 
-Lo ultimo que vamos a aprender hoy es un pequeño vistazo a como se pueden manipular tablas desde la consola de Lubuntu. Descarguen el archivo **mtcars** que se encuentra en los materiales del TP (boton al principio de todo) y ponganlo en **Documentos**.
+Lo ultimo que vamos a aprender hoy es un pequeño vistazo a como se pueden manipular tablas desde la consola de Lubuntu. Descarguen el archivo **mtcars** que se encuentra en los materiales del TP (boton al principio de todo) y ponganlo en **Documentos**. Esta tabla viene por defecto con el lenguaje de programación **R** y nos va a servir para aprender como manipular tablas en Bash. 
+
+Abran el archivo con **Leafpad** (doble click). Podemos ver que es una tabla en formato texto, donde la primera línea es el encabezado o *header* de la tabla y en cada líńea las columnas estás separadas entre ellas con un ++tab++. Imaginense si tuvieran que copiar solo una columna de esta tabla, o quedarse con aquellas filas que tengan un número específico de cilindros (columna *cyl*), ¿como lo harían? Esto es lo que vamos a aprender a continuación.
 
 ??? info "Columnas de mtcars"
+
+    **mtcars** es una tabla que viene por defecto con el lenguaje de programación **R**, sus columnas son:
 
     | Nombre | Descripción |
     | :--- | :--- |
@@ -788,7 +814,7 @@ Donde **TABLEFILE** es el archivo que contiene a la tabla e **instrucciones** es
 awk -F "\t" '{print}' mtcars
 ```
 
-Donde `-F` es la opción que le dice a `awk` cual es el caracter que separa las diferentes columnas (en este caso es `\t` o ++tab++) y `{print}` es la instrucción que simplemente dice que imprima en pantalla la tabla.
+Donde `-F` es la opción que le dice a `awk` cual es el caracter que separa las diferentes columnas (en este caso es `\t`, que es el símbolo de ++tab++) y `{print}` es la instrucción que simplemente dice que imprima en pantalla la tabla.
 
 Lo importante de `awk` es que nos permite trabajar con columnas individuales. Por ejemplo si ponemos:
 
@@ -810,7 +836,7 @@ Debido a como funciona `print`, las diferentes columnas se imprimeron una pegada
 awk -F "\t" '{print $1 "\t" $3 "\t" $5}' mtcars
 ```
 
-Ahora bien, una actividad normal cuando se tienen datas con muchos datos es filtrar mis datos por alguna columna, o dicho de otra forma, usar condicionales. Un ejemplo de esto en `awk` seria:
+Ahora bien, una actividad normal cuando se tienen tablas con muchos datos es filtrar mis datos por alguna columna, o dicho de otra forma, usar condicionales. Un ejemplo de esto en `awk` seria:
 
 ``` bash
 awk -F "\t" '{if ($3 == 6) {print}}' mtcars
@@ -822,11 +848,61 @@ Entonces, aca le estan diciendo a `awk` que imprima en la pantalla todas las fil
 
 Como siempre hay mucho más para decir sobre `awk`, pero por hoy estamos bien. Sepan sin embargo que `awk` tiene su propio `grep` y su propio *for*, que se pueden declarar variables dentro de él y que tiene hasta una lista de comandos propios. Pueden ver mucha más información de `awk` en [esta página](https://www.tutorialspoint.com/awk/index.htm).
 
-## Ejercicio 4. Tablas con AWK { markdown data-toc-label='Ejercicio 4' }
+## **Ejercicio Adicional 1. Programación en Bash** { markdown data-toc-label='Ejercicio Adicional 1' }
 
-### TO DO (Opcional?)
+!!! info
 
-## Bibliografía
+    Algunas guias van a tener ejercicios adicionales, que son ejercicios que pueden hacer si quieren practicar más el tema, pero no son obligatorios. Suelen ser un poco más complicados que los ejercicios de la guía.
+
+El objetivo de este Ejercicio va a ser hacer un script que reciba un número por consola y escriba todos los números pares entre 1 y dicho número. Para hacerla simple vamos a asumir que el numero que le pasamos por consola va a ser un número entero entre 1 y 1000. Dos cosas que van a necesitar para hacer esto son:
+
+``` bash
+# El operador % calcula el resto entre 2 números
+# En este caso $resto va a contener el resto de dividir 5 por 2 (que es 1)
+# Los paréntesis y signo $ bordeando a la operación son necesarios para que funcione bien en Bash
+resto=$((5 % 2)) 
+
+# == es el comparador para igualdad usado en los *ifs*
+# Va a ser verdadero solo si lo de la izquierda es identico a lo de la derecha.
+if [[ 2 == 2 ]]
+```
+
+Si quieren pueden intentar programar directamente, pero para hacer programas complejos, especialmente en un lenguaje que recién aprenden, es recomendado ir por partes e ir probando en el medio. Unos posibles pasos a seguir son:
+
+!!! info
+
+    La idea de hacerlo así es ir probando de a poco si aparece algun error. ¡Prueben el script entre cada paso principal!
+
+1. Creen un script en el que se declare una variable llamada `$numero` y la imprima en la terminal.
+1. Agreguen al script otra variable llamada `$resto`, que va a ser el resto de dividir a `$numero` por 2. Hagan que el script imprima tanto `$numero` como `$resto` (en 2 lineas diferentes).
+1. Agreguen un condicional que vea si `$resto` es 0 (y por lo tanto si `$numero` es par). De ser verdadero, hagan que imprima "es par".
+1. Agreguen un ciclo que vaya de 1 a `$numero` e imprima todos esos números.
+
+En este momento tenemos todos los elementos necesarios andando, pero hay que borrar algunas lineas, reescribir pedazos de otras lineas y mover algunos bloques adentro de otros. Traten de pensar que hay que modificar para conseguir nuestro objetivo. No es trivial esto, asi que si ven que se les complica lean las instrucciones siguientes:
+
+??? info "Spoilers"
+    1. Borren la linea que imprime `$resto` y la linea que imprime `$numero` (no nos interesa esta salida)
+    1. Muevan la declaración de `$resto` y el *if* adentro del *for* (ya que tengo que ver si cada uno de los números del for es par)
+    1. Cambien la declaración de `$resto` para que calcule el resto de dividir `$i` por 2 y no `$numero`
+    1. Muevan la linea que imprime `$i` adentro del *if* (que ahora está a su vez adentro del *for*) y borren la linea que imprime "es par" (porque yo quería los números)
+    1. Cambien la declaración de `$numero` al principio de todo para que tome el primer parámetro pasado en la consola
+
+¡Y listo!, deberían tener su programa andando.
+
+<!--
+numero=$1
+
+for ((i=1;i<=$numero;i++))
+do
+    resto=$(($i % 2))
+    if [[ $resto == 0 ]]
+    then
+        echo $i
+    fi
+done
+-->
+
+## **Bibliografía**
 
 <!--
 ### :material-bookshelf: Libros
@@ -834,5 +910,11 @@ Como siempre hay mucho más para decir sobre `awk`, pero por hoy estamos bien. S
 * Libro 2
 -->
 
-### :material-console-line: Online
-* https://en.wikipedia.org/wiki/History_of_Linux
+<!--
+### :material-web: Online
+* Online 1 
+* Online 2
+-->
+
+### :material-console-line: Consola
+* Comando `man`
