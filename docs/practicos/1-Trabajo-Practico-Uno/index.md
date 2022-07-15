@@ -2,7 +2,7 @@
 # TP 1. Introducción a Lubuntu, Bash y Programación { markdown data-toc-label = 'TP 1' }
 [:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1O8PaR0AoIzyUgPwLl-nNUalnH-VLwoY3/view?usp=sharing){ .md-button .md-button--primary }
 <!--
-Este es el botón para decargar materiales, en (#) hay que agregar el link correspondiente.
+Este es el botón para decargar materiales, en (#) hay que agregar el link correspondiente
 --->
 
 <br>
