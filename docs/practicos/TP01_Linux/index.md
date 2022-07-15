@@ -1,23 +1,19 @@
-![Image](img/featured.png){ width="250", align=left }
-# TP 1. Introducción a Lubuntu, Bash y Programación { markdown data-toc-label = 'TP 1' }
+![Image](img/banner.jpg){ width="250", align="left" }
+
+# **TP 1**. Introducción a Lubuntu, Bash y Programación { markdown data-toc-label = 'TP 1' }
+
+<br>
+
 [:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1O8PaR0AoIzyUgPwLl-nNUalnH-VLwoY3/view?usp=sharing){ .md-button .md-button--primary }
 <!--
 Este es el botón para decargar materiales, en (#) hay que agregar el link correspondiente
 --->
-
-<br>
 
 <!--
 ### Software a usar
 * Programa 1 [www.donde.lo.bajo.com](https://www.example.com)
 * Programa 2 [www.donde.lo.bajo2.com](https://www.example.com)
 --->
-
-## TO DO Docente
-
-* Rehacer Ej 3
-* Cambiar imagen TP
-* Ver ortografia? (acentos basicamente)
 
 ### Recursos Online
 * [Command-line bootcamp](https://cli-boot.camp/)
@@ -612,9 +608,10 @@ Las variables son importantes, pero gran parte de la programación es controlar 
 
     echo "$numero es un numero"
 
-    # *if* es la estructura más usada para condicionales
+    # *if* es la estructura más usada para condicionales.
     # Adentro de los corchetes va la condición. "-gt" es el comparador. El que estamos usando aca es el 
-    # ">" o "greater"
+    # ">" o "greater", o sea, estamos preguntando si $numero es mayor que 10
+    # En Bash es imporante respetar los espacios entre los corchetes y la condición
     if [[ $numero -gt 10 ]] 
     then
         # El codigo entre *then* y *fi* solo si ejecuta si la condición es verdad, de otra forma se saltea
@@ -658,7 +655,8 @@ Como dije antes a un condicional se le puede poner también que pase algo cuando
 
     if [[ $numero -gt 10 ]]
     then
-        # Ahora si la condición es verdad se va a ejecutar el código entre *then* y *else* y luego va a seguir a partir de *fi*
+        # Ahora si la condición es verdad se va a ejecutar el código entre *then* y *else* y luego va a 
+        # seguir a partir de *fi*
         echo "$numero es mayor a 10"
     else
         # El código entre *else* y *fi* se ejecuta solo cuando la condición no es verdad
@@ -725,52 +723,78 @@ Hay bastante más para hablar de los *ciclos*. Se pueden hacer ciclos que aument
 
 ## **Ejercicio 3. Programación en Bash** { markdown data-toc-label='Ejercicio 3' }
 
-### REHACER
+El objetivo de este Ejercicio va a ser hacer un script que cree 10 archivos, escribiendo una frase en los primeros 5 y otra en los últimos 5. Para esto van a tener que usar *if* y *for*.
 
-El objetivo de este Ejercicio va a ser hacer un script que reciba un número por consola y escriba todos los números pares entre 1 y dicho número. Para hacerla simple vamos a asumir que el numero que le pasamos por consola va a ser un número entero entre 1 y 1000. Dos cosas que van a necesitar para hacer esto son:
+Los primeros 5 archivos van a tener el texto:
 
-``` bash
-# El operador % calcula el resto entre 2 números
-# En este caso $resto va a contener el resto de dividir 5 por 2 (que es 1)
-# Los paréntesis y signo $ bordeando a la operación son necesarios para que funcione bien en Bash
-resto=$((5 % 2)) 
-
-# == es el comparador para igualdad usado en los *ifs*
-# Va a ser verdadero solo si lo de la izquierda es identico a lo de la derecha.
-if [[ 2 == 2 ]]
+```
+Primera parte. Este es el archivo NUMERO.
 ```
 
-Si quieren pueden intentar programar directamente, pero para hacer programas complejos, especialmente en un lenguaje que recién aprenden, es recomendado ir por partes e ir probando en el medio. Unos posibles pasos a seguir son:
+Donde hay que reemplazar **NUMERO** por el número correspondiente (de 1 a 5).
+
+Los últimos 5 archivos van a tener el texto:
+
+```
+Segunda parte.
+Este es el archivo NUMERO.
+```
+
+Donde hay que reemplazar **NUMERO** por el número correspondiente (de 6 a 10). Noten que aca ambas oraciones están en lineas diferentes.
+
+Ahora que sabemos nuestro objetivo vayan a **Documentos** y creen una nueva carpeta donde vamos a trabajar llamada **TP1_E3**. Dentro de ella creen un archivo vacio llamado **crear_archivos.sh** que va a ser nuestro script.
+
+Al momento de hacer programas complejos, especialmente en un lenguaje que recién aprenden, es recomendado ir por partes e ir probando en el medio. Unos posibles pasos a seguir son:
 
 !!! info
 
-    La idea de hacerlo así es ir probando de a poco si aparece algun error. ¡Prueben el script entre cada paso principal!
+    La idea de hacerlo así es ir probando de a poco si aparece algun error. ¡Prueben el script entre cada paso!
 
-1. Creen un script en el que se declare una variable llamada `$numero` y la imprima en la terminal.
-1. Agreguen al script otra variable llamada `$resto`, que va a ser el resto de dividir a `$numero` por 2. Hagan que el script imprima tanto `$numero` como `$resto` (en 2 lineas diferentes).
-1. Agreguen un condicional que vea si `$resto` es 0 (y por lo tanto si `$numero` es par). De ser verdadero, hagan que imprima "es par".
-1. Agreguen un ciclo que vaya de 1 a `$numero` e imprima todos esos números.
+1. Modifiquen el script para que cree un archivo llamado **archivo_1** que adentro tenga el texto: 
 
-En este momento tenemos todos los elementos necesarios andando, pero hay que borrar algunas lineas, reescribir pedazos de otras lineas y mover algunos bloques adentro de otros. Traten de pensar que hay que modificar para conseguir nuestro objetivo. No es trivial esto, asi que si ven que se les complica lean las instrucciones siguientes:
+    ```
+    Primera parte. Este es el archivo 1.
+    ```
+1. Agreguen un *for* que vaya de 1 a 5 y cree los archivos **archivo_1** a **archivo_5** que adentro tengan el texto:
 
-??? info "Spoilers"
-    1. Borren la linea que imprime `$resto` y la linea que imprime `$numero` (no nos interesa esta salida)
-    1. Muevan la declaración de `$resto` y el *if* adentro del *for* (ya que tengo que ver si cada uno de los números del for es par)
-    1. Cambien la declaración de `$resto` para que calcule el resto de dividir `$i` por 2 y no `$numero`
-    1. Muevan la linea que imprime `$i` adentro del *if* (que ahora está a su vez adentro del *for*) y borren la linea que imprime "es par" (porque yo quería los números)
-    1. Cambien la declaración de `$numero` al principio de todo para que tome el primer parámetro pasado en la consola
+    ```
+    Primera parte. Este es el archivo NUMERO.
+    ```
 
-Y listo, deberían tener su programa andando.
+    Donde hay que reemplazar **NUMERO** por el número correspondiente (de 1 a 5).
+
+1. Expandan el *for* para que vaya de 1 a 10 y agreguen un *if* adentro del *for* que haga que los archivos se creen solo para los primeros 5 ciclos.
+
+    !!! tip
+
+        Aca les puede venir bien el comparador `-le`, que significa "menor o igual". Un ejemplo de `-le` seria:
+
+        ``` bash
+        if [[ $1 -le 7 ]]
+        ```
+
+        Que es verdadero cuando el parámetro `$1` es menor o igual a 7.
+
+1. Agreguen un *else* al *if*, recordando que los comandos adentro de éste *else* se van a ejecutar cuando la condición no sea verdadera. Asumiendo que usaron `-le` en la condición del *if*, modifiquen los comandos adentro del *else* para que en ese caso se creen los archivos **archivo_6** a **archivo_10** que adentro tengan el texto:
+
+    ```
+    Segunda parte.
+    Este es el archivo NUMERO.
+    ```
+
+    Donde hay que reemplazar **NUMERO** por el número correspondiente (de 6 a 10). Noten que aca ambas oraciones están en lineas diferentes.
+
+¡Y listo, deberían tener su programa andando!
 
 <!--
-numero=$1
-
-for ((i=1;i<=$numero;i++))
+for ((i=1;i<=10;i++))
 do
-    resto=$(($i % 2))
-    if [[ $resto == 0 ]]
+    if [[ $i -le 5 ]]
     then
-        echo $i
+        echo "Primera parte. Este es el archivo $i." > archivo_$i
+    else
+        echo "Segunda parte." > archivo_$i
+        echo "Este es el archivo $i." >> archivo_$i
     fi
 done
 -->
@@ -779,7 +803,7 @@ done
 
 Lo ultimo que vamos a aprender hoy es un pequeño vistazo a como se pueden manipular tablas desde la consola de Lubuntu. Descarguen el archivo **mtcars** que se encuentra en los materiales del TP (boton al principio de todo) y ponganlo en **Documentos**. Esta tabla viene por defecto con el lenguaje de programación **R** y nos va a servir para aprender como manipular tablas en Bash. 
 
-Abran el archivo con **Leafpad** (doble click). Podemos ver que es una tabla en formato texto, donde la primera línea es el encabezado o *header* de la tabla y en cada líńea las columnas estás separadas entre ellas con un ++tab++. Imaginense si tuvieran que copiar solo una columna de esta tabla, o quedarse con aquellas filas que tengan un número específico de cilindros (columna *cyl*), ¿como lo harían? Esto es lo que vamos a aprender a continuación.
+Abran el archivo con **Leafpad** (doble click). Podemos ver que es una tabla en formato texto, donde la primera línea es el encabezado o *header* de la tabla y en cada líńea las columnas están separadas entre ellas con un ++tab++ (a estos archivos se los conoce como **TSV** o "Tab-Separated Values"). Es bioinformática es muy común querer seleccionar columnas específicas en una tabla, o filtrar filas debido al valor de una de sus columnas; esto es lo que vamos a aprender a continuación.
 
 ??? info "Columnas de mtcars"
 
@@ -848,7 +872,7 @@ Entonces, aca le estan diciendo a `awk` que imprima en la pantalla todas las fil
 
 Como siempre hay mucho más para decir sobre `awk`, pero por hoy estamos bien. Sepan sin embargo que `awk` tiene su propio `grep` y su propio *for*, que se pueden declarar variables dentro de él y que tiene hasta una lista de comandos propios. Pueden ver mucha más información de `awk` en [esta página](https://www.tutorialspoint.com/awk/index.htm).
 
-## **Ejercicio Adicional 1. Programación en Bash** { markdown data-toc-label='Ejercicio Adicional 1' }
+## **Ejercicio Adicional 1. Programación en Bash v2** { markdown data-toc-label='Ejercicio Adicional 1' }
 
 !!! info
 
@@ -871,7 +895,7 @@ Si quieren pueden intentar programar directamente, pero para hacer programas com
 
 !!! info
 
-    La idea de hacerlo así es ir probando de a poco si aparece algun error. ¡Prueben el script entre cada paso principal!
+    La idea de hacerlo así es ir probando de a poco si aparece algun error. ¡Prueben el script entre cada paso!
 
 1. Creen un script en el que se declare una variable llamada `$numero` y la imprima en la terminal.
 1. Agreguen al script otra variable llamada `$resto`, que va a ser el resto de dividir a `$numero` por 2. Hagan que el script imprima tanto `$numero` como `$resto` (en 2 lineas diferentes).
@@ -887,7 +911,7 @@ En este momento tenemos todos los elementos necesarios andando, pero hay que bor
     1. Muevan la linea que imprime `$i` adentro del *if* (que ahora está a su vez adentro del *for*) y borren la linea que imprime "es par" (porque yo quería los números)
     1. Cambien la declaración de `$numero` al principio de todo para que tome el primer parámetro pasado en la consola
 
-¡Y listo!, deberían tener su programa andando.
+¡Y listo, deberían tener su programa andando!
 
 <!--
 numero=$1
