@@ -5,8 +5,6 @@ tags:
   - practicos
 ---
 
-## Hola! :material-star-outline:
-
 Esta es la página de inicio de los prácticos de este curso. A continuación una lista de datos útiles.
 
 ## Consultas y Canales de Comunicación 
@@ -65,6 +63,5 @@ Respecto del formato:
 !!! warning "Aviso"
 
     El formato será considerado en la puntuación final del trabajo práctico
-
 
 * Consulten siempre que tengan dudas !!
