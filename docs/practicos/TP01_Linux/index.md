@@ -83,7 +83,7 @@ Abran la terminal en **/home/ibioinfo** y deberian ver algo así:
 ibioinfo@ibioinfo-VirtualBox:~$
 ```
 
-Donde **ibioinfo** es el nombre del usuario actual e **ibioinfo-VirtualBox** el nombre de la computadora (que justo en este caso son similares, pero no es necesario). El **\~** después de los dos puntos parece ser parte de la terminal, pero en realidad está indicando la carpeta en la que se encuentra en este momento. Como cada usuario trabaja mas que nada en su carpeta, Lubuntu le asigna el símbolo **\~** a esa carpeta para simplificar los directorios que aparecen en la terminal. En nuestro caso **\~** equivale a **/home/ibioinfo** y puede ser que nos refiramos a esa carpeta como su *home directory* o simplemente su *home*.
+Donde **ibioinfo** es el nombre del usuario actual e **ibioinfo-VirtualBox** el nombre de la computadora (que justo en este caso son similares, pero no es necesario). El **\~** después de los dos puntos (conocido como "virgulilla", "tílde" o "cosito de la ñ") parece ser parte de la terminal, pero en realidad está indicando la carpeta en la que se encuentra en este momento. Como cada usuario trabaja mas que nada en su carpeta, Lubuntu le asigna el símbolo **\~** a esa carpeta para simplificar los directorios que aparecen en la terminal. En nuestro caso **\~** equivale a **/home/ibioinfo** y puede ser que nos refiramos a esa carpeta como su *home directory* o simplemente su *home*.
 
 !!! info
 
@@ -183,7 +183,7 @@ La respuesta a todo esto son los paths relativos y absolutos:
 
 #### Paths absolutos
 
-El path **/etc/perl/Net** es lo que se llama un **path absoluto**; no importa donde esté en la terminal en ese momento, **/etc/perl/Net** va a siempre apuntar al mismo lugar y el comando `ls /etc/perl/Net` va a siempre andar bien. Una forma fácil de identificar paths absolutos es que siempre empiezan en el *root* o **/**.
+El path **/etc/perl/Net** es lo que se llama un **path absoluto**; no importa donde estén en la terminal en ese momento, **/etc/perl/Net** va a siempre apuntar al mismo lugar y el comando `ls /etc/perl/Net` va a siempre andar bien. Una forma fácil de identificar paths absolutos es que siempre empiezan en el *root* o **/**.
 
 Recuerden que **\~** apunta a **/home/ibioinfo**, y por lo tanto el comando `cd ~/Escritorio` está usando un path absoluto, ya que sin importar de donde se use va a funcionar y va a ir a **/home/ibioinfo/Escritorio**.
 
@@ -225,7 +225,7 @@ Ambos tipos de paths tienen sus ventajas y desventajas. Los paths absolutos tien
 
 ## **Bash: Crear y eliminar**
 
-Todo lo que es crear, copiar, mover y eliminar archivos y directorios se puede hacer usando la interfaz gráfica como lo harían en cualquier otro sistema operativo, sin embargo hay situaciones (por ejemplo dentro de un *script*) donde es necesario hacerlo mediante la consola. Si bien en esta guia le vamos a pedir que usen los siguientes comandos para prácticarlos, en el día a día hagan lo que les sea más cómodo.
+Todo lo que es crear, copiar, mover y eliminar archivos y directorios se puede hacer usando la interfaz gráfica como lo harían en cualquier otro sistema operativo, sin embargo hay situaciones (por ejemplo dentro de un *script*) donde es necesario hacerlo mediante la consola. Si bien por ahora les vamos a pedir que usen los siguientes comandos para prácticarlos, en el día a día hagan lo que les sea más cómodo.
 
 ### Crear y eliminar directorios
 
@@ -491,7 +491,7 @@ grep -v o martin_fierro | grep -c i
 
 Los *scripts* de Bash son básicamente una lista de muchos de los comandos que nosotros corrimos en la terminal, pero escritos dentro de un archivo. Al ejecutar ese archivo todos los comandos dentro de él serán corridos uno a uno de arriba a abajo.
 
-Para simplificar un poco la tarea y enfocarnos en lo que importa en esta sección vamos a utilizar la interfaz gráfica de Lubuntu. Vayan a **Documentos** y creen un archivo llamado **primer_programa.sh** (Boton derecho :material-arrow-right: Crear nuevo... :material-arrow-right: Archivo vacío). Luego abran el archivo en **Leafpad** (doble click) y escriban lo siguiente:
+Para simplificar un poco la tarea y enfocarnos en lo que importa en esta sección, vamos a utilizar la interfaz gráfica de Lubuntu. Vayan a **Documentos** y creen un archivo llamado **primer_programa.sh** (Boton derecho :material-arrow-right: Crear nuevo... :material-arrow-right: Archivo vacío). Luego abran el archivo en **Leafpad** (doble click) y escriban lo siguiente:
 
 ```bash
 echo "----------------"
@@ -723,24 +723,21 @@ Hay bastante más para hablar de los *ciclos*. Se pueden hacer ciclos que aument
 
 ## **Ejercicio 3. Programación en Bash** { markdown data-toc-label='Ejercicio 3' }
 
-El objetivo de este Ejercicio va a ser hacer un script que cree 10 archivos, escribiendo una frase en los primeros 5 y otra en los últimos 5. Para esto van a tener que usar *if* y *for*.
+El objetivo de este Ejercicio va a ser hacer un script que:
 
-Los primeros 5 archivos van a tener el texto:
-
-```
-Primera parte. Este es el archivo NUMERO.
-```
-
-Donde hay que reemplazar **NUMERO** por el número correspondiente (de 1 a 5).
-
-Los últimos 5 archivos van a tener el texto:
-
-```
-Segunda parte.
-Este es el archivo NUMERO.
-```
-
-Donde hay que reemplazar **NUMERO** por el número correspondiente (de 6 a 10). Noten que aca ambas oraciones están en lineas diferentes.
+* Recorra los números del 1 al 10
+* Por cada número cree un archivo llamado **archivo_NUMERO**, dónde hay que reemplazar **NUMERO** por el número correspondiente (de 1 a 10)
+* En los primeros 5 archivos (**archivo_1** a **archivo_5**) escriba el texto:
+    ```
+    Primera parte. Este es el archivo NUMERO.
+    ```
+    Donde hay que reemplazar **NUMERO** por el número correspondiente (de 1 a 5)
+* En los últimos 5 archivos (**archivo_6** a **archivo_10**) escriba el texto:
+    ```
+    Segunda parte.
+    Este es el archivo NUMERO.
+    ```
+    Donde hay que reemplazar **NUMERO** por el número correspondiente (de 6 a 10). Noten que ambas oraciones están en lineas diferentes
 
 Ahora que sabemos nuestro objetivo vayan a **Documentos** y creen una nueva carpeta donde vamos a trabajar llamada **TP1_E3**. Dentro de ella creen un archivo vacio llamado **crear_archivos.sh** que va a ser nuestro script.
 
@@ -755,7 +752,9 @@ Al momento de hacer programas complejos, especialmente en un lenguaje que recié
     ```
     Primera parte. Este es el archivo 1.
     ```
+
 1. Agreguen un *for* que vaya de 1 a 5 y cree los archivos **archivo_1** a **archivo_5** que adentro tengan el texto:
+
 
     ```
     Primera parte. Este es el archivo NUMERO.
@@ -763,7 +762,7 @@ Al momento de hacer programas complejos, especialmente en un lenguaje que recié
 
     Donde hay que reemplazar **NUMERO** por el número correspondiente (de 1 a 5).
 
-1. Expandan el *for* para que vaya de 1 a 10 y agreguen un *if* adentro del *for* que haga que los archivos se creen solo para los primeros 5 ciclos.
+1. Expandan el *for* para que vaya de 1 a 10. Agreguen un *if* adentro del *for* que haga que los archivos se creen solo para los primeros 5 ciclos.
 
     !!! tip
 
@@ -773,7 +772,7 @@ Al momento de hacer programas complejos, especialmente en un lenguaje que recié
         if [[ $1 -le 7 ]]
         ```
 
-        Que es verdadero cuando el parámetro `$1` es menor o igual a 7.
+        Que en este caso es verdadero cuando el parámetro `$1` es menor o igual a 7.
 
 1. Agreguen un *else* al *if*, recordando que los comandos adentro de éste *else* se van a ejecutar cuando la condición no sea verdadera. Asumiendo que usaron `-le` en la condición del *if*, modifiquen los comandos adentro del *else* para que en ese caso se creen los archivos **archivo_6** a **archivo_10** que adentro tengan el texto:
 
@@ -782,7 +781,7 @@ Al momento de hacer programas complejos, especialmente en un lenguaje que recié
     Este es el archivo NUMERO.
     ```
 
-    Donde hay que reemplazar **NUMERO** por el número correspondiente (de 6 a 10). Noten que aca ambas oraciones están en lineas diferentes.
+    Donde hay que reemplazar **NUMERO** por el número correspondiente (de 6 a 10).
 
 ¡Y listo, deberían tener su programa andando!
 
@@ -878,19 +877,32 @@ Como siempre hay mucho más para decir sobre `awk`, pero por hoy estamos bien. S
 
     Algunas guias van a tener ejercicios adicionales, que son ejercicios que pueden hacer si quieren practicar más el tema, pero no son obligatorios. Suelen ser un poco más complicados que los ejercicios de la guía.
 
-El objetivo de este Ejercicio va a ser hacer un script que reciba un número por consola y escriba todos los números pares entre 1 y dicho número. Para hacerla simple vamos a asumir que el numero que le pasamos por consola va a ser un número entero entre 1 y 1000. Dos cosas que van a necesitar para hacer esto son:
+El objetivo de este Ejercicio va a ser hacer un script que:
+
+* Reciba un número por consola (vamos a asumir que dicho número va a ser siempre un número entero entre 1 y 1000)
+* Recorra todos los números entre 1 y el número que recibió por consola
+* Para cada uno de esos números vea si es par
+* Imprima los números pares por consola
+
+Dos cosas que van a necesitar para hacer esto son:
+
 
 ``` bash
 # El operador % calcula el resto entre 2 números
 # En este caso $resto va a contener el resto de dividir 5 por 2 (que es 1)
+# Una forma muy usada en programacíon para ver si un número es par es ver si su resto al dividirlo por 2 es 0
 # Los paréntesis y signo $ bordeando a la operación son necesarios para que funcione bien en Bash
 resto=$((5 % 2)) 
 
 # == es el comparador para igualdad usado en los *ifs*
 # Va a ser verdadero solo si lo de la izquierda es identico a lo de la derecha.
-if [[ 2 == 2 ]]
+if [[ $1 == 2 ]]
 ```
 
+Para hacer este ejercicio pueden usar como base el código creado en el **Ejercicio 3** que ambos tienen una estructura general bastante similar.
+
+
+<!--
 Si quieren pueden intentar programar directamente, pero para hacer programas complejos, especialmente en un lenguaje que recién aprenden, es recomendado ir por partes e ir probando en el medio. Unos posibles pasos a seguir son:
 
 !!! info
@@ -912,6 +924,7 @@ En este momento tenemos todos los elementos necesarios andando, pero hay que bor
     1. Cambien la declaración de `$numero` al principio de todo para que tome el primer parámetro pasado en la consola
 
 ¡Y listo, deberían tener su programa andando!
+-->
 
 <!--
 numero=$1
