@@ -214,8 +214,8 @@ Ambos tipos de paths tienen sus ventajas y desventajas. Los paths absolutos tien
 
 1. Identifique en la siguiente lista cuales paths son **paths relativos**:
 
-    1. `/var/foo/tom_jerry`
-    1. `var/foo/tom_jerry`
+    1. `/var/temp/tom_jerry`
+    1. `var/temp/tom_jerry`
     1. `/home/tom/Documentos/catfood.png`
     1. `../../jerry/Documentos/cheese.png`
     1. `./Videos/Capitulos/`
@@ -471,15 +471,6 @@ Para este ejercicio vamos a seguir usando el archivo **martin_fierro**.
 1. Sin borrar el contenido y usando la consola, agregue una línea al final de **martin_fierro_sinA** que indique el autor del Martin Fierro (José Hernández).
 
 1. Volviendo al archivo original, ¿cuántas líneas **no** contienen la letra "o" y **sí** contienen la letra "i"? (Tip: use `|` para encadenar comandos)
-
-<!--
-wc -l martin_fierro
-grep -c cantar martin_fierro
-grep -vc guitarra martin_fierro
-grep -v a martin_fierro > martin_fierro_sinA
-echo "José Hernández" >> martin_fierro_sinA
-grep -v o martin_fierro | grep -c i
--->
 
 ## **Bash: Programación y Scripts**
 
