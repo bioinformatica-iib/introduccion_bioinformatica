@@ -6,20 +6,42 @@ tags:
   - maquina virtual
 ---
 
+## ¿Qué es una máquina virtual?
+
+Las máquinas virtuales no son más que **computadoras virtuales** (denominadas *invitadas* o *guests*), emuladas dentro de una computadora real (denominada *hospedadora* o *host*).
+
+Algunos de sus principales usos son compartir una misma computadora entre muchas personas, tener una computadora que se puede mover completa en un pendrive o similar, o instalar multiples sistemas operativos en una misma computadora de una forma mucho más simple.
+
+La virtualización es un proceso **costoso**, ya que si bien nos permite crear nuevas compus, al momento de correrlas estaremos repartiendo los recursos reales (espacio en disco, memoria RAM y velocidad de procesamiento CPU) del *host* (es decir, **de nuestra computadora**) entre todas las máquinas virtuales *guest* que estén activas.
+
+Es por esto que debemos ser cuidadosos al momento de generarlas, dándoles suficientes recursos para funcionar, pero **no todos** los recursos del *host* (es decir, **de nuestra computadora**).
+
+### El disco de máquina virtual
+
+El disco de una máquina virtual es una “foto” de un disco de almacenamiento.
+
+Todo lo que un disco duro tiene guardado, incluyendo el sistema operativo y los programas instalados, quedarán guardados en un archivo cuando la creemos con las herramientas adecuadas. Como no existe un disco duro físico se lo considera *disco virtual*.
+
+Este archivo permite regenerar el estado de la computadora desde la que se creó dicho disco al momento de sacar la foto.
+
+Los docentes ya hemos ensamblado, para la materia, un disco de máquina virtual con Lubuntu 18 (una distribución versión ultra liviana de Ubuntu 18) en la que hemos instalado todos los programas y herramientas que usaremos en la asignatura. En adelante, nos referiremos a éste como IBioinfo.
+
 ## Puesta en funcionamiento de máquina virtual
 
-Este es un instructivo corto sobre cómo hacer para correr la máquina virtual de la materia en sus compus sin tener que reinstalar el sistema operativo.
+Este es un instructivo corto sobre cómo hacer para correr la máquina virtual de la materia en sus computadoras.
 
 Vamos a necesitar:
 
 ### Software y archivos a usar
-* [Oracle VirtualBox](https://www.virtualbox.org/) instalado en nuestras compus.
-* WinZip o GUnzip para Windows o Linux, respectivamente.
+* [Oracle VM VirtualBox](https://www.virtualbox.org/) instalado en nuestras compus.
+* Forma de descomprimir un archivo comprimido ZIP (por ejemplo WinZip para Windows o GUnzip para Linux)
 * El disco de la máquina virtual (VMDK)
 
 ### Requerimientos de Hardware mínimos
 * **20 GB** de espacio libre en disco duro (para VMDK)
 * **2 GB** de RAM. 
+
+<!--
 
 ## Antes de arrancar veamos algunas definiciones 
 
@@ -32,46 +54,22 @@ Hay un montón de sistemas operativos, pero los más comunes son:
 * Windows: Probablemente el que ustedes tienen en su compu)
 * OSX: El que tienen las mac
 * Linux: El que vamos a usar en la materia
+-->
 
-### ¿Qué es una máquina virtual?
-
-Las máquinas virtuales no son más que compus *invitadas* (o *guests*), emuladas dentro de una computadora real, hospedadora (o *host*). 
-
-La compu de ustedes es la *máquina física* (la computadora real, hospedadora o *host*) y adentro le vamos a poner otra compu virtual.
-
-Las máquinas virtuales corren un sistema operativo que permitirá hacer distintas cosas.
-
-La virtualización es un proceso **costoso**, ya que nos permite crear nuevas compus pero, al momento de correrlas, estaremos repartiendo los recursos reales (espacio en disco, memoria RAM y velocidad de procesamiento CPU) del *host* (es decir, **de nuestra compu**) entre todas las máquinas virtuales *guest* que estén activas.
-
-Es por esto que debemos ser cuidadosos al momento de generarlas, dándoles suficientes recursos para funcionar, pero **no todos** los recursos del *host* (es decir, **de nuestra compu**).
-
-
-## El disco de máquina virtual
-
-El disco de una máquina virtual es una “foto” de un disco de almacenamiento.
-
-Todo lo que un disco duro tiene guardado, incluyendo el sistema operativo y los programas instalados, quedarán guardados en un archivo cuando la creemos con las herramientas adecuadas. Como no existe un disco duro físico se lo considera *disco virtual*.
-
-Este archivo permite regenerar el estado de la computadora desde la que se creó dicho disco al momento de sacar la foto.
-
-Los docentes ya hemos ensamblado, para la materia, un disco de máquina virtual con Lubuntu 18 (una distribución versión ultra liviana de Ubuntu 18) en la que hemos instalado todos los programas y herramientas que usaremos en la asignatura. En adelante, nos referiremos a éste como IBioinfo.
 
 ## Paso 1. Descargar la Máquina Virtual
 
 * Pueden usar este link, que tiene la máquina que usamos en los TPs (es un link a Dropbox).
 
-**Próximamente Link de Descarga**
-<!--
-[:fontawesome-solid-download: Máquina Virtual](#){ .md-button .md-button--primary }
--->
+[:fontawesome-solid-download: Máquina Virtual](https://www.dropbox.com/s/2187nlnjc03g8ki/IBioinfo-Lubuntu-32%20v1.3.zip?dl=0){ .md-button .md-button--primary }
 
 !!! warning "Atención"
 
-    Son archivos pesados (~ **20GB**). Descárguenlos con **tiempo** y con **conexión estable**.
+    Son archivos pesados (~ **9GB**). Descárguenlos con **tiempo** y con **conexión estable**.
     
     Si no cuentan con una conexión estable, pueden escribirnos para buscar alguna solución alternativa.
 
-* Una vez descargado el archivo, descomprimir para obtener el `vmdk`.
+* Una vez descargado el archivo, descomprimir para obtener el `vmdk` (pesa alrededor de 15GB, pero puede llegar a crecer un poco durante la cursada).
 
 !!! danger "Elegir la ubicación"
     
@@ -80,11 +78,12 @@ Los docentes ya hemos ensamblado, para la materia, un disco de máquina virtual 
 
 ## Paso 2. Instalar Virtual Box
 
-* Mientras descarga la imagen, aprovechen el tiempo muerto para descargar Oracle Virtual Box.
+* Mientras descarga la imagen, aprovechen el tiempo muerto para descargar Oracle VM VirtualBox.
 
 * El programa es gratuito y pueden descargarlo desde [la página oficial](https://www.virtualbox.org/).
 
-* Descarguen la última versión (v6.1), apropiada para su sistema operativo (Windows, OSX o Linux) y sigan las instrucciones del instalador hasta que hayan terminado.
+* Descarguen la última versión (v6.1) apropiada para su sistema operativo (Windows, OSX o Linux) y sigan las instrucciones del instalador hasta que hayan terminado.
+
 
 ## Paso 3. Crear una máquina virtual
 Virtual Box es un virtualizador de entornos. Nos permite generar *máquinas virtuales*. Vamos a crear nuestra máquina virtual con el archivo de disco virtual **IBioinfo-Lubuntu-32.vmdk** que acabamos de descargar. Para eso:
@@ -98,7 +97,7 @@ Virtual Box es un virtualizador de entornos. Nos permite generar *máquinas virt
 3. Aparecerá una caja de diálogo, en donde deberemos indicar:
 
     * **Name o Nombre:** Es el nombre que queremos darle a la máquina virtual. Elijan el que quieran.
-    * **Machine Folder o Carpeta de Máquina:** Es la ubicación de la máquina virtual. Elijan la que quieran.
+    * **Machine Folder o Carpeta de Máquina:** Es la ubicación de la configuración de la máquina virtual. Elijan la que quieran.
     * **Type o Tipo:** Es el tipo de virtualización. Elijan Linux.
     * **Version o Versión:** Es la versión del sistema operativo. Ubuntu 32 bits.
 
