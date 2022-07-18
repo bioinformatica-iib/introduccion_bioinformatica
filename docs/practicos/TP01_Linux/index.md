@@ -716,8 +716,9 @@ Hay bastante más para hablar de los *ciclos*. Se pueden hacer ciclos que aument
 
 El objetivo de este Ejercicio va a ser hacer un script que:
 
+* Use por lo menos un *for* y un *if*
 * Recorra los números del 1 al 10
-* Por cada número cree un archivo llamado **archivo_NUMERO**, dónde hay que reemplazar **NUMERO** por el número correspondiente (de 1 a 10)
+* Por cada uno de esos números cree un archivo llamado **archivo_NUMERO**, dónde hay que reemplazar **NUMERO** por el número correspondiente (de 1 a 10)
 * En los primeros 5 archivos (**archivo_1** a **archivo_5**) escriba el texto:
     ```
     Primera parte. Este es el archivo NUMERO.
@@ -775,19 +776,6 @@ Al momento de hacer programas complejos, especialmente en un lenguaje que recié
     Donde hay que reemplazar **NUMERO** por el número correspondiente (de 6 a 10).
 
 ¡Y listo, deberían tener su programa andando!
-
-<!--
-for ((i=1;i<=10;i++))
-do
-    if [[ $i -le 5 ]]
-    then
-        echo "Primera parte. Este es el archivo $i." > archivo_$i
-    else
-        echo "Segunda parte." > archivo_$i
-        echo "Este es el archivo $i." >> archivo_$i
-    fi
-done
--->
 
 ## **Bash: Tablas**
 
@@ -866,7 +854,7 @@ Como siempre hay mucho más para decir sobre `awk`, pero por hoy estamos bien. S
 
 !!! info
 
-    Algunas guias van a tener ejercicios adicionales, que son ejercicios que pueden hacer si quieren practicar más el tema, pero no son obligatorios. Suelen ser un poco más complicados que los ejercicios de la guía.
+    Algunas guias van a tener ejercicios adicionales, que son ejercicios que pueden hacer si quieren practicar más el tema, pero no son obligatorios. Estos ejercicios pueden llegar a ser un poco más complicados que los ejercicios de la guía.
 
 El objetivo de este Ejercicio va a ser hacer un script que:
 
@@ -892,7 +880,6 @@ if [[ $1 == 2 ]]
 
 Para hacer este ejercicio pueden usar como base el código creado en el **Ejercicio 3** que ambos tienen una estructura general bastante similar.
 
-
 <!--
 Si quieren pueden intentar programar directamente, pero para hacer programas complejos, especialmente en un lenguaje que recién aprenden, es recomendado ir por partes e ir probando en el medio. Unos posibles pasos a seguir son:
 
@@ -915,19 +902,6 @@ En este momento tenemos todos los elementos necesarios andando, pero hay que bor
     1. Cambien la declaración de `$numero` al principio de todo para que tome el primer parámetro pasado en la consola
 
 ¡Y listo, deberían tener su programa andando!
--->
-
-<!--
-numero=$1
-
-for ((i=1;i<=$numero;i++))
-do
-    resto=$(($i % 2))
-    if [[ $resto == 0 ]]
-    then
-        echo $i
-    fi
-done
 -->
 
 ## **Bibliografía**
