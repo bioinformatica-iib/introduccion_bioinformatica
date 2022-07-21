@@ -585,7 +585,7 @@ Las variables son importantes, pero gran parte de la programación es controlar 
 
     echo "$numero es un numero"
 
-    if [[ $numero -gt 10 ]]
+    if (($numero > 10))
     then
         echo "$numero es mayor a 10"
     fi
@@ -600,15 +600,13 @@ Las variables son importantes, pero gran parte de la programación es controlar 
     echo "$numero es un numero"
 
     # *if* es la estructura más usada para condicionales.
-    # Adentro de los corchetes va la condición. "-gt" es el comparador. El que estamos usando aca es el 
-    # ">" o "greater", o sea, estamos preguntando si $numero es mayor que 10
-    # En Bash es imporante respetar los espacios entre los corchetes y la condición
-    if [[ $numero -gt 10 ]] 
+    # Adentro de los dobles paréntesis va la condición.
+    # > es el comparador, o sea, estamos preguntando si $numero es mayor que 10
+    if (($numero > 10))
     then
         # El codigo entre *then* y *fi* solo si ejecuta si la condición es verdad, de otra forma se saltea
         # Este codigo esta más a la derecha, o *indentado*. Esto se hace con tab y en la mayoría de los lenguajes
-        # es solo para entender más fácil el código (en python y algunos otros lenguajes es necesario indentar 
-        # para que el programa ande bien)
+        # es solo para entender más fácil el código
         echo "$numero es mayor a 10"
     fi
     # *fi* indica donde termina el condicional
@@ -629,7 +627,7 @@ Como dije antes a un condicional se le puede poner también que pase algo cuando
 
     echo "$numero es un numero"
 
-    if [[ $numero -gt 10 ]]
+    if (($numero > 10))
     then
         echo "$numero es mayor a 10"
     else
@@ -644,7 +642,7 @@ Como dije antes a un condicional se le puede poner también que pase algo cuando
 
     echo "$numero es un numero"
 
-    if [[ $numero -gt 10 ]]
+    if (($numero > 10))
     then
         # Ahora si la condición es verdad se va a ejecutar el código entre *then* y *else* y luego va a 
         # seguir a partir de *fi*
@@ -655,7 +653,7 @@ Como dije antes a un condicional se le puede poner también que pase algo cuando
     fi
     ```
 
-Hay bastante más para hablar de los *ifs*. Hay muchos más comparadores y son diferentes si estoy comparando números o *strings*. Hay formas de poner más de una condición por *if* y hay otras estructuras como son los *case* que cumplen una función similar. Sin embargo, lo que acabamos de aprender es la base y va a ser suficiente por ahora. Más información sobre los condicionales en Bash, incluyendo una lista más detallada de los comparadores, se puede ver en [esta página](https://atareao.es/tutorial/scripts-en-bash/condicionales-en-bash/).
+Hay bastante más para hablar de los *ifs*. Hay muchos más comparadores y son diferentes si estoy comparando números o *strings*. Hay formas de poner más de una condición por *if* y hay otras estructuras como son los *case* que cumplen una función similar. Sin embargo, lo que acabamos de aprender es la base y va a ser suficiente por ahora. Más información sobre los condicionales en Bash, incluyendo una lista más detallada de los comparadores, se puede ver en [esta página](https://atareao.es/tutorial/scripts-en-bash/condicionales-en-bash/) y en [esta página](https://tldp.org/LDP/abs/html/comparison-ops.html) (en Bash las condiciones pueden estar rodeadas por paréntesis o corchetes y en cada caso los comparadores se comportan diferente, ojo con esto).
 
 ### Ciclos
 
@@ -714,7 +712,7 @@ Hay bastante más para hablar de los *ciclos*. Se pueden hacer ciclos que aument
 
 ## **Ejercicio 3. Programación en Bash** { markdown data-toc-label='Ejercicio 3' }
 
-El objetivo de este Ejercicio va a ser hacer un script que:
+El objetivo de este ejercicio es hacer un script que:
 
 * Use por lo menos un *for* y un *if*
 * Recorra los números del 1 al 10
@@ -758,15 +756,15 @@ Al momento de hacer programas complejos, especialmente en un lenguaje que recié
 
     !!! tip
 
-        Aca les puede venir bien el comparador `-le`, que significa "menor o igual". Un ejemplo de `-le` seria:
+        Aca les puede venir bien el comparador `<=`, que significa "menor o igual". Un ejemplo de `<=` seria:
 
         ``` bash
-        if [[ $1 -le 7 ]]
+        if (($1 <= 7))
         ```
 
         Que en este caso es verdadero cuando el parámetro `$1` es menor o igual a 7.
 
-1. Agreguen un *else* al *if*, recordando que los comandos adentro de éste *else* se van a ejecutar cuando la condición no sea verdadera. Asumiendo que usaron `-le` en la condición del *if*, modifiquen los comandos adentro del *else* para que en ese caso se creen los archivos **archivo_6** a **archivo_10** que adentro tengan el texto:
+1. Agreguen un *else* al *if*, recordando que los comandos adentro del *else* se van a ejecutar cuando la condición no sea verdadera. Asumiendo que usaron `<=` en la condición del *if*, modifiquen los comandos adentro del *else* para que en ese caso se creen los archivos **archivo_6** a **archivo_10** que adentro tengan el texto:
 
     ```
     Segunda parte.
@@ -875,7 +873,7 @@ resto=$((5 % 2))
 
 # == es el comparador para igualdad usado en los *ifs*
 # Va a ser verdadero solo si lo de la izquierda es identico a lo de la derecha.
-if [[ $1 == 2 ]]
+if (($1 == 2))
 ```
 
 Para hacer este ejercicio pueden usar como base el código creado en el **Ejercicio 3** que ambos tienen una estructura general bastante similar.
