@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://bioinformatica-iib.github.io/2022_introduccion_bioinformatica/instructivos/maquina_virtual/">
       
       <link rel="icon" href="../../img/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.15">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.6">
     
     
       
@@ -21,11 +21,12 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.c382b1dc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.4a0965b7.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.cc9b2e1e.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
         
+      
       
     
     
@@ -67,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#puesta-en-funcionamiento-de-maquina-virtual" class="md-skip">
+        <a href="#que-es-una-maquina-virtual" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -270,7 +271,7 @@
   
     <li class="md-tabs__item">
       <a href="../../practicos/inicio/" class="md-tabs__link">
-        Practicos
+        Prácticos
       </a>
     </li>
   
@@ -469,14 +470,14 @@
       
       
         <label class="md-nav__link" for="__nav_7">
-          Practicos
+          Prácticos
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Practicos" data-md-level="1">
+      <nav class="md-nav" aria-label="Prácticos" data-md-level="1">
         <label class="md-nav__title" for="__nav_7">
           <span class="md-nav__icon md-icon"></span>
-          Practicos
+          Prácticos
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -488,6 +489,20 @@
     <li class="md-nav__item">
       <a href="../../practicos/inicio/" class="md-nav__link">
         Inicio
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../practicos/TP01_Linux/" class="md-nav__link">
+        TP 1 - Linux
       </a>
     </li>
   
@@ -582,6 +597,26 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#que-es-una-maquina-virtual" class="md-nav__link">
+    ¿Qué es una máquina virtual?
+  </a>
+  
+    <nav class="md-nav" aria-label="¿Qué es una máquina virtual?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#el-disco-de-maquina-virtual" class="md-nav__link">
+    El disco de máquina virtual
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#puesta-en-funcionamiento-de-maquina-virtual" class="md-nav__link">
     Puesta en funcionamiento de máquina virtual
   </a>
@@ -605,40 +640,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#antes-de-arrancar-veamos-algunas-definiciones" class="md-nav__link">
-    Antes de arrancar veamos algunas definiciones
-  </a>
-  
-    <nav class="md-nav" aria-label="Antes de arrancar veamos algunas definiciones">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#que-es-un-sistema-operativo" class="md-nav__link">
-    ¿Qué es un sistema operativo?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#que-es-una-maquina-virtual" class="md-nav__link">
-    ¿Qué es una máquina virtual?
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#el-disco-de-maquina-virtual" class="md-nav__link">
-    El disco de máquina virtual
-  </a>
   
 </li>
       
@@ -722,13 +723,23 @@
 
   <h1>Máquina Virtual</h1>
 
+<h2 id="que-es-una-maquina-virtual">¿Qué es una máquina virtual?</h2>
+<p>Las máquinas virtuales no son más que <strong>computadoras virtuales</strong> (denominadas <em>invitadas</em> o <em>guests</em>), emuladas dentro de una computadora real (denominada <em>hospedadora</em> o <em>host</em>).</p>
+<p>Algunos de sus principales usos son compartir una misma computadora entre muchas personas, tener una computadora que se puede mover completa en un pendrive o similar, o instalar multiples sistemas operativos en una misma computadora de una forma mucho más simple.</p>
+<p>La virtualización es un proceso <strong>costoso</strong>, ya que si bien nos permite crear nuevas compus, al momento de correrlas estaremos repartiendo los recursos reales (espacio en disco, memoria RAM y velocidad de procesamiento CPU) del <em>host</em> (es decir, <strong>de nuestra computadora</strong>) entre todas las máquinas virtuales <em>guest</em> que estén activas.</p>
+<p>Es por esto que debemos ser cuidadosos al momento de generarlas, dándoles suficientes recursos para funcionar, pero <strong>no todos</strong> los recursos del <em>host</em> (es decir, <strong>de nuestra computadora</strong>).</p>
+<h3 id="el-disco-de-maquina-virtual">El disco de máquina virtual</h3>
+<p>El disco de una máquina virtual es una “foto” de un disco de almacenamiento.</p>
+<p>Todo lo que un disco duro tiene guardado, incluyendo el sistema operativo y los programas instalados, quedarán guardados en un archivo cuando la creemos con las herramientas adecuadas. Como no existe un disco duro físico se lo considera <em>disco virtual</em>.</p>
+<p>Este archivo permite regenerar el estado de la computadora desde la que se creó dicho disco al momento de sacar la foto.</p>
+<p>Los docentes ya hemos ensamblado, para la materia, un disco de máquina virtual con Lubuntu 18 (una distribución versión ultra liviana de Ubuntu 18) en la que hemos instalado todos los programas y herramientas que usaremos en la asignatura. En adelante, nos referiremos a éste como IBioinfo.</p>
 <h2 id="puesta-en-funcionamiento-de-maquina-virtual">Puesta en funcionamiento de máquina virtual</h2>
-<p>Este es un instructivo corto sobre cómo hacer para correr la máquina virtual de la materia en sus compus sin tener que reinstalar el sistema operativo.</p>
+<p>Este es un instructivo corto sobre cómo hacer para correr la máquina virtual de la materia en sus computadoras.</p>
 <p>Vamos a necesitar:</p>
 <h3 id="software-y-archivos-a-usar">Software y archivos a usar</h3>
 <ul>
-<li><a href="https://www.virtualbox.org/">Oracle VirtualBox</a> instalado en nuestras compus.</li>
-<li>WinZip o GUnzip para Windows o Linux, respectivamente.</li>
+<li><a href="https://www.virtualbox.org/">Oracle VM VirtualBox</a> instalado en nuestras compus.</li>
+<li>Forma de descomprimir un archivo comprimido ZIP (por ejemplo WinZip para Windows o GUnzip para Linux)</li>
 <li>El disco de la máquina virtual (VMDK)</li>
 </ul>
 <h3 id="requerimientos-de-hardware-minimos">Requerimientos de Hardware mínimos</h3>
@@ -736,42 +747,33 @@
 <li><strong>20 GB</strong> de espacio libre en disco duro (para VMDK)</li>
 <li><strong>2 GB</strong> de RAM. </li>
 </ul>
-<h2 id="antes-de-arrancar-veamos-algunas-definiciones">Antes de arrancar veamos algunas definiciones</h2>
-<h3 id="que-es-un-sistema-operativo">¿Qué es un sistema operativo?</h3>
-<p>Un sistema operativo es una pieza de <em>software</em> que nos permite realizar funciones básicas, como copiar/pegar/mover/generar archivos, y sobre el cual se construyen otros softwares. Muchos sistemas operativos también proveen una interfaz gráfica que permite al usuario hacer tareas sin línea de comando (yay!). </p>
-<p>Hay un montón de sistemas operativos, pero los más comunes son:</p>
-<ul>
-<li>Windows: Probablemente el que ustedes tienen en su compu)</li>
-<li>OSX: El que tienen las mac</li>
-<li>Linux: El que vamos a usar en la materia</li>
-</ul>
-<h3 id="que-es-una-maquina-virtual">¿Qué es una máquina virtual?</h3>
-<p>Las máquinas virtuales no son más que compus <em>invitadas</em> (o <em>guests</em>), emuladas dentro de una computadora real, hospedadora (o <em>host</em>). </p>
-<p>La compu de ustedes es la <em>máquina física</em> (la computadora real, hospedadora o <em>host</em>) y adentro le vamos a poner otra compu virtual.</p>
-<p>Las máquinas virtuales corren un sistema operativo que permitirá hacer distintas cosas.</p>
-<p>La virtualización es un proceso <strong>costoso</strong>, ya que nos permite crear nuevas compus pero, al momento de correrlas, estaremos repartiendo los recursos reales (espacio en disco, memoria RAM y velocidad de procesamiento CPU) del <em>host</em> (es decir, <strong>de nuestra compu</strong>) entre todas las máquinas virtuales <em>guest</em> que estén activas.</p>
-<p>Es por esto que debemos ser cuidadosos al momento de generarlas, dándoles suficientes recursos para funcionar, pero <strong>no todos</strong> los recursos del <em>host</em> (es decir, <strong>de nuestra compu</strong>).</p>
-<h2 id="el-disco-de-maquina-virtual">El disco de máquina virtual</h2>
-<p>El disco de una máquina virtual es una “foto” de un disco de almacenamiento.</p>
-<p>Todo lo que un disco duro tiene guardado, incluyendo el sistema operativo y los programas instalados, quedarán guardados en un archivo cuando la creemos con las herramientas adecuadas. Como no existe un disco duro físico se lo considera <em>disco virtual</em>.</p>
-<p>Este archivo permite regenerar el estado de la computadora desde la que se creó dicho disco al momento de sacar la foto.</p>
-<p>Los docentes ya hemos ensamblado, para la materia, un disco de máquina virtual con Lubuntu 18 (una distribución versión ultra liviana de Ubuntu 18) en la que hemos instalado todos los programas y herramientas que usaremos en la asignatura. En adelante, nos referiremos a éste como IBioinfo.</p>
+<!--
+
+## Antes de arrancar veamos algunas definiciones 
+
+### ¿Qué es un sistema operativo?
+
+Un sistema operativo es una pieza de *software* que nos permite realizar funciones básicas, como copiar/pegar/mover/generar archivos, y sobre el cual se construyen otros softwares. Muchos sistemas operativos también proveen una interfaz gráfica que permite al usuario hacer tareas sin línea de comando (yay!). 
+
+Hay un montón de sistemas operativos, pero los más comunes son:
+
+* Windows: Probablemente el que ustedes tienen en su compu)
+* OSX: El que tienen las mac
+* Linux: El que vamos a usar en la materia
+-->
+
 <h2 id="paso-1-descargar-la-maquina-virtual">Paso 1. Descargar la Máquina Virtual</h2>
 <ul>
 <li>Pueden usar este link, que tiene la máquina que usamos en los TPs (es un link a Dropbox).</li>
 </ul>
-<p><strong>Próximamente Link de Descarga</strong></p>
-<!--
-[:fontawesome-solid-download: Máquina Virtual](#){ .md-button .md-button--primary }
--->
-
+<p><a class="md-button md-button--primary" href="https://www.dropbox.com/s/2187nlnjc03g8ki/IBioinfo-Lubuntu-32%20v1.3.zip?dl=0"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M480 352H346.5l-45.25 45.25C289.2 409.3 273.1 416 256 416s-33.16-6.656-45.25-18.75L165.5 352H32c-17.67 0-32 14.33-32 32v96c0 17.67 14.33 32 32 32h448c17.67 0 32-14.33 32-32v-96c0-17.7-14.3-32-32-32zm-48 104c-13.2 0-24-10.8-24-24s10.8-24 24-24 24 10.8 24 24-10.8 24-24 24zm-198.6-81.4c6.2 6.3 14.4 9.4 22.6 9.4s16.38-3.125 22.62-9.375l128-128c12.49-12.5 12.49-32.75 0-45.25-12.5-12.5-32.76-12.5-45.25 0L288 274.8V32c0-17.67-14.33-32-32-32-17.7 0-32 14.33-32 32v242.8l-73.4-73.4c-12.49-12.5-32.75-12.5-45.25 0-12.49 12.5-12.49 32.75 0 45.25L233.4 374.6z"/></svg></span> Máquina Virtual</a></p>
 <div class="admonition warning">
 <p class="admonition-title">Atención</p>
-<p>Son archivos pesados (~ <strong>20GB</strong>). Descárguenlos con <strong>tiempo</strong> y con <strong>conexión estable</strong>.</p>
+<p>Son archivos pesados (~ <strong>9GB</strong>). Descárguenlos con <strong>tiempo</strong> y con <strong>conexión estable</strong>.</p>
 <p>Si no cuentan con una conexión estable, pueden escribirnos para buscar alguna solución alternativa.</p>
 </div>
 <ul>
-<li>Una vez descargado el archivo, descomprimir para obtener el <code>vmdk</code>.</li>
+<li>Una vez descargado el archivo, descomprimir para obtener el <code>vmdk</code> (pesa alrededor de 15GB, pero puede llegar a crecer un poco durante la cursada).</li>
 </ul>
 <div class="admonition danger">
 <p class="admonition-title">Elegir la ubicación</p>
@@ -780,13 +782,13 @@
 <h2 id="paso-2-instalar-virtual-box">Paso 2. Instalar Virtual Box</h2>
 <ul>
 <li>
-<p>Mientras descarga la imagen, aprovechen el tiempo muerto para descargar Oracle Virtual Box.</p>
+<p>Mientras descarga la imagen, aprovechen el tiempo muerto para descargar Oracle VM VirtualBox.</p>
 </li>
 <li>
 <p>El programa es gratuito y pueden descargarlo desde <a href="https://www.virtualbox.org/">la página oficial</a>.</p>
 </li>
 <li>
-<p>Descarguen la última versión (v6.1), apropiada para su sistema operativo (Windows, OSX o Linux) y sigan las instrucciones del instalador hasta que hayan terminado.</p>
+<p>Descarguen la última versión (v6.1) apropiada para su sistema operativo (Windows, OSX o Linux) y sigan las instrucciones del instalador hasta que hayan terminado.</p>
 </li>
 </ul>
 <h2 id="paso-3-crear-una-maquina-virtual">Paso 3. Crear una máquina virtual</h2>
@@ -803,7 +805,7 @@
 <p>Aparecerá una caja de diálogo, en donde deberemos indicar:</p>
 <ul>
 <li><strong>Name o Nombre:</strong> Es el nombre que queremos darle a la máquina virtual. Elijan el que quieran.</li>
-<li><strong>Machine Folder o Carpeta de Máquina:</strong> Es la ubicación de la máquina virtual. Elijan la que quieran.</li>
+<li><strong>Machine Folder o Carpeta de Máquina:</strong> Es la ubicación de la configuración de la máquina virtual. Elijan la que quieran.</li>
 <li><strong>Type o Tipo:</strong> Es el tipo de virtualización. Elijan Linux.</li>
 <li><strong>Version o Versión:</strong> Es la versión del sistema operativo. Ubuntu 32 bits.</li>
 </ul>
@@ -835,15 +837,16 @@
 </div>
 <div class="admonition danger">
 <p class="admonition-title">No cambiar ubicación</p>
-<p>Una vez creada la Virtual Machine <strong>NO</strong> muevan el archivo .vmdk de lugar. Si lo hicieron, fíjense en la sección de problemas que está la solución.</p>
+<p>Una vez creada la Virtual Machine <strong>NO</strong> muevan el archivo .vmdk de lugar. Si lo hicieron, fíjense en la <a href="/2022_introduccion_bioinformatica/instructivos/problemasVM/">sección de problemas</a> que está la solución.</p>
 </div>
 
               
             </article>
+            
           </div>
         </div>
         
-          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
             Volver al principio
           </a>
@@ -852,7 +855,10 @@
       
         <footer class="md-footer">
   
-    <nav class="md-footer__inner md-grid" aria-label="Pie">
+    
+      
+    
+    <nav class="md-footer__inner md-grid" aria-label="Pie" >
       
         
         <a href="../inicio/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Inicio" rel="prev">
@@ -911,10 +917,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["search.suggest", "search.highlight", "search.share", "header.autohide", "navigaion.tracking", "navigation.tabs", "toc.integrate", "navigation.top"], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "B\u00fasqueda", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version.title": "Seleccionar versi\u00f3n"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["search.suggest", "search.highlight", "search.share", "header.autohide", "navigaion.tracking", "navigation.tabs", "toc.integrate", "navigation.top"], "search": "../../assets/javascripts/workers/search.85cb4492.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "B\u00fasqueda", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version.title": "Seleccionar versi\u00f3n"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.a6c66575.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a877e258.min.js"></script>
       
         <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
       
