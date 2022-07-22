@@ -244,11 +244,18 @@ En el output podrás apreciar dos salidas:
 
 **1.3.1** Reproducí el alineamiento que vimos como ejemplo al inicio (**TCGCA** con **TCCA**, esquema de puntajes: M=1, m=-1, g=-2) en la web de la [UniFreiburg-FreiburgRNATools](http://rna.informatik.uni-freiburg.de/Teaching/index.jsp?toolName=Needleman-Wunsch)
 
-¿Cuántas soluciones óptimas hay para este alineamiento? ¿Sucede lo mismo para el alineamiento que realizaste en el **Ejercicio 1**? ¿Por qué?
+¿Cuántas soluciones óptimas hay para este alineamiento? ¿Sucede lo mismo para el alineamiento que realizaste en el **Ejercicio 1.1**? ¿Por qué?
 
 **1.3.2** Observá con detenimiento el output del panel de la izquierda (la matriz) 
 
-¿Qué sucede cuando seleccionás una celda y se colorea en <span style="color:green;font-weight:bold">verde</span> y 2 celdas aledañas a la misma se colorean en <span style="color:pink;font-weight:bold">rosa</span>? 
+Seleccioná una celda. ¿Qué sucede cuando cliqueás en una celda y se colorea en <span style="color:green;font-weight:bold">verde</span> y la celda aledaña a la misma en <span style="color:pink;font-weight:bold">rosa</span>?
+¿A qué corresponde este coloreado o resaltado de las celdas?
+<br>
+
+Observá nuevamente la matriz del alineamiento que obtuviste en **1.2**. Cliquéa en la celda con puntaje -2 en la posición (A3, T2). Observá que se colorea en <span style="color:green;font-weight:bold">verde</span> y **dos** celdas aledañas a la misma en <span style="color:pink;font-weight:bold">rosa</span>. 
+<br>
+¿Entendés qué significa esto? ¿Podés relacionarlo con los dos caminos óptimos posibles que existen para este alineamiento?
+<br>
 
 **1.3.3** Finalmente te propongo que realices el siguiente alineamiento: 
 
@@ -277,13 +284,18 @@ Nosotros podemos utilizar la herramienta de EMBOSS ```dotmatcher``` para generar
 
 ### Ejercicio 2
 
+!agregar un ejercicio simple para entender los patrones que arroja el DotMatcher
+
 **2.1** Utilizá la secuencia *HS-ch11-fragment.fasta* que se encuentra en la carpeta *data* para compararla contra sí misma. Esta secuencia es un pequeño fragmento del cromosoma 1 de *Homo sapiens* y la vamos a utilizar únicamente para ver algunos de los patrones que podemos encontrar en un dotplot. 
 
-Generá un dotplot utilizando la secuencia HS-ch11-fragment.fasta contra sí misma.
+Generá un dotplot utilizando la secuencia *HS-ch11-fragment.fasta* contra sí misma.
 
 ```Bash
 dotmatcher -graph X11 HS-ch1-fragment.fasta HS-ch1-fragment.fasta
 ```
+!!! attention "Atención"
+
+   Recuerden abrir el archivo *HS-ch11-fragment.fasta* y chequear que la secuencia es de ADN. Es una buena práctica conocer qué hay en los archivos que vamos a utilizar. 
 
 **¿Qué podés interpretar de este dotplot?**
 
@@ -350,9 +362,11 @@ Sabiendo que los caballos y las ballenas pertenecen al clado *Euungulata* y los 
 
 **3.2** Realizá el mismo procedimiento pero esta vez para determinar si los mamuts (*Mammuthus primigenius*) son más cercanos a los elefantes africanos (*Loxodonta africana*) o asiáticos (*Elephas maximus*) utilizando la secuencia de la cadena alfa de la hemoglobina.  
 
-**3.2.2** ¿Qué te sugieren los resultados obtenidos?  
-**3.2.3** ¿Qué otras explicaciones pueden satisfacer estos resultados?  
-**3.2.4** Proponé soluciones para los problemas encontrados.  
+**3.2.1** ¿Qué te sugieren los resultados obtenidos?
+
+**3.2.2** ¿Es relevante la diferencia hallada?
+
+**3.2.3** ¿Cómo harías para sacar conclusiones más fuertes sobre las relaciones filogenéticas entre los organismos estudiados en los ejercicios 3.1 y 3.2?
 
 ![Elefantes](./img/Elefantes.png)
 
@@ -381,7 +395,7 @@ Un pipeline típico para realizar un MSA sería:
 3. Utilizar alguno de los programas disponibles para llevar a cabo el MSA. Por ej. EMBOSS
 4. Realizar ajustes manuales para corregir posibles errores de los algoritmos de alineamiento.
 
-### Ejercicio 4
+### Ejercicio 4 (Adicional)
 
 !!! attention "Atención"
 
@@ -393,7 +407,16 @@ Un pipeline típico para realizar un MSA sería:
 
 La gp120 es una proteína que recubre al virus del HIV y facilita su unión e ingreso a la célula que infecta (linfocitos CD4+)
 Entre nuestros archivos contamos con un multifasta (gp120.fasta) que contiene 27 secuencias de gp120 de HIV-1, HIV-2 y SIV.
-Estas proteínas contienen 9 puentes disulfuro conservados. También es de interés el loop V3, una porción expuesta de la proteína, conocido target de anticuerpos el cual constituye una región hipervariable dada la presión selectiva a la que se ve sometido. Pueden ver la disposicion de los diversos elementos de gp120 en [este esquema](http://www.cbs.dtu.dk/dtucourse/cookbooks/hnielsen/gp120.farve.gif).
+Estas proteínas contienen 9 puentes disulfuro conservados. También es de interés el loop V3, una porción expuesta de la proteína, conocido target de anticuerpos el cual constituye una región hipervariable dada la presión selectiva a la que se ve sometido. 
+
+<br>
+Pueden ver la disposición de las distintas regiones de la gp120 en el siguiente esquema:
+<br>
+<br>
+![gp120](./img/gp120.png)
+
+Mathys L, Balzarini J. Several N-Glycans on the HIV Envelope Glycoprotein gp120 Preferentially Locate Near Disulphide Bridges and Are Required for Efficient Infectivity and Virus Transmission. PLoS One. 2015 Jun 29;10(6):e0130621. doi: 10.1371/journal.pone.0130621. PMID: 26121645; PMCID: PMC4488071. **Figure 1.** 
+<br>
 
 **4.1** Utilizá las herramientas de EMBOSS para realizar un alineamiento múltiple con las secuencias de gp120 (recuerden que para buscar herramientas pueden usar ```wossname```)  
 
@@ -401,7 +424,13 @@ Estas proteínas contienen 9 puentes disulfuro conservados. También es de inter
    
     El comando a utilizar es ```emma```. Para ver la ayuda, tipeá ```emma -help``` en la terminal.
 
-**4.2** Utilizá el comando ```showalign``` de EMBOSS para obtener una mejor visualización del alineamiento.  
+**4.2** Utilizá el comando ```showalign``` de EMBOSS para obtener una mejor visualización del alineamiento.
+
+!!! tip "Otra alternativa"
+
+    Para visualizar el alineamiento correctamente le sugerimos usar el comando **cat** en la consola. 
+    <br>
+    Si desea ver el archivo con Leafpad recuerde ingresar a Opciones > Tipografía y seleccionar Ubuntu Mono.  
 
 **4.3** Observá el alineamiento, como primer control podemos corroborar que las 18 Cisteínas (**C**) estén bien alineadas.  
 
@@ -436,10 +465,16 @@ Pero… Cuando usted recibe los datos (`sequence_incognito.fasta`) se da cuenta 
 
 Para solucionarlo decide utilizar las herramientas que aprendió en el trabajo práctico N3 de bioinformática cuando era estudiante y decide:
 
-1. Comparar la secuencia del nuevo aislamiento con la que crea más conveniente de su conjunto de secuencias. Y se pregunta ¿Pertenece el nuevo aislamiento a un coronavirus?
+1. Comparar la secuencia del nuevo aislamiento con la que crea más conveniente de su conjunto de secuencias. ¿Pertenece el nuevo aislamiento a un coronavirus? Para responder a esta pregunta le sugerimos que realice un dotplot que le permita visualizar el alineamiento entre su secuencia incógnita y la(s) secuencias de su interés. Identifique y reporte qué patrones observa en el dotplot.
+
 2. Ahora quisiera saber a qué coronavirus se parece más, para esto decide determinar el % de similitud que posee su secuencia con el conjunto de secuencias con las que usted trabaja comúnmente.
 
-**Extra! (y por ende opcional)**
+!!! tip "Tip"
+
+Si necesitan dividir el archivo `All_Sequences.fasta` en archivos individuales pueden buscar **wossname split**. 
+
+!!! note "Extra! (y por ende opcional)"
+
 Para resolver el punto 2 ustedes pueden hacer un script de bash usando entre otras cosas un ciclo `for`. Si lo logran (o si lo intentan), los invito a incluirlo en el trabajo práctico (aún cuando no les salió).
 
 <br>
