@@ -785,7 +785,7 @@ Abran el archivo con **Leafpad** (doble click). Podemos ver que es una tabla en 
 
     **mtcars** es una tabla que viene por defecto con el lenguaje de programación **R**, sus columnas son:
 
-    | Nombre | Descripción |
+    | Nombre { data-sort-method='none' } | Descripción { data-sort-method='none' } |
     | :--- | :--- |
     | car_name    | Name of the car |
     | mpg         | Miles/(US) gallon |
