@@ -28,7 +28,7 @@ Este es el botón para decargar materiales, en (#) hay que agregar el link corre
 * Familiarizarse con el uso básico de los comandos de Bash
 * Familiarizarse con los bloques lógicos básicos de la programación
 
-## **Introduccion al Tema**
+## **Introducción al Tema**
 En este trabajo práctico vamos a aprender a usar la **línea de comando** de Lubuntu (también referida como *terminal*, *consola* o *shell*). Para muchos de nosotros, que estamos acostumbrados a la interfaz gráfica de sistemas operativos como los de Windows o *GUI* (por las siglas en ingles: *Graphic User Interface*), la linea de comando puede parecer un desafío, pero con práctica y algo de paciencia descubrirán que puede resultar amena. Su uso tiene dos ventajas destacables para nuestro campo:
 
 * Nos permitirá trabajar en entornos o programas sin interfaz gráfica (GUI)
