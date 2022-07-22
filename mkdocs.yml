@@ -121,7 +121,7 @@ nav:
         #- TPs: 'practicos/tpsGrid.md'
         - TP 1 - Linux: 'practicos/TP01_Linux/index.md'
         #- TP2: 'practicos/2-Trabajo-Practico-Dos/index.md'
-        #- TP3: 'practicos/3-Trabajo-Practico-Tres/index.md'
+        - TP 3 - Alineamientos de a pares: 'practicos/TP03_Alineamientos/index.md'
         #- Resumen: 'practicos/resumen.md'
     - Instructivos:
         - instructivos/inicio.md
