@@ -102,6 +102,9 @@ extra_javascript:
   - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js # Esto permite que las tablas se puedan ordenar según la columna. Lo que no vi es como hacerlo selectivo para cada tabla.
   - javascripts/tablesort.js
 
+extra_css:
+  - stylesheets/extra.css
+
 # Esto organiza lo que es la navegación. El nivel más alto (Inicio, Acerca de, etc) va a ser una pestaña en la barra de navegación
 # No hay dropdowns pero aparece en una navigation bar al costado que se puede o no integrar con la tabla de contenidos (comentando o descomentando toc.integrate en theme --> features -toc.integrate). 
 nav:
@@ -120,7 +123,7 @@ nav:
         - 'practicos/inicio.md'
         #- TPs: 'practicos/tpsGrid.md'
         - TP 1 - Linux: 'practicos/TP01_Linux/index.md'
-        #- TP2: 'practicos/2-Trabajo-Practico-Dos/index.md'
+        - TP 2 - EMBOSS: 'practicos/TP02_EMBOSS/index.md'
         - TP 3 - Alineamientos de a pares: 'practicos/TP03_Alineamientos/index.md'
         #- Resumen: 'practicos/resumen.md'
     - Instructivos:
