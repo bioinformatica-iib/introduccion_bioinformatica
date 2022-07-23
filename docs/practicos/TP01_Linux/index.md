@@ -166,7 +166,7 @@ cd ..
 
 Vean ahora en que carpeta están. En todo lo que es Ubuntu y Lubuntu `..` significa "una carpeta para arriba".
 
-¿Qué pasa entonces si estan en **/home/ibioinfo/Escritorio/TP1/Version3/Intento2/Edicion1** y quieren volver a su *home*? ¿Tienen que escribir `cd ..` 5 veces? Tecnicamente funciona, pero por defecto el comando `cd` te lleva a tu *home* si no le das ningun parámetro.
+¿Qué pasa entonces si estan en **/home/ibioinfo/Escritorio/TP01/Version3/Intento2/Edicion1** y quieren volver a su *home*? ¿Tienen que escribir `cd ..` 5 veces? Tecnicamente funciona, pero por defecto el comando `cd` te lleva a tu *home* si no le das ningun parámetro.
 
 ``` bash
 cd
@@ -729,7 +729,7 @@ El objetivo de este ejercicio es hacer un script que:
     ```
     Donde hay que reemplazar **NUMERO** por el número correspondiente (de 6 a 10). Noten que ambas oraciones están en lineas diferentes
 
-Ahora que sabemos nuestro objetivo vayan a **Documentos** y creen una nueva carpeta donde vamos a trabajar llamada **TP1_E3**. Dentro de ella creen un archivo vacio llamado **crear_archivos.sh** que va a ser nuestro script.
+Ahora que sabemos nuestro objetivo vayan a **Documentos** y creen una nueva carpeta donde vamos a trabajar llamada **TP01_EJ3**. Dentro de ella creen un archivo vacio llamado **crear_archivos.sh** que va a ser nuestro script.
 
 Al momento de hacer programas complejos, especialmente en un lenguaje que recién aprenden, es recomendado ir por partes e ir probando en el medio. Unos posibles pasos a seguir son:
 
