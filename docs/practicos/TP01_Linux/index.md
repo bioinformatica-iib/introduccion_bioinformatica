@@ -438,11 +438,10 @@ Y vamos a ver todas las lineas del documento donde aparece la palabra "cantar". 
 
 * La opción `-v` devuelve las líneas que **no** contienen **PALABRA**
 * La opción `-c` devuelve el número de líneas que contienen **PALABRA**
-* Puedo buscar multiples palabras separandólas con **|**, por ejemplo, `grep PALABRA1|PALABRA2 FILE`
 
 !!! info
 
-    Mencioné antes que `grep` también funciona con patrones. Estos patrones son conocidos como Expresiones Regulares, o **RegEx**, y de hecho usar **|** para buscar multiples palabras es parte de ellos. Como este es un tema complejo y ya tenemos bastante que procesar no vamos a profundizar mas sobre ellos en este momento, pero explicaremos cualquier patrón que usemos en la materia cuando aparezca.
+    Mencioné antes que `grep` también funciona con patrones, quienes son conocidos como Expresiones Regulares, o **RegEx**. Como este es un tema complejo y ya tenemos bastante que procesar no vamos a profundizar mas sobre ellos en este momento, pero explicaremos cualquier patrón que usemos en la materia cuando aparezca.
 
 ### Combinar comandos
 
