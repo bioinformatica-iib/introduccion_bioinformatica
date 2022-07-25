@@ -353,6 +353,14 @@ leafpad output_de_ls
 
 Van a ver que se abre el editor de texto de igual forma que si ubieran hecho doble click en el ícono en el explorador de archivos de la GUI. Puede ser que aparezca un *warning* o advertencia en la consola, pero la podemos ignorar.
 
+!!! tip
+
+    Por defecto **Leafpad** usa una fuente llamada **"Ubuntu"**, que si bien sirve para escribir cuentos, nos va a dar problemas al momento de ver ciertos archivos que vamos a usar en esta materia.
+
+    En **Leafpad** vayan a **Opciones** :material-arrow-right: **Tipografía...**, seleccionen la fuente **"Ubuntu Mono"** y aprieten **Aceptar**.
+
+    Las fuentes que tienen **Mono** en su nombre estan indicando que son monoespaciadas, o sea, que todos sus caracteres tienen el mismo ancho. Esto es ideal para cuando se quieren ver tablas o alineamientos con **Leafpad**, cosa que vamos a hacer bastante en esta materia.
+
 **Leafpad** funciona como un editor de texto bastante normal. Agreguen una nueva linea abajo de todo (con cualquier texto) y guarden el archivo.
 
 Al momento sabemos como guardar en un archivo de texto cualquier salida de un comando de Lubuntu, pero, ¿cómo hacemos para poner lo que nosotros queremos en un archivo de texto? Simple, ¡con otro comando de Lubuntu!
