@@ -1,3 +1,5 @@
+Página web de la materia: https://bioinformatica-iib.github.io/2022_introduccion_bioinformatica/
+
 ## Instalación 2022 en Ubuntu
 
 Acabo de instalar esto siguiendo los pasos de abajo y estan bastante bien, pero lo pongo detallado por si ayuda:
