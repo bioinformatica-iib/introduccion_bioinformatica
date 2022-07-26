@@ -174,7 +174,7 @@ cd
 
 ### Paths relativos y absolutos
 
-Cuando corrimos `cd ls /etc/perl/Net` estaban ubicados en su *home* (**/home/ibioinfo**) y si vemos las carpetas dentro de *home* resulta que no existe ninguna llamada **/etc**.
+Cuando corrimos `ls /etc/perl/Net` estaban ubicados en su *home* (**/home/ibioinfo**) y si vemos las carpetas dentro de *home* resulta que no existe ninguna llamada **/etc**.
 
 * ¿Dónde está la carpeta **/etc** en relación a **/home/ibioinfo**? (ver **Estructura de directorio de Lubuntu** arriba si no se acuerdan)
 * ¿Cómo pudimos acceder a **/etc/perl/Net** si la terminal estaba ubicada en una carpeta sin ninguna relación?
@@ -263,7 +263,7 @@ Por defecto este comando solo puede eliminar directorios vacios (lo cual puede n
 
 ### Crear y eliminar archivos
 
-Hay varias formas de crear archivos en Lubuntu y la mas simple es `touch FILE`, que crea un archivo de texto vacio donde **FILE** es el nombre del archivo (que puede incluir un path antes). Para entender lo que quiero decir vayan a su *home* y corran:
+Hay varias formas de crear archivos en Lubuntu y la mas simple es `touch ARCHIVO`, que crea un archivo de texto vacio donde **ARCHIVO** es el nombre del archivo (que puede incluir un path antes). Para entender lo que quiero decir vayan a su *home* y corran:
 
 ``` 
 touch Documentos/testfile
@@ -273,10 +273,10 @@ Aca estoy usando un path relativo para crear el archivo. Se van a dar cuenta que
 Lo que le vamos a enseñar a continuación es probablemente uno de los comandos más peligrosos de Bash si se usa incorrectamente. `rm` es el comando usado para eliminar archivos (o carpetas, o discos enteros) y es la base de cientos de historias en internet de como alguien se quedó sin trabajo. El comando se usa:
 
 ```bash
-rm FILE
+rm ARCHIVO
 ```
 
-Donde **FILE** es el archivo a eliminar. `rm` no les va a pedir confirmación y el archivo va a ser borrado permanentemente (si borran archivos desde la interfaz gráfica sí hay confirmación y sí van a la papelera). Entonces, con cuidado, asegurense que estan en **Documentos** y borren el archivo **testfile**.
+Donde **ARCHIVO** es el archivo a eliminar. `rm` no les va a pedir confirmación y el archivo va a ser borrado permanentemente (si borran archivos desde la interfaz gráfica sí hay confirmación y sí van a la papelera). Entonces, con cuidado, asegurense que estan en **Documentos** y borren el archivo **testfile**.
 
 !!! danger
     
@@ -423,7 +423,7 @@ Qué comando usar al leer archivos de texto en la consola depende mucho de que t
 Todos estos funcionan de la forma:
 
 ```bash
-comando FILE
+comando ARCHIVO
 ```
 
 Usando el archivo **martin_fierro** que se encuentra en los materiales del TP (boton al principio de todo), prueben los 5 comandos anteriores.
@@ -433,7 +433,7 @@ Usando el archivo **martin_fierro** que se encuentra en los materiales del TP (b
 Va a ser común cuando trabajemos con tablas que nos interese encontrar filas con cierto valor y una forma rápida de hacer eso es usar `grep`, comando al que le pasas una palabra o patrón y busca filas dentro de un archivo que contengan dicha palabra o patrón. En formato general el comando es:
 
 ```bash
-grep PALABRA FILE
+grep PALABRA ARCHIVO
 ```
 
 Usando el archivo **martin_fierro** con en que trabajamos en la sección anterior podemos correr:
@@ -446,6 +446,7 @@ Y vamos a ver todas las lineas del documento donde aparece la palabra "cantar". 
 
 * La opción `-v` devuelve las líneas que **no** contienen **PALABRA**
 * La opción `-c` devuelve el número de líneas que contienen **PALABRA**
+* Es posible pasarle varias opciones a un programa. De hacer `grep -v -c` voy a estar contando el número de líneas que **no** contengan **PALABRA** (el orden de las opciones no afecta el comportamiento)
 
 !!! info
 
@@ -461,7 +462,7 @@ Para entender un poco mejor veamos un ejemplo. Digamos que quiero ver las cuales
 head -10 martin_fierro | grep cantar
 ```
 
-Fijense que en este caso parecería que a `grep` no le estoy pasando ningun **FILE**, pero lo que pasa es que va usar como entrada la salida de `head`. De esta forma se puede concatenar cualquier cantidad de comandos que seran ejecutados de izquierda a derecha.
+Fijensé que en este caso parecería que a `grep` no le estoy pasando ningun **ARCHIVO**, pero lo que pasa es que va usar como entrada la salida de `head`. De esta forma se puede concatenar cualquier cantidad de comandos que seran ejecutados de izquierda a derecha.
 
 ## **Ejercicio 2. Archivos de texto** { markdown data-toc-label='Ejercicio 2' }  
 
@@ -497,7 +498,7 @@ echo "| Hello world! |"
 echo "----------------"
 ```
 
-Ahora salven en archivo, abran la terminal en esa carpeta (++f4++) y vamos a ejecutar el script con:
+Ahora salven el archivo, abran la terminal en esa carpeta (++f4++) y vamos a ejecutar el script con:
 
 ```bash
 bash primer_programa.sh
@@ -812,10 +813,10 @@ Abran el archivo con **Leafpad** (doble click). Podemos ver que es una tabla en 
 El comando `awk`  (que recibe su nombre de las iniciales de los apellidos de las 3 personas que lo crearon) es uno de los comandos mas usados en Bash para manipular tablas por su gran flexibilidad, hasta el punto que es posible incorporar condicionales y ciclos dentro de él. La forma más simple del comando es:
 
 ``` bash
-awk -opciones 'instrucciones' TABLEFILE
+awk -opciones 'instrucciones' ARCHIVO_TABLA
 ```
 
-Donde **TABLEFILE** es el archivo que contiene a la tabla e **instrucciones** es que hacer con ese archivo una vez que se abra (las instrucciones siempre tienen que estar delimitadas por comillas simples, o `'`). Colocando a nuestra terminal en **Documentos** podemos correr:
+Donde **ARCHIVO_TABLA** es el archivo que contiene a la tabla e **instrucciones** es que hacer con ese archivo una vez que se abra (las instrucciones siempre tienen que estar delimitadas por comillas simples, o `'`). Colocando a nuestra terminal en **Documentos** podemos correr:
 
 ``` bash
 awk -F "\t" '{print}' mtcars
