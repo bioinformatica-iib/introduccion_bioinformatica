@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://bioinformatica-iib.github.io/2022_introduccion_bioinformatica/practicos/TP01_Linux/">
       
       <link rel="icon" href="../../img/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.6">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.15">
     
     
       
@@ -21,12 +21,11 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.4a0965b7.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.c382b1dc.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cc9b2e1e.min.css">
         
-      
       
     
     
@@ -39,6 +38,8 @@
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
     <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -552,7 +553,7 @@
       
         <li class="md-nav__item">
   <a href="#introduccion-al-tema" class="md-nav__link">
-    Introduccion al Tema
+    Introducción al Tema
   </a>
   
 </li>
@@ -963,7 +964,7 @@ Este es el botón para decargar materiales, en (#) hay que agregar el link corre
 <li>Familiarizarse con el uso básico de los comandos de Bash</li>
 <li>Familiarizarse con los bloques lógicos básicos de la programación</li>
 </ul>
-<h2 id="introduccion-al-tema"><strong>Introduccion al Tema</strong></h2>
+<h2 id="introduccion-al-tema"><strong>Introducción al Tema</strong></h2>
 <p>En este trabajo práctico vamos a aprender a usar la <strong>línea de comando</strong> de Lubuntu (también referida como <em>terminal</em>, <em>consola</em> o <em>shell</em>). Para muchos de nosotros, que estamos acostumbrados a la interfaz gráfica de sistemas operativos como los de Windows o <em>GUI</em> (por las siglas en ingles: <em>Graphic User Interface</em>), la linea de comando puede parecer un desafío, pero con práctica y algo de paciencia descubrirán que puede resultar amena. Su uso tiene dos ventajas destacables para nuestro campo:</p>
 <ul>
 <li>Nos permitirá trabajar en entornos o programas sin interfaz gráfica (GUI)</li>
@@ -1077,11 +1078,11 @@ En este caso están viendo los contenidos de una carpeta diferente a donde estam
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span> ..
 </code></pre></div>
 <p>Vean ahora en que carpeta están. En todo lo que es Ubuntu y Lubuntu <code>..</code> significa "una carpeta para arriba".</p>
-<p>¿Qué pasa entonces si estan en <strong>/home/ibioinfo/Escritorio/TP1/Version3/Intento2/Edicion1</strong> y quieren volver a su <em>home</em>? ¿Tienen que escribir <code>cd ..</code> 5 veces? Tecnicamente funciona, pero por defecto el comando <code>cd</code> te lleva a tu <em>home</em> si no le das ningun parámetro.</p>
+<p>¿Qué pasa entonces si estan en <strong>/home/ibioinfo/Escritorio/TP01/Version3/Intento2/Edicion1</strong> y quieren volver a su <em>home</em>? ¿Tienen que escribir <code>cd ..</code> 5 veces? Tecnicamente funciona, pero por defecto el comando <code>cd</code> te lleva a tu <em>home</em> si no le das ningun parámetro.</p>
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span>
 </code></pre></div>
 <h3 id="paths-relativos-y-absolutos">Paths relativos y absolutos</h3>
-<p>Cuando corrimos <code>cd ls /etc/perl/Net</code> estaban ubicados en su <em>home</em> (<strong>/home/ibioinfo</strong>) y si vemos las carpetas dentro de <em>home</em> resulta que no existe ninguna llamada <strong>/etc</strong>.</p>
+<p>Cuando corrimos <code>ls /etc/perl/Net</code> estaban ubicados en su <em>home</em> (<strong>/home/ibioinfo</strong>) y si vemos las carpetas dentro de <em>home</em> resulta que no existe ninguna llamada <strong>/etc</strong>.</p>
 <ul>
 <li>¿Dónde está la carpeta <strong>/etc</strong> en relación a <strong>/home/ibioinfo</strong>? (ver <strong>Estructura de directorio de Lubuntu</strong> arriba si no se acuerdan)</li>
 <li>¿Cómo pudimos acceder a <strong>/etc/perl/Net</strong> si la terminal estaba ubicada en una carpeta sin ninguna relación?</li>
@@ -1154,14 +1155,14 @@ En este caso están viendo los contenidos de una carpeta diferente a donde estam
 </ul>
 </div>
 <h3 id="crear-y-eliminar-archivos">Crear y eliminar archivos</h3>
-<p>Hay varias formas de crear archivos en Lubuntu y la mas simple es <code>touch FILE</code>, que crea un archivo de texto vacio donde <strong>FILE</strong> es el nombre del archivo (que puede incluir un path antes). Para entender lo que quiero decir vayan a su <em>home</em> y corran:</p>
+<p>Hay varias formas de crear archivos en Lubuntu y la mas simple es <code>touch ARCHIVO</code>, que crea un archivo de texto vacio donde <strong>ARCHIVO</strong> es el nombre del archivo (que puede incluir un path antes). Para entender lo que quiero decir vayan a su <em>home</em> y corran:</p>
 <p><div class="highlight"><pre><span></span><code>touch Documentos/testfile
 </code></pre></div>
 Aca estoy usando un path relativo para crear el archivo. Se van a dar cuenta que el archivo no tiene extensión (por ejemplo <strong>.txt</strong>). En Lubuntu van a ver muchos archivos de texto sin extensión, pero se la pueden agregar sin problema si quieren. Entren a <strong>Documentos</strong> y vean si el archivo realmente existe.</p>
 <p>Lo que le vamos a enseñar a continuación es probablemente uno de los comandos más peligrosos de Bash si se usa incorrectamente. <code>rm</code> es el comando usado para eliminar archivos (o carpetas, o discos enteros) y es la base de cientos de historias en internet de como alguien se quedó sin trabajo. El comando se usa:</p>
-<div class="highlight"><pre><span></span><code>rm FILE
+<div class="highlight"><pre><span></span><code>rm ARCHIVO
 </code></pre></div>
-<p>Donde <strong>FILE</strong> es el archivo a eliminar. <code>rm</code> no les va a pedir confirmación y el archivo va a ser borrado permanentemente (si borran archivos desde la interfaz gráfica sí hay confirmación y sí van a la papelera). Entonces, con cuidado, asegurense que estan en <strong>Documentos</strong> y borren el archivo <strong>testfile</strong>.</p>
+<p>Donde <strong>ARCHIVO</strong> es el archivo a eliminar. <code>rm</code> no les va a pedir confirmación y el archivo va a ser borrado permanentemente (si borran archivos desde la interfaz gráfica sí hay confirmación y sí van a la papelera). Entonces, con cuidado, asegurense que estan en <strong>Documentos</strong> y borren el archivo <strong>testfile</strong>.</p>
 <div class="admonition danger">
 <p class="admonition-title">Danger</p>
 <p>¿Se entendió que hay que tener cuidado con <code>rm</code>? ¿Si? Buenisimo.</p>
@@ -1206,6 +1207,12 @@ Y vean que pasó. Una vez que todo haya funcionado bien, usen <code>rm</code> pa
 <div class="highlight"><pre><span></span><code>leafpad output_de_ls
 </code></pre></div>
 <p>Van a ver que se abre el editor de texto de igual forma que si ubieran hecho doble click en el ícono en el explorador de archivos de la GUI. Puede ser que aparezca un <em>warning</em> o advertencia en la consola, pero la podemos ignorar.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Por defecto <strong>Leafpad</strong> usa una fuente llamada <strong>"Ubuntu"</strong>, que si bien sirve para escribir cuentos, nos va a dar problemas al momento de ver ciertos archivos que vamos a usar en esta materia.</p>
+<p>En <strong>Leafpad</strong> vayan a <strong>Opciones</strong> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg></span> <strong>Tipografía...</strong>, seleccionen la fuente <strong>"Ubuntu Mono"</strong> y aprieten <strong>Aceptar</strong>.</p>
+<p>Las fuentes que tienen <strong>Mono</strong> en su nombre estan indicando que son monoespaciadas, o sea, que todos sus caracteres tienen el mismo ancho. Esto es ideal para cuando se quieren ver tablas o alineamientos con <strong>Leafpad</strong>, cosa que vamos a hacer bastante en esta materia.</p>
+</div>
 <p><strong>Leafpad</strong> funciona como un editor de texto bastante normal. Agreguen una nueva linea abajo de todo (con cualquier texto) y guarden el archivo.</p>
 <p>Al momento sabemos como guardar en un archivo de texto cualquier salida de un comando de Lubuntu, pero, ¿cómo hacemos para poner lo que nosotros queremos en un archivo de texto? Simple, ¡con otro comando de Lubuntu!</p>
 <p>El comando <code>echo</code> hace lo que su nombre indica y devuelve por la terminal el texto que le pases. Prueben escribir <code>echo TEXTO</code>, donde <strong>TEXTO</strong> es cualquier oración, por ejemplo:</p>
@@ -1251,12 +1258,12 @@ Y vean que pasó. Una vez que todo haya funcionado bien, usen <code>rm</code> pa
 </li>
 </ul>
 <p>Todos estos funcionan de la forma:</p>
-<div class="highlight"><pre><span></span><code>comando FILE
+<div class="highlight"><pre><span></span><code>comando ARCHIVO
 </code></pre></div>
 <p>Usando el archivo <strong>martin_fierro</strong> que se encuentra en los materiales del TP (boton al principio de todo), prueben los 5 comandos anteriores.</p>
 <h3 id="buscar-palabras-en-archivos-de-texto" markdown="markdown">Buscar palabras en archivos de texto</h3>
 <p>Va a ser común cuando trabajemos con tablas que nos interese encontrar filas con cierto valor y una forma rápida de hacer eso es usar <code>grep</code>, comando al que le pasas una palabra o patrón y busca filas dentro de un archivo que contengan dicha palabra o patrón. En formato general el comando es:</p>
-<div class="highlight"><pre><span></span><code>grep PALABRA FILE
+<div class="highlight"><pre><span></span><code>grep PALABRA ARCHIVO
 </code></pre></div>
 <p>Usando el archivo <strong>martin_fierro</strong> con en que trabajamos en la sección anterior podemos correr:</p>
 <div class="highlight"><pre><span></span><code>grep cantar martin_fierro
@@ -1265,18 +1272,18 @@ Y vean que pasó. Una vez que todo haya funcionado bien, usen <code>rm</code> pa
 <ul>
 <li>La opción <code>-v</code> devuelve las líneas que <strong>no</strong> contienen <strong>PALABRA</strong></li>
 <li>La opción <code>-c</code> devuelve el número de líneas que contienen <strong>PALABRA</strong></li>
-<li>Puedo buscar multiples palabras separandólas con <strong>|</strong>, por ejemplo, <code>grep PALABRA1|PALABRA2 FILE</code></li>
+<li>Es posible pasarle varias opciones a un programa. De hacer <code>grep -v -c</code> voy a estar contando el número de líneas que <strong>no</strong> contengan <strong>PALABRA</strong> (el orden de las opciones no afecta el comportamiento)</li>
 </ul>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>Mencioné antes que <code>grep</code> también funciona con patrones. Estos patrones son conocidos como Expresiones Regulares, o <strong>RegEx</strong>, y de hecho usar <strong>|</strong> para buscar multiples palabras es parte de ellos. Como este es un tema complejo y ya tenemos bastante que procesar no vamos a profundizar mas sobre ellos en este momento, pero explicaremos cualquier patrón que usemos en la materia cuando aparezca.</p>
+<p>Mencioné antes que <code>grep</code> también funciona con patrones, quienes son conocidos como Expresiones Regulares, o <strong>RegEx</strong>. Como este es un tema complejo y ya tenemos bastante que procesar no vamos a profundizar mas sobre ellos en este momento, pero explicaremos cualquier patrón que usemos en la materia cuando aparezca.</p>
 </div>
 <h3 id="combinar-comandos">Combinar comandos</h3>
 <p>En Bash es posible combinar comandos, lo que quiere decir pasarle la salida de un comando directamente como entrada a otro comando. Esto se hace dividiendo los diferentes comandos con <strong>|</strong> (o <em>pipe</em>).</p>
 <p>Para entender un poco mejor veamos un ejemplo. Digamos que quiero ver las cuales de las primeras 10 lineas del archivo <strong>martin_fierro</strong> contienen la palabra "cantar". Para esto tengo que hacer:</p>
 <div class="highlight"><pre><span></span><code>head -10 martin_fierro <span class="p">|</span> grep cantar
 </code></pre></div>
-<p>Fijense que en este caso parecería que a <code>grep</code> no le estoy pasando ningun <strong>FILE</strong>, pero lo que pasa es que va usar como entrada la salida de <code>head</code>. De esta forma se puede concatenar cualquier cantidad de comandos que seran ejecutados de izquierda a derecha.</p>
+<p>Fijensé que en este caso parecería que a <code>grep</code> no le estoy pasando ningun <strong>ARCHIVO</strong>, pero lo que pasa es que va usar como entrada la salida de <code>head</code>. De esta forma se puede concatenar cualquier cantidad de comandos que seran ejecutados de izquierda a derecha.</p>
 <h2 id="ejercicio-2-archivos-de-texto" markdown="markdown"><strong>Ejercicio 2. Archivos de texto</strong></h2>
 <p>Para este ejercicio vamos a seguir usando el archivo <strong>martin_fierro</strong>. </p>
 <ol>
@@ -1311,7 +1318,7 @@ Y vean que pasó. Una vez que todo haya funcionado bien, usen <code>rm</code> pa
 <span class="nb">echo</span> <span class="s2">&quot;| Hello world! |&quot;</span>
 <span class="nb">echo</span> <span class="s2">&quot;----------------&quot;</span>
 </code></pre></div>
-<p>Ahora salven en archivo, abran la terminal en esa carpeta (<span class="keys"><kbd class="key-f4">F4</kbd></span>) y vamos a ejecutar el script con:</p>
+<p>Ahora salven el archivo, abran la terminal en esa carpeta (<span class="keys"><kbd class="key-f4">F4</kbd></span>) y vamos a ejecutar el script con:</p>
 <div class="highlight"><pre><span></span><code>bash primer_programa.sh
 </code></pre></div>
 <p>¡Felicidades, ya pueden decir que son programadores!</p>
@@ -1521,7 +1528,7 @@ Este es el archivo NUMERO.
 </code></pre></div>
     Donde hay que reemplazar <strong>NUMERO</strong> por el número correspondiente (de 6 a 10). Noten que ambas oraciones están en lineas diferentes</li>
 </ul>
-<p>Ahora que sabemos nuestro objetivo vayan a <strong>Documentos</strong> y creen una nueva carpeta donde vamos a trabajar llamada <strong>TP1_E3</strong>. Dentro de ella creen un archivo vacio llamado <strong>crear_archivos.sh</strong> que va a ser nuestro script.</p>
+<p>Ahora que sabemos nuestro objetivo vayan a <strong>Documentos</strong> y creen una nueva carpeta donde vamos a trabajar llamada <strong>TP01_EJ3</strong>. Dentro de ella creen un archivo vacio llamado <strong>crear_archivos.sh</strong> que va a ser nuestro script.</p>
 <p>Al momento de hacer programas complejos, especialmente en un lenguaje que recién aprenden, es recomendado ir por partes e ir probando en el medio. Unos posibles pasos a seguir son:</p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
@@ -1567,8 +1574,8 @@ Este es el archivo NUMERO.
 <table>
 <thead>
 <tr>
-<th align="left">Nombre</th>
-<th align="left">Descripción</th>
+<th align="left" data-sort-method="none">Nombre</th>
+<th align="left" data-sort-method="none">Descripción</th>
 </tr>
 </thead>
 <tbody>
@@ -1625,9 +1632,9 @@ Este es el archivo NUMERO.
 </details>
 <h3 id="awk">AWK</h3>
 <p>El comando <code>awk</code>  (que recibe su nombre de las iniciales de los apellidos de las 3 personas que lo crearon) es uno de los comandos mas usados en Bash para manipular tablas por su gran flexibilidad, hasta el punto que es posible incorporar condicionales y ciclos dentro de él. La forma más simple del comando es:</p>
-<div class="highlight"><pre><span></span><code>awk -opciones <span class="s1">&#39;instrucciones&#39;</span> TABLEFILE
+<div class="highlight"><pre><span></span><code>awk -opciones <span class="s1">&#39;instrucciones&#39;</span> ARCHIVO_TABLA
 </code></pre></div>
-<p>Donde <strong>TABLEFILE</strong> es el archivo que contiene a la tabla e <strong>instrucciones</strong> es que hacer con ese archivo una vez que se abra (las instrucciones siempre tienen que estar delimitadas por comillas simples, o <code>'</code>). Colocando a nuestra terminal en <strong>Documentos</strong> podemos correr:</p>
+<p>Donde <strong>ARCHIVO_TABLA</strong> es el archivo que contiene a la tabla e <strong>instrucciones</strong> es que hacer con ese archivo una vez que se abra (las instrucciones siempre tienen que estar delimitadas por comillas simples, o <code>'</code>). Colocando a nuestra terminal en <strong>Documentos</strong> podemos correr:</p>
 <div class="highlight"><pre><span></span><code>awk -F <span class="s2">&quot;\t&quot;</span> <span class="s1">&#39;{print}&#39;</span> mtcars
 </code></pre></div>
 <p>Donde <code>-F</code> es la opción que le dice a <code>awk</code> cual es el caracter que separa las diferentes columnas (en este caso es <code>\t</code>, que es el símbolo de <span class="keys"><kbd class="key-tab">Tab</kbd></span>) y <code>{print}</code> es la instrucción que simplemente dice que imprima en pantalla la tabla.</p>
@@ -1715,11 +1722,10 @@ En este momento tenemos todos los elementos necesarios andando, pero hay que bor
 
               
             </article>
-            
           </div>
         </div>
         
-          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
             Volver al principio
           </a>
@@ -1728,8 +1734,7 @@ En este momento tenemos todos los elementos necesarios andando, pero hay que bor
       
         <footer class="md-footer">
   
-    
-    <nav class="md-footer__inner md-grid" aria-label="Pie" >
+    <nav class="md-footer__inner md-grid" aria-label="Pie">
       
         
         <a href="../inicio/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Inicio" rel="prev">
@@ -1788,10 +1793,10 @@ En este momento tenemos todos los elementos necesarios andando, pero hay que bor
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["search.suggest", "search.highlight", "search.share", "header.autohide", "navigaion.tracking", "navigation.tabs", "toc.integrate", "navigation.top"], "search": "../../assets/javascripts/workers/search.85cb4492.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "B\u00fasqueda", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version.title": "Seleccionar versi\u00f3n"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["search.suggest", "search.highlight", "search.share", "header.autohide", "navigaion.tracking", "navigation.tabs", "toc.integrate", "navigation.top"], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "B\u00fasqueda", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version.title": "Seleccionar versi\u00f3n"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.a877e258.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a6c66575.min.js"></script>
       
         <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
       

@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://bioinformatica-iib.github.io/2022_introduccion_bioinformatica/practicos/TP02_EMBOSS/">
       
       <link rel="icon" href="../../img/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.6">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.15">
     
     
       
@@ -21,12 +21,11 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.4a0965b7.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.c382b1dc.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cc9b2e1e.min.css">
         
-      
       
     
     
@@ -39,6 +38,8 @@
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
     <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -68,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#tp2-emboss" class="md-skip">
+        <a href="#tp-2-emboss" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -615,38 +616,1664 @@
                 
 
 
-<p><img _="," align="left" alt="Image" src="img/featured.png" width="250" /></p>
-<h1 id="tp2-emboss" markdown="markdown">TP2. EMBOSS</h1>
-<p><a class="md-button md-button--primary" href="#"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M480 352H346.5l-45.25 45.25C289.2 409.3 273.1 416 256 416s-33.16-6.656-45.25-18.75L165.5 352H32c-17.67 0-32 14.33-32 32v96c0 17.67 14.33 32 32 32h448c17.67 0 32-14.33 32-32v-96c0-17.7-14.3-32-32-32zm-48 104c-13.2 0-24-10.8-24-24s10.8-24 24-24 24 10.8 24 24-10.8 24-24 24zm-198.6-81.4c6.2 6.3 14.4 9.4 22.6 9.4s16.38-3.125 22.62-9.375l128-128c12.49-12.5 12.49-32.75 0-45.25-12.5-12.5-32.76-12.5-45.25 0L288 274.8V32c0-17.67-14.33-32-32-32-17.7 0-32 14.33-32 32v242.8l-73.4-73.4c-12.49-12.5-32.75-12.5-45.25 0-12.49 12.5-12.49 32.75 0 45.25L233.4 374.6z"/></svg></span> Materiales</a></p>
+<p><img _="," align="left" alt="Banner" src="img/banner.jpg" width="250" /></p>
+<h1 id="tp-2-emboss" markdown="markdown"><strong>TP 2</strong>. EMBOSS</h1>
+<p><br></p>
+<p><a class="md-button md-button--primary" href="https://drive.google.com/file/d/15-HiP0T4f1VLRJyqKi3hkoxT3VUXh9Fs/view?usp=sharing"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M480 352H346.5l-45.25 45.25C289.2 409.3 273.1 416 256 416s-33.16-6.656-45.25-18.75L165.5 352H32c-17.67 0-32 14.33-32 32v96c0 17.67 14.33 32 32 32h448c17.67 0 32-14.33 32-32v-96c0-17.7-14.3-32-32-32zm-48 104c-13.2 0-24-10.8-24-24s10.8-24 24-24 24 10.8 24 24-10.8 24-24 24zm-198.6-81.4c6.2 6.3 14.4 9.4 22.6 9.4s16.38-3.125 22.62-9.375l128-128c12.49-12.5 12.49-32.75 0-45.25-12.5-12.5-32.76-12.5-45.25 0L288 274.8V32c0-17.67-14.33-32-32-32-17.7 0-32 14.33-32 32v242.8l-73.4-73.4c-12.49-12.5-32.75-12.5-45.25 0-12.49 12.5-12.49 32.75 0 45.25L233.4 374.6z"/></svg></span> Materiales</a></p>
 <!--
 Este es el botón para decargar materiales, en (#) hay que agregar el link correspondiente.
 --->
 
 <h3 id="software-a-usar">Software a usar</h3>
-<h3 id="recursos-online">Recursos Online</h3>
+<ul>
+<li>EMBOSS (ya instalado en la VM).</li>
+</ul>
+<!--
+### Recursos Online
+-->
+
 <h3 id="objetivos">Objetivos</h3>
-<h2 id="introduccion-al-tema">Introduccion al Tema</h2>
-<h2 id="cosas">Cosas</h2>
-<p>poner una carpeta input o output</p>
-<p>mkdir VpVAN_output</p>
-<p>for TAG in <code>ls *-tag.fasta</code>; # Por cada archivo Fasta de tag disponible... </p>
-<p>do 
-   vpvanseq=<code>cat VpVAN.fasta | grep -v "&gt;"</code>; # leer el archivo VpVAN y quitarle el header (&gt;), guardarlo en una variable (1)
-   tagseq=<code>cat $TAG | grep -v "&gt;"</code>; # leer cada archivo tag y quitarle el header (&gt;), guardarlo en otra variable (2)
-   printf "&gt;VpVAN-$TAG\n$vpvanseq$tagseq" &gt; VpVAN_output/VpVAN-$TAG; # imprimir y guardar en un archivo separado para cada tag (3)
-done;</p>
-<p>tfm, que significa :p
-http://www.sacs.ucsf.edu/Documentation/emboss/tfm.html</p>
-<h2 id="ejercicio-1-titulo-del-ejercicio-a-realizar" markdown="markdown">Ejercicio 1. Titulo del Ejercicio a realizar</h2>
+<ul>
+<li>Familiarizarse con el uso de herramientas bioinformáticas por línea de comandos.</li>
+<li>Familiarizarse con los formatos característicos de datos biológicos.</li>
+<li>Practicar conceptos aprendidos en el TP 1.</li>
+</ul>
+<h2 id="introduccion-al-tema"><strong>Introduccion al Tema</strong></h2>
+<p><a href="http://emboss.sourceforge.net/">EMBOSS</a> es una suite bioinformática creada y mantenida por <a href="https://www.embnet.org/">EMBnet</a> que incluye una multitud de herramientas elementales en biología molecular y genética. Algunas ventajas de EMBOSS son:</p>
+<ul>
+<li>Maneja información biológica en varios formatos para realizar distintos tipos de tareas.</li>
+<li>Es muy rápida, lo cual significa que es computacionalmente escalable.</li>
+<li>Si bien cada uno de sus programas individuales podrían ser reemplazados por otros softwares o un script propio, EMBOSS agrupa todos estos programas en un solo paquete y le provee al usuario una interfaz unificada para todas las aplicaciones.</li>
+</ul>
+<p>A continuación se encuentra una lista de 256 programas que contiene EMBOSS y un resumen corto de lo que hace cada uno:</p>
+<details class="info">
+<summary>Programas de EMBOSS</summary>
+<table>
+<thead>
+<tr>
+<th align="left" data-sort-method="none">Program name</th>
+<th align="left" data-sort-method="none">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">aaindexextract</td>
+<td align="left">Extract amino acid property data from AAINDEX</td>
+</tr>
+<tr>
+<td align="left">abiview</td>
+<td align="left">Display the trace in an ABI sequencer file</td>
+</tr>
+<tr>
+<td align="left">acdc</td>
+<td align="left">Test an application ACD file</td>
+</tr>
+<tr>
+<td align="left">acdpretty</td>
+<td align="left">Correctly reformat an application ACD file</td>
+</tr>
+<tr>
+<td align="left">acdtable</td>
+<td align="left">Generate an HTML table of parameters from an application ACD file</td>
+</tr>
+<tr>
+<td align="left">acdtrace</td>
+<td align="left">Trace processing of an application ACD file (for testing)</td>
+</tr>
+<tr>
+<td align="left">acdvalid</td>
+<td align="left">Validate an application ACD file</td>
+</tr>
+<tr>
+<td align="left">aligncopy</td>
+<td align="left">Read and write alignments</td>
+</tr>
+<tr>
+<td align="left">aligncopypair</td>
+<td align="left">Read and write pairs from alignments</td>
+</tr>
+<tr>
+<td align="left">antigenic</td>
+<td align="left">Find antigenic sites in proteins</td>
+</tr>
+<tr>
+<td align="left">assemblyget</td>
+<td align="left">Get assembly of sequence reads</td>
+</tr>
+<tr>
+<td align="left">backtranambig</td>
+<td align="left">Back-translate a protein sequence to ambiguous nucleotide sequence</td>
+</tr>
+<tr>
+<td align="left">backtranseq</td>
+<td align="left">Back-translate a protein sequence to a nucleotide sequence</td>
+</tr>
+<tr>
+<td align="left">banana</td>
+<td align="left">Plot bending and curvature data for B-DNA</td>
+</tr>
+<tr>
+<td align="left">biosed</td>
+<td align="left">Replace or delete sequence sections</td>
+</tr>
+<tr>
+<td align="left">btwisted</td>
+<td align="left">Calculate the twisting in a B-DNA sequence</td>
+</tr>
+<tr>
+<td align="left">cachedas</td>
+<td align="left">Generate server cache file for DAS servers or for the DAS registry</td>
+</tr>
+<tr>
+<td align="left">cachedbfetch</td>
+<td align="left">Generate server cache file for Dbfetch/WSDbfetch data sources</td>
+</tr>
+<tr>
+<td align="left">cacheebeyesearch</td>
+<td align="left">Generate server cache file for EB-eye search domains</td>
+</tr>
+<tr>
+<td align="left">cacheensembl</td>
+<td align="left">Generate server cache file for an Ensembl server</td>
+</tr>
+<tr>
+<td align="left">cai</td>
+<td align="left">Calculate codon adaptation index</td>
+</tr>
+<tr>
+<td align="left">chaos</td>
+<td align="left">Draw a chaos game representation plot for a nucleotide sequence</td>
+</tr>
+<tr>
+<td align="left">charge</td>
+<td align="left">Draw a protein charge plot</td>
+</tr>
+<tr>
+<td align="left">checktrans</td>
+<td align="left">Report STOP codons and ORF statistics of a protein</td>
+</tr>
+<tr>
+<td align="left">chips</td>
+<td align="left">Calculate Nc codon usage statistic</td>
+</tr>
+<tr>
+<td align="left">cirdna</td>
+<td align="left">Draw circular map of DNA constructs</td>
+</tr>
+<tr>
+<td align="left">codcmp</td>
+<td align="left">Codon usage table comparison</td>
+</tr>
+<tr>
+<td align="left">codcopy</td>
+<td align="left">Copy and reformat a codon usage table</td>
+</tr>
+<tr>
+<td align="left">coderet</td>
+<td align="left">Extract CDS, mRNA and translations from feature tables</td>
+</tr>
+<tr>
+<td align="left">compseq</td>
+<td align="left">Calculate the composition of unique words in sequences</td>
+</tr>
+<tr>
+<td align="left">cons</td>
+<td align="left">Create a consensus sequence from a multiple alignment</td>
+</tr>
+<tr>
+<td align="left">consambig</td>
+<td align="left">Create an ambiguous consensus sequence from a multiple alignment</td>
+</tr>
+<tr>
+<td align="left">cpgplot</td>
+<td align="left">Identify and plot CpG islands in nucleotide sequence(s)</td>
+</tr>
+<tr>
+<td align="left">cpgreport</td>
+<td align="left">Identify and report CpG-rich regions in nucleotide sequence(s)</td>
+</tr>
+<tr>
+<td align="left">cusp</td>
+<td align="left">Create a codon usage table from nucleotide sequence(s)</td>
+</tr>
+<tr>
+<td align="left">cutgextract</td>
+<td align="left">Extract codon usage tables from CUTG database</td>
+</tr>
+<tr>
+<td align="left">cutseq</td>
+<td align="left">Remove a section from a sequence</td>
+</tr>
+<tr>
+<td align="left">dan</td>
+<td align="left">Calculate nucleic acid melting temperature</td>
+</tr>
+<tr>
+<td align="left">dbiblast</td>
+<td align="left">Index a BLAST database</td>
+</tr>
+<tr>
+<td align="left">dbifasta</td>
+<td align="left">Index a fasta file database</td>
+</tr>
+<tr>
+<td align="left">dbiflat</td>
+<td align="left">Index a flat file database</td>
+</tr>
+<tr>
+<td align="left">dbigcg</td>
+<td align="left">Index a GCG formatted database</td>
+</tr>
+<tr>
+<td align="left">dbtell</td>
+<td align="left">Display information about a public database</td>
+</tr>
+<tr>
+<td align="left">dbxcompress</td>
+<td align="left">Compress an uncompressed dbx index</td>
+</tr>
+<tr>
+<td align="left">dbxedam</td>
+<td align="left">Index the EDAM ontology using b+tree indices</td>
+</tr>
+<tr>
+<td align="left">dbxfasta</td>
+<td align="left">Index a fasta file database using b+tree indices</td>
+</tr>
+<tr>
+<td align="left">dbxflat</td>
+<td align="left">Index a flat file database using b+tree indices</td>
+</tr>
+<tr>
+<td align="left">dbxgcg</td>
+<td align="left">Index a GCG formatted database using b+tree indices</td>
+</tr>
+<tr>
+<td align="left">dbxobo</td>
+<td align="left">Index an obo ontology using b+tree indices</td>
+</tr>
+<tr>
+<td align="left">dbxreport</td>
+<td align="left">Validate index and report internals for dbx databases</td>
+</tr>
+<tr>
+<td align="left">dbxresource</td>
+<td align="left">Index a data resource catalogue using b+tree indices</td>
+</tr>
+<tr>
+<td align="left">dbxstat</td>
+<td align="left">Dump statistics for dbx databases</td>
+</tr>
+<tr>
+<td align="left">dbxtax</td>
+<td align="left">Index NCBI taxonomy using b+tree indices</td>
+</tr>
+<tr>
+<td align="left">dbxuncompress</td>
+<td align="left">Uncompress a compressed dbx index</td>
+</tr>
+<tr>
+<td align="left">degapseq</td>
+<td align="left">Remove non-alphabetic (e.g. gap) characters from sequences</td>
+</tr>
+<tr>
+<td align="left">density</td>
+<td align="left">Draw a nucleic acid density plot</td>
+</tr>
+<tr>
+<td align="left">descseq</td>
+<td align="left">Alter the name or description of a sequence</td>
+</tr>
+<tr>
+<td align="left">diffseq</td>
+<td align="left">Compare and report features of two similar sequences</td>
+</tr>
+<tr>
+<td align="left">distmat</td>
+<td align="left">Create a distance matrix from a multiple sequence alignment</td>
+</tr>
+<tr>
+<td align="left">dotmatcher</td>
+<td align="left">Draw a threshold dotplot of two sequences</td>
+</tr>
+<tr>
+<td align="left">dotpath</td>
+<td align="left">Draw a non-overlapping wordmatch dotplot of two sequences</td>
+</tr>
+<tr>
+<td align="left">dottup</td>
+<td align="left">Display a wordmatch dotplot of two sequences</td>
+</tr>
+<tr>
+<td align="left">dreg</td>
+<td align="left">Regular expression search of nucleotide sequence(s)</td>
+</tr>
+<tr>
+<td align="left">drfinddata</td>
+<td align="left">Find public databases by data type</td>
+</tr>
+<tr>
+<td align="left">drfindformat</td>
+<td align="left">Find public databases by format</td>
+</tr>
+<tr>
+<td align="left">drfindid</td>
+<td align="left">Find public databases by identifier</td>
+</tr>
+<tr>
+<td align="left">drfindresource</td>
+<td align="left">Find public databases by resource</td>
+</tr>
+<tr>
+<td align="left">drget</td>
+<td align="left">Get data resource entries</td>
+</tr>
+<tr>
+<td align="left">drtext</td>
+<td align="left">Get data resource entries complete text</td>
+</tr>
+<tr>
+<td align="left">edamdef</td>
+<td align="left">Find EDAM ontology terms by definition</td>
+</tr>
+<tr>
+<td align="left">edamhasinput</td>
+<td align="left">Find EDAM ontology terms by has_input relation</td>
+</tr>
+<tr>
+<td align="left">edamhasoutput</td>
+<td align="left">Find EDAM ontology terms by has_output relation</td>
+</tr>
+<tr>
+<td align="left">edamisformat</td>
+<td align="left">Find EDAM ontology terms by is_format_of relation</td>
+</tr>
+<tr>
+<td align="left">edamisid</td>
+<td align="left">Find EDAM ontology terms by is_identifier_of relation</td>
+</tr>
+<tr>
+<td align="left">edamname</td>
+<td align="left">Find EDAM ontology terms by name</td>
+</tr>
+<tr>
+<td align="left">edialign</td>
+<td align="left">Local multiple alignment of sequences</td>
+</tr>
+<tr>
+<td align="left">einverted</td>
+<td align="left">Find inverted repeats in nucleotide sequences</td>
+</tr>
+<tr>
+<td align="left">embossdata</td>
+<td align="left">Find and retrieve EMBOSS data files</td>
+</tr>
+<tr>
+<td align="left">embossupdate</td>
+<td align="left">Checks for more recent updates to EMBOSS</td>
+</tr>
+<tr>
+<td align="left">embossversion</td>
+<td align="left">Report the current EMBOSS version number</td>
+</tr>
+<tr>
+<td align="left">emma</td>
+<td align="left">Multiple sequence alignment (ClustalW wrapper)</td>
+</tr>
+<tr>
+<td align="left">emowse</td>
+<td align="left">Search protein sequences by digest fragment molecular weight</td>
+</tr>
+<tr>
+<td align="left">entret</td>
+<td align="left">Retrieve sequence entries from flatfile databases and files</td>
+</tr>
+<tr>
+<td align="left">epestfind</td>
+<td align="left">Find PEST motifs as potential proteolytic cleavage sites</td>
+</tr>
+<tr>
+<td align="left">eprimer3</td>
+<td align="left">Pick PCR primers and hybridization oligos</td>
+</tr>
+<tr>
+<td align="left">eprimer32</td>
+<td align="left">Pick PCR primers and hybridization oligos</td>
+</tr>
+<tr>
+<td align="left">equicktandem</td>
+<td align="left">Find tandem repeats in nucleotide sequences</td>
+</tr>
+<tr>
+<td align="left">est2genome</td>
+<td align="left">Align EST sequences to genomic DNA sequence</td>
+</tr>
+<tr>
+<td align="left">etandem</td>
+<td align="left">Find tandem repeats in a nucleotide sequence</td>
+</tr>
+<tr>
+<td align="left">extractalign</td>
+<td align="left">Extract regions from a sequence alignment</td>
+</tr>
+<tr>
+<td align="left">extractfeat</td>
+<td align="left">Extract features from sequence(s)</td>
+</tr>
+<tr>
+<td align="left">extractseq</td>
+<td align="left">Extract regions from a sequence</td>
+</tr>
+<tr>
+<td align="left">featcopy</td>
+<td align="left">Read and write a feature table</td>
+</tr>
+<tr>
+<td align="left">featmerge</td>
+<td align="left">Merge two overlapping feature tables</td>
+</tr>
+<tr>
+<td align="left">featreport</td>
+<td align="left">Read and write a feature table</td>
+</tr>
+<tr>
+<td align="left">feattext</td>
+<td align="left">Return a feature table original text</td>
+</tr>
+<tr>
+<td align="left">findkm</td>
+<td align="left">Calculate and plot enzyme reaction data</td>
+</tr>
+<tr>
+<td align="left">freak</td>
+<td align="left">Generate residue/base frequency table or plot</td>
+</tr>
+<tr>
+<td align="left">fuzznuc</td>
+<td align="left">Search for patterns in nucleotide sequences</td>
+</tr>
+<tr>
+<td align="left">fuzzpro</td>
+<td align="left">Search for patterns in protein sequences</td>
+</tr>
+<tr>
+<td align="left">fuzztran</td>
+<td align="left">Search for patterns in protein sequences (translated)</td>
+</tr>
+<tr>
+<td align="left">garnier</td>
+<td align="left">Predict protein secondary structure using GOR method</td>
+</tr>
+<tr>
+<td align="left">geecee</td>
+<td align="left">Calculate fractional GC content of nucleic acid sequences</td>
+</tr>
+<tr>
+<td align="left">getorf</td>
+<td align="left">Find and extract open reading frames (ORFs)</td>
+</tr>
+<tr>
+<td align="left">godef</td>
+<td align="left">Find GO ontology terms by definition</td>
+</tr>
+<tr>
+<td align="left">goname</td>
+<td align="left">Find GO ontology terms by name</td>
+</tr>
+<tr>
+<td align="left">helixturnhelix</td>
+<td align="left">Identify nucleic acid-binding motifs in protein sequences</td>
+</tr>
+<tr>
+<td align="left">hmoment</td>
+<td align="left">Calculate and plot hydrophobic moment for protein sequence(s)</td>
+</tr>
+<tr>
+<td align="left">iep</td>
+<td align="left">Calculate the isoelectric point of proteins</td>
+</tr>
+<tr>
+<td align="left">infoalign</td>
+<td align="left">Display basic information about a multiple sequence alignment</td>
+</tr>
+<tr>
+<td align="left">infoassembly</td>
+<td align="left">Display information about assemblies</td>
+</tr>
+<tr>
+<td align="left">infobase</td>
+<td align="left">Return information on a given nucleotide base</td>
+</tr>
+<tr>
+<td align="left">inforesidue</td>
+<td align="left">Return information on a given amino acid residue</td>
+</tr>
+<tr>
+<td align="left">infoseq</td>
+<td align="left">Display basic information about sequences</td>
+</tr>
+<tr>
+<td align="left">isochore</td>
+<td align="left">Plot isochores in DNA sequences</td>
+</tr>
+<tr>
+<td align="left">jaspextract</td>
+<td align="left">Extract data from JASPAR</td>
+</tr>
+<tr>
+<td align="left">jaspscan</td>
+<td align="left">Scan DNA sequences for transcription factors</td>
+</tr>
+<tr>
+<td align="left">lindna</td>
+<td align="left">Draw linear maps of DNA constructs</td>
+</tr>
+<tr>
+<td align="left">listor</td>
+<td align="left">Write a list file of the logical OR of two sets of sequences</td>
+</tr>
+<tr>
+<td align="left">makenucseq</td>
+<td align="left">Create random nucleotide sequences</td>
+</tr>
+<tr>
+<td align="left">makeprotseq</td>
+<td align="left">Create random protein sequences</td>
+</tr>
+<tr>
+<td align="left">marscan</td>
+<td align="left">Find matrix/scaffold recognition (MRS) signatures in DNA sequences</td>
+</tr>
+<tr>
+<td align="left">maskambignuc</td>
+<td align="left">Mask all ambiguity characters in nucleotide sequences with N</td>
+</tr>
+<tr>
+<td align="left">maskambigprot</td>
+<td align="left">Mask all ambiguity characters in protein sequences with X</td>
+</tr>
+<tr>
+<td align="left">maskfeat</td>
+<td align="left">Write a sequence with masked features</td>
+</tr>
+<tr>
+<td align="left">maskseq</td>
+<td align="left">Write a sequence with masked regions</td>
+</tr>
+<tr>
+<td align="left">matcher</td>
+<td align="left">Waterman-Eggert local alignment of two sequences</td>
+</tr>
+<tr>
+<td align="left">megamerger</td>
+<td align="left">Merge two large overlapping DNA sequences</td>
+</tr>
+<tr>
+<td align="left">merger</td>
+<td align="left">Merge two overlapping sequences</td>
+</tr>
+<tr>
+<td align="left">msbar</td>
+<td align="left">Mutate a sequence</td>
+</tr>
+<tr>
+<td align="left">mwcontam</td>
+<td align="left">Find weights common to multiple molecular weights files</td>
+</tr>
+<tr>
+<td align="left">mwfilter</td>
+<td align="left">Filter noisy data from molecular weights file</td>
+</tr>
+<tr>
+<td align="left">needle</td>
+<td align="left">Needleman-Wunsch global alignment of two sequences</td>
+</tr>
+<tr>
+<td align="left">needleall</td>
+<td align="left">Many-to-many pairwise alignments of two sequence sets</td>
+</tr>
+<tr>
+<td align="left">newcpgreport</td>
+<td align="left">Identify CpG islands in nucleotide sequence(s)</td>
+</tr>
+<tr>
+<td align="left">newcpgseek</td>
+<td align="left">Identify and report CpG-rich regions in nucleotide sequence(s)</td>
+</tr>
+<tr>
+<td align="left">newseq</td>
+<td align="left">Create a sequence file from a typed-in sequence</td>
+</tr>
+<tr>
+<td align="left">nohtml</td>
+<td align="left">Remove mark-up (e.g. HTML tags) from an ASCII text file</td>
+</tr>
+<tr>
+<td align="left">noreturn</td>
+<td align="left">Remove carriage return from ASCII files</td>
+</tr>
+<tr>
+<td align="left">nospace</td>
+<td align="left">Remove whitespace from an ASCII text file</td>
+</tr>
+<tr>
+<td align="left">notab</td>
+<td align="left">Replace tabs with spaces in an ASCII text file</td>
+</tr>
+<tr>
+<td align="left">notseq</td>
+<td align="left">Write to file a subset of an input stream of sequences</td>
+</tr>
+<tr>
+<td align="left">nthseq</td>
+<td align="left">Write to file a single sequence from an input stream of sequences</td>
+</tr>
+<tr>
+<td align="left">nthseqset</td>
+<td align="left">Read and write (return) one set of sequences from many</td>
+</tr>
+<tr>
+<td align="left">octanol</td>
+<td align="left">Draw a White-Wimley protein hydropathy plot</td>
+</tr>
+<tr>
+<td align="left">oddcomp</td>
+<td align="left">Identify proteins with specified sequence word composition</td>
+</tr>
+<tr>
+<td align="left">ontocount</td>
+<td align="left">Count ontology term(s)</td>
+</tr>
+<tr>
+<td align="left">ontoget</td>
+<td align="left">Get ontology term(s)</td>
+</tr>
+<tr>
+<td align="left">ontogetcommon</td>
+<td align="left">Get common ancestor for terms</td>
+</tr>
+<tr>
+<td align="left">ontogetdown</td>
+<td align="left">Get ontology term(s) by parent id</td>
+</tr>
+<tr>
+<td align="left">ontogetobsolete</td>
+<td align="left">Get ontology ontology terms</td>
+</tr>
+<tr>
+<td align="left">ontogetroot</td>
+<td align="left">Get ontology root terms by child identifier</td>
+</tr>
+<tr>
+<td align="left">ontogetsibs</td>
+<td align="left">Get ontology term(s) by id with common parent</td>
+</tr>
+<tr>
+<td align="left">ontogetup</td>
+<td align="left">Get ontology term(s) by id of child</td>
+</tr>
+<tr>
+<td align="left">ontoisobsolete</td>
+<td align="left">Report whether an ontology term id is obsolete</td>
+</tr>
+<tr>
+<td align="left">ontotext</td>
+<td align="left">Get ontology term(s) original full text</td>
+</tr>
+<tr>
+<td align="left">palindrome</td>
+<td align="left">Find inverted repeats in nucleotide sequence(s)</td>
+</tr>
+<tr>
+<td align="left">pasteseq</td>
+<td align="left">Insert one sequence into another</td>
+</tr>
+<tr>
+<td align="left">patmatdb</td>
+<td align="left">Search protein sequences with a sequence motif</td>
+</tr>
+<tr>
+<td align="left">patmatmotifs</td>
+<td align="left">Scan a protein sequence with motifs from the PROSITE database</td>
+</tr>
+<tr>
+<td align="left">pepcoil</td>
+<td align="left">Predict coiled coil regions in protein sequences</td>
+</tr>
+<tr>
+<td align="left">pepdigest</td>
+<td align="left">Report on protein proteolytic enzyme or reagent cleavage sites</td>
+</tr>
+<tr>
+<td align="left">pepinfo</td>
+<td align="left">Plot amino acid properties of a protein sequence in parallel</td>
+</tr>
+<tr>
+<td align="left">pepnet</td>
+<td align="left">Draw a helical net for a protein sequence</td>
+</tr>
+<tr>
+<td align="left">pepstats</td>
+<td align="left">Calculate statistics of protein properties</td>
+</tr>
+<tr>
+<td align="left">pepwheel</td>
+<td align="left">Draw a helical wheel diagram for a protein sequence</td>
+</tr>
+<tr>
+<td align="left">pepwindow</td>
+<td align="left">Draw a hydropathy plot for a protein sequence</td>
+</tr>
+<tr>
+<td align="left">pepwindowall</td>
+<td align="left">Draw Kyte-Doolittle hydropathy plot for a protein alignment</td>
+</tr>
+<tr>
+<td align="left">plotcon</td>
+<td align="left">Plot conservation of a sequence alignment</td>
+</tr>
+<tr>
+<td align="left">plotorf</td>
+<td align="left">Plot potential open reading frames in a nucleotide sequence</td>
+</tr>
+<tr>
+<td align="left">polydot</td>
+<td align="left">Draw dotplots for all-against-all comparison of a sequence set</td>
+</tr>
+<tr>
+<td align="left">preg</td>
+<td align="left">Regular expression search of protein sequence(s)</td>
+</tr>
+<tr>
+<td align="left">prettyplot</td>
+<td align="left">Draw a sequence alignment with pretty formatting</td>
+</tr>
+<tr>
+<td align="left">prettyseq</td>
+<td align="left">Write a nucleotide sequence and its translation to file</td>
+</tr>
+<tr>
+<td align="left">primersearch</td>
+<td align="left">Search DNA sequences for matches with primer pairs</td>
+</tr>
+<tr>
+<td align="left">printsextract</td>
+<td align="left">Extract data from PRINTS database for use by pscan</td>
+</tr>
+<tr>
+<td align="left">profit</td>
+<td align="left">Scan one or more sequences with a simple frequency matrix</td>
+</tr>
+<tr>
+<td align="left">prophecy</td>
+<td align="left">Create frequency matrix or profile from a multiple alignment</td>
+</tr>
+<tr>
+<td align="left">prophet</td>
+<td align="left">Scan one or more sequences with a Gribskov or Henikoff profile</td>
+</tr>
+<tr>
+<td align="left">prosextract</td>
+<td align="left">Process the PROSITE motif database for use by patmatmotifs</td>
+</tr>
+<tr>
+<td align="left">pscan</td>
+<td align="left">Scan protein sequence(s) with fingerprints from the PRINTS database</td>
+</tr>
+<tr>
+<td align="left">psiphi</td>
+<td align="left">Calculates phi and psi torsion angles from protein coordinates</td>
+</tr>
+<tr>
+<td align="left">rebaseextract</td>
+<td align="left">Process the REBASE database for use by restriction enzyme applications</td>
+</tr>
+<tr>
+<td align="left">recoder</td>
+<td align="left">Find restriction sites to remove (mutate) with no translation change</td>
+</tr>
+<tr>
+<td align="left">redata</td>
+<td align="left">Retrieve information from REBASE restriction enzyme database</td>
+</tr>
+<tr>
+<td align="left">refseqget</td>
+<td align="left">Get reference sequence</td>
+</tr>
+<tr>
+<td align="left">remap</td>
+<td align="left">Display restriction enzyme binding sites in a nucleotide sequence</td>
+</tr>
+<tr>
+<td align="left">restover</td>
+<td align="left">Find restriction enzymes producing a specific overhang</td>
+</tr>
+<tr>
+<td align="left">restrict</td>
+<td align="left">Report restriction enzyme cleavage sites in a nucleotide sequence</td>
+</tr>
+<tr>
+<td align="left">revseq</td>
+<td align="left">Reverse and complement a nucleotide sequence</td>
+</tr>
+<tr>
+<td align="left">seealso</td>
+<td align="left">Find programs with similar function to a specified program</td>
+</tr>
+<tr>
+<td align="left">seqcount</td>
+<td align="left">Read and count sequences</td>
+</tr>
+<tr>
+<td align="left">seqmatchall</td>
+<td align="left">All-against-all word comparison of a sequence set</td>
+</tr>
+<tr>
+<td align="left">seqret</td>
+<td align="left">Read and write (return) sequences</td>
+</tr>
+<tr>
+<td align="left">seqretsetall</td>
+<td align="left">Read and write (return) many sets of sequences</td>
+</tr>
+<tr>
+<td align="left">seqretsplit</td>
+<td align="left">Read sequences and write them to individual files</td>
+</tr>
+<tr>
+<td align="left">seqxref</td>
+<td align="left">Retrieve all database cross-references for a sequence entry</td>
+</tr>
+<tr>
+<td align="left">seqxrefget</td>
+<td align="left">Retrieve all cross-referenced data for a sequence entry</td>
+</tr>
+<tr>
+<td align="left">servertell</td>
+<td align="left">Display information about a public server</td>
+</tr>
+<tr>
+<td align="left">showalign</td>
+<td align="left">Display a multiple sequence alignment in pretty format</td>
+</tr>
+<tr>
+<td align="left">showdb</td>
+<td align="left">Display information on configured databases</td>
+</tr>
+<tr>
+<td align="left">showfeat</td>
+<td align="left">Display features of a sequence in pretty format</td>
+</tr>
+<tr>
+<td align="left">showorf</td>
+<td align="left">Display a nucleotide sequence and translation in pretty format</td>
+</tr>
+<tr>
+<td align="left">showpep</td>
+<td align="left">Display protein sequences with features in pretty format</td>
+</tr>
+<tr>
+<td align="left">showseq</td>
+<td align="left">Display sequences with features in pretty format</td>
+</tr>
+<tr>
+<td align="left">showserver</td>
+<td align="left">Display information on configured servers</td>
+</tr>
+<tr>
+<td align="left">shuffleseq</td>
+<td align="left">Shuffle a set of sequences maintaining composition</td>
+</tr>
+<tr>
+<td align="left">sigcleave</td>
+<td align="left">Report on signal cleavage sites in a protein sequence</td>
+</tr>
+<tr>
+<td align="left">silent</td>
+<td align="left">Find restriction sites to insert (mutate) with no translation change</td>
+</tr>
+<tr>
+<td align="left">sirna</td>
+<td align="left">Find siRNA duplexes in mRNA</td>
+</tr>
+<tr>
+<td align="left">sixpack</td>
+<td align="left">Display a DNA sequence with 6-frame translation and ORFs</td>
+</tr>
+<tr>
+<td align="left">sizeseq</td>
+<td align="left">Sort sequences by size</td>
+</tr>
+<tr>
+<td align="left">skipredundant</td>
+<td align="left">Remove redundant sequences from an input set</td>
+</tr>
+<tr>
+<td align="left">skipseq</td>
+<td align="left">Read and write (return) sequences, skipping first few</td>
+</tr>
+<tr>
+<td align="left">splitsource</td>
+<td align="left">Split sequence(s) into original source sequences</td>
+</tr>
+<tr>
+<td align="left">splitter</td>
+<td align="left">Split sequence(s) into smaller sequences</td>
+</tr>
+<tr>
+<td align="left">stretcher</td>
+<td align="left">Needleman-Wunsch rapid global alignment of two sequences</td>
+</tr>
+<tr>
+<td align="left">stssearch</td>
+<td align="left">Search a DNA database for matches with a set of STS primers</td>
+</tr>
+<tr>
+<td align="left">supermatcher</td>
+<td align="left">Calculate approximate local pair-wise alignments of larger sequences</td>
+</tr>
+<tr>
+<td align="left">syco</td>
+<td align="left">Draw synonymous codon usage statistic plot for a nucleotide sequence</td>
+</tr>
+<tr>
+<td align="left">taxget</td>
+<td align="left">Get taxon(s)</td>
+</tr>
+<tr>
+<td align="left">taxgetdown</td>
+<td align="left">Get descendants of taxon(s)</td>
+</tr>
+<tr>
+<td align="left">taxgetrank</td>
+<td align="left">Get parents of taxon(s)</td>
+</tr>
+<tr>
+<td align="left">taxgetspecies</td>
+<td align="left">Get all species under taxon(s)</td>
+</tr>
+<tr>
+<td align="left">taxgetup</td>
+<td align="left">Get parents of taxon(s)</td>
+</tr>
+<tr>
+<td align="left">tcode</td>
+<td align="left">Identify protein-coding regions using Fickett TESTCODE statistic</td>
+</tr>
+<tr>
+<td align="left">textget</td>
+<td align="left">Get text data entries</td>
+</tr>
+<tr>
+<td align="left">textsearch</td>
+<td align="left">Search the textual description of sequence(s)</td>
+</tr>
+<tr>
+<td align="left">tfextract</td>
+<td align="left">Process TRANSFAC transcription factor database for use by tfscan</td>
+</tr>
+<tr>
+<td align="left">tfm</td>
+<td align="left">Display full documentation for an application</td>
+</tr>
+<tr>
+<td align="left">tfscan</td>
+<td align="left">Identify transcription factor binding sites in DNA sequences</td>
+</tr>
+<tr>
+<td align="left">tmap</td>
+<td align="left">Predict and plot transmembrane segments in protein sequences</td>
+</tr>
+<tr>
+<td align="left">tranalign</td>
+<td align="left">Generate an alignment of nucleic coding regions from aligned proteins</td>
+</tr>
+<tr>
+<td align="left">transeq</td>
+<td align="left">Translate nucleic acid sequences</td>
+</tr>
+<tr>
+<td align="left">trimest</td>
+<td align="left">Remove poly-A tails from nucleotide sequences</td>
+</tr>
+<tr>
+<td align="left">trimseq</td>
+<td align="left">Remove unwanted characters from start and end of sequence(s)</td>
+</tr>
+<tr>
+<td align="left">trimspace</td>
+<td align="left">Remove extra whitespace from an ASCII text file</td>
+</tr>
+<tr>
+<td align="left">twofeat</td>
+<td align="left">Find neighbouring pairs of features in sequence(s)</td>
+</tr>
+<tr>
+<td align="left">union</td>
+<td align="left">Concatenate multiple sequences into a single sequence</td>
+</tr>
+<tr>
+<td align="left">urlget</td>
+<td align="left">Get URLs of data resources</td>
+</tr>
+<tr>
+<td align="left">variationget</td>
+<td align="left">Get sequence variations</td>
+</tr>
+<tr>
+<td align="left">vectorstrip</td>
+<td align="left">Remove vectors from the ends of nucleotide sequence(s)</td>
+</tr>
+<tr>
+<td align="left">water</td>
+<td align="left">Smith-Waterman local alignment of sequences</td>
+</tr>
+<tr>
+<td align="left">whichdb</td>
+<td align="left">Search all sequence databases for an entry and retrieve it</td>
+</tr>
+<tr>
+<td align="left">wobble</td>
+<td align="left">Plot third base position variability in a nucleotide sequence</td>
+</tr>
+<tr>
+<td align="left">wordcount</td>
+<td align="left">Count and extract unique words in molecular sequence(s)</td>
+</tr>
+<tr>
+<td align="left">wordfinder</td>
+<td align="left">Match large sequences against one or more other sequences</td>
+</tr>
+<tr>
+<td align="left">wordmatch</td>
+<td align="left">Find regions of identity (exact matches) of two sequences</td>
+</tr>
+<tr>
+<td align="left">wossdata</td>
+<td align="left">Find programs by EDAM data</td>
+</tr>
+<tr>
+<td align="left">wossinput</td>
+<td align="left">Find programs by EDAM input data</td>
+</tr>
+<tr>
+<td align="left">wossname</td>
+<td align="left">Find programs by keywords in their short description</td>
+</tr>
+<tr>
+<td align="left">wossoperation</td>
+<td align="left">Find programs by EDAM operation</td>
+</tr>
+<tr>
+<td align="left">wossoutput</td>
+<td align="left">Find programs by EDAM output data</td>
+</tr>
+<tr>
+<td align="left">wossparam</td>
+<td align="left">Find programs by EDAM parameter</td>
+</tr>
+<tr>
+<td align="left">wosstopic</td>
+<td align="left">Find programs by EDAM topic</td>
+</tr>
+<tr>
+<td align="left">yank</td>
+<td align="left">Add a sequence reference (a full USA) to a list file</td>
+</tr>
+</tbody>
+</table>
+</details>
+<p>Como obviamente es imposible acordarse de todos estos programas, EMBOSS tiene un comando llamado <code>wossname</code> que permite listar comandos que tengan cierta palabra en su descripción (en inglés). Abran la consola y prueben correr:</p>
+<div class="highlight"><pre><span></span><code>wossname dna
+</code></pre></div>
+<p>Por otro lado, una vez que encuentran un programa que les interesa pueden leer detalladamente como funciona usando el comando <code>tfm</code> (<em>The Funny? Full? Manual</em>). Por ejemplo pueden ejecutar:</p>
+<div class="highlight"><pre><span></span><code>tfm jaspscan
+</code></pre></div>
+<p>El texto que aparece funciona similar al comando <code>less</code> que vimos en el TP 1, donde <span class="keys"><kbd class="key-space">Space</kbd></span> pasa a la próxima página y apretando <span class="keys"><kbd class="key-q">Q</kbd></span> deja de leerlo.</p>
+<p>Como mencionamos antes es posible hacer bioinformática sin usar EMBOSS, ya sea porque queremos controlar hasta el último detalle que hace nuestro programa, porque queremos agregar alguna opción que EMBOSS no tiene, o simplemente porque era una tarea simple y no queríamos aprender a usar un programa de EMBOSS para hacerla. Son todas razones válidas. Lo que queremos que se lleven hoy es que EMBOSS existe y que puede hacer algunas tareas que les van a resultar útiles en el día a día de hacer bioinformática.</p>
+<details class="warning">
+<summary>Si no estan usando la Maquina Virtual de Introducción a la Bioinformática lean esto:</summary>
+<p>EMBOSS y su documentación está ya instalado en la máquina virtual que les pasamos. Si no estas usando la máquina virtual tenes que instalarlo usando:</p>
+<div class="highlight"><pre><span></span><code>sudo apt-get install emboss emboss-data emboss-doc 
+</code></pre></div>
+</details>
+<h2 id="aplicaciones-en-biotecnologia"><strong>Aplicaciones en Biotecnología</strong></h2>
+<p>En el TP de hoy vamos a familiarizarnos con EMBOSS y algunas herramientas del paquete, aplicándolas al diseño de una estrategia de clonado, puntualmente para diseñar/optimizar proteínas para expresión recombinante heteróloga.</p>
+<p>En los últimos años se ha simplificado considerablemente la ejecución del proceso de clonado/expresión. Esto se debe a la aparición de múltiples herramientas de Ingenieria Genética y a la posibilidad de sintetizar largas secuencias de ácidos nucleicos <em>in vitro</em>, lo que quita el peso de levantar un gen de interés o el riesgo de meter errores durante la PCR que ejecutamos para hacerlo.</p>
+<p>Una de las industrias biotecnológicas más antigua es la industria alimenticia. Centenares de microorganismos distintos y decenas de enzimas son utilizados en esta industria para distintos procesos. Algunos de estos procesos son muy complejos, como la fermentación de un vino, mientras que otros son simples y puntuales, como la degradación de lactosa en productos lácteos para personas intolerantes a este azúcar. Los procesos enzimáticos simples pueden resolverse fácilmente mediante la producción de la enzima de interés en forma heteróloga.</p>
+<p>Con el fin de dar rienda suelta a nuestro emprendedor interior, montaremos las bases de una empresa biotecnológica: vamos a producir enzimas. La primera enzima que queremos producir es la <strong>VpVan</strong>, la cual es la encargada de convertir el ácido ferúlico en <strong>vanillina</strong>. La <strong>vainillina</strong> es un compuesto de alto interés económico debido a su uso como saborizante (a que no adivinan que sabor tiene).</p>
+<figure>
+<p><img alt="Vainillina" src="img/vainilina_new_version.png" width="800" /></p>
+</figure>
+<h3 id="archivos-fasta">Archivos FASTA</h3>
+<p>Esta enzima ha sido aislada (y secuenciada) a partir de <em>Vanilla planifolia</em>. Encontrarán la secuencia correspondiente entre sus materiales de trabajo (<strong>VpVAN.fasta</strong>) y más información sobre el descubrimiento en este <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4083428/">paper</a>.</p>
+<p>Por si no lo saben o no lo recuerdan, el formato <strong>FASTA</strong> es la forma más usada para trabajar secuencias biológicas (ADN, ARN, aminoácidos) en forma digital. Son archivos de texto plano, donde se asume un formato muy sencillo de interpretar para el ojo humano:</p>
+<p><img alt="FASTA" src="img/fasta.png" /></p>
+<p>Un archivo FASTA tiene dos elementos importantes:</p>
+<ul>
+<li><strong>Header</strong>: Está indicado con un <strong>&gt;</strong> . Es la línea con el nombre o identificador de la secuencia. Puede contener información adicional como alguna descripción extra sobre la secuencia, tal como las condiciones en que fue obtenida u otra descripción opcional.</li>
+<li><strong>Secuencia</strong>: El resto de las líneas que continúan contienen la secuencia propiamente dicha. El largo de cada fila de la secuencia no significa nada; una secuencia de 800 aminoácidos puede ser escrita en una sola línea de 800 aminoácidos o en 10 líneas de 80 aminoácidos cada una. La secuencia sigue hasta el próximo <strong>&gt;</strong> o hasta el final del archivo, lo que pase primero.</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Cuando un FASTA tiene más de una secuencia se lo denomina <strong>multiFASTA</strong>. En los archivos multiFASTA cada secuencia tiene su header y su secuencia propiamente dicha.</p>
+</div>
+<h3 id="repaso-biologico">Repaso biológico</h3>
+<p>Nuestro objetivo en esta guia va a ser diseñar una secuencia de ADN sintético que:</p>
+<ul>
+<li>Exprese <em>VpVan</em></li>
+<li>Tenga sitios de corte para enzimas de restricción para que pueda ser insertado en un plásmido o vector de expresión de un organismo huesped. En este caso, dichos sitios de corte van a pertenecer a diferentes enzimas de restricción para facilitar la inserción del gen en el sentido correcto</li>
+<li>Marque a <em>VpVan</em> de alguna forma para facilitar su posterior purificación</li>
+</ul>
+<p>A continuación vamos a dar una versión <strong>super</strong> resumida de los conceptos anteriores. Si ya saben como funciona todo lo mencionado pueden ir a la próxima sección (<strong>Bases del experimento</strong>).</p>
+<h4 id="plasmidos">Plásmidos</h4>
+<p>Los plásmidos son moléculas de ADN de forma circular presentes principalmente en bacterias, arqueas y levaduras. Estas moléculas se encuentran fuera de los cromosomas y se replican de manera autónoma. </p>
+<p>Debido a estas características, es posible generar plásmidos artificiales con el objetivo de amplificar (<em>vector de clonacion</em>) o de expresar (<em>vector de expresion</em>) un gen de interes. Esto generalmente se realiza cuando la expresión de dicho gen en su organismo original no es factible, ya sea por problemas de volumen, logística o ética.</p>
+<figure>
+<p><img alt="FASTA" src="img/plasmidos.png" /></p>
+</figure>
+<p>Los principales componentes de vector de expresion son:</p>
+<ul>
+<li><strong>Origen de la replicacion:</strong> punto inicial para la replicación del plásmido</li>
+<li><strong>Gen de resistencia a antibioticos:</strong> gen que se expresa y da resistencia al organismo huesped, permite quedarnos solo con los organismos que tienen el plásmido dentro de ellos</li>
+<li><strong>Promotor:</strong> controla la transcripción de una determinada secuencia (en este caso el gen insertado)</li>
+<li><strong>Sitio de restricción:</strong> secuencia que es cortada por una enzima de restricción y donde será insertado el gen de interés (más de esto a continuación)</li>
+</ul>
+<h4 id="enzimas-de-restriccion">Enzimas de Restricción</h4>
+<p>Las enzimas de restricción son proteínas que reconocen una secuencia específica de nucleótidos dentro de una molécula de ADN y cortan el ADN en ese punto en concreto o en un punto cercano. A esas secuencias de ADN se las denomina sitios de restricción y tienen entre cuatro a seis pares de bases.</p>
+<p>Hay dos grandes grupos de enzimas de restricción, aquellas que dejan extremos cohesivos y aquellas que dejan extremos romos:</p>
+<figure>
+<p><img alt="Enzimas de restricción" src="img/restri_enzymes.png" width="600" /></p>
+</figure>
+<p>Al momento de insertar genes en plásmidos se usan generalmente enzimas de restricción que dejan extremos cohesivos ya que facilitan la inserción del gen debido a su especificidad y a que pueden volverse a unir espontaneamente.</p>
+<p>La idea detrás de su uso es colocar un sitio de restricción en el plásmido y colocar el mismo sitio de restricción a cada lado del gen de interés (en el ADN que uno sintetiza). Luego los plásmidos vacios se colocan en una solución con el ADN sintético y se les agrega la enzima de restricción correspondiente que va a cortar el ADN dejando los extremos cohesivos en cada sitio de restricción. </p>
+<figure>
+<p><img alt="Agregar un gen" src="img/agregar_gen_2.png" width="600" /></p>
+</figure>
+<p>Como el sitio de restricción es el mismo en el plástido y en la secuencia de ADN, es posible entonces que el ADN sintético se inserté en el plásmido, ya sea espontaneamente o ayudado por una ligasa. <a href="https://www.khanacademy.org/science/biology/biotech-dna-technology/dna-cloning-tutorial/a/restriction-enzymes-dna-ligase">Esta página</a> tiene muy buenos esquemas sobre el proceso.</p>
+<p>En el experimento anterior, luego de cortar el sitio de restricción con la enzima, pueden pasar tres cosas: </p>
+<ul>
+<li>El plásmido se vuelve a cerrar sin ningun inserto <span class="twemoji red_text"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25-6.2 6.25-14.4 9.35-22.6 9.35s-16.38-3.125-22.62-9.375L160 301.3 54.63 406.6C48.38 412.9 40.19 416 32 416s-16.37-3.1-22.625-9.4c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg></span></li>
+<li>Se inserta el gen de interés en la dirección correcta (respecto al promotor en el plásmido) <span class="twemoji green_text"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.7 0 45.2l-256 256c-12.5 12.5-32.7 12.5-45.2 0L9.372 278.6c-12.496-12.5-12.496-32.7 0-45.2 12.498-12.5 32.758-12.5 45.258 0L159.1 338.7l234.3-233.3c12.5-12.52 32.7-12.52 45.2 0z"/></svg></span></li>
+<li>Se inserta el gen de interés en la dirección contraria (respecto al promotor en el plásmido) <span class="twemoji red_text"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25-6.2 6.25-14.4 9.35-22.6 9.35s-16.38-3.125-22.62-9.375L160 301.3 54.63 406.6C48.38 412.9 40.19 416 32 416s-16.37-3.1-22.625-9.4c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg></span></li>
+</ul>
+<p>Es posible evitar el caso donde el gen se inserta en la dirección contraria combinando 2 enzimas de restricción diferentes, donde ahora va a haber 2 sitios de restricción en el plásmido (uno para cada enzima) y los dos sitios de restricción en el ADN sintético van a ser diferentes (uno para cada enzima, en el mismo orden que en el plásmido). Si bien en esta versión no es posible que el gen sea insertado en la dirección contraria, sí es posible que se vuelva a insertar el fragmento de plásmido entre los sitios de restricción, pero hay formas de controlar estos casos. Cuando usamos 2 enzimas de reestricción en esta forma decimos que estamos "clonando en forma direccional".</p>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>Es importante cuando se usan enzimas de restricción asegurarse que no haya ningún sitio de corte para las enzimas elegidas en el plásmido ni en el ADN sintético fuera de los sitios involucrados en el proceso de inserción (ya que de existir también serán cortados y la inserción fracasará).</p>
+</div>
+<h4 id="purificacion-y-tags">Purificación y Tags</h4>
+<p>Una vez que nuestros organismos huesped tienen el vector de expresión con el gen de interés, se los deja crecer, reproducirse y expresar la proteína de interés en grandes cantidades. Una vez hecho esto, es necesario extraer esa proteína de la solución, lo que no es trivial.</p>
+<p>Hay varias formas de purificar proteínas y una de ellas es la cromatografía por afinidad, la cual se basa en la unión reversible entre el analito de interés (en nuestro caso la <em>VpVan</em>) y un ligando específico, inmovilizado en un soporte sólido inerte. Cuando la muestra pasa por la columna, sólo son retenidas las moléculas que se unen de manera selectiva al ligando por afinidad y las que no se unen avanzan con la fase móvil. La figura a continuación muestra un ejemplo donde se usan anticuerpos inmovilizados en una columna para purificar a la proteína roja del resto de la solución:</p>
+<figure>
+<p><img alt="Agregar un gen" src="img/cromatografia_afinidad.jpg" width="400" /></p>
+</figure>
+<p>Uno podría asumir entonces que para poder construir estas columnas es necesario conseguir un ligando que reconozca a nuestra proteína de interes. Si bien esto es teóricamente cierto, como nosotros estamos sintetizando el ADN desde cero podemos pensar lateralmente y agregarle a nuestra proteína una secuencía aminoacídica en uno de sus extremos para la cual ya conozcamos ligandos. Estas secuencias pueden ser desde pocos aminoácidos hasta a proteínas pequeñas y son denominadas <strong>tags</strong>.</p>
+<h3 id="bases-del-experimento">Bases del experimento</h3>
+<p>Volviendo a nuestro experimento, queremos insertar el gen de <em>VpVan</em> en un vector de expresión. Nuestro <strong>organismo huesped</strong> es:</p>
+<ul>
+<li><em>E. coli</em> BL21</li>
+</ul>
+<p>Como queremos clonar en forma direccional tenemos que usar dos <strong>enzimas de restricción</strong>. Ellas son:</p>
+<ul>
+<li>BamHI</li>
+<li>HindIII</li>
+</ul>
+<p>Al momento de purificar necesitamos agregarle un <strong>tag</strong> a la proteína. Vamos a probar 3 tags diferentes:</p>
+<ul>
+<li>FLAG-tag</li>
+<li>His-tag</li>
+<li>MBP-tag</li>
+</ul>
+<p>Por cuestiones de practicidad, todos los tags van a estar en el C-terminal.</p>
+<p>En los siguientes ejercicios vamos a:</p>
+<ul>
+<li><strong>Ejercicio 1:</strong> Generar secuencias quiméricas <em>VpVan-Tag</em> agregando diferentes <em>tags</em> de interes a la secuencia proteíca de <em>VpVan</em></li>
+<li><strong>Ejercicio 2:</strong> Obtener el genoma del organismo huesped <em>E. coli</em> BL21 (necesario para el <strong>Ejercicio 3</strong>)</li>
+<li><strong>Ejercicio 3:</strong> Generar una tabla de frecuencia de uso de codones del organismo huesped</li>
+<li><strong>Ejercicio 4:</strong> Generar la secuencia nucleotídica <em>VpVan-Tag</em> con los codones optimizados para el organismo huesped</li>
+<li><strong>Ejercicio 5:</strong> Verificar que no hayan quedado sitios de corte para nuestras enzimas de restricción dentro de la secuencia <em>VpVan-Tag</em> optimizada y luego agregar los sitios de restricción en los bordes de la secuencia</li>
+</ul>
+<h2 id="ejercicio-1-secuencias-aminoacidicas-vpvan-tag" markdown="markdown"><strong>Ejercicio 1. Secuencias aminoacídicas VpVan-Tag</strong></h2>
+<p>Vamos a generar las secuencias de aminoácidos quiméricas VpVan-Tag (donde Tag = FLAG/His/MBP). Para esto van a necesitar los siguientes archivos que se encuentras en sus materiales de trabajo:</p>
+<ul>
+<li><strong>VpVan.fasta</strong></li>
+<li><strong>FLAG-tag.fasta</strong></li>
+<li><strong>His-tag.fasta</strong></li>
+<li><strong>MBP-tag.fasta</strong></li>
+</ul>
+<p>Es altamente recomendado que creen diferentes carpetas para los diferentes TPs y en algunos casos para los diferentes ejercicios (especialemente en este). El nombre y la ubicación lo pueden decidir ustedes, pero un ejemplo para este ejercicio seria <strong>~/Documentos/TP_02/EJ_1</strong> (recuerden que es preferible no usar espacios al crear directorios o archivos). Una vez creada la carpeta para este ejercicio, muevan los cuatro archivos anteriores a dicha carpeta.</p>
+<p>Nuestro objetivo ahora es crear 3 nuevos archivos FASTA que contengan las diferentes construcciones (<em>VpVan</em> + cada uno de los tags). Vamos a llamarlos <strong>VpVan-FLAG-tag.fasta</strong> y similar (reemplazando el nombre del tag en cada caso).</p>
+<p>Ahora bien, como son solo 3 tags esto se podría hacer a mano copiando y pegando, pero es un buen momento para profundizar en dos conceptos que aprendimos la clase pasada: <em>scripts</em> y <em>ciclos</em>.</p>
+<p>Creen un archivo vacio de texto en esa carpeta y llamenló <strong>agregar_tags.sh</strong>. Dentró del archivo pongan lo siguiente:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Código</label><label for="__tabbed_1_2">Código con comentarios</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nv">vpvan_sequence</span><span class="o">=</span><span class="sb">`</span>cat VpVAN.fasta <span class="p">|</span> grep -v <span class="s2">&quot;&gt;&quot;</span><span class="sb">`</span>
+<span class="nv">lista_de_archivos_tags</span><span class="o">=</span><span class="sb">`</span>ls *-tag.fasta<span class="sb">`</span>
+
+<span class="k">for</span> archivo_tag <span class="k">in</span> <span class="nv">$lista_de_archivos_tags</span>
+<span class="k">do</span> 
+    <span class="nv">tag_sequence</span><span class="o">=</span><span class="sb">`</span>cat <span class="nv">$archivo_tag</span> <span class="p">|</span> grep -v <span class="s2">&quot;&gt;&quot;</span><span class="sb">`</span>
+
+    <span class="nv">new_header</span><span class="o">=</span><span class="s2">&quot;&gt;VpVAN-</span><span class="nv">$archivo_tag</span><span class="s2">&quot;</span>
+    <span class="nv">combined_sequence</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$vpvan_sequence$tag_sequence</span><span class="s2">&quot;</span>
+
+    <span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$new_header</span><span class="s2">&quot;</span> &gt; VpVAN-<span class="nv">$archivo_tag</span>
+    <span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$combined_sequence</span><span class="s2">&quot;</span> &gt;&gt; VpVAN-<span class="nv">$archivo_tag</span>
+<span class="k">done</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="c1"># Aca estamos ejecutando comandos de Linux y guardando su output en una variable</span>
+<span class="c1"># En estos casos hay que rodear a los comandos con ` (acento grave o comilla invertida)</span>
+
+<span class="c1"># Leemos el FASTA de VpVAN y nos quedamos solo con la secuencia</span>
+<span class="c1"># (estamos removiendo con grep cualquier linea que tenga &gt;, que aca es solo el header)</span>
+<span class="nv">vpvan_sequence</span><span class="o">=</span><span class="sb">`</span>cat VpVAN.fasta <span class="p">|</span> grep -v <span class="s2">&quot;&gt;&quot;</span><span class="sb">`</span> 
+
+<span class="c1"># Creamos una lista que contiene a todos los archivos que terminan con -tag.fasta</span>
+<span class="c1"># (esto va a mirar solo archivos que estén en la carpeta donde se corre el script)</span>
+<span class="nv">lista_de_archivos_tags</span><span class="o">=</span><span class="sb">`</span>ls *-tag.fasta<span class="sb">`</span>
+
+<span class="c1"># Este es una estructura a la que llamamos *for each* en el TP 1. Es un *for*, pero en vez de tener </span>
+<span class="c1"># una cantidad determinada de ciclos, recorre cada uno de los elementos de una lista</span>
+<span class="k">for</span> archivo_tag <span class="k">in</span> <span class="nv">$lista_de_archivos_tags</span>
+<span class="k">do</span> 
+    <span class="c1"># Leemos el FASTA del tag y nos quedamos solo con la secuencia</span>
+    <span class="nv">tag_sequence</span><span class="o">=</span><span class="sb">`</span>cat <span class="nv">$archivo_tag</span> <span class="p">|</span> grep -v <span class="s2">&quot;&gt;&quot;</span><span class="sb">`</span>
+
+    <span class="c1"># Creamos una variable que almacene el nuevo header para la secuencia de VpVAN + tag</span>
+    <span class="nv">new_header</span><span class="o">=</span><span class="s2">&quot;&gt;VpVAN-</span><span class="nv">$archivo_tag</span><span class="s2">&quot;</span>
+
+    <span class="c1"># Calculamos la nueva secuencia VpVAN + tag</span>
+    <span class="nv">combined_sequence</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$vpvan_sequence$tag_sequence</span><span class="s2">&quot;</span>
+
+    <span class="c1"># Escribimos el nuevo header y la nueva secuencia en un nuevo archivo</span>
+    <span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$new_header</span><span class="s2">&quot;</span> &gt; VpVAN-<span class="nv">$archivo_tag</span>
+    <span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$combined_sequence</span><span class="s2">&quot;</span> &gt;&gt; VpVAN-<span class="nv">$archivo_tag</span>
+<span class="k">done</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<p>Como recordatorio del TP 1:</p>
+<ul>
+<li><code>cat</code> lee archivos de texto y los escribe en la consola</li>
+<li><code>|</code> desvia la salida de un programa para que funcione como entrada del siguiente</li>
+<li><code>grep</code> filtra texto, quedandosé solo con aquellas líneas que contengan un texto dado (y de usar la opción <code>-v</code> se queda solo con aquellas que no lo contengan)</li>
+<li><code>ls</code> lista los archivos y carpetas dentro del directorio actual</li>
+<li><code>echo</code> escribe un texto por consola</li>
+<li><code>&gt;</code> desvia la salida que íria a consola hacia un archivo de texto, sobrescribiendolo</li>
+<li><code>&gt;&gt;</code> desvia la salida que íria a consola hacia un archivo de texto, sin sobreescribirlo (agrega lineas al final)</li>
+<li><code>for</code>, <code>in</code>, <code>do</code> y <code>done</code> son todas partes del ciclo <em>for each</em>. El código entre <code>do</code> y <code>done</code> se va a repetir por cada elemento en <code>$lista_de_archivos_tags</code>, donde en cada iteración la variable <code>$archivo_tag</code> toma el valor de uno de esos elementos</li>
+</ul>
+<p>Hay dos cosas en este script que no vimos en el TP 1. La primera es que estamos ejecutando comandos de Bash y guardando su salida en variables. En estos casos es necesario rodear el comando con <code>`</code>, llamado acento grave o comilla invertida. Por ejemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">variable</span><span class="o">=</span><span class="sb">`</span>comando -opciones parametro1 parametro2<span class="sb">`</span>
+</code></pre></div>
+<p>La segunda novedad es el uso de <code>*</code> con el comando <code>ls</code>. En todo lo que es Linux el caracter <code>*</code> funciona como comodín, tomando cualquier valor. Esto quiere decir que <code>ls *-tag.fasta</code> va a listar todos los archivos cuyos nombres terminen con <strong>"-tag.fasta"</strong>, sin importar como empiecen (pueden probar correr el comando <code>ls *-tag.fasta</code> a mano en la consola y ver que devuelve).</p>
+<p>¿Entienden ahora lo que hace el script? Lean la pestaña <strong>Código con comentarios</strong> para aclarar cualquier duda que tengan sobre él (y si todavía no se entiende no duden en preguntar).</p>
+<p>Ahora abran la consola y corran el script que acabamos de crear, generando así los nuevos 3 archivos.</p>
+<p>¡Ya tenemos nuestras secuencias quiméricas!</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Este script va a dar problemas si se lo corre multiples veces. Esto se debe a que al correrlo la primera vez estamos creando más archivos que terminan con "-tag.fasta", que en una segunda corrida van a ser detectados por el <code>ls</code>. Si no quieren tener problemas con esto pueden agregar el siguiente código luego de dicho comando: <code>| grep -v "VpVAN"</code></p>
+</div>
+<h2 id="ejercicio-2-genoma-de-e-coli" markdown="markdown"><strong>Ejercicio 2. Genoma de <em>E. coli</em></strong></h2>
+<p>Nosotros queremos expresar el gen de un organismo en otro organismo. Si bien el código genético es practicamente universal, diferentes organismos pueden tener preferencia para diferentes codones que generan un mismo aminoácido. Por esta razón, al hacer expresión recombinante heteróloga es una buena idea cambiar los codones del gen de interés para que matcheen mejor con los codones que prefiere el organismo huesped (se modifica el ADN pero se sigue produciendo la misma proteína). El primer paso para realizar esta modificación es conocer cuales son los codones preferidos por dicho organismo.</p>
+<ul>
+<li>
+<p>Busquen usando el comando <code>wossname</code> que programas de EMBOSS trabajan con codones (recuerden que está en inglés, asi que tienen que buscar "codon"). Lean la descripción de dichos programas, ¿cual les parece que vamos a usar para calcular la tabla de uso de codones?</p>
+<details class="info">
+<summary>Respuesta</summary>
+<p><code>cusp</code>, cuya descripción es "Create a codon usage table from nucleotide sequence(s)"</p>
+</details>
+</li>
+</ul>
+<p>Si leen la descripción del programa, verán que pide una secuencia de nucleótidos, es decir, que necesitamos un FASTA del genoma completo de <em>E. coli</em> (ya que éste es nuestro organismo huesped).</p>
+<p>Un buen lugar para obtener información de genomas, genes, y proteínas es <strong>RefSeq</strong>, que es una colección curada de secuencias nucleotídicas y sus productos. En su FAQ hay una pregunta que es básicamente lo que queremos hacer nosotros:</p>
+<p><a href="https://www.ncbi.nlm.nih.gov/genome/doc/ftpfaq/#allcomplete">How can I download RefSeq data for all complete bacterial genomes?</a></p>
+<p>Si bien los comandos que ellos sugieren son un poco complejos, vamos a utilizarlos y tratar de explicarlos lo mejor posible.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Antes de seguir les recomendamos crear una carpeta nueva para este ejercicio, por ejemplo <strong>~/Documentos/TP_02/EJ_2</strong>.</p>
+</div>
+<h3 id="refseq-paso-1-bajar-y-filtrar-la-tabla-con-los-genomas" markdown="markdown">RefSeq - Paso 1 - Bajar y filtrar la tabla con los genomas</h3>
+<p>El primer paso indicado en el FAQ es descargar el archivo <strong>assembly_summary.txt</strong> y ponerlo en la carpeta de este ejercicio. Esto lo pueden hacer desde la página de <strong>RefSeq</strong> a mano o abriendo la consola en la carpeta de este ejercicio y corriendo:</p>
+<div class="highlight"><pre><span></span><code>wget ftp://ftp.ncbi.nlm.nih.gov/genomes/refseq/bacteria/assembly_summary.txt
+</code></pre></div>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>¿Qué piensan que hace <code>wget</code>? ¿Cómo pueden averiguarlo si no lo saben?</p>
+</div>
+<p>Una vez descargado ese archivo (que pesa bastante) queremos ver sus contenidos. Sabiendo que es un archivo que tiene más de 250.000 lineas, ¿qué comando usarían para ver que tipo de datos tiene adentro? Pruebenló.</p>
+<p>Probablemente les cueste entender lo que estan viendo aunque hayan usado el comando correcto, lo que se debe a que este archivo es una tabla con decenas de columnas. Para entender un poco mas la estructura de lo que acabamos de bajar vamos a crear un archivo temporal que tenga solo las primeras 20 filas de este archivo:</p>
+<div class="highlight"><pre><span></span><code>head -20 assembly_summary.txt &gt; assembly_summary_temporal.tsv
+</code></pre></div>
+<p>Lo único que les debería llamar la atención del comando anterior es que el nuevo archivo tiene la extensión <strong>tsv</strong>. Esto lo mencionamos por arriba en el TP 1, pero los archivos <strong>TSV</strong> o "Tab-Separated Values" son archivos de texto que contienen una tabla donde sus columnas están separadas entre ellas por un <span class="keys"><kbd class="key-tab">Tab</kbd></span>, lo cual es exactamente el caso de la tabla actual.</p>
+<p>Prueben ahora hacer doble click sobre el archivo <strong>assembly_summary_temporal.tsv</strong>. La razón que le cambiamos la extensión a <strong>tsv</strong> es que en nuestra máquina virtual esa extensión esta asociada al programa <strong>Gnumeric</strong>, una hoja de cálculo similar a Excell o a Google Sheets. Gracias a la extensión <strong>tsv</strong>, Gnumeric va a detectar automáticamente que las columnas estan separadas por <span class="keys"><kbd class="key-tab">Tab</kbd></span> y va a separarlas en su hoja de cálculo, haciendo la tabla mucho mas facil de leer. Vean si pueden encontrar las columnas que contienen la especie, la cepa y el link al genoma (técnicamente a la carpeta donde está el genoma).</p>
+<p>Ahora que pueden leer un poco mejor la tabla van a ver que tiene muchos mas organismos que <em>E. coli</em>. Lo primero que tenemos que hacer entonces es filtrar el archivo y quedarnos solo con nuestro organismo y cepa de interes. Corran los siguientes comandos uno a la vez:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Código</label><label for="__tabbed_2_2">Código con comentarios</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>head -2 assembly_summary.txt &gt; assembly_summary_coli.tsv
+grep <span class="s2">&quot;Escherichia coli&quot;</span> assembly_summary.txt <span class="p">|</span> grep <span class="s2">&quot;BL21&quot;</span> &gt;&gt; assembly_summary_coli.tsv
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="c1"># Generamos un nuevo archivo con el header de la tabla (que en este caso son 2 filas)</span>
+head -2 assembly_summary.txt &gt; assembly_summary_coli.tsv
+
+<span class="c1"># Buscamos dentro del archivo las filas que contengan &quot;Escherichia coli&quot; y &quot;BL21&quot; y </span>
+<span class="c1"># las agregamos a la nuevo archivo</span>
+head grep <span class="s2">&quot;Escherichia coli&quot;</span> assembly_summary.txt <span class="p">|</span> grep <span class="s2">&quot;BL21&quot;</span> &gt;&gt; assembly_summary_coli.tsv
+</code></pre></div>
+</div>
+</div>
+</div>
+<h3 id="refseq-paso-2-crear-un-archivo-con-links-a-las-carpetas-de-los-genomas" markdown="markdown">RefSeq - Paso 2 - Crear un archivo con links a las carpetas de los genomas</h3>
+<p>Ahora que tenemos y entendemos la tabla con nuestros datos de <em>E. coli</em> la podemos abrir en <strong>Gnumeric</strong> haciendo doble click. Van a ver que no hay solo un genoma de <em>E. coli</em> BL21, sino varios, por lo cual nuestro objetivo de crear una tabla de codones acaba de volverse un poco más complicado. Lo que vamos a hacer entonces es bajar todos los genomas de <em>E. coli</em> BL21 que vemos en la tabla, así que continuamos al segundo paso en el FAQ de <strong>RefSeq</strong>:</p>
+<div class="highlight"><pre><span></span><code>awk -F <span class="s2">&quot;\t&quot;</span> <span class="s1">&#39;{if ($12==&quot;Complete Genome&quot; &amp;&amp; $11==&quot;latest&quot;) {print $20}}&#39;</span> assembly_summary_coli.tsv &gt; ftpdirpaths
+</code></pre></div>
+<p>Al comando <code>awk</code> lo vimos brevemente al final del TP 1 y sirve para trabajar con tablas en Bash (entre otras cosas). Las diferentes partes de este comando son:</p>
+<ul>
+<li><code>-F "\t"</code> indica que el separador de columnas es <code>\t</code>, o sea, <span class="keys"><kbd class="key-tab">Tab</kbd></span></li>
+<li><code>$12=="Complete Genome"</code> es una condición que filtra las filas, quedándose solo con aquellas donde la columna 12 (<strong>assembly_level</strong>) es "Complete Genome"</li>
+<li><code>$11=="latest"</code> es una condición que filtra las filas, quedándose solo con aquellas donde la columna 11 (<strong>version_status</strong>) es "latest"</li>
+<li><code>&amp;&amp;</code> se denomina <em>and</em> y une ambas condiciones, pidiendo que ambas se cumplan para que la condición total se cumpla</li>
+<li><code>{print $20}</code> indica que se va a devolver la columna 20 (<strong>ftp_path</strong>, contiene el <em>path</em> del genoma, o sea, la carpeta)</li>
+</ul>
+<p>Este comando va a crear el archivo <strong>ftpdirpaths</strong>, que contiene links a las carpetas que contienen los genomas.</p>
+<h3 id="refseq-paso-3-crear-un-archivo-con-links-a-los-genomas" markdown="markdown">RefSeq - Paso 3 - Crear un archivo con links a los genomas</h3>
+<p>Los links que tenemos de momento tienen el formato:</p>
+<div class="admonition info">
+<p>ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/833/145/GCF_000833145.1_ASM83314v1</p>
+</div>
+<p>Sin embargo, estos son links a las carpetas que contienen los genomas. Siguiendo las instrucciones del FAQ de <strong>RefSeq</strong> podemos crear el link de los genomas, que para el ejemplo anterior seria:</p>
+<div class="admonition info">
+<p>ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/833/145/GCF_000833145.1_ASM83314v1/GCF_000833145.1_ASM83314v1_cds_from_genomic.fna.gz</p>
+</div>
+<p>Donde el nombre del archivo es el nombre de la última carpeta + <strong>"_cds_from_genomic.fna.gz"</strong></p>
+<p>Hay varias formas de crear estos nuevos links, pero siguiendo el FAQ de <strong>RefSeq</strong> nos sugiere el comando:</p>
+<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;BEGIN{FS=OFS=&quot;/&quot;;filesuffix=&quot;genomic.gbff.gz&quot;}{ftpdir=$0;asm=$10;file=asm&quot;_&quot;filesuffix;print ftpdir,file}&#39;</span> ftpdirpaths &gt; ftpfilepaths
+</code></pre></div>
+<p>Siendo honestos, este comando es innecesariamente complejo para lo que quieren conseguir. A continuación les vamos a proponer un comando mas simple que hace exactamente lo mismo:</p>
+<div class="highlight"><pre><span></span><code>awk -F <span class="s2">&quot;/&quot;</span> <span class="s1">&#39;{print $0 &quot;/&quot; $10 &quot;_cds_from_genomic.fna.gz&quot;}&#39;</span> ftpdirpaths &gt; ftpfilepaths
+</code></pre></div>
+<p>Donde:</p>
+<ul>
+<li><code>-F "/"</code> indica que el separador de columnas es <code>/</code>. Lo que está haciendo este código es leer nuestros <em>paths</em> como si fueran tablas de varias columnas, haciendo que cada carpeta quede en su propia columna.</li>
+<li><code>$0</code> parecería indicar la columna 0, pero las columnas en <code>awk</code> van de 1 en adelante (<code>$1</code>, <code>$2</code>, etc). El índice <code>$0</code> es un índice especial que devuelve toda la fila (que en este caso es todo el <em>path</em> a la carpeta del genoma).</li>
+<li><code>$10</code> es la columna 10, la cual contiene el nombre del genoma (es el nombre de la última carpeta en el <em>path</em>).</li>
+<li><code>print</code> va a concatenar <code>$0</code> (el <em>path</em> a la carpeta del genoma), <code>"/"</code> (una barra para separar los directorios), <code>$10</code> (la primera parte del nombre del archivo a descargar) y <code>"_cds_from_genomic.fna.gz"</code> (la segunda parte del nombre del archivo a descargar). <code>awk</code> va a hacer esto por cada fila del archivo <strong>ftpdirpaths</strong>.</li>
+</ul>
+<p>Una vez que entienden lo que hace este comando abran la terminal y corranló.</p>
+<details class="info">
+<summary>Por si se quedaron con curiosidad de como funcionaba el comando del FAQ de <strong>RefSeq</strong></summary>
+<p>Como mencionamos antes el comando <code>awk</code> que sugeria el FAQ de <strong>RefSeq</strong> era un poco mas complejo, pero llegaba al mismo resultado. </p>
+<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;BEGIN{FS=OFS=&quot;/&quot;;filesuffix=&quot;genomic.gbff.gz&quot;}{ftpdir=$0;asm=$10;file=asm&quot;_&quot;filesuffix;print ftpdir,file}&#39;</span> ftpdirpaths &gt; ftpfilepaths
+</code></pre></div>
+<p>Este comando es bastante complejo y no es necesario que lo entiendan 100%, pero vamos a aclarar algunas cosas:</p>
+<ul>
+<li><code>BEGIN</code> significa que las cosas entre las primeras llaves se van a ejecutar solo una vez, y no una vez por fila (como el resto).</li>
+<li><code>FS</code> es una variable interna de <code>awk</code> que indica como se separan las columnas en la tabla a leer (es equivalente a usar <code>-F</code>). La variable <code>OFS</code> indica lo mismo, pero para la salida de <code>awk</code>. Con <code>FS=OFS="/"</code> estamos indicando que ambos serán la barra <code>/</code>. Lo que está haciendo este código es leer nuestros <em>paths</em> como si fueran tablas de varias columnas, haciendo que cada carpeta quede en su propia columna.</li>
+<li>En <code>filesuffix="cds_from_genomic.fna.gz"</code> está definiendo una variable en la que va a almacenar la cadena de texto que queremos agregar al final de cada link.</li>
+<li>En <code>ftpdir=$0</code> está definiendo una variable en la que parece almacenar la columna 0. Ahora bien, las columnas en <code>awk</code> van de 1 en adelante (<code>$1</code>, <code>$2</code>, etc), pero el índice <code>$0</code> es un índice especial que devuelve toda la fila (que en este caso es todo el <em>path</em> a la carpeta del genoma).</li>
+<li>En <code>asm=$10</code> está definiendo una variable en la que va a almacenar la columna 10, la cual contiene el nombre del genoma (es el nombre de la última carpeta en el <em>path</em>).</li>
+<li>En <code>file=asm"_"filesuffix</code> está definiendo una nueva variable como la concatenación de <code>asm</code>, un guión bajo y <code>filesuffix</code>. Este va a ser el nombre del archivo a descargar (pero todavía le falta el <em>path</em>).</li>
+<li><code>print ftpdir,file</code> va a imprimir el valor de <code>ftpdir</code> (el <em>path</em> a la carpeta del genoma) seguido por el valor de <em>file</em> (el nombre del archivo a descargar) por cada fila del archivo <strong>ftpdirpaths</strong>. La barra entre ambos (<code>/</code>) es agregada automaticamente debido a que declaramos <code>OFS="/"</code> al principio.</li>
+</ul>
+</details>
+<h3 id="refseq-paso-4-descargar-genomas-de-e-coli" markdown="markdown">RefSeq - Paso 4 - Descargar genomas de <em>E. coli</em></h3>
+<p>Ya falta poco para tener nuestros genomas, solo hay que descargar todos los links que tenemos adentro del archivo <strong>ftpfilepaths</strong>.</p>
+<p>Esto se puede hacer usando el comando <code>wget</code>. Ahora bien, por defecto a <code>wget</code> hay que pasarle un link de descarga como hicimos arriba, pero por suerte existe una opción que permite pasarle un archivo de entrada y que descargue todos los links que se encuentran en él.</p>
+<ul>
+<li>
+<p>Usen <code>wget -h</code> (mas conciso) o <code>man wget</code> (mas extenso) para ver las diferentes opciones de <code>wget</code>, encuentren la que se usa para pasarle un archivo de entrada (o <em>fichero</em> o <em>input file</em>) con links (o <em>URLs</em>) y usen <code>wget</code> con <strong>ftpfilepaths</strong> para bajar todos los genomas que seleccionamos.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><code>wget</code> tiene bastantes opciones, asi que para hacerla un poco más fácil sepan que la opción que necesitan es una de las 15 primeras y está en la sección <strong>Ficheros de registro y de entrada</strong> (o <strong>Logging and input file</strong>)</p>
+</div>
+</li>
+</ul>
+<p>Este comando puede tardar un rato en descargar todo y va a bajar 11 archivos con extensión <strong>.fna.gz</strong> donde <strong>.fna</strong> es una extensión que hace referencia a que el archivo contiene información de secuencia (similar a FASTA) y <strong>.gz</strong> es la extensión de los archivos comprimidos de Linux.</p>
+<h2 id="ejercicio-3-construir-tabla-de-frecuencias-de-uso-de-codones" markdown="markdown"><strong>Ejercicio 3. Construir tabla de frecuencias de uso de codones</strong></h2>
+<p>Tras lo que parece una eternidad por fin tenemos nuestros genomas. Ahora es momento de usar el comando <code>cusp</code> del que hablamos al principio del ejercicio anterior para transformar nuestros genomas en tablas con frecuencias de uso de codones.</p>
+<p>Como tenemos varios archivos <strong>.fna.gz</strong> vamos a tener que correr el comando <code>cusp</code> varias veces, y la mejor forma de hacer esto es creando un script con un ciclo <em>for each</em> que lo haga por nosotros.</p>
+<ul>
+<li>
+<p>Usando las siguientes 2 lineas de código, creen un script que contenga un <em>for each</em> que recorra todos los archivos <strong>.fna.gz</strong> que acabamos de descargar, los descomprima y ejecute el comando <code>cusp</code> para cada uno:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Creamos una lista que contiene a todos los archivos que empiezan con &quot;GCF&quot; y terminan con &quot;.gz&quot;</span>
+<span class="nv">lista_de_archivos_genomas</span><span class="o">=</span><span class="sb">`</span>ls GCF*.gz<span class="sb">`</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Descomprimimos el archivo &quot;.gz&quot; y corremos el comando *cusp* para cada $archivo_genoma de la lista</span>
+zcat <span class="nv">$archivo_genoma</span> <span class="p">|</span> cusp -auto -sequence <span class="s2">&quot;stdin&quot;</span> -outfile <span class="s2">&quot;</span><span class="si">${</span><span class="nv">archivo_genoma</span><span class="si">}</span><span class="s2">.cusp&quot;</span>
+</code></pre></div>
+<p>Donde:</p>
+<ul>
+<li><code>zcat</code> es un comando que descomprime archivos <strong>.gz</strong> y devuelve su contenido por consola (similar a <code>cat</code>).</li>
+<li><code>-auto</code> hace que <code>cusp</code> use los parámetros por defecto y no nos consulte cuales usar.</li>
+<li><code>-sequence "stdin"</code> le esta diciendo a <code>cusp</code> que el genoma se lo estamos dando por la consola (mediante el pipe o <code>|</code>).</li>
+<li><code>-outfile "${archivo_genoma}.cusp"</code> define el nombre del archivo de salida de <code>cusp</code>, que en este caso es el nombre del genoma seguido de <strong>.cusp</strong>. Si bien las llaves no son necesarias en este caso, ayudan a entender donde termina la variable y empieza el <em>string</em>. Idealmente habria que sacarle la extensión anterior al archivo (ya que ahora va a quedar <strong>.fna.gz.cusp</strong>), pero ya tenemos bastante que hacer.</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Lo unico que falta en el script es la estructura del <em>for each</em> propiamente dicho. Si no se la acuerdan pueden ver el <em>for each</em> que usamos en el <strong>Ejercicio 1</strong> como guia.</p>
+</div>
+</li>
+</ul>
+<p>Una vez creado el script, corranló.</p>
+<details class="warning">
+<summary>Si ven que este script tarda mucho tiempo en correr (varios minutos sin indicar que avanza) lean esto:</summary>
+<ul>
+<li>Cancelen la corrida apretando <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-c">C</kbd></span> en la terminal</li>
+<li>Usen para la próxima seccion los archivos <strong>ecoli_BL21_codon_table_1.cusp</strong> y <strong>ecoli_BL21_codon_table_2.cusp</strong> que se encuentra en sus materiales de trabajo</li>
+</ul>
+</details>
+<h3 id="comparar-tablas-de-codones">Comparar tablas de codones</h3>
+<p>Recordando nuestro objetivo, nosotros queríamos una tabla de codones de <em>E. coli</em> para saber como modificar el ADN de nuestra proteína de interés (<em>VpVan</em>) para que use aquellos codones preferidos por el organismo huesped. En este momento tenemos varias tablas de codones, asi que tenemos que elegir alguna.</p>
+<p>Abran uno de los archivos <strong>.cusp</strong> que acabamos de crear y vean que información tiene:</p>
+<details class="tip">
+<summary>Si en la tabla dentro del archivo <strong>.cusp</strong> las columnas no están alineadas lean esto:</summary>
+<p>Por defecto <strong>Leafpad</strong> usa una fuente llamada <strong>"Ubuntu"</strong>, que si bien sirve para escribir cuentos, nos va a dar problemas al momento de ver ciertos archivos que vamos a usar en esta materia.</p>
+<p>En <strong>Leafpad</strong> vayan a <strong>Opciones</strong> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg></span> <strong>Tipografía...</strong>, seleccionen la fuente <strong>"Ubuntu Mono"</strong> y aprieten <strong>Aceptar</strong>.</p>
+<p>Las fuentes que tienen <strong>Mono</strong> en su nombre estan indicando que son monoespaciadas, o sea, que todos sus caracteres tienen el mismo ancho. Esto es ideal para cuando se quieren ver tablas o alineamientos con <strong>Leafpad</strong>, cosa que vamos a hacer bastante en esta materia.</p>
+</details>
+<details class="info">
+<summary>Ayuda-memoria con aminoácidos y sus abreviaturas</summary>
+<table>
+<thead>
+<tr>
+<th align="left">Full Name</th>
+<th align="left">Abbreviation (3 Letter)</th>
+<th align="left">Abbreviation (1 Letter)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Alanine</td>
+<td align="left">Ala</td>
+<td align="left">A</td>
+</tr>
+<tr>
+<td align="left">Arginine</td>
+<td align="left">Arg</td>
+<td align="left">R</td>
+</tr>
+<tr>
+<td align="left">Asparagine</td>
+<td align="left">Asn</td>
+<td align="left">N</td>
+</tr>
+<tr>
+<td align="left">Aspartate</td>
+<td align="left">Asp</td>
+<td align="left">D</td>
+</tr>
+<tr>
+<td align="left">Aspartate or Asparagine</td>
+<td align="left">Asx</td>
+<td align="left">B</td>
+</tr>
+<tr>
+<td align="left">Cysteine</td>
+<td align="left">Cys</td>
+<td align="left">C</td>
+</tr>
+<tr>
+<td align="left">Glutamate</td>
+<td align="left">Glu</td>
+<td align="left">E</td>
+</tr>
+<tr>
+<td align="left">Glutamine</td>
+<td align="left">Gln</td>
+<td align="left">Q</td>
+</tr>
+<tr>
+<td align="left">Glutamate or Glutamine</td>
+<td align="left">Glx</td>
+<td align="left">Z</td>
+</tr>
+<tr>
+<td align="left">Glycine</td>
+<td align="left">Gly</td>
+<td align="left">G</td>
+</tr>
+<tr>
+<td align="left">Histidine</td>
+<td align="left">His</td>
+<td align="left">H</td>
+</tr>
+<tr>
+<td align="left">Isoleucine</td>
+<td align="left">Ile</td>
+<td align="left">I</td>
+</tr>
+<tr>
+<td align="left">Leucine</td>
+<td align="left">Leu</td>
+<td align="left">L</td>
+</tr>
+<tr>
+<td align="left">Lysine</td>
+<td align="left">Lys</td>
+<td align="left">K</td>
+</tr>
+<tr>
+<td align="left">Methionine</td>
+<td align="left">Met</td>
+<td align="left">M</td>
+</tr>
+<tr>
+<td align="left">Phenylalanine</td>
+<td align="left">Phe</td>
+<td align="left">F</td>
+</tr>
+<tr>
+<td align="left">Proline</td>
+<td align="left">Pro</td>
+<td align="left">P</td>
+</tr>
+<tr>
+<td align="left">Serine</td>
+<td align="left">Ser</td>
+<td align="left">S</td>
+</tr>
+<tr>
+<td align="left">Threonine</td>
+<td align="left">Thr</td>
+<td align="left">T</td>
+</tr>
+<tr>
+<td align="left">Tryptophans</td>
+<td align="left">Trp</td>
+<td align="left">W</td>
+</tr>
+<tr>
+<td align="left">Tyrosine</td>
+<td align="left">Tyr</td>
+<td align="left">Y</td>
+</tr>
+<tr>
+<td align="left">Valine</td>
+<td align="left">Val</td>
+<td align="left">V</td>
+</tr>
+</tbody>
+</table>
+</details>
+<ol>
+<li>¿Por qué hay más de un codón para cada aminoácido?</li>
+<li>¿Qué indica la columna <strong>Fraction</strong>?</li>
+<li>¿Qué indica la columna <strong>Frequency</strong>? (pueden encontra la respuesta usando <code>tfm cusp</code>, pero está mas claro en la <a href="http://emboss.toulouse.inra.fr/cgi-bin/emboss/help/cusp">ayuda online</a>)</li>
+<li>Ahora abran otro archivo <strong>.cusp</strong>, ¿notan diferencias entre las frecuencias de uso de codones de los distintos proyectos genoma de <em>E.Coli</em> BL21?</li>
+</ol>
+<p>En un principio pareceria que ambos archivos <strong>.cusp</strong> son bastante parecidos, pero queremos estar seguros. <strong>EMBOSS</strong> tiene un programa llamado <code>codcmp</code> que permite comparar tablas de codones, calculando ciertos estadísticos. El programa se usa:</p>
+<div class="highlight"><pre><span></span><code>codcmp ARCHIVO_CUSP_1 ARCHIVO_CUSP_2 ARCHIVO_SALIDA
+</code></pre></div>
+<p>Usen este comando para comparar los dos archivos <strong>.cusp</strong> que miraron previamente y guarden la comparación en un archivo llamado <strong>cusp_comparison.out</strong>.</p>
+<p>Abran <strong>cusp_comparison.out</strong> y vean los estadísticos calculados. ¿Son compatibles estos resultados con nuestras observaciones previas de que ambos archivos <strong>.cusp</strong> son muy parecidos?</p>
+<p>Hay entoces una noticia buena y una mala:</p>
+<details class="success">
+<summary>Noticia Buena</summary>
+<p>Todos las tablas de frecuencias de codones son casi idénticas, asi que podemos usar cualquiera de ellas y va a funcionar bien.</p>
+<ul>
+<li>
+<p><strong>Aclaración 1:</strong> Los resultados de <code>codcmp</code> no alcanzan para decir que las diferencias no son "estadisticamente signficativas" (aunque en este caso es bastante obvio). En el <a href="http://emboss.toulouse.inra.fr/cgi-bin/emboss/help/codcmp">manual de <code>codcmp</code></a> dan algunas ideas para calcular esto.</p>
+</li>
+<li>
+<p><strong>Aclaración 2:</strong> Otra forma de resolver el "problema" de tener muchas tablas de codones podría haber sido calcular una nueva tabla de frecuencias de codones que sea un promedio de todas las anteriores, pero esto es un trabajo complejo y no se amerita hacerlo para este caso debido a los similar que son las diferentes tablas entre sí.</p>
+</li>
+</ul>
+</details>
+<details class="failure">
+<summary>Noticia Mala</summary>
+<p>Todos las tablas de frecuencias de codones son casi idénticas, asi que podríamos haber bajado solo una de ellas y ahorrarnos bastante trabajo (aunque no teníamos forma de saber esto previamente).</p>
+</details>
+<h2 id="ejercicio-4-optimizar-secuencia-a-insertar-en-base-a-la-tabla-de-codones" markdown="markdown"><strong>Ejercicio 4. Optimizar secuencia a insertar en base a la tabla de codones</strong></h2>
+<p>Ya casi estamos. En este momento tenemos la tabla de frecuencia de uso de codones para <em>E. coli</em> BL21 y queremos aplicar dichos codones a las 3 secuencias quiméricas que creamos en el <strong>Ejercicio 1</strong>, es decir, codificar una secuencia amionacídica de planta en la forma más óptima para su traducción en <em>E. coli</em>.</p>
+<p>Para organizar un poco los archivos volvemos a recomendar crear una carpeta para este ejercicio, por ejemplo <strong>~/Documentos/TP_02/EJ_4</strong>. Dentro de la carpeta <strong>copien</strong> los siguientes archivos:</p>
+<ul>
+<li><strong>VpVAN-FLAG-tag.fasta</strong> (creado en el Ejercicio 1)</li>
+<li><strong>VpVAN-His-tag.fasta</strong> (creado en el Ejercicio 1)</li>
+<li><strong>VpVAN-MBP-tag.fasta</strong> (creado en el Ejercicio 1)</li>
+<li>Elijan alguno de los archivos <strong>.cusp</strong> creados en el Ejercicio 3, copienlo a la nueva carpeta y cambienlé el nombre a <strong>ecoli_BL21_codon_table.cusp</strong>.</li>
+</ul>
+<p>Ahora bien, para hacer esta optimización de secuencias podemos usar otro de los programas de <strong>EMBOSS</strong> llamado <code>backtranseq</code>. Este programa toma una secuencia de aminoácidos correspondiente a una proteína de interés y una tabla de frecuencia de uso de codones y usa ambos para hacer una traducción inversa desde la secuencia proteíca hacia la secuencia de ADN que, con mayor probabilidad, le dio origen. Es decir, <code>backtranseq</code> devuelve una secuencia de ADN a partir de una secuencia de aminoácidos. Este comando se usa:</p>
+<div class="highlight"><pre><span></span><code>backtranseq -auto -sequence ARCHIVO_PROTEINA_FASTA -cfile ARCHIVO_CUSP -outfile ARCHIVO_SALIDA_ADN_FASTA
+</code></pre></div>
+<p>Corran este comando 3 veces pasándole los archivos correctos y creen los siguientes archivos (si quieren pueden hacer script con un <em>for each</em>, pero no hace falta):</p>
+<ul>
+<li><strong>Ecoli-DNA-VpVAN-FLAG-tag.fasta</strong></li>
+<li><strong>Ecoli-DNA-VpVAN-His-tag.fasta</strong></li>
+<li><strong>Ecoli-DNA-VpVAN-MBP-tag.fasta</strong></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>De hacerlo a mano, aca van a tener que ejecutar tres comandos muy similares. Recuerden que pueden usar <span class="keys"><kbd class="key-arrow-up">Up</kbd></span> y <span class="keys"><kbd class="key-arrow-down">Down</kbd></span> en su terminal para navegar por los ultimos comandos utilizados y modificar lo necesario. También puede serles útiles la tecla <span class="keys"><kbd class="key-home">Home</kbd></span> (<strong><em>Inicio</em></strong>) y <span class="keys"><kbd class="key-end">End</kbd></span> (<strong><em>Fin</em></strong>) para moverse al principio o al final del comando que están editando.</p>
+</div>
+<h2 id="ejercicio-5-agregar-enzimas-de-restriccion" markdown="markdown"><strong>Ejercicio 5. Agregar enzimas de restricción</strong></h2>
+<p>El último paso es agregar los sitios de corte de enzimas de restricción a los costados de mi secuencia quimérica, pero antes de eso tengo que asegurarme que dichas enzimas no tengan sitios de corte dentro de mi secuencia. Probablemente ya no les sorprenda que existe un programa de <strong>EMBOSS</strong> para hacer esto llamado <code>remap</code>; sin embargo, dicho programa necesita que previamente le hayamos pasado a <strong>EMBOSS</strong> una base de datos de enzimas de restricción.</p>
+<p>En los materiales de trabajo van a encontrar dos archivos llamados <strong>proto.207</strong> y <strong>withrefm.207</strong> que contienen la información para crear la base de datos de enzimas de restricción. Copienlos a la carpeta donde estan trabajando y corran el comando:</p>
+<div class="highlight"><pre><span></span><code>rebaseextract -infile withrefm.207 -protofile proto.207
+</code></pre></div>
+<p>Este comando les va a tirar un error, pero no porque esté mal escrito. El problema es que este comando quiere editar archivos que no son del usuario <em>ibioinfo</em>, por lo que en un principio no tenemos permisos para editarlos. En estos casos hay que agregar el prefijo <code>sudo</code> y puede ser que Lubuntu les pida la contraseña (parece que no escribe nada, pero eso es por seguridad, si se las pide escriban "unsam" y aprieten <span class="keys"><kbd class="key-enter">Enter</kbd></span>). Asi que corran:</p>
+<div class="highlight"><pre><span></span><code>sudo rebaseextract -infile withrefm.207 -protofile proto.207
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Solo para que sepan, los archivos <strong>proto.207</strong> y <strong>withrefm.207</strong> se pueden descargar de <a href="ftp://ftp.neb.com/pub/rebase/">aca</a> o <a href="ftp://ftp.ebi.ac.uk/pub/databases/rebase">aca</a> usando <code>wget</code> (con los links anteriores van a bajar un índice general y luego tienen que pasarle a <code>wget</code> el link de los archivos que quieran). Dependiendo de cuando vayan a esa página puede ser que encuentren versiones incluso mas recientes.</p>
+</div>
+<p>Ahora que ya tenemos la base de datos configurada podemos usar <code>remap</code>, pero antes veamos un poco mas información sobre nuestras enzimas de restricción. Usando <code>grep</code> busquen dentro del archivo <strong>proto.207</strong> a nuestras enzimas de restricción de interés (<strong>BamHI</strong> y <strong>HindIII</strong>).</p>
+<ol>
+<li>¿Qué longitud tienen los sitios de restricción de <strong>BamHI</strong> y <strong>HindIII</strong>?</li>
+<li>¿Qué piensan que significa el símbolo <strong>^</strong> en el sitio de restricción? (pueden buscar información sobre dichas enzimas online y se van a dar cuenta enseguida)</li>
+</ol>
+<p>Ahora que sabemos un poco más sobre nuestras enzimas vamos a usar el comando <code>remap</code> con las siguientes opciones:</p>
+<div class="highlight"><pre><span></span><code>remap -auto -sequence ARCHIVO_ADN_FASTA -width <span class="m">80</span> -commercial -sitelen <span class="m">6</span> -frame <span class="m">1</span> -enzymes all -outfile ARCHIVO_SALIDA_REMAP
+</code></pre></div>
+<p>Donde:</p>
+<ul>
+<li><code>-auto</code> hace que <code>remap</code> use los parámetros por defecto y no nos consulte cuales usar.</li>
+<li><code>-width</code> indica el ancho de secuencia a mostrar en el archivo de salida.</li>
+<li><code>-commercial</code> analiza solo las enzimas de restricción de uso comercial (entre las que se encuentran nuestras enzimas de interés).</li>
+<li><code>-sitelen</code> indica el mínimo de longitud del sitio de restricción (como sabemos que los sitios de restricción de nuestras enzimas de interés tienen 6 aminoácidos ponemos ese número).</li>
+<li><code>frame</code> indica el marco de lectura a traducir (ya que el output tambien va a dar información a nivel proteína). En nuestro caso el <code>frame</code> es 1 (estamos en la hebra codificante y hay que traducir a partir del primer nucleótido).</li>
+<li><code>enzymes</code> indica los nombres de las enzimas a probar. Si bien podríamos haber puesto nuestras enzimas de interés, ponemos <code>all</code> para ver más información del output.</li>
+</ul>
+<p>Corran este comando 3 veces pasándole los archivos correctos y creen los siguientes archivos:</p>
+<ul>
+<li><strong>enzimas_FLAG.out</strong></li>
+<li><strong>enzimas_His.out</strong></li>
+<li><strong>enzimas_MBP.out</strong></li>
+</ul>
+<p>Una vez creados, abran los archivos con <strong>Leafpad</strong>. </p>
+<ol>
+<li>¿Entienden lo que simboliza el archivo? (es necesario que esten usando la fuente <strong>Ubuntu Mono</strong> en <strong>Leafpad</strong> para verlo bien)</li>
+<li>Busquen nuestras enzimas de restricción de interes. ¿Las encuentran? ¿En que categoría están? ¿Se pueden usar entonces estas enzimas de restricción para insertar nuestra secuencia en un plásmido?</li>
+<li>¿Hay algún tag de los tres que estabamos considerando que no se pueda usar debido a las enzimas de restricción que elegimos?</li>
+<li>Elijan el tag que les parece mejor (cualquiera que no sea cortado por las enzimas de restricción está bien), copien su construcción <strong>Ecoli-DNA-VpVAN-???-tag.fasta</strong> a un nuevo archivo y luego cambienlé el nombre a <strong>secuencia_final.fasta</strong>.</li>
+<li>Abran <strong>secuencia_final.fasta</strong> en <strong>Leafpad</strong> y agreguen a mano el sitio de restricción de <strong>BamHI</strong> al principio y el de <strong>HindIII</strong> al final.</li>
+</ol>
+<p><strong>¡Felicitaciones, tenemos nuestra secuencia lista para mandar a secuenciar!</strong></p>
+<div class="admonition danger">
+<p class="admonition-title">TO DO</p>
+<p>ver si no se les agrega mas secuencias del otro lado de las enzimas de restriccion?</p>
+</div>
 <h2 id="bibliografia">Bibliografía</h2>
+<h3 id="online"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2m-5.15 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56M14.34 14H9.66c-.1-.66-.16-1.32-.16-2 0-.68.06-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2M12 19.96c-.83-1.2-1.5-2.53-1.91-3.96h3.82c-.41 1.43-1.08 2.76-1.91 3.96M8 8H5.08A7.923 7.923 0 0 1 9.4 4.44C8.8 5.55 8.35 6.75 8 8m-2.92 8H8c.35 1.25.8 2.45 1.4 3.56A8.008 8.008 0 0 1 5.08 16m-.82-2C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2M12 4.03c.83 1.2 1.5 2.54 1.91 3.97h-3.82c.41-1.43 1.08-2.77 1.91-3.97M18.92 8h-2.95a15.65 15.65 0 0 0-1.38-3.56c1.84.63 3.37 1.9 4.33 3.56M12 2C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2Z"/></svg></span> Online</h3>
+<ul>
+<li><a href="https://www.khanacademy.org/science/biology/biotech-dna-technology/dna-cloning-tutorial/a/restriction-enzymes-dna-ligase">Insertar secuencias de ADN en plásmidos</a></li>
+<li><a href="https://cienciadelux.com/2015/08/16/cromatografia-por-afinidad/">Cromatografía de afinidad</a></li>
+</ul>
 
               
             </article>
-            
           </div>
         </div>
         
-          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
             Volver al principio
           </a>
@@ -679,10 +2306,10 @@ http://www.sacs.ucsf.edu/Documentation/emboss/tfm.html</p>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["search.suggest", "search.highlight", "search.share", "header.autohide", "navigaion.tracking", "navigation.tabs", "toc.integrate", "navigation.top"], "search": "../../assets/javascripts/workers/search.85cb4492.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "B\u00fasqueda", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version.title": "Seleccionar versi\u00f3n"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["search.suggest", "search.highlight", "search.share", "header.autohide", "navigaion.tracking", "navigation.tabs", "toc.integrate", "navigation.top"], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "B\u00fasqueda", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version.title": "Seleccionar versi\u00f3n"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.a877e258.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a6c66575.min.js"></script>
       
         <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
       
