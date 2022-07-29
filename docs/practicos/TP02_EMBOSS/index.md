@@ -350,78 +350,84 @@ Un archivo FASTA tiene dos elementos importantes:
 
 ### Repaso biológico
 
-Nuestro objetivo en esta guia va a ser diseñar una secuencia de ADN sintético que:
+Nuestro objetivo en esta guía va a ser diseñar una secuencia de ADN sintético que:
 
 * Exprese *VpVan*
-* Tenga sitios de corte para enzimas de restricción para que pueda ser insertado en un plásmido o vector de expresión de un organismo huesped. En este caso, dichos sitios de corte van a pertenecer a diferentes enzimas de restricción para facilitar la inserción del gen en el sentido correcto
+* Tenga sitios de corte para enzimas de restricción para que pueda ser insertado en un plásmido o vector de expresión de un organismo huésped. En este caso, dichos sitios de corte van a pertenecer a diferentes enzimas de restricción para facilitar la inserción del gen en el sentido correcto
 * Marque a *VpVan* de alguna forma para facilitar su posterior purificación
 
 A continuación vamos a dar una versión **super** resumida de los conceptos anteriores. Si ya saben como funciona todo lo mencionado pueden ir a la próxima sección (**Bases del experimento**).
 
-#### Plásmidos
+??? info "Repaso biológico - Plásmidos"
 
-Los plásmidos son moléculas de ADN de forma circular presentes principalmente en bacterias, arqueas y levaduras. Estas moléculas se encuentran fuera de los cromosomas y se replican de manera autónoma. 
+    #### Plásmidos
 
-Debido a estas características, es posible generar plásmidos artificiales con el objetivo de amplificar (*vector de clonacion*) o de expresar (*vector de expresion*) un gen de interes. Esto generalmente se realiza cuando la expresión de dicho gen en su organismo original no es factible, ya sea por problemas de volumen, logística o ética.
+    Los plásmidos son moléculas de ADN de forma circular presentes principalmente en bacterias, arqueas y levaduras. Estas moléculas se encuentran fuera de los cromosomas y se replican de manera autónoma. 
 
-<figure markdown>
-![FASTA](img/plasmidos.png)
-</figure>
+    Debido a estas características, es posible generar plásmidos artificiales con el objetivo de amplificar (*vector de clonación*) o de expresar (*vector de expresión*) un gen de interés. Esto generalmente se realiza cuando la expresión de dicho gen en su organismo original no es factible, ya sea por problemas de volumen, logística o ética.
 
-Los principales componentes de vector de expresion son:
+    <figure markdown>
+    ![FASTA](img/plasmidos.png)
+    </figure>
 
-* **Origen de la replicacion:** punto inicial para la replicación del plásmido
-* **Gen de resistencia a antibioticos:** gen que se expresa y da resistencia al organismo huesped, permite quedarnos solo con los organismos que tienen el plásmido dentro de ellos
-* **Promotor:** controla la transcripción de una determinada secuencia (en este caso el gen insertado)
-* **Sitio de restricción:** secuencia que es cortada por una enzima de restricción y donde será insertado el gen de interés (más de esto a continuación)
+    Los principales componentes de vector de expresión son:
 
-#### Enzimas de Restricción
+    * **Origen de la replicación:** punto inicial para la replicación del plásmido
+    * **Gen de resistencia a antibióticos:** gen que se expresa y da resistencia al organismo huésped, permite quedarnos solo con los organismos que tienen el plásmido dentro de ellos
+    * **Promotor:** controla la transcripción de una determinada secuencia (en este caso el gen insertado)
+    * **Sitio de restricción:** secuencia que es cortada por una enzima de restricción y donde será insertado el gen de interés (más de esto a continuación)
 
-Las enzimas de restricción son proteínas que reconocen una secuencia específica de nucleótidos dentro de una molécula de ADN y cortan el ADN en ese punto en concreto o en un punto cercano. A esas secuencias de ADN se las denomina sitios de restricción y tienen entre cuatro a seis pares de bases.
+??? info "Repaso biológico - Enzimas de Restricción"
 
-Hay dos grandes grupos de enzimas de restricción, aquellas que dejan extremos cohesivos y aquellas que dejan extremos romos:
+    #### Enzimas de Restricción
 
-<figure markdown>
-![Enzimas de restricción](img/restri_enzymes.png){ width="600" }
-</figure>
+    Las enzimas de restricción son proteínas que reconocen una secuencia específica de nucleótidos dentro de una molécula de ADN y cortan el ADN en ese punto en concreto o en un punto cercano. A esas secuencias de ADN se las denomina sitios de restricción y tienen entre cuatro a seis pares de bases.
 
-Al momento de insertar genes en plásmidos se usan generalmente enzimas de restricción que dejan extremos cohesivos ya que facilitan la inserción del gen debido a su especificidad y a que pueden volverse a unir espontaneamente.
+    Hay dos grandes grupos de enzimas de restricción, aquellas que dejan extremos cohesivos y aquellas que dejan extremos romos:
 
-La idea detrás de su uso es colocar un sitio de restricción en el plásmido y colocar el mismo sitio de restricción a cada lado del gen de interés (en el ADN que uno sintetiza). Luego los plásmidos vacios se colocan en una solución con el ADN sintético y se les agrega la enzima de restricción correspondiente que va a cortar el ADN dejando los extremos cohesivos en cada sitio de restricción. 
+    <figure markdown>
+    ![Enzimas de restricción](img/restri_enzymes.png){ width="600" }
+    </figure>
 
-<figure markdown>
-![Agregar un gen](img/agregar_gen_2.png){ width="600" }
-</figure>
+    Al momento de insertar genes en plásmidos se usan generalmente enzimas de restricción que dejan extremos cohesivos ya que facilitan la inserción del gen debido a su especificidad y a que pueden volverse a unir espontaneamente.
 
-Como el sitio de restricción es el mismo en el plástido y en la secuencia de ADN, es posible entonces que el ADN sintético se inserté en el plásmido, ya sea espontaneamente o ayudado por una ligasa. [Esta página](https://www.khanacademy.org/science/biology/biotech-dna-technology/dna-cloning-tutorial/a/restriction-enzymes-dna-ligase) tiene muy buenos esquemas sobre el proceso.
+    La idea detrás de su uso es colocar un sitio de restricción en el plásmido y colocar el mismo sitio de restricción a cada lado del gen de interés (en el ADN que uno sintetiza). Luego los plásmidos vacios se colocan en una solución con el ADN sintético y se les agrega la enzima de restricción correspondiente que va a cortar el ADN dejando los extremos cohesivos en cada sitio de restricción. 
 
-En el experimento anterior, luego de cortar el sitio de restricción con la enzima, pueden pasar tres cosas: 
+    <figure markdown>
+    ![Agregar un gen](img/agregar_gen_2.png){ width="600" }
+    </figure>
 
-* El plásmido se vuelve a cerrar sin ningun inserto :fontawesome-solid-xmark:{ .red_text }
-* Se inserta el gen de interés en la dirección correcta (respecto al promotor en el plásmido) :fontawesome-solid-check:{ .green_text }
-* Se inserta el gen de interés en la dirección contraria (respecto al promotor en el plásmido) :fontawesome-solid-xmark:{ .red_text }
+    Como el sitio de restricción es el mismo en el plástido y en la secuencia de ADN, es posible entonces que el ADN sintético se inserté en el plásmido, ya sea espontaneamente o ayudado por una ligasa. [Esta página](https://www.khanacademy.org/science/biology/biotech-dna-technology/dna-cloning-tutorial/a/restriction-enzymes-dna-ligase) tiene muy buenos esquemas sobre el proceso.
 
- Es posible evitar el caso donde el gen se inserta en la dirección contraria combinando 2 enzimas de restricción diferentes, donde ahora va a haber 2 sitios de restricción en el plásmido (uno para cada enzima) y los dos sitios de restricción en el ADN sintético van a ser diferentes (uno para cada enzima, en el mismo orden que en el plásmido). Si bien en esta versión no es posible que el gen sea insertado en la dirección contraria, sí es posible que se vuelva a insertar el fragmento de plásmido entre los sitios de restricción, pero hay formas de controlar estos casos. Cuando usamos 2 enzimas de reestricción en esta forma decimos que estamos "clonando en forma direccional".
+    En el experimento anterior, luego de cortar el sitio de restricción con la enzima, pueden pasar tres cosas: 
 
-!!! danger
+    * El plásmido se vuelve a cerrar sin ningun inserto :fontawesome-solid-xmark:{ .red_text }
+    * Se inserta el gen de interés en la dirección correcta (respecto al promotor en el plásmido) :fontawesome-solid-check:{ .green_text }
+    * Se inserta el gen de interés en la dirección contraria (respecto al promotor en el plásmido) :fontawesome-solid-xmark:{ .red_text }
 
-    Es importante cuando se usan enzimas de restricción asegurarse que no haya ningún sitio de corte para las enzimas elegidas en el plásmido ni en el ADN sintético fuera de los sitios involucrados en el proceso de inserción (ya que de existir también serán cortados y la inserción fracasará).
+     Es posible evitar el caso donde el gen se inserta en la dirección contraria combinando 2 enzimas de restricción diferentes, donde ahora va a haber 2 sitios de restricción en el plásmido (uno para cada enzima) y los dos sitios de restricción en el ADN sintético van a ser diferentes (uno para cada enzima, en el mismo orden que en el plásmido). Si bien en esta versión no es posible que el gen sea insertado en la dirección contraria, sí es posible que se vuelva a insertar el fragmento de plásmido entre los sitios de restricción, pero hay formas de controlar estos casos. Cuando usamos 2 enzimas de reestricción en esta forma decimos que estamos "clonando en forma direccional".
 
-#### Purificación y Tags
+    !!! danger
 
-Una vez que nuestros organismos huesped tienen el vector de expresión con el gen de interés, se los deja crecer, reproducirse y expresar la proteína de interés en grandes cantidades. Una vez hecho esto, es necesario extraer esa proteína de la solución, lo que no es trivial.
+        Es importante cuando se usan enzimas de restricción asegurarse que no haya ningún sitio de corte para las enzimas elegidas en el plásmido ni en el ADN sintético fuera de los sitios involucrados en el proceso de inserción (ya que de existir también serán cortados y la inserción fracasará).
 
-Hay varias formas de purificar proteínas y una de ellas es la cromatografía por afinidad, la cual se basa en la unión reversible entre el analito de interés (en nuestro caso la *VpVan*) y un ligando específico, inmovilizado en un soporte sólido inerte. Cuando la muestra pasa por la columna, sólo son retenidas las moléculas que se unen de manera selectiva al ligando por afinidad y las que no se unen avanzan con la fase móvil. La figura a continuación muestra un ejemplo donde se usan anticuerpos inmovilizados en una columna para purificar a la proteína roja del resto de la solución:
+??? info "Repaso biológico - Purificación y Tags"
 
-<figure markdown>
-![Agregar un gen](img/cromatografia_afinidad.jpg){ width="400" }
-</figure>
+    #### Purificación y Tags
 
-Uno podría asumir entonces que para poder construir estas columnas es necesario conseguir un ligando que reconozca a nuestra proteína de interes. Si bien esto es teóricamente cierto, como nosotros estamos sintetizando el ADN desde cero podemos pensar lateralmente y agregarle a nuestra proteína una secuencía aminoacídica en uno de sus extremos para la cual ya conozcamos ligandos. Estas secuencias pueden ser desde pocos aminoácidos hasta a proteínas pequeñas y son denominadas **tags**.
+    Una vez que nuestros organismos huésped tienen el vector de expresión con el gen de interés, se los deja crecer, reproducirse y expresar la proteína de interés en grandes cantidades. Una vez hecho esto, es necesario extraer esa proteína de la solución, lo que no es trivial.
+
+    Hay varias formas de purificar proteínas y una de ellas es la cromatografía por afinidad, la cual se basa en la unión reversible entre el analito de interés (en nuestro caso la *VpVan*) y un ligando específico, inmovilizado en un soporte sólido inerte. Cuando la muestra pasa por la columna, sólo son retenidas las moléculas que se unen de manera selectiva al ligando por afinidad y las que no se unen avanzan con la fase móvil. La figura a continuación muestra un ejemplo donde se usan anticuerpos inmovilizados en una columna para purificar a la proteína roja del resto de la solución:
+
+    <figure markdown>
+    ![Agregar un gen](img/cromatografia_afinidad.jpg){ width="400" }
+    </figure>
+
+    Uno podría asumir entonces que para poder construir estas columnas es necesario conseguir un ligando que reconozca a nuestra proteína de interés. Si bien esto es teóricamente cierto, como nosotros estamos sintetizando el ADN desde cero podemos pensar lateralmente y agregarle a nuestra proteína una secuencía aminoacídica en uno de sus extremos para la cual ya conozcamos ligandos. Estas secuencias pueden ser desde pocos aminoácidos hasta a proteínas pequeñas y son denominadas **tags**.
 
 ### Bases del experimento
 
-Volviendo a nuestro experimento, queremos insertar el gen de *VpVan* en un vector de expresión. Nuestro **organismo huesped** es:
+Volviendo a nuestro experimento, queremos insertar el gen de *VpVan* en un vector de expresión. Nuestro **organismo huésped** es:
 
 * *E. coli* BL21
 
@@ -440,10 +446,10 @@ Por cuestiones de practicidad, todos los tags van a estar en el C-terminal.
 
 En los siguientes ejercicios vamos a:
 
-* **Ejercicio 1:** Generar secuencias quiméricas *VpVan-Tag* agregando diferentes *tags* de interes a la secuencia proteíca de *VpVan*
-* **Ejercicio 2:** Obtener el genoma del organismo huesped *E. coli* BL21 (necesario para el **Ejercicio 3**)
-* **Ejercicio 3:** Generar una tabla de frecuencia de uso de codones del organismo huesped
-* **Ejercicio 4:** Generar la secuencia nucleotídica *VpVan-Tag* con los codones optimizados para el organismo huesped
+* **Ejercicio 1:** Generar secuencias quiméricas *VpVan-Tag* agregando diferentes *tags* de interés a la secuencia proteíca de *VpVan*
+* **Ejercicio 2:** Obtener el genoma del organismo huésped *E. coli* BL21 (necesario para el **Ejercicio 3**)
+* **Ejercicio 3:** Generar una tabla de frecuencia de uso de codones del organismo huésped
+* **Ejercicio 4:** Generar la secuencia nucleotídica *VpVan-Tag* con los codones optimizados para el organismo huésped
 * **Ejercicio 5:** Verificar que no hayan quedado sitios de corte para nuestras enzimas de restricción dentro de la secuencia *VpVan-Tag* optimizada y luego agregar los sitios de restricción en los bordes de la secuencia
 
 ## **Ejercicio 1. Secuencias aminoacídicas VpVan-Tag** { markdown data-toc-label='Ejercicio 1 - Tags' }  
@@ -455,7 +461,11 @@ Vamos a generar las secuencias de aminoácidos quiméricas VpVan-Tag (donde Tag 
 * **His-tag.fasta**
 * **MBP-tag.fasta**
 
-Es altamente recomendado que creen diferentes carpetas para los diferentes TPs y en algunos casos para los diferentes ejercicios (especialemente en este). El nombre y la ubicación lo pueden decidir ustedes, pero un ejemplo para este ejercicio seria **\~/Documentos/TP_02/EJ_1** (recuerden que es preferible no usar espacios al crear directorios o archivos). Una vez creada la carpeta para este ejercicio, muevan los cuatro archivos anteriores a dicha carpeta.
+Es altamente recomendado que creen diferentes carpetas para los diferentes TPs y en algunos casos para los diferentes ejercicios (especialemente en este). El nombre y la ubicación lo pueden decidir ustedes, pero un ejemplo para este ejercicio sería **\~/Documentos/TP_02/EJ_1**. Una vez creada la carpeta para este ejercicio, muevan los cuatro archivos anteriores a dicha carpeta.
+
+!!! tip
+
+    Recuerden que es preferible no usar espacios al crear directorios o archivos
 
 Nuestro objetivo ahora es crear 3 nuevos archivos FASTA que contengan las diferentes construcciones (*VpVan* + cada uno de los tags). Vamos a llamarlos **VpVan-FLAG-tag.fasta** y similar (reemplazando el nombre del tag en cada caso).
 
@@ -537,6 +547,10 @@ La segunda novedad es el uso de `*` con el comando `ls`. En todo lo que es Linux
 
 Ahora abran la consola y corran el script que acabamos de crear, generando así los nuevos 3 archivos.
 
+!!! tip
+
+    Recuerden que los *script* se corren con `bash ARCHIVO_SCRIPT`
+
 ¡Ya tenemos nuestras secuencias quiméricas!
 
 !!! tip
@@ -545,7 +559,7 @@ Ahora abran la consola y corran el script que acabamos de crear, generando así 
 
 ## **Ejercicio 2. Genoma de *E. coli*** { markdown data-toc-label='Ejercicio 2 - Genoma de E. coli' }
 
-Nosotros queremos expresar el gen de un organismo en otro organismo. Si bien el código genético es practicamente universal, diferentes organismos pueden tener preferencia para diferentes codones que generan un mismo aminoácido. Por esta razón, al hacer expresión recombinante heteróloga es una buena idea cambiar los codones del gen de interés para que matcheen mejor con los codones que prefiere el organismo huesped (se modifica el ADN pero se sigue produciendo la misma proteína). El primer paso para realizar esta modificación es conocer cuales son los codones preferidos por dicho organismo.
+Nosotros queremos expresar el gen de un organismo en otro organismo. Si bien el código genético es practicamente universal, diferentes organismos pueden tener preferencia para diferentes codones que generan un mismo aminoácido. Por esta razón, al hacer expresión recombinante heteróloga es una buena idea cambiar los codones del gen de interés para que matcheen mejor con los codones que prefiere el organismo huésped (se modifica el ADN pero se sigue produciendo la misma proteína). El primer paso para realizar esta modificación es conocer cuales son los codones preferidos por dicho organismo.
 
 * Busquen usando el comando `wossname` que programas de EMBOSS trabajan con codones (recuerden que está en inglés, asi que tienen que buscar "codon"). Lean la descripción de dichos programas, ¿cual les parece que vamos a usar para calcular la tabla de uso de codones?
 
@@ -553,9 +567,9 @@ Nosotros queremos expresar el gen de un organismo en otro organismo. Si bien el 
 
         `cusp`, cuya descripción es "Create a codon usage table from nucleotide sequence(s)"
 
-Si leen la descripción del programa, verán que pide una secuencia de nucleótidos, es decir, que necesitamos un FASTA del genoma completo de *E. coli* (ya que éste es nuestro organismo huesped).
+Si leen la descripción del programa, verán que pide una secuencia de nucleótidos, es decir, que necesitamos un FASTA del genoma completo de *E. coli* (ya que éste es nuestro organismo huésped).
 
-Un buen lugar para obtener información de genomas, genes, y proteínas es **RefSeq**, que es una colección curada de secuencias nucleotídicas y sus productos. En su FAQ hay una pregunta que es básicamente lo que queremos hacer nosotros:
+Un buen lugar para obtener información de genomas, genes, y proteínas es **RefSeq**, que es una colección curada de secuencias nucleotídicas y sus productos. En su FAQ (*Frequently Asked Questions*, o *preguntas frecuentes*) hay una pregunta que es básicamente lo que queremos hacer nosotros:
 
 [How can I download RefSeq data for all complete bacterial genomes?](https://www.ncbi.nlm.nih.gov/genome/doc/ftpfaq/#allcomplete)
 
@@ -576,9 +590,13 @@ wget ftp://ftp.ncbi.nlm.nih.gov/genomes/refseq/bacteria/assembly_summary.txt
 
     ¿Qué piensan que hace `wget`? ¿Cómo pueden averiguarlo si no lo saben?
 
-Una vez descargado ese archivo (que pesa bastante) queremos ver sus contenidos. Sabiendo que es un archivo que tiene más de 250.000 lineas, ¿qué comando usarían para ver que tipo de datos tiene adentro? Pruebenló.
+Una vez descargado ese archivo (que pesa bastante) queremos ver sus contenidos. Sabiendo que es un archivo que tiene más de 250.000 lineas:
 
-Probablemente les cueste entender lo que estan viendo aunque hayan usado el comando correcto, lo que se debe a que este archivo es una tabla con decenas de columnas. Para entender un poco mas la estructura de lo que acabamos de bajar vamos a crear un archivo temporal que tenga solo las primeras 20 filas de este archivo:
+* ¿Qué comando usarían para ver que tipo de datos tiene adentro? Pruebenlo.
+
+Dado que es un archivo con muchas columnas, probablemente les cueste entender lo que están viendo aunque hayan usado el comando correcto.
+
+Para entender la estructura de nuestro archivo vamos a crear un archivo temporal que tenga solo las primeras 20 filas de este archivo:
 
 ```bash
 head -20 assembly_summary.txt > assembly_summary_temporal.tsv
@@ -586,9 +604,11 @@ head -20 assembly_summary.txt > assembly_summary_temporal.tsv
 
 Lo único que les debería llamar la atención del comando anterior es que el nuevo archivo tiene la extensión **tsv**. Esto lo mencionamos por arriba en el TP 1, pero los archivos **TSV** o "Tab-Separated Values" son archivos de texto que contienen una tabla donde sus columnas están separadas entre ellas por un ++tab++, lo cual es exactamente el caso de la tabla actual.
 
-Prueben ahora hacer doble click sobre el archivo **assembly_summary_temporal.tsv**. La razón que le cambiamos la extensión a **tsv** es que en nuestra máquina virtual esa extensión esta asociada al programa **Gnumeric**, una hoja de cálculo similar a Excell o a Google Sheets. Gracias a la extensión **tsv**, Gnumeric va a detectar automáticamente que las columnas estan separadas por ++tab++ y va a separarlas en su hoja de cálculo, haciendo la tabla mucho mas facil de leer. Vean si pueden encontrar las columnas que contienen la especie, la cepa y el link al genoma (técnicamente a la carpeta donde está el genoma).
+Hagan doble click sobre el archivo **assembly_summary_temporal.tsv**. La extensión **tsv** en nuestra máquina virtual está asociada al programa **Gnumeric** (similar a Excell o a Google Sheets). Gnumeric va a detectar automáticamente que las columnas están separadas por ++tab++.
 
-Ahora que pueden leer un poco mejor la tabla van a ver que tiene muchos mas organismos que *E. coli*. Lo primero que tenemos que hacer entonces es filtrar el archivo y quedarnos solo con nuestro organismo y cepa de interes. Corran los siguientes comandos uno a la vez:
+* Identifiquen la columna correspondiente a la especie (son solo las primeras 20 filas, no van a encontrar a *E. coli*), la cepa y el link a la ubicación del genoma.
+
+Ahora que conocen la estructura de la tabla, y sabiendo que tiene muchos mas organismos que *E. coli*, tenemos que filtrar el archivo y quedarnos solo con nuestro organismo y cepa de interés. Para esto, corran los siguientes comandos uno a la vez:
 
 === "Código"
 
@@ -626,6 +646,8 @@ Al comando `awk` lo vimos brevemente al final del TP 1 y sirve para trabajar con
 
 Este comando va a crear el archivo **ftpdirpaths**, que contiene links a las carpetas que contienen los genomas.
 
+* Investiguen cuantos links quedaron en **ftpdirpaths**. ¿Entienden por qué? Sino consulten.
+
 ### RefSeq - Paso 3 - Crear un archivo con links a los genomas { markdown data-toc-label='RefSeq - Paso 3' }
 
 Los links que tenemos de momento tienen el formato:
@@ -634,7 +656,7 @@ Los links que tenemos de momento tienen el formato:
 
     ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/833/145/GCF_000833145.1_ASM83314v1
 
-Sin embargo, estos son links a las carpetas que contienen los genomas. Siguiendo las instrucciones del FAQ de **RefSeq** podemos crear el link de los genomas, que para el ejemplo anterior seria:
+Sin embargo, estos son links a las carpetas que contienen los genomas. Siguiendo las instrucciones del FAQ de **RefSeq** podemos crear el link de los genomas, que para el ejemplo anterior sería:
 
 !!! info ""
 
@@ -642,13 +664,9 @@ Sin embargo, estos son links a las carpetas que contienen los genomas. Siguiendo
 
 Donde el nombre del archivo es el nombre de la última carpeta + **"\_cds_from_genomic.fna.gz"**
 
-Hay varias formas de crear estos nuevos links, pero siguiendo el FAQ de **RefSeq** nos sugiere el comando:
+Los archivos terminados en **.fna.gz** son secuencias en formato FASTA (*f*) de nucleótidos (*na*) comprimidas (*gz*).
 
-```bash
-awk 'BEGIN{FS=OFS="/";filesuffix="genomic.gbff.gz"}{ftpdir=$0;asm=$10;file=asm"_"filesuffix;print ftpdir,file}' ftpdirpaths > ftpfilepaths
-```
-
-Siendo honestos, este comando es innecesariamente complejo para lo que quieren conseguir. A continuación les vamos a proponer un comando mas simple que hace exactamente lo mismo:
+Hay varias formas de crear estos nuevos links. Nosotros lo vamos a hacer de la siguiente manera:
 
 ```bash
 awk -F "/" '{print $0 "/" $10 "_cds_from_genomic.fna.gz"}' ftpdirpaths > ftpfilepaths
@@ -663,15 +681,15 @@ Donde:
 
 Una vez que entienden lo que hace este comando abran la terminal y corranló.
 
-??? info "Por si se quedaron con curiosidad de como funcionaba el comando del FAQ de **RefSeq**"
+??? info "Por si se quedaron con curiosidad de el comando que proponía el FAQ de **RefSeq**"
 
-    Como mencionamos antes el comando `awk` que sugeria el FAQ de **RefSeq** era un poco mas complejo, pero llegaba al mismo resultado. 
+    El comando `awk` que sugeria el FAQ de **RefSeq** es un poco más complejo, pero llegaba al mismo resultado. Noten que en este comando el archivo tiene la extensión **.gbff.gz** que hace referencia al formato de **GenBank**, que no es el con el que vamos a trabajar. Hay que cambiarlo por **"cds_from_genomic.fna.gz"**
 		
     ```bash
     awk 'BEGIN{FS=OFS="/";filesuffix="genomic.gbff.gz"}{ftpdir=$0;asm=$10;file=asm"_"filesuffix;print ftpdir,file}' ftpdirpaths > ftpfilepaths
     ```
 
-    Este comando es bastante complejo y no es necesario que lo entiendan 100%, pero vamos a aclarar algunas cosas:
+    No es necesario que lo entiendan 100%, pero vamos a aclarar algunas cosas:
 
     * `BEGIN` significa que las cosas entre las primeras llaves se van a ejecutar solo una vez, y no una vez por fila (como el resto).
     * `FS` es una variable interna de `awk` que indica como se separan las columnas en la tabla a leer (es equivalente a usar `-F`). La variable `OFS` indica lo mismo, pero para la salida de `awk`. Con `FS=OFS="/"` estamos indicando que ambos serán la barra `/`. Lo que está haciendo este código es leer nuestros *paths* como si fueran tablas de varias columnas, haciendo que cada carpeta quede en su propia columna.
@@ -722,7 +740,7 @@ Como tenemos varios archivos **.fna.gz** vamos a tener que correr el comando `cu
 
     !!! tip 
 
-        Lo unico que falta en el script es la estructura del *for each* propiamente dicho. Si no se la acuerdan pueden ver el *for each* que usamos en el **Ejercicio 1** como guia.
+        Lo unico que falta en el script es la estructura del *for each* propiamente dicho. Si no se la acuerdan pueden ver el *for each* que usamos en el **Ejercicio 1** como guía.
 
 Una vez creado el script, corranló.
 
@@ -733,7 +751,7 @@ Una vez creado el script, corranló.
 
 ### Comparar tablas de codones
 
-Recordando nuestro objetivo, nosotros queríamos una tabla de codones de *E. coli* para saber como modificar el ADN de nuestra proteína de interés (*VpVan*) para que use aquellos codones preferidos por el organismo huesped. En este momento tenemos varias tablas de codones, asi que tenemos que elegir alguna.
+Recordando nuestro objetivo, nosotros queríamos una tabla de codones de *E. coli* para saber como modificar el ADN de nuestra proteína de interés (*VpVan*) para que use aquellos codones preferidos por el organismo huésped. En este momento tenemos varias tablas de codones, asi que tenemos que elegir alguna.
 
 Abran uno de los archivos **.cusp** que acabamos de crear y vean que información tiene:
 
@@ -877,16 +895,12 @@ Corran este comando 3 veces pasándole los archivos correctos y creen los siguie
 Una vez creados, abran los archivos con **Leafpad**. 
 
 1. ¿Entienden lo que simboliza el archivo? (es necesario que esten usando la fuente **Ubuntu Mono** en **Leafpad** para verlo bien)
-1. Busquen nuestras enzimas de restricción de interes. ¿Las encuentran? ¿En que categoría están? ¿Se pueden usar entonces estas enzimas de restricción para insertar nuestra secuencia en un plásmido?
+1. Busquen nuestras enzimas de restricción de interés. ¿Las encuentran? ¿En que categoría están? ¿Se pueden usar entonces estas enzimas de restricción para insertar nuestra secuencia en un plásmido?
 1. ¿Hay algún tag de los tres que estabamos considerando que no se pueda usar debido a las enzimas de restricción que elegimos?
-1. Elijan el tag que les parece mejor (cualquiera que no sea cortado por las enzimas de restricción está bien), copien su construcción **Ecoli-DNA-VpVAN-???-tag.fasta** a un nuevo archivo y luego cambienlé el nombre a **secuencia_final.fasta**.
+1. Elijan el tag que quieren usar, copien su construcción **Ecoli-DNA-VpVAN-???-tag.fasta** a un nuevo archivo y luego cambienlé el nombre a **secuencia_final.fasta**.
 1. Abran **secuencia_final.fasta** en **Leafpad** y agreguen a mano el sitio de restricción de **BamHI** al principio y el de **HindIII** al final.
 
 **¡Felicitaciones, tenemos nuestra secuencia lista para mandar a secuenciar!**
-
-!!! danger "TO DO"
-
-    ver si no se les agrega mas secuencias del otro lado de las enzimas de restriccion?
 
 ## Bibliografía
 
