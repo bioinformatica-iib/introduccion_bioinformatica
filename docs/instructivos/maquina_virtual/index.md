@@ -69,14 +69,43 @@ Hay un montón de sistemas operativos, pero los más comunes son:
     
     Si no cuentan con una conexión estable, pueden escribirnos para buscar alguna solución alternativa.
 
-* Una vez descargado el archivo, descomprimir para obtener el `vmdk` (pesa alrededor de 15GB, pero puede llegar a crecer un poco durante la cursada).
+
+## Paso 2. Validar la descarga
+
+Una vez descargado el archivo hay que validar la descarga usando checksums. Pueden usar cualquiera de estos checksums (MD5, SHA256), y como respuesta tienen que obtener estos valores. Si los valores no coinciden, la descarga no fue exitosa (el archivo está corrompido y no va a funcionar!). Los valores de los checksums son hexadecimales, da igual si las letras están en mayuscula o minuscula, mientras coincidan está OK. 
+
+!!! info
+
+    IBioinfo-Lubuntu-32 v13.zip, MD5 checksum: 8266E14E765D03920E743AA1B09EA56B
+    IBioinfo-Lubuntu-32 v13.zip, SHA256 checksum: 7F23F297BDD497704E2DAF712C2E96673600C63978E983D222819F0EE34518FE
+
+
+Como validar los checksums. Dependiendo de si están usando Windows (Powershell), OSX (Mac, Terminal), o Linux (Terminal), estos son los comandos que tienen que usar: 
+
+``` bash
+# Windows Poweshell (asumimos que descargaron el archivo en C:\Downloads, si no es así, cambien el Path!)
+Get-FileHash -Algorithm MD5 -Path 'C:\Downloads\IBioinfo-Lubuntu-32 v13.zip'
+Get-FileHash -Algorithm SHA256 -Path 'C:\Downloads\IBioinfo-Lubuntu-32 v13.zip'
+
+# OS X (Terminal) (tienen que cambiarse primero al directorio donde hicieron la descarga, por ej Downloads)
+cd Downloads
+md5 IBioinfo-Lubuntu-32 v13.zip
+sha256 IBioinfo-Lubuntu-32 v13.zip
+
+# Linux (Terminal) (tienen que cambiarse primero al directorio donde hicieron la descarga, por ej Downloads)
+cd Downloads
+md5sum IBioinfo-Lubuntu-32 v13.zip
+sha256sum IBioinfo-Lubuntu-32 v13.zip
+```
+
+Luego, **solamente si los checksums coinciden** (la descarga fue exitosa), descomprimir para obtener el `vmdk` (pesa alrededor de 15GB, pero puede llegar a crecer un poco durante la cursada).
 
 !!! danger "Elegir la ubicación"
     
     Elijan la ubicación final del archivo `vmdk` ya que una vez creada la Virtual Machine **NO** se puede mover el archivo `.vmdk` de lugar.
 
 
-## Paso 2. Instalar Virtual Box
+## Paso 3. Instalar Virtual Box
 
 * Mientras descarga la imagen, aprovechen el tiempo muerto para descargar Oracle VM VirtualBox.
 
@@ -85,7 +114,7 @@ Hay un montón de sistemas operativos, pero los más comunes son:
 * Descarguen la última versión (v6.1) apropiada para su sistema operativo (Windows, OSX o Linux) y sigan las instrucciones del instalador hasta que hayan terminado.
 
 
-## Paso 3. Crear una máquina virtual
+## Paso 4. Crear una máquina virtual
 Virtual Box es un virtualizador de entornos. Nos permite generar *máquinas virtuales*. Vamos a crear nuestra máquina virtual con el archivo de disco virtual **IBioinfo-Lubuntu-32.vmdk** que acabamos de descargar. Para eso:
 
 1. Abrimos Virtual Box:
