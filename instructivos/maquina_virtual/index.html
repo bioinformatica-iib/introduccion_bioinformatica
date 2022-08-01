@@ -666,15 +666,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#paso-2-instalar-virtual-box" class="md-nav__link">
-    Paso 2. Instalar Virtual Box
+  <a href="#paso-2-validar-la-descarga" class="md-nav__link">
+    Paso 2. Validar la descarga
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#paso-3-crear-una-maquina-virtual" class="md-nav__link">
-    Paso 3. Crear una máquina virtual
+  <a href="#paso-3-instalar-virtual-box" class="md-nav__link">
+    Paso 3. Instalar Virtual Box
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paso-4-crear-una-maquina-virtual" class="md-nav__link">
+    Paso 4. Crear una máquina virtual
   </a>
   
 </li>
@@ -787,14 +794,37 @@ Hay un montón de sistemas operativos, pero los más comunes son:
 <p>Son archivos pesados (~ <strong>9GB</strong>). Descárguenlos con <strong>tiempo</strong> y con <strong>conexión estable</strong>.</p>
 <p>Si no cuentan con una conexión estable, pueden escribirnos para buscar alguna solución alternativa.</p>
 </div>
-<ul>
-<li>Una vez descargado el archivo, descomprimir para obtener el <code>vmdk</code> (pesa alrededor de 15GB, pero puede llegar a crecer un poco durante la cursada).</li>
-</ul>
+<h2 id="paso-2-validar-la-descarga">Paso 2. Validar la descarga</h2>
+<p>Una vez descargado el archivo hay que validar la descarga usando checksums. Pueden usar cualquiera de estos checksums (MD5, SHA256), y como respuesta tienen que obtener estos valores. Si los valores no coinciden, la descarga no fue exitosa (el archivo está corrompido y no va a funcionar!). Los valores de los checksums son hexadecimales, da igual si las letras están en mayuscula o minuscula, mientras coincidan está OK. </p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>IBioinfo-Lubuntu-32 v13.zip, MD5 checksum: 8266E14E765D03920E743AA1B09EA56B</p>
+<p>IBioinfo-Lubuntu-32 v13.zip, SHA256 checksum: 7F23F297BDD497704E2DAF712C2E96673600C63978E983D222819F0EE34518FE</p>
+</div>
+<p>Como validar los checksums. Dependiendo de si están usando Windows (Powershell), OSX (Mac, Terminal), o Linux (Terminal), estos son los comandos que tienen que usar: </p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Windows Poweshell </span>
+<span class="c1"># asumimos que descargaron el archivo en C:\Downloads, si no es así, cambien el Path!</span>
+Get-FileHash -Algorithm MD5 -Path <span class="s1">&#39;C:\Downloads\IBioinfo-Lubuntu-32 v13.zip&#39;</span>
+Get-FileHash -Algorithm SHA256 -Path <span class="s1">&#39;C:\Downloads\IBioinfo-Lubuntu-32 v13.zip&#39;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># OS X (Terminal App) </span>
+<span class="c1"># tienen que cambiarse primero al directorio donde hicieron la descarga, por ej Downloads</span>
+<span class="nb">cd</span> Downloads
+md5 IBioinfo-Lubuntu-32 v13.zip
+shasum -a <span class="m">256</span> IBioinfo-Lubuntu-32 v13.zip
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Linux (Terminal) </span>
+<span class="c1"># tienen que cambiarse primero al directorio donde hicieron la descarga, por ej Downloads</span>
+<span class="nb">cd</span> Downloads
+md5sum IBioinfo-Lubuntu-32 v13.zip
+sha256sum IBioinfo-Lubuntu-32 v13.zip
+</code></pre></div>
+<p>Luego, <strong>solamente si los checksums coinciden</strong> (la descarga fue exitosa), descomprimir para obtener el <code>vmdk</code> (pesa alrededor de 15GB, pero puede llegar a crecer un poco durante la cursada).</p>
 <div class="admonition danger">
 <p class="admonition-title">Elegir la ubicación</p>
 <p>Elijan la ubicación final del archivo <code>vmdk</code> ya que una vez creada la Virtual Machine <strong>NO</strong> se puede mover el archivo <code>.vmdk</code> de lugar.</p>
 </div>
-<h2 id="paso-2-instalar-virtual-box">Paso 2. Instalar Virtual Box</h2>
+<h2 id="paso-3-instalar-virtual-box">Paso 3. Instalar Virtual Box</h2>
 <ul>
 <li>
 <p>Mientras descarga la imagen, aprovechen el tiempo muerto para descargar Oracle VM VirtualBox.</p>
@@ -806,7 +836,7 @@ Hay un montón de sistemas operativos, pero los más comunes son:
 <p>Descarguen la última versión (v6.1) apropiada para su sistema operativo (Windows, OSX o Linux) y sigan las instrucciones del instalador hasta que hayan terminado.</p>
 </li>
 </ul>
-<h2 id="paso-3-crear-una-maquina-virtual">Paso 3. Crear una máquina virtual</h2>
+<h2 id="paso-4-crear-una-maquina-virtual">Paso 4. Crear una máquina virtual</h2>
 <p>Virtual Box es un virtualizador de entornos. Nos permite generar <em>máquinas virtuales</em>. Vamos a crear nuestra máquina virtual con el archivo de disco virtual <strong>IBioinfo-Lubuntu-32.vmdk</strong> que acabamos de descargar. Para eso:</p>
 <ol>
 <li>
