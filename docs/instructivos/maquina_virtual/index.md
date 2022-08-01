@@ -77,22 +77,30 @@ Una vez descargado el archivo hay que validar la descarga usando checksums. Pued
 !!! info
 
     IBioinfo-Lubuntu-32 v13.zip, MD5 checksum: 8266E14E765D03920E743AA1B09EA56B
+
     IBioinfo-Lubuntu-32 v13.zip, SHA256 checksum: 7F23F297BDD497704E2DAF712C2E96673600C63978E983D222819F0EE34518FE
 
 
 Como validar los checksums. Dependiendo de si están usando Windows (Powershell), OSX (Mac, Terminal), o Linux (Terminal), estos son los comandos que tienen que usar: 
 
 ``` bash
-# Windows Poweshell (asumimos que descargaron el archivo en C:\Downloads, si no es así, cambien el Path!)
+# Windows Poweshell 
+# asumimos que descargaron el archivo en C:\Downloads, si no es así, cambien el Path!
 Get-FileHash -Algorithm MD5 -Path 'C:\Downloads\IBioinfo-Lubuntu-32 v13.zip'
 Get-FileHash -Algorithm SHA256 -Path 'C:\Downloads\IBioinfo-Lubuntu-32 v13.zip'
+```
 
-# OS X (Terminal) (tienen que cambiarse primero al directorio donde hicieron la descarga, por ej Downloads)
+``` bash
+# OS X (Terminal App) 
+# tienen que cambiarse primero al directorio donde hicieron la descarga, por ej Downloads
 cd Downloads
 md5 IBioinfo-Lubuntu-32 v13.zip
-sha256 IBioinfo-Lubuntu-32 v13.zip
+shasum -a 256 IBioinfo-Lubuntu-32 v13.zip
+```
 
-# Linux (Terminal) (tienen que cambiarse primero al directorio donde hicieron la descarga, por ej Downloads)
+``` bash
+# Linux (Terminal) 
+# tienen que cambiarse primero al directorio donde hicieron la descarga, por ej Downloads
 cd Downloads
 md5sum IBioinfo-Lubuntu-32 v13.zip
 sha256sum IBioinfo-Lubuntu-32 v13.zip
