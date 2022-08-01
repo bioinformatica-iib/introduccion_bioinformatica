@@ -123,7 +123,7 @@ nav:
         - 'practicos/inicio.md'
         #- TPs: 'practicos/tpsGrid.md'
         - TP 1 - Linux: 'practicos/TP01_Linux/index.md'
-        #- TP 2 - EMBOSS: 'practicos/TP02_EMBOSS/index.md'
+        - TP 2 - EMBOSS: 'practicos/TP02_EMBOSS/index.md'
         #- TP 3 - Alineamientos de a pares: 'practicos/TP03_Alineamientos/index.md'
         #- TP 4 - Alineamientos de a pares: 'practicos/TP04_Alineamientos/index.md'
         #- TP 8 - R: 'practicos/TP08_R/index.md'
