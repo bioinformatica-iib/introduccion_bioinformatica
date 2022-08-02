@@ -19,9 +19,7 @@ Docentes, modo de cursada, cronograma, evaluaciones, etc.
 
  * :fontawesome-regular-file-pdf: [Slides](experimentosBioinformaticos2022.pdf) 
 
-## Video de la clase grabada
-
-Va a aparecer después de la clase!
+## Videos de la clase grabada
 
  * :octicons-video-16: [Presentacion de la Materia](https://youtu.be/embed/_jwvRkxu588)
  * :octicons-video-16: [Conceptos de Computación](https://youtu.be/embed/CAwG3cIv2LA)
