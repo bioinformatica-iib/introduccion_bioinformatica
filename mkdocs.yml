@@ -115,7 +115,7 @@ nav:
     - Docentes: 'docentes.md'
     - Teoricas:
         - teoricas/inicio.md
-        #- Teórica 1: teoricas/1-Teorica-Uno/index.md
+        - Teórica 1: teoricas/1-Teorica-Uno/index.md
         #- Teórica 2: teoricas/2-Teorica-Dos/index.md
         #- Teórica 3: teoricas/3-Teorica-Tres/index.md
         #- Resumen: teoricas/resumen.md

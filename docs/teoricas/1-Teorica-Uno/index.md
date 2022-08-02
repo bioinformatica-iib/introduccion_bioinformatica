@@ -4,22 +4,33 @@ tags:
   - teoricas
 ---
 
-![Image](featured.svg){ width="250", align=left }
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sit amet
-fermentum justo, at rhoncus tellus. Aliquam nec magna ullamcorper, congue libero
-at, ultrices turpis. Vestibulum imperdiet sapien arcu, vitae faucibus nunc
-congue ut. Etiam non vulputate dui. Integer nec hendrerit libero. In bibendum
-lorem lectus, id volutpat diam imperdiet vel. Curabitur eu dictum sapien. Etiam
-lacinia lacinia commodo. Aliquam erat volutpat. Duis massa odio, vulputate in
-lorem id, fringilla tincidunt nunc. Quisque risus mauris, fringilla eget euismod
-quis, dictum id dui. Cras at lectus tempus, dapibus arcu sit amet, gravida diam.
 
-## Video :octicons-video-24:
+## Presentación de la materia
 
-![type:video](https://www.youtube.com/embed/kS0X-yIsB64)
+Docentes, modo de cursada, cronograma, evaluaciones, etc.
+
+ * :fontawesome-regular-file-pdf: [Slides](presentacionDeLaMateria-2022.pdf) 
+
+## Conceptos elementales de computación y algoritmos
+
+ * :fontawesome-regular-file-pdf: [Slides](IntroduccionComputacion2022.pdf) 
+
+## Experimentos en bioinformática
+
+ * :fontawesome-regular-file-pdf: [Slides](experimentosBioinformaticos2022.pdf) 
+
+## Video de la clase grabada
+
+Va a aparecer después de la clase!
+
+ * :octicons-video-16: [Video]()
+
+[//]: # (![type:video](https://www.youtube.com/embed/kS0X-yIsB64))
+[//]: # (This is a comment on a new line.)
 
 ## Material de lectura y consulta
 
-  * Uno
-  * Dos
-  * Tres
+  * [Introduction to Algorithms (2009). Cormen, Leiserson, Rivest, Stein. 3rd Edition, MIT Press.](https://mitpress.mit.edu/books/introduction-algorithms-third-edition)
+  * [Blischak JD, Davenport ER, Wilson G (2016) A Quick Introduction to Version Control with Git and GitHub. PLOS Computational Biology 12(1): e1004668.](https://doi.org/10.1371/journal.pcbi.1004668)
+  * Introduction to Bioinformatics (2019), 4th Edition. Oxford University Press. Arthur M Lesk (hay dos copias en el lab). 
+
