@@ -23,7 +23,9 @@ Docentes, modo de cursada, cronograma, evaluaciones, etc.
 
 Va a aparecer después de la clase!
 
- * :octicons-video-16: [Video](https://youtu.be/embed/_jwvRkxu588)
+ * :octicons-video-16: [Presentacion de la Materia](https://youtu.be/embed/_jwvRkxu588)
+ * :octicons-video-16: [Conceptos de Computación](https://youtu.be/embed/CAwG3cIv2LA)
+ * :octicons-video-16: [Experimentos en Bioinformática](https://youtu.be/embed/wgWoK9hCE3c)
 
 [//]: # (![type:video](https://www.youtube.com/embed/kS0X-yIsB64))
 [//]: # (This is a comment on a new line.)
