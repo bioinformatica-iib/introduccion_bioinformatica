@@ -63,6 +63,11 @@ Hay un montón de sistemas operativos, pero los más comunes son:
 
 [:fontawesome-solid-download: Máquina Virtual](https://www.dropbox.com/s/2187nlnjc03g8ki/IBioinfo-Lubuntu-32%20v1.3.zip?dl=0){ .md-button .md-button--primary }
 
+* O bien, si eso falla, pueden probar este link, que es un link a Drive.
+
+[:fontawesome-solid-download: Máquina Virtual desde Drive](https://drive.google.com/file/d/1708hAt-M2x5HOd0OD1pJJ4ZCsSss8GCm/view?usp=sharing){ .md-button .md-button--primary }
+
+
 !!! warning "Atención"
 
     Son archivos pesados (~ **9GB**). Descárguenlos con **tiempo** y con **conexión estable**.
@@ -72,41 +77,44 @@ Hay un montón de sistemas operativos, pero los más comunes son:
 
 ## Paso 2. Validar la descarga
 
-Una vez descargado el archivo hay que validar la descarga usando checksums. Pueden usar cualquiera de estos checksums (MD5, SHA256), y como respuesta tienen que obtener estos valores. Si los valores no coinciden, la descarga no fue exitosa (el archivo está corrompido y no va a funcionar!). Los valores de los checksums son hexadecimales, da igual si las letras están en mayuscula o minuscula, mientras coincidan está OK. 
+Una vez descargado el archivo hay que validar la descarga usando checksums. Pueden usar cualquiera de estos checksums (MD5, SHA256), y como respuesta tienen que obtener estos valores. Si los valores no coinciden, la descarga no fue exitosa (el archivo está corrupto y no va a funcionar!). Los valores de los checksums son hexadecimales, da igual si las letras están en mayuscula o minuscula, mientras coincidan está OK. 
 
 !!! info
 
-    IBioinfo-Lubuntu-32 v13.zip, MD5 checksum: 8266E14E765D03920E743AA1B09EA56B
+    IBioinfo-Lubuntu-32 v1.3.zip, MD5 checksum: 8266E14E765D03920E743AA1B09EA56B
 
-    IBioinfo-Lubuntu-32 v13.zip, SHA256 checksum: 7F23F297BDD497704E2DAF712C2E96673600C63978E983D222819F0EE34518FE
+    IBioinfo-Lubuntu-32 v1.3.zip, SHA256 checksum: 7F23F297BDD497704E2DAF712C2E96673600C63978E983D222819F0EE34518FE
 
+Pueden estar en mayúsculas o minúsculas.
 
 Como validar los checksums. Dependiendo de si están usando Windows (Powershell), OSX (Mac, Terminal), o Linux (Terminal), estos son los comandos que tienen que usar: 
 
 ``` bash
 # Windows Poweshell 
 # asumimos que descargaron el archivo en C:\Downloads, si no es así, cambien el Path!
-Get-FileHash -Algorithm MD5 -Path 'C:\Downloads\IBioinfo-Lubuntu-32 v13.zip'
-Get-FileHash -Algorithm SHA256 -Path 'C:\Downloads\IBioinfo-Lubuntu-32 v13.zip'
+Get-FileHash -Algorithm MD5 -Path 'C:\Downloads\IBioinfo-Lubuntu-32 v1.3.zip'
+Get-FileHash -Algorithm SHA256 -Path 'C:\Downloads\IBioinfo-Lubuntu-32 v1.3.zip'
 ```
 
 ``` bash
 # OS X (Terminal App) 
 # tienen que cambiarse primero al directorio donde hicieron la descarga, por ej Downloads
 cd Downloads
-md5 IBioinfo-Lubuntu-32 v13.zip
-shasum -a 256 IBioinfo-Lubuntu-32 v13.zip
+md5 IBioinfo-Lubuntu-32 v1.3.zip
+shasum -a 256 IBioinfo-Lubuntu-32 v1.3.zip
 ```
 
 ``` bash
 # Linux (Terminal) 
 # tienen que cambiarse primero al directorio donde hicieron la descarga, por ej Downloads
 cd Downloads
-md5sum IBioinfo-Lubuntu-32 v13.zip
-sha256sum IBioinfo-Lubuntu-32 v13.zip
+md5sum IBioinfo-Lubuntu-32 v1.3.zip
+sha256sum IBioinfo-Lubuntu-32 v1.3.zip
 ```
 
 Luego, **solamente si los checksums coinciden** (la descarga fue exitosa), descomprimir para obtener el `vmdk` (pesa alrededor de 15GB, pero puede llegar a crecer un poco durante la cursada).
+
+
 
 !!! danger "Elegir la ubicación"
     
