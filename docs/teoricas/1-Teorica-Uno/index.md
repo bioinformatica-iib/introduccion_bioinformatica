@@ -23,7 +23,7 @@ Docentes, modo de cursada, cronograma, evaluaciones, etc.
 
 Va a aparecer después de la clase!
 
- * :octicons-video-16: [Video]()
+ * :octicons-video-16: [Video](https://youtu.be/embed/_jwvRkxu588)
 
 [//]: # (![type:video](https://www.youtube.com/embed/kS0X-yIsB64))
 [//]: # (This is a comment on a new line.)
