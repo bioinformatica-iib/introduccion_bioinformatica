@@ -91,6 +91,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://bioinformatica-iib.github.io/2022_introduccion_bioinformatica/practicos/TP08_R/</loc>
+         <lastmod>2022-08-03</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://bioinformatica-iib.github.io/2022_introduccion_bioinformatica/practicos/TP08_R/index%20-%20copia/</loc>
+         <lastmod>2022-08-03</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://bioinformatica-iib.github.io/2022_introduccion_bioinformatica/teoricas/inicio/</loc>
          <lastmod>2022-08-03</lastmod>
          <changefreq>daily</changefreq>
