@@ -63,10 +63,42 @@ Hay un montón de sistemas operativos, pero los más comunes son:
 
 [:fontawesome-solid-download: Máquina Virtual](https://www.dropbox.com/s/2187nlnjc03g8ki/IBioinfo-Lubuntu-32%20v1.3.zip?dl=0){ .md-button .md-button--primary }
 
+??? tip "Descargar desde Dropbox usando wget"
+
+    En vez de usar una descarga directa para bajar el archivo desde Dropbox, se puede bajar mediante el comando `wget`. La ventaja de usar `wget` es que si la descarga está incompleta o les dice que está dañado el archivo, pueden volver a correr `wget` con la opción `-c` (continuar descarga) para completarla, y volver a probar si pueden validar los checksums o descomprimirlo.
+
+    **En Ubuntu:**
+
+    * Abran la terminal en la ubicación donde quieren descargar la VM (después la pueden mover antes de descomprimir)
+
+    * Corran el siguiente comando:
+
+        ```bash
+        wget https://www.dropbox.com/s/2187nlnjc03g8ki/IBioinfo-Lubuntu-32%20v1.3.zip
+        ```
+
+    **En Windows:**
+
+    * Descarguen la version portable (ZIP) de la última versión de `wget` desde [esta página](https://eternallybored.org/misc/wget/)
+    * Descompriman el ZIP en la ubicación donde quieren descargar la VM (después la pueden mover antes de descomprimir)
+    * Abran la terminal o consola **en esa carpeta**
+    * Corran el siguiente comando:
+
+        ```bash
+        ./wget.exe https://www.dropbox.com/s/2187nlnjc03g8ki/IBioinfo-Lubuntu-32%20v1.3.zip
+        ```
+
+    **Reanudar descarga:**
+
+    Como mencionamos antes, si tienen algún problema con la descarga pueden usar la opción `-c` para completarla. En Ubuntu, un segundo intento sería:
+
+    ```bash
+    wget -c https://www.dropbox.com/s/2187nlnjc03g8ki/IBioinfo-Lubuntu-32%20v1.3.zip
+    ```
+
 * O bien, si eso falla, pueden probar este link, que es un link a Drive.
 
 [:fontawesome-solid-download: Máquina Virtual desde Drive](https://drive.google.com/file/d/1708hAt-M2x5HOd0OD1pJJ4ZCsSss8GCm/view?usp=sharing){ .md-button .md-button--primary }
-
 
 * O bien, si los dos anteriores fallan pueden probar este link, que es un link de Mega.
 
