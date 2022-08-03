@@ -68,6 +68,10 @@ Hay un montón de sistemas operativos, pero los más comunes son:
 [:fontawesome-solid-download: Máquina Virtual desde Drive](https://drive.google.com/file/d/1708hAt-M2x5HOd0OD1pJJ4ZCsSss8GCm/view?usp=sharing){ .md-button .md-button--primary }
 
 
+* O bien, si los dos anteriores fallan pueden probar este link, que es un link de Mega.
+
+[:fontawesome-solid-download: Máquina Virtual desde Mega](https://mega.nz/file/bzZSiYaY#CQoWNK5B8VCCj11SGP8OYyslSRT0g4JqpdhKvZ0hVPU){ .md-button .md-button--primary }
+
 !!! warning "Atención"
 
     Son archivos pesados (~ **9GB**). Descárguenlos con **tiempo** y con **conexión estable**.
