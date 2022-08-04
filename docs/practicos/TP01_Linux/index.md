@@ -15,6 +15,17 @@ Este es el botón para decargar materiales, en (#) hay que agregar el link corre
 * Programa 2 [www.donde.lo.bajo2.com](https://www.example.com)
 --->
 
+### Slides mostrados en la clase
+
+* :fontawesome-regular-file-pdf: [Introducción a la programación](https://drive.google.com/file/d/12HLvmzhoz4HToEn9280HIvPEC6NO2WPN/view?usp=sharing)
+* :fontawesome-regular-file-pdf: [Cierre TP](https://drive.google.com/file/d/1O4924IOzLfZ1_y3epUKKOrvYNC0oomfj/view?usp=sharing)
+
+### Videos de la clase grabada
+
+* :octicons-video-16: [Presentacion de la Materia](#)
+* :octicons-video-16: [Introducción a la programación](#)
+* :octicons-video-16: [Cierre TP](#)
+
 ### Recursos Online
 * [Command-line bootcamp](https://cli-boot.camp/)
 * [Programando en Bash](https://atareao.es/tutorial/scripts-en-bash/)
