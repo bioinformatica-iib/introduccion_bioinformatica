@@ -22,9 +22,9 @@ Este es el botón para decargar materiales, en (#) hay que agregar el link corre
 
 ### Videos de la clase grabada
 
-* :octicons-video-16: [Presentacion de la Materia](#)
-* :octicons-video-16: [Introducción a la programación](#)
-* :octicons-video-16: [Cierre TP](#)
+* :octicons-video-16: [Presentacion de la Materia](https://youtu.be/zOnacQHwI-E)
+* :octicons-video-16: [Introducción a la programación](https://youtu.be/d1P_6sJN1og)
+* :octicons-video-16: [Cierre TP](https://youtu.be/pYXT8aejbWE)
 
 ### Recursos Online
 * [Command-line bootcamp](https://cli-boot.camp/)
