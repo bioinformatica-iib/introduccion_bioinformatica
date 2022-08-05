@@ -751,14 +751,14 @@ Este es el botón para decargar materiales, en (#) hay que agregar el link corre
 <p>En la pestaña <strong>Files</strong> pueden ver un archivo llamado <strong>.RHistory</strong>. Este es un archivo creado por RStudio que guarda los últimos comandos corridos (que pueden recorrer en la consola con <span class="keys"><kbd class="key-arrow-up">Up</kbd></span> y <span class="keys"><kbd class="key-arrow-down">Down</kbd></span>). Estos archivos pesan poco, pero se van a crear en varios directorios donde trabajemos con <strong>R</strong>. Si les molesta y no les importa guardar los últimos comandos usados pueden borrarlos sin problema.</p>
 </div>
 <h3 id="programando-en-rstudio">Programando en RStudio</h3>
-<p>Ahora que tenemos una idea de la interfaz de <strong>RStudio</strong> vamos a ver como se crean los programas. En la consola escriban lo siguiente y aprieten <span class="keys"><kbd class="key-enter">Enter</kbd></span>:</p>
+<p>Ahora que tenemos una idea de la interfaz de <strong>RStudio</strong> vamos a ver como se crean los programas. En la consola (pestaña <strong>Console</strong>) escriban lo siguiente y aprieten <span class="keys"><kbd class="key-enter">Enter</kbd></span>:</p>
 <div class="highlight"><pre><span></span><code><span class="nf">print</span><span class="p">(</span><span class="s">&quot;Hello World!&quot;</span><span class="p">)</span>
 </code></pre></div>
 <p><code>print</code> es basicamente el <code>echo</code> de <strong>R</strong>. En <strong>R</strong> los argumentos van pegados a la función y entre paréntesis; de haber mas de un argumento se separan con comas (dentro de los paréntesis).</p>
 <p>Deberían ver algo como:
 <div class="highlight"><pre><span></span><code>[1] &quot;Hello World!&quot;
 </code></pre></div>
-El <code>[1]</code> lo está agregando RStudio y se debe a que en <strong>R</strong> todo es un vector, pero por ahora pueden ignorarlo. Como aclaración, si fueramos a guardar la salida de este <code>print</code> en un archivo, el <code>[1]</code> no aparecería.</p>
+El <code>[1]</code> lo está agregando RStudio y se debe a que en <strong>R</strong> todo es un vector, pero por ahora pueden ignorarlo.</p>
 <p>Por ahora lo que hicimos fue similar a correr un comando en la terminal. Vamos ahora a crear un <em>script</em> de <strong>R</strong>. En la editor de scripts (que debería tener una página vacía) escriban:</p>
 <div class="highlight"><pre><span></span><code><span class="nf">print</span><span class="p">(</span><span class="s">&quot;Hola Mundo!&quot;</span><span class="p">)</span>
 </code></pre></div>
@@ -788,18 +788,18 @@ El <code>[1]</code> lo está agregando RStudio y se debe a que en <strong>R</str
 <p>Como dijimos cuando vimos <strong>Bash</strong>, diferentes lenguajes tienen elementos similares, pero se usan ligeramente diferente. Vamos a entonces a aprender como se usan las variables en <strong>R</strong>. Escriban en el editor de scripts la siguiente línea y corranlá:</p>
 <div class="highlight"><pre><span></span><code><span class="n">saludo</span> <span class="o">&lt;-</span> <span class="s">&quot;Hola Mundo!&quot;</span>
 </code></pre></div>
-<p>En <strong>R</strong> las variables se asignan con el símbolo <code>&lt;-</code> (o <em>"flecha a la izquierda"</em>) y se usan mencionando a el nombre de la variable. En <strong>RStudio</strong> se puede insertar este símbolo rapidamente usando <span class="keys"><kbd class="key-alt">Alt</kbd><span>+</span><kbd class="key-minus">-</kbd></span> (signo <em>"menos"</em>).</p>
+<p>En <strong>R</strong> las variables se asignan con el símbolo <code>&lt;-</code> (o <em>"flecha a la izquierda"</em>) y se usan mencionando el nombre de la variable. En <strong>RStudio</strong> se puede insertar el símbolo <code>&lt;-</code> rapidamente usando el atajo de teclado <span class="keys"><kbd class="key-alt">Alt</kbd><span>+</span><kbd class="key-minus">-</kbd></span> (signo <em>"menos"</em>).</p>
 <p>¿Se acuerdan de la pestaña <strong>Environment</strong> de la que hablamos antes? Si la ven ahora va a tener la variable <strong>saludo</strong> y su valor.</p>
 <p>Agreguen entonces la siguiente linea al editor de scripts y corran <strong>solo</strong> esta línea:</p>
 <div class="highlight"><pre><span></span><code><span class="nf">print</span><span class="p">(</span><span class="n">saludo</span><span class="p">)</span>
 </code></pre></div>
 <p>No se si se dan cuenta lo que acaba de pasar, pero estan imprimiendo en la consola el valor de una variable que declararon previamente. Esto es un gran beneficio de <strong>RStudio</strong>, que nos permite guardar valores de variables y usarlos en el futuro, sin tener que correr todo el <em>script</em> de arriba a abajo cada vez que queremos modificar algo.</p>
-<p>Sin embargo, un gran poder conlleva una gran responsabilidad, ya que este sistema también hace posible estar usando un valor <em>"viejo"</em> o <em>"equivocado"</em> en una variable. La forma correcta de trabajar es ir dejando en nuestro <em>script</em> un registro de las órdenes correctas para llegar al output deseado. También es buena práctica comentar las instrucciones más importantes para que se pueda entender por quien tenga que reutilizar el código. Es algo así como el <strong>cuaderno de laboratorio bioinformático</strong>.</p>
+<p>Sin embargo, un gran poder conlleva una gran responsabilidad, ya que este sistema también hace posible estar usando un valor "viejo" o "equivocado" en una variable. La forma correcta de trabajar es ir dejando en nuestro <em>script</em> un registro de las órdenes correctas para llegar al output deseado. También es buena práctica comentar las instrucciones más importantes para que se pueda entender por quien tenga que reutilizar el código. Es algo así como el <strong>cuaderno de laboratorio bioinformático</strong>.</p>
 <p>De poner solo el nombre de una variable es equivalente a hacer un <code>print</code>, o sea los siguiente dos comandos son equivalentes:</p>
 <div class="highlight"><pre><span></span><code><span class="nf">print</span><span class="p">(</span><span class="n">saludo</span><span class="p">)</span>
 <span class="n">saludo</span>
 </code></pre></div>
-<p>Sin embargo, en el código es recomendable usar <code>print</code> para dejar clara nuestra intención y evitar ciertos escenarios donde la variable sola no funcionaría como queremos. Este método es muy útil para ver rápidamente lo que contiene una variable (hagan doble click en una variable, lo que la selecciona o <em>pinta</em>, y luego aprieten <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-enter">Enter</kbd></span>).</p>
+<p>Sin embargo, en el código es recomendable usar <code>print</code> para dejar clara nuestra intención y evitar ciertos escenarios donde la variable sola no funcionaría como queremos. Dicho esto, este método es muy útil para ver rápidamente lo que contiene una variable (hagan doble click en una variable, lo que la selecciona o <em>pinta</em>, y luego aprieten <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-enter">Enter</kbd></span>).</p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <p><strong>R</strong> también permite asignar variables usando el símbolo <code>=</code>, por ejemplo, <code>a = "Hola Mundo!"</code> funcionaría perfecto en el código anterior. Sin embargo, el símbolo <code>=</code> también es el usado para pasar argumentos y es similar al usado en los condicionales, por lo que se recomienda usar el <code>&lt;-</code> al momento de asignar valores a variables en <strong>R</strong>.</p>
@@ -816,7 +816,7 @@ El <code>[1]</code> lo está agregando RStudio y se debe a que en <strong>R</str
 <p>Es posible comentar o descomentar grandes secciones de texto. Para esto hay que seleccionar o <em>pintar</em> las lineas y apretar <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-c">C</kbd></span>.</p>
 </div>
 <h3 id="numeros">Números</h3>
-<p>En <strong>R</strong> hay 2 tipos principales de variables numéricas, numeros enteros (o <strong>integer</strong>) y numeros reales (o <strong>numeric</strong>). Por temas de simplicidad, es bastante común trabajar con variables del tipo <strong>numeric</strong> por mas que estes usando números enteros (y de hecho es lo que hace <strong>R</strong> por defecto). Prueben correr el próximo código línea a línea y vean como se va modificando el valor de <strong>n</strong> en el <strong>Environment</strong>:</p>
+<p>En <strong>R</strong> hay 2 tipos principales de variables numéricas, numeros enteros (o <strong>integer</strong>) y numeros reales (o <strong>numeric</strong>). Por temas de simplicidad, es bastante común trabajar con variables del tipo <strong>numeric</strong> por más que esten usando números enteros (y de hecho es lo que hace <strong>R</strong> por defecto). Prueben correr el próximo código línea a línea y vean como se va modificando el valor de <strong>n</strong> en el <strong>Environment</strong>:</p>
 <div class="highlight"><pre><span></span><code><span class="n">n</span> <span class="o">&lt;-</span> <span class="m">2</span> <span class="c1"># *n* es una variable *numeric*</span>
 
 <span class="c1"># pueden hacer diferentes operaciones matemáticas con las variables numéricas</span>
@@ -828,8 +828,20 @@ El <code>[1]</code> lo está agregando RStudio y se debe a que en <strong>R</str
 </code></pre></div>
 <h3 id="cadenas-de-caracteres-o-strings" markdown="markdown">Cadenas de caracteres o <em>Strings</em></h3>
 <p>En <strong>R</strong> las cadenas de caracteres, comunmente llamadas <em>strings</em>, tienen el tipo de variable <strong>character</strong>. Prueben correr el próximo código línea a línea, lean los comentarios y vean como se va modificando el valor de la variable <strong>frase</strong> en el <strong>Environment</strong>:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Código con comentarios</label><label for="__tabbed_1_2">Código sin comentarios</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Código</label><label for="__tabbed_1_2">Código con comentarios</label></div>
 <div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="n">frase</span> <span class="o">&lt;-</span> <span class="s">&quot;Había&quot;</span>
+
+<span class="n">frase</span> <span class="o">&lt;-</span> <span class="nf">paste</span><span class="p">(</span><span class="n">frase</span><span class="p">,</span> <span class="s">&quot;una&quot;</span><span class="p">)</span>
+
+<span class="n">frase</span> <span class="o">&lt;-</span> <span class="nf">paste</span><span class="p">(</span><span class="n">frase</span><span class="p">,</span> <span class="s">&quot;vez&quot;</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s">&quot; &quot;</span><span class="p">)</span>
+
+<span class="n">frase</span> <span class="o">&lt;-</span> <span class="nf">paste</span><span class="p">(</span><span class="n">frase</span><span class="p">,</span> <span class="s">&quot;...&quot;</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">)</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="n">frase</span><span class="p">)</span>
+</code></pre></div>
+</div>
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="n">frase</span> <span class="o">&lt;-</span> <span class="s">&quot;Había&quot;</span> <span class="c1"># *frase* es una variable *character*</span>
 
@@ -845,18 +857,6 @@ El <code>[1]</code> lo está agregando RStudio y se debe a que en <strong>R</str
 <span class="c1"># Quiero agregar tres puntos, pero no quiero un espacio entre &quot;vez&quot; y los puntos</span>
 <span class="c1"># Uso la funcion paste y cambio el argumento *sep* al valor &quot;&quot; (que es el string vacio, lo que significa</span>
 <span class="c1"># no agregarle ningun separador)</span>
-<span class="n">frase</span> <span class="o">&lt;-</span> <span class="nf">paste</span><span class="p">(</span><span class="n">frase</span><span class="p">,</span> <span class="s">&quot;...&quot;</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">)</span>
-
-<span class="nf">print</span><span class="p">(</span><span class="n">frase</span><span class="p">)</span>
-</code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="n">frase</span> <span class="o">&lt;-</span> <span class="s">&quot;Había&quot;</span>
-
-<span class="n">frase</span> <span class="o">&lt;-</span> <span class="nf">paste</span><span class="p">(</span><span class="n">frase</span><span class="p">,</span> <span class="s">&quot;una&quot;</span><span class="p">)</span>
-
-<span class="n">frase</span> <span class="o">&lt;-</span> <span class="nf">paste</span><span class="p">(</span><span class="n">frase</span><span class="p">,</span> <span class="s">&quot;vez&quot;</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s">&quot; &quot;</span><span class="p">)</span>
-
 <span class="n">frase</span> <span class="o">&lt;-</span> <span class="nf">paste</span><span class="p">(</span><span class="n">frase</span><span class="p">,</span> <span class="s">&quot;...&quot;</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">)</span>
 
 <span class="nf">print</span><span class="p">(</span><span class="n">frase</span><span class="p">)</span>
@@ -882,6 +882,7 @@ El <code>[1]</code> lo está agregando RStudio y se debe a que en <strong>R</str
 <p class="admonition-title">Tip</p>
 <p>Como ya mencionamos varias veces en la materia es recomendado utilizar diferentes carpetas para los diferentes TPs y Ejercicios. Esto es especialmente cierto al momento de trabajar con <em>scripts</em> de <strong>R</strong> ya que no es raro que un programa real tenga archivos de entrada (<strong>/input</strong>), archivos finales o de salida (<strong>/output</strong>) y archivos temporales (<strong>/temp</strong>). Por ahora probablemente no necesiten crear subcarpetas de este estilo, pero ténganlo en cuenta.</p>
 </div>
+<p>En este ejercicio vamos a practicar el uso de variables numéricas y <em>strings</em> en <strong>R</strong>:</p>
 <ol>
 <li>Creen un nuevo <em>script</em> que declare 2 variables, asigne un número a cada una, calcule la suma de ambos números y la imprima por la consola.</li>
 <li>Editen el <em>script</em> anterior agregando 2 otras operaciones matemáticas e impriman sus resultados.</li>
@@ -956,7 +957,7 @@ El <code>[1]</code> lo está agregando RStudio y se debe a que en <strong>R</str
 <span class="nf">print</span><span class="p">(</span><span class="n">vector_mixto</span><span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="o">+</span> <span class="m">2</span><span class="p">)</span> <span class="c1"># Esto les va a tirar error ya que no puede sumar el número 2 al *string* &quot;1&quot;</span>
 </code></pre></div>
 <h3 id="plots-simples">Plots simples</h3>
-<p><strong>R</strong> tiene muchas formas de hacer plots, especialmente usando paquetes externos. Sin embargo, para empezar vamos a ver las formas que vienen por defecto con <strong>R</strong>, que si bien crean <em>plots</em> más simples, también son más fáciles de usar y sirven para hacer una inspección rápida de sus datos. Creen un nuevo script, escriban en siguiente código y corranló:</p>
+<p><strong>R</strong> tiene muchas formas de hacer plots, especialmente usando paquetes externos. Sin embargo, para empezar vamos a ver las formas que vienen por defecto con <strong>R</strong>, que si bien crean <em>plots</em> más simples, también son más fáciles de usar y sirven para hacer una inspección rápida de sus datos. Creen un nuevo script, escriban el siguiente código y corranló:</p>
 <div class="highlight"><pre><span></span><code><span class="n">x</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">100</span><span class="p">)</span>
 <span class="n">y</span> <span class="o">&lt;-</span> <span class="n">x</span> <span class="o">^</span> <span class="m">2</span>
 
@@ -991,9 +992,11 @@ El <code>[1]</code> lo está agregando RStudio y se debe a que en <strong>R</str
 <p><img alt="RStudio" src="img/rplot_export.png" /></p>
 </figure>
 <h2 id="ejercicio-2-vectores-y-plots" markdown="markdown"><strong>Ejercicio 2 - Vectores y plots</strong></h2>
-<div class="admonition danger">
-<p class="admonition-title">TO DO</p>
-<p>hacer alguna formula basica a partir de c1:100, hacer plot, guardar SVG</p>
+<p>Para valores de <code>x</code> entre 1 y 200, calculen el <code>y</code> correspondiente a una recta con pendiente 3 y ordenada al origen 5 y hagan el plot correspondiente usando el comando <code>plot</code>.</p>
+<p>Una vez creado el plot, salvenló en un archivo con extensión <strong>SVG</strong>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Al momento de usar <code>plot</code> pueden agregar el parámetro <code>type = "l"</code> al final para que plotee líneas en vez de puntos.</p>
 </div>
 <h2 id="r-variables-mas-complejas"><strong>R: Variables más complejas</strong></h2>
 <h3 id="listas">Listas</h3>
@@ -1018,8 +1021,18 @@ El <code>[1]</code> lo está agregando RStudio y se debe a que en <strong>R</str
 </code></pre></div>
 <p>Hay 2 cosas de interés. Primero que cada elemento esta en su propia fila con un encabezado con su índice <code>[[i]]</code>, y segundo que los números aca no tienen comillas (como pasaba en los vectores al mezclar tipos de datos) por lo que siguen siendo números.</p>
 <p>Como sospecharan por los índices que aparecen, al momento de querer un elemento específico de una lista hay que usar doble corchete, por ejemplo:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Código con comentarios</label><label for="__tabbed_2_2">Código sin comentarios</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Código</label><label for="__tabbed_2_2">Código con comentarios</label></div>
 <div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="n">lista_super_mixta</span> <span class="o">&lt;-</span> <span class="nf">list</span><span class="p">(</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">7</span><span class="p">,</span><span class="s">&quot;perro&quot;</span><span class="p">,</span><span class="nf">c</span><span class="p">(</span><span class="m">20</span><span class="o">:</span><span class="m">30</span><span class="p">))</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="n">lista_super_mixta</span><span class="p">[[</span><span class="m">1</span><span class="p">]])</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="n">lista_super_mixta</span><span class="p">[[</span><span class="m">2</span><span class="p">]]</span> <span class="o">+</span> <span class="n">lista_super_mixta</span><span class="p">[[</span><span class="m">3</span><span class="p">]])</span> 
+
+<span class="nf">print</span><span class="p">(</span><span class="n">lista_super_mixta</span><span class="p">[[</span><span class="m">5</span><span class="p">]][</span><span class="m">7</span><span class="p">])</span>
+</code></pre></div>
+</div>
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="n">lista_super_mixta</span> <span class="o">&lt;-</span> <span class="nf">list</span><span class="p">(</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">7</span><span class="p">,</span><span class="s">&quot;perro&quot;</span><span class="p">,</span><span class="nf">c</span><span class="p">(</span><span class="m">20</span><span class="o">:</span><span class="m">30</span><span class="p">))</span>
 
@@ -1032,16 +1045,6 @@ El <code>[1]</code> lo está agregando RStudio y se debe a que en <strong>R</str
 
 <span class="c1"># El quinto elemento de la lista es un vector conteniendo los números de 20 a 30</span>
 <span class="c1"># Estoy imprimiendo el séptimo elemento de dicho vector</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">lista_super_mixta</span><span class="p">[[</span><span class="m">5</span><span class="p">]][</span><span class="m">7</span><span class="p">])</span>
-</code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="n">lista_super_mixta</span> <span class="o">&lt;-</span> <span class="nf">list</span><span class="p">(</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">7</span><span class="p">,</span><span class="s">&quot;perro&quot;</span><span class="p">,</span><span class="nf">c</span><span class="p">(</span><span class="m">20</span><span class="o">:</span><span class="m">30</span><span class="p">))</span>
-
-<span class="nf">print</span><span class="p">(</span><span class="n">lista_super_mixta</span><span class="p">[[</span><span class="m">1</span><span class="p">]])</span>
-
-<span class="nf">print</span><span class="p">(</span><span class="n">lista_super_mixta</span><span class="p">[[</span><span class="m">2</span><span class="p">]]</span> <span class="o">+</span> <span class="n">lista_super_mixta</span><span class="p">[[</span><span class="m">3</span><span class="p">]])</span> 
-
 <span class="nf">print</span><span class="p">(</span><span class="n">lista_super_mixta</span><span class="p">[[</span><span class="m">5</span><span class="p">]][</span><span class="m">7</span><span class="p">])</span>
 </code></pre></div>
 </div>
@@ -1058,7 +1061,45 @@ El <code>[1]</code> lo está agregando RStudio y se debe a que en <strong>R</str
 </div>
 <h2 id="r-estructuras-logicas"><strong>R: Estructuras lógicas</strong></h2>
 <h3 id="condicionales-y-booleanos">Condicionales y Booleanos</h3>
-<p>Los booleanos son variables que pueden tener 1 de 2 valores: o <strong>TRUE</strong> (verdadero) o <strong>FALSE</strong> (falso). El uso más común de los booleanos es ser usados para evaluar condicionales (por ejemplo <em>ifs</em>).</p>
+<p>De igual forma que en <strong>Bash</strong>, en <strong>R</strong> también existen los condicionales <em>ifs</em>, pero se escriben ligeramente diferente:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Código</label><label for="__tabbed_3_2">Código con comentarios</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="n">numero</span> <span class="o">&lt;-</span> <span class="m">42</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="n">numero</span><span class="p">,</span> <span class="s">&quot;es un numero&quot;</span><span class="p">))</span>
+
+<span class="nf">if </span><span class="p">(</span><span class="n">numero</span> <span class="o">&gt;</span> <span class="m">10</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="n">numero</span><span class="p">,</span> <span class="s">&quot;es mayor a 10&quot;</span><span class="p">))</span>    
+<span class="p">}</span> <span class="n">else</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="n">numero</span><span class="p">,</span> <span class="s">&quot;es menor o igual a 10&quot;</span><span class="p">))</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="n">numero</span> <span class="o">&lt;-</span> <span class="m">42</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="n">numero</span><span class="p">,</span> <span class="s">&quot;es un numero&quot;</span><span class="p">))</span>
+
+<span class="c1"># *if* es la estructura más usada para condicionales.</span>
+<span class="c1"># Adentro de los paréntesis va la condición.</span>
+<span class="c1"># &gt; es el comparador, o sea, estamos preguntando si la variable *numero* es mayor que 10</span>
+<span class="nf">if </span><span class="p">(</span><span class="n">numero</span> <span class="o">&gt;</span> <span class="m">10</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1"># El codigo entre *{* y el primer *}* solo si ejecuta si la condición es verdad, de otra forma se saltea</span>
+    <span class="c1"># Este codigo esta más a la derecha, o *indentado*. Esto se hace con tab y en la mayoría de los lenguajes</span>
+    <span class="c1"># es solo para entender más fácil el código (RStudio lo va a hacer automáticamente de pegar código)</span>
+    <span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="n">numero</span><span class="p">,</span> <span class="s">&quot;es mayor a 10&quot;</span><span class="p">))</span>    
+<span class="p">}</span> <span class="n">else</span> <span class="p">{</span>
+    <span class="c1"># El código entre *else {* y *}* se ejecuta solo cuando la condición no es verdad</span>
+    <span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="n">numero</span><span class="p">,</span> <span class="s">&quot;es menor o igual a 10&quot;</span><span class="p">))</span>
+<span class="p">}</span>
+<span class="c1"># Este *}* indica donde termina el condicional</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<p>Es bastante similar a lo que conocían, pero aca no esta <em>then</em> ni <em>fi</em> y los diferentes bloques lógicos se marcan con llaves (esto también va a pasar en <em>fors</em> y más adelante en funciones <strong>R</strong>).</p>
+<p>Las condiciones del <em>if</em> existen más alla de los condicionales y de hecho la comparación <code>numero &gt; 10</code> es una variable en sí misma. A estas variables las vamos a llamar <strong>booleanos</strong> y pueden tener 1 de 2 valores: o <strong>TRUE</strong> (verdadero) o <strong>FALSE</strong> (falso).</p>
 <p>Hay 3 formas principales de generar variables booleanas:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Dándoles el valor TRUE o FALSE a mano</span>
 <span class="n">booleano1</span> <span class="o">&lt;-</span> <span class="kc">TRUE</span>
@@ -1070,9 +1111,117 @@ El <code>[1]</code> lo está agregando RStudio y se debe a que en <strong>R</str
 <span class="c1"># Combinando booleanos, en este caso con *and*</span>
 <span class="n">booleano3</span> <span class="o">&lt;-</span> <span class="n">booleano1</span> <span class="o">&amp;</span> <span class="n">booleano2</span>
 </code></pre></div>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>and</p>
+<p>Como mostramos en la tercer forma de generar variables booleanas, se pueden hacer operaciones entre los booleanos usando la llamada <strong>algebra booleana</strong>. Esto es un mundo en sí mismo, pero por suerte al momento de programar solo nos van a importar las tres operaciones básicas de la algebra booleana: el <strong>AND</strong>, el <strong>OR</strong> y el <strong>NOT</strong>.</p>
+<p>El <strong>AND</strong> y el <strong>OR</strong> son operaciones entre dos booleanos, mientras que <strong>NOT</strong> es una operación que se le aplica a un solo booleano.</p>
+<ul>
+<li>El <strong>AND</strong> es el <strong>"Y"</strong>, devolviendo <strong class="green_text">TRUE</strong> solo cuando ambos booleanos eran <strong class="green_text">TRUE</strong>. Se escribe en <strong>R</strong> con <strong>&amp;</strong></li>
+<li>El <strong>OR</strong> es el <strong>"O"</strong>, devolviendo <strong class="green_text">TRUE</strong> cuando por lo menos uno de ambos booleanos era <strong class="green_text">TRUE</strong>. Se escribe en <strong>R</strong> con <strong>|</strong></li>
+<li>El <strong>NOT</strong> es el <strong>"NO"</strong>, invirtiendo el valor del booleano (o sea, devuelve <strong class="green_text">TRUE</strong> solo si el booleano era <strong class="red_text">FALSE</strong>)</li>
+</ul>
+<details class="tip">
+<summary>Detalles de <strong>AND</strong>, <strong>OR</strong> y <strong>NOT</strong></summary>
+<table>
+<thead>
+<tr>
+<th align="center" data-sort-method="none">Booleano 1</th>
+<th align="center" data-sort-method="none">Booleano 2</th>
+<th align="center" data-sort-method="none">AND (&amp;)</th>
+<th align="center" data-sort-method="none">OR (|)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><strong class="green_text">TRUE</strong></td>
+<td align="center"><strong class="green_text">TRUE</strong></td>
+<td align="center"><strong class="green_text">TRUE</strong></td>
+<td align="center"><strong class="green_text">TRUE</strong></td>
+</tr>
+<tr>
+<td align="center"><strong class="green_text">TRUE</strong></td>
+<td align="center"><strong class="red_text">FALSE</strong></td>
+<td align="center"><strong class="red_text">FALSE</strong></td>
+<td align="center"><strong class="green_text">TRUE</strong></td>
+</tr>
+<tr>
+<td align="center"><strong class="red_text">FALSE</strong></td>
+<td align="center"><strong class="green_text">TRUE</strong></td>
+<td align="center"><strong class="red_text">FALSE</strong></td>
+<td align="center"><strong class="green_text">TRUE</strong></td>
+</tr>
+<tr>
+<td align="center"><strong class="red_text">FALSE</strong></td>
+<td align="center"><strong class="red_text">FALSE</strong></td>
+<td align="center"><strong class="red_text">FALSE</strong></td>
+<td align="center"><strong class="red_text">FALSE</strong></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th align="center" data-sort-method="none">Booleano 1</th>
+<th align="center" data-sort-method="none">NOT (!)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><strong class="green_text">TRUE</strong></td>
+<td align="center"><strong class="red_text">FALSE</strong></td>
+</tr>
+<tr>
+<td align="center"><strong class="red_text">FALSE</strong></td>
+<td align="center"><strong class="green_text">TRUE</strong></td>
+</tr>
+</tbody>
+</table>
+</details>
+<p>Las variables booleanas se pueden usar en los directamente en las condiciones de los <em>ifs</em>. Si bien se pueden comparar contra <strong>TRUE</strong> y <strong>FALSE</strong>, de poner solo la variable en la condición del <em>if</em>, es equivalente a preguntar si esa variable es <strong>TRUE</strong>. Vean las siguientes tres pestañas para entenderlo mejor:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:3"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><input id="__tabbed_4_3" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Código</label><label for="__tabbed_4_2">Código con comentarios</label><label for="__tabbed_4_3">Código - Versión mínima</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="n">llueve</span> <span class="o">&lt;-</span> <span class="kc">TRUE</span>
+<span class="n">tengo_paraguas</span> <span class="o">&lt;-</span> <span class="kc">TRUE</span>
+
+<span class="nf">if </span><span class="p">((</span><span class="n">llueve</span> <span class="o">==</span> <span class="kc">TRUE</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">tengo_paraguas</span> <span class="o">==</span> <span class="kc">FALSE</span><span class="p">))</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">&quot;Me mojo&quot;</span><span class="p">)</span>
+<span class="p">}</span> <span class="n">else</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">&quot;No me mojo&quot;</span><span class="p">)</span>
+<span class="p">}</span>    
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="n">llueve</span> <span class="o">&lt;-</span> <span class="kc">TRUE</span>
+<span class="n">tengo_paraguas</span> <span class="o">&lt;-</span> <span class="kc">TRUE</span>
+
+<span class="nf">if </span><span class="p">((</span><span class="n">llueve</span> <span class="o">==</span> <span class="kc">TRUE</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">tengo_paraguas</span> <span class="o">==</span> <span class="kc">FALSE</span><span class="p">))</span> <span class="p">{</span>
+    <span class="c1"># Aca solo voy a entrar si llueve y no tengo paraguas</span>
+    <span class="c1"># Si una o ambas de esas afirmaciones son falsas, entonces se imprime el código en el *else*</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">&quot;Me mojo&quot;</span><span class="p">)</span>
+<span class="p">}</span> <span class="n">else</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">&quot;No me mojo&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="c1"># T es equivalente a escribir TRUE</span>
+<span class="c1"># F es equivalente a escribir FALSE</span>
+<span class="n">llueve</span> <span class="o">&lt;-</span> <span class="bp">T</span>
+<span class="n">tengo_paraguas</span> <span class="o">&lt;-</span> <span class="bp">T</span>
+
+<span class="c1"># *llueve* es equivalente a *llueve == TRUE*</span>
+<span class="c1"># *!tengo_paraguas* es equivalente a *(!tengo_paraguas) == TRUE*, o sea, *tengo_paraguas == FALSE*</span>
+<span class="nf">if </span><span class="p">((</span><span class="n">llueve</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="o">!</span><span class="n">tengo_paraguas</span><span class="p">))</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">&quot;Me mojo&quot;</span><span class="p">)</span>
+<span class="p">}</span> <span class="n">else</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">&quot;No me mojo&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<div class="admonition danger">
+<p class="admonition-title">TO DO</p>
+<p>agregar info hablando de los parentesis? los usamos para separar bloques, no son realmente necesarios siempre, pero ayudan</p>
 </div>
 <h1 id="quiero-saber-si-un-numero-es-mayor-a-determinado-valor">Quiero saber si un número es mayor a determinado valor:</h1>
 <p>val &lt;- 42

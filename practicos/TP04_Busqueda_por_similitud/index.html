@@ -1,0 +1,915 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Sitio Web del Curso Introducción a la Bioinformática">
+      
+      
+      
+        <link rel="canonical" href="https://bioinformatica-iib.github.io/2022_introduccion_bioinformatica/practicos/TP04_Busqueda_por_similitud/">
+      
+      <link rel="icon" href="../../img/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.15">
+    
+    
+      
+        <title>Index - Introducción a la Bioinformática</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.c382b1dc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cc9b2e1e.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tp-4-busqueda-de-secuencias-por-similitud" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Introducción a la Bioinformática" class="md-header__button md-logo" aria-label="Introducción a la Bioinformática" data-md-component="logo">
+      
+  <img src="../../img/favicon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Introducción a la Bioinformática
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Index
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Limpiar" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Inicio
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../acerca/" class="md-tabs__link">
+      Acerca de
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../contenidos/" class="md-tabs__link">
+      Contenidos
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../cronograma/" class="md-tabs__link">
+      Cronograma
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../docentes/" class="md-tabs__link">
+      Docentes
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../teoricas/inicio/" class="md-tabs__link">
+        Teoricas
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../inicio/" class="md-tabs__link">
+        Prácticos
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../instructivos/inicio/" class="md-tabs__link">
+        Instructivos
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Introducción a la Bioinformática" class="md-nav__button md-logo" aria-label="Introducción a la Bioinformática" data-md-component="logo">
+      
+  <img src="../../img/favicon.png" alt="logo">
+
+    </a>
+    Introducción a la Bioinformática
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Inicio
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../acerca/" class="md-nav__link">
+        Acerca de
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contenidos/" class="md-nav__link">
+        Contenidos
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cronograma/" class="md-nav__link">
+        Cronograma
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docentes/" class="md-nav__link">
+        Docentes
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Teoricas
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Teoricas" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Teoricas
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoricas/inicio/" class="md-nav__link">
+        Inicio
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoricas/1-Teorica-Uno/" class="md-nav__link">
+        Teórica 1
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          Prácticos
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Prácticos" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Prácticos
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inicio/" class="md-nav__link">
+        Inicio
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TP01_Linux/" class="md-nav__link">
+        TP 1 - Linux
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TP02_EMBOSS/" class="md-nav__link">
+        TP 2 - EMBOSS
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          Instructivos
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Instructivos" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Instructivos
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instructivos/inicio/" class="md-nav__link">
+        Inicio
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instructivos/maquina_virtual/" class="md-nav__link">
+        Máquina Virtual
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instructivos/problemasVM/" class="md-nav__link">
+        Problemas instalando la Máquina Virtual
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instructivos/tipsVM/" class="md-nav__link">
+        Tips and Tricks para usar la Máquina Virtual más cómodos
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<p><img _="," align="left" alt="Image" src="img/banner.jpg" width="250" /></p>
+<h1 id="tp-4-busqueda-de-secuencias-por-similitud" markdown="markdown"><strong>TP 4</strong>. Búsqueda de secuencias por similitud</h1>
+<p><br>
+<br>
+<br></p>
+<p><a class="md-button md-button--primary" href="https://drive.google.com/file/d/12fM9PPYOcJK1skHpVpaoysOhgHZBggSn/view?usp=sharing"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M480 352H346.5l-45.25 45.25C289.2 409.3 273.1 416 256 416s-33.16-6.656-45.25-18.75L165.5 352H32c-17.67 0-32 14.33-32 32v96c0 17.67 14.33 32 32 32h448c17.67 0 32-14.33 32-32v-96c0-17.7-14.3-32-32-32zm-48 104c-13.2 0-24-10.8-24-24s10.8-24 24-24 24 10.8 24 24-10.8 24-24 24zm-198.6-81.4c6.2 6.3 14.4 9.4 22.6 9.4s16.38-3.125 22.62-9.375l128-128c12.49-12.5 12.49-32.75 0-45.25-12.5-12.5-32.76-12.5-45.25 0L288 274.8V32c0-17.67-14.33-32-32-32-17.7 0-32 14.33-32 32v242.8l-73.4-73.4c-12.49-12.5-32.75-12.5-45.25 0-12.49 12.5-12.49 32.75 0 45.25L233.4 374.6z"/></svg></span> Materiales</a></p>
+<h2 id="objetivos"><strong>Objetivos</strong></h2>
+<ul>
+<li>Familiarizarse con el uso de programas de búsqueda de secuencias en bases de datos (BLAST y FASTA), y en particular con el uso de estos programas en la línea de comando.</li>
+<li>Familiarizarse con la visualización de histogramas que arroja FASTA.</li>
+<li>Familiarizarse con el uso de scores estadísticos en relación a la búsqueda en bases de datos.</li>
+</ul>
+<div class="admonition attention">
+<p class="admonition-title">¡Antes de comenzar!</p>
+<p>Para realizar este TP tienen que estar frente a una terminal UNIX. Los programas que vamos a utilizar son: <em>blastall, blastcl3, formatdb y fastacmd (NCBI-Toolkit), fasta, tfasta, fastx, tfastx, fasty, tfasty, ssearch, prss</em> (<strong>FASTA</strong> program package). </p>
+<p>Para instalarlos, descarguemos el archivo <code>install.sh</code> de la carpeta de trabajo provista y ejecutemos el comando.</p>
+<div class="highlight"><pre><span></span><code>bash install.sh
+</code></pre></div>
+</div>
+<h2 id="introduccion-a-blast"><strong>Introducción a BLAST</strong></h2>
+<p><strong>BLAST</strong> busca secuencias similares a una secuencia <em>query</em> en una base de datos de secuencias, utilizando distintas estrategias de búsqueda:</p>
+<ul>
+<li><strong>BLASTn</strong>: compara una secuencia nucleotídica <em>query</em> contra una base de datos de secuencias nucleotídicas.</li>
+<li><strong>BLASTx</strong>: compara una secuencia nucleotídica <em>query</em>, que es traducida en los 6 posibles marcos de lectura (resultando en 6 secuencias proteicas), contra una base de datos de secuencias proteicas. </li>
+<li><strong>tBLASTn</strong>: compara una secuencia proteica <em>query</em> contra las traducciones (6 posibles marcos de lectura) de una base de datos de secuencias nucleotídicas. </li>
+<li><strong>BLASTp</strong>: compara una secuencia proteica <em>query</em> contra una base de datos de secuencias proteicas.</li>
+</ul>
+<p><strong>BLAST</strong>, tal como es distribuído por el <strong>NCBI</strong>, se encuentra disponible mediante el comando <code>blastall</code>. Este comando necesita como mínimo tres argumentos para realizar una búsqueda:</p>
+<ul>
+<li><code>-i</code> una secuencia <em>query</em> (recordar, i = input) </li>
+<li><code>-d</code> una base de datos con secuencias (recordar, d = database) </li>
+<li><code>-p</code> el tipo de busqueda (p = programa: <em>blastp</em>, <em>blastn</em>, <em>blastx</em>, etc.) </li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Para ver una lista de los argumentos que acepta <code>blastall</code> prueben correr el comando sin argumentos. Si esto no les funciona pueden ver todos los argumentos haciendo click <a href="https://www.ncbi.nlm.nih.gov/Class/BLAST/blastallopts.txt">aquí</a>.</p>
+</div>
+<h3 id="ejercicio-1">Ejercicio 1</h3>
+<p><strong>1.1</strong> Como primer ejemplo podemos usar la secuencia <em>xlrhodop.pep</em> para realizar una búsqueda contra <strong>Swissprot</strong>. Como estamos trabajando con una secuencia y una base de datos de proteínas, usamos <code>blastp</code> para realizar la busqueda: </p>
+<div class="highlight"><pre><span></span><code>blastall -p blastp -i xlrhodop.pep -d ~/Swissprot_db/Swissprot.fasta
+</code></pre></div>
+<div class="admonition attention">
+<p class="admonition-title">Atención</p>
+<p>Este comando no se ejecutará correctamente si uno mueve de lugar el archivo de la base de datos <strong>Swissprot</strong> luego de ejecutar <code>install.sh</code>. Si este es el caso, especifique el camino o <em>path</em> completo.</p>
+</div>
+<p>En este ejemplo, el resultado de la búsqueda es volcado en la pantalla (stdout). Para que el resultado aparezca en un archivo, podemos redireccionar stdout (usando <code>&gt;</code>, ver TP01-Linux) o usar la opcion <code>-o</code> (output).</p>
+<div class="highlight"><pre><span></span><code>blastall -p blastp -i xlrhodop.pep -d ~/Swissprot_db/Swissprot.fasta -o xlrhodop.blastp
+</code></pre></div>
+<p>Pueden ver el resultado del <code>blastp</code>, por ejemplo paginando el archivo:</p>
+<div class="highlight"><pre><span></span><code>less xlrhodop.blastp
+</code></pre></div>
+<p>¿Qué indican las últimas líneas de este archivo?</p>
+<p><img src="./img/parameters_blastp.png" alt="Params_blastp" style="max-width:40%"></p>
+<p><strong>1.2</strong> Explore las siguientes opciones del programa <code>blastp</code>:  </p>
+<ul>
+<li><code>-G</code> Costo del gap open (<em>default</em>: 11)</li>
+<li><code>-E</code> Costo del gap extend (<em>default</em>: 1)   </li>
+<li><code>-W</code> Tamaño de la ktupla. (<em>default</em>: 3, puede variar entre 2 y 7)</li>
+</ul>
+<div class="admonition attention">
+<p class="admonition-title">Atención</p>
+<p>Hay tuplas de valores permitidos para los argumentos <code>-G</code> y <code>-E</code>, no cualquier
+combinación de costos es válida.</p>
+</div>
+<p>Utilice distintas combinaciones de estos parámetros y preste atención al impacto que esto tiene en los alineamientos reportados. </p>
+<p><strong>1.2.1</strong> Complete la siguiente tabla para resumir lo observado, teniendo en cuenta diferentes <strong>costos</strong> de gap open y gap extend. </p>
+<div class="table">
+
+|| Observaciones en el extremo del alineamiento | Observaciones en el centro del alineamiento | Extensión de la región con gaps |
+| Gap open alto + gap extend alto | | | |
+| Gap open alto + gap extend bajo | | | |
+| Gap open bajo + gap extend alto | | | |
+| Gap open bajo + gap extend bajo | | Muchos gaps | "Larga" |
+
+</div>
+
+<p><strong>1.2.2</strong> Responda a las siguientes preguntas:</p>
+<p>Para una misma combinación de costos para gap open y gap extend:</p>
+<p><strong>a.</strong> ¿Qué sucede con los valores de ktupla=2 y ktupla=7 ? </p>
+<p><strong>b.</strong> ¿Cuál búsqueda es la que tarda más? ¿Cuál menos? </p>
+<p><strong>c.</strong> ¿Cuántas secuencias devuelven?</p>
+<div class="admonition attention">
+<p class="admonition-title">Atención</p>
+<p>Si corren <code>blastp</code> sólo, es decir sin invocar primero al comando <code>blastall</code>, van a poder realizar las mismas búsquedas pero los nombres de los argumentos del comando <code>blastp</code> sólo difieren de los de <code>blastall -p blastp</code>. Por lo tanto, no les recomendamos correrlo de esta forma.   </p>
+</div>
+<h2 id="introduccion-a-fasta"><strong>Introducción a FASTA</strong></h2>
+<div class="admonition info">
+<p class="admonition-title">Curiosidad</p>
+<p>El nombre <strong>FASTA</strong> proviene de "FAST-All" porque funciona con cualquier alfabeto, esto significa que es una extensión de las herramientas originales para realizar alineamientos "FAST-P" (proteínas) y "FAST-N" (nucleótidos). El formato ".fasta" para almacenar secuencias de proteínas o nucleótidos se origina con el software <strong>FASTA</strong>, es por esto que llevan el mismo nombre. </p>
+</div>
+<p>Al igual que <strong>BLAST</strong>, <strong>FASTA</strong> necesita los mismos tres argumentos obligatorios. Sin embargo, el paquete <strong>FASTA</strong> provee un comando ejecutable para cada tipo de búsqueda.</p>
+<p>Comparación de programas en el paquete FASTA</p>
+<p><strong>FASTA</strong> permite comparar una secuencia proteica contra una base de datos de proteínas o una secuencia de ADN contra una base de datos de ADN (<em>Pearson and Lipman, 1988, Pearson, 1996</em>). La velocidad de la búsqueda y la selectividad están controladas por el parámetro ktup (<em>word size</em>). Para comparaciones entre proteínas, ktup=2 es el default, ktup=1 es más sensible pero más lento. Para comparaciones entre secuencias de ADN, ktup=6 es el default, ktup=3 o ktup=4 proveen una mayor sensibilidad, ktup=1 debe ser utilizado para oligonucleótidos (secuencias <em>query</em> de ADN de longitud &lt; 20).</p>
+<ul>
+<li>
+<p><strong>ssearch</strong> Compara una secuencia proteica contra una base de datos de proteínas o una secuencia de ADN contra una base de datos de ADN usando el algoritmo de Smith-Waterman (Smith and Waterman, 1981). </p>
+</li>
+<li>
+<p><strong>fastx y fasty</strong> Compara una secuencia de ADN contra una base de datos de proteínas.</p>
+<ul>
+<li>
+<p><em>fasty</em> compara la secuencia de ADN traducida en 3 marcos de lectura, permitiendo gaps y frameshifts. Es más lento que <em>fastx</em> pero produce mejores alineamientos para secuencias de baja calidad ya que los frameshifts se admiten entre codones. </p>
+</li>
+<li>
+<p><em>fastx</em> usa un algoritmo más simple y rápido para alineamientos que permiten frameshifts sólo entre codones. </p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>tfastx</strong> Compara una secuencia proteica a una base de datos de ADN, calculando las similaridades con frameshifts para las orientaciones forward y reverse.  </p>
+</li>
+<li>
+<p><strong>tfasta</strong> Compara una secuencia proteica a una base de datos de ADN, calculando las similaridades (sin frameshifts) para los 3 forward y los 3 reverse ORFs. <em>tfastx</em> es preferido debido a que calcula las similaridades teniendo en cuenta frameshifts. </p>
+</li>
+<li>
+<p><strong>fasts</strong> Compara un set pequeño de péptidos, obtenidos por ejemplo de un experimento de espectrometría de masas, contra una base de datos de proteínas (<em>fasts</em>) o de ADN (<em>tfasts</em>). </p>
+</li>
+</ul>
+<h3 id="ejercicio-2">Ejercicio 2</h3>
+<p>Ahora corramos la misma búsqueda del ejemplo anterior usando FASTA: </p>
+<p><div class="highlight"><pre><span></span><code>fasta -H xlrhodop.pep ~/Swissprot_db/Swissprot.fasta &gt; xlrhodop.fasta
+</code></pre></div>
+Para interpretar correctamente el histograma que FASTA da como output tenemos que pensar que está <strong>apaisado</strong> (o rotado 90 grados en sentido horario) con respecto al típico histograma que muestra la distribución de scores para todas las secuencias halladas. Esto se ilustra en la siguiente figura.</p>
+<p><img src="./img/fasta_hist.png" alt="Fasta_hist" style="max-width:70%"></p>
+<p><strong>2.1</strong> Responda a las siguientes preguntas con respecto al histograma <strong>apaisado</strong> que obtuvo como output:</p>
+<p><strong>a.</strong> ¿Qué valores se representan en el eje y (vertical)?</p>
+<p><strong>b.</strong> ¿Qué valores se representan en el eje x (horizontal)?</p>
+<p><strong>c.</strong> ¿Qué representan los asteriscos "*" ?</p>
+<p><strong>d.</strong> ¿Qué representan los iguales "=" ? ¿Cuánto representa el "=" ?</p>
+<p><strong>e.</strong> ¿Qué es la <span style="color:blue;font-weight:bold;">primera columna</span> de números?, ¿por qué hay un "&lt;" en la primera línea? y ¿por qué hay un "&gt;" en la última?</p>
+<p><strong>f.</strong> ¿Qué es la <span style="color:red;font-weight:bold;">segunda columna</span> de números? (Pista: mirá el números de iguales que hay en esa línea)</p>
+<p><strong>g.</strong> ¿Qué es la <span style="color:green;font-weight:bold;">tercera columna</span> de números?</p>
+<p><strong>h.</strong> ¿Qué es un inset? ¿Qué región del histograma está representada en el inset? ¿Cuánto representa el "=" en el inset?</p>
+<p><strong>i.</strong> ¿El valor del “=” en el inset es mayor o menor que en el resto del histograma? ¿Tiene sentido?</p>
+<p><strong>2.2</strong> ¿Qué parámetros se utilizaron en esta corrida con FASTA?</p>
+<p><strong>2.3</strong> ¿En qué se diferencian las distribuciones esperadas y observadas? ¿Qué implica?</p>
+<p><strong>2.4</strong> ¿Qué representa el número que está entre paréntesis en el E (ver figura más abajo)? ¿Cuál es el E-value para el mejor <em>hit</em>?</p>
+<p><img src="./img/fasta_bestscores.png" alt="Fasta_bestscores" style="max-width:60%"></p>
+<h2 id="diferencias-entre-blast-y-fasta"><strong>Diferencias entre BLAST y FASTA</strong></h2>
+<ul>
+<li><strong>ktup:</strong> Tanto FASTA como BLAST usan una estrategia de búsqueda inicial basada en palabras cortas. ktup en FASTA es el parámetro que indica el tamaño de la palabra utilizada en esta búsqueda inicial. FASTA utiliza por default ktup=2, mientras que BLAST utiliza ktup=3. Sin embargo, FASTA sólo considera identidades respecto a la palabra, mientras que BLAST utiliza identidades y sustituciones conservativas. Por lo tanto BLAST con ktup=3 es en general más sensible que FASTA con ktup=2. FASTA con ktup=1 es más sensible, pero es también más lento. </li>
+<li><strong>Matrices y scores:</strong> BLAST y FASTA usan distintas matrices de <em>scoring</em> y <em>gap penalties</em> por <em>default</em> (BLAST: BLOSUM62, gap open:-11, gap extend:-1; FASTA: BLOSUM50, gap open:-10, gap extend:-2). </li>
+<li><strong>Estadísticas</strong> Los parámetros <em>kappa</em> y <em>lambda</em> son centrales para estimar scores en BLAST y en FASTA. FASTA calcula estos parámetros <em>on the fly</em> a partir de la base de datos (se tiene en cuenta el tamaño) y la matriz de <em>scoring</em>. Esto produce estadísticas más representativas, pero puede ser problemático para bases de datos pequeñas. Si la base de datos es de menos de 10 secuencias, FASTA no estima estos parámetros. BLAST usa valores pre-calculados para estos parámetros, que fueron derivados a partir de simulaciones. </li>
+<li><strong>Alineamientos:</strong> BLAST puede mostrar varios alineamientos por cada par de secuencias (varios <em>high-scoring pairs</em> o HSPs), FASTA sólo muestra un alineamiento. </li>
+<li><strong>Filtrado de secuencias de baja complejidad:</strong> Por default, BLAST filtra secuencias de baja complejidad o repeticiones, ¡FASTA no! Esto puede afectar la capacidad de discriminar falsos positivos, aunque FASTA provee otro tipo de opciones para manejar este tipo de casos. Ver la sección específica sobre este punto más abajo. </li>
+<li><strong>Traducciones:</strong> <em>blastx</em> hace 6 búsquedas independientes (una en cada marco de lectura) mientras que <em>fastx3</em> y <em>fasty3</em> hacen una única búsqueda <em>forward</em> (o <em>reverse</em> usando <code>-i</code>) que permite <em>frameshifts</em>. Estos últimos son más sensibles y pueden producir mejores alineamientos que <em>blastx</em> cuando se usan secuencias de baja calidad (lo mismo es cierto para <em>tblastn</em> vs <em>tfastx3</em> y <em>tfasty3</em>). </li>
+<li><strong>Homólogos distantes:</strong> Existe una opción en FASTA (<code>-F</code>) que les permite ignorar (i.e. que no aparezcan en el output) secuencias altamente similares al <em>query</em>. Esto es útil, por ejemplo, para focalizar una búsqueda en las secuencias más divergentes. No existe una opción similar en <strong>BLAST</strong>. </li>
+<li><strong>Secuencias cortas:</strong> Ya sea que busquen un <em>primer</em> o un péptido, si quieren utilizar BLAST o FASTA para esto, tengan en cuenta que BLAST es generalmente inútil al respecto. Esto es porque BLAST tiene un límite inferior sobre la longitud que puede tener una palabra (ktup). En el caso de nucleótidos, el límite inferior es 7 (el <em>default</em> es 11). En este sentido FASTA es mejor, porque siempre pueden usar ktup=1. Por otra parte, en el caso específico de péptidos, FASTA provee algunos algoritmos particulares de búsqueda (<em>fastf</em>, <em>fasts</em> y <em>tfasf</em>, <em>tfasts</em>).</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Usar un cuchillo en lugar de un destornillador, a veces puede funcionar, pero no deja de ser cierto que cada herramienta fue diseñada para un fin distinto. Si quieren realizar búsquedas de secuencias cortas prueben primero con <em>fuzznuc</em>, <em>fuzzpro</em> o <em>findpatterns</em> (todos parte de <strong>EMBOSS</strong>).</p>
+</div>
+<h2 id="filtrado-de-secuencias-de-baja-complejidad"><strong>Filtrado de secuencias de baja complejidad</strong></h2>
+<p>Muchas secuencias son altamente repetitivas. Si la secuencia <em>query</em> contiene regiones de baja complejidad o repeticiones, es posible que una búsqueda encuentre muchas secuencias no relacionadas, con altos scores (por ej. <em>hits</em> contra colas de poly-A o regiones ricas en Prolina).
+En otros casos, la secuencia puede contener un vector (plásmido) o repeticiones Alu, que ustedes pueden querer omitir en la búsqueda. </p>
+<p><strong>BLAST</strong> permite filtrar el primer tipo de casos, mediante la opción <code>-F</code>. 
+<strong>FASTA</strong> en cambio no provee esta alternativa. Es el usuario el que tiene que filtrar el <em>query</em> antes de realizar una búsqueda. </p>
+<h3 id="ejercicio-3">Ejercicio 3</h3>
+<p><strong>3.1</strong> Usar la proteína Groucho de Drosophila (grou_drome) para buscar secuencias similares en <strong>Swissprot</strong> usando <strong>BLAST</strong>. Comparar los resultados obtenidos usando (<code>-F T</code>) o sin usar (<code>-F F</code>) la opción de filtrado que provee <strong>BLAST</strong>. </p>
+<p><strong>3.2</strong> Ahora para repetir el mismo ejercicio con <strong>FASTA</strong>, tenemos que detectar y marcar las regiones de baja complejidad. Para esto se utiliza <code>segmasker</code>: </p>
+<div class="highlight"><pre><span></span><code>segmasker -in grou_drome.fasta -outfmt fasta &gt; grou_drome_lc.fasta
+</code></pre></div>
+<p><strong>3.3</strong> Comparen las secuencias <em>grou_drome.fasta</em> y <em>grou_drome_lc.fasta</em> e identifiquen las diferencias. ¿Qué hizo <em>segmasker</em> con la secuencia? </p>
+<p>Ahora, podemos buscar secuencias similares en <strong>Swissprot</strong> usando <em>grou_drome.fasta</em> (con opciones standard) y <em>grou_drome_lc.fasta</em> (usando la opción <code>-S</code>). </p>
+<div class="highlight"><pre><span></span><code>fasta -H grou_drome.fasta ~/Swissprot_db/Swissprot.fasta
+fasta -H -S grou_drome_lc.fasta ~/Swissprot_db/Swissprot.fasta
+</code></pre></div>
+<p>¿Qué diferencias encuentran en los histogramas de cada búsqueda? </p>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Para el segundo tipo de casos (vector, elementos repetitivos), es necesario detectarlos y enmascararlos (reemplazarlos por N o X) o marcarlos (con minúscula, por ejemplo, si toda la secuencia esta en mayúsculas) previo a la búsqueda. </p>
+</div>
+<h2 id="bases-de-datos-propias">Bases de datos propias</h2>
+<p>Tener acceso a <strong>BLAST</strong> o <strong>FASTA</strong> en la línea de comando les da la posibilidad de crear sus propias bases de datos para realizar búsquedas. 
+<strong>FASTA</strong> puede realizar búsquedas sobre un archivo en formato <em>fasta</em> conteniendo varias secuencias sin ningún otro tipo de tratamiento. <strong>BLAST</strong>, sin embargo necesita contar con una base de datos indexada. <code>formatdb</code> es el comando que vamos a utilizar para generar los índices que <strong>BLAST</strong> necesita. </p>
+<h3 id="ejercicio-4">Ejercicio 4</h3>
+<p><strong>4.1</strong> Primero, vamos a generar un archivo <em>fasta</em> múltiple con algunas secuencias. Por ejemplo, para construir una base de datos con secuencias de opsinas podemos empezar con: </p>
+<p><div class="highlight"><pre><span></span><code>seqret <span class="s2">&quot;~/Swissprot_db/Swissprot.fasta:ops*&quot;</span> fasta::ops
+</code></pre></div>
+Esto debería generar un archivo FASTA múltiple conteniendo secuencias de opsinas. </p>
+<p><strong>4.2</strong> ¿Cuántas secuencias tiene nuestra base de datos? </p>
+<p>Ahora para indexar el archivo ops (en formato <em>fasta</em>), usamos <code>formatdb</code>, indicándole el archivo que contiene las secuencias (<code>-i</code>) y si el archivo contiene secuencias de ADN (<code>-p F</code>) o de proteínas (<code>-p T</code>). </p>
+<div class="highlight"><pre><span></span><code>formatdb -i ops -p T
+</code></pre></div>
+<p><strong>4.3</strong> Una vez indexada la base de datos, podemos hacer una búsqueda, por ejemplo, con nuestra ya conocida <em>xlrhodop.pep</em></p>
+<div class="highlight"><pre><span></span><code>blastall -p blastp -d ./ops -i xlrhodop.pep &gt; xlrhodop.ops.blastp
+</code></pre></div>
+<p>Pueden ver las opciones que acepta el comando <code>formatdb</code> pidiendo ayuda: </p>
+<div class="highlight"><pre><span></span><code><span class="c1">#formatdb --help ... (en versiones viejas de blast se podía usar este comando... pero ya no)</span>
+makeblastdb -help
+</code></pre></div>
+<h2 id="blast-con-multiples-secuencias"><strong>BLAST con múltiples secuencias</strong></h2>
+<p>Si tienen un archivo con múltiples secuencias en formato <em>fasta</em>, pueden usarlo como <em>query</em> en una búsqueda, usando <strong>BLAST</strong>. </p>
+<h3 id="ejercicio-5">Ejercicio 5</h3>
+<p><strong>5.1</strong> El archivo <em>opsv.fasta</em> contiene la secuencia de 4 fotorreceptores, usen este archivo para realizar una búsqueda, usando <em>blastp</em>, contra la base de datos <strong>ops</strong> que crearon en el ejercicio anterior. </p>
+<p><strong>5.2</strong> El output generado consiste en 4 reportes de <strong>BLAST</strong>, concatenados en un único archivo. ¿Cómo pueden navegar fácilmente dentro del documento usando <code>less</code>? </p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Tip: ¿qué palabras o conjunto de palabras ocurren una sola vez en cada reporte?</p>
+</div>
+<p><strong>5.3</strong> Ahora puedo leer el reporte y manejarme bien dentro de él. Si quiero partirlo en 4 reportes individuales ¿Cómo hago? </p>
+<p>Para esto pueden usar el comando de Unix <code>split</code> que puede partir un archivo en otros más pequeños, ya sea por tamaño o cada vez que encuentre una palabra o <em>pattern</em> (patrón, expresión regular). Usando la opción <code>-p</code> pueden especificar un <em>pattern</em>.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>La opción <code>-p</code> sólo está disponible en el comando <code>split</code> de sistemas operativos del tipo BSD (<em>FreeBSD</em>, <em>NetBSD</em>). Linux usa el comando <code>split</code> de GNU, donde esta opción no existe. </p>
+</div>
+<p><div class="highlight"><pre><span></span><code>man split 
+</code></pre></div>
+Tanto en Linux como en cualquier Unix, una manera de partir un archivo en varios usando un <em>pattern</em> es usando el comando <code>awk</code>: </p>
+<p>Dado un archivo llamado <em>blast.out</em>, podemos partirlo en varios usando la siguiente invocación: </p>
+<div class="highlight"><pre><span></span><code>awk -v <span class="nv">i</span><span class="o">=</span><span class="m">0</span> <span class="s1">&#39;/pattern/{i++}{print &gt; &quot;blast.&quot;i}&#39;</span> blast.out 
+</code></pre></div>
+<div class="admonition attention">
+<p class="admonition-title">Atención</p>
+<p>Recuerden reemplazar "<em>pattern</em>" por el patrón que quieren utilizar para dividir el archivo.</p>
+</div>
+<p>¿Lo lograron?</p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Volver al principio
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2022 Area Bioinformatica UNSAM
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["search.suggest", "search.highlight", "search.share", "header.autohide", "navigation.tracking", "navigation.tabs", "toc.integrate", "navigation.top"], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "B\u00fasqueda", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version.title": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.a6c66575.min.js"></script>
+      
+        <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
+      
+        <script src="../../javascripts/tablesort.js"></script>
+      
+    
+  </body>
+</html>
