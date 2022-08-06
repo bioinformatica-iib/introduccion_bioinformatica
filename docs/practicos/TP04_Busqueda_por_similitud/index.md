@@ -86,19 +86,14 @@ Utilice distintas combinaciones de estos parámetros y preste atención al impac
 
 **1.2.1** Complete la siguiente tabla para resumir lo observado, teniendo en cuenta diferentes **costos** de gap open y gap extend. 
 
-<div class="table">
-
-|| Observaciones en el extremo del alineamiento | Observaciones en el centro del alineamiento | Extensión de la región con gaps |
-| Gap open alto + gap extend alto | | | |
-| Gap open alto + gap extend bajo | | | |
-| Gap open bajo + gap extend alto | | | |
-| Gap open bajo + gap extend bajo | | Muchos gaps | "Larga" |
-
-</div>
+|| Número de (apertura de) gaps | Extensión de la regiones con gaps |
+| :--: | :--: | :--: |
+| Gap open: 6 + gap extend: 2 | |
+| Gap open: 13 + gap extend: 1 | |
 
 **1.2.2** Responda a las siguientes preguntas:
 
-Para una misma combinación de costos para gap open y gap extend:
+Para una misma combinación de costos para gap open y gap extend (pueden usar los valores default):
 
 **a.** ¿Qué sucede con los valores de ktupla=2 y ktupla=7 ? 
 
@@ -203,6 +198,9 @@ En otros casos, la secuencia puede contener un vector (plásmido) o repeticiones
 
 **3.1** Usar la proteína Groucho de Drosophila (grou_drome) para buscar secuencias similares en **Swissprot** usando **BLAST**. Comparar los resultados obtenidos usando (``-F T``) o sin usar (``-F F``) la opción de filtrado que provee **BLAST**. 
 
+Observen el primer hit en las lista de los alineamientos resultantes. ¿Qué pueden detectar de diferencia entre los dos comandos que corrieron?
+
+
 **3.2** Ahora para repetir el mismo ejercicio con **FASTA**, tenemos que detectar y marcar las regiones de baja complejidad. Para esto se utiliza ``segmasker``: 
 
 ```Bash
@@ -220,11 +218,7 @@ fasta -H -S grou_drome_lc.fasta ~/Swissprot_db/Swissprot.fasta
 
 ¿Qué diferencias encuentran en los histogramas de cada búsqueda? 
 
-!!! note "Nota"
-
-	 Para el segundo tipo de casos (vector, elementos repetitivos), es necesario detectarlos y enmascararlos (reemplazarlos por N o X) o marcarlos (con minúscula, por ejemplo, si toda la secuencia esta en mayúsculas) previo a la búsqueda. 
-
-## Bases de datos propias
+## **Bases de datos propias**
 
 Tener acceso a **BLAST** o **FASTA** en la línea de comando les da la posibilidad de crear sus propias bases de datos para realizar búsquedas. 
 **FASTA** puede realizar búsquedas sobre un archivo en formato *fasta* conteniendo varias secuencias sin ningún otro tipo de tratamiento. **BLAST**, sin embargo necesita contar con una base de datos indexada. ``formatdb`` es el comando que vamos a utilizar para generar los índices que **BLAST** necesita. 
