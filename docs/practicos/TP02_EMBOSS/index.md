@@ -844,7 +844,7 @@ Corran este comando 3 veces pasándole los archivos correctos y creen los siguie
 
 !!! tip
 
-    De hacerlo a mano, aca van a tener que ejecutar tres comandos muy similares. Recuerden que pueden usar ++arrow-up++ y ++arrow-down++ en su terminal para navegar por los ultimos comandos utilizados y modificar lo necesario. También puede serles útiles la tecla ++home++ (***Inicio***) y ++end++ (***Fin***) para moverse al principio o al final del comando que están editando.
+    De hacerlo a mano, aca van a tener que ejecutar tres comandos muy similares. Recuerden que pueden usar ++arrow-up++ y ++arrow-down++ en su terminal para navegar por los ultimos comandos utilizados y modificar lo necesario, así como ++tab++ para autocompletar nombres de archivos. También puede serles útiles la tecla ++home++ (***Inicio***) y ++end++ (***Fin***) para moverse al principio o al final del comando que están editando.
 
 ## **Ejercicio 5. Agregar enzimas de restricción** { markdown data-toc-label='Ejercicio 5 - Enzimas' }
 
