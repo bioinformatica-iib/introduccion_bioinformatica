@@ -458,6 +458,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoricas/2-Teorica-Dos/" class="md-nav__link">
+        Teórica 2
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -710,18 +724,29 @@ combinación de costos es válida.</p>
 </div>
 <p>Utilice distintas combinaciones de estos parámetros y preste atención al impacto que esto tiene en los alineamientos reportados. </p>
 <p><strong>1.2.1</strong> Complete la siguiente tabla para resumir lo observado, teniendo en cuenta diferentes <strong>costos</strong> de gap open y gap extend. </p>
-<div class="table">
-
-|| Observaciones en el extremo del alineamiento | Observaciones en el centro del alineamiento | Extensión de la región con gaps |
-| Gap open alto + gap extend alto | | | |
-| Gap open alto + gap extend bajo | | | |
-| Gap open bajo + gap extend alto | | | |
-| Gap open bajo + gap extend bajo | | Muchos gaps | "Larga" |
-
-</div>
-
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">Número de (apertura de) gaps</th>
+<th align="center">Extensión de la regiones con gaps</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Gap open: 6 + gap extend: 2</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">Gap open: 13 + gap extend: 1</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
 <p><strong>1.2.2</strong> Responda a las siguientes preguntas:</p>
-<p>Para una misma combinación de costos para gap open y gap extend:</p>
+<p>Para una misma combinación de costos para gap open y gap extend (pueden usar los valores default):</p>
 <p><strong>a.</strong> ¿Qué sucede con los valores de ktupla=2 y ktupla=7 ? </p>
 <p><strong>b.</strong> ¿Cuál búsqueda es la que tarda más? ¿Cuál menos? </p>
 <p><strong>c.</strong> ¿Cuántas secuencias devuelven?</p>
@@ -804,6 +829,7 @@ En otros casos, la secuencia puede contener un vector (plásmido) o repeticiones
 <strong>FASTA</strong> en cambio no provee esta alternativa. Es el usuario el que tiene que filtrar el <em>query</em> antes de realizar una búsqueda. </p>
 <h3 id="ejercicio-3">Ejercicio 3</h3>
 <p><strong>3.1</strong> Usar la proteína Groucho de Drosophila (grou_drome) para buscar secuencias similares en <strong>Swissprot</strong> usando <strong>BLAST</strong>. Comparar los resultados obtenidos usando (<code>-F T</code>) o sin usar (<code>-F F</code>) la opción de filtrado que provee <strong>BLAST</strong>. </p>
+<p>Observen el primer hit en las lista de los alineamientos resultantes. ¿Qué pueden detectar de diferencia entre los dos comandos que corrieron?</p>
 <p><strong>3.2</strong> Ahora para repetir el mismo ejercicio con <strong>FASTA</strong>, tenemos que detectar y marcar las regiones de baja complejidad. Para esto se utiliza <code>segmasker</code>: </p>
 <div class="highlight"><pre><span></span><code>segmasker -in grou_drome.fasta -outfmt fasta &gt; grou_drome_lc.fasta
 </code></pre></div>
@@ -813,11 +839,7 @@ En otros casos, la secuencia puede contener un vector (plásmido) o repeticiones
 fasta -H -S grou_drome_lc.fasta ~/Swissprot_db/Swissprot.fasta
 </code></pre></div>
 <p>¿Qué diferencias encuentran en los histogramas de cada búsqueda? </p>
-<div class="admonition note">
-<p class="admonition-title">Nota</p>
-<p>Para el segundo tipo de casos (vector, elementos repetitivos), es necesario detectarlos y enmascararlos (reemplazarlos por N o X) o marcarlos (con minúscula, por ejemplo, si toda la secuencia esta en mayúsculas) previo a la búsqueda. </p>
-</div>
-<h2 id="bases-de-datos-propias">Bases de datos propias</h2>
+<h2 id="bases-de-datos-propias"><strong>Bases de datos propias</strong></h2>
 <p>Tener acceso a <strong>BLAST</strong> o <strong>FASTA</strong> en la línea de comando les da la posibilidad de crear sus propias bases de datos para realizar búsquedas. 
 <strong>FASTA</strong> puede realizar búsquedas sobre un archivo en formato <em>fasta</em> conteniendo varias secuencias sin ningún otro tipo de tratamiento. <strong>BLAST</strong>, sin embargo necesita contar con una base de datos indexada. <code>formatdb</code> es el comando que vamos a utilizar para generar los índices que <strong>BLAST</strong> necesita. </p>
 <h3 id="ejercicio-4">Ejercicio 4</h3>
