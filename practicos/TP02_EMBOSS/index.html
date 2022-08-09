@@ -2290,17 +2290,25 @@ head grep <span class="s2">&quot;Escherichia coli&quot;</span> assembly_summary.
 <p>Este comando puede tardar un rato en descargar todo y va a bajar 11 archivos con extensión <strong>.fna.gz</strong> donde <strong>.fna</strong> es una extensión que hace referencia a que el archivo contiene información de secuencia (similar a FASTA) y <strong>.gz</strong> es la extensión de los archivos comprimidos de Linux.</p>
 <h2 id="ejercicio-3-construir-tabla-de-frecuencias-de-uso-de-codones" markdown="markdown"><strong>Ejercicio 3. Construir tabla de frecuencias de uso de codones</strong></h2>
 <p>Tras lo que parece una eternidad por fin tenemos nuestros genomas. Ahora es momento de usar el comando <code>cusp</code> del que hablamos al principio del ejercicio anterior para transformar nuestros genomas en tablas con frecuencias de uso de codones.</p>
-<p>Como tenemos varios archivos <strong>.fna.gz</strong> vamos a tener que correr el comando <code>cusp</code> varias veces, y la mejor forma de hacer esto es creando un script con un ciclo <em>for each</em> que lo haga por nosotros.</p>
+<p>Como tenemos varios archivos <strong>.fna.gz</strong> vamos a tener que correr el comando <code>cusp</code> varias veces, y la mejor forma de hacer esto es creando un script con un ciclo <em>for each</em> que lo haga por nosotros. Este ciclo va a recorrer todos los archivos <strong>.fna.gz</strong> que acabamos de descargar, los va a descomprimir y va a ejecutar el comando <code>cusp</code> para cada uno.</p>
 <ul>
 <li>
-<p>Usando las siguientes 2 lineas de código, creen un script que contenga un <em>for each</em> que recorra todos los archivos <strong>.fna.gz</strong> que acabamos de descargar, los descomprima y ejecute el comando <code>cusp</code> para cada uno:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Creamos una lista que contiene a todos los archivos que empiezan con &quot;GCF&quot; y terminan con &quot;.gz&quot;</span>
+<p>Reemplacen los <strong>REEMPLAZAR</strong> en el próximo código por lo que sea adecuado para conseguir nuestro objetivo:</p>
+<p><div class="highlight"><pre><span></span><code>REEMPLAZAR
+
+<span class="k">for</span> REEMPLAZAR <span class="k">in</span> REEMPLAZAR
+<span class="k">do</span> 
+    REEMPLAZAR
+<span class="k">done</span>
+</code></pre></div>
+Sabiendo que un <strong>REEMPLAZAR</strong> es:</p>
+<p><div class="highlight"><pre><span></span><code><span class="c1"># Creamos una lista que contiene a todos los archivos que empiezan con &quot;GCF&quot; y terminan con &quot;.gz&quot;</span>
 <span class="nv">lista_de_archivos_genomas</span><span class="o">=</span><span class="sb">`</span>ls GCF*.gz<span class="sb">`</span>
 </code></pre></div>
+y otro es:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Descomprimimos el archivo &quot;.gz&quot; y corremos el comando *cusp* para cada $archivo_genoma de la lista</span>
 zcat <span class="nv">$archivo_genoma</span> <span class="p">|</span> cusp -auto -sequence <span class="s2">&quot;stdin&quot;</span> -outfile <span class="s2">&quot;</span><span class="si">${</span><span class="nv">archivo_genoma</span><span class="si">}</span><span class="s2">.cusp&quot;</span>
 </code></pre></div>
-<p>Donde:</p>
 <ul>
 <li><code>zcat</code> es un comando que descomprime archivos <strong>.gz</strong> y devuelve su contenido por consola (similar a <code>cat</code>).</li>
 <li><code>-auto</code> hace que <code>cusp</code> use los parámetros por defecto y no nos consulte cuales usar.</li>
@@ -2309,7 +2317,7 @@ zcat <span class="nv">$archivo_genoma</span> <span class="p">|</span> cusp -auto
 </ul>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Lo unico que falta en el script es la estructura del <em>for each</em> propiamente dicho. Si no se la acuerdan pueden ver el <em>for each</em> que usamos en el <strong>Ejercicio 1</strong> como guía.</p>
+<p>Si no les sale pueden ver el <em>for each</em> del <strong>Ejercicio 1</strong> para usarlo como base (si bien ese es más complicado)</p>
 </div>
 </li>
 </ul>
