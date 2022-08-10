@@ -100,15 +100,37 @@ Hay un montón de sistemas operativos, pero los más comunes son:
 
 [:fontawesome-solid-download: Máquina Virtual desde Drive](https://drive.google.com/file/d/1708hAt-M2x5HOd0OD1pJJ4ZCsSss8GCm/view?usp=sharing){ .md-button .md-button--primary }
 
-* O bien, si los dos anteriores fallan pueden probar este link, que es un link de Mega.
-
-[:fontawesome-solid-download: Máquina Virtual desde Mega](https://mega.nz/file/bzZSiYaY#CQoWNK5B8VCCj11SGP8OYyslSRT0g4JqpdhKvZ0hVPU){ .md-button .md-button--primary }
-
 !!! warning "Atención"
 
     Son archivos pesados (~ **9GB**). Descárguenlos con **tiempo** y con **conexión estable**.
     
     Si no cuentan con una conexión estable, pueden escribirnos para buscar alguna solución alternativa.
+
+* O bien, si los dos anteriores fallan pueden probar descargar el archivo zip de la máquina virtual partido.
+
+[:fontawesome-solid-download: Download zip](https://drive.google.com/file/d/1TcZm4C-qLDpksmqtiJ4KUgNbs71ZAW74/view?usp=sharing)
+
+[:fontawesome-solid-download: Download z01](https://drive.google.com/file/d/1qXPRqVBbZVitFnf3mZL1dPr3aPY7sD5F/view?usp=sharing)
+
+[:fontawesome-solid-download: Download z02](https://drive.google.com/file/d/1RhcNZShwLrHa4Z9USVqK7bScW0JMYkvu/view?usp=sharing)
+
+[:fontawesome-solid-download: Download z03](https://drive.google.com/file/d/1NoCCjf6xNZEVWppKn0qTcRBVWg3QSafs/view?usp=sharing)
+
+[:fontawesome-solid-download: Download z04](https://drive.google.com/file/d/1xmj2W3PAWbE55V-ort-z7GN4ZPqUOaJd/view?usp=sharing)
+
+[:fontawesome-solid-download: Download z05](https://drive.google.com/file/d/1ln6vFz4Ek_ni6saRMnT0jZLKc4HoIHLI/view?usp=sharing)
+
+[:fontawesome-solid-download: Download z06](https://drive.google.com/file/d/1JlBGMVZt0lah0fRaiO4LvnrsckdP-s23/view?usp=sharing)
+
+[:fontawesome-solid-download: Download z07](https://drive.google.com/file/d/1sigWDFqBhY-M20uNK2wpv1ny0Fsk0Mtr/view?usp=sharing)
+
+[:fontawesome-solid-download: Download z08](https://drive.google.com/file/d/1lwC5W6vo0Iyl0tpBrrctij4UPlOfZAN9/view?usp=sharing)
+
+[:fontawesome-solid-download: Download MD5 y SHA256](https://drive.google.com/file/d/1H0xgA0fv35vJmqFFkIchyhlqCnvEwhbZ/view?usp=sharing)
+
+!!! tip "Atención"
+
+    Una vez finalizada la descarga de **TODOS** los archivos que van a estar guardados en una misma carpeta tienen que descomprimir el archivo `.zip` como siempre.
 
 
 ## Paso 2. Validar la descarga
