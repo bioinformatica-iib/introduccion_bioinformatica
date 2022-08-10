@@ -10,17 +10,20 @@ tags:
 Docentes, modo de cursada, cronograma, evaluaciones, etc.
 
  * :fontawesome-regular-file-pdf: [Slides](presentacionDeLaMateria-2022.pdf) 
- * :octicons-video-16: [Video](https://www.youtube.com/embed/_jwvRkxu588)
+ 
+ ![type:video](https://www.youtube.com/embed/_jwvRkxu588)
 
 ## Conceptos elementales de computación y algoritmos
 
  * :fontawesome-regular-file-pdf: [Slides](IntroduccionComputacion2022.pdf) 
- * :octicons-video-16: [Video](https://www.youtube.com/embed/CAwG3cIv2LA)
+ 
+ ![type:video](https://www.youtube.com/embed/CAwG3cIv2LA)
 
 ## Experimentos en bioinformática
 
  * :fontawesome-regular-file-pdf: [Slides](experimentosBioinformaticos2022.pdf) 
- * :octicons-video-16: [Video](https://www.youtube.com/embed/wgWoK9hCE3c)
+ 
+ ![type:video](https://www.youtube.com/embed/wgWoK9hCE3c)
 
 [//]: # (![type:video](https://www.youtube.com/embed/kS0X-yIsB64))
 [//]: # (This is a comment on a new line.)

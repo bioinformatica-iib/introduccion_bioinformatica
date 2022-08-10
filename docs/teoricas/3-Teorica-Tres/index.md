@@ -4,15 +4,10 @@ tags:
   - teoricas
 ---
 
-![Image](featured.svg){ width="250", align=left }
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sit amet
-fermentum justo, at rhoncus tellus. Aliquam nec magna ullamcorper, congue libero
-at, ultrices turpis. Vestibulum imperdiet sapien arcu, vitae faucibus nunc
-congue ut. Etiam non vulputate dui. Integer nec hendrerit libero. In bibendum
-lorem lectus, id volutpat diam imperdiet vel. Curabitur eu dictum sapien. Etiam
-lacinia lacinia commodo. Aliquam erat volutpat. Duis massa odio, vulputate in
-lorem id, fringilla tincidunt nunc. Quisque risus mauris, fringilla eget euismod
-quis, dictum id dui. Cras at lectus tempus, dapibus arcu sit amet, gravida diam.
+## Alineamientos de a pares 
+* :fontawesome-regular-file-pdf: [Slides](presentacionDeLaMateria-2022.pdf) 
+ * :octicons-video-16: [Video](https://www.youtube.com/embed/_jwvRkxu588)
+## Búsquedas de secuencias por similitud
 
 ## Video :octicons-video-24:
 
@@ -20,6 +15,6 @@ quis, dictum id dui. Cras at lectus tempus, dapibus arcu sit amet, gravida diam.
 
 ## Material de lectura y consulta
 
-  * Uno
-  * Dos
-  * Tres
+  * :paperclip: Having a BLAST with bioinformatics (and avoiding BLASTphemy). Pertsemlidis, A., Fondon, J.W. (2001) [Genome Biol 2, reviews2002.1](https://genomebiology.biomedcentral.com/articles/10.1186/gb-2001-2-10-reviews2002)
+  * :fontawesome-solid-file-pdf: Selecting the Right Similarity-Scoring Matrix. Pearson, W. R. (2013) [Curr. Prot. Bioinformatics Chapter 3: Unit 3.5](https://fasta.bioch.virginia.edu/wrpearson/papers/wrp_cpbio_0305.pdf)
+  * :fontawesome-solid-file-pdf: An Introduction to Similarity ("Homology") Searching. Pearson, W. R. (2013) [Curr. Prot. Bioinformatics Chapter 3: Unit 3.1](https://fasta.bioch.virginia.edu/wrpearson/papers/wrp_cpbio_0301.pdf)

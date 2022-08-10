@@ -7,7 +7,8 @@ tags:
 ## Bases de datos
 
  * :fontawesome-regular-file-pdf: [Slides](basesDeDatos2022.pdf) 
- * :octicons-video-16: [Video](https://youtu.be/1cJ5C75S08A)
+ 
+ ![type:video](https://www.youtube.com/embed/1cJ5C75S08A)
 
 ## Material de lectura y consulta
 
