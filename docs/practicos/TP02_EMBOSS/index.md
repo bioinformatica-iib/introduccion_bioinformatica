@@ -717,30 +717,40 @@ Este comando puede tardar un rato en descargar todo y va a bajar 11 archivos con
 
 Tras lo que parece una eternidad por fin tenemos nuestros genomas. Ahora es momento de usar el comando `cusp` del que hablamos al principio del ejercicio anterior para transformar nuestros genomas en tablas con frecuencias de uso de codones.
 
-Como tenemos varios archivos **.fna.gz** vamos a tener que correr el comando `cusp` varias veces, y la mejor forma de hacer esto es creando un script con un ciclo *for each* que lo haga por nosotros.
+Como tenemos varios archivos **.fna.gz** vamos a tener que correr el comando `cusp` varias veces, y la mejor forma de hacer esto es creando un script con un ciclo *for each* que lo haga por nosotros. Este ciclo va a recorrer todos los archivos **.fna.gz** que acabamos de descargar, los va a descomprimir y va a ejecutar el comando `cusp` para cada uno.
 
-* Usando las siguientes 2 lineas de código, creen un script que contenga un *for each* que recorra todos los archivos **.fna.gz** que acabamos de descargar, los descomprima y ejecute el comando `cusp` para cada uno:
+* Reemplacen los **REEMPLAZAR** en el próximo código por lo que sea adecuado para conseguir nuestro objetivo:
+
+    ```bash
+    REEMPLAZAR
+
+    for REEMPLAZAR in REEMPLAZAR
+    do 
+        REEMPLAZAR
+    done
+
+    ```
+    Sabiendo que un **REEMPLAZAR** es:
 
     ```bash
     # Creamos una lista que contiene a todos los archivos que empiezan con "GCF" y terminan con ".gz"
     lista_de_archivos_genomas=`ls GCF*.gz`
     ``` 
+    y otro es:
 
     ```bash
     # Descomprimimos el archivo ".gz" y corremos el comando *cusp* para cada $archivo_genoma de la lista
     zcat $archivo_genoma | cusp -auto -sequence "stdin" -outfile "${archivo_genoma}.cusp"
     ``` 
 
-    Donde:
-
     * `zcat` es un comando que descomprime archivos **.gz** y devuelve su contenido por consola (similar a `cat`).
     * `-auto` hace que `cusp` use los parámetros por defecto y no nos consulte cuales usar.
     * `-sequence "stdin"` le esta diciendo a `cusp` que el genoma se lo estamos dando por la consola (mediante el pipe o `|`).
     * `-outfile "${archivo_genoma}.cusp"` define el nombre del archivo de salida de `cusp`, que en este caso es el nombre del genoma seguido de **.cusp**. Si bien las llaves no son necesarias en este caso, ayudan a entender donde termina la variable y empieza el *string*. Idealmente habria que sacarle la extensión anterior al archivo (ya que ahora va a quedar **.fna.gz.cusp**), pero ya tenemos bastante que hacer.
 
-    !!! tip 
+    !!! tip
 
-        Lo unico que falta en el script es la estructura del *for each* propiamente dicho. Si no se la acuerdan pueden ver el *for each* que usamos en el **Ejercicio 1** como guía.
+        Si no les sale pueden ver el *for each* del **Ejercicio 1** para usarlo como base (si bien ese es más complicado)
 
 Una vez creado el script, corranló.
 
