@@ -15,8 +15,8 @@ Este es el botón para decargar materiales, en (#) hay que agregar el link corre
 
 ### Videos de la clase grabada
 
-* :octicons-video-16: [Introducción al TP](#)
-* :octicons-video-16: [Cierre TP](#)
+* :octicons-video-16: [Introducción al TP](https://www.youtube.com/watch?v=Kx1LzcTHCpw)
+* :octicons-video-16: [Cierre TP](https://www.youtube.com/watch?v=bULActJNfWU)
 
 ### Software a usar
 * EMBOSS (ya instalado en la VM).
