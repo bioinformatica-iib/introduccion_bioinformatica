@@ -3,8 +3,16 @@
 # **TP 3**. Alineamientos de secuencias de a pares { markdown data-toc-label = 'TP 3' }
 
 <br>
+<br>
+<br>
 
 [:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1x5ikvvVm83gycuSUFX0xiLNdR9Q31a0f/view?usp=sharing){ .md-button .md-button--primary }
+
+<br>
+
+!!! warning "Atención"
+
+    Este TP tiene informe.
 
 ## **Objetivos**
 
@@ -295,7 +303,7 @@ dotmatcher -graph X11 HS-ch1-fragment.fasta HS-ch1-fragment.fasta
 ```
 !!! attention "Atención"
 
-   Recuerden abrir el archivo *HS-ch11-fragment.fasta* y chequear que la secuencia es de ADN. Es una buena práctica conocer qué hay en los archivos que vamos a utilizar. 
+    Recuerden abrir el archivo *HS-ch11-fragment.fasta* y chequear que la secuencia es de ADN. Es una buena práctica conocer qué hay en los archivos que vamos a utilizar. 
 
 **¿Qué podés interpretar de este dotplot?**
 
@@ -471,11 +479,11 @@ Para solucionarlo decide utilizar las herramientas que aprendió en el trabajo p
 
 !!! tip "Tip"
 
-Si necesitan dividir el archivo `All_Sequences.fasta` en archivos individuales pueden buscar **wossname split**. 
+    Si necesitan dividir el archivo `All_Sequences.fasta` en archivos individuales pueden buscar **wossname split**. 
 
 !!! note "Extra! (y por ende opcional)"
 
-Para resolver el punto 2 ustedes pueden hacer un script de bash usando entre otras cosas un ciclo `for`. Si lo logran (o si lo intentan), los invito a incluirlo en el trabajo práctico (aún cuando no les salió).
+     Para resolver el punto 2 pueden hacer un script de bash usando entre otras cosas un ciclo `for`. Si lo logran (o si lo intentan), los invito a incluirlo en el trabajo práctico (inclúyanlo aún si no les salió bien).
 
 <br>
 <br>
