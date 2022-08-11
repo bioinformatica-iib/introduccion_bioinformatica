@@ -366,7 +366,7 @@ Volvamos una vez más a la página para realizar la búsqueda. Sin ingresar ning
 
 Ahora (si tuvimos suerte) habremos podido identificar una relación estructural entre nuestra secuencia *query* y las secuencias de la base de datos de estructuras proteicas PDB. Digamos que, en este punto, nos gustaría validar esa relación.
 
-Para identificar los residuos conservados en nuestra secuencia *query* vayan al servidor de [Blast2logo](https://services.healthtech.dtu.dk/service.php?Blast2logo-1.1) y suban dicha secuencia. Seleccionen *BLAST Database* NR70 y denle *Submit* (esto puede llevar un tiempito). En caso de que algo falle puede encontrar la salida [acá](http://www.cbs.dtu.dk/biotools/Blast2logo/teaching/Query1/). **BROKEN LINK!**
+Para identificar los residuos conservados en nuestra secuencia *query* vayan al servidor de [Blast2logo](https://services.healthtech.dtu.dk/service.php?Blast2logo-1.1) y suban dicha secuencia. Seleccionen *BLAST Database* NR70 y denle *Submit* (esto puede llevar un tiempito). En caso de que algo falle puede encontrar la salida [acá](https://services.healthtech.dtu.dk/services/Blast2logo-1.1/teaching/Query1/).
 
 Cuando esto termine deberían tener un logo de toda la secuencia. 
 
@@ -406,7 +406,7 @@ Una vez que usted hizo el análisis (informado en el TP3), se comunicó con el l
 Para poder identificarla, y sabiendo que es un *Betacoronavirus*, usted decide utilizar la herramienta provista por NCBI y hacer un BLASTn de su secuencia incognito contra la base de datos **genomic/Viruses/Betacoronavirus**.
 
  **1.** ¿Cuál es el resultado de realizar el BLASTn? ¿Obtiene algún hit con 100% de cobertura y E-value=0.0? Si obtiene más de un hit, recupere el primero.
- 
+
  **2.** ¿A qué aislamiento corresponde su secuencia? 
 
 Para recolectar más información de su secuencia, decide acceder al GenBank yendo a la pestaña **Alignments** de la salida del BLASTn y cliqueando en el accession number correspondiente.
