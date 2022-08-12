@@ -10,9 +10,7 @@
 
 <br>
 
-!!! warning "Atención"
-
-    Este TP tiene informe.
+!!! info "Atención: Este TP tiene informe."
 
 ## **Objetivos**
 
@@ -452,7 +450,7 @@ Mathys L, Balzarini J. Several N-Glycans on the HIV Envelope Glycoprotein gp120 
 
 !!! info 
 
-    <span style="font-weight:bold;">Fecha de Entrega:</span> Viernes, X de septiembre 2021, 23:59hs.
+    <span style="font-weight:bold;">Fecha de Entrega:</span> Domingo, 28 de septiembre 2022, 23:59hs.
 
 [:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/13hzApnpVqZqkNiayMfDDL6gpVypqj18a/view?usp=sharing){ .md-button .md-button--primary }
 
