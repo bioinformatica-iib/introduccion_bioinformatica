@@ -370,11 +370,13 @@ Para identificar los residuos conservados en nuestra secuencia *query* vayan al 
 
 Cuando esto termine deberían tener un logo de toda la secuencia. 
 
-!!! attention "Atención"
+<!--  !!! attention "Atención"
 
 	 Si les resulta difícil de leer pueden hacer click en el botón *Customize visualization using Seq2Logo*. Al hacer esto los transfiere al servidor de **Seq2logo** y allí, sin tocar ninguna opción, denle *Submit*. 
 
 	 Arriba les va a aparecer la opción de descargar cada imagen por separado (JPEG(1), JPEG(2), etc.) o en un sólo archivo EPS (similar a PDF). Se recomienda esto último.
+
+-->
 
 **10.** Viendo el logo: ¿Por qué creen que las primeras \~150 posiciones se ven bastante planas (Bits<1)? ¿Cuáles son las posiciones con contenido de información más alto? ¿Pueden identificar el dominio conservado que habían visto en el ejercicio anterior?
 
