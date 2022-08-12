@@ -33,9 +33,12 @@ Los pasos a seguir serán:
  3. Entrenamiento de métodos de predicción de unión a MHC.  
  4. Utilización de los métodos desarrollados para la selección de candidatos vacunales.  
 
-La unión de péptidos a MHC es el paso más selectivo en el camino de procesamiento y presentación antigénica. Este evento es crucial ya que solamente 1 de cada 200 péptidos forma un complejo con el MHC. Existe una gran variedad de MHC diferentes, cada uno con una alta especificidad.  
-El motivo de unión de los MHC de la vía de clase I es, en la mayoría de los casos, de 9 aminoácidos de longitud. Estos están caracterizados por una marcada preferencia por ciertos aminoácidos en determinadas posiciones del motivo. Estas posiciones son llamadas "anclas" o, en inglés, *anchor positions*. Para una gran cantidad de complejos de MHC de clase I estas anclas se encuentran en las posiciones P2 y P9. Sin embargo, este no es siempre el caso.
+La unión de péptidos a MHC es el paso más selectivo en el camino de procesamiento y presentación antigénica. Este evento es crucial ya que solamente 1 de cada 200 péptidos forma un complejo con el MHC. Existe una gran variedad de MHC diferentes, cada uno con una alta especificidad.
+
+El motivo de unión de los MHC de la vía de clase I es, en la mayoría de los casos, de 9 aminoácidos de longitud. Estos están caracterizados por una marcada preferencia por ciertos aminoácidos en determinadas posiciones del motivo. Estas posiciones son llamadas "anclas" o, en inglés, ***anchor positions***. Para una gran cantidad de complejos de MHC de clase I estas anclas se encuentran en las posiciones P2 y P9. Sin embargo, este no es siempre el caso.
+
 Existe una gran cantidad de datos que describen las diferentes especificidades de las moléculas de MHC. Una base de datos muy conocida que almacena esta información es [SYFPEITHI](http://www.syfpeithi.de/). En ella se puede encontrar informacion de ligandos y motivos de MHC.  
+
 Con este tipo de información es posible desarrollar un modelo de predicción de unión de péptidos a MHC y usarlo para descubrir nuevos epítopes con los cuales diseñar vacunas. Esto puede ser aplicado a nivel de proteomas enteros para ahorrar tanto tiempo como recursos.  
 
 A continuación vamos a:
@@ -62,7 +65,7 @@ En el resultado de la búsqueda podemos ver las posiciones *anchor* principales 
 
 **b.** ¿Qué otras posiciones muestran preferencias de residuos? ¿Qué residuos son preferidos en estas posiciones? 
 
-**c.** ¿Qué característica del conjunto de péptidos creen que puede estar diferenciando a las posiciones *anchor* (y con residuos preferidos) del resto de las posiciones de los péptidos? 
+**c.** ¿Qué característica del conjunto de péptidos creen que puede estar diferenciando a las posiciones *anchor* del resto de las posiciones de los péptidos? 
 Recuérdenla para el ejercicio de logos de secuencia.
 
 **2.** Repitan el mismo análisis para el alelo **HLA-B\*27**. ¿Coinciden las posiciones *anchor* con las del alelo **HLA-A\*02:01**?, ¿y los residuos preferidos?
@@ -95,14 +98,14 @@ Por convención los colores que se utilizan son:
 * <span style="color:black;font-weight:bold;">Negro</span>: Aminoácidos hidrofóbicos [ACFILMPVW]  
 * <span style="color:green;font-weight:bold;">Verde</span>: Aminoácidos neutros [GNQSTY]  
 
-En la carpeta del TP pueden encontrar los archivos **HLA-A0201** y **HLA-B27**, los cuales contienen ligandos de cada uno de estos alelos de MHC. 
-Úsenlos para generar logos que muestren sus motivos de preferencia. **Utilicen como opción de clustering Heuristics.** Usamos para el resto de las opciones los valores *default*.
-
 !!! attention "Atención"
 
 	 Recuerden guardar los logos de secuencia generados.
 
-**3.** Identifiquen las posiciones ancla y las preferencias de cada alelo. 
+**3.** En Materiales pueden encontrar los archivos **HLA-A0201** y **HLA-B27**, los cuales contienen ligandos de cada uno de estos alelos de MHC. 
+Úsenlos para generar logos que muestren sus motivos de preferencia. **Utilicen como opción de clustering Heuristics.** 
+
+Usamos para el resto de las opciones los valores *default*.Identifiquen las posiciones ancla y las preferencias de cada alelo. 
 
 **a.** ¿El logo obtenido para **HLA-A02:01** y **HLA-B27** se condice con lo que encontró en la base de datos en el punto anterior? 
 
@@ -154,8 +157,10 @@ Observando el logo generado:
     Son los que están por encima de y=0.
 
 <br>
-**6.** ¿Cuántos aminoácidos diferentes hay en P1 de los datos de entrada?  
+**6.**¿Cuántos aminoácidos diferentes hay en P1 (en y>=0)? ¿Cuáles se encuentran datos de entrada? ¿Cuáles en el logo generado?
+
 **7.** ¿A qué se debe esta diferencia?  
+
 **8.** Realice el mismo ejercicio pero ahora elija un *weight on prior* β=0. ¿Cambian sus respuestas para los puntos **5.**, **6.** y **7.**?
 
 ### Predicción de unión a MHC
@@ -211,7 +216,9 @@ La salida consta de varias partes:
 !!! tip "Tip"
 
 	Las métricas que utilizamos no se enfocan en reportar la precisión del método (proporción de verdaderos positivos entre todos los péptidos predichos como positivos) sino que muestran:
-	1. la habilidad del método para distinguir instancias positivas de negativas (Aroc) y 
+
+	1. la habilidad del método para distinguir instancias positivas de negativas (Aroc) y
+
 	2. la correlación entre los valores predichos y los valores reales u observados (PCC).
 
 Revisando la salida contesten:
@@ -221,6 +228,10 @@ Revisando la salida contesten:
 **10.** Viendo el logo resultante, ¿Entienden por qué el modelo tiene tan mal desempeño?  
 
 **11.** ¿Cuántos de los 110 péptidos se utilizaron para la construcción de la matriz? ¿Por qué se usó ese número de péptidos?
+
+??? tip "Pista"
+
+    Mire el archivo de entrada Entrenamiento_chico.set y vea cuáles son los valores de afinidad para los péptidos allí listados.
 
 #### Segunda prueba
 
@@ -250,7 +261,7 @@ Volvamos atrás y repitamos el caso anterior pero seleccionando **Clustering at 
 
 #### Cuarta prueba
 
-Volvamos una vez más, manteniendo **Clustering at 62% identity** pero utilicemos como **weight on prior** un valor de 200, y el resto de los parámetros como se habían seteado en la segunda prueba.
+Volvamos una vez más, manteniendo **Clustering at 62% identity** pero utilicemos como **weight on prior** un valor de 200, y el **umbral de positivos** en 0.5.
 
 **17.** Una vez más revisen las métricas de desempeño.
 
@@ -307,11 +318,15 @@ QGRVGPNEFRILKENYTVFTIEDLRKLYDEAGLVVLE
 
 Vayan a la pagina de [BLAST](https://blast.ncbi.nlm.nih.gov/Blast.cgi) y utilicen el algoritmo de *Protein BLAST* para buscar secuencias similares. **En el campo de base de datos seleccione pdb que es la base que contiene estructuras**.
 
+!!! tip "Tip"
+    
+    Pueden correr la búsqueda eligiendo el parámetro "Show results in a new window".
+
 <p style="text-align:center">
 <img src="./img/psiblast_1.png" alt="psiblast1" style="max-width:60%">
 </p>
 
-**1.** ¿Cuántos *hits* con E-value < 0.005 encuentran? Vuelvan atrás y, en **Program selection: Algorithm**, seleccionen PSI-BLAST. ¿Cambió el resultado en comparación a lo que habían obtenido anteriormente? 
+**1.** ¿Cuántos *hits* con E-value < 0.005 encuentran? Vuelvan atrás y, en **Program selection: Algorithm**, seleccionen PSI-BLAST. ¿Cambió el resultado en comparación a lo que habían obtenido anteriormente?
 
 ### Usando PSI-BLAST
 
@@ -395,13 +410,13 @@ Por esta razón, teniendo en cuenta lo realizado con el servidor Blast2logo, vam
 
 !!! info 
 
-    <span style="font-weight:bold;">Fecha Límite de Entrega:</span> Viernes, 9 de Septiembre 2022, 23:59hs.
+    <span style="font-weight:bold;">Fecha límite de entrega:</span> Viernes, 9 de Septiembre 2022, 23:59hs.
 
 ### Enunciado
 
 Una vez que usted hizo el análisis (informado en el TP3), se comunicó con el laboratorio AVENAI y le indican que una vez secuenciado el aislamiento, tienen como política hacer todas sus secuencias de dominio público, esto significa que su secuencia de estudio ya figura en las bases de datos (Usted suspira, de haberlo sabido antes...).
 
-Para poder identificarla, y sabiendo que es un *Betacoronavirus*, usted decide utilizar la herramienta provista por NCBI y hacer un BLASTn de su secuencia incognito contra la base de datos **genomic/Viruses/Betacoronavirus**.
+Para poder identificarla, y sabiendo que es un *Betacoronavirus*, usted decide utilizar la herramienta provista por NCBI y hacer un BLASTn de su secuencia incógnita contra la base de datos **genomic/Viruses/Betacoronavirus**.
 
  **1.** ¿Cuál es el resultado de realizar el BLASTn? ¿Obtiene algún hit con 100% de cobertura y E-value=0.0? Si obtiene más de un hit, recupere el primero.
 
@@ -431,11 +446,13 @@ Selecciona **Sort output on predicted values** y aprieta el botón Submit query.
 
  **4.** ¿Qué péptidos de cada una de las proteínas analizadas elegiría para testear en el laboratorio?
 
-Para analizar en forma conjunta los mejores ligandos que obtuvo según los puntajes predichos por su PSSM decide realizar un logo con todos los péptidos de las proteínas **S**, **E**, **M** y **N** que contengan un valor de predicción mayor a 1. 
+Para analizar en forma conjunta los mejores ligandos que obtuvo según los puntajes predichos por su PSSM decide realizar un logo con todos los péptidos de las proteínas **M**, **E**, **S** y **N** que contengan un valor de predicción mayor a 1. 
 
-**Extra (y por ende opcional):** Puede realizar un `for loop` junto con un `awk` para seleccionar los péptidos relevantes de cada una de las proteínas (recuerde que en un TP se realizó un `awk` para seleccionar columnas). 
+!!! tip "Extra (y por ende opcional)"
 
-Para realizar el logo, utiliza Seq2Logo y genera un logo con todos estos péptidos ajustando los parámetros según su criterio
+    Puede realizar un `for loop` junto con un `awk` para seleccionar los péptidos relevantes de cada una de las proteínas (recuerde que en un TP se realizó un `awk` para seleccionar columnas). 
+
+    Para realizar el logo, utiliza Seq2Logo y genera un logo con todos estos péptidos ajustando los parámetros según su criterio.
 
  **5.** En base a los conocimientos adquiridos en su curso de Bioinformática, ¿le parece razonable el motivo hallado para el alelo HLA-A*02:01? ¿Puede ver claramente las posiciones ancla? ¿Qué aminoácidos son los preferidos para estas posiciones?
 
