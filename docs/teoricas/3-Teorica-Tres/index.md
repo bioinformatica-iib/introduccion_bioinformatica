@@ -4,14 +4,13 @@ tags:
   - teoricas
 ---
 
-## Alineamientos de a pares 
-* :fontawesome-regular-file-pdf: [Slides](presentacionDeLaMateria-2022.pdf) 
- * :octicons-video-16: [Video](https://www.youtube.com/embed/_jwvRkxu588)
-## Búsquedas de secuencias por similitud
+## Alineamientos de a pares + Búsquedas de secuencias por similitud
+ Clase teórica de alineamientos de secuencias (de a pares), Algoritmos, Matrices, y Búsquedas de secuencias por similitud contra bases de datos.
 
-## Video :octicons-video-24:
+ * :fontawesome-regular-file-pdf: [Slides](alineamientosDeAPares2022.pdf) 
+ 
+ ![type:video](https://www.youtube.com/embed/Nw4CI8Ylg10)
 
-![type:video](https://www.youtube.com/embed/kS0X-yIsB64)
 
 ## Material de lectura y consulta
 
