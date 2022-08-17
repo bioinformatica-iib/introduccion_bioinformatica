@@ -9,12 +9,6 @@
 Este es el botón para decargar materiales, en (#) hay que agregar el link correspondiente
 --->
 
-<!--
-### Software a usar
-* Programa 1 [www.donde.lo.bajo.com](https://www.example.com)
-* Programa 2 [www.donde.lo.bajo2.com](https://www.example.com)
---->
-
 ### Slides mostrados en la clase
 
 * :fontawesome-regular-file-pdf: [Introducción a la programación](https://drive.google.com/file/d/12HLvmzhoz4HToEn9280HIvPEC6NO2WPN/view?usp=sharing)
@@ -25,6 +19,12 @@ Este es el botón para decargar materiales, en (#) hay que agregar el link corre
 * :octicons-video-16: [Presentacion de la Materia](https://youtu.be/zOnacQHwI-E)
 * :octicons-video-16: [Introducción a la programación](https://youtu.be/d1P_6sJN1og)
 * :octicons-video-16: [Cierre TP](https://youtu.be/pYXT8aejbWE)
+
+<!--
+### Software a usar
+* Programa 1 [www.donde.lo.bajo.com](https://www.example.com)
+* Programa 2 [www.donde.lo.bajo2.com](https://www.example.com)
+--->
 
 ### Recursos Online
 * [Command-line bootcamp](https://cli-boot.camp/)

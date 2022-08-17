@@ -7,7 +7,16 @@
 [:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/15-HiP0T4f1VLRJyqKi3hkoxT3VUXh9Fs/view?usp=sharing){ .md-button .md-button--primary }
 <!--
 Este es el botón para decargar materiales, en (#) hay que agregar el link correspondiente.
---->
+-->
+
+### Slides mostrados en la clase
+
+* :fontawesome-regular-file-pdf: [Cierre TP](https://drive.google.com/file/d/1-9Yxt8fzUcKjwVFqeLa7aYE4_siGU6vU/view?usp=sharing)
+
+### Videos de la clase grabada
+
+* :octicons-video-16: [Introducción al TP](https://www.youtube.com/watch?v=Kx1LzcTHCpw)
+* :octicons-video-16: [Cierre TP](https://www.youtube.com/watch?v=bULActJNfWU)
 
 ### Software a usar
 * EMBOSS (ya instalado en la VM).
@@ -586,9 +595,14 @@ El primer paso indicado en el FAQ es descargar el archivo **assembly_summary.txt
 ```bash
 wget ftp://ftp.ncbi.nlm.nih.gov/genomes/refseq/bacteria/assembly_summary.txt
 ```
+
 !!! question
 
     ¿Qué piensan que hace `wget`? ¿Cómo pueden averiguarlo si no lo saben?
+
+!!! warning
+
+    Si el comando `wget` tarda mucho o ven que tiene errores bajensé este archivo desde [este link](https://drive.google.com/file/d/1Z96oCHg7iyHZEtbVHuvfMY0XbnSj2maJ/view?usp=sharing)
 
 Una vez descargado ese archivo (que pesa bastante) queremos ver sus contenidos. Sabiendo que es un archivo que tiene más de 250.000 lineas:
 
@@ -625,7 +639,7 @@ Ahora que conocen la estructura de la tabla, y sabiendo que tiene muchos mas org
 
     # Buscamos dentro del archivo las filas que contengan "Escherichia coli" y "BL21" y 
     # las agregamos a la nuevo archivo
-    head grep "Escherichia coli" assembly_summary.txt | grep "BL21" >> assembly_summary_coli.tsv
+    grep "Escherichia coli" assembly_summary.txt | grep "BL21" >> assembly_summary_coli.tsv
     ```
 
 ### RefSeq - Paso 2 - Crear un archivo con links a las carpetas de los genomas { markdown data-toc-label='RefSeq - Paso 2' }
