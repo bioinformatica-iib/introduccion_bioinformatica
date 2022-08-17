@@ -1,0 +1,1070 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Sitio Web del Curso Introducción a la Bioinformática">
+      
+      
+      
+        <link rel="canonical" href="https://bioinformatica-iib.github.io/2022_introduccion_bioinformatica/practicos/TP05_PSI-BLAST/">
+      
+      <link rel="icon" href="../../img/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.15">
+    
+    
+      
+        <title>Index - Introducción a la Bioinformática</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.c382b1dc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cc9b2e1e.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tp-5-perfiles-de-secuencias-y-psi-blast" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Introducción a la Bioinformática" class="md-header__button md-logo" aria-label="Introducción a la Bioinformática" data-md-component="logo">
+      
+  <img src="../../img/favicon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Introducción a la Bioinformática
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Index
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Limpiar" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Inicio
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../acerca/" class="md-tabs__link">
+      Acerca de
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../contenidos/" class="md-tabs__link">
+      Contenidos
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../cronograma/" class="md-tabs__link">
+      Cronograma
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../docentes/" class="md-tabs__link">
+      Docentes
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../teoricas/inicio/" class="md-tabs__link">
+        Teoricas
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../inicio/" class="md-tabs__link">
+        Prácticos
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../instructivos/inicio/" class="md-tabs__link">
+        Instructivos
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Introducción a la Bioinformática" class="md-nav__button md-logo" aria-label="Introducción a la Bioinformática" data-md-component="logo">
+      
+  <img src="../../img/favicon.png" alt="logo">
+
+    </a>
+    Introducción a la Bioinformática
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Inicio
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../acerca/" class="md-nav__link">
+        Acerca de
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contenidos/" class="md-nav__link">
+        Contenidos
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cronograma/" class="md-nav__link">
+        Cronograma
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docentes/" class="md-nav__link">
+        Docentes
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Teoricas
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Teoricas" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Teoricas
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoricas/inicio/" class="md-nav__link">
+        Inicio
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoricas/1-Teorica-Uno/" class="md-nav__link">
+        Teórica 1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoricas/2-Teorica-Dos/" class="md-nav__link">
+        Teórica 2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoricas/3-Teorica-Tres/" class="md-nav__link">
+        Teórica 3
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          Prácticos
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Prácticos" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Prácticos
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inicio/" class="md-nav__link">
+        Inicio
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TP01_Linux/" class="md-nav__link">
+        TP 1 - Linux
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TP02_EMBOSS/" class="md-nav__link">
+        TP 2 - EMBOSS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TP03_Alineamientos/" class="md-nav__link">
+        TP 3 - Alineamientos de a pares
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          Instructivos
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Instructivos" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Instructivos
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instructivos/inicio/" class="md-nav__link">
+        Inicio
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instructivos/maquina_virtual/" class="md-nav__link">
+        Máquina Virtual
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instructivos/problemasVM/" class="md-nav__link">
+        Problemas instalando la Máquina Virtual
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instructivos/tipsVM/" class="md-nav__link">
+        Tips and Tricks para usar la Máquina Virtual más cómodos
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<p><img _="," align="left" alt="Image" src="img/banner.jpg" width="250" /></p>
+<h1 id="tp-5-perfiles-de-secuencias-y-psi-blast" markdown="markdown"><strong>TP 5</strong>. Perfiles de secuencias y PSI-BLAST</h1>
+<p><br>
+<br>
+<br>
+<br>
+<br></p>
+<p><a class="md-button md-button--primary" href="https://drive.google.com/file/d/1yfCSpn7mLNCOrmQSzKKEd9eY0LsCVoB2/view?usp=sharing"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M480 352H346.5l-45.25 45.25C289.2 409.3 273.1 416 256 416s-33.16-6.656-45.25-18.75L165.5 352H32c-17.67 0-32 14.33-32 32v96c0 17.67 14.33 32 32 32h448c17.67 0 32-14.33 32-32v-96c0-17.7-14.3-32-32-32zm-48 104c-13.2 0-24-10.8-24-24s10.8-24 24-24 24 10.8 24 24-10.8 24-24 24zm-198.6-81.4c6.2 6.3 14.4 9.4 22.6 9.4s16.38-3.125 22.62-9.375l128-128c12.49-12.5 12.49-32.75 0-45.25-12.5-12.5-32.76-12.5-45.25 0L288 274.8V32c0-17.67-14.33-32-32-32-17.7 0-32 14.33-32 32v242.8l-73.4-73.4c-12.49-12.5-32.75-12.5-45.25 0-12.49 12.5-12.49 32.75 0 45.25L233.4 374.6z"/></svg></span> Materiales</a></p>
+<p><br></p>
+<div class="admonition info">
+<p class="admonition-title">Atención: Este TP tiene informe.</p>
+</div>
+<h2 id="construccion-de-logos-y-matrices-peso-especificas"><strong>Construcción de Logos y Matrices peso-específicas</strong></h2>
+<h3 id="objetivos">Objetivos</h3>
+<ul>
+<li>Familiarizarse con la construcción de matrices peso-específicas o PSSM.</li>
+<li>Familiarizarse con la visualización de logos de secuencias, y el uso del contenido de información.</li>
+<li>Utilizar las matrices peso-específicas como métodos predictivos, y entender las métricas PCC (Pearson correlation coefficient) y Aroc (Area under the Receiver Operating Characteristic curve) empleadas para evaluar la calidad de los modelos. </li>
+</ul>
+<h3 id="introduccion">Introducción</h3>
+<p>En este TP utilizaremos herramientas bioinformáticas para predecir la unión de péptidos a MHC, o por sus siglas en inglés <em>Major Histocompatibility Complex</em>, y seleccionaremos potenciales epítopes como candidatos para desarrollar una vacuna.  </p>
+<p>Los pasos a seguir serán:  </p>
+<ol>
+<li>Identificación de motivos de unión a MHC.  </li>
+<li>Visualización de motivos utilizando logos de secuencias.  </li>
+<li>Entrenamiento de métodos de predicción de unión a MHC.  </li>
+<li>Utilización de los métodos desarrollados para la selección de candidatos vacunales.  </li>
+</ol>
+<p>La unión de péptidos a MHC es el paso más selectivo en el camino de procesamiento y presentación antigénica. Este evento es crucial ya que solamente 1 de cada 200 péptidos forma un complejo con el MHC. Existe una gran variedad de MHC diferentes, cada uno con una alta especificidad.</p>
+<p>El motivo de unión de los MHC de la vía de clase I es, en la mayoría de los casos, de 9 aminoácidos de longitud. Estos están caracterizados por una marcada preferencia por ciertos aminoácidos en determinadas posiciones del motivo. Estas posiciones son llamadas "anclas" o, en inglés, <strong><em>anchor positions</em></strong>. Para una gran cantidad de complejos de MHC de clase I estas anclas se encuentran en las posiciones P2 y P9. Sin embargo, este no es siempre el caso.</p>
+<p>Existe una gran cantidad de datos que describen las diferentes especificidades de las moléculas de MHC. Una base de datos muy conocida que almacena esta información es <a href="http://www.syfpeithi.de/">SYFPEITHI</a>. En ella se puede encontrar informacion de ligandos y motivos de MHC.  </p>
+<p>Con este tipo de información es posible desarrollar un modelo de predicción de unión de péptidos a MHC y usarlo para descubrir nuevos epítopes con los cuales diseñar vacunas. Esto puede ser aplicado a nivel de proteomas enteros para ahorrar tanto tiempo como recursos.  </p>
+<p>A continuación vamos a:</p>
+<ol>
+<li>Visualizar motivos de unión utilizando logos de secuencias.  </li>
+<li>Entrenar un modelo predictivo utilizando el servidor de <a href="https://services.healthtech.dtu.dk/service.php?EasyPred-1.0">EasyPred</a>.  </li>
+<li>Aplicar el modelo para seleccionar péptidos con potencial inmunogénico de proteínas de SARS-CoV-2.  </li>
+</ol>
+<h3 id="identificacion-de-motivos-de-union-a-mhc">Identificación de motivos de unión a MHC</h3>
+<p>Diríjanse a la página web de <a href="http://www.syfpeithi.de/">SYFPEITHI</a>. Allí, una vez que hagan <em>click</em> en el logo, pueden buscar motivos con el botón <strong>Find your motif, Ligand or Epitope</strong>.</p>
+<p>Allí seleccionen con el menú de la izquierda el alelo de MHC <strong>HLA-A*02:01</strong> y presionen <strong>Do Query</strong>. </p>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>El resto de las opciones se pueden usar para refinar la búsqueda, limitándola a ligandos de proteínas determinadas o por referencia bibliográfica. En este caso queremos obtener <strong>TODOS</strong> los ligandos para poder ver qué características comparten.</p>
+</div>
+<p>En el resultado de la búsqueda podemos ver las posiciones <em>anchor</em> principales y auxiliares, y también otras posiciones con residuos preferidos. También tenemos una lista de otros aminoácidos que se ven con frecuencia en los ligandos del alelo que estamos estudiando. Por último, más abajo, se muestra la lista de los ligandos que existen en esta base de datos, junto a su proteina de procedencia, la referencia del trabajo donde se lo identificó y alguna nota como la asociación de un péptido dado con una enfermedad.  </p>
+<p><strong>1.</strong> Respondan a las siguientes preguntas :</p>
+<p><strong>a.</strong> ¿Qué posiciones identifican como <em>anchors</em>? ¿Qué residuos son preferidos en estas posiciones? ¿Y en los <em>auxiliary anchors</em>?</p>
+<p><strong>b.</strong> ¿Qué otras posiciones muestran preferencias de residuos? ¿Qué residuos son preferidos en estas posiciones? </p>
+<p><strong>c.</strong> ¿Qué característica del conjunto de péptidos creen que puede estar diferenciando a las posiciones <em>anchor</em> del resto de las posiciones de los péptidos? 
+Recuérdenla para el ejercicio de logos de secuencia.</p>
+<p><strong>2.</strong> Repitan el mismo análisis para el alelo <strong>HLA-B*27</strong>. ¿Coinciden las posiciones <em>anchor</em> con las del alelo <strong>HLA-A*02:01</strong>?, ¿y los residuos preferidos?</p>
+<h3 id="logos-de-secuencias">Logos de secuencias</h3>
+<p>Los logos son una herramienta muy útil para visualizar motivos de unión. En un logo de secuencia se grafica en el eje y el <strong>contenido de información</strong> de cada posición del motivo, generalmente expresado en <em>bits</em>. A su vez, la frecuencia con la que aparece una letra (nucleótido u amininoácido) en una dada posición se grafica con un tamaño proporcional a dicha magnitud.</p>
+<p>Un servidor que nos permite generar facilmente logos de secuencia es <a href="https://services.healthtech.dtu.dk/service.php?Seq2Logo-2.0">Seq2Logo</a>. Este método nos da la opción de ingresar un alineamiento múltiple (MSA), una lista de péptidos o una matriz peso-específica con la cual realizar el gráfico. </p>
+<p>La información puede pegarse directamente en el <span style="color:red;font-weight:bold;"> cuadro de texto </span> que provee la web, o subiendo directamente un archivo local utilizando la opción <span style="color:blue;font-weight:bold;"> Switch to file upload </span> que se encuentra debajo del cuadro.</p>
+<p><img alt="seq2logo1" src="img/seq2logo_1.png" /></p>
+<p>Dentro de las opciones que nos permite cambiar tenemos:  </p>
+<ul>
+<li><strong>Logo type:</strong> Esto refiere a la magnitud que se calculará para cada posición y se graficará en el eje y (Kullback-Leiber, Shannon, etc.).  </li>
+<li><strong>Clustering method:</strong> Agrupa las secuencias que son muy similares para no sesgar el resultado, se pueden optar por diferentes métodos.  </li>
+<li><strong>Weight on prior:</strong> Es el valor que le asignamos al parámetro <em>beta</em> en la ecuacion del cálculo del <strong>contenido de información</strong>. Recuerden que la relación entre <em>alfa</em> y <em>beta</em> es determinante para este cálculo.   </li>
+<li><strong>Information content units:</strong> Generalmente se expresa en <em>bits</em>, pero en algunos casos se opta por <em>half-bits</em>.  </li>
+<li><strong>Output format:</strong> El tipo de archivo de imagen adonde se guardará el logo. </li>
+</ul>
+<p>También tenemos la opción de realizar cambios avanzados, como modificar las frecuencias de <em>background</em> o la matriz de <em>scoring</em>, limitar la región del alineamiento que queremos graficar, etc. y opciones gráficas, como el tamaño de la imagen y los colores con los que se representa cada aminoácido.  </p>
+<p>Por convención los colores que se utilizan son:  </p>
+<ul>
+<li><span style="color:red;font-weight:bold;">Rojo</span>: Aminoácidos ácidos [DE]  </li>
+<li><span style="color:blue;font-weight:bold;">Azul</span>: Aminoácidos básicos [HKR]  </li>
+<li><span style="color:black;font-weight:bold;">Negro</span>: Aminoácidos hidrofóbicos [ACFILMPVW]  </li>
+<li><span style="color:green;font-weight:bold;">Verde</span>: Aminoácidos neutros [GNQSTY]  </li>
+</ul>
+<div class="admonition attention">
+<p class="admonition-title">Atención</p>
+<p>Recuerden guardar los logos de secuencia generados.</p>
+</div>
+<p><strong>3.</strong> En Materiales pueden encontrar los archivos <strong>HLA-A0201</strong> y <strong>HLA-B27</strong>, los cuales contienen ligandos de cada uno de estos alelos de MHC. 
+Úsenlos para generar logos que muestren sus motivos de preferencia. <strong>Utilicen como opción de clustering Heuristics.</strong> </p>
+<p>Usamos para el resto de las opciones los valores <em>default</em>.Identifiquen las posiciones ancla y las preferencias de cada alelo. </p>
+<p><strong>a.</strong> ¿El logo obtenido para <strong>HLA-A02:01</strong> y <strong>HLA-B27</strong> se condice con lo que encontró en la base de datos en el punto anterior? </p>
+<p><strong>b.</strong> ¿Qué magnitud es la que está diferenciando a las posiciones <em>anchor</em> del resto? ¿En qué unidad aparece representada en el logo? ¿Coincide con lo supuesto en el punto <strong>1.c</strong>?</p>
+<h3 id="construccion-de-matrices-peso-especificas-pssm">Construcción de matrices peso-específicas (PSSM)</h3>
+<p>Para este punto vamos a utilizar el servidor de <a href="https://services.healthtech.dtu.dk/service.php?EasyPred-1.0">EasyPred</a>. Esta herramienta nos permite construir tanto matrices peso-específicas, o <em>PSSM (Position-Specific Scoring Matrix)</em>, como aplicarlas a un set de datos para calcular su <em>score</em>. </p>
+<p>El servidor consta de dos cuadros de texto, el de la <span style="color:blue;font-weight:bold;">izquierda</span> en el cual se ingresan datos para construir la matriz, y el de la <span style="color:red;font-weight:bold;">derecha</span> donde uno puede ingresar secuencias sobre las cuales quiere realizar una predicción.</p>
+<p><img alt="easypred" src="img/easypred.png" /></p>
+<p>Para explorar un poco la construcción de matrices solo utilizaremos el recuadro de la <span style="color:blue;font-weight:bold;">izquierda</span> donde ingresaremos las siguientes secuencias:</p>
+<p><div class="highlight"><pre><span></span><code>VFAAA  
+VHYWW  
+VLQPK  
+LREWQ  
+LPYIH  
+</code></pre></div>
+Las opciones que tenemos aquí son muy similares a las que habiamos visto en el servidor de <em>Seq2Logo</em> debido a que ambos realizan cálculos del contenido de información.<br />
+En este caso vamos a seleccionar <strong>Clustering method: No clustering</strong> y <strong>Weight on prior: 10000</strong>. Usamos para el resto de las opciones los valores <em>default</em>.</p>
+<p><strong>4.</strong> Antes de generar la PSSM, reflexionen un poco acerca de los parámetros empleados para la construcción de la misma.</p>
+<p><strong>a.</strong> ¿Por qué consideran que no estamos usando ningún método de clustering?</p>
+<p><strong>b.</strong> ¿Por qué creen que es tan alto el valor sugerido para el <em>weight on prior</em> (β) ?</p>
+<details class="note">
+<summary>Recordatorio</summary>
+<p>La ecuación utilizada para estimar la <em>frecuencia</em> <span class="latex">p<sub>a</sub></span>, para una dada posición, en una matriz peso-específica es,</p>
+<p><img src="./img/pssm_fx.png" alt="PSSM_fx" style="max-width:30%"></p>
+<p>donde α es el número de secuencias en el MSA-1, β es el <em>weight on prior</em> o <em>weight on pseudocounts</em>, <span class="latex">f<sub>a</sub></span> es la frecuencia observada para el aminoácido <em>a</em> en esa posición y <span class="latex">g<sub>a</sub></span> es la pseudo frecuencia para el aminoácido <em>a</em> en esa misma posición.</p>
+</details>
+<p><br>
+Hagan <em>Submit query</em> y observen la salida. Allí podrán encontrar información sobre los parámetros utilizados y un logo que representa el set de datos que ingresamos.</p>
+<p>Observando el logo generado:</p>
+<p><strong>5.</strong> ¿Qué aminoácidos es más probable hallar en la posición P1?</p>
+<details class="tip">
+<summary>Pista</summary>
+<p>Son los que están por encima de y=0.</p>
+</details>
+<p><br>
+<strong>6.</strong>¿Cuántos aminoácidos diferentes hay en P1 (en y&gt;=0)? ¿Cuáles se encuentran datos de entrada? ¿Cuáles en el logo generado?</p>
+<p><strong>7.</strong> ¿A qué se debe esta diferencia?  </p>
+<p><strong>8.</strong> Realice el mismo ejercicio pero ahora elija un <em>weight on prior</em> β=0. ¿Cambian sus respuestas para los puntos <strong>5.</strong>, <strong>6.</strong> y <strong>7.</strong>?</p>
+<h3 id="prediccion-de-union-a-mhc">Predicción de unión a MHC</h3>
+<p>Habiéndonos familiarizado con la interfaz de <a href="https://services.healthtech.dtu.dk/service.php?EasyPred-1.0">EasyPred</a> vamos a utilizarla para entrenar un modelo con más datos y ponerlo a prueba. Para eso utilizaremos dos sets de entrenamiento que poseen péptidos fueron testeados con el alelo HLA-A02:01. Cada uno tiene un valor asociado que denota si son positivos (1) o negativos (0.1). A lo largo del proceso iremos variando diferentes parámetros para observar qué efectos esto tiene sobre el poder predictivo del modelo, al ser testeado en un set de evaluación con valores de afinidad (<em>binding affinity</em>) de unión a MHC reales (reescalados entre 0 y 1). </p>
+<p>Los datos que utilizaremos están en los archivos:</p>
+<ul>
+<li><strong>Entrenamiento_chico.set</strong> que contiene 110 péptidos de los cuales sólo 10 son positivos.  </li>
+<li><strong>Entrenamiento_grande.set</strong> contiene 232 péptidos de los cuales todos son positivos.  </li>
+</ul>
+<p>Para evaluar el desempeño de nuestro modelo utilizaremos el archivo <strong>Evaluacion.set</strong>, el cual contiene 1266 peptidos con valores de afinidad convertidos al rango 0-1 mediante la formula 1-log(x)/log(50000). Utilizando esta transformación, </p>
+<ul>
+<li>valores mayores a <strong>0.638</strong> (equivalente a 50nM) representan una unión fuerte, </li>
+<li>entre <strong>0.638</strong> y <strong>0.426</strong> (equivalente a 500nM) una unión débil </li>
+<li>y péptidos con valores menores a <strong>0.426</strong> no se consideran ligandos. </li>
+</ul>
+<div class="admonition attention">
+<p class="admonition-title">Atención</p>
+<p>Una buena práctica antes de comezar a hacer cualquier cosa con nuestros datos es observarlos y entender el formato en el que están almacenados.</p>
+</div>
+<p>Por ejemplo, si hacemos un <code>cat</code> del archivo <strong>Entrenamiento_chico.set</strong>, nos encontramos con lo siguiente:</p>
+<p style="text-align:center">
+<img src="./img/formato_entrenamiento_chico.png" alt="Entre_chico" style="max-width:50%">
+</p>
+
+<p>Este es un archivo con dos columnas, la primera contiene a los péptidos y la segunda a los valores de afinidad de unión o <em>binding affinity</em> de los mismos. (¿En qué escala están los valores de <em>binding affinity</em>? ¿Están normalizados entre 0 y 1?)</p>
+<p>Para analizar el desempeño de nuestros modelos vamos a tener en cuenta dos métricas:</p>
+<ul>
+<li><strong>Aroc (Area under the Receiver Operator Curve):</strong> este valor varía entre 0 y 1, siendo 1 el puntaje perfecto y 0.5 el valor aleatorio. Por regla general, valores mayores a 0.85 son altamente deseables.  </li>
+<li><strong>Coeficiente de correlación  de Pearson (PCC):</strong> también oscila entre 0 y 1, siendo 1 una correlación perfecta entre las dos variables de estudio, y -1 una anticorrelación perfecta. En este caso el valor que implica aleatoriedad total o no correlación entre las dos variables es 0.  </li>
+</ul>
+<p>Estas métricas nos van a ayudar a seleccionar el mejor de nuestros modelos, siendo éste el que alcance los mejores valores de <strong>Aroc</strong> y <strong>Coeficiente de Pearson</strong>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A continuación vamos a entrenar varios modelos y comparar sus resultados. Haga cada prueba en una ventana nueva o guarde las salidas de alguna manera que crea conveniente.</p>
+</div>
+<h4 id="primera-prueba">Primera prueba</h4>
+<div class="admonition attention">
+<p class="admonition-title">Atención</p>
+<p>Volvamos a abrir <a href="https://services.healthtech.dtu.dk/service.php?EasyPred-1.0">EasyPred</a> o recarguemos la página para que todas las opciones vuelvan a estar por defecto.</p>
+</div>
+<p>Realicemos los siguientes cambios: los datos del archivo <strong>Entrenamiento_chico.set</strong> en el <span style="color:blue;font-weight:bold;">recuadro de entrenamiento</span> y los de <strong>Evaluacion.set</strong> en el <span style="color:red;font-weight:bold;">recuadro de evaluación</span>. Coloquemos el <strong>umbral de corte para positivos</strong> (<em>Cutoff for counting an example as a positive example</em>) en 0 y apretemos el botón <em>Submit query</em>.  </p>
+<p>La salida consta de varias partes:</p>
+<ul>
+<li>Al principio tenemos una pequeña descripción de los parámetros con los que se llevó a cabo el entrenamiento, tanto de los datos como del método. Esto es siempre útil para poder reproducir los resultados. </li>
+<li>Luego tenemos un logo construído a partir de los datos de entrenamiento. Esto nos puede ayudar a identificar (como hicimos anteriormente) la preferencia de la molécula que se une a nuestro set de péptidos.  </li>
+<li>A continuación sigue la información sobre la evaluación. Allí podemos encontrar los valores del coeficiente de Pearson y Aroc y la lista de predicciones sobre el set de evaluación. Fíjense que <em>Assignment</em> se refiere al valor medido o real que está en el archivo de evaluación y va de 0 a 1, sin embargo la predicción puede adoptar otros valores, incluso negativos. </li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Las métricas que utilizamos no se enfocan en reportar la precisión del método (proporción de verdaderos positivos entre todos los péptidos predichos como positivos) sino que muestran:</p>
+<ol>
+<li>
+<p>la habilidad del método para distinguir instancias positivas de negativas (Aroc) y</p>
+</li>
+<li>
+<p>la correlación entre los valores predichos y los valores reales u observados (PCC).</p>
+</li>
+</ol>
+</div>
+<p>Revisando la salida contesten:</p>
+<p><strong>9.</strong> ¿Qué valores de Aroc y PCC obtuvieron? ¿Qué implica esto?</p>
+<p><strong>10.</strong> Viendo el logo resultante, ¿Entienden por qué el modelo tiene tan mal desempeño?  </p>
+<p><strong>11.</strong> ¿Cuántos de los 110 péptidos se utilizaron para la construcción de la matriz? ¿Por qué se usó ese número de péptidos?</p>
+<details class="tip">
+<summary>Pista</summary>
+<p>Mire el archivo de entrada Entrenamiento_chico.set y vea cuáles son los valores de afinidad para los péptidos allí listados.</p>
+</details>
+<h4 id="segunda-prueba">Segunda prueba</h4>
+<p>Volvamos a la página principal de <a href="https://services.healthtech.dtu.dk/service.php?EasyPred-1.0">EasyPred</a>. Esta vez coloquemos el <strong>umbral de positivos</strong> en 0.5 pero especifiquemos que no haya <strong>clustering</strong> y pongamos un <strong>weight on prior</strong> de 0.0.</p>
+<p><strong>12.</strong> ¿Qué valores de desempeño tienen ahora? ¿Qué implican estos valores? ¿Son mejores o peores que en la primera prueba? ¿Por qué cree que cambiaron?</p>
+<p><strong>13.</strong> ¿Cuántos de los 110 péptidos se utilizaron en este caso para la construcción de la matriz?  </p>
+<p><strong>14.</strong> Mirando el logo, ¿Se parece al motivo de unión de HLA-A*02:01 que habían visto antes? ¿Por qué cree que ocurre esto?</p>
+<details class="tip">
+<summary>Pista</summary>
+<p>Tenga en cuenta el número de secuencias que se usaron para construir la matriz y recuerde que siempre es una buena práctica revisar las instrucciones de la guía y los archivos de entrada. </p>
+</details>
+<h4 id="tercera-prueba">Tercera prueba</h4>
+<p>Volvamos atrás y repitamos el caso anterior pero seleccionando <strong>Clustering at 62% identity</strong>. Mantengamos el <strong>weight on prior</strong> en 0.0 y el resto de los parámetros como se habían seteado en la segunda prueba. </p>
+<p><strong>15.</strong> ¿Cuál es el desempeño ahora?  </p>
+<p><strong>16.</strong> ¿Cambió el logo con respecto al anterior? Si es así… ¿A qué cree que se debe el cambio?</p>
+<details class="tip">
+<summary>Pista</summary>
+<p>De nuevo, es una buena práctica revisar qué contienen los archivos de entrada, es decir los datos crudos. Miren con atención las secuencias de los positivos.</p>
+</details>
+<h4 id="cuarta-prueba">Cuarta prueba</h4>
+<p>Volvamos una vez más, manteniendo <strong>Clustering at 62% identity</strong> pero utilicemos como <strong>weight on prior</strong> un valor de 200, y el <strong>umbral de positivos</strong> en 0.5.</p>
+<p><strong>17.</strong> Una vez más revisen las métricas de desempeño.</p>
+<p><strong>18.</strong> Mirando el logo, ¿Cuál es la gran diferencia con aquellos que venían viendo? ¿Cuál es la razón de este cambio? ¿Empieza ahora a parecerse a los motivos que habían visto antes?  </p>
+<h4 id="quinta-y-ultima-prueba">Quinta (y última) prueba</h4>
+<p>Hasta ahora veníamos utilizando un set de datos sumamente reducido, con solo 10 péptidos positivos para entrenar. Aún asi hemos conseguido valores de desempeño bastante aceptables. Sin embargo, estos métodos suelen utilizar muchas más información para su entrenamiento.  </p>
+<p>A continuación recarguen la página de <a href="https://services.healthtech.dtu.dk/service.php?EasyPred-1.0">EasyPred</a> y carguen para entrenar el archivo <strong>Entrenamiento_grande.set</strong>. En el cuadro de evaluación vuelvan a cargar <strong>Evaluacion.set</strong>. Seleccionen una vez más <strong>Clustering at 62% identity</strong>, pongan el <strong>weight on prior</strong> en 200 y el <strong>umbral de positivos</strong> en 0.5. Tilden también la opción <strong>Sort output on predicted values</strong> para ver la tabla de péptidos ordenada por los valores de predicción.</p>
+<p><strong>19.</strong> Revisen una vez más los valores de desempeño.</p>
+<p><strong>20.</strong> Vean el logo, ¿qué les parece?</p>
+<p><strong>21.</strong> Mirando la tabla de predicciones, ¿Cuántos falsos positivos encuentran entre los primeros 20 péptidos? (con <em>Assignment</em> menor a 0.426)</p>
+<div class="admonition attention">
+<p class="admonition-title">Atención</p>
+<p>Antes de cerrar la ventana haga <em>click</em> en <strong>Parameters for prediction method</strong> luego del logo. Allí podrá descargar la matriz calculada a partir de los datos de entrenamiento (Se descarga con el nombre para.dat, es un archivo de texto plano). Esta puede ser utilizada luego para llevar a cabo predicciones.</p>
+</div>
+<h2 id="psi-blast"><strong>PSI-BLAST</strong></h2>
+<h3 id="objetivos_1">Objetivos</h3>
+<ul>
+<li>Comprender el funcionamiento del algoritmo PSI-BLAST, aplicando el mismo en un caso de estudio en el que BLAST no funciona. </li>
+<li>Generar y reutilizar la PSSM que arroja PSI-BLAST, para encontrar hits en otras bases de datos relevantes tales como PDB.</li>
+<li>Entender la información que nos otorga la PSSM construída por PSI-BLAST en relación a los residuos o dominios conservados de una proteína.</li>
+</ul>
+<h3 id="introduccion_1">Introducción</h3>
+<p>PSI-BLAST (o Position Specific Iterated BLAST) es un algoritmo alternativo de BLAST que construye iterativamente una matriz de puntajes posición específica, o <em>PSSM (Position-Specific Scoring Matrix)</em>, para calcular el <em>score</em> de los alineamientos. </p>
+<p>En su forma básica de funcionamiento lo que hace es realizar un simple BLAST con una secuencia <em>query</em> y, a partir de los resultados o <em>hits</em> que obtiene, construye un perfil o PSSM. Entonces, la siguiente búsqueda la realiza con ese perfil, lo que permitirá encontrar, idealmente, nuevos <em>hits</em>, correspondientes a secuencias más distantes de la secuencia <em>query</em>. Con esos nuevos <em>hits</em> genera un nuevo perfil, el cual, idealmente, contendrá mayor cantidad de información y con el que se podrá realizar otra búsqueda. Es un proceso iterativo.</p>
+<p>En resumen, a partir de la segunda iteración los puntajes de la matriz variarán acorde a la conservación de los aminoácidos o nucleótidos en cada posición permitiendo refinar nuestra búsqueda y así recuperando secuencias distantes que comparten motivos o dominios con nuestra secuencia <em>query</em> original.</p>
+<h3 id="cuando-blast-falla">Cuando BLAST falla</h3>
+<p>Digamos que se tiene una secuencia <em>query</em> (abajo) y se quiere predecir su estructura y función. Como vimos anteriormente uno recurre generalmente a BLAST para este tipo de tareas. Si logramos identificar una proteína suficientemente similar podríamos hipotetizar que comparten dichas caracteristicas.</p>
+<div class="highlight"><pre><span></span><code>&gt;QUERY1
+MKDTDLSTLLSIIRLTELKESKRNALLSLIFQLSVAYFIALVIVSRFVRYVNYITYNNLV
+EFIIVLSLIMLIIVTDIFIKKYISKFSNILLETLNLKINSDNNFRREIINASKNHNDKNK
+LYDLINKTFEKDNIEIKQLGLFIISSVINNFAYIILLSIGFILLNEVYSNLFSSRYTTIS
+IFTLIVSYMLFIRNKIISSEEEEQIEYEKVATSYISSLINRILNTKFTENTTTIGQDKQL
+YDSFKTPKIQYGAKVPVKLEEIKEVAKNIEHIPSKAYFVLLAESGLRPGELLNVSIENID
+LKARIIWINKETQTKRAYFSFFSRKTAEFLEKVYLPAREEFIRANEKNIAKLAAANENQE
+IDLEKWKAKLFPYKDDVLRRKIYEAMDRALGKRFELYALRRHFATYMQLKKVPPLAINIL
+QGRVGPNEFRILKENYTVFTIEDLRKLYDEAGLVVLE
+</code></pre></div>
+<p>Vayan a la pagina de <a href="https://blast.ncbi.nlm.nih.gov/Blast.cgi">BLAST</a> y utilicen el algoritmo de <em>Protein BLAST</em> para buscar secuencias similares. <strong>En el campo de base de datos seleccione pdb que es la base que contiene estructuras</strong>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Pueden correr la búsqueda eligiendo el parámetro "Show results in a new window".</p>
+</div>
+<p style="text-align:center">
+<img src="./img/psiblast_1.png" alt="psiblast1" style="max-width:60%">
+</p>
+
+<p><strong>1.</strong> ¿Cuántos <em>hits</em> con E-value &lt; 0.005 encuentran? Vuelvan atrás y, en <strong>Program selection: Algorithm</strong>, seleccionen PSI-BLAST. ¿Cambió el resultado en comparación a lo que habían obtenido anteriormente?</p>
+<h3 id="usando-psi-blast">Usando PSI-BLAST</h3>
+<div class="admonition attention">
+<p class="admonition-title">Atención</p>
+<p>Realicen cada corrida de BLAST (e iteración de PSI-BLAST) en una ventana diferente, en varios casos van a necesitar comparar las salidas.</p>
+</div>
+<p>Vuelvan atrás a la página de alineamiento de proteínas, pero esta vez seleccionen la base de datos <strong>Non-redundant protein sequences (nr)</strong> y en la sección de algoritmos seleccionen PSI-BLAST.</p>
+<p>Teniendo en cuenta que el primer <em>hit</em> es nuestro <em>query</em> y por lo tanto vamos a ignorarlo:</p>
+<p><strong>2.</strong> Ahora, ¿Cuántos <em>hits</em> significativos encuentran (E-value &lt; 0.005)?</p>
+<p><strong>3.</strong> ¿Qué significa la variable <strong>Query Cover</strong>? Una manera visual para entender el <em>query coverage</em> es mirar el <strong>Graphic Summary</strong>. Dentro de la pestaña <strong>Descriptions</strong>, coloquen la pestaña <strong>Show</strong> en 100. Luego cliqueen en la pestaña <strong>Graphic Summary</strong>. ¿Cuál es la cobertura de los <em>hits</em> obtenidos? </p>
+<h3 id="construyendo-la-pssm">Construyendo la PSSM</h3>
+<p>Si se fijan debajo de los <em>hits</em> significativos van a tener la opción de seguir iterando PSI-BLAST:</p>
+<p><img alt="2iter" src="img/2iter.png" /></p>
+<p>Allí pueden especificar cuantas secuencias queremos utilizar para refinar nuestras PSSM (<em>Position-Specific Scoring Matrix</em>). Conservando el valor por defecto corramos la siguiente iteración.</p>
+<p><strong>4.</strong> ¿Cuántos <em>hits</em> significativos pueden encontrar ahora (E-value &lt; 0.005)?</p>
+<p><strong>5.</strong> ¿Cómo se modificó el coverage de estos <em>hits</em>? Vuelvan a mirar el <strong>Graphic Summary</strong>, colocando previamente en <strong>Descriptions</strong> la pestaña <strong>Show</strong> en 250. </p>
+<p><strong>6.</strong> ¿Por qué creen que PSI-BLAST puede identificar ahora más <em>hits</em> significativos y que es lo que está afectando el <em>query coverage</em>?</p>
+<p><strong>7.</strong> ¿Qué significan que los <em>hits</em> estén resaltados en amarillo, y qué significa que estén en blanco con un tick verde?</p>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Antes de proseguir realicen una o dos iteraciones más y observen la aparición de nuevas proteínas identificadas (marcadas con amarillo).</p>
+</div>
+<h3 id="guardando-y-reutilizando-la-pssm">Guardando y reutilizando la PSSM</h3>
+<p>Ahora podemos utilizar la PSSM que está ajustada con los resultados obtenidos de PSI-BLAST para realizar búsquedas más significativas en otras bases de datos.
+Para obtener la PSSM descarguenla arriba donde dice "<em>Donwload All</em>"</p>
+<p><img alt="DownloadPSSM" src="img/psi_blast2.png" /></p>
+<p>Volvamos una vez más a la página para realizar la búsqueda. Sin ingresar ninguna secuencia <em>query</em> seleccionemos otra vez la base de datos de estructuras Protein Data Bank (pdb) y como algoritmo PSI-BLAST. Por último, justo debajo del botón de BLAST, abramos el menú de <em>Algorithm parameters</em> y carguemos nuestra PSSM (justo al final). Ahora sí corramos la búsqueda.</p>
+<p><strong>8.</strong> ¿Pueden encontrar hits significativos de PDB ahora?</p>
+<p><strong>9.</strong> ¿Qué función pueden identificar en los primeros hits?</p>
+<h3 id="identificando-residuos-conservados">Identificando residuos conservados</h3>
+<p>Ahora (si tuvimos suerte) habremos podido identificar una relación estructural entre nuestra secuencia <em>query</em> y las secuencias de la base de datos de estructuras proteicas PDB. Digamos que, en este punto, nos gustaría validar esa relación.</p>
+<p>Para identificar los residuos conservados en nuestra secuencia <em>query</em> vayan al servidor de <a href="https://services.healthtech.dtu.dk/service.php?Blast2logo-1.1">Blast2logo</a> y suban dicha secuencia. Seleccionen <em>BLAST Database</em> NR70 y denle <em>Submit</em> (esto puede llevar un tiempito). En caso de que algo falle puede encontrar la salida <a href="https://services.healthtech.dtu.dk/services/Blast2logo-1.1/teaching/Query1/">acá</a>.</p>
+<p>Cuando esto termine deberían tener un logo de toda la secuencia. </p>
+<div class="admonition attention">
+<p class="admonition-title">Atención</p>
+<p>Si les resulta difícil de leer pueden hacer click en el botón <em>Customize visualization using Seq2Logo</em>. Al hacer esto los transfiere al servidor de <strong>Seq2logo</strong> y allí, sin tocar ninguna opción, denle <em>Submit</em>. </p>
+<p>Arriba les va a aparecer la opción de descargar cada imagen por separado (JPEG(1), JPEG(2), etc.) o en un sólo archivo EPS (similar a PDF). Se recomienda esto último.</p>
+</div>
+<p><strong>10.</strong> Viendo el logo: ¿Por qué creen que las primeras ~150 posiciones se ven bastante planas (Bits&lt;1)? ¿Cuáles son las posiciones con contenido de información más alto? ¿Pueden identificar el dominio conservado que habían visto en el ejercicio anterior?</p>
+<p>Para probar qué residuos dentro del dominio más conservado son los más relevantes para la estructura y/o función de nuestra proteína, podríamos realizar un ensayo de mutagénesis en el laboratorio. Debido a que la secuencia de nuestra proteína es larga (más de 400 aminoácidos), un estudio completo de mutagénesis podría resultar extremadamente costoso.</p>
+<p>Por esta razón, teniendo en cuenta lo realizado con el servidor Blast2logo, vamos a seleccionar (guiados por la conservación de los residuos) 4 de los siguientes 8 residuos para llevar a cabo nuestro hipotético ensayo de mutagénesis:</p>
+<ul>
+<li>(a): H271</li>
+<li>(b): R287</li>
+<li>(c): E290</li>
+<li>(d): Y334</li>
+<li>(e): F371</li>
+<li>(f): R379</li>
+<li>(g): R400</li>
+<li>(h): Y436</li>
+</ul>
+<p><strong>11.</strong> ¿Cuáles creen que son los 4 residuos que podríamos mutar de la lista para generar un impacto en la estructura de nuestra proteína <em>query</em>?</p>
+<h2 id="ejercicio-a-informar"><strong>Ejercicio a informar</strong></h2>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p><span style="font-weight:bold;">Fecha límite de entrega:</span> Viernes, 9 de Septiembre 2022, 23:59hs.</p>
+</div>
+<h3 id="enunciado">Enunciado</h3>
+<p>Una vez que usted hizo el análisis (informado en el TP3), se comunicó con el laboratorio AVENAI y le indican que una vez secuenciado el aislamiento, tienen como política hacer todas sus secuencias de dominio público, esto significa que su secuencia de estudio ya figura en las bases de datos (Usted suspira, de haberlo sabido antes...).</p>
+<p>Para poder identificarla, y sabiendo que es un <em>Betacoronavirus</em>, usted decide utilizar la herramienta provista por NCBI y hacer un BLASTn de su secuencia incógnita contra la base de datos <strong>genomic/Viruses/Betacoronavirus</strong>.</p>
+<p><strong>1.</strong> ¿Cuál es el resultado de realizar el BLASTn? ¿Obtiene algún hit con 100% de cobertura y E-value=0.0? Si obtiene más de un hit, recupere el primero.</p>
+<p><strong>2.</strong> ¿A qué aislamiento corresponde su secuencia? </p>
+<p>Para recolectar más información de su secuencia, decide acceder al GenBank yendo a la pestaña <strong>Alignments</strong> de la salida del BLASTn y cliqueando en el accession number correspondiente.</p>
+<p>Su jefe está muy interesado en estudiar qué proteínas de esta variante de coronavirus contienen ligandos del alelo <strong>HLA-A*02:01</strong>. Para eso a usted se le ocurre realizar predicciones utilizando la matriz peso-específica del alelo correspondiente que ya había generado en un curso de Bioinformática (TP5) tiempo atrás y que sabe que funciona muy bien. </p>
+<p>Puede encontrar una descripción de coronavirus y sus proteínas en <a href="https://viralzone.expasy.org/764?outline=all_by_species">ViralZone de Expasy</a>.</p>
+<p>Usted decide trabajar con las proteínas <strong>S</strong> (spike o proteína de glicoproteína de superficie), <strong>E</strong> (proteína de la envoltura), <strong>M</strong> (proteína de membrana) y <strong>N</strong> (fosfoproteína de la nucleocápside) de esta variante de coronavirus (ex secuencia incógnito) ya que cree, además, que son las que podrían llegar a contener los péptidos más inmunogénicos. Para obtener las secuencias de las proteínas en estudio decide recurrir al registro del GenBank que afortunadamente guardó después de hacer el BLASTn.</p>
+<p>Decide además utilizar la herramienta <strong>EasyPred</strong> que ya usó tiempo atrás para generar su matriz peso-específica, pero esta vez la usará para realizar una predicción. Por lo tanto, deja el recuadro de entrenamiento vacío e ingresa el archivo con la secuencia de la proteína a evaluar en el recuadro de evaluación. Por último, sube el archivo con la matriz en la sección <strong>Load saved prediction method</strong>. </p>
+<p style="text-align:center">
+<img src="./img/easypred_2.png" alt="easypredInf" width="50%">
+</p>
+
+<p>Selecciona <strong>Sort output on predicted values</strong> y aprieta el botón Submit query.</p>
+<div class="admonition attention">
+<p class="admonition-title">Atención</p>
+<p><strong>Importante:</strong> En la salida no hay logos ni métricas porque ya no se está entrenando ni testeando el modelo. En este punto se está utilizando un modelo ya entrenado (su matriz) para hacer predicciones en datos que nunca vió. La lista de péptidos son todas aquellas secuencias de 9 aminoácidos que se pueden obtener de la secuencia proteica que se le administra al servidor, junto con el valor de predicción.</p>
+</div>
+<p><strong>3.</strong> Describa lo que observa en el output de EasyPred. ¿Qué operación realiza el servidor para obtener las predicciones para cada péptido?</p>
+<p><strong>4.</strong> ¿Qué péptidos de cada una de las proteínas analizadas elegiría para testear en el laboratorio?</p>
+<p>Para analizar en forma conjunta los mejores ligandos que obtuvo según los puntajes predichos por su PSSM decide realizar un logo con todos los péptidos de las proteínas <strong>M</strong>, <strong>E</strong>, <strong>S</strong> y <strong>N</strong> que contengan un valor de predicción mayor a 1. </p>
+<div class="admonition tip">
+<p class="admonition-title">Extra (y por ende opcional)</p>
+<p>Puede realizar un <code>for loop</code> junto con un <code>awk</code> para seleccionar los péptidos relevantes de cada una de las proteínas (recuerde que en un TP se realizó un <code>awk</code> para seleccionar columnas). </p>
+<p>Para realizar el logo, utiliza Seq2Logo y genera un logo con todos estos péptidos ajustando los parámetros según su criterio.</p>
+</div>
+<p><strong>5.</strong> En base a los conocimientos adquiridos en su curso de Bioinformática, ¿le parece razonable el motivo hallado para el alelo HLA-A*02:01? ¿Puede ver claramente las posiciones ancla? ¿Qué aminoácidos son los preferidos para estas posiciones?</p>
+<p><strong>6.</strong> ¿Observa algo raro en el logo obtenido? ¿Cómo haría para modificarlo?</p>
+<p><br></p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Volver al principio
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2022 Area Bioinformatica UNSAM
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["search.suggest", "search.highlight", "search.share", "header.autohide", "navigation.tracking", "navigation.tabs", "toc.integrate", "navigation.top"], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "B\u00fasqueda", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version.title": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.a6c66575.min.js"></script>
+      
+        <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
+      
+        <script src="../../javascripts/tablesort.js"></script>
+      
+    
+  </body>
+</html>
