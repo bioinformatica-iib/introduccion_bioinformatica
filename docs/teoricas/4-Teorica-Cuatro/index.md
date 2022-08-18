@@ -9,7 +9,7 @@ tags:
 
  * :fontawesome-regular-file-pdf: [Slides](alineamientosMultiples2022.pdf) 
  
-<!-- ![type:video](https://www.youtube.com/embed/Nw4CI8Ylg10) -->
+![type:video](https://www.youtube.com/embed/EgOkJf-JWKA)
 
 
 ## Material de lectura y consulta
