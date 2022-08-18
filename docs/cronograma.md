@@ -15,8 +15,8 @@ tags:
 | Jueves, 04 Agosto 2022 | 9:00 hs |	:material-google-classroom: Online | [P1. Introducción a UNIX](/2022_introduccion_bioinformatica/practicos/TP01_Linux/) | :fontawesome-solid-hammer: Práctica |	A. Ricci |
 | Martes, 09 Agosto 2022 | 9:00 hs |	:material-google-classroom: Online | [T2. Bases de datos y ontologías](/2022_introduccion_bioinformatica/teoricas/2-Teorica-Dos/) | :fontawesome-solid-brain: Teórica |	F. Agüero |
 | Jueves, 11 Agosto 2022 | 9:00 hs |	:material-google-classroom: Online | [P2. EMBOSS Suite](/2022_introduccion_bioinformatica/practicos/TP02_EMBOSS/) | :fontawesome-solid-hammer: Práctica |	A. Ricci |
-| Martes, 16 Agosto 2022 | 9:00 hs |	:material-google-classroom: Online | T3. Alineamientos de a pares y Búsqueda de secuencias por Similitud | :fontawesome-solid-brain: Teórica |	F. Agüero |
-| Jueves, 18 Agosto 2022 | 9:00 hs |	:material-google-classroom: Online | T4. Alineamientos múltiples | :fontawesome-solid-brain: Teórica |	F. Agüero |
+| Martes, 16 Agosto 2022 | 9:00 hs |	:material-google-classroom: Online | [T3. Alineamientos de a pares y Búsqueda de secuencias por Similitud](/2022_introduccion_bioinformatica/teoricas/3-Teorica-Tres/) | :fontawesome-solid-brain: Teórica |	F. Agüero |
+| Jueves, 18 Agosto 2022 | 9:00 hs |	:material-google-classroom: Online | [T4. Alineamientos múltiples](/2022_introduccion_bioinformatica/teoricas/4-Teorica-Cuatro/) | :fontawesome-solid-brain: Teórica |	F. Agüero |
 | Jueves, 18 Agosto 2022 | 14:00 hs |	:fontawesome-solid-map-location: Aula a definir | TE1. Teórica Extra 1 | :fontawesome-solid-brain: Teórica |	F. Agüero |
 | Martes, 23 Agosto 2022 | 9:00 hs |	:material-google-classroom: Online | P3. Alineamientos de a pares | :fontawesome-solid-hammer: Práctica |	H. García A |
 | Jueves, 25 Agosto 2022 | 9:00 hs |	:material-google-classroom: Online | P4. Búsqueda de secuencias por similitud y Alineamientos Múltiples | :fontawesome-solid-hammer: Práctica |	H. García A |
