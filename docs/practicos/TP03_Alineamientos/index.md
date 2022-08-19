@@ -479,7 +479,7 @@ Para solucionarlo decide utilizar las herramientas que aprendió en el trabajo p
 
     Si necesitan dividir el archivo `All_Sequences.fasta` en archivos individuales pueden buscar **wossname split**. 
 
-!!! note "Extra! (y por ende opcional)"
+!!! example "Extra! (y por ende opcional)"
 
      Para resolver el punto 2 pueden hacer un script de bash usando entre otras cosas un ciclo `for`. Si lo logran (o si lo intentan), los invito a incluirlo en el trabajo práctico (inclúyanlo aún si no les salió bien).
 
