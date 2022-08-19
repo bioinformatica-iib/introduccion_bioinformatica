@@ -6,13 +6,13 @@
 <br>
 <br>
 
-[:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/12fM9PPYOcJK1skHpVpaoysOhgHZBggSn/view?usp=sharing){ .md-button .md-button--primary }
+[:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1uTR_Cl2Hlfk7F3UH2YPt260IroCKpb1z/view?usp=sharing){ .md-button .md-button--primary }
 
 ## **Objetivos**
 
  * Familiarizarse con el uso de programas de búsqueda de secuencias en bases de datos (BLAST y FASTA), y en particular con el uso de estos programas en la línea de comando.
  * Familiarizarse con la visualización de histogramas que arroja FASTA.
- * Familiarizarse con el uso de scores estadísticos en relación a la búsqueda en bases de datos.
+ * Familiarizarse con el uso de parámetros estadísticos en relación a la búsqueda en bases de datos.
 
 !!! attention "¡Antes de comenzar!"
 
@@ -23,6 +23,21 @@
     ```Bash
     bash install.sh
     ``` 
+## **Introducción a Bases de Datos de Proteínas**
+
+La mayor base de datos de Uniprot es UniProtKB (UniProt KnowledgeBase) que está dividida en dos secciones: TrEMBL y Swiss-Prot.
+
+- TrEMBL es una recolección de proteínas anotadas automáticamente que en su mayoría, aunque no de manera exclusiva, fueron obtenidas a partir de la traducción de secuencias nucleotídicas codificantes (CoDing Sequences, CDS) disponibles en GenBank.
+
+	??? info "Recordatorio"
+			
+		 Una secuencia codificante (CDS) es una región de ADN o ARN cuya secuencia determina la secuencia de aminoácidos en una proteína. No se debe confundir con un marco abierto de lectura (Open Reading Frame, ORF) que es una región continua de codones de ADN que empiezan con un codón de inicio y termina con un codón stop. Todos los CDS son ORFs pero no todos los ORFs son CDS, por ejemplo, los ORFs incluye a los intrones.
+
+- Swiss-Prot es una base de datos de proteínas que fueron revisadas y anotadas manualmente por un curador/a experto/a. Por lo tanto, Swiss-Prot contiene la información de más alta calidad para secuencias de proteínas.
+
+TrEMBL brinda los datos crudos para que los curadores de Swiss-Prot los revisen. Por lo tanto, TrEMBL tiene más entradas que Swiss-Prot, pero carece de la anotación manual de un experto.
+
+En este TP trabajaremos con **Swiss-Prot**.
 
 ## **Introducción a BLAST**
 
@@ -39,20 +54,36 @@
 * ``-d`` una base de datos con secuencias (recordar, d = database) 
 * ``-p`` el tipo de busqueda (p = programa: *blastp*, *blastn*, *blastx*, etc.) 
 
-!!! tip "Tip"
+??? tip "Tip"
 
 	 Para ver una lista de los argumentos que acepta ``blastall`` prueben correr el comando sin argumentos. Si esto no les funciona pueden ver todos los argumentos haciendo click [aquí](https://www.ncbi.nlm.nih.gov/Class/BLAST/blastallopts.txt).
 
+??? info "Recordatorio: Estadística de los Alineamientos"
+
+	¿Qué es un Expect value o **E-value**?
+
+	El E-value (E) es un parámetro que describe el número de hits que uno espera encontrar por azar cuando está buscando en una base de datos de un tamaño particular. Este disminuye exponencialmente a medida que el Score (S) del alineamiento aumenta. Esencialmente el E-value describe el ruido de fondo aleatorio que está presente al realizar una búsqueda en una base de datos de secuencias. 
+
+	Cuanto más pequeño sea el E-value, o más cercano a 0, más significativo resulta ser nuestro hit. Sin embargo, siempre hay que tener en cuenta que los alineamientos cortos tienen E-values relativamente altos, y esto es debido a que el E-value tiene en cuenta el largo de la secuencia *query*. Estos E-values tienen sentido porque las secuencias cortas tienen una probabilidad más alta de estar presentes en una base de datos puramente por azar.
+
+	El E-value es un parámetro conveniente para establecer un umbral de significancia a la hora de reportar los resultados de una búsqueda en una base de datos. Uno puede cambiar el E-value umbral al listar los resultados de una búsqueda con BLAST. 
+
+	Recordemos la fórmula para calcular el E-value (E) de la teórica.
+
+
+	<img src="./img/evalue.png" alt="evalue" style="max-width:60%">
+
+
 ### Ejercicio 1
 
-**1.1** Como primer ejemplo podemos usar la secuencia *xlrhodop.pep* para realizar una búsqueda contra **Swissprot**. Como estamos trabajando con una secuencia y una base de datos de proteínas, usamos ``blastp`` para realizar la busqueda: 
+**1.1** Como primer ejemplo podemos usar la secuencia *xlrhodop.pep* para realizar una búsqueda contra **Swiss-Prot**. Como estamos trabajando con una secuencia y una base de datos de proteínas, usamos ``blastp`` para realizar la busqueda: 
 
 ```Bash
 blastall -p blastp -i xlrhodop.pep -d ~/Swissprot_db/Swissprot.fasta
 ``` 
 !!! attention "Atención"
 
-	 Este comando no se ejecutará correctamente si uno mueve de lugar el archivo de la base de datos **Swissprot** luego de ejecutar ``install.sh``. Si este es el caso, especifique el camino o *path* completo.
+	 Este comando no se ejecutará correctamente si uno mueve de lugar el archivo de la base de datos **Swiss-Prot** luego de ejecutar ``install.sh``. Si este es el caso, especifique el camino o *path* completo.
 
 En este ejemplo, el resultado de la búsqueda es volcado en la pantalla (stdout). Para que el resultado aparezca en un archivo, podemos redireccionar stdout (usando ``>``, ver TP01-Linux) o usar la opcion ``-o`` (output).
 
@@ -68,7 +99,17 @@ less xlrhodop.blastp
 
 ¿Qué indican las últimas líneas de este archivo?
 
+Si recuerda cómo se computa el E-value, ¿entiende la relevancia de reportar el tamaño de la base de datos (*number of letters*, *number of sequences*)?
+
 <img src="./img/parameters_blastp.png" alt="Params_blastp" style="max-width:40%">
+
+!!! note "Nota"
+
+	 El término ***neighboring words*** refiere a palabras "vecinas" o "cercanas", es decir con alta similitud de secuencia. 
+
+!!! attention "Atención"
+
+	 Si corren ``blastp`` sólo, es decir sin invocar primero al comando ``blastall``, van a poder realizar las mismas búsquedas pero los nombres de los argumentos del comando ``blastp`` sólo difieren de los de ``blastall -p blastp``. Por lo tanto, no les recomendamos correrlo de esta forma.
 
 **1.2** Explore las siguientes opciones del programa ``blastp``:  
 
@@ -81,17 +122,30 @@ less xlrhodop.blastp
 	 Hay tuplas de valores permitidos para los argumentos ``-G`` y ``-E``, no cualquier
     combinación de costos es válida.
 
+Pruebe con distintas combinaciones de estos parámetros y preste atención al impacto que esto tiene en los alineamientos reportados.
 
-Utilice distintas combinaciones de estos parámetros y preste atención al impacto que esto tiene en los alineamientos reportados. 
+**1.2.1** Responda a las siguientes preguntas:
 
-**1.2.1** Complete la siguiente tabla para resumir lo observado, teniendo en cuenta diferentes **costos** de gap open y gap extend. 
+**a.** Si observa los primeros 20 hits de su búsqueda, ¿puede detectar alguna diferencia en los alineamientos reportados si cambia los parámetros indicados más arriba?
 
-|| Número de (apertura de) gaps | Extensión de la regiones con gaps |
+**b.** A medida que va descendendiendo en la lista de los hits reportados (menor Score, mayor E-value), ¿qué patrones puede observar en los alineamientos que arroja BLAST?
+
+**c.** Tome como ejemplo dos de los siguientes hits: 
+	
+	- OPSD_CARAU 
+	- OPN4A_DANRE
+	- OPN4_RUTRU
+
+y complete para cada uno de los alinemientos reportados la siguiente tabla, teniendo en cuenta los diferentes **costos** de gap open y gap extend propuestos. 
+
+|| Número total de gaps | Extensión de la regiones con gaps |
 | :--: | :--: | :--: |
 | Gap open: 6 + gap extend: 2 | |
 | Gap open: 13 + gap extend: 1 | |
 
-**1.2.2** Responda a las siguientes preguntas:
+**1.2.2** **Opcional**: Evaluando el impacto del parámetro longitud de la k-tupla.
+
+Responda a las siguientes preguntas:
 
 Para una misma combinación de costos para gap open y gap extend (pueden usar los valores default):
 
@@ -101,9 +155,7 @@ Para una misma combinación de costos para gap open y gap extend (pueden usar lo
 
 **c.** ¿Cuántas secuencias devuelven?
 
-!!! attention "Atención"
-
-	 Si corren ``blastp`` sólo, es decir sin invocar primero al comando ``blastall``, van a poder realizar las mismas búsquedas pero los nombres de los argumentos del comando ``blastp`` sólo difieren de los de ``blastall -p blastp``. Por lo tanto, no les recomendamos correrlo de esta forma.   
+Para los más curiosos, las respuestas a estas preguntas pueden hallarlas en el siguiente [link](https://docs.google.com/presentation/d/1ch3I2UmYGSnxt-Glk7ChnK2Lo8FQ5oK10FMNieFbkyA/edit?usp=sharing).
 
 ## **Introducción a FASTA**
 
@@ -162,25 +214,26 @@ Para interpretar correctamente el histograma que FASTA da como output tenemos qu
 
 **i.** ¿El valor del “=” en el inset es mayor o menor que en el resto del histograma? ¿Tiene sentido?
 
+**2.2** ¿Por qué le parece que es relevante que se reporte el tamaño de la base de datos (**"x residues in y sequences"**) en el *header* del archivo de salida? 
 
-**2.2** ¿Qué parámetros se utilizaron en esta corrida con FASTA?
+**2.3** ¿Qué parámetros se utilizaron en esta corrida con FASTA?
 
-**2.3** ¿En qué se diferencian las distribuciones esperadas y observadas? ¿Qué implica?
+**2.4** ¿En qué se diferencian las distribuciones esperadas y observadas? ¿Qué implica?
 
-**2.4** ¿Qué representa el número que está entre paréntesis en el E (ver figura más abajo)? ¿Cuál es el E-value para el mejor *hit*?
+**2.5** ¿Qué representa el número que está entre paréntesis en el E (ver figura más abajo)? ¿Cuál es el E-value para el mejor *hit*?
 
 <img src="./img/fasta_bestscores.png" alt="Fasta_bestscores" style="max-width:60%">
  
-## **Diferencias entre BLAST y FASTA**
+??? nota "**Diferencias entre BLAST y FASTA**"
 
-* **ktup:** Tanto FASTA como BLAST usan una estrategia de búsqueda inicial basada en palabras cortas. ktup en FASTA es el parámetro que indica el tamaño de la palabra utilizada en esta búsqueda inicial. FASTA utiliza por default ktup=2, mientras que BLAST utiliza ktup=3. Sin embargo, FASTA sólo considera identidades respecto a la palabra, mientras que BLAST utiliza identidades y sustituciones conservativas. Por lo tanto BLAST con ktup=3 es en general más sensible que FASTA con ktup=2. FASTA con ktup=1 es más sensible, pero es también más lento. 
-* **Matrices y scores:** BLAST y FASTA usan distintas matrices de *scoring* y *gap penalties* por *default* (BLAST: BLOSUM62, gap open:-11, gap extend:-1; FASTA: BLOSUM50, gap open:-10, gap extend:-2). 
-* **Estadísticas** Los parámetros *kappa* y *lambda* son centrales para estimar scores en BLAST y en FASTA. FASTA calcula estos parámetros *on the fly* a partir de la base de datos (se tiene en cuenta el tamaño) y la matriz de *scoring*. Esto produce estadísticas más representativas, pero puede ser problemático para bases de datos pequeñas. Si la base de datos es de menos de 10 secuencias, FASTA no estima estos parámetros. BLAST usa valores pre-calculados para estos parámetros, que fueron derivados a partir de simulaciones. 
-* **Alineamientos:** BLAST puede mostrar varios alineamientos por cada par de secuencias (varios *high-scoring pairs* o HSPs), FASTA sólo muestra un alineamiento. 
-* **Filtrado de secuencias de baja complejidad:** Por default, BLAST filtra secuencias de baja complejidad o repeticiones, ¡FASTA no! Esto puede afectar la capacidad de discriminar falsos positivos, aunque FASTA provee otro tipo de opciones para manejar este tipo de casos. Ver la sección específica sobre este punto más abajo. 
-* **Traducciones:** *blastx* hace 6 búsquedas independientes (una en cada marco de lectura) mientras que *fastx3* y *fasty3* hacen una única búsqueda *forward* (o *reverse* usando ``-i``) que permite *frameshifts*. Estos últimos son más sensibles y pueden producir mejores alineamientos que *blastx* cuando se usan secuencias de baja calidad (lo mismo es cierto para *tblastn* vs *tfastx3* y *tfasty3*). 
-* **Homólogos distantes:** Existe una opción en FASTA (``-F``) que les permite ignorar (i.e. que no aparezcan en el output) secuencias altamente similares al *query*. Esto es útil, por ejemplo, para focalizar una búsqueda en las secuencias más divergentes. No existe una opción similar en **BLAST**. 
-* **Secuencias cortas:** Ya sea que busquen un *primer* o un péptido, si quieren utilizar BLAST o FASTA para esto, tengan en cuenta que BLAST es generalmente inútil al respecto. Esto es porque BLAST tiene un límite inferior sobre la longitud que puede tener una palabra (ktup). En el caso de nucleótidos, el límite inferior es 7 (el *default* es 11). En este sentido FASTA es mejor, porque siempre pueden usar ktup=1. Por otra parte, en el caso específico de péptidos, FASTA provee algunos algoritmos particulares de búsqueda (*fastf*, *fasts* y *tfasf*, *tfasts*).
+	 * **ktup:** Tanto FASTA como BLAST usan una estrategia de búsqueda inicial basada en palabras cortas. ktup en FASTA es el parámetro que indica el tamaño de la palabra utilizada en esta búsqueda inicial. FASTA utiliza por default ktup=2, mientras que BLAST utiliza ktup=3. Sin embargo, FASTA sólo considera identidades respecto a la palabra, mientras que BLAST utiliza identidades y sustituciones conservativas. Por lo tanto BLAST con ktup=3 es en general más sensible que FASTA con ktup=2. FASTA con ktup=1 es más sensible, pero es también más lento. 
+	 * **Matrices y scores:** BLAST y FASTA usan distintas matrices de *scoring* y *gap penalties* por *default* (BLAST: BLOSUM62, gap open:-11, gap extend:-1; FASTA: BLOSUM50, gap open:-10, gap extend:-2). 
+	 * **Estadísticas** Los parámetros *kappa* y *lambda* son centrales para estimar scores en BLAST y en FASTA. FASTA calcula estos parámetros *on the fly* a partir de la base de datos (se tiene en cuenta el tamaño) y la matriz de *scoring*. Esto produce estadísticas más representativas, pero puede ser problemático para bases de datos pequeñas. Si la base de datos es de menos de 10 secuencias, FASTA no estima estos parámetros. BLAST usa valores pre-calculados para estos parámetros, que fueron derivados a partir de simulaciones. 
+	 * **Alineamientos:** BLAST puede mostrar varios alineamientos por cada par de secuencias (varios *high-scoring pairs* o HSPs) aunque por *default* sólo muestra el mejor, FASTA únicamente reporta un alineamiento posible. 
+	 * **Filtrado de secuencias de baja complejidad:** Por default, BLAST filtra secuencias de baja complejidad o repeticiones, ¡FASTA no! Esto puede afectar la capacidad de discriminar falsos positivos, aunque FASTA provee otro tipo de opciones para manejar este tipo de casos. Ver la sección específica sobre este punto más abajo. 
+	 * **Traducciones:** *blastx* hace 6 búsquedas independientes (una en cada marco de lectura) mientras que *fastx3* y *fasty3* hacen una única búsqueda *forward* (o *reverse* usando ``-i``) que permite *frameshifts*. Estos últimos son más sensibles y pueden producir mejores alineamientos que *blastx* cuando se usan secuencias de baja calidad (lo mismo es cierto para *tblastn* vs *tfastx3* y *tfasty3*). 
+	 * **Homólogos distantes:** Existe una opción en FASTA (``-F``) que les permite ignorar (i.e. que no aparezcan en el output) secuencias altamente similares al *query*. Esto es útil, por ejemplo, para focalizar una búsqueda en las secuencias más divergentes. No existe una opción similar en **BLAST**. 
+	 * **Secuencias cortas:** Ya sea que busquen un *primer* o un péptido, si quieren utilizar BLAST o FASTA para esto, tengan en cuenta que BLAST es generalmente inútil al respecto. Esto es porque BLAST tiene un límite inferior sobre la longitud que puede tener una palabra (ktup). En el caso de nucleótidos, el límite inferior es 7 (el *default* es 11). En este sentido FASTA es mejor, porque siempre pueden usar ktup=1. Por otra parte, en el caso específico de péptidos, FASTA provee algunos algoritmos particulares de búsqueda (*fastf*, *fasts* y *tfasf*, *tfasts*).
 
 !!! tip "Tip"
 
@@ -196,7 +249,7 @@ En otros casos, la secuencia puede contener un vector (plásmido) o repeticiones
 
 ### Ejercicio 3 
 
-**3.1** Usar la proteína Groucho de Drosophila (grou_drome) para buscar secuencias similares en **Swissprot** usando **BLAST**. Comparar los resultados obtenidos usando (``-F T``) o sin usar (``-F F``) la opción de filtrado que provee **BLAST**. 
+**3.1** Usar la proteína Groucho de Drosophila (grou_drome) para buscar secuencias similares en **Swiss-Prot** usando **BLAST**. Comparar los resultados obtenidos usando (``-F T``) o sin usar (``-F F``) la opción de filtrado que provee **BLAST**. 
 
 Observen el primer hit en las lista de los alineamientos resultantes. ¿Qué pueden detectar de diferencia entre los dos comandos que corrieron?
 
@@ -209,7 +262,7 @@ segmasker -in grou_drome.fasta -outfmt fasta > grou_drome_lc.fasta
 
 **3.3** Comparen las secuencias *grou_drome.fasta* y *grou_drome_lc.fasta* e identifiquen las diferencias. ¿Qué hizo *segmasker* con la secuencia? 
 
-Ahora, podemos buscar secuencias similares en **Swissprot** usando *grou_drome.fasta* (con opciones standard) y *grou_drome_lc.fasta* (usando la opción ``-S``). 
+Ahora, podemos buscar secuencias similares en **Swiss-Prot** usando *grou_drome.fasta* (con opciones standard) y *grou_drome_lc.fasta* (usando la opción ``-S``). 
 
 ```Bash
 fasta -H grou_drome.fasta ~/Swissprot_db/Swissprot.fasta
@@ -223,7 +276,7 @@ fasta -H -S grou_drome_lc.fasta ~/Swissprot_db/Swissprot.fasta
 Tener acceso a **BLAST** o **FASTA** en la línea de comando les da la posibilidad de crear sus propias bases de datos para realizar búsquedas. 
 **FASTA** puede realizar búsquedas sobre un archivo en formato *fasta* conteniendo varias secuencias sin ningún otro tipo de tratamiento. **BLAST**, sin embargo necesita contar con una base de datos indexada. ``formatdb`` es el comando que vamos a utilizar para generar los índices que **BLAST** necesita. 
 
-### Ejercicio 4
+### Adicional: Ejercicio 4
 
 **4.1** Primero, vamos a generar un archivo *fasta* múltiple con algunas secuencias. Por ejemplo, para construir una base de datos con secuencias de opsinas podemos empezar con: 
 
@@ -258,7 +311,7 @@ makeblastdb -help
 
 Si tienen un archivo con múltiples secuencias en formato *fasta*, pueden usarlo como *query* en una búsqueda, usando **BLAST**. 
 
-### Ejercicio 5 
+### Adicional: Ejercicio 5 
 
 **5.1** El archivo *opsv.fasta* contiene la secuencia de 4 fotorreceptores, usen este archivo para realizar una búsqueda, usando *blastp*, contra la base de datos **ops** que crearon en el ejercicio anterior. 
 
@@ -291,3 +344,7 @@ awk -v i=0 '/pattern/{i++}{print > "blast."i}' blast.out
 	 Recuerden reemplazar "*pattern*" por el patrón que quieren utilizar para dividir el archivo.
 
 ¿Lo lograron?
+
+##  **Bibliografía**
+
+- Tutorial de BLAST en la web del NCBI: [The Statistics of Sequence Similarity Scores](https://www.ncbi.nlm.nih.gov/BLAST/tutorial/Altschul-1.html)
