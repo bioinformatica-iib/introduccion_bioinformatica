@@ -10,7 +10,7 @@
 
 <br>
 
-!!! info "Atención: Este TP tiene informe."
+!!! abstract "Atención: Este TP tiene informe."
 
 ## **Objetivos**
 
