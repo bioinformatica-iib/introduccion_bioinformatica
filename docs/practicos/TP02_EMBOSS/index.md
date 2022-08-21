@@ -1,6 +1,6 @@
 ![Banner](img/banner.jpg){ width="250", align="left" }
 
-# **TP 2**. EMBOSS { markdown data-toc-label = 'TP 2' }
+# **TP 2**. EMBOSS { markdown data-toc-label='TP 2' }
 
 <br>
 
