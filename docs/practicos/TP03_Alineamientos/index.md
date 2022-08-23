@@ -10,6 +10,8 @@
 
 <br>
 
+!!! abstract "Atención: Este TP tiene informe."
+
 ### Slides mostrados en la clase
 
 * :fontawesome-regular-file-pdf: [Cierre TP](https://docs.google.com/presentation/d/149-D1Q8JrO0rNxO4NKSnUyB32bNV_RfVwmRgwV9zQ64/edit?usp=sharing)
@@ -18,9 +20,6 @@
 
 * :octicons-video-16: [Introducción al TP](...)
 * :octicons-video-16: [Cierre TP](...)
-
-
-!!! abstract "Atención: Este TP tiene informe."
 
 ## **Objetivos**
 
