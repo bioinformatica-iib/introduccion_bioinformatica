@@ -290,8 +290,6 @@ Nosotros podemos utilizar la herramienta de EMBOSS ```dotmatcher``` para generar
 
 ### Ejercicio 2
 
-!agregar un ejercicio simple para entender los patrones que arroja el DotMatcher
-
 **2.1** Utilizá la secuencia *HS-ch11-fragment.fasta* que se encuentra en la carpeta *data* para compararla contra sí misma. Esta secuencia es un pequeño fragmento del cromosoma 1 de *Homo sapiens* y la vamos a utilizar únicamente para ver algunos de los patrones que podemos encontrar en un dotplot. 
 
 Generá un dotplot utilizando la secuencia *HS-ch11-fragment.fasta* contra sí misma.
