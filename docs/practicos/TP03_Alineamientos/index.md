@@ -18,8 +18,9 @@
 
 ### Videos de la clase grabada
 
-* :octicons-video-16: [Introducción al TP](...)
-* :octicons-video-16: [Cierre TP](...)
+* :octicons-video-16: [Introducción al TP](
+https://www.youtube.com/watch?v=KwMh9fVVuo4)
+* :octicons-video-16: [Cierre TP](https://www.youtube.com/watch?v=9nF_utYbm8c)
 
 ## **Objetivos**
 
