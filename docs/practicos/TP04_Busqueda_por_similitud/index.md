@@ -8,6 +8,17 @@
 
 [:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1uTR_Cl2Hlfk7F3UH2YPt260IroCKpb1z/view?usp=sharing){ .md-button .md-button--primary }
 
+<br>
+
+### Slides mostrados en la clase
+
+* :fontawesome-regular-file-pdf: [Cierre TP](https://docs.google.com/presentation/d/1262JSFr3PDzcf_c72llMNDGn8aK23FxdP61LJHI3A74/edit?usp=sharing)
+
+### Videos de la clase grabada
+
+* :octicons-video-16: [Introducción al TP](...)
+* :octicons-video-16: [Cierre TP](...)
+
 ## **Objetivos**
 
  * Familiarizarse con el uso de programas de búsqueda de secuencias en bases de datos (BLAST y FASTA), y en particular con el uso de estos programas en la línea de comando.
@@ -220,7 +231,9 @@ Para interpretar correctamente el histograma que FASTA da como output tenemos qu
 
 **2.4** ¿En qué se diferencian las distribuciones esperadas y observadas? ¿Qué implica?
 
-**2.5** ¿Qué representa el número que está entre paréntesis en el E (ver figura más abajo)? ¿Cuál es el E-value para el mejor *hit*?
+**2.5** ¿En qué región del histograma se ubican los puntajes de los alineamientos que consideramos más significativos (*hits* con mejor puntaje)?
+
+**2.6** ¿Qué representa el número que está entre paréntesis en el E (ver figura más abajo)? ¿Cuál es el E-value para el mejor *hit*?
 
 <img src="./img/fasta_bestscores.png" alt="Fasta_bestscores" style="max-width:60%">
  
