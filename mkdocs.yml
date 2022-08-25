@@ -127,7 +127,7 @@ nav:
         - TP 2 - EMBOSS: 'practicos/TP02_EMBOSS/index.md'
         - TP 3 - Alineamientos de a pares: 'practicos/TP03_Alineamientos/index.md'
         - TP 4 - Búsqueda por similitud: 'practicos/TP04_Busqueda_por_similitud/index.md'
-        #- TP 5 - Perfiles de secuencias: 'practicos/TP05_PSI-BLAST/index.md'
+        - TP 5 - Perfiles de secuencias: 'practicos/TP05_PSI-BLAST/index.md'
         #- TP 7 - HMMs & ANNs: 'practicos/TP07_HMM_ANN/index.md'
         #- TP 8a - R - Introducción: 'practicos/TP08a_R/index.md'
         #- TP 8b - R - Aplicación: 'practicos/TP08b_R/index.md'
