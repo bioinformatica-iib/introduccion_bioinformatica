@@ -18,10 +18,10 @@ tags:
 | Martes, 16 Agosto 2022 | 9:00 hs |	:material-google-classroom: Online | [T3. Alineamientos de a pares y Búsqueda de secuencias por Similitud](/2022_introduccion_bioinformatica/teoricas/3-Teorica-Tres/) | :fontawesome-solid-brain: Teórica |	F. Agüero |
 | Jueves, 18 Agosto 2022 | 9:00 hs |	:material-google-classroom: Online | [T4. Alineamientos múltiples](/2022_introduccion_bioinformatica/teoricas/4-Teorica-Cuatro/) | :fontawesome-solid-brain: Teórica |	F. Agüero |
 | Jueves, 18 Agosto 2022 | 14:00 hs |	:fontawesome-solid-map-location: Aula a definir | TE1. Teórica Extra 1 | :fontawesome-solid-brain: Teórica |	F. Agüero |
-| Martes, 23 Agosto 2022 | 9:00 hs |	:material-google-classroom: Online | P3. Alineamientos de a pares | :fontawesome-solid-hammer: Práctica |	H. García A |
-| Jueves, 25 Agosto 2022 | 9:00 hs |	:material-google-classroom: Online | P4. Búsqueda de secuencias por similitud y Alineamientos Múltiples | :fontawesome-solid-hammer: Práctica |	H. García A |
+| Martes, 23 Agosto 2022 | 9:00 hs |	:material-google-classroom: Online | [P3. Alineamientos de a pares](/2022_introduccion_bioinformatica/practicos/TP03_Alineamientos/) | :fontawesome-solid-hammer: Práctica |	H. García A |
+| Jueves, 25 Agosto 2022 | 9:00 hs |	:material-google-classroom: Online | P4. [Búsqueda de secuencias por similitud y Alineamientos Múltiples](/2022_introduccion_bioinformatica/practicos/TP04_Busqueda_por_similitud/) | :fontawesome-solid-hammer: Práctica |	H. García A |
 | Martes, 30 Agosto 2022 | 9:00 hs |	:material-google-classroom: Online | T5. Información contenida en alineamientos múltiples | :fontawesome-solid-brain: Teórica |	M. Nielsen |
-| Jueves, 01 Septiembre 2022 | 9:00 hs |	:material-google-classroom: Online | P5. Perfiles de secuencia y PSI-BLAST | :fontawesome-solid-hammer: Práctica |	H. García A |
+| Jueves, 01 Septiembre 2022 | 9:00 hs |	:material-google-classroom: Online | [P5. Perfiles de secuencia y PSI-BLAST](/2022_introduccion_bioinformatica/practicos/TP05_PSI-BLAST/) | :fontawesome-solid-hammer: Práctica |	H. García A |
 | Martes, 06 Septiembre 2022 | 9:00 hs |	:material-google-classroom: Online | T6. Reconstrucción de filogenias | :fontawesome-solid-brain: Teórica |	F. Agüero |
 | Jueves, 08 Septiembre 2022 | 9:00 hs |	:material-google-classroom: Online | P6. Filogenias, árboles filogenéticos y filogenómica | :fontawesome-solid-hammer: Práctica |	J. Glavina |
 | Martes, 13 Septiembre 2022 | 9:00 hs |	:material-google-classroom: Online | T7. Métodos de predicción de Machine Learning basados en datos (HMM y ANN) | :fontawesome-solid-brain: Teórica |	M. Nielsen |
