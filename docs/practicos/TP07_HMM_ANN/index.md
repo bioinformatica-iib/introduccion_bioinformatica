@@ -1,6 +1,6 @@
 ![Image](img/banner.jpg){ width="250", align="left" }
 
-# **TP 7**. Hidden Markov Models (HMMs) y Artificial Neural Networks (ANNs) { markdown data-toc-label = 'TP 7' }
+# **TP 7**. Artificial Neural Networks (ANNs) y Hidden Markov Models (HMMs) { markdown data-toc-label = 'TP 7' }
 
 <br>
 <br>
@@ -48,8 +48,7 @@ Luego el archivo **Evaluacion.set** contiene datos independientes, que se utiliz
 
     Vayan corriendo las diferentes pruebas en diferentes pestañas o guarden el reporte de salida para poder compararlo cuando sea necesario.  
 
-### Primera prueba
-#### *Comprendiendo los resultados que indican el desempeño de la red*
+### Primera prueba: *Comprendiendo los resultados que indican el desempeño de la red*
 
 Para nuestro primer modelo vamos a ir a [EasyPred](https://services.healthtech.dtu.dk/service.php?EasyPred-1.0) y cargamos los archivos en los cuadros correspondientes:
 
@@ -74,12 +73,11 @@ Una vez entrenado el modelo, recuerde que puede chequear el desempeño del mismo
 <img src="./img/log_nn.png" alt="log_nn" style="max-width:70%">
 
 1. ¿Cuál es el máximo valor de PCC alcanzado sobre el set de prueba? (*Maximal test set pearson correlation coefficient sum*) 
-1. ¿En qué iteración ocurre? ¿Qué información le está dando esto sobre el proceso de entrenamiento del modelo?  
-1. ¿Cuáles son los valores de desempeño del modelo sobre el set de evalución? (PCC y Aroc)
+1. ¿En qué iteración se alcanza ese máximo? ¿Qué información le está dando esto sobre el proceso de entrenamiento del modelo?  
+1. ¿Cuáles son los valores de desempeño del modelo sobre el set de evaluación? (PCC y Aroc)
 1. ¿El PCC obtenido en el punto 3. es mayor o menor al obtenido en el punto 1.? ¿Qué implica este resultado?  
 
-### Segunda prueba
-#### *Cambiando el set de entrenamiento*
+### Segunda prueba: *Cambiando el set de entrenamiento*
 
 Mantenga los mismos parámetros que en el paso anterior pero esta vez seleccione *Use bottom sequences for training*. 
 
@@ -87,10 +85,9 @@ Mantenga los mismos parámetros que en el paso anterior pero esta vez seleccione
 1. ¿Qué valores de desempeño alcanza el modelo aplicado al set de evaluación?
 1. ¿A qué se debe que no coincidan con lo obtenido en la primera prueba?
 
-### Tercera prueba
-#### *Cambiando la arquitectura de la ANN*
+### Tercera prueba: *Cambiando la arquitectura de la ANN*
 
-Repita los parámetros de la primera prueba excepto por el número de neuronas en la capa intermedia o *hidden layer*:
+Repita los parámetros de la **primera prueba** excepto por el número de neuronas en la capa intermedia o *hidden layer*:
 
 * *Number of hidden units*: 1
 
@@ -105,22 +102,21 @@ Responda a las siguientes preguntas para ambos casos estudiados:
 1. ¿Cómo varía la *performance* en el set de prueba?  
 1. ¿Qué impacto tienen estos cambios en la *performance* del set de evaluación?  
 1. ¿Puede elegir un número óptimo de neuronas para la capa oculta?  
-1. ¿Por qué cree que el número de neuronas en la capa oculta tiene tan poco impacto en esta prueba?  
+1. ¿Por qué cree que el número de neuronas en la capa oculta tiene tan poco impacto en esta prueba? Piense en el número de datos de entrada y el número de pesos de la red. 
 
-### Cuarta prueba
-#### *Empleando un esquema de validación cruzada*
+### Cuarta prueba: *Empleando un esquema de validación cruzada*
 
 Como deberían haber notado en las dos primeras pruebas, la partición de los datos que se utilizan en el entrenamiento/prueba influyen significativamente en el desempeño del modelo. 
 
-Como *a priori* uno no puede establecer cual es la mejor forma de partir los datos en entrenamiento y *test* se recurre a una estrategia denominada *cross-validation*. La técnica de validación cruzada consiste en hacer *N* particiones (por lo general 5) y rotarlas, utilizando N-1 para entrenar y la N-ésima (es decir la que queda afuera) como set de prueba. Esto resulta en N modelos diferentes, cada uno entrenado y probado en datos diferentes. Para realizar predicciones en nuevos sets, como el de evaluación, se realizan predicciones con los N métodos y se promedian sus predicciones.
+Como *a priori* uno no puede establecer cuál es la mejor forma de partir los datos en entrenamiento y *test* se recurre a una estrategia denominada *cross-validation*. La técnica de validación cruzada consiste en hacer *N* particiones (por lo general 5) y rotarlas, utilizando N-1 para entrenar y la N-ésima (es decir la que queda afuera) como set de prueba. Esto resulta en N modelos diferentes, cada uno entrenado y probado en datos diferentes. Para realizar predicciones en nuevos sets, como el de evaluación, se realizan predicciones con los N métodos y se promedian sus predicciones.
 
 Para realizar esta prueba vuelvan a los parámetros de la **Primera prueba** pero modifiquen lo siguiente:
 
-* *Number of partitions for crossvalidated training*: 5
+* *Number of partitions for cross-validated training*: 5
 
 !!! attention "Este paso puede llevar varios minutos. Paciencia."
 
-1. ¿Encuentran diferencias entre los desempeños de los 5 modelos?  
+1. ¿Encuentran diferencias entre los desempeños de los 5 modelos? ¿Es esperable? ¿Por qué?
 1. Comparen los resultados obtenidos para el set de evaluación con respecto a las pruebas anteriores.
 1. En este caso se usa el ensamble de los 5 modelos para realizar las predicciones sobre el set de evaluación. ¿Cómo piensa que se obtienen los valores predichos?
 
@@ -211,7 +207,19 @@ S13421   S13421 GLOBIN - BRINE SHRIMP                   120.3    6.2e-37   4
 
 Noten que después del E-value hay un campo que no se encontraba en los otros algoritmos de búsqueda denominado "N". Este valor representa la cantidad de dominios de nuestro profile que fueron encontrados en el hit.
 
-Luego encontramos información sobre los dominios de nuestro *profile* individualmente. Los campos son:
+Luego encontramos información sobre los dominios de nuestro *profile* individualmente. 
+
+```
+Parsed for domains:
+Sequence Domain  seq-f seq-t    hmm-f hmm-t      score  E-value
+-------- ------- ----- -----    ----- -----      -----  -------
+S13421     3/4     771  1075 ..     1   333 []    34.0    3e-13
+S13421     1/4       1   288 [.     1   333 []    31.9  3.8e-13
+S13421     4/4    1085  1390 ..     1   333 []    29.4    5e-13
+S13421     2/4     303   607 ..     1   333 []    25.0  8.1e-13
+```
+
+Los campos son:
 
 - el nombre del hit 
 
@@ -232,16 +240,6 @@ Luego encontramos información sobre los dominios de nuestro *profile* individua
 - Los tres siguientes campos son análogos pero refiriéndose a la secuencia del dominio en nuestro perfil HMM.
 
 - Luego se reportan el score y el E-value.
-
-```
-Parsed for domains:
-Sequence Domain  seq-f seq-t    hmm-f hmm-t      score  E-value
--------- ------- ----- -----    ----- -----      -----  -------
-S13421     3/4     771  1075 ..     1   333 []    34.0    3e-13
-S13421     1/4       1   288 [.     1   333 []    31.9  3.8e-13
-S13421     4/4    1085  1390 ..     1   333 []    29.4    5e-13
-S13421     2/4     303   607 ..     1   333 []    25.0  8.1e-13
-```
 
  La sección siguiente contiene los alineamientos de los dominios que fueron hit en la lista anterior en un formato similar al de BLAST, teniendo como primera secuencia el consenso del *profile* (noten que hay aminoácidos en mayúsculas, estos se encuentran altamente conservados en el profile). 
 
@@ -329,7 +327,7 @@ less globin.swissprot.search
 
       Notarán que la búsqueda directa aumenta considerablemente el tiempo de cómputo necesario para obtener un resultado.
 
-### Modos de alineamiento
+#### Modos de alineamiento
 
 HMMer no utiliza los métodos clásicos de alineamiento (*Smith-Waterman o Needleman-Wunsch*) como el resto de los algoritmos de alineamiento sino que el modo de alinear (local o global) está dado por el modelo que construimos. 
 
@@ -372,7 +370,7 @@ Nos podemos dar cuenta que este hit es al menos sospechoso debido a su score neg
 hmm2pfam -E 0.1 myhmms 7LES_DROME
 ```
 
-### Alineamientos múltiples con HMM
+### Adicional: Alineamientos múltiples con HMM
 
 Otro uso que se les da a los *profiles* es el de asistir a la hora de llevar a cabo alineamientos múltiples de grandes cantidades de secuencias. En general este proceso suele ser lento y los alineamientos resultantes contienen errores que requieren curarse a mano. Utilizando HMMs construidos a partir de un alineamiento de unas pocas secuencias representativas, se pueden alinear grandes cantidades de secuencias relacionadas fácilmente. 
 
