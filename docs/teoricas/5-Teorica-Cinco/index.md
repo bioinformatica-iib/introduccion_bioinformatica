@@ -15,7 +15,7 @@ tags:
 
 * :fontawesome-regular-file-pdf: [Ejercicios - Logo](./files/Ex_Logo.pdf)
 
-* :fontawesome-regular-file-pdf: [Ejercicios - Pseudocounts](./files/Estimationofpseudocounts_2010)
+* :fontawesome-regular-file-pdf: [Ejercicios - Pseudocounts](./files/Estimationofpseudocounts_2010.pdf)
 
 ### Sequence profiles
 
