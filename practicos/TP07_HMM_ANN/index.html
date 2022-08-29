@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://bioinformatica-iib.github.io/2022_introduccion_bioinformatica/practicos/TP07_HMM_ANN/">
       
       <link rel="icon" href="../../img/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.3.9">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.6">
     
     
       
@@ -21,7 +21,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.1d29e8d0.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.4a0965b7.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#tp-7-hidden-markov-models-hmms-y-artificial-neural-networks-anns" class="md-skip">
+        <a href="#tp-7-artificial-neural-networks-anns-y-hidden-markov-models-hmms" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -730,7 +730,7 @@
 
 
 <p><img _="," align="left" alt="Image" src="img/banner.jpg" width="250" /></p>
-<h1 id="tp-7-hidden-markov-models-hmms-y-artificial-neural-networks-anns" markdown="markdown"><strong>TP 7</strong>. Hidden Markov Models (HMMs) y Artificial Neural Networks (ANNs)</h1>
+<h1 id="tp-7-artificial-neural-networks-anns-y-hidden-markov-models-hmms" markdown="markdown"><strong>TP 7</strong>. Artificial Neural Networks (ANNs) y Hidden Markov Models (HMMs)</h1>
 <p><br>
 <br>
 <br></p>
@@ -771,8 +771,7 @@ Luego el archivo <strong>Evaluacion.set</strong> contiene datos independientes, 
 <p class="admonition-title">Atención</p>
 <p>Vayan corriendo las diferentes pruebas en diferentes pestañas o guarden el reporte de salida para poder compararlo cuando sea necesario.  </p>
 </div>
-<h3 id="primera-prueba">Primera prueba</h3>
-<h4 id="comprendiendo-los-resultados-que-indican-el-desempeno-de-la-red"><em>Comprendiendo los resultados que indican el desempeño de la red</em></h4>
+<h3 id="primera-prueba-comprendiendo-los-resultados-que-indican-el-desempeno-de-la-red">Primera prueba: <em>Comprendiendo los resultados que indican el desempeño de la red</em></h3>
 <p>Para nuestro primer modelo vamos a ir a <a href="https://services.healthtech.dtu.dk/service.php?EasyPred-1.0">EasyPred</a> y cargamos los archivos en los cuadros correspondientes:</p>
 <p><img src="./img/train_test_upload.png" alt="easypred" style="max-width:70%"></p>
 <p>Luego bajamos hasta la opción <em>Select method</em> dónde vamos a cambiar de <em>Matrix method</em> a <em>Neural Network</em>.  </p>
@@ -790,21 +789,19 @@ Luego el archivo <strong>Evaluacion.set</strong> contiene datos independientes, 
 <p><img src="./img/log_nn.png" alt="log_nn" style="max-width:70%"></p>
 <ol>
 <li>¿Cuál es el máximo valor de PCC alcanzado sobre el set de prueba? (<em>Maximal test set pearson correlation coefficient sum</em>) </li>
-<li>¿En qué iteración ocurre? ¿Qué información le está dando esto sobre el proceso de entrenamiento del modelo?  </li>
-<li>¿Cuáles son los valores de desempeño del modelo sobre el set de evalución? (PCC y Aroc)</li>
+<li>¿En qué iteración se alcanza ese máximo? ¿Qué información le está dando esto sobre el proceso de entrenamiento del modelo?  </li>
+<li>¿Cuáles son los valores de desempeño del modelo sobre el set de evaluación? (PCC y Aroc)</li>
 <li>¿El PCC obtenido en el punto 3. es mayor o menor al obtenido en el punto 1.? ¿Qué implica este resultado?  </li>
 </ol>
-<h3 id="segunda-prueba">Segunda prueba</h3>
-<h4 id="cambiando-el-set-de-entrenamiento"><em>Cambiando el set de entrenamiento</em></h4>
+<h3 id="segunda-prueba-cambiando-el-set-de-entrenamiento">Segunda prueba: <em>Cambiando el set de entrenamiento</em></h3>
 <p>Mantenga los mismos parámetros que en el paso anterior pero esta vez seleccione <em>Use bottom sequences for training</em>. </p>
 <ol>
 <li>¿Cuál es el máximo valor de PCC alcanzado sobre el set de prueba y en qué iteración ocurre esta vez?</li>
 <li>¿Qué valores de desempeño alcanza el modelo aplicado al set de evaluación?</li>
 <li>¿A qué se debe que no coincidan con lo obtenido en la primera prueba?</li>
 </ol>
-<h3 id="tercera-prueba">Tercera prueba</h3>
-<h4 id="cambiando-la-arquitectura-de-la-ann"><em>Cambiando la arquitectura de la ANN</em></h4>
-<p>Repita los parámetros de la primera prueba excepto por el número de neuronas en la capa intermedia o <em>hidden layer</em>:</p>
+<h3 id="tercera-prueba-cambiando-la-arquitectura-de-la-ann">Tercera prueba: <em>Cambiando la arquitectura de la ANN</em></h3>
+<p>Repita los parámetros de la <strong>primera prueba</strong> excepto por el número de neuronas en la capa intermedia o <em>hidden layer</em>:</p>
 <ul>
 <li><em>Number of hidden units</em>: 1</li>
 </ul>
@@ -818,21 +815,20 @@ Luego el archivo <strong>Evaluacion.set</strong> contiene datos independientes, 
 <li>¿Cómo varía la <em>performance</em> en el set de prueba?  </li>
 <li>¿Qué impacto tienen estos cambios en la <em>performance</em> del set de evaluación?  </li>
 <li>¿Puede elegir un número óptimo de neuronas para la capa oculta?  </li>
-<li>¿Por qué cree que el número de neuronas en la capa oculta tiene tan poco impacto en esta prueba?  </li>
+<li>¿Por qué cree que el número de neuronas en la capa oculta tiene tan poco impacto en esta prueba? Piense en el número de datos de entrada y el número de pesos de la red. </li>
 </ol>
-<h3 id="cuarta-prueba">Cuarta prueba</h3>
-<h4 id="empleando-un-esquema-de-validacion-cruzada"><em>Empleando un esquema de validación cruzada</em></h4>
+<h3 id="cuarta-prueba-empleando-un-esquema-de-validacion-cruzada">Cuarta prueba: <em>Empleando un esquema de validación cruzada</em></h3>
 <p>Como deberían haber notado en las dos primeras pruebas, la partición de los datos que se utilizan en el entrenamiento/prueba influyen significativamente en el desempeño del modelo. </p>
-<p>Como <em>a priori</em> uno no puede establecer cual es la mejor forma de partir los datos en entrenamiento y <em>test</em> se recurre a una estrategia denominada <em>cross-validation</em>. La técnica de validación cruzada consiste en hacer <em>N</em> particiones (por lo general 5) y rotarlas, utilizando N-1 para entrenar y la N-ésima (es decir la que queda afuera) como set de prueba. Esto resulta en N modelos diferentes, cada uno entrenado y probado en datos diferentes. Para realizar predicciones en nuevos sets, como el de evaluación, se realizan predicciones con los N métodos y se promedian sus predicciones.</p>
+<p>Como <em>a priori</em> uno no puede establecer cuál es la mejor forma de partir los datos en entrenamiento y <em>test</em> se recurre a una estrategia denominada <em>cross-validation</em>. La técnica de validación cruzada consiste en hacer <em>N</em> particiones (por lo general 5) y rotarlas, utilizando N-1 para entrenar y la N-ésima (es decir la que queda afuera) como set de prueba. Esto resulta en N modelos diferentes, cada uno entrenado y probado en datos diferentes. Para realizar predicciones en nuevos sets, como el de evaluación, se realizan predicciones con los N métodos y se promedian sus predicciones.</p>
 <p>Para realizar esta prueba vuelvan a los parámetros de la <strong>Primera prueba</strong> pero modifiquen lo siguiente:</p>
 <ul>
-<li><em>Number of partitions for crossvalidated training</em>: 5</li>
+<li><em>Number of partitions for cross-validated training</em>: 5</li>
 </ul>
 <div class="admonition attention">
 <p class="admonition-title">Este paso puede llevar varios minutos. Paciencia.</p>
 </div>
 <ol>
-<li>¿Encuentran diferencias entre los desempeños de los 5 modelos?  </li>
+<li>¿Encuentran diferencias entre los desempeños de los 5 modelos? ¿Es esperable? ¿Por qué?</li>
 <li>Comparen los resultados obtenidos para el set de evaluación con respecto a las pruebas anteriores.</li>
 <li>En este caso se usa el ensamble de los 5 modelos para realizar las predicciones sobre el set de evaluación. ¿Cómo piensa que se obtienen los valores predichos?</li>
 </ol>
@@ -894,7 +890,16 @@ Sequence Description                                    Score    E-value  N
 S13421   S13421 GLOBIN - BRINE SHRIMP                   120.3    6.2e-37   4
 </code></pre></div>
 <p>Noten que después del E-value hay un campo que no se encontraba en los otros algoritmos de búsqueda denominado "N". Este valor representa la cantidad de dominios de nuestro profile que fueron encontrados en el hit.</p>
-<p>Luego encontramos información sobre los dominios de nuestro <em>profile</em> individualmente. Los campos son:</p>
+<p>Luego encontramos información sobre los dominios de nuestro <em>profile</em> individualmente. </p>
+<div class="highlight"><pre><span></span><code>Parsed for domains:
+Sequence Domain  seq-f seq-t    hmm-f hmm-t      score  E-value
+-------- ------- ----- -----    ----- -----      -----  -------
+S13421     3/4     771  1075 ..     1   333 []    34.0    3e-13
+S13421     1/4       1   288 [.     1   333 []    31.9  3.8e-13
+S13421     4/4    1085  1390 ..     1   333 []    29.4    5e-13
+S13421     2/4     303   607 ..     1   333 []    25.0  8.1e-13
+</code></pre></div>
+<p>Los campos son:</p>
 <ul>
 <li>
 <p>el nombre del hit </p>
@@ -929,14 +934,6 @@ S13421   S13421 GLOBIN - BRINE SHRIMP                   120.3    6.2e-37   4
 <p>Luego se reportan el score y el E-value.</p>
 </li>
 </ul>
-<div class="highlight"><pre><span></span><code>Parsed for domains:
-Sequence Domain  seq-f seq-t    hmm-f hmm-t      score  E-value
--------- ------- ----- -----    ----- -----      -----  -------
-S13421     3/4     771  1075 ..     1   333 []    34.0    3e-13
-S13421     1/4       1   288 [.     1   333 []    31.9  3.8e-13
-S13421     4/4    1085  1390 ..     1   333 []    29.4    5e-13
-S13421     2/4     303   607 ..     1   333 []    25.0  8.1e-13
-</code></pre></div>
 <p>La sección siguiente contiene los alineamientos de los dominios que fueron hit en la lista anterior en un formato similar al de BLAST, teniendo como primera secuencia el consenso del <em>profile</em> (noten que hay aminoácidos en mayúsculas, estos se encuentran altamente conservados en el profile). </p>
 <p>Al igual que BLAST en medio de ambas secuencias se escriben los aminoácidos que coinciden o "matchean" y signos más (+) en donde hay mismatches con puntaje positivo en la matriz de sustitución.</p>
 <div class="highlight"><pre><span></span><code>Alignments of top-scoring domains:
@@ -1009,7 +1006,7 @@ less globin.swissprot.search
 <p class="admonition-title">A tener en cuenta:</p>
 <p>Notarán que la búsqueda directa aumenta considerablemente el tiempo de cómputo necesario para obtener un resultado.</p>
 </div>
-<h3 id="modos-de-alineamiento">Modos de alineamiento</h3>
+<h4 id="modos-de-alineamiento">Modos de alineamiento</h4>
 <p>HMMer no utiliza los métodos clásicos de alineamiento (<em>Smith-Waterman o Needleman-Wunsch</em>) como el resto de los algoritmos de alineamiento sino que el modo de alinear (local o global) está dado por el modelo que construimos. </p>
 <p>Por defecto <code>hmm2build</code> lleva a cabo alineamientos que son globales con respecto al HMM y locales con respecto a la secuencia objetivo, permitiendo alinear varios dominios en esa misma secuencia. ¿Qué significa esto? Que cada dominio se intenta alinear <strong>completamente</strong> en alguna porción de la secuencia objetivo. Si queremos recuperar secuencias que contengan alineamientos parciales de dominios podemos agregar a <code>hmm2build</code> la opcion <code>-f</code> .</p>
 <h3 id="bases-de-datos-de-hmm">Bases de datos de HMM</h3>
@@ -1032,7 +1029,7 @@ hmm2build -A myhmms pkinase.sto
 <p>Nos podemos dar cuenta que este hit es al menos sospechoso debido a su score negativo y su E-value cercano a 1. Por defecto el límite de E-value, al igual que BLAST es 10, este umbral es extremadamente permisivo y proclive a devolver ruido. Si queremos ser más quisquillosos podemos utilizar la opción <strong>-E</strong> seguida del umbral deseado. Por ejemplo:</p>
 <div class="highlight"><pre><span></span><code>hmm2pfam -E <span class="m">0</span>.1 myhmms 7LES_DROME
 </code></pre></div>
-<h3 id="alineamientos-multiples-con-hmm">Alineamientos múltiples con HMM</h3>
+<h3 id="adicional-alineamientos-multiples-con-hmm">Adicional: Alineamientos múltiples con HMM</h3>
 <p>Otro uso que se les da a los <em>profiles</em> es el de asistir a la hora de llevar a cabo alineamientos múltiples de grandes cantidades de secuencias. En general este proceso suele ser lento y los alineamientos resultantes contienen errores que requieren curarse a mano. Utilizando HMMs construidos a partir de un alineamiento de unas pocas secuencias representativas, se pueden alinear grandes cantidades de secuencias relacionadas fácilmente. </p>
 <p>Siguiendo con nuestras globinas, tenemos un archivo (<strong>globins630.fa</strong>), que como habrán deducido, contiene 630 secuencias de globinas que vamos a alinear utilizando el comando <code>hmm2align</code>:</p>
 <div class="highlight"><pre><span></span><code>hmm2align -o globins630.ali globin.hmm globins630.fa
@@ -1115,10 +1112,10 @@ hmm2build -A myhmms pkinase.sto
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["search.suggest", "search.highlight", "search.share", "header.autohide", "navigation.tracking", "navigation.tabs", "toc.integrate", "navigation.top"], "search": "../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "B\u00fasqueda", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version.title": "Seleccionar versi\u00f3n"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["search.suggest", "search.highlight", "search.share", "header.autohide", "navigation.tracking", "navigation.tabs", "toc.integrate", "navigation.top"], "search": "../../assets/javascripts/workers/search.85cb4492.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "B\u00fasqueda", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version.title": "Seleccionar versi\u00f3n"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a877e258.min.js"></script>
       
         <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
       
