@@ -4,12 +4,13 @@ tags:
   - teoricas
 ---
 
-## Informatción contenida en alineamientos múltiples
+## Información contenida en alineamientos múltiples
+
  Clase teórica información contenida en alineamientos múltiples
 
  Esta clase incluye ejercicios para resolver (handout).
 
-### Weight matrices, Sequence motifs, information content, and sequence logos
+### Weight matrices, Sequence motifs, Information content, and Sequence logos
 
 * :fontawesome-regular-file-pdf: [Slides](./files/PSSM_SeqProf_2020.pdf)
 
