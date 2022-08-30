@@ -4,7 +4,7 @@ tags:
   - teoricas
 ---
 
-## Informatción contenida en alineamientos múltiples
+## Información contenida en alineamientos múltiples
  Clase teórica información contenida en alineamientos múltiples
 
  Esta clase incluye ejercicios para resolver (handout).
