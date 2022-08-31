@@ -9,10 +9,10 @@
 <br>
 <br>
  
-[:fontawesome-solid-download: Materiales](#){ .md-button .md-button--primary }
+[:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1JMFMy_bIkY4PY1u4wDdQqGkHdTW1SQym/view?usp=sharing){ .md-button .md-button--primary }
 
 <!--
-Este es el botón para decargar materiales, en (#) hay que agregar el link correspondiente
+Este es el botón para descargar materiales, en (#) hay que agregar el link correspondiente
 -->
 
 ### Software a usar
@@ -27,12 +27,12 @@ Este es el botón para decargar materiales, en (#) hay que agregar el link corre
 ### Objetivos
 
 * Familiarizarse en el lenguaje de programación **R**.
-* Ver como los mismos conceptos de programación se transladan de un lenguaje a otro.
+* Ver como los mismos conceptos de programación se trasladan de un lenguaje a otro.
 * Utilizar herramientas de programación para resolver problemas biológicos.
 
 ## **Introducción al Tema**
 
-Es muy normal que en trabajos de biología sea necesario trabajar con datos provenientes de servicios o equipos que no generan *outputs* de formato estándar (separados por tabs, comas, etc). Esto hace que cuando querramos cargar estos *outputs* en cualquier programa de análisis de datos vamos a tener que darles formato manualmente, algo que puede no ser muy complicado cuando se trata de unos pocos archivos o un solo ensayo, pero se vuelve un problema en grandes cantidades.
+Es muy normal que en trabajos de biología sea necesario trabajar con datos provenientes de servicios o equipos que no generan *outputs* de formato estándar (separados por tabs, comas, etc). Esto hace que cuando queramos cargar estos *outputs* en cualquier programa de análisis de datos vamos a tener que darles formato manualmente, algo que puede no ser muy complicado cuando se trata de unos pocos archivos o un solo ensayo, pero se vuelve un problema en grandes cantidades.
 
 En la materia ya vimos varios archivos de salida con patrones propios, por ejemplo los archivos FASTA, donde el marcador `>` es usado para indicar el comienzo del header una secuencia. Diferentes programas van a tener diferentes patrones de salida, pero suelen haber ciertos caracteres bastante usados como `#`, `!`, `*`, `|`, etc.
 
@@ -42,7 +42,7 @@ En este trabajo práctico vamos a usar el lenguaje de programación **R** para l
 
 ### Objetivo
 
-En el TP de hoy vamos a querer encontrar un compuesto que funcione de inhibidor para una enzima de interés, a la que vamos a denomiar **enzima Z**. No solo nos va a interesar que compuestos funcionan como inhibidores para ella, sino que también queremos calcular el **IC 50** de cada uno de dichos compuestos (que en nuestro caso sería la concentración a la cual el inhibidor produce una reacción un 50% más lenta que sin inhibidor).
+En el TP de hoy vamos a querer encontrar un compuesto que funcione de inhibidor para una enzima de interés, a la que vamos a denominar **enzima Z**. No solo nos va a interesar que compuestos funcionan como inhibidores para ella, sino que también queremos calcular el **IC 50** de cada uno de dichos compuestos (que en nuestro caso sería la concentración a la cual el inhibidor produce una reacción un 50% más lenta que sin inhibidor).
 
 Por suerte nuestra enzima de interés tiene como producto un compuesto fluorescente. Sabiendo esto podemos estimar la velocidad de la reacción calculando una regresión lineal de la abundancia de dicho producto a lo largo del tiempo (esto lo vamos a explicar un poco más detalladamente cuando lo hagamos). Si un compuesto funciona como inhibidor en algunas de las concentraciones evaluadas, la velocidad de la reacción debería caer.
 
@@ -50,7 +50,7 @@ Por suerte nuestra enzima de interés tiene como producto un compuesto fluoresce
 
 Una forma de analizar varios compuestos y concentraciones a la vez es usar usar el el equipo **FilterMax F5**, el cual permite hacer mediciones puntuales de absorbancia y fluorescencia (entre otros) en placas de wells de 96, 384 y 1536. Incluso permite hacer mediciones a distintos tiempos (por ejemplo, se le puede programar para hacer mediciones cada ciertos intervalos temporales).
 
-En nuestro ejemplo (datos reales, nombres ficticios), vamos a utilizar el **FilterMax F5** para evaluar varias placas de 384 wells y vamos a hacer 4 evaluaciones por placa, una cada 5 minutos. Cada columna de la placa corresponde compuesto distinto (22 compuestos, 1 por columna) y cada fila tiene concentraciónes diferentes de cada compuesto (16 concentraciones, diluciones seriadas). Un esquema de este experimento se puede ver en [esta planilla](https://docs.google.com/spreadsheets/d/1ey-c3nuc2zd4Cqj6B_uYcq1gAx0FPybLJUDCbV56my4/edit?usp=sharing).
+En nuestro ejemplo (datos reales, nombres ficticios), vamos a utilizar el **FilterMax F5** para evaluar varias placas de 384 wells y vamos a hacer 4 evaluaciones por placa, una cada 5 minutos. Cada columna de la placa corresponde compuesto distinto (22 compuestos, 1 por columna) y cada fila tiene concentraciones diferentes de cada compuesto (16 concentraciones, diluciones seriadas). Un esquema de este experimento se puede ver en [esta planilla](https://docs.google.com/spreadsheets/d/1ey-c3nuc2zd4Cqj6B_uYcq1gAx0FPybLJUDCbV56my4/edit?usp=sharing).
 
 ## **Paso 1 - Familiarizarnos con el Archivo** { markdown data-toc-label='Paso 1 - Familiarizarnos' }
 
@@ -62,9 +62,9 @@ Abran el archivo **00_datos_filtermax.txt** con Leafpad, vean su estructura y re
 
 **2)** Considerando que vamos a querer leerlo como una tabla en **R** ¿Les parece que hay filas que están de más?
 
-**3)** Mirando el archivo y la planilla del experimento, ¿Que posiciones contienen las diferentes diluciones del compuesto "Umbrella2"? ¿Cuantos datos hay para cada dilución del compuesto "Umbrella2"? ¿Por qué?
+**3)** Mirando el archivo y la planilla del experimento, ¿Que posiciones contienen las diferentes diluciones del compuesto "Umbrella2"? ¿Cuántos datos hay para cada dilución del compuesto "Umbrella2"? ¿Por qué?
 
-**4)** Si miran los datos van a ver que se separan con tabs, pero que al final de cada placa hay varios tabs uno despues del otro sin ningún dato en el medio. ¿Hay algo en la planilla del experimento que explique por qué pasa esto?
+**4)** Si miran los datos van a ver que se separan con tabs, pero que al final de cada placa hay varios tabs uno después del otro sin ningún dato en el medio. ¿Hay algo en la planilla del experimento que explique por qué pasa esto?
 
 ## **Paso 2 - Limpiar y Parsear el Archivo** { markdown data-toc-label='Paso 2 - Limpiar y Parsear' }
 
@@ -99,7 +99,7 @@ En este momento tenemos una tabla donde cada fila es una señal independiente, p
 
 * No tengo información de las diluciones en la tabla, solo de las letras de las filas
 
-* Más adelante vamos a querer calcular la *velocidad de reacción*, es decir, como varia la **signal** segun el **time**. Sin embargo, aca **time** es un *string*, por lo que necesito transformarlo a número
+* Más adelante vamos a querer calcular la *velocidad de reacción*, es decir, cómo varía la **signal** según el **time**. Sin embargo, aca **time** es un *string*, por lo que necesito transformarlo a número
 
 Estas son las cosas que queremos arreglar. Por suerte tenemos también otras dos tablas, una indicando que compuesto hay en cada columna (**00_datos_compuestos.tsv**) y otra indicando que dilución hay en cada fila (**00_datos_concentraciones.tsv**).
 
@@ -141,7 +141,7 @@ dt <- fread("ARCHIVO_DT", header = T, sep = "\t", dec = ",")
 
 Algo de esto vimos en el TP anterior, pero es posible filtrar filas de un *Data Table* según el valor de las diferentes columnas en dicha fila.
 
-Vamos a volver a usar el data set **iris** que esta siempre cargado en memoria; sin embargo, **iris** es un *Data Frame*, por lo que lo vamos a tener que convertir en *Data Table*.
+Vamos a volver a usar el data set **iris** que está siempre cargado en memoria; sin embargo, **iris** es un *Data Frame*, por lo que lo vamos a tener que convertir en *Data Table*.
 
 ```R
 dt_iris <- as.data.table(iris)
@@ -183,7 +183,7 @@ dt_toda_la_info <- merge(dt_info_de_esencialidad,
 print(dt_toda_la_info)
 ```
 
-Como ven, la función `merge` toma 2 *Data Tables* y los une por la columna definida en el parametro `by`. Una cosa interesante es que no es necesario que ambos *Data Frames* tengan el mismo tamaño.
+Como ven, la función `merge` toma 2 *Data Tables* y los une por la columna definida en el parámetro `by`. Una cosa interesante es que no es necesario que ambos *Data Frames* tengan el mismo tamaño.
 
 **3)** Corran el siguiente ejemplo y vean lo que devuelve.
 
@@ -230,7 +230,7 @@ print(dt_toda_la_info)
 
 El comando `rbindlist` concatena dos *Data Tables*, donde el segundo puede ser una sola fila o algo más grande. Es importante que ambos *Data Tables* tengan la misma estructura para que el comando no devuelva errores.
 
-#### Crear *Data Table* vacio
+#### Crear *Data Table* vacío
 
 Ahora que sabemos agregar filas a un *Data Table*, puede ser entonces útil tener un *Data Table* vacío al que le voy a agregando filas que voy calculando (por ejemplo en un ciclo).
 
@@ -262,7 +262,7 @@ Como mencionamos antes, el `merge` nos va a desordenar las columnas de la tabla.
 ```R
 dt_iris <- as.data.table(iris)
 
-#Los tres siguientes bloques hacen lo mismo, quedandonos solo con las 
+#Los tres siguientes bloques hacen lo mismo, quedándonos solo con las 
 #columnas Species, Sepal.Length y Sepal.Width
 
 dt_iris[, .(Species, Sepal.Length, Sepal.Width)]
@@ -273,7 +273,7 @@ columnas_a_quedarnos <- c("Species", "Sepal.Length", "Sepal.Width")
 dt_iris[, columnas_a_quedarnos, with = F]
 ```
 
-Esto es útil cuando querermos quedarnos con pocas columnas, pero ¿qué pasa cuando tenemos muchas y solo queremos sacar algunas?. Ahi podemos hacer:
+Esto es útil cuando queremos quedarnos con pocas columnas, pero ¿qué pasa cuando tenemos muchas y solo queremos sacar algunas?. Ahí podemos hacer:
 
 ```R
 dt_iris <- as.data.table(iris)
@@ -309,11 +309,11 @@ Ese `[[1]]` en el output anterior nos está indicando que `strsplit` nos está d
 
 **7)** Vean que pasa cuando usan `split = ""`.
 
-**8)** Pásenle ahora a `strsplit` el siguiente vector de strings: `frases <- c("Aquí me pongo a cantar", "al compás de la vigüela")`. Sabiendo que queremos *splitear* las diferentes palabras, ¿cuál sería el valor de `split` en este caso? ¿Cuantos elementos tiene la lista que devuelve `strsplit`? ¿Por qué? ¿Cual es la tercera palabra de la segunda frase? (imprímanla por pantalla usando `print`)
+**8)** Pasenle ahora a `strsplit` el siguiente vector de strings: `frases <- c("Aquí me pongo a cantar", "al compás de la vigüela")`. Sabiendo que queremos *splitear* las diferentes palabras, ¿cuál sería el valor de `split` en este caso? ¿Cuántos elementos tiene la lista que devuelve `strsplit`? ¿Por qué? ¿Cual es la tercera palabra de la segunda frase? (imprímanla por pantalla usando `print`)
 
 #### Eliminar elementos repetidos en vectores { markdown data-toc-label='Elementos repetidos' }
 
-En los *Data Tables* es común tener columnas con categorías, por ejemplo la columna **Species** en la tabla **iris**. Es normal al momento de programar no saber previamente cuales van a ser esas categorías (especies en este caso), por lo que muchas veces se extraen de la columna misma. Una forma de hacer esto es usar la función `unique()`, la cual toma un vector y saca los elementos repetidos, dejando uno de cada uno.
+En los *Data Tables* es común tener columnas con categorías, por ejemplo la columna **Species** en la tabla **iris**. Es normal al momento de programar no saber previamente cuáles van a ser esas categorías (especies en este caso), por lo que muchas veces se extraen de la columna misma. Una forma de hacer esto es usar la función `unique()`, la cual toma un vector y saca los elementos repetidos, dejando uno de cada uno.
 
 **9)** Corran el siguiente ejemplo y vean lo que devuelve.
 
@@ -326,11 +326,11 @@ print(vector_especies)
 print(vector_especies_unicas)
 ```
 
-La columna `iris$Species` es tecnicamente un *factor*, pero estos son simplemente vectores con propiedades extras. La función `unique()` va a funcionar igual de pasarle un vector de cáracteres; de hecho, esta función también puede remover filas repetidas de un *Data Table*.
+La columna `iris$Species` es tecnicamente un *factor*, pero estos son simplemente vectores con propiedades extras. La función `unique()` va a funcionar igual de pasarle un vector de caracteres; de hecho, esta función también puede remover filas repetidas de un *Data Table*.
 
 ### Paso 3 - Ejercicio
 
-**10)** Creen un nuevo script de **R**, copien el siguiente código y guardenló en su carpeta de trabajo. Vayan avanzando por el *script* y cambien las secciones que dicen `@@EDITAR@@` por lo que corresponda (esto puede ser un valor, una variable, una operaćión matemática, una función o incluso más de una línea de código).
+**10)** Creen un nuevo script de **R**, copien el siguiente código y guardenlo en su carpeta de trabajo. Vayan avanzando por el *script* y cambien las secciones que dicen `@@EDITAR@@` por lo que corresponda (esto puede ser un valor, una variable, una operación matemática, una función o incluso más de una línea de código).
 
 !!! warning "Working Directory"
 
@@ -338,7 +338,7 @@ La columna `iris$Species` es tecnicamente un *factor*, pero estos son simplement
 
 !!! tip "Ñ y acentos"
 
-    Van a ver que en los códigos tratamos de no usar la letra **Ñ** o acentos. Esto es así ya que cuando uno comparte código entre varias personas suele pasar que algunas de esos caracteres se "rompen" y se ven feo (por ejemplo un texto que era **diseño_compuestos** se veia como **diseÃ±o_compuestos** en otra PC).
+    Van a ver que en los códigos tratamos de no usar la letra **Ñ** o acentos. Esto es así ya que cuando uno comparte código entre varias personas suele pasar que algunas de esos caracteres se "rompen" y se ven feo (por ejemplo un texto que era **diseño_compuestos** se veía como **diseÃ±o_compuestos** en otra PC).
 
     Si bien es posible poner estándares de codificación de texto en grupos, la realidad es que solemos programar en inglés por lo que el problema se evita solo.
 
@@ -350,7 +350,7 @@ library(data.table)
 #Uso fread para cargar los datos parseados teniendo en cuenta lo que vimos en el archivo en el *Paso 2*
 dt_parsed_data <- fread(@@EDITAR@@)
 
-#Primero que nada se que las columnas de los wells 23 y 24 estan vacias, asi que las saco las filas
+#Primero que nada se que las columnas de los wells 23 y 24 estan vacias, asi que saco las filas
 #donde *columna* sea 23 o 24 (o sea, me quedo con las filas donde *columna* es 1 a 22)
 dt_parsed_data <- dt_parsed_data[@@EDITAR@@]
 
@@ -367,7 +367,7 @@ dt_parsed_data <- merge(dt_parsed_data,
 dt_datos_concentraciones <- fread(@@EDITAR@@)
 dt_parsed_data <- merge(@@EDITAR@@)
 
-#Para cada combinacion de compuesto y dilucion quiero saber la velocidad de la reaccion, es decir, 
+#Para cada combinacion de compuesto y concentracion quiero saber la velocidad de la reaccion, es decir, 
 #la pendiente de la recta que sale de hacer una regresion lineal por los 4 tiempos ensayados
 
 #El primer problema que tengo es que la variable time es un *string*, por lo que no puedo usarla 
@@ -407,7 +407,7 @@ for (time_for in unique_times) {
                                           dt_new_row_times_in_seconds))
 }
 
-#Agrego la informacion de lo segundos totales (guardada en dt_times_in_seconds) a mi tabla original
+#Agrego la informacion de los segundos totales (guardada en dt_times_in_seconds) a mi tabla original
 dt_parsed_data <- @@EDITAR@@
 
 #Ahora van a ver que las columnas de la tabla parecen estar mezcladas, lo que se debe a los merge
@@ -530,7 +530,7 @@ pendiente <- regresion_lineal$coefficients[2]
 
 !!! question "¿Se ajustan mis datos a una recta?"
 
-    Si bien no lo vamos a usar en este TP, es normal al momento de hacer una regresión querer saber que tan bien se ajustan mis datos a la fórmula que usé. Existen varios estadísticos para análizar esto, pero uno muy usado para regresiones lineales es el **R cuadrado**, que no tiene nada que ver con el lenguaje de programación y es un estadístico que va entre 0 y 1 y cuanto más cerca de 1 es mejor es el ajuste lineal (simplificando infinitamente el tema).
+    Si bien no lo vamos a usar en este TP, es normal al momento de hacer una regresión querer saber que tan bien se ajustan mis datos a la fórmula que usé. Existen varios estadísticos para analizar esto, pero uno muy usado para regresiones lineales es el **R cuadrado**, que no tiene nada que ver con el lenguaje de programación y es un estadístico que va entre 0 y 1 y cuanto más cerca de 1 es mejor es el ajuste lineal (simplificando infinitamente el tema).
 
     En el ejemplo anterior podemos conseguir el **R cuadrado** haciendo:
 
@@ -540,7 +540,7 @@ pendiente <- regresion_lineal$coefficients[2]
 
 ### Paso 4 - Ejercicio
 
-**2)** Creen un nuevo script de **R**, copien el siguiente código y guardenló en su carpeta de trabajo. Vayan avanzando por el *script* y cambien las secciones que dicen `@@EDITAR@@` por lo que corresponda (esto puede ser un valor, una variable, una operaćión matemática, una función o incluso más de una línea de código).
+**2)** Creen un nuevo script de **R**, copien el siguiente código y guardenlo en su carpeta de trabajo. Vayan avanzando por el *script* y cambien las secciones que dicen `@@EDITAR@@` por lo que corresponda (esto puede ser un valor, una variable, una operación matemática, una función o incluso más de una línea de código).
 
 ```R
 library(data.table)
@@ -548,8 +548,8 @@ library(data.table)
 #Leo los datos ya parseados y formateados
 dt_parsed_formatted_data <- fread(@@EDITAR@@)
 
-#Para cada combinacion de compuesto y dilucion quiero saber la velocidad de la reaccion, es decir, la pendiente de la recta
-#que sale de hacer una regresion lineal por los 4 tiempos ensayados
+#Para cada combinacion de compuesto y concentracion quiero saber la velocidad de la reaccion, es decir, 
+#la pendiente de la recta que sale de hacer una regresion lineal por los 4 tiempos ensayados
 
 #Creo la tabla vacia donde voy a guardar estos datos
 dt_velocidades_de_reaccion <- data.table(compuesto = character(),
@@ -612,9 +612,9 @@ Si todo salió bien, el archivo **04_velocidades_de_reaccion.tsv** debería ser 
 
 ## **Paso 5 - Calcular y plotear IC 50** { markdown data-toc-label='Paso 5 - Calcular IC 50' }
 
-Primero que nada tenemos que definir algunas palabras:
+Primero que nada tenemos que definir un par de conceptos:
 
-Vamos a llamar ***velocidad de reacción base*** a la *velocidad de reacción* de la enzima cuando no tiene ningún inhibidor, o lo que es lo mismo, cuando la concentración del inhibidor es 0. En nuestro caso tenemos 22 wells donde la concentracíón del inhibidor es 0, por lo que vamos a calcular a la *velocidad de reacción base* como el promedio de las velocidades en esos 22 wells.
+Vamos a llamar ***velocidad de reacción base*** a la *velocidad de reacción* de la enzima cuando no tiene ningún inhibidor, o lo que es lo mismo, cuando la concentración del inhibidor es 0. En nuestro caso tenemos 22 wells donde la concentración del inhibidor es 0, por lo que vamos a calcular a la *velocidad de reacción base* como el promedio de las velocidades en esos 22 wells.
 
 Vamos a llamar ***actividad*** a la relación entre la *velocidad de reacción* observada al usar una concentración dada de un compuesto, y la *velocidad de reacción base*. Es decir:
 
@@ -633,7 +633,7 @@ Estás tres propiedades hacen que la curva dosis-respuesta tenga una forma sigmo
 ![CurvaDosisRespuesta](img/dose-response-curve-ic50.svg)
 </figure>
 
-Donde en nuestro caso la respuesta va a ser la *actividad* y la dosis la concentración de nuestro compuesto. Dependiendo de las concentraciones elegidas, es normal ver que el eje X de este plot esté en escala logarítmica.
+Donde en nuestro caso la respuesta va a ser la *actividad* y la dosis va a ser la concentración de nuestro compuesto. Dependiendo de las concentraciones elegidas, es normal ver que el eje X de este plot esté en escala logarítmica.
 
 En el plot está marcado el **IC 50**, el cual es la concentración del compuesto a la cual la *actividad* de la enzima cae al 50% (es decir, cuando la *velocidad de reacción* es la mitad que la *velocidad de reacción base*. El **IC 50** da información de donde está el rango de concentraciones de dicho compuesto que hacen variar la *actividad* enzimática, entre otras cosas.
 
@@ -653,7 +653,7 @@ Y recuerden que cuando lo quieran usar tienen que cargarlo usando `library(nplr)
 
 #### Crear y modificar columnas
 
-Una cosa más que tenemos que aprender con los *Data Tables* es como agregar una columna nueva, o como modificar una columna ya existente. Esto se hace simplemente asignandole el nuevo valor a la columna como si fuera una variable o vector, solo que es importante que el nuevo valor sea ó un solo elemento ó un vector con longitud igual al número de filas de la tabla.
+Una cosa más que tenemos que aprender con los *Data Tables* es como agregar una columna nueva, o como modificar una columna ya existente. Esto se hace simplemente asignándole el nuevo valor a la columna como si fuera una variable o vector, solo que es importante que el nuevo valor sea o un solo elemento o un vector con longitud igual al número de filas de la tabla.
 
 **2)** Corran el siguiente ejemplo y vean lo que devuelve.
 
@@ -679,7 +679,7 @@ print(dt_iris)
 
 #### Crear plots en PDFs
 
-Nosotros sabemos crear plots en RStudio, pero hay veces donde uno tiene que hacer decenas (o miles) de plots y quiere guardarlos todos en un solo proceso. **R** tiene varias funciones que nos permiten guardar los plots como **.jpg**, **.png**, **.svg**, etc. Aca nos vamos a enfocar en la función que nos permite guardarlos como **.pdf**.
+Nosotros sabemos crear plots en RStudio, pero hay veces donde uno tiene que hacer decenas (o miles) de plots y quiere guardarlos todos en un solo proceso. **R** tiene varias funciones que nos permiten guardar los plots como **.jpg**, **.png**, **.svg**, etc. Acá nos vamos a enfocar en la función que nos permite guardarlos como **.pdf**.
 
 **3)** Corran el siguiente ejemplo y vean lo que devuelve (va a crear un archivo en su *Working Directory*).
 
@@ -702,7 +702,7 @@ Los parámetros `width` y `height` indican el tamaño en pulgadas de cada págin
 
 !!! tip "Resetear los gráficos"
 
-    A veces pasa que un pdf queda abierto más de lo que debería y no se cierra bien, o que no se crea como debería. En estos casos pueden usar la función `graphics.off()` antes y después del código anterior (especialmnte antes) para limpiar cualquier cosa abierta. Solo tengan en cuenta que esto va a vaciarles los plots que tengan guardados en el panel Plots de RStudio.
+    A veces pasa que un pdf queda abierto más de lo que debería y no se cierra bien, o que no se crea como debería. En estos casos pueden usar la función `graphics.off()` antes y después del código anterior (especialmente antes) para limpiar cualquier cosa abierta. Solo tengan en cuenta que esto va a vaciarles los plots que tengan guardados en el panel Plots de RStudio.
 
 #### La verdad de la función `plot`
 
@@ -748,7 +748,7 @@ print(numero_redondeado)
 
 ### Paso 5 - Ejercicio
 
-**5)** Creen un nuevo script de **R**, copien el siguiente código y guardenló en su carpeta de trabajo. Vayan avanzando por el *script* y cambien las secciones que dicen `@@EDITAR@@` por lo que corresponda (esto puede ser un valor, una variable, una operaćión matemática, una función o incluso más de una línea de código).
+**5)** Creen un nuevo script de **R**, copien el siguiente código y guardenlo en su carpeta de trabajo. Vayan avanzando por el *script* y cambien las secciones que dicen `@@EDITAR@@` por lo que corresponda (esto puede ser un valor, una variable, una operación matemática, una función o incluso más de una línea de código).
 
 ```R
 library(data.table)
@@ -799,14 +799,6 @@ for (compuesto_for in unique_compuestos) {
     regresion_sigmoidea <- nplr(x = sub_dt_velocidades_de_reaccion$concentracion, 
                                 y = sub_dt_velocidades_de_reaccion$actividad)
     
-    #Ploteo la regresion
-    titulo_plot <- @@EDITAR@@
-    plot(regresion_sigmoidea,
-         main = titulo_plot,
-         xlab = "Log10 Concentracion",
-         ylab = "Actividad",
-         showGOF = F)
-    
     #Esto es una funcion de nplr que calcula el X correspondiente a Y = 0.5, es decir, el IC 50
     estimacion_IC50 <- getEstimates(regresion_sigmoidea, targets = 0.5)
     
@@ -830,6 +822,14 @@ for (compuesto_for in unique_compuestos) {
     
     #Agrego la nueva fila recien creada a mi tabla en donde guardo todas las velocidades
     dt_IC50 <- @@EDITAR@@
+
+    #Ploteo la regresion (les recomiendo poner el numero de compuesto y el IC 50 en el titulo)
+    titulo_plot <- @@EDITAR@@
+    plot(regresion_sigmoidea,
+         main = titulo_plot,
+         xlab = "Log10 Concentracion",
+         ylab = "Actividad",
+         showGOF = F)
 }
 
 #Cierro el pdf
@@ -858,11 +858,11 @@ Si todo salió bien, el archivo **05_IC50_data.tsv** debería ser una tabla del 
 
 ??? info "Detrás de escenas del armado de este TP"
 
-    Al momento de hacer este TP tuvimos que analizar nosotros los mismos datos que ahora estan utilizando ustedes y no teníamos mucha experiencia con `nplr`.
+    Al momento de hacer este TP tuvimos que analizar nosotros los mismos datos que ahora están utilizando ustedes y no teníamos mucha experiencia con `nplr`.
 
     En las primeras versiones de este TP no estaba la condición `if (estimacion_IC50$y == 0.5)`, pero mirando los datos de la tabla vs los datos del plot nos dimos cuenta que algo no cerraba. Por ejemplo, el **IC 50** en el "Umbrella22" daba 0.6851, pero miren el plot, no tenía sentido eso.
 
-    Fuimos al *for* y reemplazamos la primera línea comentada por `# compuesto_for <- unique_compuestos[22]`, seleccionamos solo la última parte (sin el `#`) y la corrimos con ++ctrl+enter++, lo que en este caso hizo que `compuesto_for` sea "Umbrella22". Ahi fuimos paso a paso por el *for* viendo que devolvía cada función.
+    Fuimos al *for* y reemplazamos la primera línea comentada por `# compuesto_for <- unique_compuestos[22]`, seleccionamos solo la última parte (sin el `#`) y la corrimos con ++ctrl+enter++, lo que en este caso hizo que `compuesto_for` sea "Umbrella22". Ahí fuimos paso a paso por el *for* viendo que devolvía cada función.
 
     Al ejecutar `estimacion_IC50 <- getEstimates(regresion_sigmoidea, targets = 0.5)` el programa nos tiró el siguiente Warning:
 
@@ -871,11 +871,11 @@ Si todo salió bien, el archivo **05_IC50_data.tsv** debería ser una tabla del 
     These values have been replaced by the maximal possible value the model can estimate.
     ```
 
-    Miramos entonces adentro de la variable `estimacion_IC50` y vimos que `estimacion_IC50$y` era 0.004, lo que significaba que en esta iteración no estabamos calculando el **IC 50**, sino el **IC 0.4**, que no es lo que queríamos.
+    Miramos entonces adentro de la variable `estimacion_IC50` y vimos que `estimacion_IC50$y` era 0.004, lo que significaba que en esta iteración no estábamos calculando el **IC 50**, sino el **IC 0.4**, que no es lo que queríamos.
 
-    A partir de esto pusimos el `if` y le asignamos **NA** a **IC50** cuando el `y` no era 0.5.
+    A partir de esto pusimos el `if` y le asignamos **NA** a **IC 50** cuando el `y` no era 0.5.
 
-    Lo comentamos más que nada para mostrar que el análisis de datos es bastante prueba y error y que es importante pensar si lo que estan viendo tiene sentido.
+    Lo comentamos más que nada para mostrar que el análisis de datos es bastante prueba y error y que es importante pensar si lo que están viendo tiene sentido.
 
     Bienvenidos a la Bioinformática :fontawesome-regular-face-smile:
 
@@ -917,9 +917,9 @@ La función `writeLines()` también se puede usar de una forma similar a `print`
 
 #### Extraer nombres columnas
 
-Hay varias razones por lo cual es util extraer un vector con el nombre de las columnas de una tabla, pero hoy lo vamos a hacer para extraer información de dichos nombres.
+Hay varias razones por lo cual es útil extraer un vector con el nombre de las columnas de una tabla, pero hoy lo vamos a hacer para extraer información de dichos nombres.
 
-La función `colnames()` nos devuelve un vector con el nombre de las columnas de una tabla en el ordén en el que aparecen en dicha tabla. Por ej:
+La función `colnames()` nos devuelve un vector con el nombre de las columnas de una tabla en el orden en el que aparecen en dicha tabla. Por ej:
 
 ```R
 columnas_iris <- colnames(iris)
@@ -988,7 +988,7 @@ Donde `vector_booleanos1` es un vector de *booleanos* declarado a mano y `vector
 **7)** Dados los siguientes dos vectores y usando lo que acaban de aprender, impriman por pantalla un vector que contenga los nombres de las personas con mas de 20 años.
 
 ```R
-# La edad en la posición 1 corresonde al nombre en la posición 1 y así
+# La edad en la posición 1 corresponde al nombre en la posición 1 y así
 vector_edad <- c(25, 14, 5, 78, 4, 103, 19)
 vector_nombres <- c("José", "Laura", "Pedro", "María", "Esteban", "Ricardo", "Clara")
 ```
@@ -1022,7 +1022,7 @@ clean_data <- @@EDITAR@@
 clean_data <- clean_data[, @@EDITAR@@]
 
 #Los numeros (columnas de la placa well) son los compuestos
-#Las letras (filas de la placa well) son las diferentes diluciones
+#Las letras (filas de la placa well) son las diferentes concentraciones
 #Queremos poner los mismos datos en una tabla donde nos sea mas facil filtrar un dato específico
 #Creo la tabla vacia donde voy a guardar estos datos
 dt_parsed_data <- data.table(time = @@EDITAR@@,
@@ -1062,7 +1062,7 @@ for (well_name_for in wells_names) {
     #Por otro lado, time, temperature y signal van a ser vectores de 4 valores (son las columnas de clean_data)
     #La columna Temperature puede ser que se escriba un poco rara por problemas de caracteres
     dt_new_rows_in_parsed_data <- data.table(time = clean_data$Time,
-                                            temperature = clean_data$`Temperature(Â¡C)`,
+                                            temperature = clean_data$`Temperature( ¡C)`,
                                             fila = fila_for,
                                             columna = columna_for,
                                             signal = @@EDITAR@@)
@@ -1093,4 +1093,3 @@ Pueden comparar **02_datos_filtermax_parseados.tsv** con **02_datos_filtermax_pa
 
 ### :material-console-line: Consola de R
 * Comando `help()`
-

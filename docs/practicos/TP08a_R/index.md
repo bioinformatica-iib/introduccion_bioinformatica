@@ -41,11 +41,11 @@ En este trabajo práctico vamos a aprender a usar el lenguaje de programación *
 
 ## **Historia de R**
 
-* En 1976 se crea **S**, un lenguaje de programación diseñado para análisis estadísticos. **S** fue creado en Bell Labs, que es el mismo lugar mismo lugar donde se creo **Unix** (pero por otras personas)
+* En 1976 se crea **S**, un lenguaje de programación diseñado para análisis estadísticos. **S** fue creado en Bell Labs, que es el mismo lugar mismo lugar donde se creo **Unix** (pero por otras personas).
 
-* En 1991, Ross Ihaka (estadístico) y Robert Gentleman (estadístico y bioinformático) empiezan a trabajar en una versión gratis y de código abierto de **S**. Debido a sus nombres le ponen **R** a dicho lenguaje
+* En 1991, Ross Ihaka (estadístico) y Robert Gentleman (estadístico y bioinformático) empiezan a trabajar en una versión gratis y de código abierto de **S**. Debido a sus nombres le ponen **R** a dicho lenguaje.
 
-* La primera versión oficial de **R** fue publicada en 1995 bajo una licencia de código abierto *GNU General Public License*. Esta licencia fue creada originalmente para el desarrollo de **GNU** y **Linux**, pero hoy en día es muy común al momento de distribuir programas gratis o de código abierto
+* La primera versión oficial de **R** fue publicada en 1995 bajo una licencia de código abierto *GNU General Public License*. Esta licencia fue creada originalmente para el desarrollo de **GNU** y **Linux**, pero hoy en día es muy común al momento de distribuir programas gratis o de código abierto.
 
 * En 1997 se crea **CRAN** (*Comprehensive R Archive Network*), un repositorio oficial para **R** así como los paquetes creados por usuarios agregaban nuevas funcionalidades a **R**. Originalmente había solo 12 paquetes, pero a principios del 2022 ya existían más de 18.500 diferentes paquetes de **R** en **CRAN**.
 
@@ -545,7 +545,7 @@ El **AND** y el **OR** son operaciones entre dos booleanos, mientras que **NOT**
     | **TRUE**{ .green_text } | **FALSE**{ .red_text } |
     | **FALSE**{ .red_text } | **TRUE**{ .green_text } |
 
-Las variables booleanas se pueden usar en los directamente en las condiciones de los *ifs*. Si bien se pueden comparar contra **TRUE** y **FALSE**, de poner solo la variable en la condición del *if*, es equivalente a preguntar si esa variable es **TRUE**. Vean las siguientes tres pestañas para entenderlo mejor:
+Las variables booleanas se pueden usar en los directamente en las condiciones de los *ifs*. Si bien se pueden comparar contra **TRUE**{ .green_text } y **FALSE**{ .red_text }, de poner solo la variable en la condición del *if*, es equivalente a preguntar si esa variable es **TRUE**{ .green_text }. Vean las siguientes tres pestañas para entenderlo mejor:
 
 === "Código"
 
@@ -744,26 +744,6 @@ El objetivo de este ejercicio es hacer un script de **R** que:
 
     Aca van a necesitar usar diferentes estructuras *ifs* adentro del *for* teniendo en cuenta que hay varias condiciones que se pueden cumplir al mismo tiempo.
 
-<!--
-resultado <- 0
-
-for (i in c(1:50)) {
-    if ((i < 5) | (i > 47)) {
-        resultado <- resultado - i
-    }
-    if ((i > 20) & (i < 30)) {
-        resultado <- resultado + i
-    }
-    if (i <= 25) {
-        resultado <- resultado + 1
-    } else {
-        resultado <- resultado - 1
-    }
-}
-
-print(resultado)
--->
-
 ## **R: Tablas**
 
 ### Data Frames
@@ -780,11 +760,11 @@ df <- data.frame(gen = genes,
                  expresion = expresiones)
 ```
 
-Aca estamos creando una variable llamada `df` que contiene 3 columnas, **gen**, **esencial** y **expresion**, cada una conteniendo los valores de los vectores que declaramos previamente. Noten que los tres vectores tienen la misma cantidad de elementos.
+Aca estamos creando una variable llamada `df` que contiene 3 columnas, **gen**, **esencial** y **expresion**, cada una conteniendo los valores de los vectores que declaramos previamente. Noten que los tres vectores tienen la misma cantidad de elementos. El primer elemento de cada vector corresponde a los valores de las columnas para la primera fila de la tabla, y así.
 
 !!! tip "Tip"
 
-    Una cosa que les puede llamar la atención es que pusimos los diferentes parámetros de la función `data.frame` en tres líneas diferentes. Para **R** es equivalente poner todo en la misma línea o como lo hicimos en el ejemplo anterior, que ayuda a leer más fácil cada uno de los parámetros.
+    Una cosa que les puede llamar la atención es que pusimos los diferentes parámetros de la función `data.frame` en tres líneas diferentes. Para **R** es equivalente poner todo en la misma línea o como lo hicimos en el ejemplo anterior, lo que ayuda a leer más fácil cada uno de los parámetros. Sin embargo, es importante notar que los saltos de línea tienen que ir inmediatamente después de una coma.
 
 Podemos ver los contenidos de la tabla usando el comando:
 
@@ -804,7 +784,7 @@ Si bien los *Data Frames* tienen bastantes funcionalidades, existe un tipo de va
 
 El problema es que las variables *Data Tables* no vienen por defecto con **R**, sino que necesitamos usar un paquete externo llamado **data.table**. Este paquete de **R** ya está preinstalado en sus máquinas virtuales, pero pueden ver como se instala de 0 en la sección **RStudio** al principio de esta guia.
 
-Por más que esté instalado el paquete, es necesario llamarlo al principio de cada script donde lo usemos, es decir:
+Por más que esté instalado el paquete, es necesario cargarlo cada vez que abramos **R**. Es común cargar al principio de cada *script* todos los paquetes que uno va a usar (no hay problemas al intentar cargar un paquete ya cargado):
 
 ```R
 library(data.table) # Esto carga el paquete data.table para poder usar el tipo de variable Data Tables
@@ -958,6 +938,8 @@ El paquete `ggplot2` es uno de los más usados, debido a su gran variedad de plo
 **1)** La función principal del paquete `ggplot2` se llama `ggplot` y comunmente es usada con *Data Frames* o *Data Tables*. Entonces, corran el siguiente código que usa la tabla **iris** para hacer un ejemplo de un plot simple con `ggplot`:
 
 ```R
+library(ggplot2)
+
 ggplot(data = iris, aes(x = Sepal.Length, y = Petal.Length)) +
     geom_point()
 ```
@@ -1090,7 +1072,7 @@ resultados_tratamiento <- c(2, 5, 8, 9, 4)
 
 factor_niveles_tratamiento <- factor(niveles_tratamiento)
 
-plot(x = niveles_tratamiento, y = resultados_tratamiento)
+plot(x = factor_niveles_tratamiento, y = resultados_tratamiento)
 ```
 
 En este momento aunque sea vemos un plot, pero si se fijan en el eje X tenemos un problema: los niveles de tratamiento no están en un órden lógico. Cuando uno crea factores puede asignar este orden a mano.
@@ -1112,7 +1094,7 @@ Como ven el parámetro `levels` nos permite indicar a mano el orden de los facto
 
 !!! info "Factores y ggplot2"
 
-    La función `ggplot` transforma lista de *strings* a factores automaticamente al momento de plotear, por lo que no va a dar error de haber usado **niveles_tratamiento** (en una columna de un Data Table). Sin embargo, los factores siguen siendo útiles en estos casos para controlar el órden en los que se plotean las variables categóricas.
+    La función `ggplot` transforma lista de *strings* a factores automaticamente al momento de plotear, por lo que no va a dar error de haber usado **niveles_tratamiento** (en una columna de un *Data Table*). Sin embargo, los factores siguen siendo útiles en estos casos para controlar el órden en los que se plotean las variables categóricas.
 
 !!! info "Estructura interna de los factores"
 
@@ -1141,6 +1123,7 @@ cadena <- "uno dos tres"
 booleano <- TRUE
 vector_numeros <- c(1, 2, 3)
 vector_strings <- c("uno", "dos", "tres")
+df <- data.frame(numeros = vector_numeros, strings = vector_strings)
 dt <- data.table(numeros = vector_numeros, strings = vector_strings)
 factor_vector_strings <- factor(vector_strings, levels = c("dos", "tres", "uno"))
 
@@ -1155,7 +1138,7 @@ Como ya mencionamos cuando hablamos de los *ciclos*, es común en programación 
 Supongamos que por alguna razón es común para nosotros querer calcular y = 2 * x + x^2, podemos entonces hacer:
 
 ```R
-myFunction = function(x) {
+myFunction <- function(x) {
     output <- 2 * x + x ^ 2
     
     return(output)
@@ -1169,7 +1152,7 @@ y1 <- myFunction(x = x1)
 y2 <- myFunction(x = x2)
 vector_y3 <- myFunction(x = vector_x3)
 
-# Ya que estamos hacemos un plot de los vectores. x1, x2, y1 e y2 no los estoy usando para nada por ahora
+# Ya que estamos hacemos un plot de los vectores (a x1, x2, y1 e y2 no los estoy usando para nada por ahora)
 plot(x = vector_x3, y = vector_y3)
 ```
 
@@ -1182,7 +1165,7 @@ Si bien en este caso puede no ser super necesario, van viendo como me ahorro bas
 También es posible darle más de un parámetro a una función, por ejemplo:
 
 ```R
-myFunction = function(x, exp = 2) {
+myFunction <- function(x, exp = 2) {
     output <- 2 * x + x ^ exp
     
     return(output)
@@ -1206,6 +1189,25 @@ plot(x = vector_x3, y = vector_y5)
 <figure markdown>
 ![FunctionPlot2](img/function_plot2.png)
 </figure>
+
+## **Ejercicio Adicional 1** { markdown data-toc-label='Ejercicio Adicional 1' }
+
+En este Ejercicio vamos a ver si los números aleatorios de **R** se portan como deberían. Para esto vamos a hacer un script que:
+
+* Tire una moneda
+* Anote si salió cara o seca
+* Repita los pasos anteriores hasta tener 100 caras o 100 secas (o dicho de otra forma, repita los pasos ***mientras*** no tenga 100 caras ni 100 secas)
+* Imprima por pantalla cuantas secas y cuantas caras obtuvo (usar `paste` para que que en la salida se entienda bien que número corresponde a quien)
+
+Una cosa que van a necesitar para hacer esto es la siguiente función:
+
+```R
+moneda <- sample(x = c("Cara", "Seca"), size = 1)
+```
+
+Donde `sample` devuelve un sampleo al azar de `size` elementos (en este caso `1`) del vector `x` (en este caso `c("Cara", "Seca")`). En definitiva esto quiere decir que cada vez que ejecuten esa línea `moneda` va a recibir el valor **"Cara"** o el valor **"Seca"** al azar.
+
+Ejecuten el código anterior varias veces y vean si los números aleatorios funcionan bien en **R** o si está todo arreglado.
 
 ## **Bibliografía**
 
