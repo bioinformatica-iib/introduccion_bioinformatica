@@ -9,7 +9,7 @@
 <br>
 <br>
  
-[:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1JMFMy_bIkY4PY1u4wDdQqGkHdTW1SQym/view?usp=sharing){ .md-button .md-button--primary }
+[:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/133TQL4mzP8ZNIb3vzP5bbqt1KZa1iWrO/view?usp=sharing){ .md-button .md-button--primary }
 
 <!--
 Este es el botón para descargar materiales, en (#) hay que agregar el link correspondiente
@@ -1062,7 +1062,7 @@ for (well_name_for in wells_names) {
     #Por otro lado, time, temperature y signal van a ser vectores de 4 valores (son las columnas de clean_data)
     #La columna Temperature puede ser que se escriba un poco rara por problemas de caracteres
     dt_new_rows_in_parsed_data <- data.table(time = clean_data$Time,
-                                            temperature = clean_data$`Temperature( ¡C)`,
+                                            temperature = clean_data$`Temperature(C)`,
                                             fila = fila_for,
                                             columna = columna_for,
                                             signal = @@EDITAR@@)

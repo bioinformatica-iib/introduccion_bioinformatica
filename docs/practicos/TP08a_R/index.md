@@ -529,7 +529,7 @@ El **AND** y el **OR** son operaciones entre dos booleanos, mientras que **NOT**
 
 * El **AND** es el **"Y"**, devolviendo **TRUE**{ .green_text } solo cuando ambos booleanos eran **TRUE**{ .green_text }. Se escribe en **R** con **&**
 * El **OR** es el **"O"**, devolviendo **TRUE**{ .green_text } cuando por lo menos uno de ambos booleanos era **TRUE**{ .green_text }. Se escribe en **R** con **|**
-* El **NOT** es el **"NO"**, invirtiendo el valor del booleano (o sea, devuelve **TRUE**{ .green_text } solo si el booleano era **FALSE**{ .red_text })
+* El **NOT** es el **"NO"**, invirtiendo el valor del booleano (o sea, devuelve **TRUE**{ .green_text } solo si el booleano era **FALSE**{ .red_text }). Se escribe en **R** con **!**
 
 ??? tip "Detalles de **AND**, **OR** y **NOT**"
 
@@ -889,7 +889,7 @@ Los parámetros de `write.table` que estamos usando son:
 * `file` es donde se escribe el nombre del archivo. Si es un *path* absoluto se guarda en dicho *path*, y si es un *path* relativo es relativo al *Working Directory*
     * `"ARCHIVO_DT"` suele tener extensión **.tsv** de separar las columnas con tabs, o extensión **.csv** de separarlas con comas
 * `col.names` pregunta si queremos o nó guardar el nombre de nuestras columnas en el archivo de salida (puede ser **T**{ .green_text } o **F**{ .red_text })
-* `row.names` pregunta si queremos o nó guardar el número de nuestras filas en el archivo de salida (puede ser **T**{ .green_text } o **F**{ .red_text })
+* `row.names` pregunta si queremos o nó guardar el nombre de nuestras filas en el archivo de salida, el cual generalmente es el número de fila (puede ser **T**{ .green_text } o **F**{ .red_text })
 * `sep` indica cual es el separador de columnas. En este caso es `"\t"`, es decir, ++tab++
 * `quote` indica si queremos colocar comillas bordeando a los *strings* que tengamos en la tabla. Puede ser **T**{ .green_text } o **F**{ .red_text }, o tambíen puede ser un vector numérico que indica a las columnas a las que hay que ponerle comillas (con la primera siendo la número 1)
 
@@ -984,7 +984,7 @@ ggplot(data = iris, aes(x = Sepal.Length, y = Petal.Length, color = Species)) +
 
 ### Listas
 
-El concepto de las listas es similar a el de los vectores, solo que las listas pueden contener elementos de diferentes tipos (incluyendo vectores, plots, tablas u otras listas). Sin embargo, las listas son estructuras un poco más complejas, por lo que de querer multiplicar cada elemento de una lista por dos no alcanza con hacer `lista * 2`.
+El concepto de las listas es similar al de los vectores, solo que las listas pueden contener elementos de diferentes tipos (incluyendo vectores, plots, tablas u otras listas). Sin embargo, las listas son estructuras un poco más complejas, por lo que de querer multiplicar cada elemento de una lista por dos no alcanza con hacer `lista * 2`.
 
 Las listas se crean de la siguiente forma:
 
