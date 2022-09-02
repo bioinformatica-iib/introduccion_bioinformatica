@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://bioinformatica-iib.github.io/2022_introduccion_bioinformatica/practicos/TP08a_R/">
       
       <link rel="icon" href="../../img/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.6">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.3.9">
     
     
       
@@ -21,7 +21,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.4a0965b7.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.1d29e8d0.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
@@ -782,13 +782,13 @@ Este es el botón para decargar materiales, en (#) hay que agregar el link corre
 <h2 id="historia-de-r"><strong>Historia de R</strong></h2>
 <ul>
 <li>
-<p>En 1976 se crea <strong>S</strong>, un lenguaje de programación diseñado para análisis estadísticos. <strong>S</strong> fue creado en Bell Labs, que es el mismo lugar mismo lugar donde se creo <strong>Unix</strong> (pero por otras personas)</p>
+<p>En 1976 se crea <strong>S</strong>, un lenguaje de programación diseñado para análisis estadísticos. <strong>S</strong> fue creado en Bell Labs, que es el mismo lugar mismo lugar donde se creo <strong>Unix</strong> (pero por otras personas).</p>
 </li>
 <li>
-<p>En 1991, Ross Ihaka (estadístico) y Robert Gentleman (estadístico y bioinformático) empiezan a trabajar en una versión gratis y de código abierto de <strong>S</strong>. Debido a sus nombres le ponen <strong>R</strong> a dicho lenguaje</p>
+<p>En 1991, Ross Ihaka (estadístico) y Robert Gentleman (estadístico y bioinformático) empiezan a trabajar en una versión gratis y de código abierto de <strong>S</strong>. Debido a sus nombres le ponen <strong>R</strong> a dicho lenguaje.</p>
 </li>
 <li>
-<p>La primera versión oficial de <strong>R</strong> fue publicada en 1995 bajo una licencia de código abierto <em>GNU General Public License</em>. Esta licencia fue creada originalmente para el desarrollo de <strong>GNU</strong> y <strong>Linux</strong>, pero hoy en día es muy común al momento de distribuir programas gratis o de código abierto</p>
+<p>La primera versión oficial de <strong>R</strong> fue publicada en 1995 bajo una licencia de código abierto <em>GNU General Public License</em>. Esta licencia fue creada originalmente para el desarrollo de <strong>GNU</strong> y <strong>Linux</strong>, pero hoy en día es muy común al momento de distribuir programas gratis o de código abierto.</p>
 </li>
 <li>
 <p>En 1997 se crea <strong>CRAN</strong> (<em>Comprehensive R Archive Network</em>), un repositorio oficial para <strong>R</strong> así como los paquetes creados por usuarios agregaban nuevas funcionalidades a <strong>R</strong>. Originalmente había solo 12 paquetes, pero a principios del 2022 ya existían más de 18.500 diferentes paquetes de <strong>R</strong> en <strong>CRAN</strong>.</p>
@@ -1164,7 +1164,7 @@ Este es el botón para decargar materiales, en (#) hay que agregar el link corre
 <ul>
 <li>El <strong>AND</strong> es el <strong>"Y"</strong>, devolviendo <strong class="green_text">TRUE</strong> solo cuando ambos booleanos eran <strong class="green_text">TRUE</strong>. Se escribe en <strong>R</strong> con <strong>&amp;</strong></li>
 <li>El <strong>OR</strong> es el <strong>"O"</strong>, devolviendo <strong class="green_text">TRUE</strong> cuando por lo menos uno de ambos booleanos era <strong class="green_text">TRUE</strong>. Se escribe en <strong>R</strong> con <strong>|</strong></li>
-<li>El <strong>NOT</strong> es el <strong>"NO"</strong>, invirtiendo el valor del booleano (o sea, devuelve <strong class="green_text">TRUE</strong> solo si el booleano era <strong class="red_text">FALSE</strong>)</li>
+<li>El <strong>NOT</strong> es el <strong>"NO"</strong>, invirtiendo el valor del booleano (o sea, devuelve <strong class="green_text">TRUE</strong> solo si el booleano era <strong class="red_text">FALSE</strong>). Se escribe en <strong>R</strong> con <strong>!</strong></li>
 </ul>
 <details class="tip">
 <summary>Detalles de <strong>AND</strong>, <strong>OR</strong> y <strong>NOT</strong></summary>
@@ -1223,7 +1223,7 @@ Este es el botón para decargar materiales, en (#) hay que agregar el link corre
 </tbody>
 </table>
 </details>
-<p>Las variables booleanas se pueden usar en los directamente en las condiciones de los <em>ifs</em>. Si bien se pueden comparar contra <strong>TRUE</strong> y <strong>FALSE</strong>, de poner solo la variable en la condición del <em>if</em>, es equivalente a preguntar si esa variable es <strong>TRUE</strong>. Vean las siguientes tres pestañas para entenderlo mejor:</p>
+<p>Las variables booleanas se pueden usar en los directamente en las condiciones de los <em>ifs</em>. Si bien se pueden comparar contra <strong class="green_text">TRUE</strong> y <strong class="red_text">FALSE</strong>, de poner solo la variable en la condición del <em>if</em>, es equivalente a preguntar si esa variable es <strong class="green_text">TRUE</strong>. Vean las siguientes tres pestañas para entenderlo mejor:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Código</label><label for="__tabbed_3_2">Código con comentarios</label><label for="__tabbed_3_3">Código - Versión mínima</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -1408,26 +1408,6 @@ Este es el botón para decargar materiales, en (#) hay que agregar el link corre
 <p class="admonition-title">Tip</p>
 <p>Aca van a necesitar usar diferentes estructuras <em>ifs</em> adentro del <em>for</em> teniendo en cuenta que hay varias condiciones que se pueden cumplir al mismo tiempo.</p>
 </div>
-<!--
-resultado <- 0
-
-for (i in c(1:50)) {
-    if ((i < 5) | (i > 47)) {
-        resultado <- resultado - i
-    }
-    if ((i > 20) & (i < 30)) {
-        resultado <- resultado + i
-    }
-    if (i <= 25) {
-        resultado <- resultado + 1
-    } else {
-        resultado <- resultado - 1
-    }
-}
-
-print(resultado)
--->
-
 <h2 id="r-tablas"><strong>R: Tablas</strong></h2>
 <h3 id="data-frames">Data Frames</h3>
 <p>El <em>Data Frame</em> es el tipo de variable que viene por defecto con <strong>R</strong> para usar tablas. Hay varias formas de crearlas, pero la más simple es con la función <code>data.frame()</code>. Por ejemplo:</p>
@@ -1439,10 +1419,10 @@ print(resultado)
                  <span class="n">esencial</span> <span class="o">=</span> <span class="n">esencialidad</span><span class="p">,</span>
                  <span class="n">expresion</span> <span class="o">=</span> <span class="n">expresiones</span><span class="p">)</span>
 </code></pre></div>
-<p>Aca estamos creando una variable llamada <code>df</code> que contiene 3 columnas, <strong>gen</strong>, <strong>esencial</strong> y <strong>expresion</strong>, cada una conteniendo los valores de los vectores que declaramos previamente. Noten que los tres vectores tienen la misma cantidad de elementos.</p>
+<p>Aca estamos creando una variable llamada <code>df</code> que contiene 3 columnas, <strong>gen</strong>, <strong>esencial</strong> y <strong>expresion</strong>, cada una conteniendo los valores de los vectores que declaramos previamente. Noten que los tres vectores tienen la misma cantidad de elementos. El primer elemento de cada vector corresponde a los valores de las columnas para la primera fila de la tabla, y así.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Una cosa que les puede llamar la atención es que pusimos los diferentes parámetros de la función <code>data.frame</code> en tres líneas diferentes. Para <strong>R</strong> es equivalente poner todo en la misma línea o como lo hicimos en el ejemplo anterior, que ayuda a leer más fácil cada uno de los parámetros.</p>
+<p>Una cosa que les puede llamar la atención es que pusimos los diferentes parámetros de la función <code>data.frame</code> en tres líneas diferentes. Para <strong>R</strong> es equivalente poner todo en la misma línea o como lo hicimos en el ejemplo anterior, lo que ayuda a leer más fácil cada uno de los parámetros. Sin embargo, es importante notar que los saltos de línea tienen que ir inmediatamente después de una coma.</p>
 </div>
 <p>Podemos ver los contenidos de la tabla usando el comando:</p>
 <p><div class="highlight"><pre><span></span><code><span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
@@ -1455,7 +1435,7 @@ print(resultado)
 <h3 id="data-tables">Data Tables</h3>
 <p>Si bien los <em>Data Frames</em> tienen bastantes funcionalidades, existe un tipo de variable llamada <em>Data Table</em> que básicamente es un <em>Data Frame</em> con muchas mejoras, por lo que va a ser la variable que vamos a usar nosotros al momento de trabajar con tablas.</p>
 <p>El problema es que las variables <em>Data Tables</em> no vienen por defecto con <strong>R</strong>, sino que necesitamos usar un paquete externo llamado <strong>data.table</strong>. Este paquete de <strong>R</strong> ya está preinstalado en sus máquinas virtuales, pero pueden ver como se instala de 0 en la sección <strong>RStudio</strong> al principio de esta guia.</p>
-<p>Por más que esté instalado el paquete, es necesario llamarlo al principio de cada script donde lo usemos, es decir:</p>
+<p>Por más que esté instalado el paquete, es necesario cargarlo cada vez que abramos <strong>R</strong>. Es común cargar al principio de cada <em>script</em> todos los paquetes que uno va a usar (no hay problemas al intentar cargar un paquete ya cargado):</p>
 <p><div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span> <span class="c1"># Esto carga el paquete data.table para poder usar el tipo de variable Data Tables</span>
 
 <span class="n">genes</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;ERT2&quot;</span><span class="p">,</span> <span class="s">&quot;TTR4&quot;</span><span class="p">,</span> <span class="s">&quot;REC1&quot;</span><span class="p">)</span>
@@ -1533,7 +1513,7 @@ Fijense que <code>summary</code> va a devolver información en base a que contie
 </ul>
 </li>
 <li><code>col.names</code> pregunta si queremos o nó guardar el nombre de nuestras columnas en el archivo de salida (puede ser <strong class="green_text">T</strong> o <strong class="red_text">F</strong>)</li>
-<li><code>row.names</code> pregunta si queremos o nó guardar el número de nuestras filas en el archivo de salida (puede ser <strong class="green_text">T</strong> o <strong class="red_text">F</strong>)</li>
+<li><code>row.names</code> pregunta si queremos o nó guardar el nombre de nuestras filas en el archivo de salida, el cual generalmente es el número de fila (puede ser <strong class="green_text">T</strong> o <strong class="red_text">F</strong>)</li>
 <li><code>sep</code> indica cual es el separador de columnas. En este caso es <code>"\t"</code>, es decir, <span class="keys"><kbd class="key-tab">Tab</kbd></span></li>
 <li><code>quote</code> indica si queremos colocar comillas bordeando a los <em>strings</em> que tengamos en la tabla. Puede ser <strong class="green_text">T</strong> o <strong class="red_text">F</strong>, o tambíen puede ser un vector numérico que indica a las columnas a las que hay que ponerle comillas (con la primera siendo la número 1)</li>
 </ul>
@@ -1572,7 +1552,9 @@ Fijense que <code>summary</code> va a devolver información en base a que contie
 <p>Si bien la funciones <code>plot</code> e <code>hist</code> se pueden usar para hacer muchos tipos de plots, la mayoría de los plots hechos por <strong>R</strong> que uno puede llegar a ver en papers o similar estan hechos con paquetes de <strong>R</strong> que se especializan en plots.</p>
 <p>El paquete <code>ggplot2</code> es uno de los más usados, debido a su gran variedad de plots y a que le permite al usuario modificar practicamente cualquier detalle del plot (con más o menos dificultad).</p>
 <p><strong>1)</strong> La función principal del paquete <code>ggplot2</code> se llama <code>ggplot</code> y comunmente es usada con <em>Data Frames</em> o <em>Data Tables</em>. Entonces, corran el siguiente código que usa la tabla <strong>iris</strong> para hacer un ejemplo de un plot simple con <code>ggplot</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="nf">ggplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">iris</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">Sepal.Length</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">Petal.Length</span><span class="p">))</span> <span class="o">+</span>
+<div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
+
+<span class="nf">ggplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">iris</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">Sepal.Length</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">Petal.Length</span><span class="p">))</span> <span class="o">+</span>
     <span class="nf">geom_point</span><span class="p">()</span>
 </code></pre></div>
 <ul>
@@ -1606,7 +1588,7 @@ Fijense que <code>summary</code> va a devolver información en base a que contie
 </figure>
 <h2 id="r-variables-mas-complejas"><strong>R: Variables más complejas</strong></h2>
 <h3 id="listas">Listas</h3>
-<p>El concepto de las listas es similar a el de los vectores, solo que las listas pueden contener elementos de diferentes tipos (incluyendo vectores, plots, tablas u otras listas). Sin embargo, las listas son estructuras un poco más complejas, por lo que de querer multiplicar cada elemento de una lista por dos no alcanza con hacer <code>lista * 2</code>.</p>
+<p>El concepto de las listas es similar al de los vectores, solo que las listas pueden contener elementos de diferentes tipos (incluyendo vectores, plots, tablas u otras listas). Sin embargo, las listas son estructuras un poco más complejas, por lo que de querer multiplicar cada elemento de una lista por dos no alcanza con hacer <code>lista * 2</code>.</p>
 <p>Las listas se crean de la siguiente forma:</p>
 <div class="highlight"><pre><span></span><code><span class="n">lista_numeros</span> <span class="o">&lt;-</span> <span class="nf">list</span><span class="p">(</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">7</span><span class="p">,</span><span class="m">13</span><span class="p">,</span><span class="m">45.3</span><span class="p">)</span>
 <span class="n">lista_strings</span> <span class="o">&lt;-</span> <span class="nf">list</span><span class="p">(</span><span class="s">&quot;hola&quot;</span><span class="p">,</span><span class="s">&quot;chau&quot;</span><span class="p">,</span><span class="s">&quot;perro&quot;</span><span class="p">)</span>
@@ -1674,7 +1656,7 @@ Fijense que <code>summary</code> va a devolver información en base a que contie
 
 <span class="n">factor_niveles_tratamiento</span> <span class="o">&lt;-</span> <span class="nf">factor</span><span class="p">(</span><span class="n">niveles_tratamiento</span><span class="p">)</span>
 
-<span class="nf">plot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">niveles_tratamiento</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">resultados_tratamiento</span><span class="p">)</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">factor_niveles_tratamiento</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">resultados_tratamiento</span><span class="p">)</span>
 </code></pre></div>
 <p>En este momento aunque sea vemos un plot, pero si se fijan en el eje X tenemos un problema: los niveles de tratamiento no están en un órden lógico. Cuando uno crea factores puede asignar este orden a mano.</p>
 <p><strong>5)</strong> Cambien entonces el código anterior al código siguiente y corranló:</p>
@@ -1689,7 +1671,7 @@ Fijense que <code>summary</code> va a devolver información en base a que contie
 <p><strong>6)</strong> Impriman por consola a <strong>niveles_tratamiento</strong> y a <strong>factor_niveles_tratamiento</strong> y vean las diferencias.</p>
 <div class="admonition info">
 <p class="admonition-title">Factores y ggplot2</p>
-<p>La función <code>ggplot</code> transforma lista de <em>strings</em> a factores automaticamente al momento de plotear, por lo que no va a dar error de haber usado <strong>niveles_tratamiento</strong> (en una columna de un Data Table). Sin embargo, los factores siguen siendo útiles en estos casos para controlar el órden en los que se plotean las variables categóricas.</p>
+<p>La función <code>ggplot</code> transforma lista de <em>strings</em> a factores automaticamente al momento de plotear, por lo que no va a dar error de haber usado <strong>niveles_tratamiento</strong> (en una columna de un <em>Data Table</em>). Sin embargo, los factores siguen siendo útiles en estos casos para controlar el órden en los que se plotean las variables categóricas.</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Estructura interna de los factores</p>
@@ -1710,6 +1692,7 @@ Fijense que <code>summary</code> va a devolver información en base a que contie
 <span class="n">booleano</span> <span class="o">&lt;-</span> <span class="kc">TRUE</span>
 <span class="n">vector_numeros</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span>
 <span class="n">vector_strings</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;uno&quot;</span><span class="p">,</span> <span class="s">&quot;dos&quot;</span><span class="p">,</span> <span class="s">&quot;tres&quot;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">numeros</span> <span class="o">=</span> <span class="n">vector_numeros</span><span class="p">,</span> <span class="n">strings</span> <span class="o">=</span> <span class="n">vector_strings</span><span class="p">)</span>
 <span class="n">dt</span> <span class="o">&lt;-</span> <span class="nf">data.table</span><span class="p">(</span><span class="n">numeros</span> <span class="o">=</span> <span class="n">vector_numeros</span><span class="p">,</span> <span class="n">strings</span> <span class="o">=</span> <span class="n">vector_strings</span><span class="p">)</span>
 <span class="n">factor_vector_strings</span> <span class="o">&lt;-</span> <span class="nf">factor</span><span class="p">(</span><span class="n">vector_strings</span><span class="p">,</span> <span class="n">levels</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;dos&quot;</span><span class="p">,</span> <span class="s">&quot;tres&quot;</span><span class="p">,</span> <span class="s">&quot;uno&quot;</span><span class="p">))</span>
 
@@ -1719,7 +1702,7 @@ Fijense que <code>summary</code> va a devolver información en base a que contie
 <h2 id="r-funciones"><strong>R: Funciones</strong></h2>
 <p>Como ya mencionamos cuando hablamos de los <em>ciclos</em>, es común en programación querer realizar una tarea varias veces en condiciones ligeramente diferentes. Otra herramienta que tenemos a nuestra disposición son las funciones, que ademas de ser parte de <strong>R</strong> y de los paquetes, pueden ser creadas por nosotros desde 0.</p>
 <p>Supongamos que por alguna razón es común para nosotros querer calcular y = 2 * x + x^2, podemos entonces hacer:</p>
-<div class="highlight"><pre><span></span><code><span class="n">myFunction</span> <span class="o">=</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight"><pre><span></span><code><span class="n">myFunction</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">output</span> <span class="o">&lt;-</span> <span class="m">2</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">x</span> <span class="o">^</span> <span class="m">2</span>
 
     <span class="nf">return</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
@@ -1733,7 +1716,7 @@ Fijense que <code>summary</code> va a devolver información en base a que contie
 <span class="n">y2</span> <span class="o">&lt;-</span> <span class="nf">myFunction</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">x2</span><span class="p">)</span>
 <span class="n">vector_y3</span> <span class="o">&lt;-</span> <span class="nf">myFunction</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">vector_x3</span><span class="p">)</span>
 
-<span class="c1"># Ya que estamos hacemos un plot de los vectores. x1, x2, y1 e y2 no los estoy usando para nada por ahora</span>
+<span class="c1"># Ya que estamos hacemos un plot de los vectores (a x1, x2, y1 e y2 no los estoy usando para nada por ahora)</span>
 <span class="nf">plot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">vector_x3</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">vector_y3</span><span class="p">)</span>
 </code></pre></div>
 <figure>
@@ -1741,7 +1724,7 @@ Fijense que <code>summary</code> va a devolver información en base a que contie
 </figure>
 <p>Si bien en este caso puede no ser super necesario, van viendo como me ahorro bastante código al usar funciones. Imaginenese ahora si lo que está adentro de la función es algo mas complejo que ocupa 20 líneas de código.</p>
 <p>También es posible darle más de un parámetro a una función, por ejemplo:</p>
-<div class="highlight"><pre><span></span><code><span class="n">myFunction</span> <span class="o">=</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">exp</span> <span class="o">=</span> <span class="m">2</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight"><pre><span></span><code><span class="n">myFunction</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">exp</span> <span class="o">=</span> <span class="m">2</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">output</span> <span class="o">&lt;-</span> <span class="m">2</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">x</span> <span class="o">^</span> <span class="n">exp</span>
 
     <span class="nf">return</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
@@ -1764,6 +1747,19 @@ Fijense que <code>summary</code> va a devolver información en base a que contie
 <figure>
 <p><img alt="FunctionPlot2" src="img/function_plot2.png" /></p>
 </figure>
+<h2 id="ejercicio-adicional-1" markdown="markdown"><strong>Ejercicio Adicional 1</strong></h2>
+<p>En este Ejercicio vamos a ver si los números aleatorios de <strong>R</strong> se portan como deberían. Para esto vamos a hacer un script que:</p>
+<ul>
+<li>Tire una moneda</li>
+<li>Anote si salió cara o seca</li>
+<li>Repita los pasos anteriores hasta tener 100 caras o 100 secas (o dicho de otra forma, repita los pasos <strong><em>mientras</em></strong> no tenga 100 caras ni 100 secas)</li>
+<li>Imprima por pantalla cuantas secas y cuantas caras obtuvo (usar <code>paste</code> para que que en la salida se entienda bien que número corresponde a quien)</li>
+</ul>
+<p>Una cosa que van a necesitar para hacer esto es la siguiente función:</p>
+<div class="highlight"><pre><span></span><code><span class="n">moneda</span> <span class="o">&lt;-</span> <span class="nf">sample</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;Cara&quot;</span><span class="p">,</span> <span class="s">&quot;Seca&quot;</span><span class="p">),</span> <span class="n">size</span> <span class="o">=</span> <span class="m">1</span><span class="p">)</span>
+</code></pre></div>
+<p>Donde <code>sample</code> devuelve un sampleo al azar de <code>size</code> elementos (en este caso <code>1</code>) del vector <code>x</code> (en este caso <code>c("Cara", "Seca")</code>). En definitiva esto quiere decir que cada vez que ejecuten esa línea <code>moneda</code> va a recibir el valor <strong>"Cara"</strong> o el valor <strong>"Seca"</strong> al azar.</p>
+<p>Ejecuten el código anterior varias veces y vean si los números aleatorios funcionan bien en <strong>R</strong> o si está todo arreglado.</p>
 <h2 id="bibliografia"><strong>Bibliografía</strong></h2>
 <!--
 ### :material-bookshelf: Libros
@@ -1821,14 +1817,20 @@ Fijense que <code>summary</code> va a devolver información en base a que contie
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["search.suggest", "search.highlight", "search.share", "header.autohide", "navigation.tracking", "navigation.tabs", "toc.integrate", "navigation.top"], "search": "../../assets/javascripts/workers/search.85cb4492.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "B\u00fasqueda", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version.title": "Seleccionar versi\u00f3n"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["search.suggest", "search.highlight", "search.share", "header.autohide", "navigation.tracking", "navigation.tabs", "toc.integrate", "navigation.top"], "search": "../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "B\u00fasqueda", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version.title": "Seleccionar versi\u00f3n"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.a877e258.min.js"></script>
+      <script src="../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
       
         <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
       
         <script src="../../javascripts/tablesort.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>
