@@ -415,7 +415,7 @@ Por esta razón, teniendo en cuenta lo realizado con el servidor Blast2logo, vam
 
 !!! info 
 
-    <span style="font-weight:bold;">Fecha límite de entrega:</span> Viernes, 9 de Septiembre 2022, 23:59hs.
+    <span style="font-weight:bold;">Fecha límite de entrega:</span> Viernes, 16 de Septiembre 2022, 23:59hs.
 
 ### Enunciado
 
