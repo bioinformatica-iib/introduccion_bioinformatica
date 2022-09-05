@@ -13,15 +13,15 @@
         <link rel="canonical" href="https://bioinformatica-iib.github.io/2022_introduccion_bioinformatica/practicos/TP06_Filogenia/">
       
       <link rel="icon" href="../../img/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.3.9">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.6">
     
     
       
-        <title>Index - Introducción a la Bioinformática</title>
+        <title>TP 6 - Filogenias - Introducción a la Bioinformática</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.1d29e8d0.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.4a0965b7.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Index
+              TP 6 - Filogenias
             
           </span>
         </div>
@@ -266,13 +266,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../inicio/" class="md-tabs__link">
+      <a href="../inicio/" class="md-tabs__link md-tabs__link--active">
         Prácticos
       </a>
     </li>
@@ -527,12 +529,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" checked>
       
       
       
@@ -628,6 +632,192 @@
       <a href="../TP05_PSI-BLAST/" class="md-nav__link">
         TP 5 - Perfiles de secuencias
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          TP 6 - Filogenias
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        TP 6 - Filogenias
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#software-a-usar" class="md-nav__link">
+    Software a usar
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objetivos" class="md-nav__link">
+    Objetivos
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#filogenia" class="md-nav__link">
+    Filogenia
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicios-paso-por-paso-hacia-un-arbol" class="md-nav__link">
+    data-toc-label
+  </a>
+  
+    <nav class="md-nav" aria-label="data-toc-label">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#paso-1-construccion-del-dataset-recoleccion-de-datos" class="md-nav__link">
+    data-toc-label
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-2-construccion-y-curacion-del-alineamiento-multiple" class="md-nav__link">
+    data-toc-label
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paso-3-construccion-del-arbol" class="md-nav__link">
+    data-toc-label
+  </a>
+  
+    <nav class="md-nav" aria-label="data-toc-label">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parte-i-metodos-basados-en-distancias-neighbor-joining-y-upgma" class="md-nav__link">
+    Parte I. Métodos basados en distancias: Neighbor Joining y UPGMA
+  </a>
+  
+    <nav class="md-nav" aria-label="Parte I. Métodos basados en distancias: Neighbor Joining y UPGMA">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#metodo-neighbor-joining" class="md-nav__link">
+    Método Neighbor-Joining.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metodo-upgma" class="md-nav__link">
+    Método UPGMA.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parte-ii-metodos-de-busqueda-de-arboles-maxima-verosimilitud-y-maxima-parsimonia" class="md-nav__link">
+    Parte II. Métodos de búsqueda de árboles: Máxima Verosimilitud y Máxima Parsimonia
+  </a>
+  
+    <nav class="md-nav" aria-label="Parte II. Métodos de búsqueda de árboles: Máxima Verosimilitud y Máxima Parsimonia">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#metodo-de-maxima-verosimilitud" class="md-nav__link">
+    Método de Máxima Verosimilitud
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uso-de-outgroups" class="md-nav__link">
+    Uso de Outgroups
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metodo-de-maxima-parsimonia" class="md-nav__link">
+    Método de Máxima Parsimonia
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-4-tests-seleccionar-arboles-en-el-bosque" class="md-nav__link">
+    Paso 4. Tests – Seleccionar árboles en el bosque
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-5-presentacion-de-resultados" class="md-nav__link">
+    Paso 5. Presentación de resultados.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -746,11 +936,43 @@
 <p><img _="," align="left" alt="Image" src="img/featured.png" width="250" /></p>
 <h1 id="tp-6-filogenias-arboles-filogeneticos-y-filogenomica" markdown="markdown"><strong>TP 6</strong>. Filogenias, árboles filogenéticos y filogenómica</h1>
 <p><br></p>
-<p><a class="md-button md-button--primary" href=""><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M480 352H346.5l-45.25 45.25C289.2 409.3 273.1 416 256 416s-33.16-6.656-45.25-18.75L165.5 352H32c-17.67 0-32 14.33-32 32v96c0 17.67 14.33 32 32 32h448c17.67 0 32-14.33 32-32v-96c0-17.7-14.3-32-32-32zm-48 104c-13.2 0-24-10.8-24-24s10.8-24 24-24 24 10.8 24 24-10.8 24-24 24zm-198.6-81.4c6.2 6.3 14.4 9.4 22.6 9.4s16.38-3.125 22.62-9.375l128-128c12.49-12.5 12.49-32.75 0-45.25-12.5-12.5-32.76-12.5-45.25 0L288 274.8V32c0-17.67-14.33-32-32-32-17.7 0-32 14.33-32 32v242.8l-73.4-73.4c-12.49-12.5-32.75-12.5-45.25 0-12.49 12.5-12.49 32.75 0 45.25L233.4 374.6z"/></svg></span> Materiales</a></p>
+<p><a class="md-button md-button--primary" href="https://drive.google.com/file/d/147nunzIsdA5tKI-AbeIzIjHY0JwoymmX/view?usp=sharing"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M480 352H346.5l-45.25 45.25C289.2 409.3 273.1 416 256 416s-33.16-6.656-45.25-18.75L165.5 352H32c-17.67 0-32 14.33-32 32v96c0 17.67 14.33 32 32 32h448c17.67 0 32-14.33 32-32v-96c0-17.7-14.3-32-32-32zm-48 104c-13.2 0-24-10.8-24-24s10.8-24 24-24 24 10.8 24 24-10.8 24-24 24zm-198.6-81.4c6.2 6.3 14.4 9.4 22.6 9.4s16.38-3.125 22.62-9.375l128-128c12.49-12.5 12.49-32.75 0-45.25-12.5-12.5-32.76-12.5-45.25 0L288 274.8V32c0-17.67-14.33-32-32-32-17.7 0-32 14.33-32 32v242.8l-73.4-73.4c-12.49-12.5-32.75-12.5-45.25 0-12.49 12.5-12.49 32.75 0 45.25L233.4 374.6z"/></svg></span> Materiales</a></p>
 <p><br></p>
-<div class="admonition abstract">
-<p class="admonition-title">Atención: Este TP tiene informe.</p>
-</div>
+<!--
+!!! abstract "Atención: Este TP tiene informe."
+-->
+
+<h2 id="software-a-usar">Software a usar</h2>
+<ul>
+<li>
+<p>Alineamientos: emma y clustalw (en EMBOSS suite)</p>
+</li>
+<li>
+<p>Visualización de alineamientos: Jalview <a href="https://www.jalview.org">www.jalview.org</a></p>
+</li>
+<li>
+<p>Métodos basados en distancias:</p>
+<ul>
+<li>fprotdist (en EMBOSS suite) <!-- (se instala en el tp) --></li>
+<li>fneighbor (en EMBOSS suite) <!-- (se instala en el tp) --></li>
+</ul>
+</li>
+<li>
+<p>Métodos de búsqueda de árboles:</p>
+<ul>
+<li>fproml (en EMBOSS suite)</li>
+<li>fprotpars (en EMBOSS suite)</li>
+</ul>
+</li>
+<li>
+<p>Visualización de árboles: FigTree  <a href="http://tree.bio.ed.ac.uk/software/figtree/">tree.bio.ed.ac.uk/software/figtree/</a><!-- (se instala en el tp) --></p>
+</li>
+<li>Remuestreo y árbol consenso:<ul>
+<li>fseqboot (en EMBOSS suite)</li>
+<li>fconsense  (en EMBOSS suite)</li>
+</ul>
+</li>
+</ul>
 <h2 id="objetivos">Objetivos</h2>
 <ul>
 <li>Familiarizarse con el uso de árboles filogenéticos</li>
@@ -857,6 +1079,10 @@ less Ribonucleasas.showalign
 </div>
 <p>Los algoritmos de alineamiento utilizan heurísticas y aproximaciones que pueden (y suelen) dar lugar a errores. Por ello muchas veces (o siempre) es necesario  <strong>curar manualmente</strong> los alineamientos, eliminando o agregando <strong>gaps</strong>. También se puede recurrir a la eliminación de columnas completas si contienen una gran mayoría de gaps o hay dudas sobre su veracidad. En muchos casos, es mejor eliminar estos eventos para deshacernos del ruido.</p>
 <p>Dado que el curado de un alineamiento para filogenética es un proceso crítico y muy "visual", existen herramientas más apropiadas (y vistosas) para esta tarea que <code>showalign</code>. El visualizador de alineamientos a utilizar se llama Jalview. </p>
+<p>Jalview requiere la instalación de la versión 8 de java. Para instalar ejecute en su terminal:</p>
+<div class="highlight"><pre><span></span><code>sudo apt install openjdk-8-jdk openjdk-8-jre
+sudo update-java-alternatives --set /usr/lib/jvm/java-1.8.0-openjdk-i386
+</code></pre></div>
 <p>Preferentemente desde una nueva terminal, pueden ejecutar Jalview:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span> ~/Tools/Jalview
 bash jalview.sh
@@ -867,7 +1093,7 @@ O desde el el explorador de archivos:
 -->
 
 <p>Cuando abren el programa hay algunas ventanas abiertas. Cierren todo. Además ignoren la <em>"barra de avance"</em> que se encuentra en la parte inferior de la ventana.</p>
-<p>Una vez abierto el programa, carguen el alineamiento generado por <code>emma</code> haciendo click en:</p>
+<p>Una vez abierto el programa, carguen el alineamiento generado por <code>emma</code> (<code>Ribonucleasas.msa</code>) haciendo click en:</p>
 <p><code>Archivo</code> &gt; <code>Alineamiento de entrada</code> &gt; <code>Desde fichero</code>.</p>
 <p>Esto abrirá una ventana en la que se puede buscar el archivo yendo a la carpeta de trabajo.</p>
 <div class="admonition warning">
@@ -877,7 +1103,7 @@ O desde el el explorador de archivos:
 </div>
 <p>Para colorear el alineamiento vayan a:</p>
 <p><code>Color</code> &gt; <code>ClustalX</code></p>
-<p><strong>2.3.</strong> Revisen su alineamiento con Jalview para ver si hay errores o posiciones dudosas y, en caso de encontrarlos, corríjanlos en <code>Ribonucleasas.msa</code> y guarden!</p>
+<p><strong>2.3.</strong> Revisen su alineamiento con Jalview para ver si hay errores o posiciones dudosas y, en caso de encontrarlos, corríjanlos en <code>Ribonucleasas.msa</code> y guarden en <code>Ribonucleasas.curado.msa</code>!</p>
 <div class="admonition idea">
 <p class="admonition-title">Eliminar columnas</p>
 <p>En la parte superior pueden seleccionar columnas del alineamiento y luego presionan <strong>delete</strong> para eliminarlas. </p>
@@ -920,7 +1146,7 @@ O desde el el explorador de archivos:
 <p>Chequee su respuesta en EMBOSS !!!!</p>
 </details>
 <p><strong>3.I.1</strong> Construya la matriz de distancia utilizando el método JTT:</p>
-<div class="highlight"><pre><span></span><code>fprotdist -method j -sequence Ribonucleasas.msa -outfile Ribonucleasas.dist
+<div class="highlight"><pre><span></span><code>fprotdist -method j -sequence Ribonucleasas.curado.msa -outfile Ribonucleasas.dist
 </code></pre></div>
 <p><strong>3.I.2</strong> ¿Qué son los siguientes parámetros del comando?</p>
 <ul>
@@ -953,7 +1179,7 @@ Para guardar la imagen y poder verla en detalle tienen que ir a:</p>
 <p><code>File</code> &gt; <code>Save as...</code> </p>
 <p><strong>3.I.4</strong> Observen la topología del árbol a diferentes niveles e identifiquen diferentes órdenes. ¿Tiene sentido el agrupamiento que se realizó?</p>
 <div class="admonition quote">
-<p class="admonition-title">Nemotenic para Taxonomía</p>
+<p class="admonition-title">Regla mnemotécnica para Taxonomía</p>
 <p>Si aún no vieron taxonomía o si no recuerdan lo que es un Orden...</p>
 <p>"Lineo dijo que el <strong>Rey</strong> (<em>Reino</em>) era un <strong>tipo</strong> (<em>phylo</em>) con mucha <strong>Clase</strong> que puso <strong>Orden</strong> en su <strong>Familia</strong> comprando un <strong>Género</strong> de cada <strong>Especie</strong>"</p>
 </div>
@@ -992,7 +1218,7 @@ Para guardar la imagen y poder verla en detalle tienen que ir a:</p>
 <p><code>-intrefile</code> (opcional),  Árbol para usar de guía. No se utilizará en este caso, pero lo va a preguntar igual, en ese caso se aprieta <em>Enter</em>.</p>
 </li>
 </ul>
-<div class="highlight"><pre><span></span><code>fproml -seed <span class="m">1</span> -sequence Ribonucleasas.msa -outfile Ribonucleasas-ML.tree -outtreefile Ribonucleasas-ML.treefile
+<div class="highlight"><pre><span></span><code>fproml -seed <span class="m">1</span> -sequence Ribonucleasas.curado.msa -outfile Ribonucleasas-ML.tree -outtreefile Ribonucleasas-ML.treefile
 </code></pre></div>
 <details class="question">
 <summary>¿Qué es Seed?</summary>
@@ -1026,11 +1252,11 @@ Para guardar la imagen y poder verla en detalle tienen que ir a:</p>
 </li>
 </ul>
 <p>Contar a mano puede llevar a errores, y dado que esto es bioinformática, se utilizará el siguiente comando:</p>
-<div class="highlight"><pre><span></span><code>cat Ribonucleasas.msa <span class="p">|</span> grep <span class="s2">&quot;&gt;&quot;</span> <span class="p">|</span> grep -n <span class="s2">&quot;Macropus&quot;</span>
+<div class="highlight"><pre><span></span><code>cat Ribonucleasas.curado.msa <span class="p">|</span> grep <span class="s2">&quot;&gt;&quot;</span> <span class="p">|</span> grep -n <span class="s2">&quot;Macropus&quot;</span>
 </code></pre></div>
 <p>La salida se verá similar a esta: <code>45:&gt;Macropus_rufus</code>. La secuencia en el alineamiento en este caso está en la posición 45 pero este número puede cambiar según el usuario.</p>
 <p>Una vez obtenido este valor se vuelve a correr <code>fproml</code></p>
-<div class="highlight"><pre><span></span><code>fproml -outgrno <span class="m">45</span> -seed <span class="m">1</span> -sequence Ribonucleasas.msa -outfile Ribonucleasas-ML-OUTGR.tree -outtreefile Ribonucleasas-ML-OUTGR.treefile
+<div class="highlight"><pre><span></span><code>fproml -outgrno <span class="m">45</span> -seed <span class="m">1</span> -sequence Ribonucleasas.curado.msa -outfile Ribonucleasas-ML-OUTGR.tree -outtreefile Ribonucleasas-ML-OUTGR.treefile
 </code></pre></div>
 <div class="admonition info">
 <p class="admonition-title">"Ventaja del Método de Maximum Likelihood</p>
@@ -1051,12 +1277,12 @@ Si un agrupamiento determinado es encontrado en todos los árboles, entonces tie
 <p>Al final de este proceso se obtiene un conjunto de alineamientos. A partir de cada alineamiento se construye un árbol.</p>
 <p>Este test parece sencillo, y estudios en filogenias conocidas (poblaciones virales cultivadas en laboratorio) muestran que es una medida adecuada de la certeza del árbol resultante; y que un valor de <strong>70%</strong> o más suele indicar un agrupamiento adecuado.</p>
 <p>Para generar el conjunto de alineamientos se utiliza el comando <code>fseqboot</code> los argumentos son <code>-sequence</code> (datos de ENTRADA), <code>-outfile</code> (datos de SALIDA) y <code>-reps</code>:</p>
-<div class="highlight"><pre><span></span><code>fseqboot -reps <span class="m">10</span> -sequence Ribonucleasas.msa -outfile Ribonucleasas.boot
+<div class="highlight"><pre><span></span><code>fseqboot -reps <span class="m">10</span> -sequence Ribonucleasas.curado.msa -outfile Ribonucleasas.boot
 </code></pre></div>
 <details class="bug">
 <summary>En este comando falta algo muy importante! ¿Lo ven?</summary>
 <p>Falta el seed !!!</p>
-<div class="highlight"><pre><span></span><code>fseqboot -reps <span class="m">10</span> -seed <span class="m">1</span> -sequence Ribonucleasas.msa -outfile Ribonucleasas.boot
+<div class="highlight"><pre><span></span><code>fseqboot -reps <span class="m">10</span> -seed <span class="m">1</span> -sequence Ribonucleasas.curado.msa -outfile Ribonucleasas.boot
 </code></pre></div>
 </details>
 <p><code>-reps</code> indica el número de remuestreos a realizar. Calcular varios árboles puede llevar bastante tiempo por lo que solo se harán 10 repeticiones. En un típico ensayo se realizan muchas más repeticiones.</p>
@@ -1098,64 +1324,71 @@ Si un agrupamiento determinado es encontrado en todos los árboles, entonces tie
 <p>Por último, tengan en cuenta la legibilidad del árbol en general. Utilizar nombres para las ramas con códigos de acceso a bases de datos o acrónimos de pocas letras puede resultar muy confuso. Hoy en día existen numerosos softwares para la visualización de árboles (ej. Hypertree) que nos permiten, mediante agrupamientos, colores, fuentes, etc. llamar la atención del lector sobre uno u otro aspecto importante del mismo y lograr que transmita la información que nos interesa mostrar.</p>
 </li>
 </ul>
-<h2 id="ejercicio-a-informar">Ejercicio a informar</h2>
-<p>!!! abstract "Fecha de Entrega: Viernes, xx de septiembre 2022, 23:59hs".</p>
-<h3 id="enunciado">Enunciado</h3>
-<p>Feliz con sus descubrimientos hasta el momento. Su jefe decide que es hora de tratar de entender de qué variante deriva el virus, por más que ya analizó la identidad de secuencia de genoma completo cree que es mejor verlo (y usted está de acuerdo) realizando una filogenia.</p>
-<p><strong>1.</strong> Decide realizar un alineamiento de genomas para construir un árbol. Después de un rato de ver en su computadora “aligned score….” recuerda que el genoma de coronavirus son como 30000 bases que es mucho más que una proteína estándar.Se imagina cuánto va a tardar todo este proceso y transpira. Entonces decide llamar a la Fundación Internacional Facilitadora de Alineamientos (Si Si, llama a la FIFA) y pedirle que lo hagan por usted (Pero que suerte que existe la FIFA!). La FIFA le comenta que el proceso entero llevó como dos horas de reloj (se consideran muy afortunados) y que se tuvo en cuenta que iba a utilizarse para construir una filogenia. Por último, agregan que no tienen muchas ganas de escribir el procedimiento pero que lo hicieron como siempre.</p>
-<p>Cómo usted debe informar este procedimiento a su jefe, debe reproducir los pasos a seguir para armar el alineamiento considerando que usted envió los archivos: <code>All_sequences.fasta</code> y <code>MW298643.1.fasta</code>. Y que le devolvieron el archivo <code>All_22_sequences_aln.fasta</code> que se encuentra en los Materiales.</p>
-<p>En este informe deben figurar los comandos utilizados con los parámetros correspondientes y una descripción de cualquier otro procedimiento que hayan realizado.</p>
-<p><strong>2.</strong> Usando el alineamiento, decide construir un árbol mediante la técnica que le parece más correcta (debidamente justificada). Dado que los algoritmos de construcción de árboles cortan los nombres de la secuencia, para una mejor presentación de los resultados a su jefe decide que en el árbol es mejor agregar los nombres de las cepas y sus hospedadores. En este reporte es necesario identificar su secuencia e interpretar el árbol y sugerir de qué variante proviene el árbol.</p>
-<div class="admonition warning">
-<p class="admonition-title">Recordatorio importante: Recuerden el uso del Seed</p>
-</div>
-<div class="admonition danger">
-<p class="admonition-title">Nota aclaratoria sobre bootstrapping:</p>
-<p>Si llegaran a querer hacer un bootstrap, la generación de cada árbol lleva aproximadamente 7min. En base a esto para 10 árboles, llevaría 70 min, o sea, 1h 10 min.</p>
-</div>
-<div class="admonition danger">
-<p class="admonition-title">Nota aclaratoria sobre árbol consenso: En el árbol consenso se pierden las longitudes de las ramas.</p>
-</div>
-<p><strong>Extra (y por ende opcional).</strong> En lugar de cambiar las etiquetas de los nodos externos manualmente en Figtree, se puede hacer mediante un script de bash. Como ya sabrán , hay varias formas de hacerlo, pero dado el entusiasmo observado vamos a sugerir algunas cosas para que les sea quizás un poco más fácil y vayan practicando como hacer buenas búsquedas en Google.</p>
-<p>La forma más simple es:</p>
-<p><strong>1.</strong> Tener en un archivo de texto el nombre de la secuencia como figura en el árbol, separado por un tab o espacios del nombre de la secuencia como queremos que figure en el árbol.</p>
-<div class="admonition danger">
-<p class="admonition-title">CUIDADO!</p>
-<p>Hagan una copia de respaldo de el o los archivos de árbol que vayan a modificar para tener un backup y no tener que volver a hacerlos si ocurren errores.</p>
-</div>
-<p><strong>2.</strong> Luego usar un <code>for</code>, un <code>awk</code> y un <code>sed</code>.</p>
-<p>Errores que vimos que podían ocurrir.</p>
-<ul>
-<li>
-<p>Reemplacen en el archivo de texto los espacios por "_"</p>
-</li>
-<li>
-<p>Reemplacen en el archivo de texto las "\" por "_"</p>
-</li>
-<li>
-<p>La última línea del archivo de texto requiere que tenga un enter al final (es decir, que haya una nueva línea vacía luego de la última etiqueta elegida).</p>
-</li>
-</ul>
-<p><strong>3.</strong> Como es un poquito complejo (no sabíamos hacerlo todo) les damos algunas ayuditas de como fuimos armando el script:</p>
-<ul>
-<li>
-<p>Para saber como leer un archivo con un <code>for</code> en bash buscamos en Google: “how to read lines with for in bash” y en el primer resultado encontramos la <a href="https://www.cyberciti.biz/faq/unix-howto-read-line-by-line-from-file/">solución</a>.</p>
-</li>
-<li>
-<p>Para saber como guardar las etiquetas en variables con <code>awk</code> buscamos en Google: “how to save variables with awk” y en el primer resultado encontramos una <a href="https://stackoverflow.com/questions/18648345/saving-awk-output-to-variable/18648383">solución</a> que no me funcionó.</p>
-</li>
-<li>
-<p>Así que modificamos la búsqueda en Google: “how to save variables with awk while reading lines in bash” y en el primer resultado encontramos una <a href="https://stackoverflow.com/questions/47259579/read-line-by-line-with-awk-and-parse-variables">pregunta</a> que nos ayudó junto con lo que vimos en la búsqueda anterior a armar correctamente el <code>awk</code> sobre la línea de archivo.</p>
-</li>
-<li>
-<p>Para saber cómo usar el <code>sed</code> con variables buscamos en google: “how to pass variables to sed” y en el segundo resultado encontramos la <a href="https://unix.stackexchange.com/questions/84063/passing-a-variable-to-sed">solución</a></p>
-</li>
-<li>
-<p><strong>Obviamente,</strong> después de estar probando y googleando encontramos una solución mucho más simple al problema en una de las tantas búsquedas (que ya no recordamos cuál). Esta <a href="https://unix.stackexchange.com/questions/136727/awk-for-loop-for-each-line-in-a-file">solución</a> evita usar el awk.</p>
-</li>
-</ul>
-<h3 id="materiales">Materiales</h3>
-<p><a href="https://drive.google.com/file/d/1N5GqyvYntZkZ2Ic_-Gg-r4hqJ07sEgTs/view?usp=sharing">Descargar</a></p>
+<!--
+## Ejercicio a informar
+
+!!! abstract "Fecha de Entrega: Viernes, xx de septiembre 2022, 23:59hs".
+
+### Enunciado
+
+Feliz con sus descubrimientos hasta el momento. Su jefe decide que es hora de tratar de entender de qué variante deriva el virus, por más que ya analizó la identidad de secuencia de genoma completo cree que es mejor verlo (y usted está de acuerdo) realizando una filogenia.
+
+**1.** Decide realizar un alineamiento de genomas para construir un árbol. Después de un rato de ver en su computadora “aligned score….” recuerda que el genoma de coronavirus son como 30000 bases que es mucho más que una proteína estándar.Se imagina cuánto va a tardar todo este proceso y transpira. Entonces decide llamar a la Fundación Internacional Facilitadora de Alineamientos (Si Si, llama a la FIFA) y pedirle que lo hagan por usted (Pero que suerte que existe la FIFA!). La FIFA le comenta que el proceso entero llevó como dos horas de reloj (se consideran muy afortunados) y que se tuvo en cuenta que iba a utilizarse para construir una filogenia. Por último, agregan que no tienen muchas ganas de escribir el procedimiento pero que lo hicieron como siempre.
+
+Cómo usted debe informar este procedimiento a su jefe, debe reproducir los pasos a seguir para armar el alineamiento considerando que usted envió los archivos: `All_sequences.fasta` y `MW298643.1.fasta`. Y que le devolvieron el archivo `All_22_sequences_aln.fasta` que se encuentra en los Materiales.
+
+En este informe deben figurar los comandos utilizados con los parámetros correspondientes y una descripción de cualquier otro procedimiento que hayan realizado.
+
+**2.** Usando el alineamiento, decide construir un árbol mediante la técnica que le parece más correcta (debidamente justificada Maximum Likelihood !!!!). Dado que los algoritmos de construcción de árboles cortan los nombres de la secuencia, para una mejor presentación de los resultados a su jefe decide que en el árbol es mejor agregar los nombres de las cepas y sus hospedadores. En este reporte es necesario identificar su secuencia e interpretar el árbol y sugerir de qué variante proviene el árbol.
+
+!!! warning "Recordatorio importante: Recuerden el uso del Seed"
+
+!!! danger "Nota aclaratoria sobre bootstrapping:"
+
+      Si llegaran a querer hacer un bootstrap, la generación de cada árbol lleva aproximadamente 7min. En base a esto para 10 árboles, llevaría 70 min, o sea, 1h 10 min.
+
+!!! danger "Nota aclaratoria sobre árbol consenso: En el árbol consenso se pierden las longitudes de las ramas."
+
+
+!!! example "Extra (y por ende opcional)"
+
+En lugar de cambiar las etiquetas de los nodos externos manualmente en Figtree, se puede hacer mediante un script de bash. Como ya sabrán , hay varias formas de hacerlo, pero dado el entusiasmo observado vamos a sugerir algunas cosas para que les sea quizás un poco más fácil y vayan practicando como hacer buenas búsquedas en Google.
+
+La forma más simple es:
+
+**1.** Tener en un archivo de texto el nombre de la secuencia como figura en el árbol, separado por un tab o espacios del nombre de la secuencia como queremos que figure en el árbol.
+
+
+!!! ad-danger "CUIDADO!"
+
+      Hagan una copia de respaldo de el o los archivos de árbol que vayan a modificar para tener un backup y no tener que volver a hacerlos si ocurren errores.
+
+
+**2.** Luego usar un `for`, un `awk` y un `sed`.
+
+Errores que vimos que podían ocurrir.
+
+* Reemplacen en el archivo de texto los espacios por "_"
+
+* Reemplacen en el archivo de texto las "\" por "_"
+
+* La última línea del archivo de texto requiere que tenga un enter al final (es decir, que haya una nueva línea vacía luego de la última etiqueta elegida).
+
+**3.** Como es un poquito complejo (no sabíamos hacerlo todo) les damos algunas ayuditas de como fuimos armando el script:
+
+* Para saber como leer un archivo con un `for` en bash buscamos en Google: “how to read lines with for in bash” y en el primer resultado encontramos la [solución](https://www.cyberciti.biz/faq/unix-howto-read-line-by-line-from-file/).
+
+* Para saber como guardar las etiquetas en variables con `awk` buscamos en Google: “how to save variables with awk” y en el primer resultado encontramos una [solución](https://stackoverflow.com/questions/18648345/saving-awk-output-to-variable/18648383) que no me funcionó.
+
+* Así que modificamos la búsqueda en Google: “how to save variables with awk while reading lines in bash” y en el primer resultado encontramos una [pregunta](https://stackoverflow.com/questions/47259579/read-line-by-line-with-awk-and-parse-variables) que nos ayudó junto con lo que vimos en la búsqueda anterior a armar correctamente el `awk` sobre la línea de archivo.
+
+* Para saber cómo usar el `sed` con variables buscamos en google: “how to pass variables to sed” y en el segundo resultado encontramos la [solución](https://unix.stackexchange.com/questions/84063/passing-a-variable-to-sed)
+
+* **Obviamente,** después de estar probando y googleando encontramos una solución mucho más simple al problema en una de las tantas búsquedas (que ya no recordamos cuál). Esta [solución](https://unix.stackexchange.com/questions/136727/awk-for-loop-for-each-line-in-a-file) evita usar el awk.
+
+### Materiales
+[Descargar](https://drive.google.com/file/d/1N5GqyvYntZkZ2Ic_-Gg-r4hqJ07sEgTs/view?usp=sharing)
+-->
 
               
             </article>
@@ -1171,6 +1404,42 @@ Si un agrupamiento determinado es encontrado en todos los árboles, entonces tie
       </main>
       
         <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Pie" >
+      
+        
+        <a href="../TP05_PSI-BLAST/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: TP 5 - Perfiles de secuencias" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              TP 5 - Perfiles de secuencias
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../instructivos/inicio/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: Inicio" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Siguiente
+              </span>
+              Inicio
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -1196,10 +1465,10 @@ Si un agrupamiento determinado es encontrado en todos los árboles, entonces tie
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["search.suggest", "search.highlight", "search.share", "header.autohide", "navigation.tracking", "navigation.tabs", "toc.integrate", "navigation.top"], "search": "../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "B\u00fasqueda", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version.title": "Seleccionar versi\u00f3n"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["search.suggest", "search.highlight", "search.share", "header.autohide", "navigation.tracking", "navigation.tabs", "toc.integrate", "navigation.top"], "search": "../../assets/javascripts/workers/search.85cb4492.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "B\u00fasqueda", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version.title": "Seleccionar versi\u00f3n"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a877e258.min.js"></script>
       
         <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
       
