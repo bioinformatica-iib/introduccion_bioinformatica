@@ -1,8 +1,7 @@
 ![Image](img/featured.png){ width="250", align="left" }
 
 
-# **TP 6**. Filogenias, árboles filogenéticos y filogenómica { markdown data-toc-label = 'TP 6' }
-
+# **TP 6**. Filogenias, árboles filogenéticos y filogenómica
 <br>
 
 [:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/147nunzIsdA5tKI-AbeIzIjHY0JwoymmX/view?usp=sharing){ .md-button .md-button--primary }
@@ -77,9 +76,9 @@ Por último, los árboles pueden poseer raíz (**Rooted**) o no poseer raíz (**
 
 Un **outgroup** puede ser cualquier secuencia que no sea un miembro natural del grupo de interés. Cuando uno no cuenta con un elemento que pueda usarse como referencia, la raíz suele ubicarse en el medio del árbol, o aun mejor, no se coloca en ningún lado.
 
-## Ejercicios: Paso por paso hacia un árbol. { markdown data-toc-label = 'Ejercicios' }
+## Ejercicios: Paso por paso hacia un árbol { markdown data-toc-label='Ejercicios' }
 
-### Paso 1. Construcción del dataset: Recolección de datos { markdown data-toc-label = 'Paso 1' }
+### Paso 1. Construcción del dataset: Recolección de datos { markdown data-toc-label='Paso 1 - Recolección de datos' }
 
 Un árbol filogenético se construye a partir de un alineamiento múltiple que a su vez debe calcularse a partir de un conjunto de secuencias representativas. La topología de el o los árboles resultantes va a depender mucho de la cantidad y calidad de los datos que utilicemos. 
 
@@ -100,7 +99,7 @@ Se utilizarán las secuencias contenidas en el archivo `Ribonucleasas.fasta` cuy
 
 En el archivo multiFASTA contiene 64 secuencias proteicas de ribonucleasas pancreáticas de diversos animales. Si observan el archivo `Ribonucleasas_organismos.pdf` pueden ver que **todas** pertenecen a mamíferos placentarios, excepto por nuestro viejo amigo el canguro, que como despistó a más de uno en el trabajo práctico de Alineamientos se ganó su lugar.
 
-### Paso 2. Construcción y Curación del Alineamiento múltiple { markdown data-toc-label = 'Paso 2' }
+### Paso 2. Construcción y Curación del Alineamiento múltiple { markdown data-toc-label='Paso 2 - Alineamiento' }
 
 Para este paso se utilizará la herramienta de **EMBOSS** del trabajo práctico anterior: `emma`
 
@@ -193,7 +192,7 @@ Para colorear el alineamiento vayan a:
       En la parte superior pueden seleccionar columnas del alineamiento y luego presionan **delete** para eliminarlas. 
 
 
-## Paso 3. Construcción del Árbol { markdown data-toc-label = 'Paso 3' }
+### Paso 3. Construcción del Árbol { markdown data-toc-label='Paso 3 - Construcción del Árbol' }
 
 Los métodos para llevar a cabo la filogenia se pueden separar en dos categorías generales:
 
@@ -201,7 +200,7 @@ Los métodos para llevar a cabo la filogenia se pueden separar en dos categoría
 
 * **Métodos de búsqueda de árboles o discretos:** máxima parsimonia, maximum likelihood (máxima verosimilitud), métodos bayesianos.
 
-### Parte I. Métodos basados en distancias: Neighbor Joining y UPGMA
+### Parte I. Métodos basados en distancias: Neighbor Joining y UPGMA  { markdown data-toc-label='Parte I - Métodos basados en distancias' }
 
 El funcionamiento de estos es relativamente sencillo. Se cuenta con un solo parámetro: la distancia, que se calcula entre todos los elementos con los que vamos a construir el árbol (OTUs por sus siglas en inglés: *Operational Taxonomic Unit*), el cual es utilizado para ensamblar el árbol agrupando elementos cercanos.
 
@@ -320,7 +319,7 @@ fneighbor -treetype u -datafile Ribonucleasas.dist -outfile Ribonucleasas-UPGMA.
    b. Grafiquen los resultados de ambos métodos. Se ven diferentes ¿no? Investigue las razones.
 
 
-### Parte II. Métodos de búsqueda de árboles: Máxima Verosimilitud y Máxima Parsimonia
+### Parte II. Métodos de búsqueda de árboles: Máxima Verosimilitud y Máxima Parsimonia { markdown data-toc-label='Parte II - Métodos de búsqueda de árboles' }
 
 Los métodos de búsqueda de árboles examinan cada columna del MSA de manera individual y buscan un árbol que mejor represente esta información.
 
@@ -369,7 +368,7 @@ fproml -seed 1 -sequence Ribonucleasas.curado.msa -outfile Ribonucleasas-ML.tree
 
       Chequee su respuesta en EMBOSS !!!!
 
-#### Uso de Outgroups
+##### Uso de Outgroups
 
 Hasta ahora se generaron árboles **sin raiz**, donde las distancias entre los OTUs son relativas. Para colocar una raíz se utiliza un OTU que se sabe *a priori* que divergió antes que el resto, así se obtiene una referencia a partir de la cual construir el árbol.
 
@@ -395,7 +394,7 @@ Una vez obtenido este valor se vuelve a correr `fproml`
 fproml -outgrno 45 -seed 1 -sequence Ribonucleasas.curado.msa -outfile Ribonucleasas-ML-OUTGR.tree -outtreefile Ribonucleasas-ML-OUTGR.treefile
 ```
 
-!!! info ""Ventaja del Método de Maximum Likelihood"
+!!! info "Ventaja del Método de Maximum Likelihood"
 
       ML utiliza un modelo de Markov para estimar las tasas de cambio de las diferentes posiciones y así poder hacer cálculos más precisos. Esto se debe a que no todas las posiciones varían con la misma frecuencia.
 
@@ -410,7 +409,7 @@ Genere el árbol utilizando máxima parsimonia con el comando `fprotpars`, utili
 
 **3.II.4** ¿Cuántos árboles nos devuelve? ¿Por qué?  
 
-### Paso 4. Tests – Seleccionar árboles en el bosque
+### Paso 4. Tests – Seleccionar árboles en el bosque { markdown data-toc-label='Paso 4 - Elección del árbol' }
 
 Entonces, ¿qué tan bueno es nuestro árbol?
 
@@ -471,7 +470,7 @@ Observando el árbol consenso. Responda:
 
 **3.II.7** ¿Cómo podrían lidiar con nodos de baja calidad?   
 
-### Paso 5. Presentación de resultados.
+### Paso 5. Presentación de resultados { markdown data-toc-label='Paso 5 - Presentación de resultados' }
 
 Finalmente algunos conceptos en cuanto a la presentación de los datos. Por lo general no hay reglas duras de cómo debe hacerse pero sí convenciones que están bastante aceptadas.
 
