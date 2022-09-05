@@ -5,11 +5,32 @@
 
 <br>
 
-[:fontawesome-solid-download: Materiales](){ .md-button .md-button--primary }
+[:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/147nunzIsdA5tKI-AbeIzIjHY0JwoymmX/view?usp=sharing){ .md-button .md-button--primary }
 
 <br>
 
+<!--
 !!! abstract "Atención: Este TP tiene informe."
+-->
+
+## Software a usar
+
+* Alineamientos: emma y clustalw (en EMBOSS suite)
+
+* Visualización de alineamientos: Jalview [www.jalview.org](https://www.jalview.org)
+
+* Métodos basados en distancias:
+      * fprotdist (en EMBOSS suite) <!-- (se instala en el tp) -->
+      * fneighbor (en EMBOSS suite) <!-- (se instala en el tp) -->
+* Métodos de búsqueda de árboles:
+      * fproml (en EMBOSS suite)
+      * fprotpars (en EMBOSS suite)
+
+* Visualización de árboles: FigTree  [tree.bio.ed.ac.uk/software/figtree/](http://tree.bio.ed.ac.uk/software/figtree/)<!-- (se instala en el tp) -->
+* Remuestreo y árbol consenso:
+      * fseqboot (en EMBOSS suite)
+      * fconsense  (en EMBOSS suite)
+
 
 ## Objetivos
 * Familiarizarse con el uso de árboles filogenéticos
@@ -128,6 +149,13 @@ Los algoritmos de alineamiento utilizan heurísticas y aproximaciones que pueden
 
 Dado que el curado de un alineamiento para filogenética es un proceso crítico y muy "visual", existen herramientas más apropiadas (y vistosas) para esta tarea que `showalign`. El visualizador de alineamientos a utilizar se llama Jalview. 
 
+Jalview requiere la instalación de la versión 8 de java. Para instalar ejecute en su terminal:
+
+```Bash
+sudo apt install openjdk-8-jdk openjdk-8-jre
+sudo update-java-alternatives --set /usr/lib/jvm/java-1.8.0-openjdk-i386
+```
+
 Preferentemente desde una nueva terminal, pueden ejecutar Jalview:
 
 ```Bash
@@ -141,7 +169,7 @@ O desde el el explorador de archivos:
 
 Cuando abren el programa hay algunas ventanas abiertas. Cierren todo. Además ignoren la *"barra de avance"* que se encuentra en la parte inferior de la ventana.
 
-Una vez abierto el programa, carguen el alineamiento generado por `emma` haciendo click en:
+Una vez abierto el programa, carguen el alineamiento generado por `emma` (`Ribonucleasas.msa`) haciendo click en:
 
 `Archivo` > `Alineamiento de entrada` > `Desde fichero`.
 
@@ -158,7 +186,7 @@ Para colorear el alineamiento vayan a:
 
 `Color` > `ClustalX`
 
-**2.3.** Revisen su alineamiento con Jalview para ver si hay errores o posiciones dudosas y, en caso de encontrarlos, corríjanlos en `Ribonucleasas.msa` y guarden!
+**2.3.** Revisen su alineamiento con Jalview para ver si hay errores o posiciones dudosas y, en caso de encontrarlos, corríjanlos en `Ribonucleasas.msa` y guarden en `Ribonucleasas.curado.msa`!
 
 !!! idea "Eliminar columnas"
 
@@ -216,7 +244,7 @@ Los tres primeros (PAM, JTT y PBM) son los más ampliamente utilizados.
 **3.I.1** Construya la matriz de distancia utilizando el método JTT:
 
 ```Bash
-fprotdist -method j -sequence Ribonucleasas.msa -outfile Ribonucleasas.dist
+fprotdist -method j -sequence Ribonucleasas.curado.msa -outfile Ribonucleasas.dist
 ```
 
 **3.I.2** ¿Qué son los siguientes parámetros del comando?
@@ -262,7 +290,7 @@ Todo lo realizado con FigTree se puede guardar en un archivo nuevo para seguir t
 
 **3.I.4** Observen la topología del árbol a diferentes niveles e identifiquen diferentes órdenes. ¿Tiene sentido el agrupamiento que se realizó?
 
-!!! quote "Nemotenic para Taxonomía"
+!!! quote "Regla mnemotécnica para Taxonomía"
 
       Si aún no vieron taxonomía o si no recuerdan lo que es un Orden...
       
@@ -311,7 +339,7 @@ Para utilizar Máxima Verosimilitud (*maximum likelihood*) se usa el comando `fp
 * `-intrefile` (opcional),  Árbol para usar de guía. No se utilizará en este caso, pero lo va a preguntar igual, en ese caso se aprieta *Enter*.
 
 ```Bash
-fproml -seed 1 -sequence Ribonucleasas.msa -outfile Ribonucleasas-ML.tree -outtreefile Ribonucleasas-ML.treefile
+fproml -seed 1 -sequence Ribonucleasas.curado.msa -outfile Ribonucleasas-ML.tree -outtreefile Ribonucleasas-ML.treefile
 ```
 
 ??? question "¿Qué es Seed?"
@@ -356,7 +384,7 @@ El set de secuencias está compuesto casi en su totalidad por mamíferos placent
 Contar a mano puede llevar a errores, y dado que esto es bioinformática, se utilizará el siguiente comando:
 
 ```Bash
-cat Ribonucleasas.msa | grep ">" | grep -n "Macropus"
+cat Ribonucleasas.curado.msa | grep ">" | grep -n "Macropus"
 ```
 
 La salida se verá similar a esta: ``45:>Macropus_rufus``. La secuencia en el alineamiento en este caso está en la posición 45 pero este número puede cambiar según el usuario.
@@ -364,7 +392,7 @@ La salida se verá similar a esta: ``45:>Macropus_rufus``. La secuencia en el al
 Una vez obtenido este valor se vuelve a correr `fproml`
 
 ```Bash
-fproml -outgrno 45 -seed 1 -sequence Ribonucleasas.msa -outfile Ribonucleasas-ML-OUTGR.tree -outtreefile Ribonucleasas-ML-OUTGR.treefile
+fproml -outgrno 45 -seed 1 -sequence Ribonucleasas.curado.msa -outfile Ribonucleasas-ML-OUTGR.tree -outtreefile Ribonucleasas-ML-OUTGR.treefile
 ```
 
 !!! info ""Ventaja del Método de Maximum Likelihood"
@@ -402,7 +430,7 @@ Este test parece sencillo, y estudios en filogenias conocidas (poblaciones viral
 Para generar el conjunto de alineamientos se utiliza el comando `fseqboot` los argumentos son `-sequence` (datos de ENTRADA), `-outfile` (datos de SALIDA) y `-reps`:
 
 ```Bash
-fseqboot -reps 10 -sequence Ribonucleasas.msa -outfile Ribonucleasas.boot
+fseqboot -reps 10 -sequence Ribonucleasas.curado.msa -outfile Ribonucleasas.boot
 ```
 
 ??? bug "En este comando falta algo muy importante! ¿Lo ven?"
@@ -410,7 +438,7 @@ fseqboot -reps 10 -sequence Ribonucleasas.msa -outfile Ribonucleasas.boot
       Falta el seed !!!
 
       ```Bash
-      fseqboot -reps 10 -seed 1 -sequence Ribonucleasas.msa -outfile Ribonucleasas.boot
+      fseqboot -reps 10 -seed 1 -sequence Ribonucleasas.curado.msa -outfile Ribonucleasas.boot
       ```
 
 `-reps` indica el número de remuestreos a realizar. Calcular varios árboles puede llevar bastante tiempo por lo que solo se harán 10 repeticiones. En un típico ensayo se realizan muchas más repeticiones.
@@ -453,7 +481,7 @@ Finalmente algunos conceptos en cuanto a la presentación de los datos. Por lo g
 
 * Por último, tengan en cuenta la legibilidad del árbol en general. Utilizar nombres para las ramas con códigos de acceso a bases de datos o acrónimos de pocas letras puede resultar muy confuso. Hoy en día existen numerosos softwares para la visualización de árboles (ej. Hypertree) que nos permiten, mediante agrupamientos, colores, fuentes, etc. llamar la atención del lector sobre uno u otro aspecto importante del mismo y lograr que transmita la información que nos interesa mostrar.
 
-
+<!--
 ## Ejercicio a informar
 
 !!! abstract "Fecha de Entrega: Viernes, xx de septiembre 2022, 23:59hs".
@@ -468,7 +496,7 @@ Cómo usted debe informar este procedimiento a su jefe, debe reproducir los paso
 
 En este informe deben figurar los comandos utilizados con los parámetros correspondientes y una descripción de cualquier otro procedimiento que hayan realizado.
 
-**2.** Usando el alineamiento, decide construir un árbol mediante la técnica que le parece más correcta (debidamente justificada). Dado que los algoritmos de construcción de árboles cortan los nombres de la secuencia, para una mejor presentación de los resultados a su jefe decide que en el árbol es mejor agregar los nombres de las cepas y sus hospedadores. En este reporte es necesario identificar su secuencia e interpretar el árbol y sugerir de qué variante proviene el árbol.
+**2.** Usando el alineamiento, decide construir un árbol mediante la técnica que le parece más correcta (debidamente justificada Maximum Likelihood !!!!). Dado que los algoritmos de construcción de árboles cortan los nombres de la secuencia, para una mejor presentación de los resultados a su jefe decide que en el árbol es mejor agregar los nombres de las cepas y sus hospedadores. En este reporte es necesario identificar su secuencia e interpretar el árbol y sugerir de qué variante proviene el árbol.
 
 !!! warning "Recordatorio importante: Recuerden el uso del Seed"
 
@@ -478,15 +506,20 @@ En este informe deben figurar los comandos utilizados con los parámetros corres
 
 !!! danger "Nota aclaratoria sobre árbol consenso: En el árbol consenso se pierden las longitudes de las ramas."
 
-**Extra (y por ende opcional).** En lugar de cambiar las etiquetas de los nodos externos manualmente en Figtree, se puede hacer mediante un script de bash. Como ya sabrán , hay varias formas de hacerlo, pero dado el entusiasmo observado vamos a sugerir algunas cosas para que les sea quizás un poco más fácil y vayan practicando como hacer buenas búsquedas en Google.
+
+!!! example "Extra (y por ende opcional)"
+
+En lugar de cambiar las etiquetas de los nodos externos manualmente en Figtree, se puede hacer mediante un script de bash. Como ya sabrán , hay varias formas de hacerlo, pero dado el entusiasmo observado vamos a sugerir algunas cosas para que les sea quizás un poco más fácil y vayan practicando como hacer buenas búsquedas en Google.
 
 La forma más simple es:
 
 **1.** Tener en un archivo de texto el nombre de la secuencia como figura en el árbol, separado por un tab o espacios del nombre de la secuencia como queremos que figure en el árbol.
 
-!!! danger "CUIDADO!"
+
+!!! ad-danger "CUIDADO!"
 
       Hagan una copia de respaldo de el o los archivos de árbol que vayan a modificar para tener un backup y no tener que volver a hacerlos si ocurren errores.
+
 
 **2.** Luego usar un `for`, un `awk` y un `sed`.
 
@@ -512,3 +545,4 @@ Errores que vimos que podían ocurrir.
 
 ### Materiales
 [Descargar](https://drive.google.com/file/d/1N5GqyvYntZkZ2Ic_-Gg-r4hqJ07sEgTs/view?usp=sharing)
+-->
