@@ -17,7 +17,7 @@
     
     
       
-        <title>Index - Introducción a la Bioinformática</title>
+        <title>TP 6 - Filogenias - Introducción a la Bioinformática</title>
       
     
     
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Index
+              TP 6 - Filogenias
             
           </span>
         </div>
@@ -266,13 +266,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../inicio/" class="md-tabs__link">
+      <a href="../inicio/" class="md-tabs__link md-tabs__link--active">
         Prácticos
       </a>
     </li>
@@ -527,12 +529,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" checked>
       
       
       
@@ -628,6 +632,192 @@
       <a href="../TP05_PSI-BLAST/" class="md-nav__link">
         TP 5 - Perfiles de secuencias
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          TP 6 - Filogenias
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        TP 6 - Filogenias
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#software-a-usar" class="md-nav__link">
+    Software a usar
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objetivos" class="md-nav__link">
+    Objetivos
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#filogenia" class="md-nav__link">
+    Filogenia
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicios-paso-por-paso-hacia-un-arbol" class="md-nav__link">
+    Ejercicios
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#paso-1-construccion-del-dataset-recoleccion-de-datos" class="md-nav__link">
+    Paso 1 - Recolección de datos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-2-construccion-y-curacion-del-alineamiento-multiple" class="md-nav__link">
+    Paso 2 - Alineamiento
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-3-construccion-del-arbol" class="md-nav__link">
+    Paso 3 - Construcción del Árbol
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parte-i-metodos-basados-en-distancias-neighbor-joining-y-upgma" class="md-nav__link">
+    Parte I - Métodos basados en distancias
+  </a>
+  
+    <nav class="md-nav" aria-label="Parte I - Métodos basados en distancias">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#metodo-neighbor-joining" class="md-nav__link">
+    Método Neighbor-Joining.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metodo-upgma" class="md-nav__link">
+    Método UPGMA.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parte-ii-metodos-de-busqueda-de-arboles-maxima-verosimilitud-y-maxima-parsimonia" class="md-nav__link">
+    Parte II - Métodos de búsqueda de árboles
+  </a>
+  
+    <nav class="md-nav" aria-label="Parte II - Métodos de búsqueda de árboles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#metodo-de-maxima-verosimilitud" class="md-nav__link">
+    Método de Máxima Verosimilitud
+  </a>
+  
+    <nav class="md-nav" aria-label="Método de Máxima Verosimilitud">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#uso-de-outgroups" class="md-nav__link">
+    Uso de Outgroups
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metodo-de-maxima-parsimonia" class="md-nav__link">
+    Método de Máxima Parsimonia
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-4-tests-seleccionar-arboles-en-el-bosque" class="md-nav__link">
+    Paso 4 - Elección del árbol
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-5-presentacion-de-resultados" class="md-nav__link">
+    Paso 5 - Presentación de resultados
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -744,7 +934,7 @@
 
 
 <p><img _="," align="left" alt="Image" src="img/featured.png" width="250" /></p>
-<h1 id="tp-6-filogenias-arboles-filogeneticos-y-filogenomica" markdown="markdown"><strong>TP 6</strong>. Filogenias, árboles filogenéticos y filogenómica</h1>
+<h1 id="tp-6-filogenias-arboles-filogeneticos-y-filogenomica"><strong>TP 6</strong>. Filogenias, árboles filogenéticos y filogenómica</h1>
 <p><br></p>
 <p><a class="md-button md-button--primary" href="https://drive.google.com/file/d/147nunzIsdA5tKI-AbeIzIjHY0JwoymmX/view?usp=sharing"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M480 352H346.5l-45.25 45.25C289.2 409.3 273.1 416 256 416s-33.16-6.656-45.25-18.75L165.5 352H32c-17.67 0-32 14.33-32 32v96c0 17.67 14.33 32 32 32h448c17.67 0 32-14.33 32-32v-96c0-17.7-14.3-32-32-32zm-48 104c-13.2 0-24-10.8-24-24s10.8-24 24-24 24 10.8 24 24-10.8 24-24 24zm-198.6-81.4c6.2 6.3 14.4 9.4 22.6 9.4s16.38-3.125 22.62-9.375l128-128c12.49-12.5 12.49-32.75 0-45.25-12.5-12.5-32.76-12.5-45.25 0L288 274.8V32c0-17.67-14.33-32-32-32-17.7 0-32 14.33-32 32v242.8l-73.4-73.4c-12.49-12.5-32.75-12.5-45.25 0-12.49 12.5-12.49 32.75 0 45.25L233.4 374.6z"/></svg></span> Materiales</a></p>
 <p><br></p>
@@ -829,7 +1019,7 @@ Generalmente los árboles filogenéticos (o filogramas) tienen ramas que son pro
 <p><img alt="Clado" src="img/Arbol-Clado.png" /></p>
 <p>Por último, los árboles pueden poseer raíz (<strong>Rooted</strong>) o no poseer raíz (<strong>Unrooted</strong>). La raíz es el punto más antiguo del árbol y marca el orden de ramificación del mismo, es decir, quién comparte un ancestro más reciente con quién. La forma más frecuente de ubicar la raíz del árbol es a través de un <strong>outgroup</strong>: un punto externo de referencia.</p>
 <p>Un <strong>outgroup</strong> puede ser cualquier secuencia que no sea un miembro natural del grupo de interés. Cuando uno no cuenta con un elemento que pueda usarse como referencia, la raíz suele ubicarse en el medio del árbol, o aun mejor, no se coloca en ningún lado.</p>
-<h2 id="ejercicios-paso-por-paso-hacia-un-arbol" markdown="markdown">Ejercicios: Paso por paso hacia un árbol.</h2>
+<h2 id="ejercicios-paso-por-paso-hacia-un-arbol" markdown="markdown">Ejercicios: Paso por paso hacia un árbol</h2>
 <h3 id="paso-1-construccion-del-dataset-recoleccion-de-datos" markdown="markdown">Paso 1. Construcción del dataset: Recolección de datos</h3>
 <p>Un árbol filogenético se construye a partir de un alineamiento múltiple que a su vez debe calcularse a partir de un conjunto de secuencias representativas. La topología de el o los árboles resultantes va a depender mucho de la cantidad y calidad de los datos que utilicemos. </p>
 <div class="admonition info">
@@ -918,7 +1108,7 @@ O desde el el explorador de archivos:
 <p class="admonition-title">Eliminar columnas</p>
 <p>En la parte superior pueden seleccionar columnas del alineamiento y luego presionan <strong>delete</strong> para eliminarlas. </p>
 </div>
-<h2 id="paso-3-construccion-del-arbol" markdown="markdown">Paso 3. Construcción del Árbol</h2>
+<h3 id="paso-3-construccion-del-arbol" markdown="markdown">Paso 3. Construcción del Árbol</h3>
 <p>Los métodos para llevar a cabo la filogenia se pueden separar en dos categorías generales:</p>
 <ul>
 <li>
@@ -928,7 +1118,7 @@ O desde el el explorador de archivos:
 <p><strong>Métodos de búsqueda de árboles o discretos:</strong> máxima parsimonia, maximum likelihood (máxima verosimilitud), métodos bayesianos.</p>
 </li>
 </ul>
-<h3 id="parte-i-metodos-basados-en-distancias-neighbor-joining-y-upgma">Parte I. Métodos basados en distancias: Neighbor Joining y UPGMA</h3>
+<h3 id="parte-i-metodos-basados-en-distancias-neighbor-joining-y-upgma" markdown="markdown">Parte I. Métodos basados en distancias: Neighbor Joining y UPGMA</h3>
 <p>El funcionamiento de estos es relativamente sencillo. Se cuenta con un solo parámetro: la distancia, que se calcula entre todos los elementos con los que vamos a construir el árbol (OTUs por sus siglas en inglés: <em>Operational Taxonomic Unit</em>), el cual es utilizado para ensamblar el árbol agrupando elementos cercanos.</p>
 <h4 id="metodo-neighbor-joining">Método Neighbor-Joining.</h4>
 <p>Este método se puede utilizar usando el comando <code>fneighbor</code>. Pero debemos instalarlo:</p>
@@ -1011,7 +1201,7 @@ Para guardar la imagen y poder verla en detalle tienen que ir a:</p>
 <p><strong>3.I.6</strong> Comparen el árbol obtenido por <strong>Neighbor-Joining</strong> y por <strong>UPGMA</strong>.
    a. ¿Hay cambios en las agrupaciones?
    b. Grafiquen los resultados de ambos métodos. Se ven diferentes ¿no? Investigue las razones.</p>
-<h3 id="parte-ii-metodos-de-busqueda-de-arboles-maxima-verosimilitud-y-maxima-parsimonia">Parte II. Métodos de búsqueda de árboles: Máxima Verosimilitud y Máxima Parsimonia</h3>
+<h3 id="parte-ii-metodos-de-busqueda-de-arboles-maxima-verosimilitud-y-maxima-parsimonia" markdown="markdown">Parte II. Métodos de búsqueda de árboles: Máxima Verosimilitud y Máxima Parsimonia</h3>
 <p>Los métodos de búsqueda de árboles examinan cada columna del MSA de manera individual y buscan un árbol que mejor represente esta información.</p>
 <p>Este procedimiento los vuelve mas lentos que los métodos basados en distancia, pero examinar cada posición por separado da un árbol más <em>acertado</em> y brinda la posibilidad de relacionar los eventos a cada una de las posiciones.</p>
 <p>En este caso <strong>NO</strong> va a ser necesario calcular una matriz de distancias, podemos ejecutar el método directamente sobre el alineamiento. </p>
@@ -1049,7 +1239,7 @@ Para guardar la imagen y poder verla en detalle tienen que ir a:</p>
 <p>¿Cree que utiliza los mismos métodos que el comando utiliza para proteínas?</p>
 <p>Chequee su respuesta en EMBOSS !!!!</p>
 </details>
-<h4 id="uso-de-outgroups">Uso de Outgroups</h4>
+<h5 id="uso-de-outgroups">Uso de Outgroups</h5>
 <p>Hasta ahora se generaron árboles <strong>sin raiz</strong>, donde las distancias entre los OTUs son relativas. Para colocar una raíz se utiliza un OTU que se sabe <em>a priori</em> que divergió antes que el resto, así se obtiene una referencia a partir de la cual construir el árbol.</p>
 <p>¡Aprovechemos que tenemos a un intruso!</p>
 <p>El set de secuencias está compuesto casi en su totalidad por mamíferos placentarios, excepto por el canguro rojo. Su aparición no es casualidad ya que como miembro de otra infraclase sirve de referencia para proponer una raíz al árbol. Para ello se utiliza el argumento <code>-outgrno</code>, que recibe el número del organismo a utilizar como referencia. Este número esta dado por la posición de la secuencia en el alineamiento múltiple. Para averiguar que número es hay dos opciones:</p>
@@ -1069,7 +1259,7 @@ Para guardar la imagen y poder verla en detalle tienen que ir a:</p>
 <div class="highlight"><pre><span></span><code>fproml -outgrno <span class="m">45</span> -seed <span class="m">1</span> -sequence Ribonucleasas.curado.msa -outfile Ribonucleasas-ML-OUTGR.tree -outtreefile Ribonucleasas-ML-OUTGR.treefile
 </code></pre></div>
 <div class="admonition info">
-<p class="admonition-title">"Ventaja del Método de Maximum Likelihood</p>
+<p class="admonition-title">Ventaja del Método de Maximum Likelihood</p>
 <p>ML utiliza un modelo de Markov para estimar las tasas de cambio de las diferentes posiciones y así poder hacer cálculos más precisos. Esto se debe a que no todas las posiciones varían con la misma frecuencia.</p>
 <p>Posiciones importantes para la estructura/función de la proteína, por ejemplo el sitio activo de una enzima, tienden a variar mucho menos que el resto y esto debe ser tenido en cuenta a la hora de construir la filogenia.</p>
 </div>
@@ -1077,7 +1267,7 @@ Para guardar la imagen y poder verla en detalle tienen que ir a:</p>
 <p>Genere el árbol utilizando máxima parsimonia con el comando <code>fprotpars</code>, utilice <code>-help</code> para ver qué argumentos recibe. Responda:</p>
 <p><strong>3.II.3</strong> ¿Qué información nos da este método?  </p>
 <p><strong>3.II.4</strong> ¿Cuántos árboles nos devuelve? ¿Por qué?  </p>
-<h3 id="paso-4-tests-seleccionar-arboles-en-el-bosque">Paso 4. Tests – Seleccionar árboles en el bosque</h3>
+<h3 id="paso-4-tests-seleccionar-arboles-en-el-bosque" markdown="markdown">Paso 4. Tests – Seleccionar árboles en el bosque</h3>
 <p>Entonces, ¿qué tan bueno es nuestro árbol?</p>
 <p>Uno de los test más simples para medir la veracidad del árbol es el <em>bootstrap</em>. Hoy en día sería muy raro encontrar un árbol filogenético que no lo haya utilizado.</p>
 <p>El <em>bootstrap</em> esencialmente prueba si todo el set de datos está de acuerdo con el árbol resultante, o si dicho árbol es un <em>outlier</em> entre varias otras posibilidades. Esto se hace tomando muestras aleatorias de nuestro set de datos, armando varios árboles y calculando la frecuencia de ocurrencia de cada fragmento del árbol.
@@ -1121,7 +1311,7 @@ Si un agrupamiento determinado es encontrado en todos los árboles, entonces tie
 <p>Observando el árbol consenso. Responda:  </p>
 <p><strong>3.II.6</strong> ¿Resulta ser un buen árbol? ¿En qué se basan para afirmarlo?   </p>
 <p><strong>3.II.7</strong> ¿Cómo podrían lidiar con nodos de baja calidad?   </p>
-<h3 id="paso-5-presentacion-de-resultados">Paso 5. Presentación de resultados.</h3>
+<h3 id="paso-5-presentacion-de-resultados" markdown="markdown">Paso 5. Presentación de resultados</h3>
 <p>Finalmente algunos conceptos en cuanto a la presentación de los datos. Por lo general no hay reglas duras de cómo debe hacerse pero sí convenciones que están bastante aceptadas.</p>
 <ul>
 <li>
@@ -1214,6 +1404,42 @@ Errores que vimos que podían ocurrir.
       </main>
       
         <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Pie" >
+      
+        
+        <a href="../TP05_PSI-BLAST/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: TP 5 - Perfiles de secuencias" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              TP 5 - Perfiles de secuencias
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../instructivos/inicio/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: Inicio" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Siguiente
+              </span>
+              Inicio
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
