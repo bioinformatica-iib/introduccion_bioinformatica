@@ -22,8 +22,9 @@ Este es el botón para decargar materiales, en (#) hay que agregar el link corre
 
 ### Recursos Online
 * [Curso online de R de Coursera](https://www.coursera.org/learn/r-programming) (se puede hacer gratis) (en ese caso no da certificado)
+* [Tips de comandos básicos de R](http://www.cookbook-r.com/)
 * Data Tables: [Introducción oficial](https://cran.r-project.org/web/packages/data.table/vignettes/datatable-intro.html) y [otra página con más info](https://bookdown.org/paradinas_iosu/CursoR/data-table.html)
-* ggplot2: [Vistazo rápido](https://bookdown.org/paradinas_iosu/CursoR/ggplot2.html) y [otra página con cada plot detallando sus parámetros](http://sthda.com/english/wiki/ggplot2-essentials)
+* ggplot2: [Vistazo rápido](https://bookdown.org/paradinas_iosu/CursoR/ggplot2.html), [otra página con cada plot detallando sus parámetros](http://sthda.com/english/wiki/ggplot2-essentials) y [cheatsheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf)
 
 ### Objetivos
 
@@ -133,7 +134,7 @@ Ahora que tenemos una idea de la interfaz de **RStudio** vamos a ver como se cre
 print("Hello World!")
 ```
 
-`print` es basicamente el `echo` de **R** y cuando lo usamos decimos que *imprimimos* a la variable. Puede ser que usemos las frases *"imprimir por terminal"*, *"imprimir por consola"*, o *"imprimir por por pantalla"* de forma intercambiable.
+`print` es equivalente al `echo` de **bash** y cuando lo usamos decimos que *imprimimos* a la variable. Puede ser que usemos las frases *"imprimir por terminal"*, *"imprimir por consola"*, o *"imprimir por por pantalla"* de forma intercambiable.
 
 Como muestra el código anterior, en **R** los argumentos van pegados a la función y entre paréntesis; de haber mas de un argumento se separan con comas (dentro de los paréntesis).
 
@@ -248,6 +249,14 @@ n <- ((n - 2) / 2) ^ (1/2)
 
 print(n)
 ```
+
+!!! tip "Tip - Averiguar el tipo de una variable"
+
+    Si uno no sabe el tipo de una variable puede usar la función `class()` la cual devuelve por consola el tipo de dicha variable. Por ejemplo, en este caso `class(n)` devolvería **"numeric"**.
+
+!!! info "Tipos de variables"
+
+    Si bien al momento de trabajar con **R** vamos a aceptar usar **numeric** incluso cuando trabajamos con **integer**, en otros lenguajes de programación esta diferencia puede ser más estricta por lo que habría que usar **integer** al trabajar con números enteros. Otro factor a considerar es que los **integer** ocupan menos tamaño en memoria, lo que puede ser relevante en ciertos casos.
 
 ### Cadenas de caracteres o *Strings* { markdown data-toc-label='Cadenas de caracteres' }  
 
@@ -455,7 +464,7 @@ En la pestaña **Plots** hay varios botones que van a ser muy útiles al momento
 
 ## **Ejercicio 2 - Vectores y plots** { markdown data-toc-label='Ejercicio 2 - Plots' }
 
-Para valores de `x` entre 1 y 200, calculen el `y` correspondiente a una recta con pendiente 3 y ordenada al origen 5 y hagan el plot correspondiente usando el comando `plot`.
+Para valores de `x` entre 1 y 200, calculen el `y` correspondiente a una recta con pendiente 3 y ordenada al origen 5 y hagan el plot de dicha recta usando el comando `plot`.
 
 Una vez creado el plot, salvenló en un archivo con extensión **SVG**.
 
@@ -519,7 +528,7 @@ booleano1 <- TRUE
 numero1 <- 5
 booleano2 <- numero1 > 10
 
-# Combinando booleanos, en este caso con *and*
+# Combinando booleanos con operadores lógicos, en este caso con *and*
 booleano3 <- booleano1 & booleano2
 ```
 
@@ -528,7 +537,7 @@ Como mostramos en la tercer forma de generar variables booleanas, se pueden hace
 El **AND** y el **OR** son operaciones entre dos booleanos, mientras que **NOT** es una operación que se le aplica a un solo booleano.
 
 * El **AND** es el **"Y"**, devolviendo **TRUE**{ .green_text } solo cuando ambos booleanos eran **TRUE**{ .green_text }. Se escribe en **R** con **&**
-* El **OR** es el **"O"**, devolviendo **TRUE**{ .green_text } cuando por lo menos uno de ambos booleanos era **TRUE**{ .green_text }. Se escribe en **R** con **|**
+* El **OR** es el **"O"**, devolviendo **TRUE**{ .green_text } cuando por lo menos uno de ambos booleanos era **TRUE**{ .green_text }. Se escribe en **R** con **|** (*pipe*)
 * El **NOT** es el **"NO"**, invirtiendo el valor del booleano (o sea, devuelve **TRUE**{ .green_text } solo si el booleano era **FALSE**{ .red_text }). Se escribe en **R** con **!**
 
 ??? tip "Detalles de **AND**, **OR** y **NOT**"
@@ -635,8 +644,8 @@ En este caso el *for* va a recorrer todos los elementos de un vector de números
 
     ```R
     vector_colores <- c("rojo", "amarillo", "verde")
-    for (color_for in vector_colores) {
-        print(color_for)
+    for (color in vector_colores) {
+        print(color)
     }
     ```
 
@@ -644,10 +653,10 @@ En este caso el *for* va a recorrer todos los elementos de un vector de números
 
     ```R
     vector_colores <- c("rojo", "amarillo", "verde")
-    for (color_for in vector_colores) {
-        # *color_for* es la variable que va cambiando en cada iteración del *for* (como antes era *i*)
+    for (color in vector_colores) {
+        # *color* es la variable que va cambiando en cada iteración del *for* (como antes era *i*)
         # En este caso va a ir tomando los valores de los diferentes elementos de *vector_colores*
-        print(color_for)
+        print(color)
     }
     ```
 
@@ -736,13 +745,16 @@ El objetivo de este ejercicio es hacer un script de **R** que:
 * En cada iteración vamos a sumarle o restarle algo a `resultado` (guardando el nuevo valor en `resultado`):
     * Para todo `i` menor a 5 o mayor a 47 :material-arrow-right: Restarle `i` a `resultado`
     * Para todo `i` mayor a 20 y menor a 30 :material-arrow-right: Sumarle `i` a `resultado`
+* Imprima el valor final de `resultado` por la consola
+
+<!--
     * Para los primeros 25 `i` (1 a 25) :material-arrow-right: Sumarle 1 a `resultado`
     * Para los últimos 25 `i` (26 a 50) :material-arrow-right: Restarle 1 a `resultado`
-* Imprima el valor final de `resultado` por la consola
+-->
 
 !!! tip "Tip"
 
-    Aca van a necesitar usar diferentes estructuras *ifs* adentro del *for* teniendo en cuenta que hay varias condiciones que se pueden cumplir al mismo tiempo.
+    Aca van a necesitar usar diferentes estructuras *ifs* adentro del *for* teniendo en cuenta que hay varias condiciones.
 
 ## **R: Tablas**
 
@@ -897,6 +909,10 @@ Los parámetros de `write.table` que estamos usando son:
 
 **5)** Guarden la tabla **iris** en un archivo llamado **iris.tsv** dentro de la carpeta creada en el punto **1)**. Usen los parámetros usados en el ejemplo de arriba. Confirmen que se creo el archivo.
 
+!!! info "Data Tables y nombres de las filas"
+
+    Es medio técnico, pero a diferencia de los *Data Frames*, los *Data Tables* no pueden tener nombres en las filas (razón por la que estoy usando `row.names = F` en el código anterior). Esta es una decisión consciente de los creadores de los *Data Tables* ya que cualquier información que uno quiera almacenar en los nombres de las filas también se puede almacenar en una nueva columna, lo que hace mucho más fácil trabajar con esa información (filtrar, ordenar, etc).
+
 ### Leer Tablas
 
 Hay varias funciones para leer tablas, pero la que vamos a usar nosotros es `fread`, por ejemplo:
@@ -929,6 +945,65 @@ Esta función es una de las funciones del paquete **data.table**. Los parámetro
 1. Impriman por pantalla el valor de **col2** de la cuarta fila de la tabla
 1. Impriman por pantalla todas las filas donde **col2** sea menor o igual a 7
 
+## **R: Funciones**
+
+Como ya mencionamos cuando hablamos de los *ciclos*, es común en programación querer realizar una tarea varias veces en condiciones ligeramente diferentes. Otra herramienta que tenemos a nuestra disposición son las funciones, que ademas de ser parte de **R** y de los paquetes, pueden ser creadas por nosotros desde 0.
+
+Supongamos que por alguna razón es común para nosotros querer calcular $y = 2x + x^2$, podemos entonces hacer:
+
+```R
+myFunction <- function(x) {
+    output <- 2 * x + x ^ 2
+    
+    return(output)
+}
+
+x1 <- 5
+x2 <- 7
+vector_x3 <- c(1:100)
+
+y1 <- myFunction(x = x1)
+y2 <- myFunction(x = x2)
+vector_y3 <- myFunction(x = vector_x3)
+
+# Ya que estamos hacemos un plot de los vectores (a x1, x2, y1 e y2 no los estoy usando para nada por ahora)
+plot(x = vector_x3, y = vector_y3)
+```
+
+<figure markdown>
+![FunctionPlot1](img/function_plot.png)
+</figure>
+
+Si bien en este caso puede no ser super necesario, van viendo como me ahorro bastante código al usar funciones. Imaginenese ahora si lo que está adentro de la función es algo mas complejo que ocupa 20 líneas de código.
+
+También es posible darle más de un parámetro a una función, por ejemplo:
+
+```R
+myFunction <- function(x, exp = 2) {
+    output <- 2 * x + x ^ exp
+    
+    return(output)
+}
+
+x1 <- 5
+x2 <- 7
+vector_x3 <- c(1:100)
+
+# El parametro *exp* tiene por defecto el valor 2
+# Estas dos lineas de código devuelven lo mismo
+y1 <- myFunction(x = x1)
+y1 <- myFunction(x = x1, exp = 2)
+
+y4 <- myFunction(x = x2, exp = 4)
+vector_y5 <- myFunction(x = vector_x3, exp = 10)
+
+plot(x = vector_x3, y = vector_y5)
+```
+
+<figure markdown>
+![FunctionPlot2](img/function_plot2.png)
+</figure>
+
 ## **R: Plots más complejos**
 
 Si bien la funciones `plot` e `hist` se pueden usar para hacer muchos tipos de plots, la mayoría de los plots hechos por **R** que uno puede llegar a ver en papers o similar estan hechos con paquetes de **R** que se especializan en plots.
@@ -959,7 +1034,7 @@ ggplot(data = iris, aes(x = Sepal.Length, y = Petal.Length)) +
 
 Como dijimos antes hay muchas funciones de ploteo, cada una con muchos parámetos posibles. Lo más normal al usar `ggplot` es googlear el uso específico que uno quiere hacer en ese momento y ver como se hace.
 
-**3)** El siguiente código es un ejemplo más "completo" de un plot hecho con `ggplot`. Corran el siguiente código y vean el plot. Fijense si pueden inferir en base a su nombre que hacen algunos de los parámetros que le pasamos a `ggplot`:
+**3)** El siguiente código es un ejemplo más "completo" de un plot hecho con `ggplot`. Corran el siguiente código y vean el plot. Fijense si pueden inferir en base a su nombre que hacen algunos de los parámetros que le pasamos a `ggplot` (pueden ver el [cheatsheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf)):
 
 ```R
 ggplot(data = iris, aes(x = Sepal.Length, y = Petal.Length, color = Species)) +
@@ -1130,65 +1205,6 @@ factor_vector_strings <- factor(vector_strings, levels = c("dos", "tres", "uno")
 class(numero)
 typeof(numero)
 ```
-
-## **R: Funciones**
-
-Como ya mencionamos cuando hablamos de los *ciclos*, es común en programación querer realizar una tarea varias veces en condiciones ligeramente diferentes. Otra herramienta que tenemos a nuestra disposición son las funciones, que ademas de ser parte de **R** y de los paquetes, pueden ser creadas por nosotros desde 0.
-
-Supongamos que por alguna razón es común para nosotros querer calcular y = 2 * x + x^2, podemos entonces hacer:
-
-```R
-myFunction <- function(x) {
-    output <- 2 * x + x ^ 2
-    
-    return(output)
-}
-
-x1 <- 5
-x2 <- 7
-vector_x3 <- c(1:100)
-
-y1 <- myFunction(x = x1)
-y2 <- myFunction(x = x2)
-vector_y3 <- myFunction(x = vector_x3)
-
-# Ya que estamos hacemos un plot de los vectores (a x1, x2, y1 e y2 no los estoy usando para nada por ahora)
-plot(x = vector_x3, y = vector_y3)
-```
-
-<figure markdown>
-![FunctionPlot1](img/function_plot.png)
-</figure>
-
-Si bien en este caso puede no ser super necesario, van viendo como me ahorro bastante código al usar funciones. Imaginenese ahora si lo que está adentro de la función es algo mas complejo que ocupa 20 líneas de código.
-
-También es posible darle más de un parámetro a una función, por ejemplo:
-
-```R
-myFunction <- function(x, exp = 2) {
-    output <- 2 * x + x ^ exp
-    
-    return(output)
-}
-
-x1 <- 5
-x2 <- 7
-vector_x3 <- c(1:100)
-
-# El parametro *exp* tiene por defecto el valor 2
-# Estas dos lineas de código devuelven lo mismo
-y1 <- myFunction(x = x1)
-y1 <- myFunction(x = x1, exp = 2)
-
-y4 <- myFunction(x = x2, exp = 4)
-vector_y5 <- myFunction(x = vector_x3, exp = 10)
-
-plot(x = vector_x3, y = vector_y5)
-```
-
-<figure markdown>
-![FunctionPlot2](img/function_plot2.png)
-</figure>
 
 ## **Ejercicio Adicional 1** { markdown data-toc-label='Ejercicio Adicional 1' }
 

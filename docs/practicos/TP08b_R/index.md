@@ -48,7 +48,7 @@ Por suerte nuestra enzima de interés tiene como producto un compuesto fluoresce
 
 ### FilterMax
 
-Una forma de analizar varios compuestos y concentraciones a la vez es usar usar el el equipo **FilterMax F5**, el cual permite hacer mediciones puntuales de absorbancia y fluorescencia (entre otros) en placas de wells de 96, 384 y 1536. Incluso permite hacer mediciones a distintos tiempos (por ejemplo, se le puede programar para hacer mediciones cada ciertos intervalos temporales).
+Una forma de analizar varios compuestos y concentraciones a la vez es usar el equipo **FilterMax F5**, el cual permite hacer mediciones puntuales de absorbancia y fluorescencia (entre otros) en placas de wells de 96, 384 y 1536. Incluso permite hacer mediciones a distintos tiempos (por ejemplo, se le puede programar para hacer mediciones cada ciertos intervalos temporales).
 
 En nuestro ejemplo (datos reales, nombres ficticios), vamos a utilizar el **FilterMax F5** para evaluar varias placas de 384 wells y vamos a hacer 4 evaluaciones por placa, una cada 5 minutos. Cada columna de la placa corresponde compuesto distinto (22 compuestos, 1 por columna) y cada fila tiene concentraciones diferentes de cada compuesto (16 concentraciones, diluciones seriadas). Un esquema de este experimento se puede ver en [esta planilla](https://docs.google.com/spreadsheets/d/1ey-c3nuc2zd4Cqj6B_uYcq1gAx0FPybLJUDCbV56my4/edit?usp=sharing).
 
@@ -87,7 +87,7 @@ En este paso queremos hacer 2 cosas:
 
 Si bien este paso es importante, también es bastante específico a la salida del **FilterMax F5**. Por esta razón les vamos a dar el archivo ya parseado para que pasemos directamente al análisis de datos más general. Este es el archivo **02_datos_filtermax_parseados.tsv** que se encuentra en sus materiales de trabajo.
 
-Dicho esto, si completan el resto del TP a tiempo y quieren aprender como llegar del archivo original a éste archivo pueden hacer el **Ejercicio Adicional 1** abajo de todo.
+Dicho esto, si completan el resto del TP a tiempo y quieren aprender cómo llegar del archivo original a éste archivo pueden hacer el **Ejercicio Adicional 1** abajo de todo.
 
 **1)** Abran el archivo **02_datos_filtermax_parseados.tsv** con Leafpad y vean la columna **signal**. ¿Qué piensan que significan los **NA** en esa columna?
 
@@ -99,7 +99,7 @@ En este momento tenemos una tabla donde cada fila es una señal independiente, p
 
 * No tengo información de las diluciones en la tabla, solo de las letras de las filas
 
-* Más adelante vamos a querer calcular la *velocidad de reacción*, es decir, cómo varía la **signal** según el **time**. Sin embargo, aca **time** es un *string*, por lo que necesito transformarlo a número
+* Más adelante vamos a querer calcular la *velocidad de reacción*, es decir, cómo varía la **signal** según el **time**. Sin embargo, acá **time** es un *string*, por lo que necesito transformarlo a número
 
 Estas son las cosas que queremos arreglar. Por suerte tenemos también otras dos tablas, una indicando que compuesto hay en cada columna (**00_datos_compuestos.tsv**) y otra indicando que dilución hay en cada fila (**00_datos_concentraciones.tsv**).
 
@@ -273,7 +273,7 @@ columnas_a_quedarnos <- c("Species", "Sepal.Length", "Sepal.Width")
 dt_iris[, columnas_a_quedarnos, with = F]
 ```
 
-Esto es útil cuando queremos quedarnos con pocas columnas, pero ¿qué pasa cuando tenemos muchas y solo queremos sacar algunas?. Ahí podemos hacer:
+Esto es útil cuando queremos quedarnos con pocas columnas, pero ¿qué pasa cuando tenemos muchas y solo queremos sacar algunas? Ahí podemos hacer:
 
 ```R
 dt_iris <- as.data.table(iris)
@@ -309,7 +309,7 @@ Ese `[[1]]` en el output anterior nos está indicando que `strsplit` nos está d
 
 **7)** Vean que pasa cuando usan `split = ""`.
 
-**8)** Pasenle ahora a `strsplit` el siguiente vector de strings: `frases <- c("Aquí me pongo a cantar", "al compás de la vigüela")`. Sabiendo que queremos *splitear* las diferentes palabras, ¿cuál sería el valor de `split` en este caso? ¿Cuántos elementos tiene la lista que devuelve `strsplit`? ¿Por qué? ¿Cual es la tercera palabra de la segunda frase? (imprímanla por pantalla usando `print`)
+**8)** Pásenle ahora a `strsplit` el siguiente vector de strings: `frases <- c("Aquí me pongo a cantar", "al compás de la vigüela")`. Sabiendo que queremos *splitear* las diferentes palabras, ¿cuál sería el valor de `split` en este caso? ¿Cuántos elementos tiene la lista que devuelve `strsplit`? ¿Por qué? ¿Cuál es la tercera palabra de la segunda frase? (imprímanla por pantalla usando `print`)
 
 #### Eliminar elementos repetidos en vectores { markdown data-toc-label='Elementos repetidos' }
 
@@ -326,7 +326,7 @@ print(vector_especies)
 print(vector_especies_unicas)
 ```
 
-La columna `iris$Species` es tecnicamente un *factor*, pero estos son simplemente vectores con propiedades extras. La función `unique()` va a funcionar igual de pasarle un vector de caracteres; de hecho, esta función también puede remover filas repetidas de un *Data Table*.
+La columna `iris$Species` es técnicamente un *factor*, pero estos son simplemente vectores con propiedades extras. La función `unique()` va a funcionar igual de pasarle un vector de caracteres; de hecho, esta función también puede remover filas repetidas de un *Data Table*.
 
 ### Paso 3 - Ejercicio
 
@@ -342,7 +342,7 @@ La columna `iris$Species` es tecnicamente un *factor*, pero estos son simplement
 
     Si bien es posible poner estándares de codificación de texto en grupos, la realidad es que solemos programar en inglés por lo que el problema se evita solo.
 
-    Este tip es ***especialmente*** importante para los nombres de las variables. Ahi si que recomendamos nunca usar acentos o **Ñ**.
+    Este tip es ***especialmente*** importante para los nombres de las variables. Ahí si que recomendamos nunca usar acentos o **Ñ**.
 
 ```R
 library(data.table)
@@ -363,7 +363,7 @@ dt_parsed_data <- merge(dt_parsed_data,
                         dt_datos_compuestos,
                         by = "columna")
 
-#Agrego informacion concentraciones con numeros "en castellano"
+#Agrego informacion concentraciones (ojo que en *00_datos_concentraciones.tsv* los numeros estan "en castellano")
 dt_datos_concentraciones <- fread(@@EDITAR@@)
 dt_parsed_data <- merge(@@EDITAR@@)
 
@@ -408,7 +408,7 @@ for (time_for in unique_times) {
 }
 
 #Agrego la informacion de los segundos totales (guardada en dt_times_in_seconds) a mi tabla original
-dt_parsed_data <- @@EDITAR@@
+dt_parsed_data <- merge(@@EDITAR@@)
 
 #Ahora van a ver que las columnas de la tabla parecen estar mezcladas, lo que se debe a los merge
 #Por otro lado hay columnas que ya no vamos a usar
@@ -480,9 +480,9 @@ En este ejercicio también vamos a necesitar varias herramientas, pero la buena 
 
 #### Fors anidados
 
-Es bastante común cuando se trabaja con tablas querer recorrer todas las combinaciones de dos variables categóricas. Una forma de hacer esto es usar *fors anidados*, es decir, un *for* adentro de otro *for*. En este caso el *for* interno se va a ejecutar completo una vez por cada elemento del *for* externo. Dentro del *for* interno es donde vamos a poner el código que querramos hacer con cada combinación de nuestras variables.
+Es bastante común cuando se trabaja con tablas querer recorrer todas las combinaciones de dos variables categóricas. Una forma de hacer esto es usar *fors anidados*, es decir, un *for* adentro de otro *for*. En este caso el *for* interno se va a ejecutar completo una vez por cada elemento del *for* externo. Dentro del *for* interno es donde vamos a poner el código que queramos hacer con cada combinación de nuestras variables.
 
-**1)** Corran el siguiente ejemplo y vean lo que devuelve. ¿Cuántas veces se ejecutó el `print`?
+**1)** Corran el siguiente ejemplo y vean lo que devuelve. ¿Cuántas veces se ejecutó el `print`? ¿En qué orden se recorrieron los diferentes prefijos y sufijos?
 
 ```R
 vector_prefijos <- c("veinti", "cuarenti", "ciento")
@@ -499,7 +499,7 @@ for (prefijo_for in vector_prefijos) {
 
 #### Regresión lineal
 
-El ajuste de mis datos a una fórmula matemática es un tema super complejo; sin embargo, en este TP necesitamos la versión más simple de esto, que son las regresiones lineales. Existe una función que viene con **R** llamada `lm` que nos va a permitir calcular una regresión lineal a partir de dos vectores numéricos.
+El ajuste de mis datos a una fórmula matemática es un tema súper complejo; sin embargo, en este TP necesitamos la versión más simple de esto, que son las regresiones lineales. Existe una función que viene con **R** llamada `lm` que nos va a permitir calcular una regresión lineal a partir de dos vectores numéricos.
 
 ```R
 regresion_lineal <- lm(data = iris, formula = Sepal.Length ~ Petal.Length)
@@ -617,6 +617,10 @@ Primero que nada tenemos que definir un par de conceptos:
 Vamos a llamar ***velocidad de reacción base*** a la *velocidad de reacción* de la enzima cuando no tiene ningún inhibidor, o lo que es lo mismo, cuando la concentración del inhibidor es 0. En nuestro caso tenemos 22 wells donde la concentración del inhibidor es 0, por lo que vamos a calcular a la *velocidad de reacción base* como el promedio de las velocidades en esos 22 wells.
 
 Vamos a llamar ***actividad*** a la relación entre la *velocidad de reacción* observada al usar una concentración dada de un compuesto, y la *velocidad de reacción base*. Es decir:
+
+$$
+actividad = \frac{velocidadReaccion}{velocidadReaccionBase}
+$$
 
 * Si no hay inhibidor o si la concentración del inhibidor es muy baja para que haga efecto :material-arrow-right: **Actividad ~ 1**
 * Si no hay enzima o si estoy usando un inhibidor perfecto: :material-arrow-right: **Actividad ~ 0**
@@ -748,7 +752,7 @@ print(numero_redondeado)
 
 ### Paso 5 - Ejercicio
 
-**5)** Creen un nuevo script de **R**, copien el siguiente código y guardenlo en su carpeta de trabajo. Vayan avanzando por el *script* y cambien las secciones que dicen `@@EDITAR@@` por lo que corresponda (esto puede ser un valor, una variable, una operación matemática, una función o incluso más de una línea de código).
+**5)** Creen un nuevo script de **R**, copien el siguiente código y guárdenlo en su carpeta de trabajo. Vayan avanzando por el *script* y cambien las secciones que dicen `@@EDITAR@@` por lo que corresponda (esto puede ser un valor, una variable, una operación matemática, una función o incluso más de una línea de código).
 
 ```R
 library(data.table)
@@ -899,7 +903,7 @@ Leer el **Paso 2** para entender el objetivo de este ejercicio.
 
 #### Leer y escribir texto plano
 
-Por "texto plano" nos referimos a leer un archivo de texto que no tiene un formato definido (o sea no es un **.csv** o **.tsv**, por ejemplo). Esto puede ser algo como un libro, una página web, o una tabla que por alguna razón no la queremos leer como tabla.
+Por "texto plano" nos referimos a leer un archivo de texto que no tiene un formato definido (o sea no es un **.csv** o **.tsv**, por ejemplo). Esto puede ser algo como un libro, notas, o una tabla que por alguna razón no la queremos leer como tabla.
 
 La forma más directa de leer texto plano en **R** es la función `readLines()`, a la cual hay que pasarle el path del archivo a leer. Esta función va a devolver un vector en el cual cada elemento es una línea del archivo leído. Se usa:
 
