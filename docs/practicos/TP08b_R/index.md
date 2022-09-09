@@ -58,13 +58,17 @@ El primer paso cuando uno empieza a trabajar con un archivo nuevo es siempre mir
 
 Abran el archivo **00_datos_filtermax.txt** con Leafpad, vean su estructura y respondan las siguientes preguntas:
 
-**1)** ¿Se parece un poco a algún **.csv** o **.tsv** que hayan visto antes? ¿Que diferencias tiene?
+**1)** ¿Se parece un poco a algún **.csv** (columnas separadas por comas) o **.tsv** (columnas separadas por tabs) que hayan visto antes? ¿Que diferencias tiene? Teniendo en cuenta esas diferencias y considerando que vamos a querer leerlo como una tabla en **R** ¿Les parece que hay filas que están de más?
 
-**2)** Considerando que vamos a querer leerlo como una tabla en **R** ¿Les parece que hay filas que están de más?
+**2)** Mirando el archivo y la planilla del experimento:
 
-**3)** Mirando el archivo y la planilla del experimento, ¿Que posiciones contienen las diferentes diluciones del compuesto "Umbrella2"? ¿Cuántos datos hay para cada dilución del compuesto "Umbrella2"? ¿Por qué?
+* ¿Qué hay en la celda A1?
 
-**4)** Si miran los datos van a ver que se separan con tabs, pero que al final de cada placa hay varios tabs uno después del otro sin ningún dato en el medio. ¿Hay algo en la planilla del experimento que explique por qué pasa esto?
+* ¿Qué posiciones contienen las diferentes diluciones del compuesto "Umbrella2"?
+
+* ¿Cuántos datos hay para cada dilución del compuesto "Umbrella2"? ¿Por qué?
+
+**3)** Ahora abra el archivo con Gnumeric (Click derecho sobre el archivo :material-arrow-right: Abrir con :material-arrow-right: Oficina :material-arrow-right: Gnumeric). Al final de cada placa hay varias celdas sin datos. ¿Hay algo en la planilla del experimento que explique por qué pasa esto?
 
 ## **Paso 2 - Limpiar y Parsear el Archivo** { markdown data-toc-label='Paso 2 - Limpiar y Parsear' }
 
@@ -103,39 +107,9 @@ En este momento tenemos una tabla donde cada fila es una señal independiente, p
 
 Estas son las cosas que queremos arreglar. Por suerte tenemos también otras dos tablas, una indicando que compuesto hay en cada columna (**00_datos_compuestos.tsv**) y otra indicando que dilución hay en cada fila (**00_datos_concentraciones.tsv**).
 
-Sin embargo, antes de arreglar estos problemas necesitamos aprender algunas cosas nuevas:
+Esto se podría hacer a mano, pero llevaría mucho tiempo y podría haber errores de tipeo. Por esta razón vamos a crear un programa que haga todo esto por nosotos. Sin embargo, antes de crear este programa necesitamos aprender algunas cosas nuevas:
 
 ### Herramientas necesarias
-
-#### Usar `fread` con datos faltantes { markdown data-toc-label='fread y NAs' }
-
-Es común que un set de datos tenga datos faltantes, lo que en nuestro caso vendría a ser wells sin señal. Diferentes tablas los van a indicar de diferentes maneras, pero es común verlos como *nada* (o sea veo los separadores de columnas, pero no hay información en el medio) o como **NA**.
-
-Es importante al momento de leer un archivo saber si mi archivo tiene o no estos datos faltantes, ya que de no tenerlo en cuenta puedo terminar leyendo a **NA** como el *string* "NA", lo cual puede insertar datos falsos y hasta forzar a **R** a leer una columna numérica como si fueran todos *strings*.
-
-Podemos indicarle a `fread` si hay celdas sin valores y como están escritas con el parámetro `na.strings`:
-
-```R
-dt <- fread("ARCHIVO_DT", header = T, sep = "\t", na.strings = "NA")
-```
-
-En este caso le estamos indicando que hay celdas sin valores y que están escritas en la tabla como "NA" (pueden estar con o sin comillas en el archivo). De querer indicarle a `fread` que los datos faltantes están como *nada* se usa `na.strings = ""`, aunque en este caso cualquier columna con un *string* vacío también va a ser considerada dato faltante.
-
-!!! tip "Tip"
-
-    Si estamos seguros que no hay celdas sin valores en nuestros datos, le podemos pasar `na.strings = NULL` para indicarle que no busque celdas vacías, lo que acelera la carga de la tabla.
-
-#### Usar `fread` con decimales españoles { markdown data-toc-label='fread y decimales' }
-
-Otro problema común al momento de trabajar con datos es que por alguna ~~diabólica~~ razón el separador de decimales y el separador de miles no son iguales para algunos países que para otros, de hecho, son exactamente al revés.
-
-Es posible entonces que tengan una tabla que hizo alguien en Argentina donde uso comas como separador de decimales, pero que al cargarla en **R**, el cual fue creado en Estados Unidos, piense que dichas comas son separador de miles, lo que rompe completamente los números pasados.
-
-Por suerte algo de consideración tienen y existe un parámetro de `fread` que nos permite especificar cual es el separador de decimales (que por defecto es el punto):
-
-```R
-dt <- fread("ARCHIVO_DT", header = T, sep = "\t", dec = ",")
-```
 
 #### Filtrar filas en *Data Table*
 
@@ -328,9 +302,39 @@ print(vector_especies_unicas)
 
 La columna `iris$Species` es técnicamente un *factor*, pero estos son simplemente vectores con propiedades extras. La función `unique()` va a funcionar igual de pasarle un vector de caracteres; de hecho, esta función también puede remover filas repetidas de un *Data Table*.
 
+#### Usar `fread` con datos faltantes { markdown data-toc-label='fread y NAs' }
+
+Es común que un set de datos tenga datos faltantes, lo que en nuestro caso vendría a ser wells sin señal. Diferentes tablas los van a indicar de diferentes maneras, pero es común verlos como *nada* (o sea veo los separadores de columnas, pero no hay información en el medio), **NaN** (*Not a Number*), **ND** (*No Data*) o como **NA** (*Not Available*). En esta caso vamos a usar **NA**.
+
+Es importante al momento de leer un archivo saber si mi archivo tiene o no estos datos faltantes, ya que de no tenerlo en cuenta puedo terminar leyendo a **NA** como el *string* "NA", lo cual puede insertar datos falsos y hasta forzar a **R** a leer una columna numérica como si fueran todos *strings*.
+
+Podemos indicarle a `fread` si hay celdas sin valores y como están escritas con el parámetro `na.strings`:
+
+```R
+dt <- fread("ARCHIVO_DT", header = T, sep = "\t", na.strings = "NA")
+```
+
+En este caso le estamos indicando que hay celdas sin valores y que están escritas en la tabla como "NA" (pueden estar con o sin comillas en el archivo). De querer indicarle a `fread` que los datos faltantes están como *nada* se usa `na.strings = ""`, aunque en este caso cualquier columna con un *string* vacío también va a ser considerada dato faltante.
+
+!!! tip "Tip"
+
+    Si estamos seguros que no hay celdas sin valores en nuestros datos, le podemos pasar `na.strings = NULL` para indicarle que no busque celdas vacías, lo que acelera la carga de la tabla.
+
+#### Usar `fread` con decimales españoles { markdown data-toc-label='fread y decimales' }
+
+Otro problema común al momento de trabajar con datos es que por alguna ~~diabólica~~ razón el separador de decimales y el separador de miles no son iguales para algunos países que para otros, de hecho, son exactamente al revés.
+
+Es posible entonces que tengan una tabla que hizo alguien en Argentina donde uso comas como separador de decimales, pero que al cargarla en **R**, el cual fue creado en Estados Unidos, piense que dichas comas son separador de miles, lo que rompe completamente los números pasados.
+
+Por suerte algo de consideración tienen y existe un parámetro de `fread` que nos permite especificar cual es el separador de decimales (que por defecto es el punto):
+
+```R
+dt <- fread("ARCHIVO_DT", header = T, sep = "\t", dec = ",")
+```
+
 ### Paso 3 - Ejercicio
 
-**10)** Creen un nuevo script de **R**, copien el siguiente código y guardenlo en su carpeta de trabajo. Vayan avanzando por el *script* y cambien las secciones que dicen `@@EDITAR@@` por lo que corresponda (esto puede ser un valor, una variable, una operación matemática, una función o incluso más de una línea de código).
+**10)** Creen un nuevo script de **R**, copien el siguiente código y guardenlo en su carpeta de trabajo. Vayan avanzando por el *script* y cambien las secciones que dicen `@@EDITAR@@` por lo que corresponda (esto puede ser un valor, una variable, una operación matemática o una función de **R**).
 
 !!! warning "Working Directory"
 
@@ -342,7 +346,7 @@ La columna `iris$Species` es técnicamente un *factor*, pero estos son simplemen
 
     Si bien es posible poner estándares de codificación de texto en grupos, la realidad es que solemos programar en inglés por lo que el problema se evita solo.
 
-    Este tip es ***especialmente*** importante para los nombres de las variables. Ahí si que recomendamos nunca usar acentos o **Ñ**.
+    Este tip es ***especialmente*** importante para los nombres de las variables. Ahí si que recomendamos nunca usar acentos o **Ñ** (o espacios).
 
 ```R
 library(data.table)
@@ -363,7 +367,7 @@ dt_parsed_data <- merge(dt_parsed_data,
                         dt_datos_compuestos,
                         by = "columna")
 
-#Agrego informacion concentraciones (ojo que en *00_datos_concentraciones.tsv* los numeros estan "en castellano")
+#Agrego informacion concentraciones (ojo que en *00_datos_concentraciones.tsv* el separador decimal es la coma)
 dt_datos_concentraciones <- fread(@@EDITAR@@)
 dt_parsed_data <- merge(@@EDITAR@@)
 
@@ -383,10 +387,11 @@ dt_times_in_seconds <- data.table(time = character(),
 for (time_for in unique_times) {
     # Esta siguiente linea comentada la uso para debuggear, es decir, para cuando estoy creando el programa
     # Si la ejecutan a mano (sin el #) pueden entonces ir paso a paso en el *for* viendo que funcione todo
+    # Recuerden que pueden usar CTRL + ENTER para ejecutar el codigo seleccionado o ver el valor de una variable
 
     # time_for <- unique_times[2]
     
-    #Divido las horas minutos y segundos y las transformo a numeros
+    #Divido las horas, minutos y segundos y las transformo a numeros
     time_spliteado <- strsplit(time_for, ":")
     time_spliteado <- time_spliteado[[1]]
     
@@ -433,7 +438,7 @@ Si todo salió bien, el archivo **03_datos_filtermax_parseados_y_formateados.tsv
 
 ## **Paso 4 - Calcular velocidades de reacción** { markdown data-toc-label='Paso 4 - Calcular velocidad' }
 
-En física la *velocidad* es la variación de posición por unidad de tiempo. La *velocidad de reacción* es similar, donde queremos averiguar la variación de señal por unidad de tiempo, que en nuestro caso es un segundo.
+En física la *velocidad* es la variación de posición por unidad de tiempo. La *velocidad de reacción* es similar, donde queremos averiguar la variación de señal por unidad de tiempo (en nuestro caso es un segundo).
 
 Para cada dilución de cada compuesto, nosotros tenemos la señal a cuatro puntos en el tiempo (una vez cada 5 minutos, o 300 segundos). Vamos a asumir que la señal varía linealmente con el tiempo, por lo que la forma más directa de conseguir la *velocidad de reacción* es calcular la pendiente de la recta que pasa por los cuatro puntos que conseguimos experimentalmente.
 
@@ -540,7 +545,7 @@ pendiente <- regresion_lineal$coefficients[2]
 
 ### Paso 4 - Ejercicio
 
-**2)** Creen un nuevo script de **R**, copien el siguiente código y guardenlo en su carpeta de trabajo. Vayan avanzando por el *script* y cambien las secciones que dicen `@@EDITAR@@` por lo que corresponda (esto puede ser un valor, una variable, una operación matemática, una función o incluso más de una línea de código).
+**2)** Creen un nuevo script de **R**, copien el siguiente código y guardenlo en su carpeta de trabajo. Vayan avanzando por el *script* y cambien las secciones que dicen `@@EDITAR@@` por lo que corresponda (esto puede ser un valor, una variable, una operación matemática o una función de **R**).
 
 ```R
 library(data.table)
@@ -623,13 +628,13 @@ actividad = \frac{velocidadReaccion}{velocidadReaccionBase}
 $$
 
 * Si no hay inhibidor o si la concentración del inhibidor es muy baja para que haga efecto :material-arrow-right: **Actividad ~ 1**
-* Si no hay enzima o si estoy usando un inhibidor perfecto: :material-arrow-right: **Actividad ~ 0**
+* Si no hay enzima o si estoy usando un inhibidor perfecto :material-arrow-right: **Actividad ~ 0**
 
 Ahora sí, queremos calcular una curva de dosis-respuesta para ver como es afectada nuestra **enzima Z** por diferentes concentraciones de cada uno de los 22 compuestos. En general es esperable que:
 
 * A muy bajas concentraciones del compuesto no hay efecto sobre la enzima, por lo que estoy viendo la una *actividad* cercana a 1. Esto quiere decir que esperamos ver varias concentraciones bajas de un compuesto que muestren la misma *actividad*.
 * A muy altas concentraciones del compuesto ya está saturado el efecto que él pueda hacer sobre la enzima (por ejemplo todos los sitios de unión ya están ocupados), por lo que estoy viendo el máximo efecto que puede hacer dicho compuesto a la *actividad* de la enzima. Esto quiere decir que esperamos ver varias concentraciones altas que muestren la misma *actividad*.
-* Las concentraciones medias son aquellas en donde una variación en la concentración del compuesto produce un cambio en la *actividad* de la enzima.
+* Las concentraciones intermedias son aquellas en donde una variación en la concentración del compuesto produce un cambio en la *actividad* de la enzima.
 
 Estás tres propiedades hacen que la curva dosis-respuesta tenga una forma sigmoidea, es decir:
 
@@ -639,7 +644,7 @@ Estás tres propiedades hacen que la curva dosis-respuesta tenga una forma sigmo
 
 Donde en nuestro caso la respuesta va a ser la *actividad* y la dosis va a ser la concentración de nuestro compuesto. Dependiendo de las concentraciones elegidas, es normal ver que el eje X de este plot esté en escala logarítmica.
 
-En el plot está marcado el **IC 50**, el cual es la concentración del compuesto a la cual la *actividad* de la enzima cae al 50% (es decir, cuando la *velocidad de reacción* es la mitad que la *velocidad de reacción base*. El **IC 50** da información de donde está el rango de concentraciones de dicho compuesto que hacen variar la *actividad* enzimática, entre otras cosas.
+En el plot está marcado el **IC 50**, el cual es la concentración del compuesto a la cual la *actividad* de la enzima cae al 50% (es decir, cuando la *velocidad de reacción* es la mitad que la *velocidad de reacción base*). El **IC 50** da información de donde está el rango de concentraciones de dicho compuesto que hacen variar la *actividad* enzimática, entre otras cosas.
 
 ### Herramientas
 
@@ -710,9 +715,9 @@ Los parámetros `width` y `height` indican el tamaño en pulgadas de cada págin
 
 #### La verdad de la función `plot`
 
-Nosotros acabamos de ver unos plots hechos con la función `plot()`, que es la forma de plotear por defecto en **R**. Sin embargo `plot` no solo plotea cosas pasándole un X y un Y, sino que también es una función que de pasarle ciertos tipos de variables (como puede ser una regresión logística) usa un plot interno de dichas variables.
+Nosotros acabamos de ver unos plots hechos con la función `plot()`, que es la forma de plotear por defecto en **R**. Sin embargo `plot` no solo plotea cosas pasándole un X y un Y, sino que también es una función que de pasarle ciertos tipos de variables (como puede ser una regresión logística) usa un plot interno de dichas variables. 
 
-Es decir, el paquete `nplr` trae sus propios plots que se van a hacer mediante `plot(regresion_logistica)`. Ya lo vamos a ver.
+El paquete `nplr` trae sus propios plots que se van a hacer mediante `plot(regresion_logistica)`. Esto no es único de este paquete y existen otras librerías, por ejemplo de filogenia, que tienen este mismo funcionamiento, donde `plot` hace árboles filogenéticos.
 
 #### Google
 
@@ -752,7 +757,7 @@ print(numero_redondeado)
 
 ### Paso 5 - Ejercicio
 
-**5)** Creen un nuevo script de **R**, copien el siguiente código y guárdenlo en su carpeta de trabajo. Vayan avanzando por el *script* y cambien las secciones que dicen `@@EDITAR@@` por lo que corresponda (esto puede ser un valor, una variable, una operación matemática, una función o incluso más de una línea de código).
+**5)** Creen un nuevo script de **R**, copien el siguiente código y guárdenlo en su carpeta de trabajo. Vayan avanzando por el *script* y cambien las secciones que dicen `@@EDITAR@@` por lo que corresponda (esto puede ser un valor, una variable, una operación matemática o una función de **R**).
 
 ```R
 library(data.table)
@@ -833,7 +838,11 @@ for (compuesto_for in unique_compuestos) {
          main = titulo_plot,
          xlab = "Log10 Concentracion",
          ylab = "Actividad",
-         showGOF = F)
+         ylim = c(0, 1.5),
+         showGOF = F,
+         xaxt = "n")
+    #Reescribo el eje X para que se entienda que es logaritmico
+    axis(side = 1, at = c(0, 0.5, 1, 1.5, 2), labels = c(expression(10^0), expression(10^0.5), expression(10^1), expression(10^1.5), expression(10^2)))
 }
 
 #Cierro el pdf
@@ -889,7 +898,7 @@ Ahora que tenemos todos los datos que necesitamos es momento de analizarlos. Vie
 
 **1)** ¿Por qué hay casos donde el **IC 50** dió **NA**?
 
-**2)** En base a los plots obtenidos, ¿Les parece suficientes nuestros datos para estar seguros de los **IC 50** calculados? ¿Cuál es un compuesto donde están bastantes seguros de su **IC 50**? ¿Cuál es un compuesto donde desconfían del **IC 50** calculado?
+**2)** En base a los plots obtenidos, ¿Les parecen suficientes nuestros datos para estar seguros de los **IC 50** calculados? ¿Cuál es un compuesto donde están bastantes seguros de su **IC 50**? ¿Cuál es un compuesto donde desconfían del **IC 50** calculado?
 
 **3)** ¿Qué experimentos harían para tener la curva completa en "Umbrella1"? ¿Y en "Umbrella8"?
 
