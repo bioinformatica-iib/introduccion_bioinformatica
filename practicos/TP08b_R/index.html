@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://bioinformatica-iib.github.io/2022_introduccion_bioinformatica/practicos/TP08b_R/">
       
       <link rel="icon" href="../../img/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.15">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.6">
     
     
       
@@ -21,11 +21,12 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.c382b1dc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.4a0965b7.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.cc9b2e1e.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
         
+      
       
     
     
@@ -809,15 +810,25 @@ Este es el botón para descargar materiales, en (#) hay que agregar el link corr
 <p>En el TP de hoy vamos a querer encontrar un compuesto que funcione de inhibidor para una enzima de interés, a la que vamos a denominar <strong>enzima Z</strong>. No solo nos va a interesar que compuestos funcionan como inhibidores para ella, sino que también queremos calcular el <strong>IC 50</strong> de cada uno de dichos compuestos (que en nuestro caso sería la concentración a la cual el inhibidor produce una reacción un 50% más lenta que sin inhibidor).</p>
 <p>Por suerte nuestra enzima de interés tiene como producto un compuesto fluorescente. Sabiendo esto podemos estimar la velocidad de la reacción calculando una regresión lineal de la abundancia de dicho producto a lo largo del tiempo (esto lo vamos a explicar un poco más detalladamente cuando lo hagamos). Si un compuesto funciona como inhibidor en algunas de las concentraciones evaluadas, la velocidad de la reacción debería caer.</p>
 <h3 id="filtermax">FilterMax</h3>
-<p>Una forma de analizar varios compuestos y concentraciones a la vez es usar usar el el equipo <strong>FilterMax F5</strong>, el cual permite hacer mediciones puntuales de absorbancia y fluorescencia (entre otros) en placas de wells de 96, 384 y 1536. Incluso permite hacer mediciones a distintos tiempos (por ejemplo, se le puede programar para hacer mediciones cada ciertos intervalos temporales).</p>
+<p>Una forma de analizar varios compuestos y concentraciones a la vez es usar el equipo <strong>FilterMax F5</strong>, el cual permite hacer mediciones puntuales de absorbancia y fluorescencia (entre otros) en placas de wells de 96, 384 y 1536. Incluso permite hacer mediciones a distintos tiempos (por ejemplo, se le puede programar para hacer mediciones cada ciertos intervalos temporales).</p>
 <p>En nuestro ejemplo (datos reales, nombres ficticios), vamos a utilizar el <strong>FilterMax F5</strong> para evaluar varias placas de 384 wells y vamos a hacer 4 evaluaciones por placa, una cada 5 minutos. Cada columna de la placa corresponde compuesto distinto (22 compuestos, 1 por columna) y cada fila tiene concentraciones diferentes de cada compuesto (16 concentraciones, diluciones seriadas). Un esquema de este experimento se puede ver en <a href="https://docs.google.com/spreadsheets/d/1ey-c3nuc2zd4Cqj6B_uYcq1gAx0FPybLJUDCbV56my4/edit?usp=sharing">esta planilla</a>.</p>
 <h2 id="paso-1-familiarizarnos-con-el-archivo" markdown="markdown"><strong>Paso 1 - Familiarizarnos con el Archivo</strong></h2>
 <p>El primer paso cuando uno empieza a trabajar con un archivo nuevo es siempre mirarlo y deducir su formato. Los resultados reales de este experimento pueden verlos en el archivo <strong>00_datos_filtermax.txt</strong> que se encuentra en sus materiales de trabajo.</p>
 <p>Abran el archivo <strong>00_datos_filtermax.txt</strong> con Leafpad, vean su estructura y respondan las siguientes preguntas:</p>
-<p><strong>1)</strong> ¿Se parece un poco a algún <strong>.csv</strong> o <strong>.tsv</strong> que hayan visto antes? ¿Que diferencias tiene?</p>
-<p><strong>2)</strong> Considerando que vamos a querer leerlo como una tabla en <strong>R</strong> ¿Les parece que hay filas que están de más?</p>
-<p><strong>3)</strong> Mirando el archivo y la planilla del experimento, ¿Que posiciones contienen las diferentes diluciones del compuesto "Umbrella2"? ¿Cuántos datos hay para cada dilución del compuesto "Umbrella2"? ¿Por qué?</p>
-<p><strong>4)</strong> Si miran los datos van a ver que se separan con tabs, pero que al final de cada placa hay varios tabs uno después del otro sin ningún dato en el medio. ¿Hay algo en la planilla del experimento que explique por qué pasa esto?</p>
+<p><strong>1)</strong> ¿Se parece un poco a algún <strong>.csv</strong> (columnas separadas por comas) o <strong>.tsv</strong> (columnas separadas por tabs) que hayan visto antes? ¿Que diferencias tiene? Teniendo en cuenta esas diferencias y considerando que vamos a querer leerlo como una tabla en <strong>R</strong> ¿Les parece que hay filas que están de más?</p>
+<p><strong>2)</strong> Mirando el archivo y la planilla del experimento:</p>
+<ul>
+<li>
+<p>¿Qué hay en la celda A1?</p>
+</li>
+<li>
+<p>¿Qué posiciones contienen las diferentes diluciones del compuesto "Umbrella2"?</p>
+</li>
+<li>
+<p>¿Cuántos datos hay para cada dilución del compuesto "Umbrella2"? ¿Por qué?</p>
+</li>
+</ul>
+<p><strong>3)</strong> Ahora abra el archivo con Gnumeric (Click derecho sobre el archivo <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg></span> Abrir con <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg></span> Oficina <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg></span> Gnumeric). Al final de cada placa hay varias celdas sin datos. ¿Hay algo en la planilla del experimento que explique por qué pasa esto?</p>
 <h2 id="paso-2-limpiar-y-parsear-el-archivo" markdown="markdown"><strong>Paso 2 - Limpiar y Parsear el Archivo</strong></h2>
 <p>En este paso queremos hacer 2 cosas:</p>
 <ul>
@@ -886,7 +897,7 @@ Este es el botón para descargar materiales, en (#) hay que agregar el link corr
 </table>
 </figure>
 <p>Si bien este paso es importante, también es bastante específico a la salida del <strong>FilterMax F5</strong>. Por esta razón les vamos a dar el archivo ya parseado para que pasemos directamente al análisis de datos más general. Este es el archivo <strong>02_datos_filtermax_parseados.tsv</strong> que se encuentra en sus materiales de trabajo.</p>
-<p>Dicho esto, si completan el resto del TP a tiempo y quieren aprender como llegar del archivo original a éste archivo pueden hacer el <strong>Ejercicio Adicional 1</strong> abajo de todo.</p>
+<p>Dicho esto, si completan el resto del TP a tiempo y quieren aprender cómo llegar del archivo original a éste archivo pueden hacer el <strong>Ejercicio Adicional 1</strong> abajo de todo.</p>
 <p><strong>1)</strong> Abran el archivo <strong>02_datos_filtermax_parseados.tsv</strong> con Leafpad y vean la columna <strong>signal</strong>. ¿Qué piensan que significan los <strong>NA</strong> en esa columna?</p>
 <h2 id="paso-3-agregar-la-informacion-que-necesito" markdown="markdown"><strong>Paso 3 - Agregar la información que necesito</strong></h2>
 <p>En este momento tenemos una tabla donde cada fila es una señal independiente, pero tenemos algunos problemas:</p>
@@ -898,29 +909,12 @@ Este es el botón para descargar materiales, en (#) hay que agregar el link corr
 <p>No tengo información de las diluciones en la tabla, solo de las letras de las filas</p>
 </li>
 <li>
-<p>Más adelante vamos a querer calcular la <em>velocidad de reacción</em>, es decir, cómo varía la <strong>signal</strong> según el <strong>time</strong>. Sin embargo, aca <strong>time</strong> es un <em>string</em>, por lo que necesito transformarlo a número</p>
+<p>Más adelante vamos a querer calcular la <em>velocidad de reacción</em>, es decir, cómo varía la <strong>signal</strong> según el <strong>time</strong>. Sin embargo, acá <strong>time</strong> es un <em>string</em>, por lo que necesito transformarlo a número</p>
 </li>
 </ul>
 <p>Estas son las cosas que queremos arreglar. Por suerte tenemos también otras dos tablas, una indicando que compuesto hay en cada columna (<strong>00_datos_compuestos.tsv</strong>) y otra indicando que dilución hay en cada fila (<strong>00_datos_concentraciones.tsv</strong>).</p>
-<p>Sin embargo, antes de arreglar estos problemas necesitamos aprender algunas cosas nuevas:</p>
+<p>Esto se podría hacer a mano, pero llevaría mucho tiempo y podría haber errores de tipeo. Por esta razón vamos a crear un programa que haga todo esto por nosotos. Sin embargo, antes de crear este programa necesitamos aprender algunas cosas nuevas:</p>
 <h3 id="herramientas-necesarias">Herramientas necesarias</h3>
-<h4 id="usar-fread-con-datos-faltantes" markdown="markdown">Usar <code>fread</code> con datos faltantes</h4>
-<p>Es común que un set de datos tenga datos faltantes, lo que en nuestro caso vendría a ser wells sin señal. Diferentes tablas los van a indicar de diferentes maneras, pero es común verlos como <em>nada</em> (o sea veo los separadores de columnas, pero no hay información en el medio) o como <strong>NA</strong>.</p>
-<p>Es importante al momento de leer un archivo saber si mi archivo tiene o no estos datos faltantes, ya que de no tenerlo en cuenta puedo terminar leyendo a <strong>NA</strong> como el <em>string</em> "NA", lo cual puede insertar datos falsos y hasta forzar a <strong>R</strong> a leer una columna numérica como si fueran todos <em>strings</em>.</p>
-<p>Podemos indicarle a <code>fread</code> si hay celdas sin valores y como están escritas con el parámetro <code>na.strings</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="n">dt</span> <span class="o">&lt;-</span> <span class="nf">fread</span><span class="p">(</span><span class="s">&quot;ARCHIVO_DT&quot;</span><span class="p">,</span> <span class="n">header</span> <span class="o">=</span> <span class="bp">T</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s">&quot;\t&quot;</span><span class="p">,</span> <span class="n">na.strings</span> <span class="o">=</span> <span class="s">&quot;NA&quot;</span><span class="p">)</span>
-</code></pre></div>
-<p>En este caso le estamos indicando que hay celdas sin valores y que están escritas en la tabla como "NA" (pueden estar con o sin comillas en el archivo). De querer indicarle a <code>fread</code> que los datos faltantes están como <em>nada</em> se usa <code>na.strings = ""</code>, aunque en este caso cualquier columna con un <em>string</em> vacío también va a ser considerada dato faltante.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Si estamos seguros que no hay celdas sin valores en nuestros datos, le podemos pasar <code>na.strings = NULL</code> para indicarle que no busque celdas vacías, lo que acelera la carga de la tabla.</p>
-</div>
-<h4 id="usar-fread-con-decimales-espanoles" markdown="markdown">Usar <code>fread</code> con decimales españoles</h4>
-<p>Otro problema común al momento de trabajar con datos es que por alguna <del>diabólica</del> razón el separador de decimales y el separador de miles no son iguales para algunos países que para otros, de hecho, son exactamente al revés.</p>
-<p>Es posible entonces que tengan una tabla que hizo alguien en Argentina donde uso comas como separador de decimales, pero que al cargarla en <strong>R</strong>, el cual fue creado en Estados Unidos, piense que dichas comas son separador de miles, lo que rompe completamente los números pasados.</p>
-<p>Por suerte algo de consideración tienen y existe un parámetro de <code>fread</code> que nos permite especificar cual es el separador de decimales (que por defecto es el punto):</p>
-<div class="highlight"><pre><span></span><code><span class="n">dt</span> <span class="o">&lt;-</span> <span class="nf">fread</span><span class="p">(</span><span class="s">&quot;ARCHIVO_DT&quot;</span><span class="p">,</span> <span class="n">header</span> <span class="o">=</span> <span class="bp">T</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s">&quot;\t&quot;</span><span class="p">,</span> <span class="n">dec</span> <span class="o">=</span> <span class="s">&quot;,&quot;</span><span class="p">)</span>
-</code></pre></div>
 <h4 id="filtrar-filas-en-data-table">Filtrar filas en <em>Data Table</em></h4>
 <p>Algo de esto vimos en el TP anterior, pero es posible filtrar filas de un <em>Data Table</em> según el valor de las diferentes columnas en dicha fila.</p>
 <p>Vamos a volver a usar el data set <strong>iris</strong> que está siempre cargado en memoria; sin embargo, <strong>iris</strong> es un <em>Data Frame</em>, por lo que lo vamos a tener que convertir en <em>Data Table</em>.</p>
@@ -1022,7 +1016,7 @@ Este es el botón para descargar materiales, en (#) hay que agregar el link corr
 <span class="n">columnas_a_quedarnos</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;Species&quot;</span><span class="p">,</span> <span class="s">&quot;Sepal.Length&quot;</span><span class="p">,</span> <span class="s">&quot;Sepal.Width&quot;</span><span class="p">)</span>
 <span class="n">dt_iris</span><span class="p">[,</span> <span class="n">columnas_a_quedarnos</span><span class="p">,</span> <span class="n">with</span> <span class="o">=</span> <span class="bp">F</span><span class="p">]</span>
 </code></pre></div>
-<p>Esto es útil cuando queremos quedarnos con pocas columnas, pero ¿qué pasa cuando tenemos muchas y solo queremos sacar algunas?. Ahí podemos hacer:</p>
+<p>Esto es útil cuando queremos quedarnos con pocas columnas, pero ¿qué pasa cuando tenemos muchas y solo queremos sacar algunas? Ahí podemos hacer:</p>
 <div class="highlight"><pre><span></span><code><span class="n">dt_iris</span> <span class="o">&lt;-</span> <span class="nf">as.data.table</span><span class="p">(</span><span class="n">iris</span><span class="p">)</span>
 
 <span class="c1">#Los dos siguientes bloques hacen lo mismo, sacando las columnas Species, Sepal.Length y Sepal.Width</span>
@@ -1046,7 +1040,7 @@ Como ven la función <code>strsplit</code> toma un <em>string</em> y lo divide e
 <p>Ese <code>[[1]]</code> en el output anterior nos está indicando que <code>strsplit</code> nos está devolviendo una variable de tipo <code>list</code> donde el primer elemento es el vector con la frase <em>spliteada</em>.</p>
 <p><strong>6)</strong> Si bien el parámetro <code>split</code> suele ser un caracter, en realidad puede ser un <em>string</em> cualquiera. Prueben el código anterior usando <code>split = "-una-"</code> y vean que pasa.</p>
 <p><strong>7)</strong> Vean que pasa cuando usan <code>split = ""</code>.</p>
-<p><strong>8)</strong> Pasenle ahora a <code>strsplit</code> el siguiente vector de strings: <code>frases &lt;- c("Aquí me pongo a cantar", "al compás de la vigüela")</code>. Sabiendo que queremos <em>splitear</em> las diferentes palabras, ¿cuál sería el valor de <code>split</code> en este caso? ¿Cuántos elementos tiene la lista que devuelve <code>strsplit</code>? ¿Por qué? ¿Cual es la tercera palabra de la segunda frase? (imprímanla por pantalla usando <code>print</code>)</p>
+<p><strong>8)</strong> Pásenle ahora a <code>strsplit</code> el siguiente vector de strings: <code>frases &lt;- c("Aquí me pongo a cantar", "al compás de la vigüela")</code>. Sabiendo que queremos <em>splitear</em> las diferentes palabras, ¿cuál sería el valor de <code>split</code> en este caso? ¿Cuántos elementos tiene la lista que devuelve <code>strsplit</code>? ¿Por qué? ¿Cuál es la tercera palabra de la segunda frase? (imprímanla por pantalla usando <code>print</code>)</p>
 <h4 id="eliminar-elementos-repetidos-en-vectores" markdown="markdown">Eliminar elementos repetidos en vectores</h4>
 <p>En los <em>Data Tables</em> es común tener columnas con categorías, por ejemplo la columna <strong>Species</strong> en la tabla <strong>iris</strong>. Es normal al momento de programar no saber previamente cuáles van a ser esas categorías (especies en este caso), por lo que muchas veces se extraen de la columna misma. Una forma de hacer esto es usar la función <code>unique()</code>, la cual toma un vector y saca los elementos repetidos, dejando uno de cada uno.</p>
 <p><strong>9)</strong> Corran el siguiente ejemplo y vean lo que devuelve.</p>
@@ -1057,9 +1051,26 @@ Como ven la función <code>strsplit</code> toma un <em>string</em> y lo divide e
 <span class="nf">print</span><span class="p">(</span><span class="n">vector_especies</span><span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">vector_especies_unicas</span><span class="p">)</span>
 </code></pre></div>
-<p>La columna <code>iris$Species</code> es tecnicamente un <em>factor</em>, pero estos son simplemente vectores con propiedades extras. La función <code>unique()</code> va a funcionar igual de pasarle un vector de caracteres; de hecho, esta función también puede remover filas repetidas de un <em>Data Table</em>.</p>
+<p>La columna <code>iris$Species</code> es técnicamente un <em>factor</em>, pero estos son simplemente vectores con propiedades extras. La función <code>unique()</code> va a funcionar igual de pasarle un vector de caracteres; de hecho, esta función también puede remover filas repetidas de un <em>Data Table</em>.</p>
+<h4 id="usar-fread-con-datos-faltantes" markdown="markdown">Usar <code>fread</code> con datos faltantes</h4>
+<p>Es común que un set de datos tenga datos faltantes, lo que en nuestro caso vendría a ser wells sin señal. Diferentes tablas los van a indicar de diferentes maneras, pero es común verlos como <em>nada</em> (o sea veo los separadores de columnas, pero no hay información en el medio), <strong>NaN</strong> (<em>Not a Number</em>), <strong>ND</strong> (<em>No Data</em>) o como <strong>NA</strong> (<em>Not Available</em>). En esta caso vamos a usar <strong>NA</strong>.</p>
+<p>Es importante al momento de leer un archivo saber si mi archivo tiene o no estos datos faltantes, ya que de no tenerlo en cuenta puedo terminar leyendo a <strong>NA</strong> como el <em>string</em> "NA", lo cual puede insertar datos falsos y hasta forzar a <strong>R</strong> a leer una columna numérica como si fueran todos <em>strings</em>.</p>
+<p>Podemos indicarle a <code>fread</code> si hay celdas sin valores y como están escritas con el parámetro <code>na.strings</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">dt</span> <span class="o">&lt;-</span> <span class="nf">fread</span><span class="p">(</span><span class="s">&quot;ARCHIVO_DT&quot;</span><span class="p">,</span> <span class="n">header</span> <span class="o">=</span> <span class="bp">T</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s">&quot;\t&quot;</span><span class="p">,</span> <span class="n">na.strings</span> <span class="o">=</span> <span class="s">&quot;NA&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>En este caso le estamos indicando que hay celdas sin valores y que están escritas en la tabla como "NA" (pueden estar con o sin comillas en el archivo). De querer indicarle a <code>fread</code> que los datos faltantes están como <em>nada</em> se usa <code>na.strings = ""</code>, aunque en este caso cualquier columna con un <em>string</em> vacío también va a ser considerada dato faltante.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Si estamos seguros que no hay celdas sin valores en nuestros datos, le podemos pasar <code>na.strings = NULL</code> para indicarle que no busque celdas vacías, lo que acelera la carga de la tabla.</p>
+</div>
+<h4 id="usar-fread-con-decimales-espanoles" markdown="markdown">Usar <code>fread</code> con decimales españoles</h4>
+<p>Otro problema común al momento de trabajar con datos es que por alguna <del>diabólica</del> razón el separador de decimales y el separador de miles no son iguales para algunos países que para otros, de hecho, son exactamente al revés.</p>
+<p>Es posible entonces que tengan una tabla que hizo alguien en Argentina donde uso comas como separador de decimales, pero que al cargarla en <strong>R</strong>, el cual fue creado en Estados Unidos, piense que dichas comas son separador de miles, lo que rompe completamente los números pasados.</p>
+<p>Por suerte algo de consideración tienen y existe un parámetro de <code>fread</code> que nos permite especificar cual es el separador de decimales (que por defecto es el punto):</p>
+<div class="highlight"><pre><span></span><code><span class="n">dt</span> <span class="o">&lt;-</span> <span class="nf">fread</span><span class="p">(</span><span class="s">&quot;ARCHIVO_DT&quot;</span><span class="p">,</span> <span class="n">header</span> <span class="o">=</span> <span class="bp">T</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s">&quot;\t&quot;</span><span class="p">,</span> <span class="n">dec</span> <span class="o">=</span> <span class="s">&quot;,&quot;</span><span class="p">)</span>
+</code></pre></div>
 <h3 id="paso-3-ejercicio">Paso 3 - Ejercicio</h3>
-<p><strong>10)</strong> Creen un nuevo script de <strong>R</strong>, copien el siguiente código y guardenlo en su carpeta de trabajo. Vayan avanzando por el <em>script</em> y cambien las secciones que dicen <code>@@EDITAR@@</code> por lo que corresponda (esto puede ser un valor, una variable, una operación matemática, una función o incluso más de una línea de código).</p>
+<p><strong>10)</strong> Creen un nuevo script de <strong>R</strong>, copien el siguiente código y guardenlo en su carpeta de trabajo. Vayan avanzando por el <em>script</em> y cambien las secciones que dicen <code>@@EDITAR@@</code> por lo que corresponda (esto puede ser un valor, una variable, una operación matemática o una función de <strong>R</strong>).</p>
 <div class="admonition warning">
 <p class="admonition-title">Working Directory</p>
 <p>Cada vez que lean o escriban un archivo recuerden que el path que le pasen debe ser un path absoluto o un path relativo al <em>Working Directory</em>. Para cambiar el <em>Working Directory</em> pueden usar la función <code>setwd()</code> que aprendimos en el TP anterior.</p>
@@ -1068,7 +1079,7 @@ Como ven la función <code>strsplit</code> toma un <em>string</em> y lo divide e
 <p class="admonition-title">Ñ y acentos</p>
 <p>Van a ver que en los códigos tratamos de no usar la letra <strong>Ñ</strong> o acentos. Esto es así ya que cuando uno comparte código entre varias personas suele pasar que algunas de esos caracteres se "rompen" y se ven feo (por ejemplo un texto que era <strong>diseño_compuestos</strong> se veía como <strong>diseÃ±o_compuestos</strong> en otra PC).</p>
 <p>Si bien es posible poner estándares de codificación de texto en grupos, la realidad es que solemos programar en inglés por lo que el problema se evita solo.</p>
-<p>Este tip es <strong><em>especialmente</em></strong> importante para los nombres de las variables. Ahi si que recomendamos nunca usar acentos o <strong>Ñ</strong>.</p>
+<p>Este tip es <strong><em>especialmente</em></strong> importante para los nombres de las variables. Ahí si que recomendamos nunca usar acentos o <strong>Ñ</strong> (o espacios).</p>
 </div>
 <div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
 
@@ -1088,7 +1099,7 @@ Como ven la función <code>strsplit</code> toma un <em>string</em> y lo divide e
                         <span class="n">dt_datos_compuestos</span><span class="p">,</span>
                         <span class="n">by</span> <span class="o">=</span> <span class="s">&quot;columna&quot;</span><span class="p">)</span>
 
-<span class="c1">#Agrego informacion concentraciones con numeros &quot;en castellano&quot;</span>
+<span class="c1">#Agrego informacion concentraciones (ojo que en *00_datos_concentraciones.tsv* el separador decimal es la coma)</span>
 <span class="n">dt_datos_concentraciones</span> <span class="o">&lt;-</span> <span class="nf">fread</span><span class="p">(</span><span class="o">@@</span><span class="n">EDITAR</span><span class="o">@@</span><span class="p">)</span>
 <span class="n">dt_parsed_data</span> <span class="o">&lt;-</span> <span class="nf">merge</span><span class="p">(</span><span class="o">@@</span><span class="n">EDITAR</span><span class="o">@@</span><span class="p">)</span>
 
@@ -1108,10 +1119,11 @@ Como ven la función <code>strsplit</code> toma un <em>string</em> y lo divide e
 <span class="nf">for </span><span class="p">(</span><span class="n">time_for</span> <span class="n">in</span> <span class="n">unique_times</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1"># Esta siguiente linea comentada la uso para debuggear, es decir, para cuando estoy creando el programa</span>
     <span class="c1"># Si la ejecutan a mano (sin el #) pueden entonces ir paso a paso en el *for* viendo que funcione todo</span>
+    <span class="c1"># Recuerden que pueden usar CTRL + ENTER para ejecutar el codigo seleccionado o ver el valor de una variable</span>
 
     <span class="c1"># time_for &lt;- unique_times[2]</span>
 
-    <span class="c1">#Divido las horas minutos y segundos y las transformo a numeros</span>
+    <span class="c1">#Divido las horas, minutos y segundos y las transformo a numeros</span>
     <span class="n">time_spliteado</span> <span class="o">&lt;-</span> <span class="nf">strsplit</span><span class="p">(</span><span class="n">time_for</span><span class="p">,</span> <span class="s">&quot;:&quot;</span><span class="p">)</span>
     <span class="n">time_spliteado</span> <span class="o">&lt;-</span> <span class="n">time_spliteado</span><span class="p">[[</span><span class="m">1</span><span class="p">]]</span>
 
@@ -1133,7 +1145,7 @@ Como ven la función <code>strsplit</code> toma un <em>string</em> y lo divide e
 <span class="p">}</span>
 
 <span class="c1">#Agrego la informacion de los segundos totales (guardada en dt_times_in_seconds) a mi tabla original</span>
-<span class="n">dt_parsed_data</span> <span class="o">&lt;-</span> <span class="o">@@</span><span class="n">EDITAR</span><span class="o">@@</span>
+<span class="n">dt_parsed_data</span> <span class="o">&lt;-</span> <span class="nf">merge</span><span class="p">(</span><span class="o">@@</span><span class="n">EDITAR</span><span class="o">@@</span><span class="p">)</span>
 
 <span class="c1">#Ahora van a ver que las columnas de la tabla parecen estar mezcladas, lo que se debe a los merge</span>
 <span class="c1">#Por otro lado hay columnas que ya no vamos a usar</span>
@@ -1189,7 +1201,7 @@ Como ven la función <code>strsplit</code> toma un <em>string</em> y lo divide e
 </table>
 </figure>
 <h2 id="paso-4-calcular-velocidades-de-reaccion" markdown="markdown"><strong>Paso 4 - Calcular velocidades de reacción</strong></h2>
-<p>En física la <em>velocidad</em> es la variación de posición por unidad de tiempo. La <em>velocidad de reacción</em> es similar, donde queremos averiguar la variación de señal por unidad de tiempo, que en nuestro caso es un segundo.</p>
+<p>En física la <em>velocidad</em> es la variación de posición por unidad de tiempo. La <em>velocidad de reacción</em> es similar, donde queremos averiguar la variación de señal por unidad de tiempo (en nuestro caso es un segundo).</p>
 <p>Para cada dilución de cada compuesto, nosotros tenemos la señal a cuatro puntos en el tiempo (una vez cada 5 minutos, o 300 segundos). Vamos a asumir que la señal varía linealmente con el tiempo, por lo que la forma más directa de conseguir la <em>velocidad de reacción</em> es calcular la pendiente de la recta que pasa por los cuatro puntos que conseguimos experimentalmente.</p>
 <p>Es de esperar que los cuatro puntos no se alineen perfectamente, pero hay formas en <strong>R</strong> de calcular y plotear la línea que más se ajusta a ellos (hacer una regresión lineal). A continuación mostramos el ejemplo de "Umbrella1" a concentración 0, es decir, la <em>velocidad de reacción base</em> cuando no hay ningún compuesto.</p>
 <figure>
@@ -1227,8 +1239,8 @@ Como ven la función <code>strsplit</code> toma un <em>string</em> y lo divide e
 <h3 id="herramientas-necesarias_1">Herramientas necesarias</h3>
 <p>En este ejercicio también vamos a necesitar varias herramientas, pero la buena noticia es que la mayoría ya las vieron en el TP anterior o en el paso anterior.</p>
 <h4 id="fors-anidados">Fors anidados</h4>
-<p>Es bastante común cuando se trabaja con tablas querer recorrer todas las combinaciones de dos variables categóricas. Una forma de hacer esto es usar <em>fors anidados</em>, es decir, un <em>for</em> adentro de otro <em>for</em>. En este caso el <em>for</em> interno se va a ejecutar completo una vez por cada elemento del <em>for</em> externo. Dentro del <em>for</em> interno es donde vamos a poner el código que querramos hacer con cada combinación de nuestras variables.</p>
-<p><strong>1)</strong> Corran el siguiente ejemplo y vean lo que devuelve. ¿Cuántas veces se ejecutó el <code>print</code>?</p>
+<p>Es bastante común cuando se trabaja con tablas querer recorrer todas las combinaciones de dos variables categóricas. Una forma de hacer esto es usar <em>fors anidados</em>, es decir, un <em>for</em> adentro de otro <em>for</em>. En este caso el <em>for</em> interno se va a ejecutar completo una vez por cada elemento del <em>for</em> externo. Dentro del <em>for</em> interno es donde vamos a poner el código que queramos hacer con cada combinación de nuestras variables.</p>
+<p><strong>1)</strong> Corran el siguiente ejemplo y vean lo que devuelve. ¿Cuántas veces se ejecutó el <code>print</code>? ¿En qué orden se recorrieron los diferentes prefijos y sufijos?</p>
 <div class="highlight"><pre><span></span><code><span class="n">vector_prefijos</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;veinti&quot;</span><span class="p">,</span> <span class="s">&quot;cuarenti&quot;</span><span class="p">,</span> <span class="s">&quot;ciento&quot;</span><span class="p">)</span>
 <span class="n">vector_sufijos</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;cuatro&quot;</span><span class="p">,</span> <span class="s">&quot;dos&quot;</span><span class="p">,</span> <span class="s">&quot;ocho&quot;</span><span class="p">)</span>
 
@@ -1241,7 +1253,7 @@ Como ven la función <code>strsplit</code> toma un <em>string</em> y lo divide e
 <span class="p">}</span>
 </code></pre></div>
 <h4 id="regresion-lineal">Regresión lineal</h4>
-<p>El ajuste de mis datos a una fórmula matemática es un tema super complejo; sin embargo, en este TP necesitamos la versión más simple de esto, que son las regresiones lineales. Existe una función que viene con <strong>R</strong> llamada <code>lm</code> que nos va a permitir calcular una regresión lineal a partir de dos vectores numéricos.</p>
+<p>El ajuste de mis datos a una fórmula matemática es un tema súper complejo; sin embargo, en este TP necesitamos la versión más simple de esto, que son las regresiones lineales. Existe una función que viene con <strong>R</strong> llamada <code>lm</code> que nos va a permitir calcular una regresión lineal a partir de dos vectores numéricos.</p>
 <div class="highlight"><pre><span></span><code><span class="n">regresion_lineal</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">iris</span><span class="p">,</span> <span class="n">formula</span> <span class="o">=</span> <span class="n">Sepal.Length</span> <span class="o">~</span> <span class="n">Petal.Length</span><span class="p">)</span>
 
 <span class="nf">print</span><span class="p">(</span><span class="n">regresion_lineal</span><span class="p">)</span>
@@ -1273,7 +1285,7 @@ Como ven la función <code>strsplit</code> toma un <em>string</em> y lo divide e
 </code></pre></div>
 </div>
 <h3 id="paso-4-ejercicio">Paso 4 - Ejercicio</h3>
-<p><strong>2)</strong> Creen un nuevo script de <strong>R</strong>, copien el siguiente código y guardenlo en su carpeta de trabajo. Vayan avanzando por el <em>script</em> y cambien las secciones que dicen <code>@@EDITAR@@</code> por lo que corresponda (esto puede ser un valor, una variable, una operación matemática, una función o incluso más de una línea de código).</p>
+<p><strong>2)</strong> Creen un nuevo script de <strong>R</strong>, copien el siguiente código y guardenlo en su carpeta de trabajo. Vayan avanzando por el <em>script</em> y cambien las secciones que dicen <code>@@EDITAR@@</code> por lo que corresponda (esto puede ser un valor, una variable, una operación matemática o una función de <strong>R</strong>).</p>
 <div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
 
 <span class="c1">#Leo los datos ya parseados y formateados</span>
@@ -1374,22 +1386,25 @@ Como ven la función <code>strsplit</code> toma un <em>string</em> y lo divide e
 <p>Primero que nada tenemos que definir un par de conceptos:</p>
 <p>Vamos a llamar <strong><em>velocidad de reacción base</em></strong> a la <em>velocidad de reacción</em> de la enzima cuando no tiene ningún inhibidor, o lo que es lo mismo, cuando la concentración del inhibidor es 0. En nuestro caso tenemos 22 wells donde la concentración del inhibidor es 0, por lo que vamos a calcular a la <em>velocidad de reacción base</em> como el promedio de las velocidades en esos 22 wells.</p>
 <p>Vamos a llamar <strong><em>actividad</em></strong> a la relación entre la <em>velocidad de reacción</em> observada al usar una concentración dada de un compuesto, y la <em>velocidad de reacción base</em>. Es decir:</p>
+<div class="arithmatex">\[
+actividad = \frac{velocidadReaccion}{velocidadReaccionBase}
+\]</div>
 <ul>
 <li>Si no hay inhibidor o si la concentración del inhibidor es muy baja para que haga efecto <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg></span> <strong>Actividad ~ 1</strong></li>
-<li>Si no hay enzima o si estoy usando un inhibidor perfecto: <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg></span> <strong>Actividad ~ 0</strong></li>
+<li>Si no hay enzima o si estoy usando un inhibidor perfecto <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg></span> <strong>Actividad ~ 0</strong></li>
 </ul>
 <p>Ahora sí, queremos calcular una curva de dosis-respuesta para ver como es afectada nuestra <strong>enzima Z</strong> por diferentes concentraciones de cada uno de los 22 compuestos. En general es esperable que:</p>
 <ul>
 <li>A muy bajas concentraciones del compuesto no hay efecto sobre la enzima, por lo que estoy viendo la una <em>actividad</em> cercana a 1. Esto quiere decir que esperamos ver varias concentraciones bajas de un compuesto que muestren la misma <em>actividad</em>.</li>
 <li>A muy altas concentraciones del compuesto ya está saturado el efecto que él pueda hacer sobre la enzima (por ejemplo todos los sitios de unión ya están ocupados), por lo que estoy viendo el máximo efecto que puede hacer dicho compuesto a la <em>actividad</em> de la enzima. Esto quiere decir que esperamos ver varias concentraciones altas que muestren la misma <em>actividad</em>.</li>
-<li>Las concentraciones medias son aquellas en donde una variación en la concentración del compuesto produce un cambio en la <em>actividad</em> de la enzima.</li>
+<li>Las concentraciones intermedias son aquellas en donde una variación en la concentración del compuesto produce un cambio en la <em>actividad</em> de la enzima.</li>
 </ul>
 <p>Estás tres propiedades hacen que la curva dosis-respuesta tenga una forma sigmoidea, es decir:</p>
 <figure>
 <p><img alt="CurvaDosisRespuesta" src="img/dose-response-curve-ic50.svg" /></p>
 </figure>
 <p>Donde en nuestro caso la respuesta va a ser la <em>actividad</em> y la dosis va a ser la concentración de nuestro compuesto. Dependiendo de las concentraciones elegidas, es normal ver que el eje X de este plot esté en escala logarítmica.</p>
-<p>En el plot está marcado el <strong>IC 50</strong>, el cual es la concentración del compuesto a la cual la <em>actividad</em> de la enzima cae al 50% (es decir, cuando la <em>velocidad de reacción</em> es la mitad que la <em>velocidad de reacción base</em>. El <strong>IC 50</strong> da información de donde está el rango de concentraciones de dicho compuesto que hacen variar la <em>actividad</em> enzimática, entre otras cosas.</p>
+<p>En el plot está marcado el <strong>IC 50</strong>, el cual es la concentración del compuesto a la cual la <em>actividad</em> de la enzima cae al 50% (es decir, cuando la <em>velocidad de reacción</em> es la mitad que la <em>velocidad de reacción base</em>). El <strong>IC 50</strong> da información de donde está el rango de concentraciones de dicho compuesto que hacen variar la <em>actividad</em> enzimática, entre otras cosas.</p>
 <h3 id="herramientas">Herramientas</h3>
 <h4 id="instalar-paquetes-de-r">Instalar paquetes de <strong>R</strong></h4>
 <p>Para calcular el <strong>IC 50</strong> vamos a ajustar nuestros datos a una curva sigmoidea, para lo cual vamos a instalar un paquete de <strong>R</strong> llamado <code>nplr</code> que hace estos cálculos por nosotros.</p>
@@ -1440,8 +1455,8 @@ Como ven la función <code>strsplit</code> toma un <em>string</em> y lo divide e
 <p>A veces pasa que un pdf queda abierto más de lo que debería y no se cierra bien, o que no se crea como debería. En estos casos pueden usar la función <code>graphics.off()</code> antes y después del código anterior (especialmente antes) para limpiar cualquier cosa abierta. Solo tengan en cuenta que esto va a vaciarles los plots que tengan guardados en el panel Plots de RStudio.</p>
 </div>
 <h4 id="la-verdad-de-la-funcion-plot">La verdad de la función <code>plot</code></h4>
-<p>Nosotros acabamos de ver unos plots hechos con la función <code>plot()</code>, que es la forma de plotear por defecto en <strong>R</strong>. Sin embargo <code>plot</code> no solo plotea cosas pasándole un X y un Y, sino que también es una función que de pasarle ciertos tipos de variables (como puede ser una regresión logística) usa un plot interno de dichas variables.</p>
-<p>Es decir, el paquete <code>nplr</code> trae sus propios plots que se van a hacer mediante <code>plot(regresion_logistica)</code>. Ya lo vamos a ver.</p>
+<p>Nosotros acabamos de ver unos plots hechos con la función <code>plot()</code>, que es la forma de plotear por defecto en <strong>R</strong>. Sin embargo <code>plot</code> no solo plotea cosas pasándole un X y un Y, sino que también es una función que de pasarle ciertos tipos de variables (como puede ser una regresión logística) usa un plot interno de dichas variables. </p>
+<p>El paquete <code>nplr</code> trae sus propios plots que se van a hacer mediante <code>plot(regresion_logistica)</code>. Esto no es único de este paquete y existen otras librerías, por ejemplo de filogenia, que tienen este mismo funcionamiento, donde <code>plot</code> hace árboles filogenéticos.</p>
 <h4 id="google">Google</h4>
 <p>Es muy importante al momento de programar saber buscar funcionalidades que uno quiere usar en sus programas.</p>
 <p><strong>4)</strong> Busquen en internet:</p>
@@ -1475,7 +1490,7 @@ Es posible redondear números, lo que es especialmente útil para cuando tenemos
 -->
 
 <h3 id="paso-5-ejercicio">Paso 5 - Ejercicio</h3>
-<p><strong>5)</strong> Creen un nuevo script de <strong>R</strong>, copien el siguiente código y guardenlo en su carpeta de trabajo. Vayan avanzando por el <em>script</em> y cambien las secciones que dicen <code>@@EDITAR@@</code> por lo que corresponda (esto puede ser un valor, una variable, una operación matemática, una función o incluso más de una línea de código).</p>
+<p><strong>5)</strong> Creen un nuevo script de <strong>R</strong>, copien el siguiente código y guárdenlo en su carpeta de trabajo. Vayan avanzando por el <em>script</em> y cambien las secciones que dicen <code>@@EDITAR@@</code> por lo que corresponda (esto puede ser un valor, una variable, una operación matemática o una función de <strong>R</strong>).</p>
 <div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">nplr</span><span class="p">)</span>
 
@@ -1554,7 +1569,11 @@ Es posible redondear números, lo que es especialmente útil para cuando tenemos
          <span class="n">main</span> <span class="o">=</span> <span class="n">titulo_plot</span><span class="p">,</span>
          <span class="n">xlab</span> <span class="o">=</span> <span class="s">&quot;Log10 Concentracion&quot;</span><span class="p">,</span>
          <span class="n">ylab</span> <span class="o">=</span> <span class="s">&quot;Actividad&quot;</span><span class="p">,</span>
-         <span class="n">showGOF</span> <span class="o">=</span> <span class="bp">F</span><span class="p">)</span>
+         <span class="n">ylim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">1.5</span><span class="p">),</span>
+         <span class="n">showGOF</span> <span class="o">=</span> <span class="bp">F</span><span class="p">,</span>
+         <span class="n">xaxt</span> <span class="o">=</span> <span class="s">&quot;n&quot;</span><span class="p">)</span>
+    <span class="c1">#Reescribo el eje X para que se entienda que es logaritmico</span>
+    <span class="nf">axis</span><span class="p">(</span><span class="n">side</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span> <span class="n">at</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0.5</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">1.5</span><span class="p">,</span> <span class="m">2</span><span class="p">),</span> <span class="n">labels</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="nf">expression</span><span class="p">(</span><span class="m">10</span><span class="o">^</span><span class="m">0</span><span class="p">),</span> <span class="nf">expression</span><span class="p">(</span><span class="m">10</span><span class="o">^</span><span class="m">0.5</span><span class="p">),</span> <span class="nf">expression</span><span class="p">(</span><span class="m">10</span><span class="o">^</span><span class="m">1</span><span class="p">),</span> <span class="nf">expression</span><span class="p">(</span><span class="m">10</span><span class="o">^</span><span class="m">1.5</span><span class="p">),</span> <span class="nf">expression</span><span class="p">(</span><span class="m">10</span><span class="o">^</span><span class="m">2</span><span class="p">)))</span>
 <span class="p">}</span>
 
 <span class="c1">#Cierro el pdf</span>
@@ -1630,14 +1649,14 @@ Es posible redondear números, lo que es especialmente útil para cuando tenemos
 <h2 id="paso-6-conclusiones"><strong>Paso 6 - Conclusiones</strong></h2>
 <p>Ahora que tenemos todos los datos que necesitamos es momento de analizarlos. Viendo el <strong>.pdf</strong> y la tabla generados en el paso anterior respondan:</p>
 <p><strong>1)</strong> ¿Por qué hay casos donde el <strong>IC 50</strong> dió <strong>NA</strong>?</p>
-<p><strong>2)</strong> En base a los plots obtenidos, ¿Les parece suficientes nuestros datos para estar seguros de los <strong>IC 50</strong> calculados? ¿Cuál es un compuesto donde están bastantes seguros de su <strong>IC 50</strong>? ¿Cuál es un compuesto donde desconfían del <strong>IC 50</strong> calculado?</p>
+<p><strong>2)</strong> En base a los plots obtenidos, ¿Les parecen suficientes nuestros datos para estar seguros de los <strong>IC 50</strong> calculados? ¿Cuál es un compuesto donde están bastantes seguros de su <strong>IC 50</strong>? ¿Cuál es un compuesto donde desconfían del <strong>IC 50</strong> calculado?</p>
 <p><strong>3)</strong> ¿Qué experimentos harían para tener la curva completa en "Umbrella1"? ¿Y en "Umbrella8"?</p>
 <p><strong>4)</strong> En base a lo observado, nombren dos o tres compuestos que recomendarían para inhibir a la <strong>enzima Z</strong>. ¿Por qué los eligieron?</p>
 <h2 id="ejercicio-adicional-1-paso-2-limpiar-y-parsear-el-archivo" markdown="markdown"><strong>Ejercicio Adicional 1 - Paso 2 - Limpiar y Parsear el Archivo</strong></h2>
 <p>Leer el <strong>Paso 2</strong> para entender el objetivo de este ejercicio.</p>
 <h3 id="herramientas_1">Herramientas</h3>
 <h4 id="leer-y-escribir-texto-plano">Leer y escribir texto plano</h4>
-<p>Por "texto plano" nos referimos a leer un archivo de texto que no tiene un formato definido (o sea no es un <strong>.csv</strong> o <strong>.tsv</strong>, por ejemplo). Esto puede ser algo como un libro, una página web, o una tabla que por alguna razón no la queremos leer como tabla.</p>
+<p>Por "texto plano" nos referimos a leer un archivo de texto que no tiene un formato definido (o sea no es un <strong>.csv</strong> o <strong>.tsv</strong>, por ejemplo). Esto puede ser algo como un libro, notas, o una tabla que por alguna razón no la queremos leer como tabla.</p>
 <p>La forma más directa de leer texto plano en <strong>R</strong> es la función <code>readLines()</code>, a la cual hay que pasarle el path del archivo a leer. Esta función va a devolver un vector en el cual cada elemento es una línea del archivo leído. Se usa:</p>
 <div class="highlight"><pre><span></span><code><span class="n">nuevo_vector</span> <span class="o">&lt;-</span> <span class="nf">readLines</span><span class="p">(</span><span class="n">con</span> <span class="o">=</span> <span class="s">&quot;ARCHIVO&quot;</span><span class="p">)</span> 
 </code></pre></div>
@@ -1807,10 +1826,11 @@ Donde `vector_booleanos1` es un vector de *booleanos* declarado a mano y `vector
 
               
             </article>
+            
           </div>
         </div>
         
-          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
             Volver al principio
           </a>
@@ -1843,10 +1863,10 @@ Donde `vector_booleanos1` es un vector de *booleanos* declarado a mano y `vector
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["search.suggest", "search.highlight", "search.share", "header.autohide", "navigation.tracking", "navigation.tabs", "toc.integrate", "navigation.top"], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "B\u00fasqueda", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version.title": "Seleccionar versi\u00f3n"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["search.suggest", "search.highlight", "search.share", "header.autohide", "navigation.tracking", "navigation.tabs", "toc.integrate", "navigation.top"], "search": "../../assets/javascripts/workers/search.85cb4492.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "B\u00fasqueda", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version.title": "Seleccionar versi\u00f3n"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.a6c66575.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a877e258.min.js"></script>
       
         <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
       

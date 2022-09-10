@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://bioinformatica-iib.github.io/2022_introduccion_bioinformatica/practicos/TP08a_R/">
       
       <link rel="icon" href="../../img/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.15">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.6">
     
     
       
@@ -21,11 +21,12 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.c382b1dc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.4a0965b7.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.cc9b2e1e.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
         
+      
       
     
     
@@ -793,8 +794,9 @@ Este es el botón para decargar materiales, en (#) hay que agregar el link corre
 <h3 id="recursos-online">Recursos Online</h3>
 <ul>
 <li><a href="https://www.coursera.org/learn/r-programming">Curso online de R de Coursera</a> (se puede hacer gratis) (en ese caso no da certificado)</li>
+<li><a href="http://www.cookbook-r.com/">Tips de comandos básicos de R</a></li>
 <li>Data Tables: <a href="https://cran.r-project.org/web/packages/data.table/vignettes/datatable-intro.html">Introducción oficial</a> y <a href="https://bookdown.org/paradinas_iosu/CursoR/data-table.html">otra página con más info</a></li>
-<li>ggplot2: <a href="https://bookdown.org/paradinas_iosu/CursoR/ggplot2.html">Vistazo rápido</a> y <a href="http://sthda.com/english/wiki/ggplot2-essentials">otra página con cada plot detallando sus parámetros</a></li>
+<li>ggplot2: <a href="https://bookdown.org/paradinas_iosu/CursoR/ggplot2.html">Vistazo rápido</a>, <a href="http://sthda.com/english/wiki/ggplot2-essentials">otra página con cada plot detallando sus parámetros</a> y <a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf">cheatsheet</a></li>
 </ul>
 <h3 id="objetivos">Objetivos</h3>
 <ul>
@@ -880,7 +882,7 @@ Este es el botón para decargar materiales, en (#) hay que agregar el link corre
 <p><strong>3)</strong> En la consola (pestaña <strong>Console</strong>) escriban lo siguiente y aprieten <span class="keys"><kbd class="key-enter">Enter</kbd></span>:</p>
 <div class="highlight"><pre><span></span><code><span class="nf">print</span><span class="p">(</span><span class="s">&quot;Hello World!&quot;</span><span class="p">)</span>
 </code></pre></div>
-<p><code>print</code> es basicamente el <code>echo</code> de <strong>R</strong> y cuando lo usamos decimos que <em>imprimimos</em> a la variable. Puede ser que usemos las frases <em>"imprimir por terminal"</em>, <em>"imprimir por consola"</em>, o <em>"imprimir por por pantalla"</em> de forma intercambiable.</p>
+<p><code>print</code> es equivalente al <code>echo</code> de <strong>bash</strong> y cuando lo usamos decimos que <em>imprimimos</em> a la variable. Puede ser que usemos las frases <em>"imprimir por terminal"</em>, <em>"imprimir por consola"</em>, o <em>"imprimir por por pantalla"</em> de forma intercambiable.</p>
 <p>Como muestra el código anterior, en <strong>R</strong> los argumentos van pegados a la función y entre paréntesis; de haber mas de un argumento se separan con comas (dentro de los paréntesis).</p>
 <p>Al correr el código deberían ver algo como:</p>
 <div class="highlight"><pre><span></span><code>[1] &quot;Hello World!&quot;
@@ -956,6 +958,14 @@ Este es el botón para decargar materiales, en (#) hay que agregar el link corre
 
 <span class="nf">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
 </code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Tip - Averiguar el tipo de una variable</p>
+<p>Si uno no sabe el tipo de una variable puede usar la función <code>class()</code> la cual devuelve por consola el tipo de dicha variable. Por ejemplo, en este caso <code>class(n)</code> devolvería <strong>"numeric"</strong>.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Tipos de variables</p>
+<p>Si bien al momento de trabajar con <strong>R</strong> vamos a aceptar usar <strong>numeric</strong> incluso cuando trabajamos con <strong>integer</strong>, en otros lenguajes de programación esta diferencia puede ser más estricta por lo que habría que usar <strong>integer</strong> al trabajar con números enteros. Otro factor a considerar es que los <strong>integer</strong> ocupan menos tamaño en memoria, lo que puede ser relevante en ciertos casos.</p>
+</div>
 <h3 id="cadenas-de-caracteres-o-strings" markdown="markdown">Cadenas de caracteres o <em>Strings</em></h3>
 <p>En <strong>R</strong> las cadenas de caracteres, comunmente llamadas <em>strings</em>, tienen el tipo de variable <strong>character</strong>.</p>
 <p><strong>4)</strong> Prueben correr el próximo código línea a línea, lean los comentarios y vean como se va modificando el valor de la variable <strong>frase</strong> en el <strong>Environment</strong>:</p>
@@ -1128,7 +1138,7 @@ Este es el botón para decargar materiales, en (#) hay que agregar el link corre
 <p><img alt="RStudioExport" src="img/rplot_export.png" /></p>
 </figure>
 <h2 id="ejercicio-2-vectores-y-plots" markdown="markdown"><strong>Ejercicio 2 - Vectores y plots</strong></h2>
-<p>Para valores de <code>x</code> entre 1 y 200, calculen el <code>y</code> correspondiente a una recta con pendiente 3 y ordenada al origen 5 y hagan el plot correspondiente usando el comando <code>plot</code>.</p>
+<p>Para valores de <code>x</code> entre 1 y 200, calculen el <code>y</code> correspondiente a una recta con pendiente 3 y ordenada al origen 5 y hagan el plot de dicha recta usando el comando <code>plot</code>.</p>
 <p>Una vez creado el plot, salvenló en un archivo con extensión <strong>SVG</strong>.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip - Plotear una línea</p>
@@ -1183,14 +1193,14 @@ Este es el botón para decargar materiales, en (#) hay que agregar el link corre
 <span class="n">numero1</span> <span class="o">&lt;-</span> <span class="m">5</span>
 <span class="n">booleano2</span> <span class="o">&lt;-</span> <span class="n">numero1</span> <span class="o">&gt;</span> <span class="m">10</span>
 
-<span class="c1"># Combinando booleanos, en este caso con *and*</span>
+<span class="c1"># Combinando booleanos con operadores lógicos, en este caso con *and*</span>
 <span class="n">booleano3</span> <span class="o">&lt;-</span> <span class="n">booleano1</span> <span class="o">&amp;</span> <span class="n">booleano2</span>
 </code></pre></div>
 <p>Como mostramos en la tercer forma de generar variables booleanas, se pueden hacer operaciones entre los booleanos usando la llamada <strong>algebra booleana</strong>. Esto es un mundo en sí mismo, pero por suerte al momento de programar solo nos van a importar las tres operaciones básicas de la algebra booleana: el <strong>AND</strong>, el <strong>OR</strong> y el <strong>NOT</strong>.</p>
 <p>El <strong>AND</strong> y el <strong>OR</strong> son operaciones entre dos booleanos, mientras que <strong>NOT</strong> es una operación que se le aplica a un solo booleano.</p>
 <ul>
 <li>El <strong>AND</strong> es el <strong>"Y"</strong>, devolviendo <strong class="green_text">TRUE</strong> solo cuando ambos booleanos eran <strong class="green_text">TRUE</strong>. Se escribe en <strong>R</strong> con <strong>&amp;</strong></li>
-<li>El <strong>OR</strong> es el <strong>"O"</strong>, devolviendo <strong class="green_text">TRUE</strong> cuando por lo menos uno de ambos booleanos era <strong class="green_text">TRUE</strong>. Se escribe en <strong>R</strong> con <strong>|</strong></li>
+<li>El <strong>OR</strong> es el <strong>"O"</strong>, devolviendo <strong class="green_text">TRUE</strong> cuando por lo menos uno de ambos booleanos era <strong class="green_text">TRUE</strong>. Se escribe en <strong>R</strong> con <strong>|</strong> (<em>pipe</em>)</li>
 <li>El <strong>NOT</strong> es el <strong>"NO"</strong>, invirtiendo el valor del booleano (o sea, devuelve <strong class="green_text">TRUE</strong> solo si el booleano era <strong class="red_text">FALSE</strong>). Se escribe en <strong>R</strong> con <strong>!</strong></li>
 </ul>
 <details class="tip">
@@ -1330,17 +1340,17 @@ Este es el botón para decargar materiales, en (#) hay que agregar el link corre
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="n">vector_colores</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;rojo&quot;</span><span class="p">,</span> <span class="s">&quot;amarillo&quot;</span><span class="p">,</span> <span class="s">&quot;verde&quot;</span><span class="p">)</span>
-<span class="nf">for </span><span class="p">(</span><span class="n">color_for</span> <span class="n">in</span> <span class="n">vector_colores</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nf">print</span><span class="p">(</span><span class="n">color_for</span><span class="p">)</span>
+<span class="nf">for </span><span class="p">(</span><span class="n">color</span> <span class="n">in</span> <span class="n">vector_colores</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">color</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="n">vector_colores</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;rojo&quot;</span><span class="p">,</span> <span class="s">&quot;amarillo&quot;</span><span class="p">,</span> <span class="s">&quot;verde&quot;</span><span class="p">)</span>
-<span class="nf">for </span><span class="p">(</span><span class="n">color_for</span> <span class="n">in</span> <span class="n">vector_colores</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1"># *color_for* es la variable que va cambiando en cada iteración del *for* (como antes era *i*)</span>
+<span class="nf">for </span><span class="p">(</span><span class="n">color</span> <span class="n">in</span> <span class="n">vector_colores</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1"># *color* es la variable que va cambiando en cada iteración del *for* (como antes era *i*)</span>
     <span class="c1"># En este caso va a ir tomando los valores de los diferentes elementos de *vector_colores*</span>
-    <span class="nf">print</span><span class="p">(</span><span class="n">color_for</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">color</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div>
 </div>
@@ -1425,15 +1435,18 @@ Este es el botón para decargar materiales, en (#) hay que agregar el link corre
 <li>En cada iteración vamos a sumarle o restarle algo a <code>resultado</code> (guardando el nuevo valor en <code>resultado</code>):<ul>
 <li>Para todo <code>i</code> menor a 5 o mayor a 47 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg></span> Restarle <code>i</code> a <code>resultado</code></li>
 <li>Para todo <code>i</code> mayor a 20 y menor a 30 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg></span> Sumarle <code>i</code> a <code>resultado</code></li>
-<li>Para los primeros 25 <code>i</code> (1 a 25) <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg></span> Sumarle 1 a <code>resultado</code></li>
-<li>Para los últimos 25 <code>i</code> (26 a 50) <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg></span> Restarle 1 a <code>resultado</code></li>
 </ul>
 </li>
 <li>Imprima el valor final de <code>resultado</code> por la consola</li>
 </ul>
+<!--
+    * Para los primeros 25 `i` (1 a 25) :material-arrow-right: Sumarle 1 a `resultado`
+    * Para los últimos 25 `i` (26 a 50) :material-arrow-right: Restarle 1 a `resultado`
+-->
+
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Aca van a necesitar usar diferentes estructuras <em>ifs</em> adentro del <em>for</em> teniendo en cuenta que hay varias condiciones que se pueden cumplir al mismo tiempo.</p>
+<p>Aca van a necesitar usar diferentes estructuras <em>ifs</em> adentro del <em>for</em> teniendo en cuenta que hay varias condiciones.</p>
 </div>
 <h2 id="r-tablas"><strong>R: Tablas</strong></h2>
 <h3 id="data-frames">Data Frames</h3>
@@ -1546,6 +1559,10 @@ Fijense que <code>summary</code> va a devolver información en base a que contie
 </ul>
 <p><strong>4)</strong> Existen algunas tablas en <strong>R</strong> que estan siempre cargadas en memoria y sirven para probar cosas. Una de estas tablas es <strong>iris</strong>. Usen <code>print</code> para ver esta tabla y luego usen <code>help(iris)</code> para ver la ayuda relacionada a esta tabla (que explica un poco las columnas).</p>
 <p><strong>5)</strong> Guarden la tabla <strong>iris</strong> en un archivo llamado <strong>iris.tsv</strong> dentro de la carpeta creada en el punto <strong>1)</strong>. Usen los parámetros usados en el ejemplo de arriba. Confirmen que se creo el archivo.</p>
+<div class="admonition info">
+<p class="admonition-title">Data Tables y nombres de las filas</p>
+<p>Es medio técnico, pero a diferencia de los <em>Data Frames</em>, los <em>Data Tables</em> no pueden tener nombres en las filas (razón por la que estoy usando <code>row.names = F</code> en el código anterior). Esta es una decisión consciente de los creadores de los <em>Data Tables</em> ya que cualquier información que uno quiera almacenar en los nombres de las filas también se puede almacenar en una nueva columna, lo que hace mucho más fácil trabajar con esa información (filtrar, ordenar, etc).</p>
+</div>
 <h3 id="leer-tablas">Leer Tablas</h3>
 <p>Hay varias funciones para leer tablas, pero la que vamos a usar nosotros es <code>fread</code>, por ejemplo:</p>
 <div class="highlight"><pre><span></span><code><span class="n">nuevo_dt</span> <span class="o">&lt;-</span> <span class="nf">fread</span><span class="p">(</span><span class="s">&quot;ARCHIVO_DT&quot;</span><span class="p">,</span> <span class="n">header</span> <span class="o">=</span> <span class="bp">T</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s">&quot;\t&quot;</span><span class="p">)</span>
@@ -1575,6 +1592,54 @@ Fijense que <code>summary</code> va a devolver información en base a que contie
 <li>Impriman por pantalla el valor de <strong>col2</strong> de la cuarta fila de la tabla</li>
 <li>Impriman por pantalla todas las filas donde <strong>col2</strong> sea menor o igual a 7</li>
 </ol>
+<h2 id="r-funciones"><strong>R: Funciones</strong></h2>
+<p>Como ya mencionamos cuando hablamos de los <em>ciclos</em>, es común en programación querer realizar una tarea varias veces en condiciones ligeramente diferentes. Otra herramienta que tenemos a nuestra disposición son las funciones, que ademas de ser parte de <strong>R</strong> y de los paquetes, pueden ser creadas por nosotros desde 0.</p>
+<p>Supongamos que por alguna razón es común para nosotros querer calcular <span class="arithmatex">\(y = 2x + x^2\)</span>, podemos entonces hacer:</p>
+<div class="highlight"><pre><span></span><code><span class="n">myFunction</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">output</span> <span class="o">&lt;-</span> <span class="m">2</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">x</span> <span class="o">^</span> <span class="m">2</span>
+
+    <span class="nf">return</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="n">x1</span> <span class="o">&lt;-</span> <span class="m">5</span>
+<span class="n">x2</span> <span class="o">&lt;-</span> <span class="m">7</span>
+<span class="n">vector_x3</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">100</span><span class="p">)</span>
+
+<span class="n">y1</span> <span class="o">&lt;-</span> <span class="nf">myFunction</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">x1</span><span class="p">)</span>
+<span class="n">y2</span> <span class="o">&lt;-</span> <span class="nf">myFunction</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">x2</span><span class="p">)</span>
+<span class="n">vector_y3</span> <span class="o">&lt;-</span> <span class="nf">myFunction</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">vector_x3</span><span class="p">)</span>
+
+<span class="c1"># Ya que estamos hacemos un plot de los vectores (a x1, x2, y1 e y2 no los estoy usando para nada por ahora)</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">vector_x3</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">vector_y3</span><span class="p">)</span>
+</code></pre></div>
+<figure>
+<p><img alt="FunctionPlot1" src="img/function_plot.png" /></p>
+</figure>
+<p>Si bien en este caso puede no ser super necesario, van viendo como me ahorro bastante código al usar funciones. Imaginenese ahora si lo que está adentro de la función es algo mas complejo que ocupa 20 líneas de código.</p>
+<p>También es posible darle más de un parámetro a una función, por ejemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="n">myFunction</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">exp</span> <span class="o">=</span> <span class="m">2</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">output</span> <span class="o">&lt;-</span> <span class="m">2</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">x</span> <span class="o">^</span> <span class="n">exp</span>
+
+    <span class="nf">return</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="n">x1</span> <span class="o">&lt;-</span> <span class="m">5</span>
+<span class="n">x2</span> <span class="o">&lt;-</span> <span class="m">7</span>
+<span class="n">vector_x3</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">100</span><span class="p">)</span>
+
+<span class="c1"># El parametro *exp* tiene por defecto el valor 2</span>
+<span class="c1"># Estas dos lineas de código devuelven lo mismo</span>
+<span class="n">y1</span> <span class="o">&lt;-</span> <span class="nf">myFunction</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">x1</span><span class="p">)</span>
+<span class="n">y1</span> <span class="o">&lt;-</span> <span class="nf">myFunction</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">x1</span><span class="p">,</span> <span class="n">exp</span> <span class="o">=</span> <span class="m">2</span><span class="p">)</span>
+
+<span class="n">y4</span> <span class="o">&lt;-</span> <span class="nf">myFunction</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">x2</span><span class="p">,</span> <span class="n">exp</span> <span class="o">=</span> <span class="m">4</span><span class="p">)</span>
+<span class="n">vector_y5</span> <span class="o">&lt;-</span> <span class="nf">myFunction</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">vector_x3</span><span class="p">,</span> <span class="n">exp</span> <span class="o">=</span> <span class="m">10</span><span class="p">)</span>
+
+<span class="nf">plot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">vector_x3</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">vector_y5</span><span class="p">)</span>
+</code></pre></div>
+<figure>
+<p><img alt="FunctionPlot2" src="img/function_plot2.png" /></p>
+</figure>
 <h2 id="r-plots-mas-complejos"><strong>R: Plots más complejos</strong></h2>
 <p>Si bien la funciones <code>plot</code> e <code>hist</code> se pueden usar para hacer muchos tipos de plots, la mayoría de los plots hechos por <strong>R</strong> que uno puede llegar a ver en papers o similar estan hechos con paquetes de <strong>R</strong> que se especializan en plots.</p>
 <p>El paquete <code>ggplot2</code> es uno de los más usados, debido a su gran variedad de plots y a que le permite al usuario modificar practicamente cualquier detalle del plot (con más o menos dificultad).</p>
@@ -1596,7 +1661,7 @@ Fijense que <code>summary</code> va a devolver información en base a que contie
     <span class="nf">geom_line</span><span class="p">(</span><span class="n">linetype</span> <span class="o">=</span> <span class="s">&quot;dashed&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s">&quot;blue&quot;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="m">0.25</span><span class="p">)</span>
 </code></pre></div>
 <p>Como dijimos antes hay muchas funciones de ploteo, cada una con muchos parámetos posibles. Lo más normal al usar <code>ggplot</code> es googlear el uso específico que uno quiere hacer en ese momento y ver como se hace.</p>
-<p><strong>3)</strong> El siguiente código es un ejemplo más "completo" de un plot hecho con <code>ggplot</code>. Corran el siguiente código y vean el plot. Fijense si pueden inferir en base a su nombre que hacen algunos de los parámetros que le pasamos a <code>ggplot</code>:</p>
+<p><strong>3)</strong> El siguiente código es un ejemplo más "completo" de un plot hecho con <code>ggplot</code>. Corran el siguiente código y vean el plot. Fijense si pueden inferir en base a su nombre que hacen algunos de los parámetros que le pasamos a <code>ggplot</code> (pueden ver el <a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf">cheatsheet</a>):</p>
 <div class="highlight"><pre><span></span><code><span class="nf">ggplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">iris</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">Sepal.Length</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">Petal.Length</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="n">Species</span><span class="p">))</span> <span class="o">+</span>
     <span class="nf">geom_point</span><span class="p">(</span><span class="n">size</span> <span class="o">=</span> <span class="m">1.5</span><span class="p">)</span> <span class="o">+</span>
     <span class="nf">xlim</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">8</span><span class="p">))</span> <span class="o">+</span>
@@ -1726,54 +1791,6 @@ Fijense que <code>summary</code> va a devolver información en base a que contie
 <span class="nf">class</span><span class="p">(</span><span class="n">numero</span><span class="p">)</span>
 <span class="nf">typeof</span><span class="p">(</span><span class="n">numero</span><span class="p">)</span>
 </code></pre></div>
-<h2 id="r-funciones"><strong>R: Funciones</strong></h2>
-<p>Como ya mencionamos cuando hablamos de los <em>ciclos</em>, es común en programación querer realizar una tarea varias veces en condiciones ligeramente diferentes. Otra herramienta que tenemos a nuestra disposición son las funciones, que ademas de ser parte de <strong>R</strong> y de los paquetes, pueden ser creadas por nosotros desde 0.</p>
-<p>Supongamos que por alguna razón es común para nosotros querer calcular y = 2 * x + x^2, podemos entonces hacer:</p>
-<div class="highlight"><pre><span></span><code><span class="n">myFunction</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">output</span> <span class="o">&lt;-</span> <span class="m">2</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">x</span> <span class="o">^</span> <span class="m">2</span>
-
-    <span class="nf">return</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
-<span class="p">}</span>
-
-<span class="n">x1</span> <span class="o">&lt;-</span> <span class="m">5</span>
-<span class="n">x2</span> <span class="o">&lt;-</span> <span class="m">7</span>
-<span class="n">vector_x3</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">100</span><span class="p">)</span>
-
-<span class="n">y1</span> <span class="o">&lt;-</span> <span class="nf">myFunction</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">x1</span><span class="p">)</span>
-<span class="n">y2</span> <span class="o">&lt;-</span> <span class="nf">myFunction</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">x2</span><span class="p">)</span>
-<span class="n">vector_y3</span> <span class="o">&lt;-</span> <span class="nf">myFunction</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">vector_x3</span><span class="p">)</span>
-
-<span class="c1"># Ya que estamos hacemos un plot de los vectores (a x1, x2, y1 e y2 no los estoy usando para nada por ahora)</span>
-<span class="nf">plot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">vector_x3</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">vector_y3</span><span class="p">)</span>
-</code></pre></div>
-<figure>
-<p><img alt="FunctionPlot1" src="img/function_plot.png" /></p>
-</figure>
-<p>Si bien en este caso puede no ser super necesario, van viendo como me ahorro bastante código al usar funciones. Imaginenese ahora si lo que está adentro de la función es algo mas complejo que ocupa 20 líneas de código.</p>
-<p>También es posible darle más de un parámetro a una función, por ejemplo:</p>
-<div class="highlight"><pre><span></span><code><span class="n">myFunction</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">exp</span> <span class="o">=</span> <span class="m">2</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">output</span> <span class="o">&lt;-</span> <span class="m">2</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">x</span> <span class="o">^</span> <span class="n">exp</span>
-
-    <span class="nf">return</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
-<span class="p">}</span>
-
-<span class="n">x1</span> <span class="o">&lt;-</span> <span class="m">5</span>
-<span class="n">x2</span> <span class="o">&lt;-</span> <span class="m">7</span>
-<span class="n">vector_x3</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">100</span><span class="p">)</span>
-
-<span class="c1"># El parametro *exp* tiene por defecto el valor 2</span>
-<span class="c1"># Estas dos lineas de código devuelven lo mismo</span>
-<span class="n">y1</span> <span class="o">&lt;-</span> <span class="nf">myFunction</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">x1</span><span class="p">)</span>
-<span class="n">y1</span> <span class="o">&lt;-</span> <span class="nf">myFunction</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">x1</span><span class="p">,</span> <span class="n">exp</span> <span class="o">=</span> <span class="m">2</span><span class="p">)</span>
-
-<span class="n">y4</span> <span class="o">&lt;-</span> <span class="nf">myFunction</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">x2</span><span class="p">,</span> <span class="n">exp</span> <span class="o">=</span> <span class="m">4</span><span class="p">)</span>
-<span class="n">vector_y5</span> <span class="o">&lt;-</span> <span class="nf">myFunction</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">vector_x3</span><span class="p">,</span> <span class="n">exp</span> <span class="o">=</span> <span class="m">10</span><span class="p">)</span>
-
-<span class="nf">plot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">vector_x3</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">vector_y5</span><span class="p">)</span>
-</code></pre></div>
-<figure>
-<p><img alt="FunctionPlot2" src="img/function_plot2.png" /></p>
-</figure>
 <h2 id="ejercicio-adicional-1" markdown="markdown"><strong>Ejercicio Adicional 1</strong></h2>
 <p>En este Ejercicio vamos a ver si los números aleatorios de <strong>R</strong> se portan como deberían. Para esto vamos a hacer un script que:</p>
 <ul>
@@ -1807,10 +1824,11 @@ Fijense que <code>summary</code> va a devolver información en base a que contie
 
               
             </article>
+            
           </div>
         </div>
         
-          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
             Volver al principio
           </a>
@@ -1843,10 +1861,10 @@ Fijense que <code>summary</code> va a devolver información en base a que contie
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["search.suggest", "search.highlight", "search.share", "header.autohide", "navigation.tracking", "navigation.tabs", "toc.integrate", "navigation.top"], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "B\u00fasqueda", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version.title": "Seleccionar versi\u00f3n"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["search.suggest", "search.highlight", "search.share", "header.autohide", "navigation.tracking", "navigation.tabs", "toc.integrate", "navigation.top"], "search": "../../assets/javascripts/workers/search.85cb4492.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "B\u00fasqueda", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version.title": "Seleccionar versi\u00f3n"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.a6c66575.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a877e258.min.js"></script>
       
         <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
       
