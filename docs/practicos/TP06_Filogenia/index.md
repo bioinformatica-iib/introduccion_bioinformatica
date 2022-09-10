@@ -12,6 +12,10 @@
 !!! abstract "Atención: Este TP tiene informe."
 -->
 
+### Videos de la clase grabada
+* :octicons-video-16: [Introducción al TP](https://youtu.be/SGO7w4lMeDI)
+* :octicons-video-16: [Cierre TP](https://youtu.be/TmODeuHWco4)
+
 ## Software a usar
 
 * Alineamientos: emma y clustalw (en EMBOSS suite)
