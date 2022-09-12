@@ -334,7 +334,7 @@ dt <- fread("ARCHIVO_DT", header = T, sep = "\t", dec = ",")
 
 ### Paso 3 - Ejercicio
 
-**10)** Creen un nuevo script de **R**, copien el siguiente código y guardenlo en su carpeta de trabajo. Vayan avanzando por el *script* y cambien las secciones que dicen `@@EDITAR@@` por lo que corresponda (esto puede ser un valor, una variable, una operación matemática o una función de **R**).
+**10)** Creen un nuevo script de **R**, copien el siguiente código y guardenlo en su carpeta de trabajo. Vayan avanzando por el *script* y cambien las secciones que dicen `@@EDITAR@@` por lo que corresponda (esto puede ser un valor, una variable, una operación matemática, una comparación o una función de **R**).
 
 !!! warning "Working Directory"
 
@@ -349,9 +349,13 @@ dt <- fread("ARCHIVO_DT", header = T, sep = "\t", dec = ",")
     Este tip es ***especialmente*** importante para los nombres de las variables. Ahí si que recomendamos nunca usar acentos o **Ñ** (o espacios).
 
 ```R
+#Aca hay que poner el Path Absoluto que apunta a su carpeta de trabajo
+#Por ej: "/home/ibioinfo/Documentos/data_TP8b"
+setwd(@@EDITAR@@)
+
 library(data.table)
 
-#Uso fread para cargar los datos parseados teniendo en cuenta lo que vimos en el archivo en el *Paso 2*
+#Uso fread para cargar los datos parseados teniendo en cuenta que tienen NAs
 dt_parsed_data <- fread(@@EDITAR@@)
 
 #Primero que nada se que las columnas de los wells 23 y 24 estan vacias, asi que saco las filas
@@ -376,7 +380,7 @@ dt_parsed_data <- merge(@@EDITAR@@)
 
 #El primer problema que tengo es que la variable time es un *string*, por lo que no puedo usarla 
 #como X en una ecuacion. Por esta razon vamos a convertir a time en cantidad de segundos
-#Otra cosa a considerar es que si bien hay 1408 filas, en sí solo hay 4 tiempos que se repiten, 
+#Otra cosa a considerar es que si bien hay 1408 filas, en si solo hay 4 tiempos que se repiten, 
 #por lo cual solo tengo que calcular esto 4 veces
 
 #Extraigo los diferentes tiempos y creo una tabla vacia donde voy a guardar la cantidad de segundos para
@@ -401,7 +405,8 @@ for (time_for in unique_times) {
     minutos <- as.numeric(@@EDITAR@@)
     segundos <- as.numeric(@@EDITAR@@)
     
-    #Calculo los segundos totales
+    #Calculo los segundos totales, es decir, del paso anterior transformo las horas y los minutos en segundos 
+    #y sumo las tres variables
     segundos_totales <- @@EDITAR@@
     
     #Guardo esta info en la tabla que acabo de crear
@@ -545,9 +550,13 @@ pendiente <- regresion_lineal$coefficients[2]
 
 ### Paso 4 - Ejercicio
 
-**2)** Creen un nuevo script de **R**, copien el siguiente código y guardenlo en su carpeta de trabajo. Vayan avanzando por el *script* y cambien las secciones que dicen `@@EDITAR@@` por lo que corresponda (esto puede ser un valor, una variable, una operación matemática o una función de **R**).
+**2)** Creen un nuevo script de **R**, copien el siguiente código y guardenlo en su carpeta de trabajo. Vayan avanzando por el *script* y cambien las secciones que dicen `@@EDITAR@@` por lo que corresponda (esto puede ser un valor, una variable, una operación matemática, una comparación o una función de **R**).
 
 ```R
+#Aca hay que poner el Path Absoluto que apunta a su carpeta de trabajo
+#Por ej: "/home/ibioinfo/Documentos/data_TP8b"
+setwd(@@EDITAR@@)
+
 library(data.table)
 
 #Leo los datos ya parseados y formateados
@@ -757,9 +766,17 @@ print(numero_redondeado)
 
 ### Paso 5 - Ejercicio
 
-**5)** Creen un nuevo script de **R**, copien el siguiente código y guárdenlo en su carpeta de trabajo. Vayan avanzando por el *script* y cambien las secciones que dicen `@@EDITAR@@` por lo que corresponda (esto puede ser un valor, una variable, una operación matemática o una función de **R**).
+**5)** Creen un nuevo script de **R**, copien el siguiente código y guárdenlo en su carpeta de trabajo. Vayan avanzando por el *script* y cambien las secciones que dicen `@@EDITAR@@` por lo que corresponda (esto puede ser un valor, una variable, una operación matemática, una comparación o una función de **R**).
+
+!!! warning "Warnings en el código"
+
+    Al ejecutar el siguiente código les va a aparecer por consola varios *Warnings* de `nplr` sobre el fiteo del modelo y la predicción del IC 50. Los *Warnings* son advertencias, las cuales informan eventos que pueden o no causar problemas. Si bien es importante prestarle atención a estos *Warnings* cuando aparecen, en este caso ya están contemplados y pueden ignorarlos.
 
 ```R
+#Aca hay que poner el Path Absoluto que apunta a su carpeta de trabajo
+#Por ej: "/home/ibioinfo/Documentos/data_TP8b"
+setwd(@@EDITAR@@)
+
 library(data.table)
 library(nplr)
 
