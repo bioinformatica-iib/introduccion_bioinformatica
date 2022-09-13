@@ -16,10 +16,9 @@ tags:
 
 * :fontawesome-regular-file-pdf: [Ejercicios](./files/handout_viterbi_HMM.pdf)
 
+![type:video](https://www.youtube.com/embed/hlmJDkSPWLU)
 
-<!--
-![type:video](https://www.youtube.com/embed/2f_ZSic28ko)
--->
+https://youtu.be/
 
 ### Neural Networks (ANN)
 
@@ -29,10 +28,4 @@ tags:
 
 * :fontawesome-regular-file-pdf: [Ejercicios 2](./files/NN_handout.pdf)
 
-<!--
-![type:video]()
--->
-
- <!--
-![type:video]()
--->
+![type:video](https://www.youtube.com/embed/MvAGSjdWbUs)
