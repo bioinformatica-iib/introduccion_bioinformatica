@@ -388,7 +388,7 @@ Noten que también se puede utilizar la opción `--outformat` para cambiar el fo
 
 !!! info 
 
-    <span style="font-weight:bold;">Fecha de Publicación:</span> Viernes, XX de Septiembre 2022, 23:59hs.
+    <span style="font-weight:bold;">Fecha de Publicación:</span> Viernes, 30 de Septiembre 2022, 23:59hs.
 
 ### Enunciado
 
