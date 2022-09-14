@@ -121,6 +121,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://bioinformatica-iib.github.io/2022_introduccion_bioinformatica/practicos/TP12a_Clustering/</loc>
+         <lastmod>2022-09-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://bioinformatica-iib.github.io/2022_introduccion_bioinformatica/practicos/TP12b_Data_Mining/</loc>
+         <lastmod>2022-09-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://bioinformatica-iib.github.io/2022_introduccion_bioinformatica/teoricas/inicio/</loc>
          <lastmod>2022-09-14</lastmod>
          <changefreq>daily</changefreq>
