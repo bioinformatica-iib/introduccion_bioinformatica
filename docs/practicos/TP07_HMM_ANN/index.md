@@ -117,7 +117,7 @@ Para realizar esta prueba vuelvan a los parámetros de la **Primera prueba** per
 !!! attention "Este paso puede llevar varios minutos. Paciencia."
 
 1. ¿Encuentran diferencias entre los desempeños de los 5 modelos? ¿Es esperable? ¿Por qué?
-1. Comparen los resultados obtenidos para el set de evaluación con respecto a las pruebas anteriores.
+1. Comparen los resultados obtenidos para el set de evaluación con respecto a la primera prueba.
 1. En este caso se usa el ensamble de los 5 modelos para realizar las predicciones sobre el set de evaluación. ¿Cómo piensa que se obtienen los valores predichos?
 
 ### Utilizando el modelo entrenado
@@ -126,7 +126,7 @@ Como vimos en el TP de PSSM, una vez que uno entrena un método, puede guardar l
 
 !!! attention "Guardar el modelo entrenado"
 
-    Para ello vamos a guardar el modelo entrenado en la **Cuarta prueba** haciendo *click* en *Parameters for prediction method* del reporte de resultados (se guarda como **para.dat**). 
+    Para ello vamos a guardar el modelo entrenado en la **Cuarta prueba** haciendo **click derecho** en *Parameters for prediction method* del reporte de resultados y seleccionando "Guardar enlace como..." (el archivo se guarda como **para.dat**). 
     Este modelo será utilizado en el ejercicio a entregar de este TP.
 
 ## Parte II. HMMer
@@ -338,7 +338,7 @@ Por defecto `hmm2build` lleva a cabo alineamientos que son globales con respecto
 Así como nos es posible realizar búsquedas de *profiles* contra bases de datos de secuencias, podemos crear una base de datos de *profiles* y utilizar como *query* a una secuencia. Este es el caso de la base de datos **PFAM** (Sonnhammer *et al.*, 1997; Sonnhammer *et al.*, 1998) que nuclea *profiles* de una gran variedad de dominios y es una herramienta sumamente utilizada para analizar secuencias de proteínas de las cuales no tenemos información previa.
 
 Como ejemplo, tomemos el producto del gen *Sevenless* de *Drosophila melanogaster* que codifica un receptor de *tyrosine kinase* esencial para el desarrollo de las células R7 del ojo de la mosca. 
-La secuencia proteica de este receptor se encuentra en el archivo **7LES_DROME**. Realice una búsqueda de esta secuencia en [PFAM](http://pfam.xfam.org/search#tabview=tab0).
+La secuencia proteica de este receptor se encuentra en el archivo **7LES_DROME**. Realice una búsqueda de esta secuencia en [PFAM](http://pfam.xfam.org/search#tabview=tab0). Para esto haga click en la pestaña *Sequence* en el menú de la izquierda y pegue la secuencia en el recuadro correspondiente. 
 
 ¿Qué dominios fueron identificados en esta proteína? Recuerde estos resultados para contrastarlo con lo que hará más adelante. 
 
@@ -388,7 +388,7 @@ Noten que también se puede utilizar la opción `--outformat` para cambiar el fo
 
 !!! info 
 
-    <span style="font-weight:bold;">Fecha de Publicación:</span> Viernes, 30 de Septiembre 2022, 23:59hs.
+    <span style="font-weight:bold;">Fecha límite de entrega:</span> Viernes, 30 de Septiembre 2022, 23:59hs.
 
 ### Enunciado
 
