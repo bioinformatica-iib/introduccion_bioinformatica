@@ -12,6 +12,19 @@
 
 !!! abstract "Atención: Este TP tiene informe."
 
+### Slides mostrados en la clase
+
+* :fontawesome-regular-file-pdf: [Explicación ANNs](https://docs.google.com/presentation/d/1QJHn0rxV3sIW3Prb9-loM91DgPnVwR0M6PQTYYzjYMQ/edit?usp=sharing)
+* :fontawesome-regular-file-pdf: [Explicación HMMs](https://docs.google.com/presentation/d/107NFfznzLTd0RDTQ_dmyBzrBs3Ri8tqbkyoru28FjYU/edit?usp=sharing)
+
+### Videos de la clase grabada
+
+* :octicons-video-16: [Introducción ANNs](
+https://www.youtube.com/watch?v=XFBQW5qKXdE)
+* :octicons-video-16: [Puesta en común ANNs](https://www.youtube.com/watch?v=EXrwYBp6FQw)
+* :octicons-video-16: [Ejercicio guiado HMMer](https://www.youtube.com/watch?v=5Rpo7dZaTyQ)
+
+
 ## Objetivos
 
 * Comprender cómo se entrena y evalúa un modelo basado en redes neuronales.
