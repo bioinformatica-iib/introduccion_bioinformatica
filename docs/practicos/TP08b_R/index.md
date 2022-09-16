@@ -21,8 +21,9 @@ Este es el botón para descargar materiales, en (#) hay que agregar el link corr
 
 ### Recursos Online
 * [Curso online de R de Coursera](https://www.coursera.org/learn/r-programming) (se puede hacer gratis) (en ese caso no da certificado)
+* [Tips de comandos básicos de R](http://www.cookbook-r.com/)
 * Data Tables: [Introducción oficial](https://cran.r-project.org/web/packages/data.table/vignettes/datatable-intro.html) y [otra página con más info](https://bookdown.org/paradinas_iosu/CursoR/data-table.html)
-* ggplot2: [Vistazo rápido](https://bookdown.org/paradinas_iosu/CursoR/ggplot2.html) y [otra página con cada plot detallando sus parámetros](http://sthda.com/english/wiki/ggplot2-essentials)
+* ggplot2: [Vistazo rápido](https://bookdown.org/paradinas_iosu/CursoR/ggplot2.html), [otra página con cada plot detallando sus parámetros](http://sthda.com/english/wiki/ggplot2-essentials) y [cheatsheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf)
 
 ### Objetivos
 
