@@ -16,6 +16,11 @@
 Este es el botón para decargar materiales, en (#) hay que agregar el link correspondiente
 -->
 
+### Videos de la clase grabada
+
+* :octicons-video-16: [Introducción a la programación en R](https://www.youtube.com/watch?v=xah7gbyHXuU)
+* :octicons-video-16: [Puesta en común del TP e introducción a funciones](https://www.youtube.com/watch?v=3Q7XacgdIRs)
+
 ### Software a usar
 * R (ya instalado en la VM).
 * RStudio (ya instalado en la VM)
@@ -464,7 +469,7 @@ En la pestaña **Plots** hay varios botones que van a ser muy útiles al momento
 
 ## **Ejercicio 2 - Vectores y plots** { markdown data-toc-label='Ejercicio 2 - Plots' }
 
-Para valores de `x` entre 1 y 200, calculen el `y` correspondiente a una recta con pendiente 3 y ordenada al origen 5 y hagan el plot de dicha recta usando el comando `plot`.
+Para valores enteros de `x` entre 1 y 200, calculen el `y` correspondiente a una recta con pendiente 3 y ordenada al origen 5 y hagan el plot de dicha recta usando el comando `plot`.
 
 Una vez creado el plot, salvenló en un archivo con extensión **SVG**.
 
@@ -881,7 +886,7 @@ En **R** el comando para saber en que *path* estoy "parado" es la función `getw
 
 Si quiero cambiar este *path*, tengo que usar la función `setwd("PATH_ABSOLUTO")`.
 
-**1)** Creen una carpeta donde van a trabajar, por ejemplo **\~/Documentos/TP_08/DT**
+**1)** Creen una carpeta donde van a trabajar, por ejemplo **\~/Documentos/TP_08**
 
 **2)** Usen la función `getwd()` para ver el *Working Directory* actual
 
