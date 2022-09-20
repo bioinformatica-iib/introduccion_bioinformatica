@@ -734,6 +734,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#videos-de-la-clase-grabada" class="md-nav__link">
+    Videos de la clase grabada
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#software-a-usar" class="md-nav__link">
     Software a usar
   </a>
@@ -1195,6 +1202,11 @@
 Este es el botón para decargar materiales, en (#) hay que agregar el link correspondiente
 -->
 
+<h3 id="videos-de-la-clase-grabada">Videos de la clase grabada</h3>
+<ul>
+<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.75 3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25v-8.5a.25.25 0 0 0-.25-.25H1.75zM0 3.75C0 2.784.784 2 1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0 1 14.25 14H1.75A1.75 1.75 0 0 1 0 12.25v-8.5z"/><path d="M6 10.559V5.442a.25.25 0 0 1 .379-.215l4.264 2.559a.25.25 0 0 1 0 .428l-4.264 2.559A.25.25 0 0 1 6 10.559z"/></svg></span> <a href="https://www.youtube.com/watch?v=xah7gbyHXuU">Introducción a la programación en R</a></li>
+<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.75 3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25v-8.5a.25.25 0 0 0-.25-.25H1.75zM0 3.75C0 2.784.784 2 1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0 1 14.25 14H1.75A1.75 1.75 0 0 1 0 12.25v-8.5z"/><path d="M6 10.559V5.442a.25.25 0 0 1 .379-.215l4.264 2.559a.25.25 0 0 1 0 .428l-4.264 2.559A.25.25 0 0 1 6 10.559z"/></svg></span> <a href="https://www.youtube.com/watch?v=3Q7XacgdIRs">Puesta en común del TP e introducción a funciones</a></li>
+</ul>
 <h3 id="software-a-usar">Software a usar</h3>
 <ul>
 <li>R (ya instalado en la VM).</li>
@@ -1547,7 +1559,7 @@ Este es el botón para decargar materiales, en (#) hay que agregar el link corre
 <p><img alt="RStudioExport" src="img/rplot_export.png" /></p>
 </figure>
 <h2 id="ejercicio-2-vectores-y-plots" markdown="markdown"><strong>Ejercicio 2 - Vectores y plots</strong></h2>
-<p>Para valores de <code>x</code> entre 1 y 200, calculen el <code>y</code> correspondiente a una recta con pendiente 3 y ordenada al origen 5 y hagan el plot de dicha recta usando el comando <code>plot</code>.</p>
+<p>Para valores enteros de <code>x</code> entre 1 y 200, calculen el <code>y</code> correspondiente a una recta con pendiente 3 y ordenada al origen 5 y hagan el plot de dicha recta usando el comando <code>plot</code>.</p>
 <p>Una vez creado el plot, salvenló en un archivo con extensión <strong>SVG</strong>.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip - Plotear una línea</p>
@@ -1947,7 +1959,7 @@ Fijense que <code>summary</code> va a devolver información en base a que contie
 <p>Esto es algo que lo veníamos posponiendo desde el principio de este TP, pero ahora vamos a querer leer y escribir archivos de disco, por lo que es necesario. El <em>Working Directory</em> es el <em>path</em> en donde estoy trabajando y comparándolo con lo que hicimos en <strong>Bash</strong> se puede pensar como en que carpeta está ahora la terminal.</p>
 <p>En <strong>R</strong> el comando para saber en que <em>path</em> estoy "parado" es la función <code>getwd()</code>.</p>
 <p>Si quiero cambiar este <em>path</em>, tengo que usar la función <code>setwd("PATH_ABSOLUTO")</code>.</p>
-<p><strong>1)</strong> Creen una carpeta donde van a trabajar, por ejemplo <strong>~/Documentos/TP_08/DT</strong></p>
+<p><strong>1)</strong> Creen una carpeta donde van a trabajar, por ejemplo <strong>~/Documentos/TP_08</strong></p>
 <p><strong>2)</strong> Usen la función <code>getwd()</code> para ver el <em>Working Directory</em> actual</p>
 <p><strong>3)</strong> Usen la función <code>setwd()</code> para asignar la carpeta creada en <strong>1)</strong> como <em>Working Directory</em> (recuerden que tienen que pasarle como parámetro el <em>path</em> absoluto de dicha carpeta)</p>
 <h3 id="escribir-tablas">Escribir Tablas</h3>

@@ -872,6 +872,69 @@ Este es el botón para descargar materiales, en (#) hay que agregar el link corr
 <p class="admonition-title">to do</p>
 <p>re redactar este ultimo parrafo</p>
 </div>
+<h2 id="mejores-plots-ggplot2">Mejores plots: ggplot2</h2>
+<p>En el <strong>TP8a</strong> mencionamos rápidamente al paquete <code>ggplot2</code>, el cual es uno de los paquetes más populares al momento de hacer plots en <strong>R</strong>. Dicho esto, este paquete también es bastante complicado y tiene un sinfín de funcionalidades.</p>
+<p>En este TP vamos a necesitar los plots de este paquete, por lo que antes de ir a los ejercicios vamos a explicar un poco más su uso. A grandes rasgos, la función <code>ggplot</code> se corre de la siguiente manera:</p>
+<div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
+
+<span class="n">p</span> <span class="o">&lt;-</span> <span class="nf">ggplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">DATA</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">COLUMNA_X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">COLUMNA_Y</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="n">COLUMNA_COLOR</span><span class="p">,</span> <span class="n">shape</span> <span class="o">=</span> <span class="n">COLUMNA_SHAPE</span><span class="p">))</span> <span class="o">+</span>
+    <span class="nf">PLOT_TYPE</span><span class="p">()</span> <span class="o">+</span>
+    <span class="nf">FORMATTING</span><span class="p">()</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li><strong>DATA</strong>: es el <em>Data Frame</em> o <em>Data Table</em> que contiene a los datos</li>
+<li><strong>aes()</strong>: en esta sección vamos a escribir las columnas de la tabla correspondientes a las diferentes</li>
+</ul>
+<h2 id="ejercicio-1-agrupando-flores-por-especies" markdown="markdown"><strong>Ejercicio 1 - Agrupando flores por especies</strong></h2>
+<p>En este ejercicio vamos a trabajar una vez más con el data set <strong>iris</strong>, el cual es un set de datos que viene por defecto con <strong>R</strong> y está siempre cargado en memoria.</p>
+<p>Este data set contiene las medidas de ancho (<em>width</em>) y largo (<em>length</em>) de los sépalos y los petalos para 3 especies de flores diferentes: setosa, versicolor, y virginica (todas del Genus <em>Iris</em>). Tiene mediciones de 150 flores, 50 por especie.</p>
+<details class="info">
+<summary>Sépalo vs pétalo</summary>
+<p><figure markdown>
+<img alt="SepalPetal" src="img/sepal_vs_petal.png" />  <br />
+</figure></p>
+</details>
+<p>Antes que nada vamos a familiarizarnos un poco con este data set.</p>
+<p><strong>1)</strong> Corran el siguiente código y vean el plot resultante:</p>
+<div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
+
+<span class="c1">#Transformo a iris en un *Data Table* (que aca realmente no hace falta, pero para despues)</span>
+<span class="n">dt_iris</span> <span class="o">&lt;-</span> <span class="nf">as.data.table</span><span class="p">(</span><span class="n">iris</span><span class="p">)</span>
+
+<span class="c1">#Le asigno un color a cada especie</span>
+<span class="n">colores_aux</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;#004D40&quot;</span><span class="p">,</span><span class="s">&quot;#D81B60&quot;</span><span class="p">,</span><span class="s">&quot;#FFC107&quot;</span><span class="p">)</span>
+<span class="nf">names</span><span class="p">(</span><span class="n">colores_aux</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;setosa&quot;</span><span class="p">,</span> <span class="s">&quot;versicolor&quot;</span><span class="p">,</span> <span class="s">&quot;virginica&quot;</span><span class="p">)</span>
+
+<span class="c1">#Hago un plot comparando el largo de los sepalos y los petalos</span>
+<span class="c1">#Estoy cambiando la forma y el color segun la especie</span>
+<span class="n">p</span> <span class="o">&lt;-</span> <span class="nf">ggplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">dt_iris</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">Sepal.Length</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">Petal.Length</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="n">Species</span><span class="p">,</span> <span class="n">shape</span> <span class="o">=</span> <span class="n">Species</span><span class="p">))</span> <span class="o">+</span>
+    <span class="nf">geom_point</span><span class="p">(</span><span class="n">size</span> <span class="o">=</span> <span class="m">2</span><span class="p">)</span> <span class="o">+</span>
+    <span class="nf">theme_bw</span><span class="p">()</span> <span class="o">+</span>
+    <span class="nf">xlab</span><span class="p">(</span><span class="s">&quot;Sepal Length&quot;</span><span class="p">)</span> <span class="o">+</span>
+    <span class="nf">ylab</span><span class="p">(</span><span class="s">&quot;Petal Length&quot;</span><span class="p">)</span> <span class="o">+</span>
+    <span class="nf">ggtitle</span><span class="p">(</span><span class="s">&quot;Sepal Length vs Petal Length per Species&quot;</span><span class="p">)</span> <span class="o">+</span>
+    <span class="nf">theme</span><span class="p">(</span><span class="n">plot.title</span> <span class="o">=</span> <span class="nf">element_text</span><span class="p">(</span><span class="n">size</span> <span class="o">=</span> <span class="m">16</span><span class="p">,</span> <span class="n">hjust</span> <span class="o">=</span> <span class="m">0.5</span><span class="p">),</span>
+          <span class="n">axis.title</span> <span class="o">=</span> <span class="nf">element_text</span><span class="p">(</span><span class="n">size</span> <span class="o">=</span> <span class="m">14</span><span class="p">),</span>
+          <span class="n">axis.text</span> <span class="o">=</span> <span class="nf">element_text</span><span class="p">(</span><span class="n">size</span> <span class="o">=</span> <span class="m">12</span><span class="p">))</span> <span class="o">+</span>
+    <span class="nf">scale_colour_manual</span><span class="p">(</span><span class="n">values</span> <span class="o">=</span> <span class="n">colores_aux</span><span class="p">)</span> <span class="o">+</span>
+    <span class="nf">scale_shape_manual</span><span class="p">(</span><span class="n">values</span> <span class="o">=</span>  <span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="m">1</span><span class="p">))</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="ejercicio">Ejercicio</h3>
+<p>Podemos ver que con solo plotear el largo de los pétalos y los sépalos ya estamos viendo diferencias entre las especies. Es teóricamente posible agregar una tercera dimensión para plotear otra de las variables, e incluso agregar la cuarta variable como "tamaño" de los diferentes puntos, pero dichos plots probablemente resulten muy dificiles de leer.</p>
+<p>Este plot nos muestra que las tres especies de irises tienen bastantes diferencias en las longitudes de sus pétalos y sépalos. Este plot es nuestro intento de resumir nuestr</p>
+<div class="admonition tip">
+<p class="admonition-title">Colores y daltonismo</p>
+<p>info sobre esto, algunas pags</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Shapes</p>
+<p>de donde saque los numeros</p>
+</div>
+<p>En este ejercicio vamos a hacer un poco de "trampa", porque vamos a asumir que no s
+Vamos a volver a usar el data set iris que está siempre cargado en memoria; sin embargo, iris es un Data Frame, por lo que lo vamos a tener que convertir en Data Table.</p>
 <h2 id="ej-1">Ej 1</h2>
 <p>cargar dt_iris, recordar que era</p>
 <p>mostrar codigo plot para len vs len (mostrar plot?)</p>
