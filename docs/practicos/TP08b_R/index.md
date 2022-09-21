@@ -318,7 +318,7 @@ dt <- fread("ARCHIVO_DT", header = T, sep = "\t", na.strings = "NA")
 
 En este caso le estamos indicando que hay celdas sin valores y que están escritas en la tabla como "NA" (pueden estar con o sin comillas en el archivo). De querer indicarle a `fread` que los datos faltantes están como *nada* se usa `na.strings = ""`, aunque en este caso cualquier columna con un *string* vacío también va a ser considerada dato faltante.
 
-!!! tip "Tip"
+!!! tip "Tip - Carga más rápida de los datos"
 
     Si estamos seguros que no hay celdas sin valores en nuestros datos, le podemos pasar `na.strings = NULL` para indicarle que no busque celdas vacías, lo que acelera la carga de la tabla.
 
@@ -338,11 +338,11 @@ dt <- fread("ARCHIVO_DT", header = T, sep = "\t", dec = ",")
 
 **10)** Creen un nuevo script de **R**, copien el siguiente código y guardenlo en su carpeta de trabajo. Vayan avanzando por el *script* y cambien las secciones que dicen `@@EDITAR@@` por lo que corresponda (esto puede ser un valor, una variable, una operación matemática, una comparación o una función de **R**).
 
-!!! warning "Working Directory"
+!!! warning "Warning - Working Directory"
 
     Cada vez que lean o escriban un archivo recuerden que el path que le pasen debe ser un path absoluto o un path relativo al *Working Directory*. Para cambiar el *Working Directory* pueden usar la función `setwd()` que aprendimos en el TP anterior.
 
-!!! tip "Ñ y acentos"
+!!! tip "Tip - Ñ y acentos"
 
     Van a ver que en los códigos tratamos de no usar la letra **Ñ** o acentos. Esto es así ya que cuando uno comparte código entre varias personas suele pasar que algunas de esos caracteres se "rompen" y se ven feo (por ejemplo un texto que era **diseño_compuestos** se veía como **diseÃ±o_compuestos** en otra PC).
 
@@ -442,6 +442,10 @@ Si todo salió bien, el archivo **03_datos_filtermax_parseados_y_formateados.tsv
 | "Umbrella4" | 200 | 0 | 248039 |
 | ... | ... | ... | ... |
 </figure>
+
+!!! warning "Warning - Comas en el archivo 03_datos_filtermax_parseados_y_formateados.tsv"
+
+	Si abren el archivo **03_datos_filtermax_parseados_y_formateados.tsv** con Gnumeric van a ver que parece que el separador decimal de los números sigue siendo la coma. Sin embargo, si abren el archivo usando Leafpad van a ver que en realidad el separador decimal es ahora el punto, por lo que para los próximos ejercicios podemos usar `fread` sin poner el parámetró `dec`. Gnumeric cambia los puntos visualmente a comas por estar en español.
 
 ## **Paso 4 - Calcular velocidades de reacción** { markdown data-toc-label='Paso 4 - Calcular velocidad' }
 
@@ -720,7 +724,7 @@ dev.off()
 
 Los parámetros `width` y `height` indican el tamaño en pulgadas de cada página en el pdf. Noten que a partir que abren el pdf los plots ya no van a aparecer en la pestaña Plots de RStudio hasta que cierren el pdf (se podría pensar que redirige la salida del plot al archivo pdf).
 
-!!! tip "Resetear los gráficos"
+!!! tip "Tip - Resetear los gráficos"
 
     A veces pasa que un pdf queda abierto más de lo que debería y no se cierra bien, o que no se crea como debería. En estos casos pueden usar la función `graphics.off()` antes y después del código anterior (especialmente antes) para limpiar cualquier cosa abierta. Solo tengan en cuenta que esto va a vaciarles los plots que tengan guardados en el panel Plots de RStudio.
 
@@ -855,7 +859,7 @@ for (compuesto_for in unique_compuestos) {
     titulo_plot <- @@EDITAR@@
     plot(regresion_sigmoidea,
          main = titulo_plot,
-         xlab = "Log10 Concentracion",
+         xlab = "Log10 Concentracion (micromolar)",
          ylab = "Actividad",
          ylim = c(0, 1.5),
          showGOF = F,
