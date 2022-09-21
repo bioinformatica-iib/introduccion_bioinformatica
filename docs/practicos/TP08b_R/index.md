@@ -443,7 +443,7 @@ Si todo salió bien, el archivo **03_datos_filtermax_parseados_y_formateados.tsv
 | ... | ... | ... | ... |
 </figure>
 
-!!! warning "Warning - Comas en el archivo 03_datos_filtermax_parseados_y_formateados.tsv"
+!!! warning "Warning - Gnumeric transforma visualmente los separadores decimales"
 
 	Si abren el archivo **03_datos_filtermax_parseados_y_formateados.tsv** con Gnumeric van a ver que parece que el separador decimal de los números sigue siendo la coma. Sin embargo, si abren el archivo usando Leafpad van a ver que en realidad el separador decimal es ahora el punto, por lo que para los próximos ejercicios podemos usar `fread` sin poner el parámetró `dec`. Gnumeric cambia los puntos visualmente a comas por estar en español.
 
