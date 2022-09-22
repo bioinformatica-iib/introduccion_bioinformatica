@@ -16,6 +16,15 @@
 Este es el botón para descargar materiales, en (#) hay que agregar el link correspondiente
 -->
 
+### Videos de la clase grabada
+
+* :octicons-video-16: [Introducción al TP](https://www.youtube.com/watch?v=MoGWtBkaVIU)
+* :octicons-video-16: [Puesta en común del TP](https://www.youtube.com/watch?v=0KKRWkZDvXw)
+
+### Códigos resueltos
+
+* :octicons-file-code-16: [Códigos completos](https://drive.google.com/file/d/1fBpEtMAAMvbx9zmbow4ovosQY7fu9kJc/view?usp=sharing) (tienen que setear el *Working Directory*) (si corren el 3, 4 y 5 llegan al **PDF**)
+
 ### Software a usar
 * R (ya instalado en la VM).
 * RStudio (ya instalado en la VM)
@@ -120,6 +129,8 @@ Algo de esto vimos en el TP anterior, pero es posible filtrar filas de un *Data 
 Vamos a volver a usar el data set **iris** que está siempre cargado en memoria; sin embargo, **iris** es un *Data Frame*, por lo que lo vamos a tener que convertir en *Data Table*.
 
 ```R
+library(data.table) #tenemos que cargar el paquete data.table en memoria cada vez que cerramos RStudio
+
 dt_iris <- as.data.table(iris)
 ```
 
@@ -382,11 +393,17 @@ dt_parsed_data <- merge(@@EDITAR@@)
 
 #El primer problema que tengo es que la variable time es un *string*, por lo que no puedo usarla 
 #como X en una ecuacion. Por esta razon vamos a convertir a time en cantidad de segundos
-#Otra cosa a considerar es que si bien hay 1408 filas, en si solo hay 4 tiempos que se repiten, 
-#por lo cual solo tengo que calcular esto 4 veces
 
-#Extraigo los diferentes tiempos y creo una tabla vacia donde voy a guardar la cantidad de segundos para
-#cada *time*
+#Si bien hay 1408 filas, en si solo hay 4 tiempos que se repiten:
+#"00:00:00", "00:04:59", "00:10:00" y "00:15:00"
+
+#Voy entonces a hacer una tabla llamada dt_times_in_seconds que va a empezar vacía y una vez corrido el 
+#siguiente *for* va a tener 4 filas, una por cada uno de los 4 tiempos
+#Esta tabla va a tener dos columnas, la columna *time* indicando el tiempo en string que estamos analizando
+#y la columna *segundos_totales* que contiene ese tiempo transformado en numero y en segundos
+
+#Extraigo entonces los diferentes tiempos y creo una tabla vacia donde voy a guardar la cantidad de segundos 
+#para cada *time*
 unique_times <- unique(dt_parsed_data$time)
 dt_times_in_seconds <- data.table(time = character(),
                                   segundos_totales = numeric())
@@ -399,7 +416,10 @@ for (time_for in unique_times) {
     
     #Divido las horas, minutos y segundos y las transformo a numeros
     time_spliteado <- strsplit(time_for, ":")
-    time_spliteado <- time_spliteado[[1]]
+
+    #*strsplit* devuelve una lista, que es como un vector, pero mas complicado
+    #Voy a sobreescribir la variable quedandome solo con el primer elemento de la lista, que es un vector
+    time_spliteado <- time_spliteado[[1]] 
     
     #Guardo cada uno de los tres numeros en otra variable. Como ahora son *strings* uso as.numeric() para
     #convertirlos en numeros
@@ -804,7 +824,8 @@ dt_velocidades_de_reaccion <- dt_velocidades_de_reaccion[concentracion > 0]
 #La actividad es la relacion entre la velocidad de reaccion y la velocidad de reaccion base (es decir, la division)
 dt_velocidades_de_reaccion$actividad <- @@EDITAR@@
 
-#El siguiente for va a tener 2 salidas, un pdf con los plots y un tsv con los datos
+#El *for* de mas adelante va a tener 2 salidas, un pdf con los plots y un tsv con los datos
+#Tengo que inicializar ambos
 
 #Abro el pdf (toda imagen que se plotee hasta que se cierre el pdf va a ir a el)
 pdf("05_IC50_plots.pdf", width = 7, height = 7)

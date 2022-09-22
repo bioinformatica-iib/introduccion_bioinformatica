@@ -914,6 +914,10 @@ Los parámetros de `write.table` que estamos usando son:
 
 **5)** Guarden la tabla **iris** en un archivo llamado **iris.tsv** dentro de la carpeta creada en el punto **1)**. Usen los parámetros usados en el ejemplo de arriba. Confirmen que se creo el archivo.
 
+!!! info "Comillas en los archivos **.tsv**"
+
+    Si abren con **Leafpad** el archivo **iris.tsv** recién creado van a ver que los nombres de las columnas y todos los valores de la columna **Species** estan rodeados por comillas. Estas comillas no son parte de los nombres o valores de las columnas, sino que es la forma que usamos para indicar que lo que está dentro de ellas es un *string*. Estas comillas aparecen por haber usado el parámetro `quote = T` y son útiles para varios casos, por ejemplo de trabajar con *strings* con espacios.
+
 !!! info "Data Tables y nombres de las filas"
 
     Es medio técnico, pero a diferencia de los *Data Frames*, los *Data Tables* no pueden tener nombres en las filas (razón por la que estoy usando `row.names = F` en el código anterior). Esta es una decisión consciente de los creadores de los *Data Tables* ya que cualquier información que uno quiera almacenar en los nombres de las filas también se puede almacenar en una nueva columna, lo que hace mucho más fácil trabajar con esa información (filtrar, ordenar, etc).
