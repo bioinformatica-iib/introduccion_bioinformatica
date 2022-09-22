@@ -748,6 +748,20 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#videos-de-la-clase-grabada" class="md-nav__link">
+    Videos de la clase grabada
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#codigos-resueltos" class="md-nav__link">
+    Códigos resueltos
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#software-a-usar" class="md-nav__link">
     Software a usar
   </a>
@@ -1248,6 +1262,15 @@
 Este es el botón para descargar materiales, en (#) hay que agregar el link correspondiente
 -->
 
+<h3 id="videos-de-la-clase-grabada">Videos de la clase grabada</h3>
+<ul>
+<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.75 3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25v-8.5a.25.25 0 0 0-.25-.25H1.75zM0 3.75C0 2.784.784 2 1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0 1 14.25 14H1.75A1.75 1.75 0 0 1 0 12.25v-8.5z"/><path d="M6 10.559V5.442a.25.25 0 0 1 .379-.215l4.264 2.559a.25.25 0 0 1 0 .428l-4.264 2.559A.25.25 0 0 1 6 10.559z"/></svg></span> <a href="https://www.youtube.com/watch?v=MoGWtBkaVIU">Introducción al TP</a></li>
+<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.75 3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25v-8.5a.25.25 0 0 0-.25-.25H1.75zM0 3.75C0 2.784.784 2 1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0 1 14.25 14H1.75A1.75 1.75 0 0 1 0 12.25v-8.5z"/><path d="M6 10.559V5.442a.25.25 0 0 1 .379-.215l4.264 2.559a.25.25 0 0 1 0 .428l-4.264 2.559A.25.25 0 0 1 6 10.559z"/></svg></span> <a href="https://www.youtube.com/watch?v=0KKRWkZDvXw">Puesta en común del TP</a></li>
+</ul>
+<h3 id="codigos-resueltos">Códigos resueltos</h3>
+<ul>
+<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 1.75C4 .784 4.784 0 5.75 0h5.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v8.586A1.75 1.75 0 0 1 14.25 15h-9a.75.75 0 0 1 0-1.5h9a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 10 4.25V1.5H5.75a.25.25 0 0 0-.25.25v2.5a.75.75 0 0 1-1.5 0v-2.5zm7.5-.188V4.25c0 .138.112.25.25.25h2.688a.252.252 0 0 0-.011-.013l-2.914-2.914a.272.272 0 0 0-.013-.011zM5.72 6.72a.75.75 0 0 0 0 1.06l1.47 1.47-1.47 1.47a.75.75 0 1 0 1.06 1.06l2-2a.75.75 0 0 0 0-1.06l-2-2a.75.75 0 0 0-1.06 0zM3.28 7.78a.75.75 0 0 0-1.06-1.06l-2 2a.75.75 0 0 0 0 1.06l2 2a.75.75 0 0 0 1.06-1.06L1.81 9.25l1.47-1.47z"/></svg></span> <a href="https://drive.google.com/file/d/1fBpEtMAAMvbx9zmbow4ovosQY7fu9kJc/view?usp=sharing">Códigos completos</a> (tienen que setear el <em>Working Directory</em>) (si corren el 3, 4 y 5 llegan al <strong>PDF</strong>)</li>
+</ul>
 <h3 id="software-a-usar">Software a usar</h3>
 <ul>
 <li>R (ya instalado en la VM).</li>
@@ -1383,7 +1406,9 @@ Este es el botón para descargar materiales, en (#) hay que agregar el link corr
 <h4 id="filtrar-filas-en-data-table">Filtrar filas en <em>Data Table</em></h4>
 <p>Algo de esto vimos en el TP anterior, pero es posible filtrar filas de un <em>Data Table</em> según el valor de las diferentes columnas en dicha fila.</p>
 <p>Vamos a volver a usar el data set <strong>iris</strong> que está siempre cargado en memoria; sin embargo, <strong>iris</strong> es un <em>Data Frame</em>, por lo que lo vamos a tener que convertir en <em>Data Table</em>.</p>
-<div class="highlight"><pre><span></span><code><span class="n">dt_iris</span> <span class="o">&lt;-</span> <span class="nf">as.data.table</span><span class="p">(</span><span class="n">iris</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span> <span class="c1">#tenemos que cargar el paquete data.table en memoria cada vez que cerramos RStudio</span>
+
+<span class="n">dt_iris</span> <span class="o">&lt;-</span> <span class="nf">as.data.table</span><span class="p">(</span><span class="n">iris</span><span class="p">)</span>
 </code></pre></div>
 <p>Ahora supongamos que queremos solo las filas donde la columna <strong>Species</strong> es <strong>versicolor</strong> ó <strong>virginica</strong>. Hay varias formas de hacer esto y todas les van a ser útiles para lo que tenemos que hacer hoy.</p>
 <p><strong>1)</strong> Corran por lo menos dos de las líneas de código siguientes y vean lo que devuelven:</p>
@@ -1577,11 +1602,17 @@ Como ven la función <code>strsplit</code> toma un <em>string</em> y lo divide e
 
 <span class="c1">#El primer problema que tengo es que la variable time es un *string*, por lo que no puedo usarla </span>
 <span class="c1">#como X en una ecuacion. Por esta razon vamos a convertir a time en cantidad de segundos</span>
-<span class="c1">#Otra cosa a considerar es que si bien hay 1408 filas, en si solo hay 4 tiempos que se repiten, </span>
-<span class="c1">#por lo cual solo tengo que calcular esto 4 veces</span>
 
-<span class="c1">#Extraigo los diferentes tiempos y creo una tabla vacia donde voy a guardar la cantidad de segundos para</span>
-<span class="c1">#cada *time*</span>
+<span class="c1">#Si bien hay 1408 filas, en si solo hay 4 tiempos que se repiten:</span>
+<span class="c1">#&quot;00:00:00&quot;, &quot;00:04:59&quot;, &quot;00:10:00&quot; y &quot;00:15:00&quot;</span>
+
+<span class="c1">#Voy entonces a hacer una tabla llamada dt_times_in_seconds que va a empezar vacía y una vez corrido el </span>
+<span class="c1">#siguiente *for* va a tener 4 filas, una por cada uno de los 4 tiempos</span>
+<span class="c1">#Esta tabla va a tener dos columnas, la columna *time* indicando el tiempo en string que estamos analizando</span>
+<span class="c1">#y la columna *segundos_totales* que contiene ese tiempo transformado en numero y en segundos</span>
+
+<span class="c1">#Extraigo entonces los diferentes tiempos y creo una tabla vacia donde voy a guardar la cantidad de segundos </span>
+<span class="c1">#para cada *time*</span>
 <span class="n">unique_times</span> <span class="o">&lt;-</span> <span class="nf">unique</span><span class="p">(</span><span class="n">dt_parsed_data</span><span class="o">$</span><span class="n">time</span><span class="p">)</span>
 <span class="n">dt_times_in_seconds</span> <span class="o">&lt;-</span> <span class="nf">data.table</span><span class="p">(</span><span class="n">time</span> <span class="o">=</span> <span class="nf">character</span><span class="p">(),</span>
                                   <span class="n">segundos_totales</span> <span class="o">=</span> <span class="nf">numeric</span><span class="p">())</span>
@@ -1594,7 +1625,10 @@ Como ven la función <code>strsplit</code> toma un <em>string</em> y lo divide e
 
     <span class="c1">#Divido las horas, minutos y segundos y las transformo a numeros</span>
     <span class="n">time_spliteado</span> <span class="o">&lt;-</span> <span class="nf">strsplit</span><span class="p">(</span><span class="n">time_for</span><span class="p">,</span> <span class="s">&quot;:&quot;</span><span class="p">)</span>
-    <span class="n">time_spliteado</span> <span class="o">&lt;-</span> <span class="n">time_spliteado</span><span class="p">[[</span><span class="m">1</span><span class="p">]]</span>
+
+    <span class="c1">#*strsplit* devuelve una lista, que es como un vector, pero mas complicado</span>
+    <span class="c1">#Voy a sobreescribir la variable quedandome solo con el primer elemento de la lista, que es un vector</span>
+    <span class="n">time_spliteado</span> <span class="o">&lt;-</span> <span class="n">time_spliteado</span><span class="p">[[</span><span class="m">1</span><span class="p">]]</span> 
 
     <span class="c1">#Guardo cada uno de los tres numeros en otra variable. Como ahora son *strings* uso as.numeric() para</span>
     <span class="c1">#convertirlos en numeros</span>
@@ -1998,7 +2032,8 @@ Es posible redondear números, lo que es especialmente útil para cuando tenemos
 <span class="c1">#La actividad es la relacion entre la velocidad de reaccion y la velocidad de reaccion base (es decir, la division)</span>
 <span class="n">dt_velocidades_de_reaccion</span><span class="o">$</span><span class="n">actividad</span> <span class="o">&lt;-</span> <span class="o">@@</span><span class="n">EDITAR</span><span class="o">@@</span>
 
-<span class="c1">#El siguiente for va a tener 2 salidas, un pdf con los plots y un tsv con los datos</span>
+<span class="c1">#El *for* de mas adelante va a tener 2 salidas, un pdf con los plots y un tsv con los datos</span>
+<span class="c1">#Tengo que inicializar ambos</span>
 
 <span class="c1">#Abro el pdf (toda imagen que se plotee hasta que se cierre el pdf va a ir a el)</span>
 <span class="nf">pdf</span><span class="p">(</span><span class="s">&quot;05_IC50_plots.pdf&quot;</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="m">7</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="m">7</span><span class="p">)</span>

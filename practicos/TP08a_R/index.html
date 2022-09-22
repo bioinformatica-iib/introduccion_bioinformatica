@@ -1981,6 +1981,10 @@ Fijense que <code>summary</code> va a devolver información en base a que contie
 <p><strong>4)</strong> Existen algunas tablas en <strong>R</strong> que estan siempre cargadas en memoria y sirven para probar cosas. Una de estas tablas es <strong>iris</strong>. Usen <code>print</code> para ver esta tabla y luego usen <code>help(iris)</code> para ver la ayuda relacionada a esta tabla (que explica un poco las columnas).</p>
 <p><strong>5)</strong> Guarden la tabla <strong>iris</strong> en un archivo llamado <strong>iris.tsv</strong> dentro de la carpeta creada en el punto <strong>1)</strong>. Usen los parámetros usados en el ejemplo de arriba. Confirmen que se creo el archivo.</p>
 <div class="admonition info">
+<p class="admonition-title">Comillas en los archivos <strong>.tsv</strong></p>
+<p>Si abren con <strong>Leafpad</strong> el archivo <strong>iris.tsv</strong> recién creado van a ver que los nombres de las columnas y todos los valores de la columna <strong>Species</strong> estan rodeados por comillas. Estas comillas no son parte de los nombres o valores de las columnas, sino que es la forma que usamos para indicar que lo que está dentro de ellas es un <em>string</em>. Estas comillas aparecen por haber usado el parámetro <code>quote = T</code> y son útiles para varios casos, por ejemplo de trabajar con <em>strings</em> con espacios.</p>
+</div>
+<div class="admonition info">
 <p class="admonition-title">Data Tables y nombres de las filas</p>
 <p>Es medio técnico, pero a diferencia de los <em>Data Frames</em>, los <em>Data Tables</em> no pueden tener nombres en las filas (razón por la que estoy usando <code>row.names = F</code> en el código anterior). Esta es una decisión consciente de los creadores de los <em>Data Tables</em> ya que cualquier información que uno quiera almacenar en los nombres de las filas también se puede almacenar en una nueva columna, lo que hace mucho más fácil trabajar con esa información (filtrar, ordenar, etc).</p>
 </div>
