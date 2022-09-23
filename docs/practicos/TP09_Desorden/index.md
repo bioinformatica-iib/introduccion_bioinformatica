@@ -19,7 +19,7 @@
 * IUPred2A            [https://iupred2a.elte.hu/plot](https://iupred2a.elte.hu/plot)
 * DisProt            [https://www.disprot.org](https://www.disprot.org)
 
-* MobiDB            [http://mobidb.bio.unipd.it/](http://mobidb.bio.unipd.it/)
+
 
 ## Objetivos
 * Interpretar alineamientos múltiples de secuencias
@@ -237,7 +237,7 @@ ggsave(filename="aminoacidos.png",plot=plot_aa,device="png",dpi=150,width=10,hei
 ```
 Deberías obtener un gráfico como el siguiente:
 
-![](./images/Aminoacidos.png)
+![](./img/Aminoacidos.png)
 
 * ¿Qué aminoácidos son los más abundantes en las regiones desordenadas? ¿La abundancia de los aminoácidos coincide con lo esperado?
 
@@ -312,15 +312,6 @@ Ingresa a la página web de [DisProt](https://disprot.org/) y encuentra la prote
 * Interpretar alineamientos múltiples de secuencias. Identificar regiones de secuencia conservadas y asociarlas a diferentes elementos funcionales de las proteínas. 
 * Visualizar y analizar los patrones de sustitución aminoacídica encontrados en proteínas modulares. Correlacionar con sus conocimientos sobre matrices de sustitución 
 
-## **JalView, software de visualización de alineamientos**
-Para poder visualizar alineamientos múltiples de secuencias (MSA, de sus siglas en inglés: Multiple Sequence Alignment) utilizaremos el visualizador de alineamientos JalView desarrollado en JAVA. Jalview permite generar alineamientos, manipularlos, editarlos y anotarlos. Tiene una interfaz que permite acceder remotamente numerosas herramientas como programas para realizar alineamientos múltiples de secuencia y predictores de estructura secundaria. A lo largo de la guía de ejercicios, introduciremos este programa usandolo para visualizar alineamientos múltiples de secuencias (MSAs) de proteínas modulares y discutir características de secuencia asociadas a los dominios y motivos funcionales encontrados en las proteínas.
-
-JalView es un programa que se ofrece de manera gratuita, y está disponible para descargar e instalar en tu propia computadora en [https://www.jalview.org/](https://www.jalview.org/)
- 
-Existen un alto número de guías y tutoriales disponibles online que pueden encontrar en: [https://www.jalview.org/training](https://www.jalview.org/training)
-
-Los desarrolladores de JalView crearon numerosos videos de entrenamiento disponibles en el [Canal de YouTube de JalView](https://www.youtube.com/channel/UCIjpnvZB770yz7ftbrJ0tfw)
-
 ## **Ejercicios**
 
 ### **Ejercicio 1.** Identificando Módulos en Proteínas { markdown data-toc-label='Ejercicio 1' }
@@ -334,7 +325,7 @@ Para buscar la proteína p53 puedes hacerlo ingresando en *VIEW A SEQUENCE* el a
 
 **1b.** ¿Qué longitud tiene la proteína p53 humana?
 
-**1c.** Observar el esquema modular de p53: ¿Puedes identificar qué dominios Pfam tiene p53? ¿Qué nombres y qué funciones tienen?
+**1c.** Observar el esquema modular de p53: ¿Puedes identificar qué dominios Pfam tiene p53? ¿Qué nombres y qué funciones tienen? En algunos casos esta información está en la pestaña de Pfam que aparece en la nueva ventana que se abre al hacer click en el nombre del dominio.
 
 **1d.** ¿En qué regiones de la secuencia se encuentran estos dominios? Anotar de qué residuo a qué residuo abarca cada dominio, para usar más adelante. 
 
@@ -342,12 +333,21 @@ Para buscar la proteína p53 puedes hacerlo ingresando en *VIEW A SEQUENCE* el a
 
 **1f.** ¿A qué cree que corresponden las regiones marcadas como *Disorder* y *Low Complexity* en p53?
 
-**1g.** ¿Se corresponden las regiones identificadas como *Disorder* en Pfam con las predichas por IUPred en el **Ejercicio 2** de la parte I de predicción de desorden? ¿Qué utiliza Pfam para poder identificar las regiones como *Disorder*?
+**1g.** ¿Se corresponden las regiones identificadas como *Disorder* en Pfam con las predichas por IUPred en el **Ejercicio 2** de la parte I de predicción de desorden? ¿Qué utiliza Pfam para poder identificar las regiones como *Disorder* (Esta información está en el **HELP** de Pfam en *Guide to Graphics*)?
+
+## **JalView, software de visualización de alineamientos**
+Para poder visualizar alineamientos múltiples de secuencias (MSA, de sus siglas en inglés: Multiple Sequence Alignment) utilizaremos el visualizador de alineamientos JalView desarrollado en JAVA. Jalview permite generar alineamientos, manipularlos, editarlos y anotarlos. Tiene una interfaz que permite acceder remotamente numerosas herramientas como programas para realizar alineamientos múltiples de secuencia y predictores de estructura secundaria. A lo largo de la guía de ejercicios, introduciremos este programa usandolo para visualizar alineamientos múltiples de secuencias (MSAs) de proteínas modulares y discutir características de secuencia asociadas a los dominios y motivos funcionales encontrados en las proteínas.
+
+JalView es un programa que se ofrece de manera gratuita, y está disponible para descargar e instalar en tu propia computadora en [https://www.jalview.org/](https://www.jalview.org/)
+ 
+Existen un alto número de guías y tutoriales disponibles online que pueden encontrar en: [https://www.jalview.org/training](https://www.jalview.org/training)
+
+Los desarrolladores de JalView crearon numerosos videos de entrenamiento disponibles en el [Canal de YouTube de JalView](https://www.youtube.com/channel/UCIjpnvZB770yz7ftbrJ0tfw)
 
 ### **Ejercicio 2.** Usando JalView para analizar un MSA de p53 { markdown data-toc-label='Ejercicio 2' }
 **2a.** Abre Jalview
 
-Para abrir Jalview vayan al directorio: `~/Tools/JalView/` y corran el archivo `jalview.sh`:
+Para abrir Jalview vayan al directorio: `~/Tools/Jalview/` y corran el archivo `jalview.sh`:
 
 ```
 bash jalview.sh
@@ -367,11 +367,10 @@ Si no llegara a funcionar, pues Internet, Virtualidad, la vida... Tienen las sec
 
 *Format* → *Show Non-Conserved*
 
-a. Algunas secuencias son más cortas que otras ¿por qué crees que es esto?  
-b. ¿Todas las secuencias comienzan con el aminoácido metionina? A qué corresponden las secuencias que no?  
-c. ¿Si quieren construir un alineamiento de alta calidad, preservarían o descartarían estas secuencias?  
-d. Remuevan las secuencias que no corresponden a proteínas completas. Para ello seleccionar las secuencias haciendo click sobre el nombre de la misma en el panel izquierdo, la secuencia se marcará con una caja roja punteada. Remover la secuencia seleccionada utilizando la tecla ++backspace++ o ++del++  
-e. ¿Existen regiones del alineamiento que no estén alineadas correctamente?
+a. Algunas secuencias son más cortas que otras ¿por qué crees que es esto? 
+b. ¿Si quieren construir un alineamiento de alta calidad, preservarían o descartarían estas secuencias?  
+c. Remuevan las secuencias que no corresponden a proteínas completas. Para ello seleccionar las secuencias haciendo click sobre el nombre de la misma en el panel izquierdo, la secuencia se marcará con una caja roja punteada. Remover la secuencia seleccionada utilizando la tecla ++backspace++ o ++del++  
+d. ¿Existen regiones del alineamiento que no estén alineadas correctamente?
 
 Para editar el alineamiento, primero asegurate de realizar:
     
@@ -420,26 +419,25 @@ a. ¿Qué regiones muestran una identidad de secuencia mayor al 80% en el MSA de
 
    Anote los límites de estas regiones y responda: ¿Qué correlación observa con la información obtenida de Pfam?
  
-
-En las regiones conservadas, observe los patrones de sustitución en diferentes columnas del MSA. Estos patrones son un reflejo de la historia evolutiva de la proteína y contienen mucha información funcional que aprenderemos a cuantificar más adelante en la materia.
+Con la identidad al 80%, observe en las columnas del MSA que sustituciones ocurren. Estas susticiones son un reflejo de la historia evolutiva de la proteína y contienen mucha información funcional.
 
 Observando detenidamente, responda:
 
-b. ¿Qué tipos de patrones observa?  
-c. ¿Qué relación guardan estos patrones con las matrices PAM y BLOSUM utilizadas para construir alineamientos de proteínas?  
+b. ¿Qué tipos de sustituciones observa?  
+c. ¿Qué relación guardan estas sustituciones con las matrices PAM y BLOSUM utilizadas para construir alineamientos de proteínas? 
 d. En base a este alineamiento analice las regiones desordenadas y ordenadas ya reconocidas en p53. Compare sus observaciones en este alineamiento con el alineamiento visualizado en ProViz en el **Ejercicio 1** de la **PARTE I**.
 
-* ¿Puede distinguir las mismas regiones?  
-* ¿Ve diferencias en la composición de secuencia en cada región?  
-* ¿Se observan diferencias en el grado de conservación?  
+* ¿Puede distinguir las mismas regiones? 
+* ¿Ve diferencias en la composición de secuencia en cada región entre los dos alineamientos?  
+* ¿Se observan diferencias en el grado de conservación entre los dos alineamientos?  
 * ¿Las especies a las que corresponde cada secuencia son las mismas en los alineamientos? ¿Cuál posee organismos más distantes?  
-* Discuta qué ventajas considera que tiene trabajar con un alineamiento propio respecto de trabajar con el alineamiento de ProViz?
+* Discuta qué ventajas considera que tiene trabajar con un alineamiento propio respecto de trabajar con el alineamiento de ProViz.
 
 ## Ejercicio a informar
 
 !!! info ""
 
-      **Fecha límite de entrega:** Viernes, 30 de Septiembre 2022, 23:59hs.
+      **Fecha límite de entrega:** Viernes, 07 de Octubre 2022, 23:59hs.
 
 
 
@@ -460,8 +458,11 @@ pequeños en el N-terminal (Dominio N) y C terminal (Dominio C).
 1. Como se vió en la clase teórica, IUPred puede correrse utilizando como argumento `short` o `long`. Realice el gráfico del perfil de IUPred nuevamente utilizando `short`. ¿Qué diferencias observa en los gráficos usando Iupred `short` o `long`? En base a sus conocimientos de IUPred, explique **brevemente** y de manera **abarcativa** las diferencias observadas.
 
 
+<!--
 ## Ejercicios Adicionales de Desorden
 ### Ejercicio Adicional 1. Base de datos MobiDB
+
+* MobiDB            [http://mobidb.bio.unipd.it/](http://mobidb.bio.unipd.it/)
 
 La base de datos MobiDB centraliza diferentes recursos que facilitan la anotación de proteínas desordenadas y de su función. MobiDB abarca distintos aspectos del desorden, desde regiones que carecen una estructura tridimensional definida anotadas o predichas como desordenadas hasta regiones que interactúan con otras proteínas, ADN o ARN preservando una estructura desordenada. Los datos provienen de bases de datos externas con datos manualmente curados, de datos experimentales como estructuras tridimensionales de las proteínas o predicciones.
 
@@ -478,7 +479,7 @@ La base de datos MobiDB centraliza diferentes recursos que facilitan la anotaci�
 
     * ¿Qué regiones tienen una estructura? 
 
-    Observa la entrada 5AOM_A. Ahora ve a la página web del [Protein Data Bank](www.rscb.org) y busca el PDB 5AOM, o puedes ir directamente desde [aquí](https://www.rcsb.org/structure/5AOM). En la web de la base de datos de PDB ve a la sección *Macromolecules*. Mira la sección correspondiente a la cadena A (UNMODELED A). ¿Puedes decir cómo se determinó que estas regiones eran desordenadas?
+    Observa la entrada 5AOM_A. Ahora ve a la página web del [Protein Data Bank](https://www.rcsb.org) y busca el PDB 5AOM, o puedes ir directamente desde [aquí](https://www.rcsb.org/structure/5AOM). En la web de la base de datos de PDB ve a la sección *Macromolecules*. Mira la sección correspondiente a la cadena A (UNMODELED A). ¿Puedes decir cómo se determinó que estas regiones eran desordenadas?
 
 ### Ejercicio Adicional 2. Selección de regiones para determinar la estructura de una proteína.
 Una de las aplicaciones principales de la predicción de desorden es encontrar regiones que son más adecuadas para determinar la estructura tridimensional de una proteína por cristalografía de rayos X.
@@ -568,5 +569,4 @@ Existen muchísimos métodos para predecir regiones desordenadas. Puedes probar 
 4. Encuentra regiones de baja complejidad (“low complexity”) ¿Qué aminoácidos son más frecuentes en esta región?
 5. Utiliza el predictor de desorden de tu preferencia.
 6. ¿Qué regiones llamarías desordenadas?
-
-{% endif %}
+-->
