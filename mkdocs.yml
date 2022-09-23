@@ -145,7 +145,7 @@ nav:
         - TP 7 - HMMs & ANNs: 'practicos/TP07_HMM_ANN/index.md'
         - TP 8a - R - Introducción: 'practicos/TP08a_R/index.md'
         - TP 8b - R - Aplicación: 'practicos/TP08b_R/index.md'
-        #- TP 9 - Predicción de Desorden: 'practicos/TP09_IUPred/index.md'
+        - TP 9 - Predicción de Desorden: 'practicos/TP09_Desorden/index.md'
         #- TP 10 - Motivos Lineales: 'practicos/TP10_Motivos/index.md'
         #- TP 11 - Modelado por Homología: 'practicos/TP11_Dominios/index.md'
         #- TP 12a - Clustering: 'practicos/TP12a_Clustering/index.md'
