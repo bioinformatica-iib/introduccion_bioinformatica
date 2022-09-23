@@ -29,7 +29,7 @@ tags:
 | Martes, 20 Septiembre 2022 | 9:00 hs |	:material-google-classroom: Online | [P8a. Programando en Biología](/2022_introduccion_bioinformatica/practicos/TP08a_R/) | :fontawesome-solid-hammer: Práctica |	A. Ricci |
 | Jueves, 22 Septiembre 2022 | 9:00 hs |	:material-google-classroom: Online | [P8b. Programando en Biología](/2022_introduccion_bioinformatica/practicos/TP08b_R/) | :fontawesome-solid-hammer: Práctica |	A. Ricci |
 | Martes, 27 Septiembre 2022 | 9:00 hs |	:material-google-classroom: Online | T8. Bioinformática Estructural: Desorden | :fontawesome-solid-brain: Teórica |	L. Chemes |
-| Jueves, 29 Septiembre 2022 | 9:00 hs |	:material-google-classroom: Online | P9. Bioinformática Estructural: Predicción de Desorden | :fontawesome-solid-hammer: Práctica |	J. Glavina |
+| Jueves, 29 Septiembre 2022 | 9:00 hs |	:material-google-classroom: Online | [P9. Bioinformática Estructural: Predicción de Desorden](/2022_introduccion_bioinformatica/practicos/TP09_Desorden/) | :fontawesome-solid-hammer: Práctica |	J. Glavina |
 | Jueves, 29 Septiembre 2022 | 14:00 hs | :fontawesome-solid-map-location: Aula a definir| TE2. Teórica Extra 2 | :fontawesome-solid-brain: Teórica | L. Chemes |
 | Martes, 04 Octubre 2022 | 9:00 hs |	:material-google-classroom: Online | T9. Bioinformática Estructural: Motivos lineales | :fontawesome-solid-brain: Teórica |	L. Chemes |
 | Jueves, 06 Octubre 2022 | 9:00 hs |	:material-google-classroom: Online | P10. Bioinformática Estructural: Motivos funcionales en proteínas | :fontawesome-solid-hammer: Práctica |	J. Glavina |
