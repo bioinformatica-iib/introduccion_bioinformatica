@@ -9,7 +9,7 @@
 
 !!! abstract "Atención: Este TP tiene informe."
 
-[:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1GrCbM-rWvnxdrJ_dJeGaoaYstEUpMMYN/view?usp=sharing){ .md-button .md-button--primary }
+[:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1wh5zn1GZ4s_Rp8V5lekZZbIKzM7BOKc8/view?usp=sharing){ .md-button .md-button--primary }
 
 
 ## **PARTE I: Predicción de Desorden**
@@ -151,7 +151,7 @@ fileIN <- "~/Tools/IUPred/P53_HUMAN.iupred"
 
 header <-c("Posicion","Aminoacido","Iupred","Anchor")
 
-p53 <- fread(file=fileIN, header=F ,sep="\t", col.names=header,  comment.char="#")
+p53 <- fread(file=fileIN, header=T ,sep="\t", col.names=header, skip="POS")
 ```
 Asegurate que los datos se cargaron correctamente, esperamos una tabla con 4 columnas.
 
@@ -163,9 +163,9 @@ Primero crearemos una columna en el data.table:
 
 ``` R
 umbral <- 0.5
-p53$Prediccion <- NA
-p53$Prediccion[Iupred>=umbral] <- "Desorden"
-p53$Prediccion[Iupred<umbral] <- "Orden"
+p53$Prediccion <- ""
+p53[Iupred>=umbral]$Prediccion <- "Desorden"
+p53[Iupred<umbral]$Prediccion <- "Orden"
 ```
 
 Para obtener un gráfico similar al que brinda el servidor de IUPred, utilizaremos la librería `ggplot2`:
@@ -180,6 +180,8 @@ plot_p53 <- ggplot(p53,aes(x=Posicion,y=Iupred)) +
   geom_point(aes(color=Prediccion)) +
   geom_hline(yintercept = 0.5,lty="dotted",size=1) +
   theme_linedraw()
+
+plot_p53
 ```
 
 Debería obtener un gráfico como el siguiente:
@@ -190,7 +192,7 @@ Ahora, quisiéramos evaluar el porcentaje de residuos predichos ordenados y deso
 
 ``` R
 cuentaTotal <- table(p53$Prediccion)
-porcentaje <- 100*cuentaTotal/length(p53$Posición)
+porcentaje <- 100*cuentaTotal/length(p53$Posicion)
 
 print(cuentaTotal)
 print(porcentaje)
@@ -199,7 +201,11 @@ print(porcentaje)
 
 **4c.** En base a los valores obtenidos, ¿diría que la proteína p53 es altamente desordenada?
 
-**4d.** Por último, analizaremos la composición de aminoácidos de p53. Pero antes: ¿Qué residuos espera ver enriquecidos en las regiones desordenadas y cuales en las ordenadas? ¿Por qué?
+**4d.** Por último, analizaremos la composición de aminoácidos de p53.
+
+!!! idea "Pero antes:"
+
+      ¿Qué residuos espera ver enriquecidos en las regiones **desordenadas** y cuales en las **ordenadas**? ¿Por qué?
 
 Vamos a graficar el porcentaje de cada aminoácido predicho como ordenado o desordenado en la secuencia de p53
 
@@ -213,7 +219,7 @@ print(aminoacidos)
 Para calcular el porcentaje de aminoácidos:
 
 ``` R
-aminoacidos_porcentaje <- 100*aminoacidos/length(p53$Posición)
+aminoacidos_porcentaje <- 100*aminoacidos/length(p53$Posicion)
 ```
 
 Ahora vamos a convertir la tabla en un data.table para graficar con `ggplot2`:
@@ -235,7 +241,7 @@ Deberías obtener un gráfico como el siguiente:
 
 * ¿Qué aminoácidos son los más abundantes en las regiones desordenadas? ¿La abundancia de los aminoácidos coincide con lo esperado?
 
-## **Disprot**
+## PARTE II: Base de Datos **Disprot**
 La base de datos [DisProt](https://disprot.org/) es una colección de evidencia de desorden experimental recolectada de la literatura y curada manualmente. La evidencia corresponde a una región proteica, e incluye por lo menos:
 
 * un experimento,
@@ -253,7 +259,7 @@ La ontología de desorden está organizada en tres categorías diferentes:
 
 En Disprot también se incluye la función molecular *Molecular function* de cada región. 
 
-### **Ejercicio 3.** Base de datos DisProt  { markdown data-toc-label='Ejercicio 3' }
+### **Ejercicio 1.** Base de datos DisProt  { markdown data-toc-label='Ejercicio 3' }
 
 La proteína p53 es una proteína supresora de tumores, es decir que su mutación favorece el crecimiento tumoral. p53 es uno de los genes más mutados en el cáncer humano, y actúa como un factor de transcripción que se expresa en todos los tejidos. Cumple un rol principal en el ciclo celular y es el regulador principal de la apoptosis. Es esencial para inducir la respuesta celular ante el daño al ADN, deteniendo el ciclo celular cuando las células no pueden reparar el ADN dañado por agentes genotóxicos. Si falla p53 podrían facilitar la formación de tumores celulares y en consecuencia producir cáncer. Alrededor de un 50% de los tumores humanos identificados poseen mutaciones en la proteína p53. Esta proteína, por su importancia para la salud humana, es una de las proteínas más estudiadas en cuanto a su estructura y función.
 
@@ -293,7 +299,7 @@ Ingresa a la página web de [DisProt](https://disprot.org/) y encuentra la prote
 **e.** ¿La evidencia experimental recolectada coincide con las predicciones realizadas en el **Ejercicio 1** y en el **Ejercicio 2**?
 
 
-## **PARTE II: Análisis de alineamientos múltiples de secuencia de proteínas - Visualizando alineamientos con JalView** { markdown data-toc-label='Parte II - Alineamientos' }
+## **PARTE III: Análisis de alineamientos múltiples de secuencia de proteínas - Visualizando alineamientos con JalView** { markdown data-toc-label='Parte II - Alineamientos' }
 
 ## Software
 * JalView:                [https://www.jalview.org/](https://www.jalview.org/)
