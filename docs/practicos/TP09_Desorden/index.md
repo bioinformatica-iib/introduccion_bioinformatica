@@ -32,11 +32,11 @@
 
 ## **Métodos de predicción de desorden**
 
-Uno de los mayores desafíos en el campo de las proteínas es la predicción de la estructura tridimensional a partir de la estructura primaria incluyendo aquellas proteínas que son total o parcialmente desordenadas. Mientras que las proteínas globulares adquieren una única estructura nativa, las proteínas intrínsecamente desordenadas (IDPs) son un conjunto de estructuras tridimensionales. También pueden existir regiones desordenadas conectando dos dominios globulares, como los *loops*; o incluso regiones más largas, que abarcan más de 30 residuos de longitud, que reciben el nombre de IDRs (del inglés *intrinsically disordered proteins*).
+Uno de los mayores desafíos en el campo de las proteínas es la predicción de la estructura tridimensional a partir de la estructura primaria incluyendo aquellas proteínas que son total o parcialmente desordenadas. Mientras que las proteínas globulares adquieren una única estructura nativa, las proteínas intrínsecamente desordenadas (IDPs, del inglés *intrinsically disordered proteins*) son un conjunto de estructuras tridimensionales. También pueden existir regiones desordenadas conectando dos dominios globulares, como los *loops*; o incluso regiones más largas, que abarcan más de 30 residuos de longitud, que reciben el nombre de IDRs (del inglés *intrinsically disordered regions*).
 
 En el año 2020, AlphaFold2 gana la competición de predicción de estructuras (CASP14) con un amplio margen prediciendo estructuras con muy alta precisión. Sin embargo, aún la predicción de conjunto de estructuras para proteínas desordenadas no se ha resuelto.
 
-La predicción de IDRs a partir de la secuencia de aminoácidos permite un análisis rápido y abarcativo de distintas proteínas permitiendo establecer hipótesis sobre la presencia de desorden en las proteínas (Dunker et al., 2008; van der Lee et al., 2014). La importancia que adquirieron las IDRs/IDPs en los últimos años llevó al desarrollo de numerosos métodos de predicción, pero en general se basan en tres estrategias de predicción de desorden: 
+La predicción de IDRs/IDPs a partir de la secuencia de aminoácidos permite un análisis rápido y abarcativo de distintas proteínas permitiendo establecer hipótesis sobre la presencia de desorden en las proteínas (Dunker et al., 2008; van der Lee et al., 2014). La importancia que adquirieron las IDRs/IDPs en los últimos años llevó al desarrollo de numerosos métodos de predicción, pero en general se basan en tres estrategias de predicción de desorden: 
 
 1. a partir de composición de secuencia, 
 2. a partir de *machine learning* sobre estructuras determinadas por cristalografía de rayos X y 
@@ -241,7 +241,7 @@ Deberías obtener un gráfico como el siguiente:
 
 * ¿Qué aminoácidos son los más abundantes en las regiones desordenadas? ¿La abundancia de los aminoácidos coincide con lo esperado?
 
-## PARTE II: Base de Datos **Disprot**
+## **PARTE II: Base de Datos Disprot**
 La base de datos [DisProt](https://disprot.org/) es una colección de evidencia de desorden experimental recolectada de la literatura y curada manualmente. La evidencia corresponde a una región proteica, e incluye por lo menos:
 
 * un experimento,
@@ -259,7 +259,7 @@ La ontología de desorden está organizada en tres categorías diferentes:
 
 En Disprot también se incluye la función molecular *Molecular function* de cada región. 
 
-### **Ejercicio 1.** Base de datos DisProt  { markdown data-toc-label='Ejercicio 3' }
+### **Ejercicio 1.** Base de datos DisProt  { markdown data-toc-label='Ejercicio 1' }
 
 La proteína p53 es una proteína supresora de tumores, es decir que su mutación favorece el crecimiento tumoral. p53 es uno de los genes más mutados en el cáncer humano, y actúa como un factor de transcripción que se expresa en todos los tejidos. Cumple un rol principal en el ciclo celular y es el regulador principal de la apoptosis. Es esencial para inducir la respuesta celular ante el daño al ADN, deteniendo el ciclo celular cuando las células no pueden reparar el ADN dañado por agentes genotóxicos. Si falla p53 podrían facilitar la formación de tumores celulares y en consecuencia producir cáncer. Alrededor de un 50% de los tumores humanos identificados poseen mutaciones en la proteína p53. Esta proteína, por su importancia para la salud humana, es una de las proteínas más estudiadas en cuanto a su estructura y función.
 
@@ -275,7 +275,7 @@ Ingresa a la página web de [DisProt](https://disprot.org/) y encuentra la prote
    * ¿A qué corresponden los segmentos coloreados?
    * ¿Qué tipo de evidencia poseen dichos fragmentos?
 
-**c.** ¿Cuál es el rol de las regiones desordenadas?
+**c.** Pensando en el rol de las regiones desordenadas.
 
 **i.** Expande *Molecular Function*:
 
@@ -299,7 +299,7 @@ Ingresa a la página web de [DisProt](https://disprot.org/) y encuentra la prote
 **e.** ¿La evidencia experimental recolectada coincide con las predicciones realizadas en el **Ejercicio 1** y en el **Ejercicio 2**?
 
 
-## **PARTE III: Análisis de alineamientos múltiples de secuencia de proteínas - Visualizando alineamientos con JalView** { markdown data-toc-label='Parte II - Alineamientos' }
+## **PARTE III: Análisis de alineamientos múltiples de secuencia de proteínas - Visualizando alineamientos con JalView** { markdown data-toc-label='Parte III - Alineamientos' }
 
 ## Software
 * JalView:                [https://www.jalview.org/](https://www.jalview.org/)
@@ -325,7 +325,7 @@ Para buscar la proteína p53 puedes hacerlo ingresando en *VIEW A SEQUENCE* el a
 
 **1b.** ¿Qué longitud tiene la proteína p53 humana?
 
-**1c.** Observar el esquema modular de p53: ¿Puedes identificar qué dominios Pfam tiene p53? ¿Qué nombres y qué funciones tienen? En algunos casos esta información está en la pestaña de Pfam que aparece en la nueva ventana que se abre al hacer click en el nombre del dominio.
+**1c.** Observar el esquema de p53: ¿Puedes identificar qué dominios Pfam tiene p53? ¿Qué nombres y qué funciones tienen? En algunos casos esta información está en la pestaña de Pfam que aparece en la nueva ventana que se abre al hacer click en el nombre del dominio.
 
 **1d.** ¿En qué regiones de la secuencia se encuentran estos dominios? Anotar de qué residuo a qué residuo abarca cada dominio, para usar más adelante. 
 
@@ -367,9 +367,12 @@ Si no llegara a funcionar, pues Internet, Virtualidad, la vida... Tienen las sec
 
 *Format* → *Show Non-Conserved*
 
-a. Algunas secuencias son más cortas que otras ¿por qué crees que es esto? 
-b. ¿Si quieren construir un alineamiento de alta calidad, preservarían o descartarían estas secuencias?  
-c. Remuevan las secuencias que no corresponden a proteínas completas. Para ello seleccionar las secuencias haciendo click sobre el nombre de la misma en el panel izquierdo, la secuencia se marcará con una caja roja punteada. Remover la secuencia seleccionada utilizando la tecla ++backspace++ o ++del++  
+a. Algunas secuencias son más cortas que otras ¿por qué crees que es esto?
+
+b. ¿Si quieren construir un alineamiento de alta calidad, preservarían o descartarían estas secuencias?
+
+c. Remuevan las secuencias que no corresponden a proteínas completas. Para ello seleccionar las secuencias haciendo click sobre el nombre de la misma en el panel izquierdo, la secuencia se marcará con una caja roja punteada. Remover la secuencia seleccionada utilizando la tecla ++backspace++ o ++del++
+
 d. ¿Existen regiones del alineamiento que no estén alineadas correctamente?
 
 Para editar el alineamiento, primero asegurate de realizar:
