@@ -5,7 +5,7 @@
 <br>
 <br>
  
-[:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1JnLn4QXTnOMd_PaWcSOukTS28emTciOo/view?usp=sharing){ .md-button .md-button--primary }
+[:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1zT1Qt_BgAxqtDTYxBTRK5uqoIMA1EXRw/view?usp=sharing){ .md-button .md-button--primary }
 
 <!--
 Este es el botón para descargar materiales, en (#) hay que agregar el link correspondiente
@@ -16,7 +16,7 @@ Este es el botón para descargar materiales, en (#) hay que agregar el link corr
 * RStudio (ya instalado en la VM)
 
 ### Recursos Online
-* Introducción a **R**, TP 8 de esta materia: [Parte 1](../TP08a_R) y [Parte 2](../TP08b_R)
+* Introducción a **R**, **TP 8** de esta materia: [Parte 1](../TP08a_R) y [Parte 2](../TP08b_R)
 * [Clustering jerárquico en **R**](https://www.datanovia.com/en/lessons/agglomerative-hierarchical-clustering/)
 * [Detalles del cálculo de Silhouette (y mucho más)](https://www.cienciadedatos.net/documentos/37_clustering_y_heatmaps#Average_silhouette_method)
 
@@ -28,11 +28,11 @@ Este es el botón para descargar materiales, en (#) hay que agregar el link corr
 
 ## **Introducción al Tema**
 
-En este TP vamos a retomar el trabajo con **R**. Recomendamos repasar o tener a mano el TP 8 de esta materia por si necesitan recordar como hacer ciertos comandos ([Parte 1](../TP08a_R) y [Parte 2](../TP08b_R)).
+Hoy vamos a retomar el trabajo con **R**. Recomendamos repasar o tener a mano el **TP 8** de esta materia por si necesitan recordar como hacer ciertos comandos ([Parte 1](../TP08a_R) y [Parte 2](../TP08b_R)).
 
-Como mencionamos en el TP 8, es cada vez más normal que experimentos biológicos nos permitan analizar miles a millones de interacciones biológicas a la vez, lo que resulta en tablas con millones de datos. Esto hace necesario entonces saber utilizar herramientas que nos permitan extraer, o *minar*, información de estos enormes conjuntos de datos. A este proceso vamos a denominar *Data Mining*.
+Como mencionamos en el **TP 8**, es cada vez más normal que experimentos biológicos nos permitan analizar miles a millones de interacciones biológicas a la vez, lo que resulta en tablas con millones de datos. Esto hace necesario entonces saber utilizar herramientas que nos permitan extraer, o *minar*, información de estos enormes conjuntos de datos. A este proceso lo vamos a denominar *Data Mining*.
 
-En este TP nos vamos a enfocar en métodos de clustering, que nos permiten agrupar elementos analizados en base a datos observados sobre ellos. Esto tiene muchas utilidades, como puede ser entender mejor las diferencias entre grupos conocidos, encontrar diferentes grupos dentro del conjunto datos analizado, o remover datos redundantes, entre otros.
+En este TP nos vamos a enfocar en métodos de clustering, los cuales nos permiten agrupar elementos analizados en base a datos observados sobre ellos. Esto tiene muchas utilidades, como puede ser entender mejor las diferencias entre grupos conocidos, encontrar diferentes grupos dentro del conjunto datos analizado, o remover datos redundantes, entre otros.
 
 Si bien este TP vamos a enfocarnos más que nada en aprender las técnicas, el objetivo final de este proceso es identificar agrupamientos naturales en los datos con alguna relevancia biológica.
 
@@ -113,7 +113,7 @@ Si no entienden algunos de estos conceptos pueden leer un poco más sobre ellos 
     * **Complete Linkage:** la nueva distancia es la ***mayor*** entre las distancias $dist(genA, genB)$ y $dist(genA, genC)$
     * **Average Linkage:** la nueva distancia es el ***promedio*** de las distancias $dist(genA, genB)$ y $dist(genA, genC)$
 
-1. Para agilizar un poco este Ejercicio les vamos a dar una planilla de Google Sheets que contiene la base de lo que vamos a necesitar. Abran [esta planilla de Google Sheets](https://docs.google.com/spreadsheets/d/1RBQNAsE1N6PPfKLWCqtYuuiYVqlTcPUQeeQX3PZmre8/edit?usp=sharing) y hagan una copia. Leyendo la siguiente información, traten de entender que hace las diferentes partes de dicha planilla (desde ya, hay partes vacías que vamos a completar).
+1. Para agilizar un poco este Ejercicio les vamos a dar una planilla de Google Sheets que contiene la base de lo que vamos a necesitar. Abran [esta planilla de Google Sheets](https://docs.google.com/spreadsheets/d/1RBQNAsE1N6PPfKLWCqtYuuiYVqlTcPUQeeQX3PZmre8/edit?usp=sharing) y hagan una copia. Leyendo la siguiente información, traten de entender que hacen las diferentes partes de dicha planilla (desde ya, hay partes vacías que vamos a completar).
 
     * Pestaña **Plot Señal**
 
@@ -167,7 +167,7 @@ Si no entienden algunos de estos conceptos pueden leer un poco más sobre ellos 
 
 5. El próximo paso es calcular la matriz de distancias para nuestros datos estandarizados:
 
-    1. Copien los datos recien calculados a la pestaña **Clustering Estandarizado** (ojo que queremos los valores, no las fórmulas).
+    1. Copien los datos recien calculados a la pestaña **Clustering Estandarizado** (tengan en cuenta al copiar y pegar los datos que queremos los valores, no las fórmulas).
 
     2. En la **columna J**, calculen las distancias euclideanas entre los diferentes genes.
 
@@ -184,7 +184,7 @@ Si no entienden algunos de estos conceptos pueden leer un poco más sobre ellos 
 
 7. Comparando los clusterings obtenidos con los datos estandarizados y sin estandarizar.
 
-    1. ¿Qué similitudes y diferencias observan?
+    1. ¿Qué diferencias observan?
     2. ¿Cuál de los dos clusterings les parece mejor para este escenario donde queríamos evaluar como afectaba un tratamiento los niveles de expresión de diferentes genes?
     3. ¿Les parece qué es siempre correcto estandarizar los datos de esta forma o se les ocurre escenarios donde no es así?
 
@@ -200,7 +200,7 @@ Los datos originales los tienene en el archivo **tabla_ejemplo.tsv** que se encu
 
 **1)** Usen la función `fread` para cargar los datos de **tabla_ejemplo.tsv** en una nueva variable llamada `dt_tabla_ejemplo` (recuerden que van a tener que cargar el paquete `data.table` y setear el *working directory*)
 
-#### Pasarlos a una matriz
+#### Pasar los datos a una matriz { markdown data-toc-label='Pasarlos a una matriz' }
 
 Queremos crear una matriz de distancias, las cuales se calculan usando la función `dist`. Para que la matriz de distancias tenga los nombres de los genes en las filas y columnas necesitamos que la tabla que le pasemos también cumpla esta condición, cosa que los *Data Tables* no hacen (ya que no pueden tener nombres en las filas).
 
@@ -228,7 +228,7 @@ Donde `rownames = 1` le está indicando a **R** que los valores de la primera co
 
 #### Crear la matriz de distancias { markdown data-toc-label='Matriz de distancias' }
 
-Ahora que tenemos una tabla o matriz con los nombres de los genes en las filas y las columnas, queremos usar la función `dist` para calcular la matriz de distancias. El código es:
+Ahora que tenemos una matriz con los nombres de los genes en las filas y las columnas, queremos usar la función `dist` para calcular la matriz de distancias. El código es:
 
 ```R
 matriz_distancias <- dist(matriz_datos, method = "euclidean", diag = T)
@@ -238,9 +238,9 @@ Donde `method = "euclidean"` le esta diciendo a la función `dist` que tiene que
 
 **3)** Corran el código anterior e impriman `matriz_distancias` por consola. ¿Coinciden los datos con la matriz de distancias vista en el **Ejercicio 1**?
 
-#### Hacer el clústering jerárquico { markdown data-toc-label='Clústering jerárquico' }
+#### Hacer el clustering jerárquico { markdown data-toc-label='clustering jerárquico' }
 
-El clústering jerárquico se hace con la función `hclust`, la cual se usa:
+El *clustering jerárquico* se hace con la función `hclust`, la cual se usa:
 
 ```R
 clustering_jerarquico <- hclust(matriz_distancias, method = "complete")
@@ -250,7 +250,7 @@ Donde `method = "complete"` está indicandole a la función que criterio de agre
 
 **4)** Corran el código anterior e impriman `clustering_jerarquico` por consola. ¿Da alguna información útil a simple vista?
 
-**5)** Usen la función `plot` para plotear `clustering_jerarquico`. Usen el parámetro `main` para cambiarle el título al plot indicando que es un *clustering jerárquico*, que usa *complete linkage* y que usa datos no estandarizados.
+**5)** Usen la función `plot` para plotear `clustering_jerarquico`. Usen el parámetro `main` para cambiarle el título al plot indicando que es un *clustering jerárquico*, que usa *complete linkage* y que usa datos sin estandarizar.
 
 #### Asignando clusters
 
@@ -306,27 +306,27 @@ matriz_datos_ST <- t(t_matriz_datos_ST)
 
 ### K-means
 
-Otro método muy popular para agrupar elementos es el *K-means*. A diferencia del *clustering jerárquico*, éste no crea un árbol de similitud, sino que utiliza un método iterativo para asignar directamente cada elemento a diferentes grupos. Otra característica del *K-means* es que hay que pasarle siempre el número de clusters a crear.
+Otro método muy popular para agrupar elementos es el *K-means*. A diferencia del *clustering jerárquico*, éste no crea un árbol de similitud, sino que utiliza un método iterativo para asignar directamente cada elemento a diferentes grupos. Otra característica del *K-means* es que hay que pasarle el número de clusters a crear.
 
 La función `kmeans` viene con **R** y se usa:
 
 ```R
 #Corro la funcion kmeans para los datos sin estandarizar pidiendole 3 clusters
-clustering_kmeans_k3 <- kmeans(matriz_datos, centers = 3)
+clustering_kmeans_k2_ST <- kmeans(matriz_datos_ST, centers = 2)
 
 #Extraigo los clusters calculados
-clusters_kmeans_k3 <- clustering_kmeans_k3$cluster
+clusters_kmeans_k2_ST <- clustering_kmeans_k2_ST$cluster
 ```
 
-Donde `centers = 3` le está diciendo a la función que cree 3 clusters (lo que estoy indicando en la variable con **k3** para que no haya confusión más adelante).
+Donde `centers = 2` le está diciendo a la función que cree 2 clusters (lo que estoy indicando en el nombre de la variable con **_k2** para que no haya confusión más adelante).
 
-**1)** Corran el código anterior y comparen estos clusters a los obtenidos para los datos no estandarizados en el **Ejercicio 2** usando *clustering jerárquico*.
+**1)** Corran el código anterior y comparen estos clusters a los obtenidos para los datos estandarizados en el **Ejercicio 2** usando *clustering jerárquico*.
 
 ### Silhouette
 
 Para cada elemento presente en un agrupamiento se puede calcular un *Silhouette coeficient*, el cual es un número entre -1 y 1 que indica que tan similar es dicho elemento a otros elementos de su mismo *cluster* y que tan diferente es dicho elemento a los elementos de otros *clusters*. Cuanto más cerca de 1, mejor asignado esta dicho elemento en su *cluster*.
 
-Es posible entonces calcular el promedio de los *Silhouette coeficients* de todos los elementos presentes en un agrupamiento, donde promedios más cercanos a 1 van a indicar que el agrupamiento general es mejor.
+Es posible entonces calcular el promedio de los *Silhouette coefficients* de todos los elementos presentes en un agrupamiento, donde promedios más cercanos a 1 van a indicar que el agrupamiento general es mejor.
 
 Este método tiene bastantes usos, pero uno de los más comunes es definir cuál es el número ideal de clusters a crear con *K-means*. 
 
@@ -341,39 +341,26 @@ Esta función se usa:
 ```R
 library(cluster) #para silhouette()
 
-#Calculo los silhouette coeficients para los datos sin estandarizar agrupados en 3 clusters usando kmeans 
+#Calculo los silhouette coefficients para los datos estandarizados agrupados en 2 clusters usando kmeans 
 #Tengo que pasarle tambien la matriz de distancias correspondiente para que pueda calcular similitud entre elementos
-silhouette_kmeans_k3 <- silhouette(clusters_kmeans_k3, dist = matriz_distancias)
+silhouette_kmeans_k2_ST <- silhouette(clusters_kmeans_k2_ST, dist = matriz_distancias_ST)
 
 #La funcion *silhouette* saca los nombres de las filas, por lo cual ahora mis genes estan como numeros
 #Para recuperar los nombres de las filas (o *rownames*) hago lo siguiente
-rownames(silhouette_kmeans_k3) <- rownames(matriz_datos)
+rownames(silhouette_kmeans_k2_ST) <- rownames(matriz_datos_ST)
 
-#Podemos plotear los silhouette coeficients con plot
-plot(silhouette_kmeans_k3, main = "Kmeans - centers = 3")
+#Podemos plotear los silhouette coefficients con plot
+plot(silhouette_kmeans_k2_ST, main = "STD - Kmeans - centers = 2")
 
-#Y podemos extraer el promedio de los *Silhouette coeficients*
-promedio_silhouette_kmeans_k3 <- summary(silhouette_kmeans_k3)[[1]][["Mean"]]
+#Y podemos extraer el promedio de los *Silhouette coefficients*
+promedio_silhouette_kmeans_k2_ST <- summary(silhouette_kmeans_k2_ST)[[1]][["Mean"]]
 ```
 
 **2)** Corran el código anterior y vean su salida.
 
-**3)** Vamos ahora a realizar el mismo análisis para los datos estandarizados.
+**3)** Basándose en los códigos usados en **1)** y en **2)**, vuelvan a agrupar a los cuatro genes en base a sus datos estandarizados pero ahora en 3 clusters. Luego ploteen los *Silhouette coefficients* de este agrupamiento y calculen su promedio. Guarden estos nuevos datos en variables con diferentes nombres que las anteriores.
 
-!!! tip "Al momento de resolver el punto **3)** recuerden:"
-
-    * Cambiar el nombre de las variables para indicar la cantidad de clusters creados (**k2** o **k3**)
-    * Agregar el sufijo `_ST` a las variables que usan datos estandarizados para diferenciarlas de las que no
-    * Cambiar las variables `matriz_datos` y `matriz_distancias` por sus equivalentes con datos estandarizados
-    * Cambiar el título del plot para que coincida con lo que se esta ploteando
-
-**3.1)** Usen *K-means* para agrupar a los cuatro genes en base a sus datos estandarizados en 3 clusters.
-
-**3.2)** Para los clusters creados en **3.1)**, ploteen los *Silhouette coeficients* y calculen su promedio.
-
-**3.3)** Vuelvan a realizar los puntos **3.1)** y **3.2)**, pero ahora agrupando a los cuatro genes en 2 clusters. Guarden estos nuevos datos en variables con diferentes nombres que las anteriores.
-
-**3.4)** Comparando lo obtenido en los puntos anteriores, ¿qué número de *clusters* resulta en un mejor promedio para los *Silhouette coeficients*? ¿coincide esto con lo observado con el *clustering jerárquico*?
+**4)** Comparando lo obtenido en los puntos anteriores, ¿qué número de *clusters* resulta en un mejor promedio para los *Silhouette coefficients*? ¿coincide esto con lo observado en el dendrograma hecho a partir del *clustering jerárquico*?
 
 ## **Bibliografía**
 
