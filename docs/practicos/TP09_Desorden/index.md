@@ -1,11 +1,15 @@
 ![Image](img/featured.png){ width="250", align="left" }
 
-# **TP 9**. Predicción de Desorden { markdown data-toc-label = 'TP 8a' }
+# **TP 9**. Predicción de Desorden { markdown data-toc-label = 'TP 9' }
 
 <br>
 <br>
 <br>
 
+## Videos de la clase grabada
+
+* :octicons-video-16: [Introducción al TP](https://www.youtube.com/watch?v=i8YJJR6eqG4)
+* :octicons-video-16: [Puesta en común del TP](https://www.youtube.com/watch?v=ogw6Sp7jLms)
 
 !!! abstract "Atención: Este TP tiene informe."
 
