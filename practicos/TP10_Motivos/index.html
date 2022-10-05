@@ -1102,10 +1102,20 @@ LVPDAASKHKQLSELLRGGSGSSINPG
 <div class="admonition info">
 <p class="admonition-title">Regex101</p>
 <p>No es una herramienta que se use en bioinformática. Simplemente es un recurso educativo para entender <strong>Expresiones Regulares</strong>.</p>
+<p>En <code>R</code> hay funciones como <code>grep</code> o <code>gregexpr</code> que permiten identificar expresiones regulares y en python hay todo una librería <code>re</code> dedicada a expresiones regulares.</p>
 </div>
 <p><strong>2.</strong> Considerando que el motivo se encuentra en una hélice, ¿modificaría la expresión regular que obtuvo?</p>
 <h3 id="ejercicio-2-base-de-datos-de-motivos-lineales-en-eucariotas-elmdb">Ejercicio 2. Base de datos de motivos lineales en Eucariotas (ELMdb)</h3>
-<p>La base de datos ELM (<em>Eukaryotic Linear Motifs</em>) es una base de datos que se enfoca principalmente en la anotación y detección de motivos lineales (MLs). Para ello cuenta con un repositorio de motivos manualmente anotados, por lo cual está altamente curada y una herramienta de predicción de motivos. Esta predicción de motivos se realiza mediante una búsqueda de patrones de secuencia basada en texto utilizando expresiones regulares.</p>
+<p>La base de datos ELM (<em>Eukaryotic Linear Motifs</em>) es una base de datos que se enfoca principalmente en la anotación y detección de motivos lineales (MLs). Para ello cuenta con un repositorio de motivos manualmente anotados, por lo cual está altamente curada y también cuenta con una herramienta de predicción de motivos. Esta predicción de motivos se realiza mediante una búsqueda de patrones de secuencia basada en texto utilizando expresiones regulares.</p>
+<div class="admonition idea">
+<p class="admonition-title">Las instancias anotadas (es decir, probadas experimentalmente) pueden ser:</p>
+<ul>
+<li><strong>True Positives:</strong> Una instancia anotada con evidencia experimental que demuestra que es funcional.</li>
+<li><strong>False Positives:</strong> Una instancia anotada con evidencia experimental que sugiere que es funcional. Pero luego de una inspección cuidadosa de los anotadores se cree que la instancia en realidad no es funcional.</li>
+<li><strong>True Negative:</strong> Una instancia anotada donde los experimentos muestren que es no funcional.</li>
+<li><strong>Unknown:</strong> No se encontró evidencia suficiente para determinar si la instancia es funcional o no.</li>
+</ul>
+</div>
 <p><strong>1.</strong> Busque en <a href="http://elm.eu.org">ELMdb</a> en la pestaña <strong>Prediction</strong> la proteína PGC-1-alpha, una de las proteínas de la lista que usamos en el <strong>Ejercicio 1</strong>, utilizando el accession number o uniprot ID (Q9UBK2 - PRGC1_HUMAN).</p>
 <p>Para cada motivo encontrado, se indica con símbolos (descriptos en la parte superior de la página) si la instancia del motivo es predicha o fue identificada experimentalmente (anotadas o "True Positives"). Responda:</p>
 <ul>
@@ -1114,8 +1124,7 @@ LVPDAASKHKQLSELLRGGSGSSINPG
 <li>¿Cómo es la estructura de la proteína donde se encuentran estos motivos?</li>
 </ul>
 <p><strong>2.</strong> Pegue y copie la siguiente secuencia en ELM y utilice los parámetros que se indican a continuación.</p>
-<pre><code>```
-&gt;seq
+<div class="highlight"><pre><span></span><code>&gt;seq
 MEEPQSDPSVEPPLSQETFSDLWKLLPENNVLSPLPSQAMDDLMLSPDDI  
 EQWFTEDPGPDEAPRMPEAAPPVAPAPAAPTPAAPAPAPSWPLSSSVPSQ  
 KTYQGSYGFRLGFLHSGTAKSVTCTYSPALNKMFCQLAKTCPVQLWVDST  
@@ -1124,9 +1133,8 @@ LRVEYLDDRNTFRHSVVVPYEPPEVGSDCTTIHYNYMCNSSCMGGMNRRP
 ILTIITLEDSSGNLLGRNSFEVRVCACPGRDRRTEEENLRKKGEPHHELP  
 PGSTKRALPNNTSSSPQPKKKPLDGEYFTLQIRGRERFEMFRELNEALEL  
 KDAQAGKEPGGSRAHSSHLKSKKGQSTSRHKKLMFKTEGPDSD
-```
-</code></pre>
-<p>Modifique los valores de los distintos parámetros de la siguiente manera:</p>
+</code></pre></div>
+<p>Asegúrese que los valores de los distintos parámetros son los siguientes:</p>
 <div class="admonition idea">
 <p><strong>Cell Compartment:</strong> Not specified  </p>
 <p><strong>Motif Probability Cutoff:</strong> 100  </p>
@@ -1137,11 +1145,13 @@ KDAQAGKEPGGSRAHSSHLKSKKGQSTSRHKKLMFKTEGPDSD
 <li>¿Qué se puede decir sobre la estructura de la proteína? ¿Se observa algún dominio? ¿Se observan regiones desordenadas?  </li>
 <li>¿Los predictores estructurales y filtros (SMART, GlobPlot, IUPRED, Secondary Structure) coinciden sobre qué regiones son estructuradas/desordenadas?</li>
 </ul>
-<p><strong>3.</strong> Por si no se dió cuenta, la proteína utilizada en el ejercicio anterior es p53 de humanos. Abra en una nueva pestaña la página de elm. Vaya de nuevo a la pestaña de predicción. Limpie el formulario con el botón <em>Reset Form</em>. Ingrese el Uniprot ID de la proteína (P53_human).</p>
+<p><strong>3.</strong> Por si no se dió cuenta, la proteína utilizada en el ejercicio anterior es p53 de humanos. </p>
 <ul>
-<li>
-<p>¿Qué compartimentos celulares se le asignaron? ¿Tienen sentido?</p>
-</li>
+<li>ELM nos permite fitrar por compartimento celular ¿Porqué consideran que esto sería útil?</li>
+</ul>
+<p>Utilizando el uniprot ID de p53 (P53_HUMAN) busque en la web de Uniprot (<a href="https://www.uniprot.org/">https://www.uniprot.org/</a>) las posibles localizaciones subcelulares de esta proteína y utilícelas como filtro en ELM. Para esto:</p>
+<p>Abra en una nueva pestaña la página de ELM. Vaya de nuevo a la pestaña de predicción. Limpie el formulario con el botón <em>Reset Form</em>. Ingrese el Uniprot ID de la proteína (P53_human) y asigne en <strong>Cell compartment</strong> los compartimentos correspondientes utilizando <span class="keys"><kbd class="key-control">Ctrl</kbd></span> para seleccionar más de uno.</p>
+<ul>
 <li>
 <p>Realice la predicción y conteste: ¿Cuántas instancias de motivos se encuentran ahora? ¿Cuántas instancias de motivos son retenidas luego del filtro? ¿A qué se debe esta diferencia con el punto anterior?</p>
 </li>
@@ -1158,24 +1168,39 @@ KDAQAGKEPGGSRAHSSHLKSKKGQSTSRHKKLMFKTEGPDSD
 <p>¿Cuántos degrons anotados hay en p53? ¿Cuál es la función de estos motivos?</p>
 </li>
 <li>
-<p>¿Existe algún sitio anotado CDK en p53?</p>
+<p>¿Existe algún sitio anotado CDK (<em>Cyclin Dependent Kinase</em>) en p53?</p>
 </li>
 <li>
 <p>¿Existe algún sitio anotado <code>DOC_CYCLIN_RXL_1</code>? ¿Qué relación funcional existe entre este sitio y el sitio CDK?</p>
 </li>
 </ul>
-<p><strong>4.</strong> Abra una nueva pestaña y vaya de nuevo a la pestaña de predicción. Limpie el formulario con el botón <em>Reset Form</em>. Ingrese el Uniprot ID (P53_HUMAN) y modifique el parámetro:  </p>
+<p><strong>4.</strong> Abra una nueva pestaña y vaya de nuevo a la pestaña de predicción. Manteniendo los compartimentos celulares seleccionados para p53, ingrese el Uniprot ID (P53_HUMAN) y modifique el parámetro:  </p>
 <div class="admonition idea">
 <p><strong>Motif Probability Cutoff:</strong> 0.01
 (Recuerde que en el punto anterior este parámetro era de 100)</p>
 </div>
 <ul>
-<li>¿Cuántas instancias predichas de motivos se encuentran ahora? ¿Cuántas instancias de motivos son retenidas luego del filtro?</li>
-<li>¿Por qué cree que es útil usar la localización celular, el contexto taxonómico y el umbral de probabilidad del motivo?</li>
+<li>
+<p>¿Cuántas instancias predichas de motivos se encuentran ahora? ¿Cuántas instancias de motivos son retenidas luego del filtro?</p>
+</li>
+<li>
+<p>¿Por qué cree que es útil usar el umbral de probabilidad del motivo?</p>
+</li>
+</ul>
+<p><strong>5.</strong> Abra una nueva pestaña y vaya de nuevo a la pestaña de predicción. Manteniendo los compartimentos celulares seleccionados para p53, ingrese el Uniprot ID (P53_HUMAN) y modifique el parámetro:  </p>
+<div class="admonition idea">
+<p><strong>Taxonomic Context:</strong> Homo sapiens</p>
+</div>
+<ul>
+<li>
+<p>¿Cuántas instancias predichas de motivos se encuentran ahora? ¿Cuántas instancias de motivos son retenidas luego del filtro?</p>
+</li>
+<li>
+<p>¿Por qué cree que es útil usar el contexto taxonómico?</p>
+</li>
 </ul>
 <p><strong>5.</strong> Busque la proteína P53_MOUSE en ELM.</p>
 <ul>
-<li>¿Qué compartimentos celulares y que contexto taxonómico se asignaron?</li>
 <li>¿Existen instancias anotadas?</li>
 <li>¿Existen instancias asignadas por homología? ¿A qué organismo pertenecen?</li>
 </ul>
@@ -1195,7 +1220,7 @@ KDAQAGKEPGGSRAHSSHLKSKKGQSTSRHKKLMFKTEGPDSD
 </ol>
 <h2 id="ejercicio-a-informar">Ejercicio a informar</h2>
 <div class="admonition info">
-<p><strong>Fecha límite de entrega:</strong> Viernes, 15 de Octubre 2022, 23:59hs.</p>
+<p><strong>Fecha límite de entrega:</strong> Viernes, 14 de Octubre 2022, 23:59hs.</p>
 </div>
 <h3 id="enunciado">Enunciado</h3>
 <p>Su jefe también está interesado en que Ud. entienda más sobre los mecanismos de entrada del virus a la célula, la cual está mediada por la enzima convertidora de angiotensina 2 (ACE2) (Uniprot ID: ACE2_HUMAN2, Q9BYF1). Luego de unirse la proteína Spike a ACE2, se desencadena la entrada del virus SARS-CoV-2 a las células pulmonares por un mecanismo llamado endocitosis mediada por receptor, en el cual participan muchos motivos lineales.</p>
@@ -1211,15 +1236,28 @@ KDAQAGKEPGGSRAHSSHLKSKKGQSTSRHKKLMFKTEGPDSD
 <p class="admonition-title">Atención</p>
 <p>Siempre que reporte una región o instancia de un motivo indique las posiciones de inicio y final de la misma. Para cada respuesta, indicar los algoritmos, base de datos y métodos utilizados, y el criterio usado en cada caso para clasificar/identificar.</p>
 </div>
-<p><strong>3.</strong> Un criterio para clasificar un buen motivo candidato es que esté conservado en &gt;50% de un conjunto de secuencias divergentes. Utilizando las expresiones regulares y el conjunto de secuencias de ACE2 (que se encuentran en el archivo <code>ACE2_secuencias.fasta</code>), indique cuáles de las instancias de los motivos seleccionados en (2) son buenos candidatos según su conservación.
-* ¿Encuentra variaciones en la secuencia de los motivos en las diferentes secuencias ¿Cuáles?</p>
-<p><strong>Extra! (y por ende opcional)</strong>
-1. La presentación de resultados con figuras que faciliten la compresión es una de las partes más importantes de un informe. Una forma muy linda de visualizar las posiciones de los motivos reportados es marcarlas en un gráfico de desorden cambiando el color de los puntos. ¿Se animan?</p>
-<p><strong> ESTO HAY QUE CAMBIARLO </strong>
-2. El punto 3 se puede hacer utlizando R. Para esto primero va a necesitar instalar la librería <code>bioseq</code> (tarda) para poder leer el alineamiento con la función <code>read_fasta</code>. Luego, se puede utilizar la función <code>gregexpr</code> para buscar la expresión regular del motivo de interés y cuantificar su presencia en el alineamiento, prestando atención a la posición que se lo espera encontrar, claro!.</p>
-<blockquote>
-<p>Nota: <code>gregexpr</code> devuelve una lista. Las posiciones de la lista se acceden como <code>lista[[i]]</code> donde <code>i</code> es un número.</p>
-</blockquote>
+<p><strong>3.</strong> Un criterio para clasificar un buen motivo candidato es que esté conservado en &gt;50% de un conjunto de secuencias divergentes. Utilizando las expresiones regulares y el conjunto de secuencias de ACE2 (que se encuentran en el archivo <code>ACE2_secuencias.fasta</code>), indique cuáles de las instancias de los motivos seleccionados en (2) son buenos candidatos según su conservación.</p>
+<ul>
+<li>Si bien es un alineamiento de proteínas homólogas ¿Encuentra variaciones en la secuencia de los motivos en las diferentes secuencias? ¿Cuáles?</li>
+</ul>
+<p><strong>Extra! (y por ende opcional)</strong></p>
+<ol>
+<li>
+<p>La presentación de resultados con figuras que faciliten la compresión es una de las partes más importantes de un informe. Una forma muy linda de visualizar las posiciones de los motivos reportados es marcarlas en un gráfico de desorden cambiando el color de los puntos. ¿Se animan?</p>
+</li>
+<li>
+<p>El punto 3 se puede hacer utlizando R. Para esto primero va a necesitar instalar la librería <code>bioseq</code> (tarda) para poder leer el alineamiento con la función <code>read_fasta</code>. Luego, se puede utilizar la función <code>gregexpr</code> para buscar la expresión regular del motivo de interés y cuantificar su presencia en el alineamiento, prestando atención a la posición que se lo espera encontrar, claro!.</p>
+</li>
+</ol>
+<div class="admonition info">
+<p class="admonition-title"><code>gregexpr</code></p>
+<p>Esta función devuelve una lista. Las posiciones de la lista se acceden como <code>lista[[i]]</code> donde <code>i</code> es un número.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">RegEx en alineamientos</p>
+<p>En un alineamiento de secuencias tenemos gaps que pueden interrumpir la secuencia. Deben modificar la RegEx de manera que esto no suceda. Ejemplo:
+  <code>R.L</code> pasaría a ser <code>R-*.-*L</code> </p>
+</div>
 <h3 id="materiales">Materiales</h3>
 <p><a href="https://drive.google.com/file/d/1uAo-m-gFXRnq-Ms8-yeAVy3bhC4pJLvL/view?usp=sharing">Descarga</a></p>
 <!--
