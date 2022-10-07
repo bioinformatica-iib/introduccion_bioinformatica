@@ -36,7 +36,14 @@ PGIFDLTKIEHFSTVGLVLFMHLPSEGNDVVNFKLLLKTTENLAQALGGFVLNEHREIFDENSRQS
 YLARVS
 ```
 
-**2.** Haga click en **Submit** en la parte inferior de la página y seleccione el hit que le parezca más conveniente, ¿por qué es el más conveniente? ¿Que e-value tiene? ¿que porcentaje de identidad posee con su proteína misteriosa (en la pate inferior está el alineamiento)? y luego seleccione en la parte superior **Model using selection**. 
+**2.** Haga click en **Submit** en la parte inferior de la página y seleccione el hit que le parezca más conveniente:
+
+* ¿por qué es el más conveniente?
+* ¿Cuál es el PDB ID y a qué cadena corresponde?
+* ¿Que e-value tiene?
+* ¿que porcentaje de identidad y qué porcentaje de similitud posee con su proteína misteriosa (en la pate inferior está el alineamiento)?
+
+Luego seleccione en la parte superior **Model using selection**. 
 
 * ¿Qué se muestra en la nueva ventana? (Mueva la barra inferior para ver que hay en la ventana).
 
@@ -72,16 +79,21 @@ regiones:
 * Seleccione **Procheck** y espere por los resultados.
 
 **a.** Investigue el **Ramachandran Plot**. Reconozca las regiones a los distintos elementos de estructura secundaria y responda:
+
 * ¿Cuántas estructuras se utilizaron para construir este Ramachandran?
 * ¿Qué residuos no están en el área esperada?
 * ¿Qué criterio se utiliza para considerar que el modelo es de buena calidad?
 * ¿Qué porcentaje de residuos en la estructura modelada se encuentran en las regiones más favorecidas?
+* ¿Qué residuo está representado como triángulos? ¿A qué creés que se debe?
 
-**b.** Investigue los gráficos de ramchandran para todos los residuos en **All Ramachandrans** debe elegir el pdf.
+**b.** Mirando el PDF en "All Ramachandrans", investigue los gráficos de ramachandran para todos los residuos.
+
 * ¿Cuántas estructuras se utilizaron para construir este Ramachandran?
 * ¿Qué residuos no están en el área esperada?
+* Observe el ramachandran teórico de la Glicina ¿Qué diferencias observa respecto al resto? ¿y el de la prolina?
 
-**c.** Investigue los gráficos de las longitudes de enlace en la cadena principal (M/c bond lengths) y los ángulos de unión de la cadena principal (M/c bond angles).  
+**c.** Investigue los gráficos de las longitudes de enlace en la cadena principal (M/c bond lengths) y los ángulos de unión de la cadena principal (M/c bond angles).
+
 * ¿Existen aminoácidos que se alejen significativamente de los resultados esperados?
 
 **7.** En base a los resultados obtenidos por **Verify 3D** y **ProCheck** responda: ¿Es bueno el modelo? ¿Por qué?
@@ -104,11 +116,13 @@ Vaya a *Tools → Structure Comparison → MatchMaker*
     
 Se abrirá una nueva ventana.
 
-* En *Reference structure* (el panel de la izquierda) puede seleccionar una de las estructuras de referencia. Esta estructura es la que se mantendrá fija. (**Ej. 1F46**)  
+* En *Structure(s) to match* (el panel de la derecha) seleccione la estructura que será superpuesta y alineada con la que se eligió como referencia, es decir el modelo.
 
-* En *Structure(s) to match* (el panel de la derecha) seleccione la estructura que será superpuesta y alineada con la que se eligió como referencia. (Ej. el modelo)
+* En *Chain Pairing* elija: *Specific chain in reference structure with best aligning chain in match structure*
 
-* En *Matching* asegurése que *Iterate by pruning long atom pairs untilo no pair exceeds* está desclickeado.
+* En *Reference structure* (el panel de la izquierda) seleccione la cadena correcta de la estructura utilizada como molde.
+
+* En *Matching* asegurése que *Iterate by pruning long atom pairs untilo no pair exceeds* está clickeado.
 
 * Piense, ¿Porqué está utilizando el PDB:1F46?
 
@@ -116,7 +130,7 @@ Se abrirá una nueva ventana.
 
       Vaya a *Favorites → Reply Log*
 
-* ¿Cuál es el RMSD global reportado?
+* ¿Cuál es el RMSD global reportado? ¿y con *pruned atoms*?
 
 **11.** Para ver cómo se corresponde el grado de similitud estructural con el grado de similitud en secuencia podemos realizar un alineamiento de ambas secuencias guiado por el alineamiento estructural. Para esto, vaya a:
 
@@ -170,22 +184,23 @@ Desconfiando de los resultados de su becario, Ud. decide analizar la calidad del
 
 * ¿Le parece que su becario estaba en lo cierto, o equivocado?  
 
-**2.** Para explicar las diferencias obtenidas analice las estructuras como se indica en los puntos siguientes (2, 3 y 4) usando **Chimera** y **IUPred**:
+**2.** Para explicar las diferencias obtenidas analice las estructuras como se indica en los puntos siguientes (a, b y c) usando **Chimera** y **IUPred**:
 
 **a.** Utilizando el modelo generado y el PDB (3NE4) utilizado como molde realice un alineamiento estructural en Chimera (*Tools → Structure Comparison → MatchMaker*).
 
 * ¿Cuál es el RMSD global?
-* ¿Qué diferencias observa en las
-estructuras alineadas?
+* ¿Qué diferencias observa en las estructuras alineadas?
 * ¿Tiene relación con lo obtenido por **Verify3D**?
 
 **b.** En Chimera observe el alineamiento de secuencia (*Tools → Structure Comparison Match -> Align*).
+
+* Cuando se quiere obtener una estructura de una proteína a veces ocurre que hay regiones o residuos que no se pueden "resolver" y no se les puede asignar una estructura. Estos residuos se conocen como *Missing residues* y en el alineamiento de secuencia en chimera están resaltados de una manera especial. ¿Puede identificar como están destacados? ¿A qué región corresponde en la proteína modelada?
 * ¿En qué regiones hay mayor número de Gaps?
 * Observe el RMSD por posición utilizando el RMSD:ca. ¿En qué regiones se observan las mayores diferencias? ¿A qué estructura corresponde? ¿Por qué cree que ocurre esto?
 
-**c**. Ingrese la secuencia de la rana en [IUPRed2A](https://iupred2a.elte.hu/plot). ¿Qué relación encuentra con lo obtenido por Verify3D?
+**c**. Ingrese la secuencia de la rana en [IUPRed2A](https://iupred2a.elte.hu/). ¿Qué relación encuentra con lo obtenido por Verify3D?
 
-**d.** En base a los resultados de su análisis, responda:
+**3.** En base a los resultados de su análisis, responda:
 
 * ¿Pudo explicar todas las regiones de menor calidad reportadas por **Verify3D**?
 
