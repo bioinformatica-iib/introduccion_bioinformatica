@@ -1,31 +1,24 @@
----
-layout: page
-title: TP N°11
-subtitle: Dominios Proteicos
-data : True
-menubar_toc: true
-hero_height: is-small
-toc_title: CONTENIDOS
-construccion: false
----
+![Image](img/featured.png){ width="250", align="left" }
+# **TP 11**. Modelado por Homología { markdown data-toc-label = 'TP 11' }
 
-{% if page.construccion %}
-
-**Pagina en construccion**
-
-{% else %}
+<br>
+<br>
+<br>
+<br>
 
 
-<ul class="block-list has-radius is-primary">
-   <li class=" is-info has-icon" markdown="span">
-      <span class="icon"><i class="fas fa-clipboard"></i></span>
-    <span style="font-weight:bold;">Este TP tiene informe.</span>
-   </li>
-</ul>
+<!--
+## Videos de la clase grabada
 
-## Materiales
-[Descargar](https://drive.google.com/file/d/1fgYENsbk0R3jsujwxkoHT7s141aiBt0H/view?usp=sharing)
+* :octicons-video-16: [Introducción al TP]()
+* :octicons-video-16: [Puesta en común del TP]()
 
+[:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1wh5zn1GZ4s_Rp8V5lekZZbIKzM7BOKc8/view?usp=sharing){ .md-button .md-button--primary }
+-->
+
+!!! abstract "Atención: Este TP tiene informe."
+
+[:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1fgYENsbk0R3jsujwxkoHT7s141aiBt0H/view?usp=sharing){ .md-button .md-button--primary }
 
 ## Ejercicio 1. Modelado mistery protein.
 Luego de dos años y numerosos intentos fallidos, usted logra determinar por resonancia magnética nuclear una región de una proteína misteriosa y deposita la estructura en la base de datos de proteínas PDB (PDB: 1F46).
@@ -200,18 +193,10 @@ estructuras alineadas?
 
 ## Ejercicio a informar
 
-<ul class="block-list has-radius is-primary">
-   <li class="is-highlighted is-info has-icon" markdown="span">
-      <span class="icon"><i class="fas fa-calendar"></i></span>
-    <span style="font-weight:bold;">Fecha Límite de Entrega:</span> Viernes, 15 de Octubre 2021, 23:59hs.
-   </li>
-</ul>
+!!! Abstract "Fecha Límite de Entrega: Viernes, 21 de Octubre 2022, 23:59hs"
 
 ### Enunciado
-Su jefe sigue interesado en la proteína N que forma la nucleocápside viral de SARS-CoV2 y empaqueta el genoma viral de ARN formando una
-ribonucleocápside. Usted ya comprobó que la estructura de la proteína N es altamente desordenada y posee dos dominios globulares
-pequeños en el N-terminal (Dominio N) y C terminal (Dominio C). Dada la importancia de la proteína en la
-replicación viral, consideran que es un blanco posible de drogas. Por lo tanto, decide realizar un modelado por homología del dominio N-terminal de la proteína N del **aislamiento** original utilizando las herramientas que conoce.
+Su jefe sigue interesado en la proteína N que forma la nucleocápside viral de SARS-CoV2 y empaqueta el genoma viral de ARN formando una ribonucleocápside. Usted ya comprobó que la estructura de la proteína N es altamente desordenada y posee dos dominios globulares pequeños en el N-terminal (Dominio N) y C terminal (Dominio C). Dada la importancia de la proteína en la replicación viral, consideran que es un blanco posible de drogas. Por lo tanto, decide realizar un modelado por homología del dominio N-terminal de la proteína N del **aislamiento** original utilizando las herramientas que conoce.
 
 **1.** Diseñe por homología el dominio N-terminal. Evalúe si su modelo es bueno y recuerde incluir el molde que seleccionó para crearlo justificando la elección e indicando a qué virus pertenece.
 
@@ -219,6 +204,7 @@ replicación viral, consideran que es un blanco posible de drogas. Por lo tanto,
 
 **3.** Según este análisis, si desearía cristalizar el dominio N ¿Qué regiones no incluiría?
 
+<!--
 ## Ejercicios Adicionales (No hay que informarlos)
 ### Ejercicio Adicional 1.
 Después del exitoso resultado que obtuvo, ahora más relajado luego de haber salvado a la población porcina, decide rechequear los resultados obtenidos con la proteína misteriosa patogénica 1 utilizando otro programa que requiere más tiempo para modelar su proteína.
@@ -233,7 +219,7 @@ Después del exitoso resultado que obtuvo, ahora más relajado luego de haber sa
 4. En la web de Phyre, vaya a la sección Detailed template information. Haga click en *Run Investigator*.  
 Explore en Quality las distintas opciones:  
 
-    ![img1](./images/img1.png)
+    ![img1](img/img1.png)
 
     Al final de la página posee el alineamiento y puede ir estudiando estas
 características posición por posición.
@@ -272,7 +258,7 @@ La búsqueda de estructuras puede realizarse utilizando palabras claves, por eje
 ### El archivo PDB. ¿Cómo están codificadas las estructuras?
 Las estructuras tridimensionales de las proteı́nas pueden generarse por diferentes métodos (cristalografía de rayos X o XRay, resonancia magnética nuclear o RMN, criomicroscopía electrónica o CryoEM) y están codificadas en archivos pdb. Un archivo pdb está compuesto por múltiples lı́neas de registros, cada uno identificado por una etiqueta determinada incluidos dentro de distintas secciones. En la figura se muestra un fragmento de la sección de coordenadas que describe la estructura de la proteına dando las coordenadas x, y y z (azul claro) de cada uno de los átomos identificados.
 
-![img2](./images/img2.png)
+![img2](./img/img2.png)
 
 En cada lı́nea, además, se identifica si es un átomo (rojo) perteneciente a un aminoácido o nucleótido, o heteroátomo (azul oscuro), la numeración (verde), el nombre del átomo (naranja), el nombre del residuo en el que está incluido el átomo (violeta), la cadena a la que pertenece (negro), el número del residuo al que pertenece (verde). Este archivo puede incluir más columnas para cada átomo con datos relacionados con el espacio que ocupa el átomo, la movilidad del átomo (el factor de temperatura o B-factor), el sı́mbolo que representa al átomo y la carga del mismo (señaladas con “...” en la figura). El encabezado o header del archivo PDB puede tener muchísima información no relacionada directamente con la conformación tridimensional de la proteína, sino con cómo se hizo el experimento, las publicaciones relacionadas y otros. La descripción del resto del contenido de las secciones del archivo pdb puede obtenerse en la sección documentación de http://www.wwpdb.org/.  
 
@@ -547,5 +533,4 @@ Y asegurate que NO estén seleccionados:
 
 * Según los conocimientos que tienes de las uniones en el ADN ¿Se observa lo que
 esperabas?
-
-{% endif %}
+-->
