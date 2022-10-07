@@ -6,6 +6,15 @@
 <br>
 <br>
 
+## Videos de la clase grabada
+
+* :octicons-video-16: [Introducción al TP](https://www.youtube.com/watch?v=erSvL81NsRg)
+* :octicons-video-16: [Puesta en común del TP](https://www.youtube.com/watch?v=cZVEAZy0Wx8)
+
+!!! abstract "Atención: Este TP tiene informe."
+
+[:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1wh5zn1GZ4s_Rp8V5lekZZbIKzM7BOKc8/view?usp=sharing){ .md-button .md-button--primary }
+
 !!! abstract "Atención: Este TP tiene informe."
 
 <!--
@@ -251,8 +260,7 @@ Su jefe también está interesado en que Ud. entienda más sobre los mecanismos 
       En un alineamiento de secuencias tenemos gaps que pueden interrumpir la secuencia. Deben modificar la RegEx de manera que esto no suceda. Ejemplo:
       `R.L` pasaría a ser `R-*.-*L` 
 
-### Materiales
-[Descarga](https://drive.google.com/file/d/1uAo-m-gFXRnq-Ms8-yeAVy3bhC4pJLvL/view?usp=sharing)
+[:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1uAo-m-gFXRnq-Ms8-yeAVy3bhC4pJLvL/view?usp=sharing){ .md-button .md-button--primary }
 
 <!--
 ## Ejercicios Adicionales
