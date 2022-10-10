@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://bioinformatica-iib.github.io/2022_introduccion_bioinformatica/practicos/TP11_Modelado_Por_Homologia/">
       
       <link rel="icon" href="../../img/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.6">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.3.9">
     
     
       
@@ -21,7 +21,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.4a0965b7.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.1d29e8d0.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
@@ -914,7 +914,14 @@ QKPVAENNMLTLYVVAPEGQQFRGDYVVQSLEALGFQYGEYQIFHRHQHMGNSASPVIFSVANMMQ
 PGIFDLTKIEHFSTVGLVLFMHLPSEGNDVVNFKLLLKTTENLAQALGGFVLNEHREIFDENSRQS
 YLARVS
 </code></pre></div>
-<p><strong>2.</strong> Haga click en <strong>Submit</strong> en la parte inferior de la página y seleccione el hit que le parezca más conveniente, ¿por qué es el más conveniente? ¿Que e-value tiene? ¿que porcentaje de identidad posee con su proteína misteriosa (en la pate inferior está el alineamiento)? y luego seleccione en la parte superior <strong>Model using selection</strong>. </p>
+<p><strong>2.</strong> Haga click en <strong>Submit</strong> en la parte inferior de la página y seleccione el hit que le parezca más conveniente:</p>
+<ul>
+<li>¿por qué es el más conveniente?</li>
+<li>¿Cuál es el PDB ID y a qué cadena corresponde?</li>
+<li>¿Que e-value tiene?</li>
+<li>¿que porcentaje de identidad y qué porcentaje de similitud posee con su proteína misteriosa (en la pate inferior está el alineamiento)?</li>
+</ul>
+<p>Luego seleccione en la parte superior <strong>Model using selection</strong>. </p>
 <ul>
 <li>¿Qué se muestra en la nueva ventana? (Mueva la barra inferior para ver que hay en la ventana).</li>
 </ul>
@@ -949,16 +956,24 @@ regiones:<br />
 <p>Seleccione <strong>Procheck</strong> y espere por los resultados.</p>
 </li>
 </ul>
-<p><strong>a.</strong> Investigue el <strong>Ramachandran Plot</strong>. Reconozca las regiones a los distintos elementos de estructura secundaria y responda:
-* ¿Cuántas estructuras se utilizaron para construir este Ramachandran?
-* ¿Qué residuos no están en el área esperada?
-* ¿Qué criterio se utiliza para considerar que el modelo es de buena calidad?
-* ¿Qué porcentaje de residuos en la estructura modelada se encuentran en las regiones más favorecidas?</p>
-<p><strong>b.</strong> Investigue los gráficos de ramchandran para todos los residuos en <strong>All Ramachandrans</strong> debe elegir el pdf.
-* ¿Cuántas estructuras se utilizaron para construir este Ramachandran?
-* ¿Qué residuos no están en el área esperada?</p>
-<p><strong>c.</strong> Investigue los gráficos de las longitudes de enlace en la cadena principal (M/c bond lengths) y los ángulos de unión de la cadena principal (M/c bond angles).<br />
-* ¿Existen aminoácidos que se alejen significativamente de los resultados esperados?</p>
+<p><strong>a.</strong> Investigue el <strong>Ramachandran Plot</strong>. Reconozca las regiones a los distintos elementos de estructura secundaria y responda:</p>
+<ul>
+<li>¿Cuántas estructuras se utilizaron para construir este Ramachandran?</li>
+<li>¿Qué residuos no están en el área esperada?</li>
+<li>¿Qué criterio se utiliza para considerar que el modelo es de buena calidad?</li>
+<li>¿Qué porcentaje de residuos en la estructura modelada se encuentran en las regiones más favorecidas?</li>
+<li>¿Qué residuo está representado como triángulos? ¿A qué creés que se debe?</li>
+</ul>
+<p><strong>b.</strong> Mirando el PDF en "All Ramachandrans", investigue los gráficos de ramachandran para todos los residuos.</p>
+<ul>
+<li>¿Cuántas estructuras se utilizaron para construir este Ramachandran?</li>
+<li>¿Qué residuos no están en el área esperada?</li>
+<li>Observe el ramachandran teórico de la Glicina ¿Qué diferencias observa respecto al resto? ¿y el de la prolina?</li>
+</ul>
+<p><strong>c.</strong> Investigue los gráficos de las longitudes de enlace en la cadena principal (M/c bond lengths) y los ángulos de unión de la cadena principal (M/c bond angles).</p>
+<ul>
+<li>¿Existen aminoácidos que se alejen significativamente de los resultados esperados?</li>
+</ul>
 <p><strong>7.</strong> En base a los resultados obtenidos por <strong>Verify 3D</strong> y <strong>ProCheck</strong> responda: ¿Es bueno el modelo? ¿Por qué?</p>
 <p><strong>8.</strong> Abra chimera y busque el modelo que determinó usted años atrás:</p>
 <p><em>File</em> → <em>Fetch by ID</em> → 1F46</p>
@@ -971,10 +986,13 @@ regiones:<br />
 <p>Se abrirá una nueva ventana.</p>
 <ul>
 <li>
-<p>En <em>Reference structure</em> (el panel de la izquierda) puede seleccionar una de las estructuras de referencia. Esta estructura es la que se mantendrá fija. (<strong>Ej. 1F46</strong>)  </p>
+<p>En <em>Structure(s) to match</em> (el panel de la derecha) seleccione la estructura que será superpuesta y alineada con la que se eligió como referencia, es decir el modelo.</p>
 </li>
 <li>
-<p>En <em>Structure(s) to match</em> (el panel de la derecha) seleccione la estructura que será superpuesta y alineada con la que se eligió como referencia. (Ej. el modelo)</p>
+<p>En <em>Chain Pairing</em> elija: <em>Specific chain in reference structure with best aligning chain in match structure</em></p>
+</li>
+<li>
+<p>En <em>Reference structure</em> (el panel de la izquierda) seleccione la cadena correcta de la estructura utilizada como molde.</p>
 </li>
 <li>
 <p>En <em>Matching</em> asegurése que <em>Iterate by pruning long atom pairs untilo no pair exceeds</em> está clickeado.</p>
@@ -1032,19 +1050,21 @@ MMSFDEHGTEAAPATAAEADPLMLPPHFKFDYPFIFRVQDLKTKNPLLVGRIANPQK
 <ul>
 <li>¿Le parece que su becario estaba en lo cierto, o equivocado?  </li>
 </ul>
-<p><strong>2.</strong> Para explicar las diferencias obtenidas analice las estructuras como se indica en los puntos siguientes (2, 3 y 4) usando <strong>Chimera</strong> y <strong>IUPred</strong>:</p>
+<p><strong>2.</strong> Para explicar las diferencias obtenidas analice las estructuras como se indica en los puntos siguientes (a, b y c) usando <strong>Chimera</strong> y <strong>IUPred</strong>:</p>
 <p><strong>a.</strong> Utilizando el modelo generado y el PDB (3NE4) utilizado como molde realice un alineamiento estructural en Chimera (<em>Tools → Structure Comparison → MatchMaker</em>).</p>
 <ul>
 <li>¿Cuál es el RMSD global?</li>
-<li>¿Qué diferencias observa en las
-estructuras alineadas?</li>
+<li>¿Qué diferencias observa en las estructuras alineadas?</li>
 <li>¿Tiene relación con lo obtenido por <strong>Verify3D</strong>?</li>
 </ul>
-<p><strong>b.</strong> En Chimera observe el alineamiento de secuencia (<em>Tools → Structure Comparison Match -&gt; Align</em>).
-* ¿En qué regiones hay mayor número de Gaps?
-* Observe el RMSD por posición utilizando el RMSD:ca. ¿En qué regiones se observan las mayores diferencias? ¿A qué estructura corresponde? ¿Por qué cree que ocurre esto?</p>
-<p><strong>c</strong>. Ingrese la secuencia de la rana en <a href="https://iupred2a.elte.hu/plot">IUPRed2A</a>. ¿Qué relación encuentra con lo obtenido por Verify3D?</p>
-<p><strong>d.</strong> En base a los resultados de su análisis, responda:</p>
+<p><strong>b.</strong> En Chimera observe el alineamiento de secuencia (<em>Tools → Structure Comparison Match -&gt; Align</em>).</p>
+<ul>
+<li>Cuando se quiere obtener una estructura de una proteína a veces ocurre que hay regiones o residuos que no se pueden "resolver" y no se les puede asignar una estructura. Estos residuos se conocen como <em>Missing residues</em> y en el alineamiento de secuencia en chimera están resaltados de una manera especial. ¿Puede identificar como están destacados? ¿A qué región corresponde en la proteína modelada?</li>
+<li>¿En qué regiones hay mayor número de Gaps?</li>
+<li>Observe el RMSD por posición utilizando el RMSD:ca. ¿En qué regiones se observan las mayores diferencias? ¿A qué estructura corresponde? ¿Por qué cree que ocurre esto?</li>
+</ul>
+<p><strong>c</strong>. Ingrese la secuencia de la rana en <a href="https://iupred2a.elte.hu/">IUPRed2A</a>. ¿Qué relación encuentra con lo obtenido por Verify3D?</p>
+<p><strong>3.</strong> En base a los resultados de su análisis, responda:</p>
 <ul>
 <li>
 <p>¿Pudo explicar todas las regiones de menor calidad reportadas por <strong>Verify3D</strong>?</p>
@@ -1432,10 +1452,10 @@ esperabas?
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["search.suggest", "search.highlight", "search.share", "header.autohide", "navigation.tracking", "navigation.tabs", "toc.integrate", "navigation.top"], "search": "../../assets/javascripts/workers/search.85cb4492.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "B\u00fasqueda", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version.title": "Seleccionar versi\u00f3n"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["search.suggest", "search.highlight", "search.share", "header.autohide", "navigation.tracking", "navigation.tabs", "toc.integrate", "navigation.top"], "search": "../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "B\u00fasqueda", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version.title": "Seleccionar versi\u00f3n"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.a877e258.min.js"></script>
+      <script src="../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
       
         <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
       
