@@ -128,7 +128,7 @@ nav:
         - Teórica 7: teoricas/7-Teorica-Siete/index.md
         - Teórica 8: teoricas/8-Teorica-Ocho/index.md
         - Teórica 9: teoricas/9-Teorica-Nueve/index.md
-        #- Teórica 10: teoricas/10-Teorica-Diez/index.md
+        - Teórica 10: teoricas/10-Teorica-Diez/index.md
         #- Teórica 11: teoricas/11-Teorica-Once/index.md
         #- Teórica 12: teoricas/12-Teorica-Doce/index.md
         #- Resumen: teoricas/resumen.md
@@ -147,7 +147,7 @@ nav:
         - TP 8b - R - Aplicación: 'practicos/TP08b_R/index.md'
         - TP 9 - Predicción de Desorden: 'practicos/TP09_Desorden/index.md'
         - TP 10 - Motivos Lineales: 'practicos/TP10_Motivos/index.md'
-        #- TP 11 - Modelado por Homología: 'practicos/TP11_Modelado_Por_Homologia/index.md'
+        - TP 11 - Modelado por Homología: 'practicos/TP11_Modelado_Por_Homologia/index.md'
         #- TP 12a - Clustering: 'practicos/TP12a_Clustering/index.md'
         #- TP 12b - Data Mining: 'practicos/TP12b_Data_Mining/index.md'
         #- Resumen: 'practicos/resumen.md'
