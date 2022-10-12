@@ -215,7 +215,7 @@ Su jefe sigue interesado en la proteína N que forma la nucleocápside viral de 
 
 **1.** Diseñe por homología el dominio N-terminal. Evalúe si su modelo es bueno y recuerde incluir el molde que seleccionó para crearlo justificando la elección e indicando a qué virus pertenece.
 
-**2.** Elija una estructura contra la cual comparará su modelo y justifique brevemente la elección. Recuerde reportar el RMSD global y las regiones alinean mejor.
+**2.** Elija una estructura contra la cual comparará su modelo y justifique brevemente la elección. Recuerde reportar el RMSD global y que regiones alinean mejor.
 
 **3.** Según este análisis, si desearía cristalizar el dominio N ¿Qué regiones no incluiría?
 
