@@ -60,23 +60,23 @@ Queremos entonces agrupar a los diferentes genes por como varían sus niveles de
 
 Si no entienden algunos de estos conceptos pueden leer un poco más sobre ellos a continuación (y más todavía en la teórica):
 
-??? info "Distancia euclideana"
+??? info "Distancia euclidiana"
 
-    Es una de las varias formas de calcular una distancia entre dos vectores de datos, lo cual es necesario al momento de calcular una matriz de distancias. Por ejemplo, suponiendo que tenemos 2 vectores de forma $V = (x, y, z)$ la distancia euclideana entre ellos se calcula como:
+    Es una de las varias formas de calcular una distancia entre dos vectores de datos, lo cual es necesario al momento de calcular una matriz de distancias. Por ejemplo, suponiendo que tenemos 2 vectores de forma $V = (x, y, z)$ la distancia euclidiana entre ellos se calcula como:
 
     $$
-    distanciaEuclideana(V_1, V_2) = \sqrt{(x_1 - x_2)^2 + (y_1 - y_2)^2 + (z_1 - z_2)^2}
+    distanciaEuclidiana(V_1, V_2) = \sqrt{(x_1 - x_2)^2 + (y_1 - y_2)^2 + (z_1 - z_2)^2}
     $$
 
     Aplicando esto a nuestros datos, la distancia entre los genes A y B se calcula como:
 
     $$
-    distanciaEuclideana(genA, genB) = \sqrt{(2 - (-1))^2 + (4 - (-1))^2 + (8 - (-2))^2} = 11,58
+    distanciaEuclidiana(genA, genB) = \sqrt{(2 - (-1))^2 + (4 - (-1))^2 + (8 - (-2))^2} = 11,58
     $$
 
 ??? info "Matriz de distancias"
 
-    Es una matriz donde tanto las filas como las columnas representan un mismo conjunto de elementos y en cada intersección se pone la distancia (en nuestro caso euclideana) entre dos elementos específicos. Es la base de muchos métodos de clustering.
+    Es una matriz donde tanto las filas como las columnas representan un mismo conjunto de elementos y en cada intersección se pone la distancia (en nuestro caso euclidiana) entre dos elementos específicos. Es la base de muchos métodos de clustering.
 
     Para nuestros datos la matriz de distancias entre los cuatro genes es:
 
@@ -87,7 +87,7 @@ Si no entienden algunos de estos conceptos pueden leer un poco más sobre ellos 
     | genC | 9 | 3,32 |0 | |
     | genD | 15 | 4,12 | 7,35 | 0 |
 
-    Como el órden de los elementos es igual para las filas que para las columnas, en la diagonal se compara cada elemento contra sí mismo por lo que la distancia es 0. Por otro lado, estamos llenando solo la mitad de la matriz ya que las matrices de distancia son matrices simétricas, es decir, que el triángulo superior derecho de la matriz va a ser un reflejo del triángulo inferior izquierdo.
+    Como el orden de los elementos es igual para las filas que para las columnas, en la diagonal se compara cada elemento contra sí mismo por lo que la distancia es 0. Por otro lado, estamos llenando solo la mitad de la matriz ya que las matrices de distancia son matrices simétricas, es decir, que el triángulo superior derecho de la matriz va a ser un reflejo del triángulo inferior izquierdo.
 
 ??? info "Clustering jerárquico"
 
@@ -95,9 +95,9 @@ Si no entienden algunos de estos conceptos pueden leer un poco más sobre ellos 
 
     1. Sin considerar a la diagonal, encontrar el par de elementos (fila, columna) que son más similares entre sí (el menor número en la matriz de distancias). En nuestra matriz de distancias los elementos más parecidos son **"genB"** y **"genC"** ya que tienen la menor similitud (3,32)
 
-    2. Dejar constancia de dicha similitud y reconstruir la matriz, reemplazando ambos elementos por uno nuevo ( saco los elementos **"genB"** y **"genC"** y agrego el elemento **"genB+C"**)
+    2. Dejar constancia de dicha similitud y reconstruir la matriz, reemplazando ambos elementos por uno nuevo (saco los elementos **"genB"** y **"genC"** y agrego el elemento **"genB+C"**)
 
-    3. Al momento de calcular la nueva distancia entre este nuevo elemento (**"genB+C"**) y el resto de los elementos de la matriz, usar algún criterio de agregación (por ej: *single linkage*, *average linkage* o *complete linkage*)
+    3. Al momento de calcular la nueva distancia entre este nuevo elemento (**"genB+C"**) y el resto de los elementos de la matriz, usar algún criterio de agregación (por ejemplo: *single linkage*, *average linkage* o *complete linkage*)
 
     4. Volver al paso 1 hasta que todos los elementos estén unidos entre sí
 
@@ -118,7 +118,7 @@ Si no entienden algunos de estos conceptos pueden leer un poco más sobre ellos 
     * Pestaña **Plot Señal**
 
         * **Columnas A - D:** contienen nuestros datos
-        * **Columnas F y G:** contienen el promedio y la desviación estandar de cada gen (vacío, ahora lo hacemos)
+        * **Columnas F y G:** contienen el promedio y la desviación estándar de cada gen (vacío, ahora lo hacemos)
         * **Columnas I - L:** contienen nuestros datos estandarizados (vacío, ahora lo hacemos)
         * **Plot izquierdo:** plot de la evolución de los niveles de expresión a los 3 tiempos para los 4 genes
         * **Plot derecho:** plot de la evolución de los niveles de expresión estandarizados a los 3 tiempos para los 4 genes (se hace solo al llenar datos)
@@ -126,7 +126,7 @@ Si no entienden algunos de estos conceptos pueden leer un poco más sobre ellos 
     * Pestaña **Clustering**
 
         * **Columnas A - D:** contienen nuestros datos
-        * **Columnas F - J:** contienen el cálculo de las distancias euclideanas entre las filas
+        * **Columnas F - J:** contienen el cálculo de las distancias euclidianas entre las filas
         * **Columnas L - P:** contienen la matriz de distancias para nuestros datos (y matrices más chicas donde se van a ir escribiendo los varios pasos al hacer el clustering a mano)
 
     * Pestaña **Clustering Estandarizado**
@@ -139,11 +139,11 @@ Si no entienden algunos de estos conceptos pueden leer un poco más sobre ellos 
 
     1. Vayan a la pestaña **Clustering**. Usando la matriz de distancias ubicada en las **Columnas L - P**, calculen a mano el *clustering jerárquico* para nuestros datos usando *complete linkage*.
 
-    2. Hagan un esquema del dendrograma o árbol de similitud que resulta de este clustering. Pueden usar la herramienta **Dibujo** de Google Sheets (no se preocupen por el largo de las ramas, solo nos importa como se unen los genes).
+    2. Hagan un esquema del dendrograma o árbol de similitud que resulta de este clustering. Pueden usar la herramienta **Dibujo** de Google Sheets (no se preocupen por el largo de las ramas, solo nos importa cómo se unen los genes).
 
-    3. ¿Dió similar a lo que habían propuesto en el punto **2**?
+    3. ¿Dio similar a lo que habían propuesto en el punto **2**?
 
-4. Queremos ahora calcular nuestros datos estandarizados donde vamos a estandarizar por gen, restandole a cada dato el promedio de los tres tiempos para ese gen y dividiendo el resultado por la desviación estándar de los tres tiempos para ese gen. Es decir:
+4. Queremos ahora calcular nuestros datos estandarizados donde vamos a estandarizar por gen, restándole a cada dato el promedio de los tres tiempos para ese gen y dividiendo el resultado por la desviación estándar de los tres tiempos para ese gen. Es decir:
 
     $$
     datoEstandarizado(genA, t_0) = \frac{dato(genA, t_0) - promedio(genA)}{desviacionEstandar(genA)}
@@ -157,35 +157,35 @@ Si no entienden algunos de estos conceptos pueden leer un poco más sobre ellos 
 
         ??? tip "Tip - Copiar y pegar una fórmula en Google Sheets manteniendo una parte constante"
 
-            En Google Sheets, así como en Excell y otras hojas de cálculo, es posible "arrastrar" una fórmula, por lo que podrían calcular el dato estandarizado para un solo número (por ej celda **J2**) y luego copiar dicha fórmula al resto de las celdas.
+            En Google Sheets, así como en Excell y otras hojas de cálculo, es posible "arrastrar" una fórmula, por lo que podrían calcular el dato estandarizado para un solo número (por ejemplo celda **J2**) y luego copiar dicha fórmula al resto de las celdas.
 
             Sin embargo, de usar este método para calcular los valores estandarizados tendríamos problemas, ya que se movería también la referencia en la fórmula a las celdas del promedio y la desviación estándar (las cuales queremos que se muevan con la fórmula para abajo, pero no para la derecha).
 
-            Por suerte es posible controlar esto agregandole el símbolo **\$** adelante de la fila o columna. Es decir, si la fórmula apunta a **F2** y no queremos que se mueva horizontalmente (es decir, no queremos que cambie la **F**), podemos agregar el símbolo **\$** en la fórmula con lo que quedaría **\$F2**. Si ahora arrastramos (o copiamos y pegamos) dicha fórmula, el **2** puede cambiar, pero la **F** se va a mantener siempre como **F**.
+            Por suerte es posible controlar esto agregándole el símbolo **\$** adelante de la fila o columna. Es decir, si la fórmula apunta a **F2** y no queremos que se mueva horizontalmente (es decir, no queremos que cambie la **F**), podemos agregar el símbolo **\$** en la fórmula con lo que quedaría **\$F2**. Si ahora arrastramos (o copiamos y pegamos) dicha fórmula, el **2** puede cambiar, pero la **F** se va a mantener siempre como **F**.
 
     3.  Una vez calculados los datos estandarizados debería aparecerles el plot en el **Plot derecho**. ¿De qué forma les parece que se van a agrupar los cuatro genes en el *clustering jerárquico* usando los datos estandarizados?
 
 5. El próximo paso es calcular la matriz de distancias para nuestros datos estandarizados:
 
-    1. Copien los datos recien calculados a la pestaña **Clustering Estandarizado** (tengan en cuenta al copiar y pegar los datos que queremos los valores, no las fórmulas).
+    1. Copien los datos recién calculados a la pestaña **Clustering Estandarizado** (tengan en cuenta al copiar y pegar los datos que queremos los valores, no las fórmulas).
 
-    2. En la **columna J**, calculen las distancias euclideanas entre los diferentes genes.
+    2. En la **columna J**, calculen las distancias euclidianas entre los diferentes genes.
 
     3. Copien a mano las distancias recién calculadas a las posiciones correspondientes de la matriz de distancias en las **Columnas L - P**.
 
 6. Por último vamos a calcular el *clustering jerárquico* para nuestros datos estandarizados:
 
-    1. Asegurensé que estan en la pestaña **Clustering Estandarizado**. Usando la matriz de distancias ubicada en las  
+    1. Asegúrense que están en la pestaña **Clustering Estandarizado**. Usando la matriz de distancias ubicada en las  
     **Columnas L - P**, calculen a mano el *clustering jerárquico* para nuestros datos estandarizados usando *complete linkage*.
 
-    2. Hagan un esquema del dendrograma o árbol de similitud que resulta de este clustering. Pueden usar la herramienta **Dibujo** de Google Sheets (no se preocupen por el largo de las ramas, solo nos importa como se unen los genes).
+    2. Hagan un esquema del dendrograma o árbol de similitud que resulta de este clustering. Pueden usar la herramienta **Dibujo** de Google Sheets (no se preocupen por el largo de las ramas, solo nos importa cómo se unen los genes).
 
-    3. ¿Dió similar a lo que habían propuesto en el punto **4.c**?
+    3. ¿Dio similar a lo que habían propuesto en el punto **4.c**?
 
 7. Comparando los clusterings obtenidos con los datos estandarizados y sin estandarizar.
 
     1. ¿Qué diferencias observan?
-    2. ¿Cuál de los dos clusterings les parece mejor para este escenario donde queríamos evaluar como afectaba un tratamiento los niveles de expresión de diferentes genes?
+    2. ¿Cuál de los dos clusterings les parece mejor para este escenario donde queríamos evaluar cómo afecta un tratamiento los niveles de expresión de diferentes genes?
     3. ¿Les parece qué es siempre correcto estandarizar los datos de esta forma o se les ocurre escenarios donde no es así?
 
 ## **Ejercicio 2 - Clustering Jerárquico con R** { markdown data-toc-label='Ejercicio 2 - Clustering con R' }
@@ -196,7 +196,7 @@ En este Ejercicio vamos a hacer lo mismo que hicimos en el **Ejercicio 1**, pero
 
 #### Leer los datos
 
-Los datos originales los tienene en el archivo **tabla_ejemplo.tsv** que se encuentra en sus materiales de trabajo.
+Los datos originales los tienen en el archivo **tabla_ejemplo.tsv** que se encuentra en sus materiales de trabajo.
 
 **1)** Usen la función `fread` para cargar los datos de **tabla_ejemplo.tsv** en una nueva variable llamada `dt_tabla_ejemplo` (recuerden que van a tener que cargar el paquete `data.table` y setear el *working directory*)
 
@@ -234,7 +234,7 @@ Ahora que tenemos una matriz con los nombres de los genes en las filas y las col
 matriz_distancias <- dist(matriz_datos, method = "euclidean", diag = T)
 ```
 
-Donde `method = "euclidean"` le esta diciendo a la función `dist` que tiene que calcular las distancias euclideanas entre filas y `diag = T` hace que deje la diagonal de ceros en el output.
+Donde `method = "euclidean"` le está diciendo a la función `dist` que tiene que calcular las distancias euclidianas entre filas y `diag = T` hace que deje la diagonal de ceros en el output.
 
 **3)** Corran el código anterior e impriman `matriz_distancias` por consola. ¿Coinciden los datos con la matriz de distancias vista en el **Ejercicio 1**?
 
@@ -246,7 +246,7 @@ El *clustering jerárquico* se hace con la función `hclust`, la cual se usa:
 clustering_jerarquico <- hclust(matriz_distancias, method = "complete")
 ```
 
-Donde `method = "complete"` está indicandole a la función que criterio de agregación usar al momento de combinar elementos. Pueden usar `help(hclust)` para ver otros posibles criterios.
+Donde `method = "complete"` está indicándole a la función que criterio de agregación usar al momento de combinar elementos. Pueden usar `help(hclust)` para ver otros posibles criterios.
 
 **4)** Corran el código anterior e impriman `clustering_jerarquico` por consola. ¿Da alguna información útil a simple vista?
 
@@ -269,7 +269,7 @@ Donde `h` es el parámetro que recibe la altura de similitud a la cual cortar (e
 
 ??? info "Extraer esta información a un Data Table"
 
-    La variable `clusters_porAltura` es un vector con nombres, por lo que si quisieramos extraer su información y guardarla en un *Data Table*, tendriámos que hacer:
+    La variable `clusters_porAltura` es un vector con nombres, por lo que si quisiéramos extraer su información y guardarla en un *Data Table*, tendríamos que hacer:
 
     ```R
     dt_clusters_porAltura <- data.table(gen = names(genes_clusters_porAltura),
@@ -282,7 +282,7 @@ Donde `h` es el parámetro que recibe la altura de similitud a la cual cortar (e
 
 El primer paso para trabajar con estos datos es estandarizarlos como hicimos en el **Ejercicio 1**. Si bien podríamos calcular a mano el promedio (función `mean`) y la desviación estandar (función `sd`) de cada fila y luego hacer las cuentas, existe ya en **R** una función que hace esta estandarización por nosotros.
 
-Esta función es `scale`, pero un problema que tenemos es que dicha función estandariza por columna, no por fila. Por suerte es bastante fácil en **R** transponer una matriz (lo que básicamente cambia filas por columnas y visceversa). Esto se hace usando la función `t`.
+Esta función es `scale`, pero un problema que tenemos es que dicha función estandariza por columna, no por fila. Por suerte es bastante fácil en **R** transponer una matriz (lo que básicamente cambia filas por columnas y viceversa). Esto se hace usando la función `t`.
 
 ```R
 #Transpongo la matriz de datos
@@ -300,7 +300,7 @@ matriz_datos_ST <- t(t_matriz_datos_ST)
 
 #### Hacer el resto del análisis
 
-**8)** Vuelvan a hacer los pasos **3)** a **6)** usando la nueva matriz de datos estandarizados, `matriz_datos_ST`. Vayan creando nuevas variables en cada caso para no sobreescribir las anteriores (recomendamos usar los mismos nombres y agregarles el sufijo `_ST`).
+**8)** Vuelvan a hacer los pasos **3)** a **6)** usando la nueva matriz de datos estandarizados, `matriz_datos_ST`. Vayan creando nuevas variables en cada caso para no sobrescribir las anteriores (recomendamos usar los mismos nombres y agregarles el sufijo `_ST`).
 
 ## **Ejercicio 3 - K-means y Silhouette** { markdown data-toc-label='Ejercicio 3 - K-means' }
 

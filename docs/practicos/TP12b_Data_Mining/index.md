@@ -19,7 +19,7 @@ Este es el botón para descargar materiales, en (#) hay que agregar el link corr
 ### Recursos Online
 * [Curso online de R de Coursera](https://www.coursera.org/learn/r-programming) (se puede hacer gratis) (en ese caso no da certificado)
 * Data Tables: [Introducción oficial](https://cran.r-project.org/web/packages/data.table/vignettes/datatable-intro.html) y [otra página con más info](https://bookdown.org/paradinas_iosu/CursoR/data-table.html)
-* ggplot2: [Vistazo rápido](https://bookdown.org/paradinas_iosu/CursoR/ggplot2.html), [otra página con cada plot detallando sus parámetros](http://sthda.com/english/wiki/ggplot2-essentials), [cheatsheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf) e [información sobre colores y daltonismo](https://jfly.uni-koeln.de/color/)
+* ggplot2: [Vistazo rápido](https://bookdown.org/paradinas_iosu/CursoR/ggplot2.html), [detalles sobre los tipos de plots](http://sthda.com/english/wiki/ggplot2-essentials), [cheatsheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf) e [información sobre colores y daltonismo](https://jfly.uni-koeln.de/color/)
 * dendextend: [Detalle del paquete](https://cran.r-project.org/web/packages/dendextend/vignettes/dendextend.html)
 
 ### Objetivos
@@ -36,15 +36,15 @@ Vamos ahora a utilizar los mismos métodos para trabajar con data sets más gran
 
 A su vez vamos a desarrollar algunos temas de **R** que son muy útiles, pero para los cuales no nos alcanzó el tiempo en los TPs anteriores: plotear usando `ggplot2` y utilizar funciones creadas por nosotros.
 
-Para hacer esto vamos a utilizar 2 data sets. En el **Ejercicio 1** vamos a trabajar con el ya conocido data set **iris** que tiene 150 filas y viene por defecto con **R**. En el **Ejercicio 2** vamos a trabajar con datos de un estudio de transcriptómica que nos devolvió 9 datos para cada uno de 11.106 genes estudiados. Este trabajo es un segundo paso de lo realizado en el **TP 8b** cuando buscabamos inhibidores para la **Enzima Z**.
+Para hacer esto vamos a utilizar 2 data sets. En el **Ejercicio 1** vamos a trabajar con el ya conocido data set **iris** que tiene 150 filas y viene por defecto con **R**. En el **Ejercicio 2** vamos a trabajar con datos de un estudio de transcriptómica que nos devolvió 9 datos para cada uno de 11.106 genes estudiados. Este trabajo es un segundo paso de lo realizado en el **TP 8b** cuando buscábamos inhibidores para la **Enzima Z**.
 
 ## **Mejores plots: ggplot2**
 
 ### Bases de ggplot2
 
-En el **TP 8a** mencionamos rápidamente al paquete `ggplot2`, el cual es uno de los paquetes más populares al momento de hacer plots en **R**. Dicho esto, este paquete también es bastante complicado y tiene un sinfín de funcionalidades (el [cheatsheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf) es una forma rápida de ver todas las posibilidades que tiene).
+En el **TP 8a** mencionamos rápidamente al paquete `ggplot2`, el cual es uno de las formas más populares de hacer plots en **R**. Este paquete es bastante complicado y tiene un sinfín de funcionalidades, pero hoy vamos a darle un vistazo a su funcionalidad básica (el [cheatsheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf) es una forma rápida de ver todas las posibilidades que tiene).
 
-Vamos a aprovechar este TP para profundizar un poco en como funciona este paquete. Un ejemplo muy simple de hacer un plot con la función `ggplot` sería:
+Un ejemplo muy simple de hacer un plot con la función `ggplot` sería:
 
 ```R
 library(ggplot2)
@@ -83,7 +83,7 @@ En este código, `color = Species` le está diciendo a `ggplot` que modifique el
 
 **3)** Corran el código anterior, pero ahora reemplacen a **Species** por **Petal.Width**, ¿qué cambios observan?
 
-**4)** Es posible tambíen modificar varias de estas características a la vez. Corran el siguiente código y vean el plot resultante:
+**4)** Es posible también modificar varias de estas características a la vez. Corran el siguiente código y vean el plot resultante:
 
 ```R
 p <- ggplot(data = iris, aes(x = Petal.Length, y = Sepal.Length, color = Species, shape = Species, size = Petal.Width)) +
@@ -94,7 +94,7 @@ print(p)
 
 En este caso agregamos 2 características nuevas, `shape` (la forma de los puntos) y `size` (el tamaño de los puntos) y le asignamos cada uno de ellos a una variable de la tabla. Noten que no hay problema con que una columna modifique más de una característica a la vez.
 
-**5)** Tal vez ya lo notaron, pero por el momento no tenemos ningún control sobre que colores o formas le asigna `ggplot` a mis tres categorías. Vamos a mostrarles como hacerlo para este caso específico, pero sepan que las funciones a usar son ligeramente diferentes dependiendo si la variable pasada es discreta o contínua. 
+**5)** Tal vez ya lo notaron, pero por el momento no tenemos ningún control sobre que colores o formas le asigna `ggplot` a mis tres categorías. Vamos a mostrarles como hacerlo para este caso específico, pero sepan que las funciones a usar son ligeramente diferentes dependiendo si la variable pasada es discreta o continua. 
 
 Corran el siguiente código y vean el plot resultante:
 
@@ -112,7 +112,7 @@ print(p)
 * `scale_colour_manual()`: me permite modificar a mano una escala discreta de colores. El parámetro `values` modifica los colores en sí.
 * `scale_shape_manual()`: me permite modificar a mano una escala discreta de formas. El parámetro `values` modifica las formas, las cuales corresponden a un número entero (en el tip a continuación se muestran las más comunes).
 
-Un detalle importante a destacar es que el órden en que se asignó cada color a cada categoría depende del órden en el que aparecen los *Levels* de la columna **Species**, la cual es un *factor* (pueden imprimir `iris$Species` para ver a lo que nos referimos). 
+Un detalle importante a destacar es que el orden en que se asignó cada color a cada categoría depende del orden en el que aparecen los *Levels* de la columna **Species**, la cual es un *factor* (pueden imprimir `iris$Species` para ver a lo que nos referimos). 
 
 ??? tip "Tip - Posibles valores para `shape`"
 
@@ -138,7 +138,7 @@ Un detalle importante a destacar es que el órden en que se asignó cada color a
     ![ColorblindPallete](img/colorblind_pallete.jpg)    
     </figure>
 
-    Pueden leer mas información sobre este tema [aca](https://jfly.uni-koeln.de/color/).
+    Pueden leer más información sobre este tema [aca](https://jfly.uni-koeln.de/color/).
 
 ??? tip "Tip - Asignar colores específicos a cada característica sin depender del orden de los *Levels*"
     
@@ -188,7 +188,7 @@ print(p)
 * `ylab()`: indica el nombre del eje Y
 * `ggtitle()`: indica el título del plot
 
-**8)** Si bien obtuvimos lo deseado, puede ser que querramos cambiar el tamaño de los ejes o centrar el título. Esto lo hacemos con la función `theme()`:
+**8)** Si bien obtuvimos lo deseado, puede ser que queramos cambiar el tamaño de los ejes o centrar el título. Esto lo hacemos con la función `theme()`:
 
 Corran el siguiente código y vean el plot resultante:
 
@@ -235,7 +235,7 @@ p <- ggplot(data = iris, aes(x = Sepal.Length, y = Petal.Length, color = Species
 print(p)
 ```
 
-* `theme_bw()` es una función que setea varias opciones de `theme()` a un estilo específico (en este caso un estilo simple en blanco y negro). La tenemos que usar antes de `theme()` para asegurarnos que cualquier cambio que hagamos a mano en `theme()` sobreescriba los de `theme_bw()`.
+* `theme_bw()` es una función que setea varias opciones de `theme()` a un estilo específico (en este caso un estilo simple en blanco y negro). La tenemos que usar antes de `theme()` para asegurarnos que cualquier cambio que hagamos a mano en `theme()` sobrescriba los de `theme_bw()`.
 
 **10)** Reemplacen a `theme_bw()` por `theme_` y vean la lista de temas que aparecen en el autocompletar de RStudio (si no aparece pueden apretar ++ctrl++ + ++space++). Prueben correr el código anterior con 2 temas que no sean `theme_bw()` y vean como se ve el plot en cada caso.
 
@@ -251,7 +251,7 @@ Debido a que esto es suficiente para lo que necesitamos hacer hoy (y que este TP
 
 En este ejercicio vamos a trabajar una vez más con el data set **iris**, el cual es un set de datos que viene por defecto con **R** y está siempre cargado en memoria.
 
-Este data set contiene las medidas de ancho (*width*) y largo (*length*) de los sépalos y los petalos para 3 especies de flores diferentes: setosa, versicolor, y virginica (todas del Genus *Iris*). Tiene mediciones de 150 flores, 50 por especie.
+Este data set contiene las medidas de ancho (*width*) y largo (*length*) de los sépalos y los pétalos para 3 especies de flores diferentes: setosa, versicolor, y virginica (todas del Genus *Iris*). Tiene mediciones de 150 flores, 50 por especie.
 
 ??? info "Sépalo vs pétalo"
 
@@ -290,7 +290,7 @@ Podemos ver que con solo plotear el largo de los pétalos y los sépalos ya esta
 
 ### Problema a resolver
 
-En este ejercicio vamos a suponer que alguién apretó el botón equivocado y borró la columna **Species** de dicha tabla. Como nos acordamos de que eran tres especies y que tenían diferencias en sus largos y anchos de pétalos y śépalos, queremos entonces usar métodos de clustering para tratar de recuperar lo mejor que podamos los tres grupos de flores.
+En este ejercicio vamos a suponer que alguien apretó el botón equivocado y borró la columna **Species** de dicha tabla. Como nos acordamos de que eran tres especies y que tenían diferencias en sus largos y anchos de pétalos y sépalos, queremos entonces usar métodos de clustering para tratar de recuperar lo mejor que podamos los tres grupos de flores.
 
 Dicho esto vamos a hacer un poco de trampa y vamos a comparar visualmente lo que vamos obteniendo por los métodos de clustering con lo que nosotros sabemos es verdad.
 
@@ -386,7 +386,7 @@ Vamos a crear una función que guarde diferentes plots como PDFs.
 
 ### Clustering jerárquico
 
-Lo primero que vamos a hacer entonces es usar un clustering jerárquico para agrupar a las 150 filas en 3 grupos segun los valores de las 4 medidas. Un problema que tenemos es que por ahora no hay ninguna forma de identificar a una fila específica, así que le vamos a agregar un ID numérico a cada fila. Debido al orden que tienen las filas de **dt_iris**, los primeros 50 IDs van a corresponder a flores de la especie setosa, los segundos 50 a versicolor y los últimos a virgínica.
+Lo primero que vamos a hacer entonces es usar un clustering jerárquico para agrupar a las 150 filas en 3 grupos según los valores de las 4 medidas. Un problema que tenemos es que por ahora no hay ninguna forma de identificar a una fila específica, así que le vamos a agregar un ID numérico a cada fila. Debido al orden que tienen las filas de **dt_iris**, los primeros 50 IDs van a corresponder a flores de la especie setosa, los segundos 50 a versicolor y los últimos a virginica (aunque supuestamente esto no lo sabemos).
 
 **4)** Corran el siguiente código para crear la matriz de datos que vamos a usar al momento de clusterizar. Lean los comentarios en la segunda pestaña para entender que estamos haciendo.
 
@@ -411,7 +411,7 @@ Lo primero que vamos a hacer entonces es usar un clustering jerárquico para agr
     #Aca estamos cambiando el orden de las columnas a *dt_iris*.
     #No hace falta asignar esto a *dt_iris* ya que *setcolorder* modifica la variable misma 
     #Como solo le estamos pasando 1 columna, lo que estamos haciendo es mover esa columna al principio
-    #(al usar *setcolorder* las otras se quedan donde estan)
+    #(al usar así *setcolorder* las otras se quedan donde estan)
     setcolorder(dt_iris, c("row_id"))
 
     #Similar a lo que hicimos en el TP anterior, estamos transformando nuestros datos a una matriz
@@ -423,19 +423,19 @@ Lo primero que vamos a hacer entonces es usar un clustering jerárquico para agr
 
 **5)** Usando lo aprendido en el TP anterior y la matriz de datos recién creada:
 
-**5.1)** Usen la función `dist()` para crear una matriz de distancias euclideanas que muestre también la diagonal.
+**5.1)** Usen la función `dist()` para crear una matriz de distancias euclidianas que muestre también la diagonal.
 
 **5.2)** usen la función `hclust()` para crear un clustering jerárquico basado en su matriz de distancias usando el criterio de agregación *complete linkage*. 
 
 **5.3)** Usen la función `plot()` para plotear el clustering jerárquico.
 
-**5.4)** Mirando el plot recién creado, ¿pueden distinguir los tres grupos de especies en el clustering jerárquico? (recuerden que pueden usar el botón **Zoom** para agrandar el plot).
+**5.4)** Mirando el plot recién creado, ¿les es fácil distinguir los tres grupos de especies en el clustering jerárquico? (recuerden que pueden usar el botón **Zoom** para agrandar el plot).
 
 #### Mejorar el plot del clustering jerárquico { markdown data-toc-label='Mejorar el plot' }
 
-**6)** Una cosa que vendría bien al momento de leer el plot recien creado sería colorear cada flor dependiendo de su especie. Si bien esto no es posible en este caso usando solo la función `plot()`, hay paquetes de **R** que nos van a permitir hacer esto.
+**6)** Una cosa que vendría bien al momento de leer el plot recién creado sería colorear cada flor dependiendo de su especie. Si bien esto no es posible en este caso usando solo la función `plot()`, hay paquetes de **R** que nos van a permitir hacer esto:
 
-**6.1)** Usen la función `install.packages()` e instalen la libreria **dendextend** (recuerden que al usar `install.packages()` el nombre del paquete va entre comillas). Luego corran el siguiente código:
+**6.1)** Usen la función `install.packages()` e instalen la librería **dendextend** (recuerden que al usar `install.packages()` el nombre del paquete va entre comillas). Luego corran el siguiente código:
 
 === "Código"
 
@@ -498,13 +498,13 @@ Lo primero que vamos a hacer entonces es usar un clustering jerárquico para agr
 
 Por último vamos a querer recrear el plot generado en los puntos **1)** y **2)**, pero ahora mostrando información tanto de las especies originales (con el color) como de la agrupación resultante del clustering jerárquico (con la forma).
 
-**7)** Lo primero es entonces agregar la información del clustering jerárquico a nuestro **dt_iris**:
+**7)** Lo primero es entonces agregar la información del clustering jerárquico a nuestro **dt_iris**; para ello:
 
-**7.1)** Usen la `cutree` para dividir a los datos en 3 clusters.
+**7.1)** Usen la `cutree` para dividir a los datos obtenidos en **5.2)** en 3 clusters.
 
 **7.2)** Asignen esa información a una nueva columna en la tabla **dt_iris** llamada **CJ_cluster**.
 
-**7.3)** Por el momento la variable es numérica, pero para nosotros los números 1, 2 y 3 son categorías que teóricamente corresponden a las especies (aunque no sabemos que categoría corresponde a que especie). Corran el siguiente código para convertir la columna recién creada en un *factor*:
+**7.3)** Por el momento la variable es numérica, pero para nosotros los números 1, 2 y 3 son categorías que teóricamente corresponden a las especies (aunque no sabemos qué categoría corresponde a que especie). Corran el siguiente código para convertir la columna recién creada en un *factor*:
 
 ```R
 #En este caso poner los levels a mano no es 100% necesario, pero no viene mal
@@ -513,9 +513,9 @@ Por último vamos a querer recrear el plot generado en los puntos **1)** y **2)*
 dt_iris$CJ_cluster <- factor(dt_iris$CJ_cluster, levels = c(1, 2, 3))
 ```
 
-**8)** Ahora queremos hacer un plot similar al creado en el punto **2)**, pero donde la columna **Species** determine el color y la columna **CJ_cluster** determine la forma de los diferentes puntos del plot.
+**8)** Ahora queremos hacer un plot similar al creado en el punto **2)**, pero donde la columna **Species** determine el color y la columna **CJ_cluster** determine la forma de los diferentes puntos del plot; para ello:
 
-**8.1)** Una opción para hacer esto sería modificar la función `plotData2PDF_wColor()` agregando parámetros con valores predeterminados, pero para hacerla más fácil vamos a crear una nueva función. Copien la función anterior y cambienle en nombre a `plotData2PDF_wColorAndShape()`. Modifiquen esta nueva función considerando lo siguiente:
+**8.1)** Copien la función `plotData2PDF_wColor()` y cámbienle en nombre a `plotData2PDF_wColorAndShape()`. Modifiquen esta nueva función considerando lo siguiente:
 
 * Agreguen un parámetro a la función el cual va a recibir el nombre de la columna que determina la forma, o *shape*, de los puntos.
 * Modifiquen la función `aes_string()`, agregando la característica `shape` y asignándole el valor del parámetro agregado.
@@ -523,7 +523,7 @@ dt_iris$CJ_cluster <- factor(dt_iris$CJ_cluster, levels = c(1, 2, 3))
 
 **8.2)** Usando la función que acabamos de crear, vean como se distribuyen los puntos al comparar **Sepal.Length** contra **Petal.Length** usando la columna **Species** para determinar el color y la columna **CJ_cluster** para determinar la forma de los diferentes puntos. Guarden este plot en un archivo llamado **12_Sepal_vs_Petal_Width_per_Species_CJ3.pdf**.
 
-**8.3)** Abran el archivo recien creado. ¿Cuáles especies les parecen mejor agrupadas? Entre este plot y el dendrograma creado en **11_Clustering_jerarquico.pdf** ¿Cuál les parece la mejor manera de representar este clustering? ¿Por qué?
+**8.3)** Abran el archivo recién creado. ¿Cuáles especies les parecen mejor agrupadas? Entre este plot y el dendrograma creado en **11_Clustering_jerarquico.pdf** ¿Cuál les parece la mejor manera de representar este clustering? ¿Por qué?
 
 !!! danger "Importante - Clustering vs Plot"
 
@@ -538,11 +538,11 @@ dt_iris$CJ_cluster <- factor(dt_iris$CJ_cluster, levels = c(1, 2, 3))
 **9.1)** Usando lo aprendido en el TP anterior:
 
 * Usen la función `kmeans()` para crear un nuevo clustering. Usen la cantidad de `centers` que consideren necesarios.
-* Extraigan los clusters del clustering recien creado y asignenlos a una nueva columna en **dt_iris** llamada **K3_cluster**.
+* Extraigan los clusters del clustering recién creado y asígnenlos a una nueva columna en **dt_iris** llamada **K3_cluster**.
 * Transformen dicha columna en un *factor*.
 * Usando la función creada en el punto **8)**, vean como se distribuyen los puntos al comparar **Sepal.Length** contra **Petal.Length** usando la columna **Species** para determinar el color y la columna **K3_cluster** para determinar la forma de los diferentes puntos. Guarden este plot en un archivo llamado **13_Sepal_vs_Petal_Width_per_Species_K3.pdf**.
 
-**9.2)** Abran el archivo recien creado. Basandose solo en lo que pueden observar en este plot, ¿les parece que el agrupamiento es mejor, peor o similar al obtenido con el clustering jerárquico?
+**9.2)** Abran el archivo recién creado. Basándose solo en lo que pueden observar en este plot, ¿pueden decir algo de si este agrupamiento es mejor, peor o similar al obtenido con el clustering jerárquico?
 
 **9.3)** Supongamos ahora que estamos en un escenario real, por lo que no tenemos información de a que especie corresponde cada punto. En base a lo visto en el TP anterior, ¿se les ocurre alguna forma de evaluar objetivamente cuál de ambos es el mejor clustering?
 
@@ -558,9 +558,9 @@ dt_iris$CJ_cluster <- factor(dt_iris$CJ_cluster, levels = c(1, 2, 3))
 
 ## **Ejercicio 2 - Analizando el efecto de dos inhibidores** { markdown data-toc-label='Ejercicio 2' }
 
-En el **TP 8b** hicimos un ejercicio donde usabamos el equipo **FilterMax F5** para analizar 22 inhibidores de una llamada **Enzima Z**, la cuál resulta que era la cruzipaína, es decir, la cisteín proteasa principal del parásito causante de la enfermedad de Chagas, *Trypanosoma cruzi*.
+En el **TP 8b** hicimos un ejercicio donde usábamos el equipo **FilterMax F5** para analizar 22 inhibidores de una llamada **Enzima Z**, la cual resulta que era la cruzipaína, es decir, la cisteín proteasa principal de *Trypanosoma cruzi*, el parásito causante de la enfermedad de Chagas.
 
-En esta segunda fase del experimento se eligieron 2 de dichos inhibidores y se realizó un análisis más detallado, estudiando como varía la expresión de varios genes en presencia o ausencia de los inhibidores. Para esto se hizo un estudio de transcriptómica (RNA-seq) donde se extrae el ARN y se analiza con **Illumina**. Luego, cada *read* encontrado se mapea contra el genoma de referencia y se llega a una tabla de conteo para cada uno de las transcriptos del genoma.
+En esta segunda fase del experimento se eligieron 2 inhibidores y se realizó un análisis más detallado, estudiando como varía la expresión de miles de genes en presencia o ausencia de dichos inhibidores. Para esto se hizo un estudio de transcriptómica (RNA-seq) donde se extrajo el ARN y se lo analizó con **Illumina**. Luego, cada *read* encontrado se mapeó contra el genoma de referencia y se llegó a una tabla de conteo para cada uno de las transcriptos del genoma.
 
 Para cada caso (*control*, *droga 1* y *droga 2*) se realizaron 3 réplicas técnicas para obtener resultados más robustos.
 
@@ -584,7 +584,7 @@ $$
 
 Otra cosa que vamos a querer hacer es combinar las tres réplicas para cada caso. Esto lo vamos a hacer simplemente promediando los 3 valores de CPM para cada gen en cada tratamiento.
 
-**2)** En base a los TPs anteriores ya tienen los conocimentos para hacer el estandarizado de datos y la combinación de réplicas usando *fors*, pero para hacerla un poco más fácil les vamos a dar un par de funciones que les van a simplificar bastante este paso (y ya que estamos les mostramos la función `apply()` en acción):
+**2)** En base a los TPs anteriores ya tienen los conocimientos para hacer el estandarizado de datos y la combinación de réplicas usando *fors*, pero para hacerla un poco más fácil les vamos a dar un par de funciones que les van a simplificar bastante este paso (y ya que estamos les mostramos la función `apply()` en acción):
 
 === "Código"
 
@@ -670,7 +670,7 @@ control_data <- parsearDatos(dt_par = control_data,
 
 ### Calcular el Fold Change
 
-**3)** Algo mencionamos antes, pero concluir que "hay 10 CPM más al agregarle la droga" no significa nada en el vacio. Si en el control era solo 1 CPM, entonces 10 más es mucho. Si en el control eran 10.000 CPM, 10 más es insignificante.
+**3)** Algo mencionamos antes, pero concluir que "hay 10 CPM más al agregarle la droga" no significa nada en el vacío. Si en el control era solo 1 CPM, entonces 10 más es mucho. Si en el control eran 10.000 CPM, 10 más es insignificante.
 
 Vamos entonces a calcular el fold change, es decir, cuantas veces más (o menos) de CPM fueron observados al agregarle la droga frente a cuando estaba solo el control. Esto lo calculamos como:
 
@@ -695,15 +695,15 @@ $$
 
 **3.2)** ¿Qué pasa ahora en los dos casos problemáticos que estamos tratando resolver? ¿Cómo afecta este *buffer* a los casos "normales"? (es decir, cuando tanto el numerador como el denominador son números mayores a 1)
 
-**3.3)** Usando la fórmula con *buffer*, calculen el Fold Change para ambas drogas y guárdenlos en nuevas columnas de la tabla **full_data**.
+**3.3)** Usando la fórmula con *buffer*, calculen el Fold Change para ambas drogas y guárdenlos en nuevas columnas de la tabla **full_data** (pónganles nombres que representen la información que contienen).
 
 ### Transformar el Fold Change
 
-Ahora bien, vamos a analizar como se distribuyen los valores del Fold Change para todas las proteínas (primera pestaña en el siguiente plot). Podemos ver que si bien el Fold Change llega hasta 20 en algunos casos, la gran mayoría de ellas tienen Fold Changes menores a 4.
+Ahora bien, vamos a analizar como se distribuyen los valores del Fold Change para todas las proteínas (primera pestaña del plot que está abajo). Podemos ver que si bien el Fold Change llega hasta 20 en algunos casos, la gran mayoría de ellas tienen Fold Changes menores a 4.
 
 En el paso siguiente vamos a querer agrupar nuestros genes por como se comportan frente a las drogas 1 y 2 clusterizando con `kmeans()` y luego plotearlo en un *heatmap*. En este momento la mayoría de los datos se encuentran en un pequeño rango del "espectro" de Fold Change, por lo que al momento de agrupar por similitud básicamente van a formar un único gran cluster, lo que no da información.
 
-Por esta razón queremos convertir nuestros datos a una escala logarítmica. Como Fold Change solo llega hasta 20 vamos a usar una escala logaritmica en base 2. En **R** esto se hace usando la función `log()`. Por defecto esta función usa como base a $e$, es decir, es el logaritmo natural. Sin embargo, se le puede cambiar la base a 2 pasandole el parámetro `base = 2` (ver la segunda pestaña en el siguiente plot).
+Por esta razón queremos convertir nuestros datos a una escala logarítmica. Como Fold Change solo llega hasta 20 vamos a usar una escala logarítmica en base 2. En **R** esto se hace usando la función `log()`. Por defecto esta función usa como base a $e$, es decir, es el logaritmo natural. Sin embargo, se le puede cambiar la base a 2 pasándole el parámetro `base = 2` (ver la segunda pestaña en el siguiente plot).
 
 **4)** Usando la función `log()` con el parámetro necesario, calculen el logaritmo en base 2 de los Fold Change para ambas drogas y guárdenlos en nuevas columnas de la tabla **full_data**.
 
@@ -721,7 +721,7 @@ Por esta razón queremos convertir nuestros datos a una escala logarítmica. Com
 
 ### Plotear el Heatmap
 
-El *heatmap* es un tipo de plot que no vimos hasta el momento, pero que tal vez conozcan. La versión básica del heatmap nos permite gráficar valores numéricos como una escala de colores lo que nos permite ver diferencias entre filas rápidamente e incluso encontrar filas similares o patrones.
+El *heatmap* es un tipo de plot que no vimos hasta el momento, pero que tal vez conozcan. La versión básica del heatmap nos permite graficar valores numéricos como una escala de colores lo que nos permite ver diferencias entre filas rápidamente e incluso encontrar filas similares o patrones.
 
 A continuación mostramos un ejemplo que usa los datos estandarizados del **Ejercicio 2** del **TP 12a** (la tabla ejemplo con los 4 genes, **matriz_datos_ST**):
 
@@ -740,7 +740,7 @@ No solo nos permite ver rápidamente que hay 2 grupos de genes, sino que este pa
 ```R
 library(pheatmap)
 
-#Como *pheatmap* usa kmeans adentro inicializo la seed para que el plot de igual en todo lados siempre
+#Como *pheatmap* usa kmeans adentro inicializo la seed para que el plot de igual en todos lados siempre
 set.seed(1)
 
 #Me quedo solo con las columnas a plotear (en este caso el log 2 de los Fold Change para ambas drogas)
@@ -753,21 +753,22 @@ pheatmap(mat = plot_data, kmeans_k = 10, cluster_cols = F)
 * `kmeans_k = 10` le está diciendo que agrupe los datos en 10 clusters, similar a correr `kmeans(plot_data, centers = 10)`
 * `cluster_col = F` le está diciendo que no trate de agrupar las columnas por similitud y que no haga un dendrograma asociado
 
-**5.3)** Mirando los 10 clusters que acabamos de crear, ¿cuáles les parece que son similares entre sí? ¿que patrones de alto o bajo Fold Change para droga 1 o droga 2 pueden observar?
+**5.3)** Mirando los 10 clusters que acabamos de crear, ¿cuáles les parece que son similares entre sí? ¿qué patrones de alto o bajo Fold Change para droga 1 o droga 2 pueden observar?
 
-### Calcular genes mas afectados { markdown data-toc-label='Genes mas afectados' }
+### Calcular genes más afectados { markdown data-toc-label='Genes más afectados' }
 
-Si bien el *heatmap* nos da una idea global de como actuaron las drogas, nuestro objetivo es entender un poco más como funcionan, por lo que querríamos la lista de genes que se vieron afectados por ellas.
+**6)** Si bien el *heatmap* nos da una idea global de como actuaron las drogas, nuestro objetivo es entender un poco más de su funcionamiento. Para esto, vamos a analizar la lista de genes que se vieron afectados por ellas.
 
-Para hacer esto tenemos que definir un umbral numérico de Fold Change a partir del cual consideramos que el cambio fue "significativo" para nosotros. Estos umbrales se pueden elegir en base a conocimientos previos, en base a controles positivos y negativos, o mediante prueba y error, analizando qué y cuántos genes quedan por encima del umbral.
+Para obtener esta lista es necesario entonces definir un umbral numérico de Fold Change a partir del cual consideramos que el cambio fue "significativo" para nosotros. Estos umbrales se pueden elegir en base a conocimientos previos, en base a controles positivos y negativos, o mediante prueba y error (analizando qué y cuántos genes quedan por encima del umbral).
 
 Otra cosa a considerar es que en este caso estamos analizando drogas que funcionan como inhibidores, por lo que no nos interesa solo los genes con Fold Change alto, sino que incluso nos interesan más los genes con Fold Change bajo (que debido a como se calculó quiere decir cercanos a 0).
 
-Una consecuencia interesante de haber calculado el logaritmo en base 2 del Fold Change es que nos permite encarar este problema con números más enteros. Supongamos que decidimos como umbral superior cuando $log_2(FoldChange) = 1.5$. En este caso $FoldChange = 2^{1.5} = 2.83$, lo que quiere decir que me estoy quedando con los genes que tienen un CPM 2.83 veces más grande que el control.
+En este caso vamos a quedarnos con aquellos genes que cumplan alguna de las siguientes condiciones:
 
-Si quisieramos usar la misma lógica para el otro lado y quedarnos con genes con CPM 2.83 veces mas chicos que el control tendríamos que hacer $FoldChange = \frac{1}{2.83} = 0.35$ y si calculamos ahora el $log_2$ de ese número interesantemente observamos que $log_2(0.35) \approx -1.5$.
+* $log_2(FoldChange) \geq 1.5$ (es decir $FoldChange \geq 2.83 = 2^{1.5}$)
+* $log_2(FoldChange) \leq -1.5$ (es decir $FoldChange \leq \frac{1}{2.83} = 2^{-1.5}$)
 
-**6)** Esto fue una forma muy larga de decir que vamos a quedarnos con aquellas proteínas donde $log_2(FoldChange)$ sea mayor a $1.5$ o menor a $-1.5$.
+O sea, que nos vamos a quedar con aquellos genes que tienen un CPM 2.83 veces más grande o más chico que el control.
 
 **6.1)** Filtren **full_data** para quedarnos con aquellas filas donde el logaritmo en base 2 del Fold Change de la droga 1 sea mayor a 1.5 o menor a -1.5. Guarden la lista de los IDs de las proteínas que cumplen esa condición en una nueva variable. Hagan lo mismo para la droga 2.
 
@@ -779,11 +780,11 @@ Si quisieramos usar la misma lógica para el otro lado y quedarnos con genes con
 
 ### Buscar nuestros genes en bases de datos { markdown data-toc-label='Bases de datos' }
 
-**7)** Lo último que vamos a hacer con esta información es investigar en bases de datos para tratar de entender un poco más que procesos biológicos estan siendo afectados por nuestras drogas. Como estamos trabajando con *Trypanosoma cruzi* vamos a ir a una página que se especializa en tripanosomatidos llamada **TriTrypDB**.
+**7)** Lo último que vamos a hacer con esta información es investigar en bases de datos para tratar de entender un poco más que procesos biológicos están siendo afectados por nuestras drogas. Como estamos trabajando con *Trypanosoma cruzi* vamos a ir a una página que se especializa en tripanosomátidos llamada **TriTrypDB**.
 
 **7.1)** Entren a [este link](https://tritrypdb.org/tritrypdb/app/search/transcript/GeneByLocusTag) y copien la lista de IDs que acabamos de crear para la droga 1. Hagan click en **Get Answer**.
 
-**7.2)** Una vez que se hayan cargados los datos vayan a **Analyze Results** :material-arrow-right: **Gene Onthology Enrichment**, asegurensé que este checkeado **Biological Process** y aprieten **Submit** (disclaimer: esta parte a veces no anda y hay que probar otro día).
+**7.2)** Una vez que se hayan cargados los datos vayan a **Analyze Results** :material-arrow-right: **Gene Onthology Enrichment**, asegúrense que este checkeado **Biological Process** y aprieten **Submit** (disclaimer: esta parte a veces no anda y hay que probar otro día).
 
 ??? tip "Tip - Ubicación del botón **Analyze Results**"
 
@@ -791,9 +792,11 @@ Si quisieramos usar la misma lógica para el otro lado y quedarnos con genes con
     ![AnalyzeResults](img/analyzeResults.png)
     </figure>
 
-**7.3)** A grandes rasgos, ¿qúé procesos biológicos parecen estar afectados directa o indirectamente por la droga 1?
+**7.3)** Ordenen la tabla obtenida por la columna **P-value** para que los mejores hits estén primero. A grandes rasgos, ¿qué procesos biológicos parecen estar afectados directa o indirectamente por la droga 1?
 
 **7.4)** Hagan **7.1)**, **7.2)** y **7.3)** para la droga 2.
+
+**7.5)** ¿Que habría que cambiar en lo que hicimos en el punto **6)** si sólo nos interesaran los procesos biológicos que son inhibidos por nuestras drogas?
 
 ## **Bibliografía**
 
