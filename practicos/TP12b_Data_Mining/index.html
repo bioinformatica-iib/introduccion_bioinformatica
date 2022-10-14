@@ -801,6 +801,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TP12a_Clustering/" class="md-nav__link">
+        TP 12a - Clustering
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -930,7 +944,7 @@ Este es el botón para descargar materiales, en (#) hay que agregar el link corr
 <ul>
 <li><a href="https://www.coursera.org/learn/r-programming">Curso online de R de Coursera</a> (se puede hacer gratis) (en ese caso no da certificado)</li>
 <li>Data Tables: <a href="https://cran.r-project.org/web/packages/data.table/vignettes/datatable-intro.html">Introducción oficial</a> y <a href="https://bookdown.org/paradinas_iosu/CursoR/data-table.html">otra página con más info</a></li>
-<li>ggplot2: <a href="https://bookdown.org/paradinas_iosu/CursoR/ggplot2.html">Vistazo rápido</a>, <a href="http://sthda.com/english/wiki/ggplot2-essentials">otra página con cada plot detallando sus parámetros</a>, <a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf">cheatsheet</a> e <a href="https://jfly.uni-koeln.de/color/">información sobre colores y daltonismo</a></li>
+<li>ggplot2: <a href="https://bookdown.org/paradinas_iosu/CursoR/ggplot2.html">Vistazo rápido</a>, <a href="http://sthda.com/english/wiki/ggplot2-essentials">detalles sobre los tipos de plots</a>, <a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf">cheatsheet</a> e <a href="https://jfly.uni-koeln.de/color/">información sobre colores y daltonismo</a></li>
 <li>dendextend: <a href="https://cran.r-project.org/web/packages/dendextend/vignettes/dendextend.html">Detalle del paquete</a></li>
 </ul>
 <h3 id="objetivos">Objetivos</h3>
@@ -943,11 +957,11 @@ Este es el botón para descargar materiales, en (#) hay que agregar el link corr
 <p>Este TP retoma lo empezado en el <strong>TP 12a</strong>, donde aprendimos métodos de clustering como <em>clustering jerárquico</em> o <em>K-means</em> y los aplicamos a un ejemplo mínimo de una tabla con solo 4 filas.</p>
 <p>Vamos ahora a utilizar los mismos métodos para trabajar con data sets más grandes y tratar de ir entendiendo cuándo, cómo y por qué es conveniente agrupar nuestros datos.</p>
 <p>A su vez vamos a desarrollar algunos temas de <strong>R</strong> que son muy útiles, pero para los cuales no nos alcanzó el tiempo en los TPs anteriores: plotear usando <code>ggplot2</code> y utilizar funciones creadas por nosotros.</p>
-<p>Para hacer esto vamos a utilizar 2 data sets. En el <strong>Ejercicio 1</strong> vamos a trabajar con el ya conocido data set <strong>iris</strong> que tiene 150 filas y viene por defecto con <strong>R</strong>. En el <strong>Ejercicio 2</strong> vamos a trabajar con datos de un estudio de transcriptómica que nos devolvió 9 datos para cada uno de 11.106 genes estudiados. Este trabajo es un segundo paso de lo realizado en el <strong>TP 8b</strong> cuando buscabamos inhibidores para la <strong>Enzima Z</strong>.</p>
+<p>Para hacer esto vamos a utilizar 2 data sets. En el <strong>Ejercicio 1</strong> vamos a trabajar con el ya conocido data set <strong>iris</strong> que tiene 150 filas y viene por defecto con <strong>R</strong>. En el <strong>Ejercicio 2</strong> vamos a trabajar con datos de un estudio de transcriptómica que nos devolvió 9 datos para cada uno de 11.106 genes estudiados. Este trabajo es un segundo paso de lo realizado en el <strong>TP 8b</strong> cuando buscábamos inhibidores para la <strong>Enzima Z</strong>.</p>
 <h2 id="mejores-plots-ggplot2"><strong>Mejores plots: ggplot2</strong></h2>
 <h3 id="bases-de-ggplot2">Bases de ggplot2</h3>
-<p>En el <strong>TP 8a</strong> mencionamos rápidamente al paquete <code>ggplot2</code>, el cual es uno de los paquetes más populares al momento de hacer plots en <strong>R</strong>. Dicho esto, este paquete también es bastante complicado y tiene un sinfín de funcionalidades (el <a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf">cheatsheet</a> es una forma rápida de ver todas las posibilidades que tiene).</p>
-<p>Vamos a aprovechar este TP para profundizar un poco en como funciona este paquete. Un ejemplo muy simple de hacer un plot con la función <code>ggplot</code> sería:</p>
+<p>En el <strong>TP 8a</strong> mencionamos rápidamente al paquete <code>ggplot2</code>, el cual es uno de las formas más populares de hacer plots en <strong>R</strong>. Este paquete es bastante complicado y tiene un sinfín de funcionalidades, pero hoy vamos a darle un vistazo a su funcionalidad básica (el <a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf">cheatsheet</a> es una forma rápida de ver todas las posibilidades que tiene).</p>
+<p>Un ejemplo muy simple de hacer un plot con la función <code>ggplot</code> sería:</p>
 <div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
 
 <span class="c1">#Recuerden que *iris* es un *Data Frame* para hacer pruebas que esta siempre cargado en la memoria de R</span>
@@ -976,14 +990,14 @@ Este es el botón para descargar materiales, en (#) hay que agregar el link corr
 </code></pre></div>
 <p>En este código, <code>color = Species</code> le está diciendo a <code>ggplot</code> que modifique el color de los puntos dependiendo del valor de la columna <strong>Species</strong>. Si recuerdan a <strong>iris</strong>, esta columna era una columna categórica (o <em>factor</em>) con 3 valores que podemos ver en el plot. Como le pasamos a <code>color</code> una variable categórica, nos devolvió una escala de colores categórica.</p>
 <p><strong>3)</strong> Corran el código anterior, pero ahora reemplacen a <strong>Species</strong> por <strong>Petal.Width</strong>, ¿qué cambios observan?</p>
-<p><strong>4)</strong> Es posible tambíen modificar varias de estas características a la vez. Corran el siguiente código y vean el plot resultante:</p>
+<p><strong>4)</strong> Es posible también modificar varias de estas características a la vez. Corran el siguiente código y vean el plot resultante:</p>
 <div class="highlight"><pre><span></span><code><span class="n">p</span> <span class="o">&lt;-</span> <span class="nf">ggplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">iris</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">Petal.Length</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">Sepal.Length</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="n">Species</span><span class="p">,</span> <span class="n">shape</span> <span class="o">=</span> <span class="n">Species</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="n">Petal.Width</span><span class="p">))</span> <span class="o">+</span>
     <span class="nf">geom_point</span><span class="p">()</span>
 
 <span class="nf">print</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
 </code></pre></div>
 <p>En este caso agregamos 2 características nuevas, <code>shape</code> (la forma de los puntos) y <code>size</code> (el tamaño de los puntos) y le asignamos cada uno de ellos a una variable de la tabla. Noten que no hay problema con que una columna modifique más de una característica a la vez.</p>
-<p><strong>5)</strong> Tal vez ya lo notaron, pero por el momento no tenemos ningún control sobre que colores o formas le asigna <code>ggplot</code> a mis tres categorías. Vamos a mostrarles como hacerlo para este caso específico, pero sepan que las funciones a usar son ligeramente diferentes dependiendo si la variable pasada es discreta o contínua. </p>
+<p><strong>5)</strong> Tal vez ya lo notaron, pero por el momento no tenemos ningún control sobre que colores o formas le asigna <code>ggplot</code> a mis tres categorías. Vamos a mostrarles como hacerlo para este caso específico, pero sepan que las funciones a usar son ligeramente diferentes dependiendo si la variable pasada es discreta o continua. </p>
 <p>Corran el siguiente código y vean el plot resultante:</p>
 <div class="highlight"><pre><span></span><code><span class="c1">#Los colores se pueden escribir en ingles o en hexadecimal</span>
 <span class="c1">#&quot;#FF0000&quot; es el color rojo (se podría haber puesto &quot;red&quot;)</span>
@@ -998,7 +1012,7 @@ Este es el botón para descargar materiales, en (#) hay que agregar el link corr
 <li><code>scale_colour_manual()</code>: me permite modificar a mano una escala discreta de colores. El parámetro <code>values</code> modifica los colores en sí.</li>
 <li><code>scale_shape_manual()</code>: me permite modificar a mano una escala discreta de formas. El parámetro <code>values</code> modifica las formas, las cuales corresponden a un número entero (en el tip a continuación se muestran las más comunes).</li>
 </ul>
-<p>Un detalle importante a destacar es que el órden en que se asignó cada color a cada categoría depende del órden en el que aparecen los <em>Levels</em> de la columna <strong>Species</strong>, la cual es un <em>factor</em> (pueden imprimir <code>iris$Species</code> para ver a lo que nos referimos). </p>
+<p>Un detalle importante a destacar es que el orden en que se asignó cada color a cada categoría depende del orden en el que aparecen los <em>Levels</em> de la columna <strong>Species</strong>, la cual es un <em>factor</em> (pueden imprimir <code>iris$Species</code> para ver a lo que nos referimos). </p>
 <details class="tip">
 <summary>Tip - Posibles valores para <code>shape</code></summary>
 <p><figure markdown>
@@ -1017,7 +1031,7 @@ Este es el botón para descargar materiales, en (#) hay que agregar el link corr
 <p><figure markdown>
 <img alt="ColorblindPallete" src="img/colorblind_pallete.jpg" />  <br />
 </figure></p>
-<p>Pueden leer mas información sobre este tema <a href="https://jfly.uni-koeln.de/color/">aca</a>.</p>
+<p>Pueden leer más información sobre este tema <a href="https://jfly.uni-koeln.de/color/">aca</a>.</p>
 </details>
 <details class="tip">
 <summary>Tip - Asignar colores específicos a cada característica sin depender del orden de los <em>Levels</em></summary>
@@ -1056,7 +1070,7 @@ Este es el botón para descargar materiales, en (#) hay que agregar el link corr
 <li><code>ylab()</code>: indica el nombre del eje Y</li>
 <li><code>ggtitle()</code>: indica el título del plot</li>
 </ul>
-<p><strong>8)</strong> Si bien obtuvimos lo deseado, puede ser que querramos cambiar el tamaño de los ejes o centrar el título. Esto lo hacemos con la función <code>theme()</code>:</p>
+<p><strong>8)</strong> Si bien obtuvimos lo deseado, puede ser que queramos cambiar el tamaño de los ejes o centrar el título. Esto lo hacemos con la función <code>theme()</code>:</p>
 <p>Corran el siguiente código y vean el plot resultante:</p>
 <div class="highlight"><pre><span></span><code><span class="n">p</span> <span class="o">&lt;-</span> <span class="nf">ggplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">iris</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">Sepal.Length</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">Petal.Length</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="n">Species</span><span class="p">,</span> <span class="n">shape</span> <span class="o">=</span> <span class="n">Species</span><span class="p">))</span> <span class="o">+</span>
     <span class="nf">geom_point</span><span class="p">(</span><span class="n">size</span> <span class="o">=</span> <span class="m">2</span><span class="p">)</span> <span class="o">+</span>
@@ -1095,20 +1109,23 @@ Este es el botón para descargar materiales, en (#) hay que agregar el link corr
 <span class="nf">print</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
 </code></pre></div>
 <ul>
-<li><code>theme_bw()</code> es una función que setea varias opciones de <code>theme()</code> a un estilo específico (en este caso un estilo simple en blanco y negro). La tenemos que usar antes de <code>theme()</code> para asegurarnos que cualquier cambio que hagamos a mano en <code>theme()</code> sobreescriba los de <code>theme_bw()</code>.</li>
+<li><code>theme_bw()</code> es una función que setea varias opciones de <code>theme()</code> a un estilo específico (en este caso un estilo simple en blanco y negro). La tenemos que usar antes de <code>theme()</code> para asegurarnos que cualquier cambio que hagamos a mano en <code>theme()</code> sobrescriba los de <code>theme_bw()</code>.</li>
 </ul>
-<p><strong>10)</strong> Reemplacen a <code>theme_bw()</code> por <code>theme_</code> y vean la lista de temas que aparecen en el autocompletar de RStudio (si no aparece pueden apretar <span class="keys"><kbd class="key-control">Ctrl</kbd></span> + <span class="keys"><kbd class="key-space">Space</kbd></span>). Prueben correr el código anterior con 2 temas que no sean <code>theme_bw()</code> y vean como se ve el plot en cada caso.</p>
+<!--
+**10)** Reemplacen a `theme_bw()` por `theme_` y vean la lista de temas que aparecen en el autocompletar de RStudio (si no aparece pueden apretar ++ctrl++ + ++space++). Prueben correr el código anterior con 2 temas que no sean `theme_bw()` y vean como se ve el plot en cada caso.
+-->
+
 <h3 id="otros-tipos-de-plots">Otros tipos de plots</h3>
 <p>Si bien la mayoría de lo que les mencionamos hasta ahora es aplicable al uso general de <strong>ggplot</strong>, hasta el momento nos enfocamos en un solo tipo de plot, el scatter plot, hecho mediante <code>geom_point()</code>.</p>
 <p>Debido a que esto es suficiente para lo que necesitamos hacer hoy (y que este TP es de <em>Data Mining</em>) no vamos a hablar hoy de otros tipos de plots, pero si les interesa pueden verlo con mucho detalle en <a href="http://sthda.com/english/wiki/ggplot2-essentials">esta página</a> o ver un vistazo rápido en la <a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf">cheatsheet</a>.</p>
 <h2 id="ejercicio-1-agrupando-flores-por-especies" markdown="markdown"><strong>Ejercicio 1 - Agrupando flores por especies</strong></h2>
 <h3 id="introduccion-al-data-set">Introducción al data set</h3>
 <p>En este ejercicio vamos a trabajar una vez más con el data set <strong>iris</strong>, el cual es un set de datos que viene por defecto con <strong>R</strong> y está siempre cargado en memoria.</p>
-<p>Este data set contiene las medidas de ancho (<em>width</em>) y largo (<em>length</em>) de los sépalos y los petalos para 3 especies de flores diferentes: setosa, versicolor, y virginica (todas del Genus <em>Iris</em>). Tiene mediciones de 150 flores, 50 por especie.</p>
+<p>Este data set contiene las medidas de ancho (<em>width</em>) y largo (<em>length</em>) de los sépalos y los pétalos para 3 especies de flores diferentes: setosa, versicolor, y virginica (todas del Genus <em>Iris</em>). Tiene mediciones de 150 flores, 50 por especie.</p>
 <details class="info">
 <summary>Sépalo vs pétalo</summary>
 <p><figure markdown>
-<img alt="SepalPetal" max-width="500" src="img/sepal_vs_petal.png" />
+<img alt="SepalPetal" max-width="400" src="img/sepal_vs_petal.png" />
 </figure></p>
 </details>
 <p>Antes que nada vamos a familiarizarnos un poco con este data set.</p>
@@ -1136,7 +1153,7 @@ Este es el botón para descargar materiales, en (#) hay que agregar el link corr
 </code></pre></div>
 <p>Podemos ver que con solo plotear el largo de los pétalos y los sépalos ya estamos viendo diferencias entre las especies. Es teóricamente posible agregar una tercera dimensión para plotear otra de las variables, e incluso agregar la cuarta variable como "tamaño" de los diferentes puntos, pero dichos plots van a resultar considerablemente mas complejos al momento de leerlos.</p>
 <h3 id="problema-a-resolver">Problema a resolver</h3>
-<p>En este ejercicio vamos a suponer que alguién apretó el botón equivocado y borró la columna <strong>Species</strong> de dicha tabla. Como nos acordamos de que eran tres especies y que tenían diferencias en sus largos y anchos de pétalos y śépalos, queremos entonces usar métodos de clustering para tratar de recuperar lo mejor que podamos los tres grupos de flores.</p>
+<p>En este ejercicio vamos a suponer que alguien apretó el botón equivocado y borró la columna <strong>Species</strong> de dicha tabla. Como nos acordamos de que eran tres especies y que tenían diferencias en sus largos y anchos de pétalos y sépalos, queremos entonces usar métodos de clustering para tratar de recuperar lo mejor que podamos los tres grupos de flores.</p>
 <p>Dicho esto vamos a hacer un poco de trampa y vamos a comparar visualmente lo que vamos obteniendo por los métodos de clustering con lo que nosotros sabemos es verdad.</p>
 <p>Por último, cómo vamos a tener que hacer varios plots similares, vamos a aprovechar la oportunidad y vamos a usar por primera vez funciones de <strong>R</strong> creadas por nosotros.</p>
 <h3 id="guardar-el-plot-en-un-pdf">Guardar el plot en un PDF</h3>
@@ -1224,7 +1241,7 @@ Este es el botón para descargar materiales, en (#) hay que agregar el link corr
 </div>
 <p><strong>3)</strong> Usando la función que acabamos de crear, vean como se distribuyen los puntos al comparar <strong>Sepal.Width</strong> contra <strong>Petal.Width</strong>. Guarden este plot en un archivo llamado <strong>02_Sepal_vs_Petal_Width_per_Species.pdf</strong>.</p>
 <h3 id="clustering-jerarquico">Clustering jerárquico</h3>
-<p>Lo primero que vamos a hacer entonces es usar un clustering jerárquico para agrupar a las 150 filas en 3 grupos segun los valores de las 4 medidas. Un problema que tenemos es que por ahora no hay ninguna forma de identificar a una fila específica, así que le vamos a agregar un ID numérico a cada fila. Debido al orden que tienen las filas de <strong>dt_iris</strong>, los primeros 50 IDs van a corresponder a flores de la especie setosa, los segundos 50 a versicolor y los últimos a virgínica.</p>
+<p>Lo primero que vamos a hacer entonces es usar un clustering jerárquico para agrupar a las 150 filas en 3 grupos según los valores de las 4 medidas. Un problema que tenemos es que por ahora no hay ninguna forma de identificar a una fila específica, así que le vamos a agregar un ID numérico a cada fila. Debido al orden que tienen las filas de <strong>dt_iris</strong>, los primeros 50 IDs van a corresponder a flores de la especie setosa, los segundos 50 a versicolor y los últimos a virginica (aunque supuestamente esto no lo sabemos).</p>
 <p><strong>4)</strong> Corran el siguiente código para crear la matriz de datos que vamos a usar al momento de clusterizar. Lean los comentarios en la segunda pestaña para entender que estamos haciendo.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Código</label><label for="__tabbed_2_2">Código con comentarios</label></div>
 <div class="tabbed-content">
@@ -1245,7 +1262,7 @@ Este es el botón para descargar materiales, en (#) hay que agregar el link corr
 <span class="c1">#Aca estamos cambiando el orden de las columnas a *dt_iris*.</span>
 <span class="c1">#No hace falta asignar esto a *dt_iris* ya que *setcolorder* modifica la variable misma </span>
 <span class="c1">#Como solo le estamos pasando 1 columna, lo que estamos haciendo es mover esa columna al principio</span>
-<span class="c1">#(al usar *setcolorder* las otras se quedan donde estan)</span>
+<span class="c1">#(al usar así *setcolorder* las otras se quedan donde estan)</span>
 <span class="nf">setcolorder</span><span class="p">(</span><span class="n">dt_iris</span><span class="p">,</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;row_id&quot;</span><span class="p">))</span>
 
 <span class="c1">#Similar a lo que hicimos en el TP anterior, estamos transformando nuestros datos a una matriz</span>
@@ -1258,13 +1275,13 @@ Este es el botón para descargar materiales, en (#) hay que agregar el link corr
 </div>
 </div>
 <p><strong>5)</strong> Usando lo aprendido en el TP anterior y la matriz de datos recién creada:</p>
-<p><strong>5.1)</strong> Usen la función <code>dist()</code> para crear una matriz de distancias euclideanas que muestre también la diagonal.</p>
+<p><strong>5.1)</strong> Usen la función <code>dist()</code> para crear una matriz de distancias euclidianas que muestre también la diagonal.</p>
 <p><strong>5.2)</strong> usen la función <code>hclust()</code> para crear un clustering jerárquico basado en su matriz de distancias usando el criterio de agregación <em>complete linkage</em>. </p>
 <p><strong>5.3)</strong> Usen la función <code>plot()</code> para plotear el clustering jerárquico.</p>
-<p><strong>5.4)</strong> Mirando el plot recién creado, ¿pueden distinguir los tres grupos de especies en el clustering jerárquico? (recuerden que pueden usar el botón <strong>Zoom</strong> para agrandar el plot).</p>
+<p><strong>5.4)</strong> Mirando el plot recién creado, ¿les es fácil distinguir a simple vista los tres grupos de especies en el clustering jerárquico? (recuerden que pueden usar el botón <strong>Zoom</strong> para agrandar el plot).</p>
 <h4 id="mejorar-el-plot-del-clustering-jerarquico" markdown="markdown">Mejorar el plot del clustering jerárquico</h4>
-<p><strong>6)</strong> Una cosa que vendría bien al momento de leer el plot recien creado sería colorear cada flor dependiendo de su especie. Si bien esto no es posible en este caso usando solo la función <code>plot()</code>, hay paquetes de <strong>R</strong> que nos van a permitir hacer esto.</p>
-<p><strong>6.1)</strong> Usen la función <code>install.packages()</code> e instalen la libreria <strong>dendextend</strong> (recuerden que al usar <code>install.packages()</code> el nombre del paquete va entre comillas). Luego corran el siguiente código:</p>
+<p><strong>6)</strong> Una cosa que vendría bien al momento de leer el plot recién creado sería colorear cada flor dependiendo de su especie. Si bien esto no es posible en este caso usando solo la función <code>plot()</code>, hay paquetes de <strong>R</strong> que nos van a permitir hacer esto:</p>
+<p><strong>6.1)</strong> Usen la función <code>install.packages()</code> e instalen la librería <strong>dendextend</strong> (recuerden que al usar <code>install.packages()</code> el nombre del paquete va entre comillas). Luego corran el siguiente código:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Código</label><label for="__tabbed_3_2">Código con comentarios</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -1280,10 +1297,10 @@ Este es el botón para descargar materiales, en (#) hay que agregar el link corr
 
 <span class="n">dend</span> <span class="o">&lt;-</span> <span class="n">dend</span> <span class="o">%&gt;%</span> <span class="nf">set</span><span class="p">(</span><span class="s">&quot;labels_cex&quot;</span><span class="p">,</span> <span class="m">0.6</span><span class="p">)</span>
 
-<span class="n">pdf_file</span> <span class="o">&lt;-</span> <span class="s">&quot;11_Clustering_jerarquico.pdf&quot;</span>
+<span class="n">pdf_file</span> <span class="o">&lt;-</span> <span class="s">&quot;11_Clustering_jerarquico_complete_linkage.pdf&quot;</span>
 <span class="nf">pdf</span><span class="p">(</span><span class="n">file</span> <span class="o">=</span> <span class="n">pdf_file</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="m">18</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="m">6</span><span class="p">)</span>
 
-<span class="nf">plot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">dend</span><span class="p">,</span> <span class="n">main</span> <span class="o">=</span> <span class="s">&quot;Clustering Jerárquico - Complete - Color per Species&quot;</span><span class="p">)</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">dend</span><span class="p">,</span> <span class="n">main</span> <span class="o">=</span> <span class="s">&quot;Clustering Jerárquico - Complete Linkage - Color per Species&quot;</span><span class="p">)</span>
 
 <span class="nf">dev.off</span><span class="p">()</span>
 </code></pre></div>
@@ -1310,53 +1327,58 @@ Este es el botón para descargar materiales, en (#) hay que agregar el link corr
 <span class="n">dend</span> <span class="o">&lt;-</span> <span class="n">dend</span> <span class="o">%&gt;%</span> <span class="nf">set</span><span class="p">(</span><span class="s">&quot;labels_cex&quot;</span><span class="p">,</span> <span class="m">0.6</span><span class="p">)</span>
 
 <span class="c1">#Creo el pdf de salida y guardo el clustering jerárquico</span>
-<span class="n">pdf_file</span> <span class="o">&lt;-</span> <span class="s">&quot;11_Clustering_jerarquico.pdf&quot;</span>
+<span class="n">pdf_file</span> <span class="o">&lt;-</span> <span class="s">&quot;11_Clustering_jerarquico_complete_linkage.pdf&quot;</span>
 <span class="nf">pdf</span><span class="p">(</span><span class="n">file</span> <span class="o">=</span> <span class="n">pdf_file</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="m">18</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="m">6</span><span class="p">)</span>
 
-<span class="nf">plot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">dend</span><span class="p">,</span> <span class="n">main</span> <span class="o">=</span> <span class="s">&quot;Clustering Jerárquico - Complete - Color per Species&quot;</span><span class="p">)</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">dend</span><span class="p">,</span> <span class="n">main</span> <span class="o">=</span> <span class="s">&quot;Clustering Jerárquico - Complete Linkage - Color per Species&quot;</span><span class="p">)</span>
 
 <span class="nf">dev.off</span><span class="p">()</span>
 </code></pre></div>
 </div>
 </div>
 </div>
-<p><strong>6.2)</strong> Abran el archivo <strong>11_Clustering_jerarquico.pdf</strong>. ¿Pueden ahora distinguir los tres grupos de especies en el clustering jerárquico? ¿Cuáles especies les parecen mejor agrupadas? (los colores de las especies corresponden al color usado en el plot creado en los puntos <strong>1)</strong> y <strong>2)</strong>)</p>
+<p><strong>6.2)</strong> Abran el archivo <strong>11_Clustering_jerarquico_complete_linkage.pdf</strong>. ¿Pueden ahora distinguir los tres grupos de especies en el clustering jerárquico? ¿Cuáles especies les parecen mejor agrupadas? (los colores de las especies corresponden al color usado en el plot creado en los puntos <strong>1)</strong> y <strong>2)</strong>)</p>
+<h4 id="single-linkage">Single Linkage</h4>
+<p><strong>7)</strong> Hasta el momento sólo utilizamos <em>complete linkage</em> al momento de hacer nuestros clustering jerárquicos, pero sería interesante ver como es el dendrograma resultante de hacer el clustering usando otro criterio de agregación, por ejemplo el <em>single linkage</em>. Para esto:</p>
+<p><strong>7.1)</strong> Vuelvan a correr la función <code>hclust()</code> como en <strong>5.2)</strong>, pero ahora usen <code>method = "single"</code> y guarden el clustering resultante en una nueva variable. Luego usen el código de <strong>6.1)</strong> editando lo que sea necesario para crear un archivo que contenga al dendrograma hecho a partir del clustering jerárquico que usa <em>single linkage</em> como criterio de agregación. Nombren a este archivo <strong>12_Clustering_jerarquico_single_linkage.pdf</strong>.</p>
+<p><strong>7.2)</strong> ¿Qué diferencias ven entre este dendrograma y el creado en <strong>6.2)</strong>? ¿Pueden relacionar estas diferencias con lo que saben de <em>single linkage</em> y <em>complete linkage</em>?</p>
+<p><strong>7.3)</strong> Ignorando los colores, ¿cuál les parece el mejor criterio de agregación para este caso donde queremos recuperar tres clusters?</p>
 <h4 id="hacer-clusters-y-plots">Hacer clusters y plots</h4>
-<p>Por último vamos a querer recrear el plot generado en los puntos <strong>1)</strong> y <strong>2)</strong>, pero ahora mostrando información tanto de las especies originales (con el color) como de la agrupación resultante del clustering jerárquico (con la forma).</p>
-<p><strong>7)</strong> Lo primero es entonces agregar la información del clustering jerárquico a nuestro <strong>dt_iris</strong>:</p>
-<p><strong>7.1)</strong> Usen la <code>cutree</code> para dividir a los datos en 3 clusters.</p>
-<p><strong>7.2)</strong> Asignen esa información a una nueva columna en la tabla <strong>dt_iris</strong> llamada <strong>CJ_cluster</strong>.</p>
-<p><strong>7.3)</strong> Por el momento la variable es numérica, pero para nosotros los números 1, 2 y 3 son categorías que teóricamente corresponden a las especies (aunque no sabemos que categoría corresponde a que especie). Corran el siguiente código para convertir la columna recién creada en un <em>factor</em>:</p>
+<p>Por último vamos a querer recrear el plot generado en los puntos <strong>1)</strong> y <strong>2)</strong>, pero ahora mostrando información tanto de las especies originales (con el color) como de la agrupación resultante del clustering jerárquico (con la forma). Vamos a utilizar los datos del clustering jerárquico que usa el criterio de agregación <em>complete linkage</em>.</p>
+<p><strong>8)</strong> Lo primero es entonces agregar la información del clustering jerárquico a nuestro <strong>dt_iris</strong>; para ello:</p>
+<p><strong>8.1)</strong> Usen la <code>cutree</code> para dividir a los datos obtenidos en <strong>5.2)</strong> en 3 clusters.</p>
+<p><strong>8.2)</strong> Asignen esa información a una nueva columna en la tabla <strong>dt_iris</strong> llamada <strong>CJ_cluster</strong>.</p>
+<p><strong>8.3)</strong> Por el momento la variable es numérica, pero para nosotros los números 1, 2 y 3 son categorías que teóricamente corresponden a las especies (aunque no sabemos qué categoría corresponde a que especie). Corran el siguiente código para convertir la columna recién creada en un <em>factor</em>:</p>
 <div class="highlight"><pre><span></span><code><span class="c1">#En este caso poner los levels a mano no es 100% necesario, pero no viene mal</span>
 <span class="c1">#Recuerden que no sabemos que numero corresponde a que especie</span>
 <span class="c1">#(porque ademas ya vimos que no hay un match perfecto 1 a 1)</span>
 <span class="n">dt_iris</span><span class="o">$</span><span class="n">CJ_cluster</span> <span class="o">&lt;-</span> <span class="nf">factor</span><span class="p">(</span><span class="n">dt_iris</span><span class="o">$</span><span class="n">CJ_cluster</span><span class="p">,</span> <span class="n">levels</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">))</span>
 </code></pre></div>
-<p><strong>8)</strong> Ahora queremos hacer un plot similar al creado en el punto <strong>2)</strong>, pero donde la columna <strong>Species</strong> determine el color y la columna <strong>CJ_cluster</strong> determine la forma de los diferentes puntos del plot.</p>
-<p><strong>8.1)</strong> Una opción para hacer esto sería modificar la función <code>plotData2PDF_wColor()</code> agregando parámetros con valores predeterminados, pero para hacerla más fácil vamos a crear una nueva función. Copien la función anterior y cambienle en nombre a <code>plotData2PDF_wColorAndShape()</code>. Modifiquen esta nueva función considerando lo siguiente:</p>
+<p><strong>9)</strong> Ahora queremos hacer un plot similar al creado en el punto <strong>2)</strong>, pero donde la columna <strong>Species</strong> determine el color y la columna <strong>CJ_cluster</strong> determine la forma de los diferentes puntos del plot; para ello:</p>
+<p><strong>9.1)</strong> Copien la función <code>plotData2PDF_wColor()</code> y cámbienle en nombre a <code>plotData2PDF_wColorAndShape()</code>. Modifiquen esta nueva función considerando lo siguiente:</p>
 <ul>
 <li>Agreguen un parámetro a la función el cual va a recibir el nombre de la columna que determina la forma, o <em>shape</em>, de los puntos.</li>
 <li>Modifiquen la función <code>aes_string()</code>, agregando la característica <code>shape</code> y asignándole el valor del parámetro agregado.</li>
 <li>Agreguen la función <code>scale_shape_manual()</code> a <code>ggplot</code> para definir a mano las tres formas. Usen los valores <code>c(2, 4, 1)</code>.</li>
 </ul>
-<p><strong>8.2)</strong> Usando la función que acabamos de crear, vean como se distribuyen los puntos al comparar <strong>Sepal.Length</strong> contra <strong>Petal.Length</strong> usando la columna <strong>Species</strong> para determinar el color y la columna <strong>CJ_cluster</strong> para determinar la forma de los diferentes puntos. Guarden este plot en un archivo llamado <strong>12_Sepal_vs_Petal_Width_per_Species_CJ3.pdf</strong>.</p>
-<p><strong>8.3)</strong> Abran el archivo recien creado. ¿Cuáles especies les parecen mejor agrupadas? Entre este plot y el dendrograma creado en <strong>11_Clustering_jerarquico.pdf</strong> ¿Cuál les parece la mejor manera de representar este clustering? ¿Por qué?</p>
+<p><strong>9.2)</strong> Usando la función que acabamos de crear, vean como se distribuyen los puntos al comparar <strong>Sepal.Length</strong> contra <strong>Petal.Length</strong> usando la columna <strong>Species</strong> para determinar el color y la columna <strong>CJ_cluster</strong> para determinar la forma de los diferentes puntos. Guarden este plot en un archivo llamado <strong>21_Sepal_vs_Petal_Width_per_Species_CJ3.pdf</strong>.</p>
+<p><strong>9.3)</strong> Abran el archivo recién creado. ¿Cuáles especies les parecen mejor agrupadas? Entre este plot y el dendrograma creado en <strong>11_Clustering_jerarquico_complete_linkage.pdf</strong> ¿Cuál les parece la mejor manera de representar este clustering? ¿Por qué?</p>
 <div class="admonition danger">
 <p class="admonition-title">Importante - Clustering vs Plot</p>
 <p>Tengan en cuenta que al momento de clusterizar estamos usando los datos de las cuatro columnas de la tabla. Sin embargo, en este último plot estamos viendo solo la relación entre dos. Por esta razón, este plot no es realmente representativo del clustering que estamos haciendo.</p>
 <p>Dicho todo esto, este plot es útil ya que es mucho más fácil de leer que otros plots más complejos, pero debe tomarse como un análisis exploratorio.</p>
 </div>
 <h3 id="kmeans">Kmeans</h3>
-<p><strong>9)</strong> Lo último que vamos a hacer con este data set es volver a crear los clusters pero usando ahora la función <code>kmeans()</code>.</p>
-<p><strong>9.1)</strong> Usando lo aprendido en el TP anterior:</p>
+<p><strong>10)</strong> Lo último que vamos a hacer con este data set es volver a crear los clusters pero usando ahora la función <code>kmeans()</code>.</p>
+<p><strong>10.1)</strong> Usando lo aprendido en el TP anterior:</p>
 <ul>
 <li>Usen la función <code>kmeans()</code> para crear un nuevo clustering. Usen la cantidad de <code>centers</code> que consideren necesarios.</li>
-<li>Extraigan los clusters del clustering recien creado y asignenlos a una nueva columna en <strong>dt_iris</strong> llamada <strong>K3_cluster</strong>.</li>
+<li>Extraigan los clusters del clustering recién creado y asígnenlos a una nueva columna en <strong>dt_iris</strong> llamada <strong>K3_cluster</strong>.</li>
 <li>Transformen dicha columna en un <em>factor</em>.</li>
-<li>Usando la función creada en el punto <strong>8)</strong>, vean como se distribuyen los puntos al comparar <strong>Sepal.Length</strong> contra <strong>Petal.Length</strong> usando la columna <strong>Species</strong> para determinar el color y la columna <strong>K3_cluster</strong> para determinar la forma de los diferentes puntos. Guarden este plot en un archivo llamado <strong>13_Sepal_vs_Petal_Width_per_Species_K3.pdf</strong>.</li>
+<li>Usando la función creada en el punto <strong>9)</strong>, vean como se distribuyen los puntos al comparar <strong>Sepal.Length</strong> contra <strong>Petal.Length</strong> usando la columna <strong>Species</strong> para determinar el color y la columna <strong>K3_cluster</strong> para determinar la forma de los diferentes puntos. Guarden este plot en un archivo llamado <strong>22_Sepal_vs_Petal_Width_per_Species_K3.pdf</strong>.</li>
 </ul>
-<p><strong>9.2)</strong> Abran el archivo recien creado. Basandose solo en lo que pueden observar en este plot, ¿les parece que el agrupamiento es mejor, peor o similar al obtenido con el clustering jerárquico?</p>
-<p><strong>9.3)</strong> Supongamos ahora que estamos en un escenario real, por lo que no tenemos información de a que especie corresponde cada punto. En base a lo visto en el TP anterior, ¿se les ocurre alguna forma de evaluar objetivamente cuál de ambos es el mejor clustering?</p>
+<p><strong>10.2)</strong> Abran el archivo recién creado. Basándose solo en lo que pueden observar en este plot, ¿pueden decir algo de si este agrupamiento es mejor, peor o similar al obtenido con el clustering jerárquico? (recuerden que "no" también es una respuesta válida)</p>
+<p><strong>10.3)</strong> Supongamos ahora que estamos en un escenario real, por lo que no tenemos información de a que especie corresponde cada punto. En base a lo visto en el TP anterior, ¿se les ocurre alguna forma de evaluar objetivamente cuál de ambos es el mejor clustering?</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip - Predeterminar el azar</p>
 <p>La función <code>kmeans()</code> genera la primera posición de sus centros al azar. Esto hace que si la corren varias veces o en diferentes computadoras va a dar diferentes resultados cada vez. Esto se puede controlar con una función de <strong>R</strong> que asigna a mano el valor de la <em>seed</em>, que es el número base que usa <strong>R</strong> al momento de generar azar. Si les interesa hacer esto tienen que ejecutar la siguiente línea antes de usar la función <code>kmeans()</code>:</p>
@@ -1365,8 +1387,8 @@ Este es el botón para descargar materiales, en (#) hay que agregar el link corr
 <p>P.D.: El azar en las computadoras no existe realmente. Muchos programas usan lista pre-generadas de "números creados al azar" y otras usan cosas como "el quinto decimal de la temperatura del procesador en este momento", lo que se aproxima suficientemente al azar para funcionar bien.</p>
 </div>
 <h2 id="ejercicio-2-analizando-el-efecto-de-dos-inhibidores" markdown="markdown"><strong>Ejercicio 2 - Analizando el efecto de dos inhibidores</strong></h2>
-<p>En el <strong>TP 8b</strong> hicimos un ejercicio donde usabamos el equipo <strong>FilterMax F5</strong> para analizar 22 inhibidores de una llamada <strong>Enzima Z</strong>, la cuál resulta que era la cruzipaína, es decir, la cisteín proteasa principal del parásito causante de la enfermedad de Chagas, <em>Trypanosoma cruzi</em>.</p>
-<p>En esta segunda fase del experimento se eligieron 2 de dichos inhibidores y se realizó un análisis más detallado, estudiando como varía la expresión de varios genes en presencia o ausencia de los inhibidores. Para esto se hizo un estudio de transcriptómica (RNA-seq) donde se extrae el ARN y se analiza con <strong>Illumina</strong>. Luego, cada <em>read</em> encontrado se mapea contra el genoma de referencia y se llega a una tabla de conteo para cada uno de las transcriptos del genoma.</p>
+<p>En el <strong>TP 8b</strong> hicimos un ejercicio donde usábamos el equipo <strong>FilterMax F5</strong> para analizar 22 inhibidores de una llamada <strong>Enzima Z</strong>, la cual resulta que era la cruzipaína, es decir, la cisteín proteasa principal de <em>Trypanosoma cruzi</em>, el parásito causante de la enfermedad de Chagas.</p>
+<p>En esta segunda fase del experimento se eligieron 2 inhibidores y se realizó un análisis más detallado, estudiando como varía la expresión de miles de genes en presencia o ausencia de dichos inhibidores. Para esto se hizo un estudio de transcriptómica (RNA-seq) donde se extrajo el ARN y se lo analizó con <strong>Illumina</strong>. Luego, cada <em>read</em> encontrado se mapeó contra el genoma de referencia y se llegó a una tabla de conteo para cada uno de las transcriptos del genoma.</p>
 <p>Para cada caso (<em>control</em>, <em>droga 1</em> y <em>droga 2</em>) se realizaron 3 réplicas técnicas para obtener resultados más robustos.</p>
 <p>Nuestro objetivo va a ser entonces obtener una lista de los genes que son más afectados por cada droga.</p>
 <h3 id="leer-los-datos">Leer los datos</h3>
@@ -1375,11 +1397,11 @@ Este es el botón para descargar materiales, en (#) hay que agregar el link corr
 <p>El conteo de <em>reads</em> no se puede comparar entre genes puesto que la expresión basal de cada uno es distinto, por lo cual encontrar 10 <em>reads</em> de un gen puede ser mucho, y encontrar 1000 de otro puede ser poco. Además cada ensayo de secuenciación puede tener distinta profundidad con lo que tampoco sería viable comparar 10 <em>reads</em> de un ensayo donde en total se mapearon <span class="arithmatex">\(2\text{x}10^8\)</span> <em>reads</em> con los mismos 10 de otro ensayo donde se mapearon <span class="arithmatex">\(1\text{x}10^8\)</span> (es decir, la mitad).</p>
 <p>Por esta razón vamos a querer modificar las nueve columnas y transformar el valor a "conteo por millón", cuya fórmula es:</p>
 <div class="arithmatex">\[
-\text{RMP or CPM} = \frac{ReadsDelGen * 10^6}{ReadsTotales}
+\text{RPM or CPM} = \frac{ReadsDelGen * 10^6}{ReadsTotales}
 \]</div>
 <h3 id="combinar-las-replicas">Combinar las réplicas</h3>
 <p>Otra cosa que vamos a querer hacer es combinar las tres réplicas para cada caso. Esto lo vamos a hacer simplemente promediando los 3 valores de CPM para cada gen en cada tratamiento.</p>
-<p><strong>2)</strong> En base a los TPs anteriores ya tienen los conocimentos para hacer el estandarizado de datos y la combinación de réplicas usando <em>fors</em>, pero para hacerla un poco más fácil les vamos a dar un par de funciones que les van a simplificar bastante este paso (y ya que estamos les mostramos la función <code>apply()</code> en acción):</p>
+<p><strong>2)</strong> En base a los TPs anteriores ya tienen los conocimientos para hacer el estandarizado de datos y la combinación de réplicas usando <em>fors</em>, pero para hacerla un poco más fácil les vamos a dar un par de funciones que les van a simplificar bastante este paso (y ya que estamos les mostramos la función <code>apply()</code> en acción):</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Código</label><label for="__tabbed_4_2">Código con comentarios</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -1459,7 +1481,7 @@ Este es el botón para descargar materiales, en (#) hay que agregar el link corr
 </code></pre></div>
 <p><strong>2.2)</strong> Ahora que ya tenemos los datos parseados, usen la función <code>merge()</code> dos veces para combinar los 3 <em>Data Tables</em> en uno solo llamado <strong>full_data</strong> (si todo salió bien debería tener 11.106 filas y 4 columnas).</p>
 <h3 id="calcular-el-fold-change">Calcular el Fold Change</h3>
-<p><strong>3)</strong> Algo mencionamos antes, pero concluir que "hay 10 CPM más al agregarle la droga" no significa nada en el vacio. Si en el control era solo 1 CPM, entonces 10 más es mucho. Si en el control eran 10.000 CPM, 10 más es insignificante.</p>
+<p><strong>3)</strong> Algo mencionamos antes, pero concluir que "hay 10 CPM más al agregarle la droga" no significa nada en el vacío. Si en el control era solo 1 CPM, entonces 10 más es mucho. Si en el control eran 10.000 CPM, 10 más es insignificante.</p>
 <p>Vamos entonces a calcular el fold change, es decir, cuantas veces más (o menos) de CPM fueron observados al agregarle la droga frente a cuando estaba solo el control. Esto lo calculamos como:</p>
 <div class="arithmatex">\[
 \text{Fold Change} = \frac{\text{CPM Droga}}{\text{CPM Control}}
@@ -1478,11 +1500,11 @@ Este es el botón para descargar materiales, en (#) hay que agregar el link corr
 \text{Fold Change} = \frac{\text{CPM Droga} + 0.125}{\text{CPM Control} + 0.125}
 \]</div>
 <p><strong>3.2)</strong> ¿Qué pasa ahora en los dos casos problemáticos que estamos tratando resolver? ¿Cómo afecta este <em>buffer</em> a los casos "normales"? (es decir, cuando tanto el numerador como el denominador son números mayores a 1)</p>
-<p><strong>3.3)</strong> Usando la fórmula con <em>buffer</em>, calculen el Fold Change para ambas drogas y guárdenlos en nuevas columnas de la tabla <strong>full_data</strong>.</p>
+<p><strong>3.3)</strong> Usando la fórmula con <em>buffer</em>, calculen el Fold Change para ambas drogas y guárdenlos en nuevas columnas de la tabla <strong>full_data</strong> (pónganles nombres que representen la información que contienen).</p>
 <h3 id="transformar-el-fold-change">Transformar el Fold Change</h3>
-<p>Ahora bien, vamos a analizar como se distribuyen los valores del Fold Change para todas las proteínas (primera pestaña en el siguiente plot). Podemos ver que si bien el Fold Change llega hasta 20 en algunos casos, la gran mayoría de ellas tienen Fold Changes menores a 4.</p>
+<p>Ahora bien, vamos a analizar como se distribuyen los valores del Fold Change para todas las proteínas (primera pestaña del plot que está abajo). Podemos ver que si bien el Fold Change llega hasta 20 en algunos casos, la gran mayoría de ellas tienen Fold Changes menores a 4.</p>
 <p>En el paso siguiente vamos a querer agrupar nuestros genes por como se comportan frente a las drogas 1 y 2 clusterizando con <code>kmeans()</code> y luego plotearlo en un <em>heatmap</em>. En este momento la mayoría de los datos se encuentran en un pequeño rango del "espectro" de Fold Change, por lo que al momento de agrupar por similitud básicamente van a formar un único gran cluster, lo que no da información.</p>
-<p>Por esta razón queremos convertir nuestros datos a una escala logarítmica. Como Fold Change solo llega hasta 20 vamos a usar una escala logaritmica en base 2. En <strong>R</strong> esto se hace usando la función <code>log()</code>. Por defecto esta función usa como base a <span class="arithmatex">\(e\)</span>, es decir, es el logaritmo natural. Sin embargo, se le puede cambiar la base a 2 pasandole el parámetro <code>base = 2</code> (ver la segunda pestaña en el siguiente plot).</p>
+<p>Por esta razón queremos convertir nuestros datos a una escala logarítmica. Como Fold Change solo llega hasta 20 vamos a usar una escala logarítmica en base 2. En <strong>R</strong> esto se hace usando la función <code>log()</code>. Por defecto esta función usa como base a <span class="arithmatex">\(e\)</span>, es decir, es el logaritmo natural. Sin embargo, se le puede cambiar la base a 2 pasándole el parámetro <code>base = 2</code> (ver la segunda pestaña en el siguiente plot).</p>
 <p><strong>4)</strong> Usando la función <code>log()</code> con el parámetro necesario, calculen el logaritmo en base 2 de los Fold Change para ambas drogas y guárdenlos en nuevas columnas de la tabla <strong>full_data</strong>.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Fold Change para la Droga 1</label><label for="__tabbed_5_2">Log2(Fold Change) para la Droga 1</label></div>
 <div class="tabbed-content">
@@ -1499,7 +1521,7 @@ Este es el botón para descargar materiales, en (#) hay que agregar el link corr
 </div>
 </div>
 <h3 id="plotear-el-heatmap">Plotear el Heatmap</h3>
-<p>El <em>heatmap</em> es un tipo de plot que no vimos hasta el momento, pero que tal vez conozcan. La versión básica del heatmap nos permite gráficar valores numéricos como una escala de colores lo que nos permite ver diferencias entre filas rápidamente e incluso encontrar filas similares o patrones.</p>
+<p>El <em>heatmap</em> es un tipo de plot que no vimos hasta el momento, pero que tal vez conozcan. La versión básica del heatmap nos permite graficar valores numéricos como una escala de colores lo que nos permite ver diferencias entre filas rápidamente e incluso encontrar filas similares o patrones.</p>
 <p>A continuación mostramos un ejemplo que usa los datos estandarizados del <strong>Ejercicio 2</strong> del <strong>TP 12a</strong> (la tabla ejemplo con los 4 genes, <strong>matriz_datos_ST</strong>):</p>
 <figure>
 <p><img alt="HeatmapEjemplo" src="img/heatmapEjemplo.png" /></p>
@@ -1510,7 +1532,7 @@ Este es el botón para descargar materiales, en (#) hay que agregar el link corr
 <p><strong>5.2)</strong> Corran el siguiente código reemplazando <strong>log2_fold_change_drug1_wBuffer</strong> y <strong>log2_fold_change_drug2_wBuffer</strong> por el nombre de las columnas que contienen el logaritmo en base 2 de los Fold Change:</p>
 <div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">pheatmap</span><span class="p">)</span>
 
-<span class="c1">#Como *pheatmap* usa kmeans adentro inicializo la seed para que el plot de igual en todo lados siempre</span>
+<span class="c1">#Como *pheatmap* usa kmeans adentro inicializo la seed para que el plot de igual en todos lados siempre</span>
 <span class="nf">set.seed</span><span class="p">(</span><span class="m">1</span><span class="p">)</span>
 
 <span class="c1">#Me quedo solo con las columnas a plotear (en este caso el log 2 de los Fold Change para ambas drogas)</span>
@@ -1523,32 +1545,42 @@ Este es el botón para descargar materiales, en (#) hay que agregar el link corr
 <li><code>kmeans_k = 10</code> le está diciendo que agrupe los datos en 10 clusters, similar a correr <code>kmeans(plot_data, centers = 10)</code></li>
 <li><code>cluster_col = F</code> le está diciendo que no trate de agrupar las columnas por similitud y que no haga un dendrograma asociado</li>
 </ul>
-<p><strong>5.3)</strong> Mirando los 10 clusters que acabamos de crear, ¿cuáles les parece que son similares entre sí? ¿que patrones de alto o bajo Fold Change para droga 1 o droga 2 pueden observar?</p>
-<h3 id="calcular-genes-mas-afectados" markdown="markdown">Calcular genes mas afectados</h3>
-<p>Si bien el <em>heatmap</em> nos da una idea global de como actuaron las drogas, nuestro objetivo es entender un poco más como funcionan, por lo que querríamos la lista de genes que se vieron afectados por ellas.</p>
-<p>Para hacer esto tenemos que definir un umbral numérico de Fold Change a partir del cual consideramos que el cambio fue "significativo" para nosotros. Estos umbrales se pueden elegir en base a conocimientos previos, en base a controles positivos y negativos, o mediante prueba y error, analizando qué y cuántos genes quedan por encima del umbral.</p>
+<p><strong>5.3)</strong> Mirando los 10 clusters que acabamos de crear, para que clusters de genes se observa:</p>
+<ul>
+<li>Fold change alto para ambas drogas</li>
+<li>Fold change bajo para ambas drogas</li>
+<li>Fold change alto para la droga 1 y bajo la droga 2</li>
+<li>Fold change bajo para la droga 1 y alto la droga 2</li>
+</ul>
+<h3 id="calcular-genes-mas-afectados" markdown="markdown">Calcular genes más afectados</h3>
+<p><strong>6)</strong> Si bien el <em>heatmap</em> nos da una idea global de como actuaron las drogas, nuestro objetivo es entender un poco más de su funcionamiento. Para esto, vamos a analizar la lista de genes que se vieron afectados por ellas.</p>
+<p>Para obtener esta lista es necesario entonces definir un umbral numérico de Fold Change a partir del cual consideramos que el cambio fue "significativo" para nosotros. Estos umbrales se pueden elegir en base a conocimientos previos, en base a controles positivos y negativos, o mediante prueba y error (analizando qué y cuántos genes quedan por encima del umbral).</p>
 <p>Otra cosa a considerar es que en este caso estamos analizando drogas que funcionan como inhibidores, por lo que no nos interesa solo los genes con Fold Change alto, sino que incluso nos interesan más los genes con Fold Change bajo (que debido a como se calculó quiere decir cercanos a 0).</p>
-<p>Una consecuencia interesante de haber calculado el logaritmo en base 2 del Fold Change es que nos permite encarar este problema con números más enteros. Supongamos que decidimos como umbral superior cuando <span class="arithmatex">\(log_2(FoldChange) = 1.5\)</span>. En este caso <span class="arithmatex">\(FoldChange = 2^{1.5} = 2.83\)</span>, lo que quiere decir que me estoy quedando con los genes que tienen un CPM 2.83 veces más grande que el control.</p>
-<p>Si quisieramos usar la misma lógica para el otro lado y quedarnos con genes con CPM 2.83 veces mas chicos que el control tendríamos que hacer <span class="arithmatex">\(FoldChange = \frac{1}{2.83} = 0.35\)</span> y si calculamos ahora el <span class="arithmatex">\(log_2\)</span> de ese número interesantemente observamos que <span class="arithmatex">\(log_2(0.35) \approx -1.5\)</span>.</p>
-<p><strong>6)</strong> Esto fue una forma muy larga de decir que vamos a quedarnos con aquellas proteínas donde <span class="arithmatex">\(log_2(FoldChange)\)</span> sea mayor a <span class="arithmatex">\(1.5\)</span> o menor a <span class="arithmatex">\(-1.5\)</span>.</p>
+<p>En este caso vamos a quedarnos con aquellos genes que cumplan alguna de las siguientes condiciones:</p>
+<ul>
+<li><span class="arithmatex">\(log_2(FoldChange) \geq 1.5\)</span> (es decir <span class="arithmatex">\(FoldChange \geq 2.83 = 2^{1.5}\)</span>)</li>
+<li><span class="arithmatex">\(log_2(FoldChange) \leq -1.5\)</span> (es decir <span class="arithmatex">\(FoldChange \leq \frac{1}{2.83} = 2^{-1.5}\)</span>)</li>
+</ul>
+<p>O sea, que nos vamos a quedar con aquellos genes que tienen un CPM 2.83 veces más grande o más chico que el control.</p>
 <p><strong>6.1)</strong> Filtren <strong>full_data</strong> para quedarnos con aquellas filas donde el logaritmo en base 2 del Fold Change de la droga 1 sea mayor a 1.5 o menor a -1.5. Guarden la lista de los IDs de las proteínas que cumplen esa condición en una nueva variable. Hagan lo mismo para la droga 2.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip - Calcular el valor absoluto</p>
-<p>La función <code>abs()</code> nos devuelve el valor absoluto de un número. Si bien es posible filtrar estos datos usando simplemente un <strong>AND</strong>, también lo pueden hacer usando <code>abs()</code>, lo que prefieran.</p>
+<p>La función <code>abs()</code> nos devuelve el valor absoluto de un número. Si bien es posible filtrar estos datos usando simplemente un <strong>OR</strong>, también lo pueden hacer usando <code>abs()</code>, lo que prefieran.</p>
 </div>
 <p><strong>6.2)</strong> Usen <code>write.table()</code> para generar un nuevo archivo llamado <strong>affected_genes_drug1</strong> y guarden en él los IDs recién calculados para la droga 1. Tengan en cuenta que queremos solo los IDs, por lo que tienen que cambiar los parámetros de la función para que no haya nombres de las filas, nombres de las columnas ni comillas. Hagan lo mismo para la droga 2.</p>
 <h3 id="buscar-nuestros-genes-en-bases-de-datos" markdown="markdown">Buscar nuestros genes en bases de datos</h3>
-<p><strong>7)</strong> Lo último que vamos a hacer con esta información es investigar en bases de datos para tratar de entender un poco más que procesos biológicos estan siendo afectados por nuestras drogas. Como estamos trabajando con <em>Trypanosoma cruzi</em> vamos a ir a una página que se especializa en tripanosomatidos llamada <strong>TriTrypDB</strong>.</p>
+<p><strong>7)</strong> Lo último que vamos a hacer con esta información es investigar en bases de datos para tratar de entender un poco más que procesos biológicos están siendo afectados por nuestras drogas. Como estamos trabajando con <em>Trypanosoma cruzi</em> vamos a ir a una página que se especializa en tripanosomátidos llamada <strong>TriTrypDB</strong>.</p>
 <p><strong>7.1)</strong> Entren a <a href="https://tritrypdb.org/tritrypdb/app/search/transcript/GeneByLocusTag">este link</a> y copien la lista de IDs que acabamos de crear para la droga 1. Hagan click en <strong>Get Answer</strong>.</p>
-<p><strong>7.2)</strong> Una vez que se hayan cargados los datos vayan a <strong>Analyze Results</strong> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg></span> <strong>Gene Onthology Enrichment</strong>, asegurensé que este checkeado <strong>Biological Process</strong> y aprieten <strong>Submit</strong> (disclaimer: esta parte a veces no anda y hay que probar otro día).</p>
+<p><strong>7.2)</strong> Una vez que se hayan cargados los datos vayan a <strong>Analyze Results</strong> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg></span> <strong>Gene Onthology Enrichment</strong>, asegúrense que este checkeado <strong>Biological Process</strong> y aprieten <strong>Submit</strong> (disclaimer: esta parte a veces no anda y hay que probar otro día).</p>
 <details class="tip">
 <summary>Tip - Ubicación del botón <strong>Analyze Results</strong></summary>
 <p><figure markdown>
 <img alt="AnalyzeResults" src="img/analyzeResults.png" />
 </figure></p>
 </details>
-<p><strong>7.3)</strong> A grandes rasgos, ¿qúé procesos biológicos parecen estar afectados directa o indirectamente por la droga 1?</p>
+<p><strong>7.3)</strong> Esta tabla muestra procesos biológicos relacionados con nuestra lista de genes. A grandes rasgos, ¿qué procesos biológicos parecen estar afectados directa o indirectamente por la droga 1? Para responder esto pueden ordenar la tabla obtenida por la columna <strong>P-value</strong> en forma ascendente o pueden presionar el botón <strong>Show Word Cloud</strong> que se encuentra arriba de la tabla para ver un <em>Word Cloud</em> de los diferentes procesos biológicos.</p>
 <p><strong>7.4)</strong> Hagan <strong>7.1)</strong>, <strong>7.2)</strong> y <strong>7.3)</strong> para la droga 2.</p>
+<p><strong>7.5)</strong> ¿Que habría que cambiar en lo que hicimos en el punto <strong>6)</strong> si sólo nos interesaran los procesos biológicos que son inhibidos por nuestras drogas?</p>
 <h2 id="bibliografia"><strong>Bibliografía</strong></h2>
 <!--
 ### :material-bookshelf: Libros
