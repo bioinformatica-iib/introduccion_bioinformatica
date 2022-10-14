@@ -7,14 +7,12 @@
 <br>
 
 
-<!--
 ## Videos de la clase grabada
 
-* :octicons-video-16: [Introducción al TP]()
-* :octicons-video-16: [Puesta en común del TP]()
+* :octicons-video-16: [Introducción al TP](https://www.youtube.com/watch?v=mzzItpMc7ds)
+* :octicons-video-16: [Resultados Verify y Procheck](https://www.youtube.com/watch?v=t6P6AprFvVg)
+* :octicons-video-16: [Puesta en común del TP](https://www.youtube.com/watch?v=vAtKowbM4oo)
 
-[:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1wh5zn1GZ4s_Rp8V5lekZZbIKzM7BOKc8/view?usp=sharing){ .md-button .md-button--primary }
--->
 
 !!! abstract "Atención: Este TP tiene informe."
 
