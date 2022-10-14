@@ -311,6 +311,9 @@ Otro método muy popular para agrupar elementos es el *K-means*. A diferencia de
 La función `kmeans` viene con **R** y se usa:
 
 ```R
+#Esta funcion controla el aspecto azaroso de kmeans para que nos de igual a todos
+set.seed(1)
+
 #Corro la funcion kmeans para los datos sin estandarizar pidiendole 3 clusters
 clustering_kmeans_k2_ST <- kmeans(matriz_datos_ST, centers = 2)
 
@@ -319,6 +322,16 @@ clusters_kmeans_k2_ST <- clustering_kmeans_k2_ST$cluster
 ```
 
 Donde `centers = 2` le está diciendo a la función que cree 2 clusters (lo que estoy indicando en el nombre de la variable con **_k2** para que no haya confusión más adelante).
+
+!!! tip "Tip - Predeterminar el azar"
+
+    La función `kmeans()` genera la primera posición de sus centros al azar. Esto hace que si la corren varias veces o en diferentes computadoras va a dar diferentes resultados cada vez. Esto se puede controlar con una función de **R** que asigna a mano el valor de la *seed*, que es el número base que usa **R** al momento de generar azar. Si les interesa hacer esto tienen que ejecutar la siguiente línea antes de usar la función `kmeans()`:
+
+    ```R
+    set.seed(1)
+    ```
+
+    P.D.: El azar en las computadoras no existe realmente. Muchos programas usan lista pre-generadas de "números creados al azar" y otras usan cosas como "el quinto decimal de la temperatura del procesador en este momento", lo que se aproxima suficientemente al azar para funcionar bien.
 
 **1)** Corran el código anterior y comparen estos clusters a los obtenidos para los datos estandarizados en el **Ejercicio 2** usando *clustering jerárquico*.
 

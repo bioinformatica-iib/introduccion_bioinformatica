@@ -148,7 +148,7 @@ nav:
         - TP 9 - Predicción de Desorden: 'practicos/TP09_Desorden/index.md'
         - TP 10 - Motivos Lineales: 'practicos/TP10_Motivos/index.md'
         - TP 11 - Modelado por Homología: 'practicos/TP11_Modelado_Por_Homologia/index.md'
-        #- TP 12a - Clustering: 'practicos/TP12a_Clustering/index.md'
+        - TP 12a - Clustering: 'practicos/TP12a_Clustering/index.md'
         #- TP 12b - Data Mining: 'practicos/TP12b_Data_Mining/index.md'
         #- Resumen: 'practicos/resumen.md'
 

@@ -237,7 +237,9 @@ print(p)
 
 * `theme_bw()` es una función que setea varias opciones de `theme()` a un estilo específico (en este caso un estilo simple en blanco y negro). La tenemos que usar antes de `theme()` para asegurarnos que cualquier cambio que hagamos a mano en `theme()` sobrescriba los de `theme_bw()`.
 
+<!--
 **10)** Reemplacen a `theme_bw()` por `theme_` y vean la lista de temas que aparecen en el autocompletar de RStudio (si no aparece pueden apretar ++ctrl++ + ++space++). Prueben correr el código anterior con 2 temas que no sean `theme_bw()` y vean como se ve el plot en cada caso.
+-->
 
 ### Otros tipos de plots
 
@@ -256,7 +258,7 @@ Este data set contiene las medidas de ancho (*width*) y largo (*length*) de los 
 ??? info "Sépalo vs pétalo"
 
     <figure markdown>
-    ![SepalPetal](img/sepal_vs_petal.png){ max-width="500" }
+    ![SepalPetal](img/sepal_vs_petal.png){ max-width="400" }
     </figure>
 
 Antes que nada vamos a familiarizarnos un poco con este data set.
@@ -429,7 +431,7 @@ Lo primero que vamos a hacer entonces es usar un clustering jerárquico para agr
 
 **5.3)** Usen la función `plot()` para plotear el clustering jerárquico.
 
-**5.4)** Mirando el plot recién creado, ¿les es fácil distinguir los tres grupos de especies en el clustering jerárquico? (recuerden que pueden usar el botón **Zoom** para agrandar el plot).
+**5.4)** Mirando el plot recién creado, ¿les es fácil distinguir a simple vista los tres grupos de especies en el clustering jerárquico? (recuerden que pueden usar el botón **Zoom** para agrandar el plot).
 
 #### Mejorar el plot del clustering jerárquico { markdown data-toc-label='Mejorar el plot' }
 
@@ -452,10 +454,10 @@ Lo primero que vamos a hacer entonces es usar un clustering jerárquico para agr
 
     dend <- dend %>% set("labels_cex", 0.6)
 
-    pdf_file <- "11_Clustering_jerarquico.pdf"
+    pdf_file <- "11_Clustering_jerarquico_complete_linkage.pdf"
     pdf(file = pdf_file, width = 18, height = 6)
 
-    plot(x = dend, main = "Clustering Jerárquico - Complete - Color per Species")
+    plot(x = dend, main = "Clustering Jerárquico - Complete Linkage - Color per Species")
 
     dev.off()
     ```
@@ -484,27 +486,37 @@ Lo primero que vamos a hacer entonces es usar un clustering jerárquico para agr
     dend <- dend %>% set("labels_cex", 0.6)
 
     #Creo el pdf de salida y guardo el clustering jerárquico
-    pdf_file <- "11_Clustering_jerarquico.pdf"
+    pdf_file <- "11_Clustering_jerarquico_complete_linkage.pdf"
     pdf(file = pdf_file, width = 18, height = 6)
 
-    plot(x = dend, main = "Clustering Jerárquico - Complete - Color per Species")
+    plot(x = dend, main = "Clustering Jerárquico - Complete Linkage - Color per Species")
 
     dev.off()
     ```
 
-**6.2)** Abran el archivo **11_Clustering_jerarquico.pdf**. ¿Pueden ahora distinguir los tres grupos de especies en el clustering jerárquico? ¿Cuáles especies les parecen mejor agrupadas? (los colores de las especies corresponden al color usado en el plot creado en los puntos **1)** y **2)**)
+**6.2)** Abran el archivo **11_Clustering_jerarquico_complete_linkage.pdf**. ¿Pueden ahora distinguir los tres grupos de especies en el clustering jerárquico? ¿Cuáles especies les parecen mejor agrupadas? (los colores de las especies corresponden al color usado en el plot creado en los puntos **1)** y **2)**)
+
+#### Single Linkage
+
+**7)** Hasta el momento sólo utilizamos *complete linkage* al momento de hacer nuestros clustering jerárquicos, pero sería interesante ver como es el dendrograma resultante de hacer el clustering usando otro criterio de agregación, por ejemplo el *single linkage*. Para esto:
+
+**7.1)** Vuelvan a correr la función `hclust()` como en **5.2)**, pero ahora usen `method = "single"` y guarden el clustering resultante en una nueva variable. Luego usen el código de **6.1)** editando lo que sea necesario para crear un archivo que contenga al dendrograma hecho a partir del clustering jerárquico que usa *single linkage* como criterio de agregación. Nombren a este archivo **12_Clustering_jerarquico_single_linkage.pdf**.
+
+**7.2)** ¿Qué diferencias ven entre este dendrograma y el creado en **6.2)**? ¿Pueden relacionar estas diferencias con lo que saben de *single linkage* y *complete linkage*?
+
+**7.3)** Ignorando los colores, ¿cuál les parece el mejor criterio de agregación para este caso donde queremos recuperar tres clusters?
 
 #### Hacer clusters y plots
 
-Por último vamos a querer recrear el plot generado en los puntos **1)** y **2)**, pero ahora mostrando información tanto de las especies originales (con el color) como de la agrupación resultante del clustering jerárquico (con la forma).
+Por último vamos a querer recrear el plot generado en los puntos **1)** y **2)**, pero ahora mostrando información tanto de las especies originales (con el color) como de la agrupación resultante del clustering jerárquico (con la forma). Vamos a utilizar los datos del clustering jerárquico que usa el criterio de agregación *complete linkage*.
 
-**7)** Lo primero es entonces agregar la información del clustering jerárquico a nuestro **dt_iris**; para ello:
+**8)** Lo primero es entonces agregar la información del clustering jerárquico a nuestro **dt_iris**; para ello:
 
-**7.1)** Usen la `cutree` para dividir a los datos obtenidos en **5.2)** en 3 clusters.
+**8.1)** Usen la `cutree` para dividir a los datos obtenidos en **5.2)** en 3 clusters.
 
-**7.2)** Asignen esa información a una nueva columna en la tabla **dt_iris** llamada **CJ_cluster**.
+**8.2)** Asignen esa información a una nueva columna en la tabla **dt_iris** llamada **CJ_cluster**.
 
-**7.3)** Por el momento la variable es numérica, pero para nosotros los números 1, 2 y 3 son categorías que teóricamente corresponden a las especies (aunque no sabemos qué categoría corresponde a que especie). Corran el siguiente código para convertir la columna recién creada en un *factor*:
+**8.3)** Por el momento la variable es numérica, pero para nosotros los números 1, 2 y 3 son categorías que teóricamente corresponden a las especies (aunque no sabemos qué categoría corresponde a que especie). Corran el siguiente código para convertir la columna recién creada en un *factor*:
 
 ```R
 #En este caso poner los levels a mano no es 100% necesario, pero no viene mal
@@ -513,17 +525,17 @@ Por último vamos a querer recrear el plot generado en los puntos **1)** y **2)*
 dt_iris$CJ_cluster <- factor(dt_iris$CJ_cluster, levels = c(1, 2, 3))
 ```
 
-**8)** Ahora queremos hacer un plot similar al creado en el punto **2)**, pero donde la columna **Species** determine el color y la columna **CJ_cluster** determine la forma de los diferentes puntos del plot; para ello:
+**9)** Ahora queremos hacer un plot similar al creado en el punto **2)**, pero donde la columna **Species** determine el color y la columna **CJ_cluster** determine la forma de los diferentes puntos del plot; para ello:
 
-**8.1)** Copien la función `plotData2PDF_wColor()` y cámbienle en nombre a `plotData2PDF_wColorAndShape()`. Modifiquen esta nueva función considerando lo siguiente:
+**9.1)** Copien la función `plotData2PDF_wColor()` y cámbienle en nombre a `plotData2PDF_wColorAndShape()`. Modifiquen esta nueva función considerando lo siguiente:
 
 * Agreguen un parámetro a la función el cual va a recibir el nombre de la columna que determina la forma, o *shape*, de los puntos.
 * Modifiquen la función `aes_string()`, agregando la característica `shape` y asignándole el valor del parámetro agregado.
 * Agreguen la función `scale_shape_manual()` a `ggplot` para definir a mano las tres formas. Usen los valores `c(2, 4, 1)`.
 
-**8.2)** Usando la función que acabamos de crear, vean como se distribuyen los puntos al comparar **Sepal.Length** contra **Petal.Length** usando la columna **Species** para determinar el color y la columna **CJ_cluster** para determinar la forma de los diferentes puntos. Guarden este plot en un archivo llamado **12_Sepal_vs_Petal_Width_per_Species_CJ3.pdf**.
+**9.2)** Usando la función que acabamos de crear, vean como se distribuyen los puntos al comparar **Sepal.Length** contra **Petal.Length** usando la columna **Species** para determinar el color y la columna **CJ_cluster** para determinar la forma de los diferentes puntos. Guarden este plot en un archivo llamado **21_Sepal_vs_Petal_Width_per_Species_CJ3.pdf**.
 
-**8.3)** Abran el archivo recién creado. ¿Cuáles especies les parecen mejor agrupadas? Entre este plot y el dendrograma creado en **11_Clustering_jerarquico.pdf** ¿Cuál les parece la mejor manera de representar este clustering? ¿Por qué?
+**9.3)** Abran el archivo recién creado. ¿Cuáles especies les parecen mejor agrupadas? Entre este plot y el dendrograma creado en **11_Clustering_jerarquico_complete_linkage.pdf** ¿Cuál les parece la mejor manera de representar este clustering? ¿Por qué?
 
 !!! danger "Importante - Clustering vs Plot"
 
@@ -533,18 +545,18 @@ dt_iris$CJ_cluster <- factor(dt_iris$CJ_cluster, levels = c(1, 2, 3))
 
 ### Kmeans
 
-**9)** Lo último que vamos a hacer con este data set es volver a crear los clusters pero usando ahora la función `kmeans()`.
+**10)** Lo último que vamos a hacer con este data set es volver a crear los clusters pero usando ahora la función `kmeans()`.
 
-**9.1)** Usando lo aprendido en el TP anterior:
+**10.1)** Usando lo aprendido en el TP anterior:
 
 * Usen la función `kmeans()` para crear un nuevo clustering. Usen la cantidad de `centers` que consideren necesarios.
 * Extraigan los clusters del clustering recién creado y asígnenlos a una nueva columna en **dt_iris** llamada **K3_cluster**.
 * Transformen dicha columna en un *factor*.
-* Usando la función creada en el punto **8)**, vean como se distribuyen los puntos al comparar **Sepal.Length** contra **Petal.Length** usando la columna **Species** para determinar el color y la columna **K3_cluster** para determinar la forma de los diferentes puntos. Guarden este plot en un archivo llamado **13_Sepal_vs_Petal_Width_per_Species_K3.pdf**.
+* Usando la función creada en el punto **9)**, vean como se distribuyen los puntos al comparar **Sepal.Length** contra **Petal.Length** usando la columna **Species** para determinar el color y la columna **K3_cluster** para determinar la forma de los diferentes puntos. Guarden este plot en un archivo llamado **22_Sepal_vs_Petal_Width_per_Species_K3.pdf**.
 
-**9.2)** Abran el archivo recién creado. Basándose solo en lo que pueden observar en este plot, ¿pueden decir algo de si este agrupamiento es mejor, peor o similar al obtenido con el clustering jerárquico?
+**10.2)** Abran el archivo recién creado. Basándose solo en lo que pueden observar en este plot, ¿pueden decir algo de si este agrupamiento es mejor, peor o similar al obtenido con el clustering jerárquico? (recuerden que "no" también es una respuesta válida)
 
-**9.3)** Supongamos ahora que estamos en un escenario real, por lo que no tenemos información de a que especie corresponde cada punto. En base a lo visto en el TP anterior, ¿se les ocurre alguna forma de evaluar objetivamente cuál de ambos es el mejor clustering?
+**10.3)** Supongamos ahora que estamos en un escenario real, por lo que no tenemos información de a que especie corresponde cada punto. En base a lo visto en el TP anterior, ¿se les ocurre alguna forma de evaluar objetivamente cuál de ambos es el mejor clustering?
 
 !!! tip "Tip - Predeterminar el azar"
 
@@ -577,7 +589,7 @@ El conteo de *reads* no se puede comparar entre genes puesto que la expresión b
 Por esta razón vamos a querer modificar las nueve columnas y transformar el valor a "conteo por millón", cuya fórmula es:
 
 $$
-\text{RMP or CPM} = \frac{ReadsDelGen * 10^6}{ReadsTotales}
+\text{RPM or CPM} = \frac{ReadsDelGen * 10^6}{ReadsTotales}
 $$
 
 ### Combinar las réplicas
@@ -753,7 +765,12 @@ pheatmap(mat = plot_data, kmeans_k = 10, cluster_cols = F)
 * `kmeans_k = 10` le está diciendo que agrupe los datos en 10 clusters, similar a correr `kmeans(plot_data, centers = 10)`
 * `cluster_col = F` le está diciendo que no trate de agrupar las columnas por similitud y que no haga un dendrograma asociado
 
-**5.3)** Mirando los 10 clusters que acabamos de crear, ¿cuáles les parece que son similares entre sí? ¿qué patrones de alto o bajo Fold Change para droga 1 o droga 2 pueden observar?
+**5.3)** Mirando los 10 clusters que acabamos de crear, para que clusters de genes se observa:
+
+* Fold change alto para ambas drogas
+* Fold change bajo para ambas drogas
+* Fold change alto para la droga 1 y bajo la droga 2
+* Fold change bajo para la droga 1 y alto la droga 2
 
 ### Calcular genes más afectados { markdown data-toc-label='Genes más afectados' }
 
@@ -774,7 +791,7 @@ O sea, que nos vamos a quedar con aquellos genes que tienen un CPM 2.83 veces m�
 
 !!! tip "Tip - Calcular el valor absoluto"
 
-    La función `abs()` nos devuelve el valor absoluto de un número. Si bien es posible filtrar estos datos usando simplemente un **AND**, también lo pueden hacer usando `abs()`, lo que prefieran.
+    La función `abs()` nos devuelve el valor absoluto de un número. Si bien es posible filtrar estos datos usando simplemente un **OR**, también lo pueden hacer usando `abs()`, lo que prefieran.
 
 **6.2)** Usen `write.table()` para generar un nuevo archivo llamado **affected_genes_drug1** y guarden en él los IDs recién calculados para la droga 1. Tengan en cuenta que queremos solo los IDs, por lo que tienen que cambiar los parámetros de la función para que no haya nombres de las filas, nombres de las columnas ni comillas. Hagan lo mismo para la droga 2.
 
@@ -792,7 +809,7 @@ O sea, que nos vamos a quedar con aquellos genes que tienen un CPM 2.83 veces m�
     ![AnalyzeResults](img/analyzeResults.png)
     </figure>
 
-**7.3)** Ordenen la tabla obtenida por la columna **P-value** para que los mejores hits estén primero. A grandes rasgos, ¿qué procesos biológicos parecen estar afectados directa o indirectamente por la droga 1?
+**7.3)** Esta tabla muestra procesos biológicos relacionados con nuestra lista de genes. A grandes rasgos, ¿qué procesos biológicos parecen estar afectados directa o indirectamente por la droga 1? Para responder esto pueden ordenar la tabla obtenida por la columna **P-value** en forma ascendente o pueden presionar el botón **Show Word Cloud** que se encuentra arriba de la tabla para ver un *Word Cloud* de los diferentes procesos biológicos.
 
 **7.4)** Hagan **7.1)**, **7.2)** y **7.3)** para la droga 2.
 
