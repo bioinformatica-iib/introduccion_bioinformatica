@@ -238,7 +238,7 @@ Donde `method = "euclidean"` le está diciendo a la función `dist` que tiene qu
 
 **3)** Corran el código anterior e impriman `matriz_distancias` por consola. ¿Coinciden los datos con la matriz de distancias vista en el **Ejercicio 1**?
 
-#### Hacer el clustering jerárquico { markdown data-toc-label='clustering jerárquico' }
+#### Hacer el clustering jerárquico { markdown data-toc-label='Clustering jerárquico' }
 
 El *clustering jerárquico* se hace con la función `hclust`, la cual se usa:
 
