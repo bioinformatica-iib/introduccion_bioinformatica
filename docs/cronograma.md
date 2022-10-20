@@ -38,7 +38,7 @@ tags:
 | Martes, 18 Octubre 2022 | 9:00 hs |	:material-google-classroom: Online | [T11. Data clustering](/2022_introduccion_bioinformatica/teoricas/11-Teorica-Once/) | :fontawesome-solid-brain: Teórica |	F. Agüero |
 | Jueves, 20 Octubre 2022 | 9:00 hs |	:material-google-classroom: Online | P12a. Data mining | :fontawesome-solid-hammer: Práctica |	A. Ricci |
 | Jueves, 20 Octubre 2022 | 14:00 hs |	:fontawesome-solid-map-location: Aula a definir| TE3. Teórica Extra 3 | :fontawesome-solid-brain: Teórica |	J. Glavina |
-| Martes, 25 Octubre 2022 | 9:00 hs |	:material-google-classroom: Online | T12. Secuenciación y ensamblado de genomas | :fontawesome-solid-brain: Teórica |	F. Agüero |
+| Martes, 25 Octubre 2022 | 9:00 hs |	:material-google-classroom: Online | [T12. Secuenciación y ensamblado de genomas](/2022_introduccion_bioinformatica/teoricas/12-Teorica-Doce/) | :fontawesome-solid-brain: Teórica |	F. Agüero |
 | Jueves, 27 Octubre 2022 | 9:00 hs |	:material-google-classroom: Online | P12b. Data mining | :fontawesome-solid-hammer: Práctica |	A. Ricci |
 | Martes, 01 Noviembre 2022 | 9:00 hs |	:material-google-classroom: Online | P13. Visualizando genomas con Artemis | :fontawesome-solid-hammer: Práctica |	J. Glavina |
 | Jueves, 03 Noviembre 2022 | 9:00 hs |	:material-google-classroom: Online | P14. Genómica comparativa | :fontawesome-solid-hammer: Práctica |	J. Glavina |
