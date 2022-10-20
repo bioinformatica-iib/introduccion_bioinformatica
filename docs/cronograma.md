@@ -35,7 +35,7 @@ tags:
 | Jueves, 06 Octubre 2022 | 9:00 hs |	:material-google-classroom: Online | [P10. Bioinformática Estructural: Motivos funcionales en proteínas](/2022_introduccion_bioinformatica/practicos/TP10_Motivos/) | :fontawesome-solid-hammer: Práctica |	J. Glavina |
 | Martes, 11 Octubre 2022 | 9:00 hs |	:material-google-classroom: Online | [T10. Bioinformática Estructural: Dominios](/2022_introduccion_bioinformatica/teoricas/10-Teorica-Diez/) | :fontawesome-solid-brain: Teórica |	L. Chemes |
 | Jueves, 13 Octubre 2022 | 9:00 hs |	:material-google-classroom: Online | [P11. Bioinformática Estructural: Dominios 3D y Modelado por homología](/2022_introduccion_bioinformatica/practicos/TP11_Modelado_Por_Homologia/) | :fontawesome-solid-hammer: Práctica |	J. Glavina |
-| Martes, 18 Octubre 2022 | 9:00 hs |	:material-google-classroom: Online | T11. Data clustering | :fontawesome-solid-brain: Teórica |	F. Agüero |
+| Martes, 18 Octubre 2022 | 9:00 hs |	:material-google-classroom: Online | [T11. Data clustering](/2022_introduccion_bioinformatica/teoricas/11-Teorica-Once/) | :fontawesome-solid-brain: Teórica |	F. Agüero |
 | Jueves, 20 Octubre 2022 | 9:00 hs |	:material-google-classroom: Online | P12a. Data mining | :fontawesome-solid-hammer: Práctica |	A. Ricci |
 | Jueves, 20 Octubre 2022 | 14:00 hs |	:fontawesome-solid-map-location: Aula a definir| TE3. Teórica Extra 3 | :fontawesome-solid-brain: Teórica |	J. Glavina |
 | Martes, 25 Octubre 2022 | 9:00 hs |	:material-google-classroom: Online | T12. Secuenciación y ensamblado de genomas | :fontawesome-solid-brain: Teórica |	F. Agüero |
