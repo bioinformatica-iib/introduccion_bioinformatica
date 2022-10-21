@@ -11,6 +11,16 @@
 Este es el botón para descargar materiales, en (#) hay que agregar el link correspondiente
 -->
 
+### Slides mostrados en la clase
+
+* :fontawesome-regular-file-pdf: [Introducción Clustering Jerárquico](https://drive.google.com/file/d/1Eh_u3qKrqPI8AgOggD_qW_CvXjk_vNfT/view?usp=sharing)
+* :fontawesome-regular-file-pdf: [Cierre TP](https://drive.google.com/file/d/17JlDGAwSoU8ynugUjD-nOSqThE2HOKPC/view?usp=sharing)
+
+### Videos de la clase grabada
+
+* :octicons-video-16: [Introducción al TP](https://www.youtube.com/watch?v=lmfJhns31fo)
+* :octicons-video-16: [Cierre TP](https://www.youtube.com/watch?v=gkZ0wE_vdfA)
+
 ### Software a usar
 * R (ya instalado en la VM).
 * RStudio (ya instalado en la VM)
@@ -314,7 +324,7 @@ La función `kmeans` viene con **R** y se usa:
 #Esta funcion controla el aspecto azaroso de kmeans para que nos de igual a todos
 set.seed(1)
 
-#Corro la funcion kmeans para los datos sin estandarizar pidiendole 3 clusters
+#Corro la funcion kmeans para los datos sin estandarizar pidiendole 2 clusters
 clustering_kmeans_k2_ST <- kmeans(matriz_datos_ST, centers = 2)
 
 #Extraigo los clusters calculados
@@ -343,16 +353,18 @@ Es posible entonces calcular el promedio de los *Silhouette coefficients* de tod
 
 Este método tiene bastantes usos, pero uno de los más comunes es definir cuál es el número ideal de clusters a crear con *K-means*. 
 
+<!--
 La función `silhouette` no viene por defecto con **R**. Corran el siguiente código para instalar el paquete `cluster`:
 
 ```R
 install.packages("cluster")
 ```
+-->
 
-Esta función se usa:
+En **R** Esta función se usa:
 
 ```R
-library(cluster) #para silhouette()
+library(cluster) #paquete que contiene la funcion silhouette()
 
 #Calculo los silhouette coefficients para los datos estandarizados agrupados en 2 clusters usando kmeans 
 #Tengo que pasarle tambien la matriz de distancias correspondiente para que pueda calcular similitud entre elementos
