@@ -17,7 +17,7 @@
     
     
       
-        <title>Index - Introducción a la Bioinformática</title>
+        <title>TP 12b - Data Mining - Introducción a la Bioinformática</title>
       
     
     
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Index
+              TP 12b - Data Mining
             
           </span>
         </div>
@@ -265,13 +265,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../inicio/" class="md-tabs__link">
+      <a href="../inicio/" class="md-tabs__link md-tabs__link--active">
         Prácticos
       </a>
     </li>
@@ -624,12 +626,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" checked>
       
       
       
@@ -837,6 +841,296 @@
       <a href="../TP12a_Clustering/" class="md-nav__link">
         TP 12a - Clustering
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          TP 12b - Data Mining
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        TP 12b - Data Mining
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#software-a-usar" class="md-nav__link">
+    Software a usar
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recursos-online" class="md-nav__link">
+    Recursos Online
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objetivos" class="md-nav__link">
+    Objetivos
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduccion-al-tema" class="md-nav__link">
+    Introducción al Tema
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mejores-plots-ggplot2" class="md-nav__link">
+    Mejores plots: ggplot2
+  </a>
+  
+    <nav class="md-nav" aria-label="Mejores plots: ggplot2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bases-de-ggplot2" class="md-nav__link">
+    Bases de ggplot2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cambiar-la-estetica-del-plot-segun-variables" class="md-nav__link">
+    Estética variable
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nombres-y-estilo-de-los-ejes-y-el-plot" class="md-nav__link">
+    Nombres de los ejes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fondo-del-plot" class="md-nav__link">
+    Fondo del plot
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#otros-tipos-de-plots" class="md-nav__link">
+    Otros tipos de plots
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-1-agrupando-flores-por-especies" class="md-nav__link">
+    Ejercicio 1
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicio 1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introduccion-al-data-set" class="md-nav__link">
+    Introducción al data set
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problema-a-resolver" class="md-nav__link">
+    Problema a resolver
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#guardar-el-plot-en-un-pdf" class="md-nav__link">
+    Guardar el plot en un PDF
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clustering-jerarquico" class="md-nav__link">
+    Clustering jerárquico
+  </a>
+  
+    <nav class="md-nav" aria-label="Clustering jerárquico">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mejorar-el-plot-del-clustering-jerarquico" class="md-nav__link">
+    Mejorar el plot
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#single-linkage" class="md-nav__link">
+    Single Linkage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hacer-clusters-y-plots" class="md-nav__link">
+    Hacer clusters y plots
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kmeans" class="md-nav__link">
+    Kmeans
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-2-analizando-el-efecto-de-dos-inhibidores" class="md-nav__link">
+    Ejercicio 2
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicio 2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#leer-los-datos" class="md-nav__link">
+    Leer los datos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estandarizar-los-datos" class="md-nav__link">
+    Estandarizar los datos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#combinar-las-replicas" class="md-nav__link">
+    Combinar las réplicas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calcular-el-fold-change" class="md-nav__link">
+    Calcular el Fold Change
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transformar-el-fold-change" class="md-nav__link">
+    Transformar el Fold Change
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotear-el-heatmap" class="md-nav__link">
+    Plotear el Heatmap
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calcular-genes-mas-afectados" class="md-nav__link">
+    Genes más afectados
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buscar-nuestros-genes-en-bases-de-datos" class="md-nav__link">
+    Bases de datos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bibliografia" class="md-nav__link">
+    Bibliografía
+  </a>
+  
+    <nav class="md-nav" aria-label="Bibliografía">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#consola-de-r" class="md-nav__link">
+     Consola de R
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1639,6 +1933,41 @@ Este es el botón para descargar materiales, en (#) hay que agregar el link corr
       </main>
       
         <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Pie">
+      
+        
+        <a href="../TP12a_Clustering/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: TP 12a - Clustering" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              TP 12a - Clustering
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../instructivos/inicio/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: Inicio" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Siguiente
+              </span>
+              Inicio
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
