@@ -1,0 +1,1216 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Sitio Web del Curso Introducción a la Bioinformática">
+      
+      
+      
+        <link rel="canonical" href="https://bioinformatica-iib.github.io/2022_introduccion_bioinformatica/practicos/TP13_Artemis/">
+      
+      <link rel="icon" href="../../img/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.15">
+    
+    
+      
+        <title>TP N°13 - Introducción a la Bioinformática</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.c382b1dc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cc9b2e1e.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#materiales" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Introducción a la Bioinformática" class="md-header__button md-logo" aria-label="Introducción a la Bioinformática" data-md-component="logo">
+      
+  <img src="../../img/favicon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Introducción a la Bioinformática
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              TP N°13
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Limpiar" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Inicio
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../acerca/" class="md-tabs__link">
+      Acerca de
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../contenidos/" class="md-tabs__link">
+      Contenidos
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../cronograma/" class="md-tabs__link">
+      Cronograma
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../docentes/" class="md-tabs__link">
+      Docentes
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../teoricas/inicio/" class="md-tabs__link">
+        Teoricas
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../inicio/" class="md-tabs__link">
+        Prácticos
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../instructivos/inicio/" class="md-tabs__link">
+        Instructivos
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Introducción a la Bioinformática" class="md-nav__button md-logo" aria-label="Introducción a la Bioinformática" data-md-component="logo">
+      
+  <img src="../../img/favicon.png" alt="logo">
+
+    </a>
+    Introducción a la Bioinformática
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Inicio
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../acerca/" class="md-nav__link">
+        Acerca de
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contenidos/" class="md-nav__link">
+        Contenidos
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cronograma/" class="md-nav__link">
+        Cronograma
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docentes/" class="md-nav__link">
+        Docentes
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Teoricas
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Teoricas" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Teoricas
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoricas/inicio/" class="md-nav__link">
+        Inicio
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoricas/1-Teorica-Uno/" class="md-nav__link">
+        Teórica 1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoricas/2-Teorica-Dos/" class="md-nav__link">
+        Teórica 2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoricas/3-Teorica-Tres/" class="md-nav__link">
+        Teórica 3
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoricas/4-Teorica-Cuatro/" class="md-nav__link">
+        Teórica 4
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoricas/5-Teorica-Cinco/" class="md-nav__link">
+        Teórica 5
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoricas/6-Teorica-Seis/" class="md-nav__link">
+        Teórica 6
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoricas/7-Teorica-Siete/" class="md-nav__link">
+        Teórica 7
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoricas/8-Teorica-Ocho/" class="md-nav__link">
+        Teórica 8
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoricas/9-Teorica-Nueve/" class="md-nav__link">
+        Teórica 9
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoricas/10-Teorica-Diez/" class="md-nav__link">
+        Teórica 10
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoricas/11-Teorica-Once/" class="md-nav__link">
+        Teórica 11
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoricas/12-Teorica-Doce/" class="md-nav__link">
+        Teórica 12
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          Prácticos
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Prácticos" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Prácticos
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inicio/" class="md-nav__link">
+        Inicio
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TP01_Linux/" class="md-nav__link">
+        TP 1 - Linux
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TP02_EMBOSS/" class="md-nav__link">
+        TP 2 - EMBOSS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TP03_Alineamientos/" class="md-nav__link">
+        TP 3 - Alineamientos de a pares
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TP04_Busqueda_por_similitud/" class="md-nav__link">
+        TP 4 - Búsqueda por similitud
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TP05_PSI-BLAST/" class="md-nav__link">
+        TP 5 - Perfiles de secuencias
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TP06_Filogenia/" class="md-nav__link">
+        TP 6 - Filogenias
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TP07_HMM_ANN/" class="md-nav__link">
+        TP 7 - HMMs & ANNs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TP08a_R/" class="md-nav__link">
+        TP 8a - R - Introducción
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TP08b_R/" class="md-nav__link">
+        TP 8b - R - Aplicación
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TP09_Desorden/" class="md-nav__link">
+        TP 9 - Predicción de Desorden
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TP10_Motivos/" class="md-nav__link">
+        TP 10 - Motivos Lineales
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TP11_Modelado_Por_Homologia/" class="md-nav__link">
+        TP 11 - Modelado por Homología
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TP12a_Clustering/" class="md-nav__link">
+        TP 12a - Clustering
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TP12b_Data_Mining/" class="md-nav__link">
+        TP 12b - Data Mining
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          Instructivos
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Instructivos" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Instructivos
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instructivos/inicio/" class="md-nav__link">
+        Inicio
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instructivos/maquina_virtual/" class="md-nav__link">
+        Máquina Virtual
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instructivos/problemasVM/" class="md-nav__link">
+        Problemas instalando la Máquina Virtual
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instructivos/tipsVM/" class="md-nav__link">
+        Tips and Tricks para usar la Máquina Virtual más cómodos
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+  <h1>TP N°13</h1>
+
+<p>{% if page.construccion %}</p>
+<p><strong>Pagina en construccion</strong></p>
+<p>{% else %}</p>
+<p>{% if page.data %}</p>
+<h2 id="materiales">Materiales</h2>
+<p><a href="data/"> Descargar </a></p>
+<p>{% endif %}</p>
+<h2 id="introduccion">Introducción:</h2>
+<p>Artemis es una herramienta de visualización y anotación de DNA gratuita desarrollada por Kim Rutherford ( Rutherford et al.,2000). Es utilizado rutinariamente para la anotación y el análisis de tanto genomas procariotas como eucariotas, y puede ser utilizado para visualizar datos mapeados de secuenciación de segunda generación. Este programa permite al usuario visualizar archivos de secuencias simples, archivos de EMBL/Genbank y los resultados de análisis de secuencias en un formato gráfico altamente interactivo e intuitivo. Multiples conjuntos/tipos de información pueden ser visualizados dentro de diferentes contextos, por ejemplo, en Artemis se puede inspeccionar motivos de secuencia de DNA, arquitecturas genicas locales (e.g. operones), varias kilobases de un genoma o hasta cromosomas enteros en una única pantalla. Se puede incluso realizar análisis dentro de Artemis guardando la salida para acceder luego.</p>
+<h2 id="objetivos">Objetivos:</h2>
+<p>El objetivo de este módulo es familiarizarse con las funciones básicas de Artemis empleando una serie de ejercicios. Estos ejemplos fueron desarrollados para atravesar las funciones más utilizadas. Sin embargo, les recomendamos que exploren otras funciones de Artemis que no estan desarrolladas en los ejercicios de este manual. Como siempre, "si no entienden, por favor pregunten!".</p>
+<h3 id="ejercicio-1">Ejercicio 1:</h3>
+<h4 id="1-iniciar-el-programa">1. Iniciar el programa</h4>
+<p>Para abrir el programa podemos usar la terminal: </p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span> ~/Tools/artemis/
+./art
+</code></pre></div>
+<p><img alt="Programa, ventana principal" src="images/0.png" /></p>
+<p>Aparecerá una pequeña ventana de inicio. Cargaremos la secuencia del cromosoma de Salmonella typhi, para esto clickeen en <strong>'File'</strong> y luego <strong>'Open'</strong>. Vayan a la carpeta del TP y abran el archivo <code>S_typhi.dna</code> seleccionándolo y luego clickeando en <strong>'Open'</strong>. Si todo salió bien se les abrirá una ventana de Artemis. Si no fue así, pidan asistencia.</p>
+<p><img alt="Genoma" src="images/1.png" /></p>
+<h4 id="2-cargando-archivos-de-anotacion-entries-en-artemis">2. Cargando archivos de anotación (<em>entries</em>) en Artemis</h4>
+<p>Ahora cargaremos un archivo de anotación para el cromosoma de <em>Salmonella typhi</em>. Esto lo haremos clickeando en <strong>'File'</strong> , <strong>'Read An Entry'</strong> y seleccionando el archivo <strong>'S_typhi.tab'</strong> y luego clickeando en <strong>'Open'</strong>.</p>
+<p><img alt="Anotaciones" src="images/2.png" /></p>
+<h4 id="3-vista-basica-de-artemis">3. Vista básica de Artemis</h4>
+<p>Una vez realizado esto, démosle una mirada a que hay en la ventana ( de arriba hacia abajo):</p>
+<p><img alt="Ventanas" src="images/3.png" /></p>
+<blockquote>
+<ol>
+<li>Menúes desplegables. Después iremos viendo algunas de sus utilidades.</li>
+<li>La siguiente línea muestra que entradas están activas. En nuestro caso estará <code>S_typhi.dna</code> y <code>S_typhi.tab</code>. Los detalles de los "features" que se encuentran actualmente seleccionados se muestran en el siguiente renglón.</li>
+<li>Este es el panel principal de visualización. Las 2 lineas grises centrales representan la hebra de DNA positiva (arriba) y la negativa (abajo). Arriba y abajo de ellas se encuentran los 3 marcos de lectura en cada sentido, respectivamente. Los codones <em>stop</em> en cada marco de lectura son señalados con barras negras verticales. Los genes y otros "features" (e.g. dominios Pfam o Prosite) se muestran como cajas coloreadas.</li>
+<li>Este panel tiene una disposición similar al panel principal pero es un acercamiento que permite observar la secuencia de nucleotidos y de aminoacidos. Hagan doble click sobre un gen en el panel principal y en este observaran un acercamiento del comienzo del gen.Noten que ambos paneles pueden ser desplazados hacia la izquierda o la derecha con el deslizador horizontal (inferior), y acercar o alejar con el deslizador vertical (lateral).</li>
+<li>Este panel lista los "features" presentes, en el orden en que ocurren en el DNA, con el gen seleccionado resaltado.</li>
+</ol>
+</blockquote>
+<h4 id="4-desplazandose-a-traves-de-artemis">4. Desplazandose a través de Artemis</h4>
+<p>Las 3 maneras principales de ir a región o posición que uno quiere en Artemis son: </p>
+<ul>
+<li>El menu desplegable <strong>Goto</strong>, </li>
+<li>el <strong>Navigator</strong>, </li>
+<li>y el <strong>Feature Selector</strong>. </li>
+</ul>
+<blockquote>
+<p>El mejor método depende de lo que cada uno este tratando de realizar, conocer cual conviene utilizar en cada caso viene con la práctica.</p>
+</blockquote>
+<h6 id="41-el-menu-goto">4.1 El menu 'Goto'</h6>
+<p>Las funciones en este menu (ignoren el Navigator por ahora) son atajos para dirigirse a sitios dentro de "features" seleccionados o para saltar al final o principio de la secuencia de DNA. Son muy intuitivos, asi que pruebenlos!</p>
+<p><img alt="Desplazamientos" src="images/4.png" /></p>
+<blockquote>
+<h6 id="tareas-sugeridas">Tareas sugeridas:</h6>
+<ol>
+<li>Alejen el visualizador, marquen una región grande de secuencia clickeando el botón izquierdo del mouse y arrastrando el cursor, luego vayan al principio y al final de la región seleccionada.</li>
+<li>Seleccionen un gen, vayan al principio y al final.</li>
+<li>Vayan al principio y al final de la secuencia del genoma.</li>
+<li>Seleccionen un gen. Dentro de él, vayan a una base y/o aminoácido que quieran.</li>
+<li>Marquen una región, luego desde el menu del click izquierdo, seleccionen 'Zoom to selection'.</li>
+</ol>
+</blockquote>
+<h6 id="42-navigator">4.2 Navigator</h6>
+<p>El panel del navigator es muy intuitivo, así que ábranlo (Clic en 'Goto', luego en 'Navigator') y pruébenlo!.</p>
+<p><img alt="Desplazamientos con navigator" src="images/5.png" /></p>
+<blockquote>
+<h6 id="sugerencias-a-donde-ir">Sugerencias a donde ir:</h6>
+<ol>
+<li>Piensen un número entre 1 y 4809037 y vayan a esa base.</li>
+<li>Su nombre de gen favorito ( puede que no este, en tal caso prueben 'fts').</li>
+<li>Usen 'Goto Feature With This Qualifier Value' para buscar en todos los qualifiers por un término particular. Por ejemplo, usando la palabra 'pseudogene' te llevará al próximo "feature" que contenga esa palabra en cualquiera de sus qualifiers. Noten que repitiendo el clic en el botón 'Goto' los llevará a lo largo de los pseudogenes a medida que se presentan en el cromosoma.</li>
+<li>Para la anotación de los genomas se utiliza un esquema de clasificación funcional mediante números, similar a los términos GO, denominados '<em>class qualifiers</em>'. A cada CDS se le asigna un 'class qualifier' de acuerdo a su función. Usen la función 'Goto Feature With This Qualifier value' para buscar CDS que pertenecen a una determinada clase. Algunos que pueden buscar son: 0.0.1 (Conservados en Escherichia coli) ; 1.4.0 (Respuestas protectivas) ; 1.4.1 (Muerte celular) ; 1.4.2 (Detoxificación) ; 1.4.4 ( sensitividad a la radiación) 3.1.0 (Biosintesis de aminoácidos) ; 3.1.01 (Biosíntesis de alanina) ; 3.1.09 (Biosíntesis de glicina).</li>
+<li>Genes de tRNAs. Escriban 'tRNA' en el 'Goto Feature With This Key'</li>
+<li>Secuencias consenso de DNA para la unión de reguladores (reales o inventadas!). Noten que se pueden utilizar valores de bases degeneradas (e.g. R = A o G ; Y = C o T; etc) </li>
+<li>Secuencias consenso de aminoácidos (reales o inventadas!). Pueden utilizar 'X'. Noten que estas búsquedas se realizan en todos los marcos de lectura independientemente de si realmente codifican aminoácidos o no.</li>
+</ol>
+</blockquote>
+<p>Claramente hay muchos más funciones de Artemis, las cuales no tendremos tiempo de explicar en detalle. Sin embargo ustedes mismos pueden recorrer los menús. Seguramente encuentren que la mayoría de ellos son intuitivos y simples de entender.</p>
+<h6 id="43-feature-selector">4.3 Feature Selector</h6>
+<p>Para acceder a este menú hay que ir a "Select" y luego a "Feature Selector ...". Al igual que con el Navigator, esto nos abre una nueva ventana donde podemos elegir los criterios de selección. Cada una de las opciones tiene una cajita asociada a su izquierda que nos permite usar o ignorar cada criterio, pudiéndose realizar cualquier combinación de los mismos.</p>
+<ul>
+<li>
+<p><strong>Key</strong>. Desde el menú desplegable se puede elegir que tipo de elemento queremos seleccionar (CDS, tRNA, TMM, etc.). Se lista una gran variedad independientemente si están o no anotados en nuestra secuencia.</p>
+</li>
+<li>
+<p><strong>Qualifier</strong>. Nos permite refinar la búsqueda encontrando un texto determinado en el campo seleccionado (por ej. si elegimos EC_number podemos encontrar las regiones codificantes que pertenezcan a una categoría determinada como hicimos en "Navigator"). Debajo del campo para escribir el texto encontraran 3 cajas más que con opciones para la búsqueda del texto.</p>
+</li>
+<li>
+<p><strong>Up to/At least</strong>. Aquí podemos restringir la búsqueda por cantidad de bases o exones que contiene la secuencia a seleccionar. No guarda mayores misterios.</p>
+</li>
+<li>
+<p><strong>Amino acid motif</strong>. Por último, podemos buscar regiones que contengan ciertos patrones de aminoácidos y si su búsqueda debe llevarse a cabo en la hebra positiva, negativa o ambas.</p>
+</li>
+</ul>
+<p>Al finalizar la elección de criterios pueden apretar "Select" para seleccionar las regiones que cumplan con la búsqueda, o "View" para que nos dé una lista de los hits, con el mismo formato que la que encontramos bajo el panel principal.</p>
+<h3 id="ejercicio-2-analisis-particulares-y-globales">Ejercicio 2: Análisis particulares y globales</h3>
+<h4 id="analizando-informacion-particular">Analizando información particular:</h4>
+<p>Por el método de su elección diríjanse a la región localizada entre las bases 2188349 y 2199512 en la secuencia de ADN. Esta región esta <em>upstream</em> al gen fbaB, el cual codifica la fructosa bisfosfonato aldolasa. Pueden utilizar el 'Navigator', el 'Feature Selector' o las funciones de 'Goto' discutidas previamente para ir a esta localización. Una vez que estén ahí visualizaremos la información específica disponible:</p>
+<p><strong>Anotación</strong>: Si clickean en un "feature" en particular pueden ver la anotación asociada a él: Seleccionen un "CDS feature" ( o cualquier otro "feature" y clickeen en el menú 'Edit' y seleccionen 'Selected Feature in Editor'. Aparecerá una ventana conteniendo toda la anotación asociada con este CDS.</p>
+<p><img alt="Features" src="images/6.png" /></p>
+<p><strong>Visualizando secuencias de aminoácidos:</strong> Clickeen en el menú 'View' y verán varias opciones para visualizar las bases o aminoácidos del "feature" que han seleccionado, en dos formatos, EMBL o FASTA. Esto puede ser muy útil cuando se desea utilizar otros programas que no están integrados en Artemis, e.g. aquellos disponibles en la Web que requieren cortar y pegar la secuencia en ellos.</p>
+<p><img alt="Plots" src="images/8.png" /></p>
+<p><strong>Gráficos</strong>: Se pueden desplegar gráficos de características seleccionando un "CDS feature", luego clickeando en 'View' y 'Feature Plots'. La ventana que aparece muestra gráficos prediciendo hidrofobicidad, hidrofilicidad y alfa-hélices para la proteína codificada por el CDS seleccionado.</p>
+<p><img alt="Plots" src="images/7.png" /></p>
+<h4 id="analizando-informacion-global">Analizando información global:</h4>
+<p>Además de visualizar al detalle los "features" anotados también se puede observar las características del ADN en toda la región presentada. Esto puede realizarse adicionando diferentes gráficos mostrando distintas características del ADN. Algunos de estos son utilizados para observar el potencial codificante o marcos de lectura dentro del ADN, como el 'GC frame plot', y otros pueden ser utilizados para buscar regiones de ADN adquirido horizontalmente. En el directorio de este módulo encontrarán una tabla de uso de codones, S_typhi.cod, la cual puede ser utilizada para generar un gráfico de uso de codones cargándola mediante la opción 'Add usage plots' dentro del menú 'Graph'.</p>
+<p>Clickeen en el menú 'Graph' para ver todos los gráficos disponibles. Tal vez los gráficos más útiles sean 'GC content (%)' , 'GC Deviation' y 'Karlin Signature Difference' (es un gráfico de frecuencia de dinucleótidos). Despliéguenlos!. Para ajustar la suavidad de los gráficos pueden cambiar el tamaño de la ventana sobre la cual los puntos del gráfico son calculados, utilizando el deslizador vertical a la derecha de los mismos.</p>
+<p><img alt="Plots" src="images/9.png" /></p>
+<blockquote>
+<p><strong>Nota</strong>: La información de los gráficos es generada dinámicamente por Artemis y aunque este es un ejercicio relativamente rápido para una pequeña región de ADN, en una vista de genoma completo esto puede demorar un rato, así que, en tal caso, tengan paciencia.</p>
+</blockquote>
+<p>Observen cómo los gráficos muestran una desviación marcada en la región que están visualizando (cerca del gen fbaB). Para apreciar mejor la anomalía de esta región, agranden un poco la región visualizada. <strong>¿Qué les sugiere el contenido inusual de nucleótidos en esta región del ADN?</strong></p>
+<p><img alt="GC Devs" src="images/10.png" /></p>
+<p>Además de visualizar las características de regiones pequeñas del genoma, también se puede alejar la imagen y observar características del genoma como un todo. Para esto primero tengan en cuenta que alejar la imagen rápidamente con todos los "features" desplegados puede bloquear momentáneamente la computadora. Por lo que para realizar este proceso rápidamente, (1) apaguen los indicadores de codones stop haciendo clic derecho sobre la ventana principal. Aparecerá un menú con la opción de deseleccionar los codones stop. (2) También se debe eliminar temporariamente todo los "features" de anotación. Para realizarlo descliqueen la caja de "S_typhi.tab" en la barra de entrada debajo de la barra de menú.</p>
+<p><img alt="GC Devs" src="images/11.png" /></p>
+<p>Otro tip importante es ajustar la escala de los gráficos desplegados antes de alejar la imagen. Esto aumenta el tamaño de ventana sobre el cual un punto en cada gráfico es calculado. Para ajustar el escalado (3) cliqueen con el botón derecho del mouse sobre la ventana de un gráfico en particular. Aparecerá un menú con una serie de valores para los tamaños máximos de ventana, seleccionen 500. Esto deben hacerlo para cada gráfico desplegado.</p>
+<p>Ahora están listos para alejar la imagen haciendo clic sobre el deslizador (4) de la ventana principal y arrastrando hacia abajo.</p>
+<p><img alt="GC Devs" src="images/12.png" /></p>
+<h3 id="ejercicio-3-anotando-el-genoma">Ejercicio 3: Anotando el genoma</h3>
+<p>Ahora vuelvan a seleccionar <code>S_typhi.tab</code> en las entradas activas para volver a visualizar las anotaciones. Vayan a la posición 4409511. Buscaremos aquí una región denominada <em>Salmonella pathogenicity island (SPI)</em>. En el genoma con el que estamos trabajando la veremos como "<em>The major Vi antigen pathogenicity island (SPI 7)</em>"; una región de ~134 kb de largo que contiene un bacteriófago de ~30 kb. </p>
+<p><img alt="SPI7" src="images/13.png" /></p>
+<p>Esta región es un ejemplo más bien clásico de SPI. La definición exacta de qué constituye una isla de patogénesis es, de hecho, bastante diversa; pero las carcterísticas fundamentales comunmente observadas en estas regiones son, según Hacker <em>et al</em>., 1997.</p>
+<ol>
+<li>Normalmente insertas entre dos RNAs estables flanqueantes.</li>
+<li>Contenidos de G+C atípicos.</li>
+<li>Codifican, entre otras cosas, para factores de virulencia.</li>
+<li>Codifican, además, para transposas o integrasas.</li>
+<li>Se trata de un "cassette" inestable y auto-móvil. </li>
+<li>De distribución filogenética limitada.</li>
+</ol>
+<p>Para corroborar que efectivamente esta región es un SPI, vamos a extraerla del genoma completo y realizar algunos análisis puntuales. Vamos a apuntar a escribir y guardar un nuevo archivo EMBL, que incluirá nuestras anotaciones para esta región exclusivamente.</p>
+<p>Para ello seleccionaremos nuestro presunto SPI y, en la barra de menús desplegables, iremos a <code>Edit</code> &gt; <code>Subsequence (and Features)</code>. Esto abrirá una nueva ventana (sí, otra más <img alt="💩" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4a9.svg" title=":poop:" />). A primera vista no parecerá muy distinta a la ventana anterior (la principal, en la que tenemos cargado nuestro genoma), pero si miran un poco mejor notarán que</p>
+<ul>
+<li>Los nombres de las <code>entries</code> han cambiado (<em>no name</em>)</li>
+<li>Se han re-numerado las bases y ahora todas se relativizan a nuestra selección</li>
+<li>La nueva ventana se extiende desde el principio y hasta el final del presunto SPI, pero no podemos ver nada del genoma completo por fuera de ésta. </li>
+</ul>
+<p>Nótese que en la barra de <code>entries</code> de esta nueva ventana, como en la original, también tenemos dos entradas. Si desmarcan una o la otra, notarán que de hecho son las mismas entradas que en la original (contienen la misma información y están en el mismo orden). No obstante, dado que la sub-secuencia ahora es una sesión nueva de Artemis, este comportamiento previene que los originales sean sobre-escritos.</p>
+<p>Vamos a guardar estos nuevos archivos con nombres relevantes, para evitar confusiones: Hagan click en <code>File</code> &gt; <code>Save An Entry As</code> &gt; <code>New File</code>. Un nuevo menú nos preguntará cuál de nuestras entries vamos a guardar. </p>
+<blockquote>
+<p>En este punto ambas se llaman <em>no name</em>, lo cual puede resultar confuso. Lo único que nos ayudará a saber cuál es cuál es el orden (<img alt="💩" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4a9.svg" title=":poop:" />). </p>
+</blockquote>
+<p>Tomen el primero (desde arriba) y guárdenlo como <code>spi7.dna</code>. Repitan el proceso para el segundo y llámenlo <code>spi7.tab</code>.</p>
+<p>Ahora que hemos guardado podemos empezar a jugar sin miedo a sobreescribir los originales ni a perder nuestro progreso. Lo primero que haremos será identificar los límites del bacteriofago que está inserto en SPI7. Hallar estos límites será equivalente a hallar los sitios de inserción del fago. </p>
+<p>Es importante notar que el <code>Feature Selector</code> puede usarse de muchas maneras. En el ejemplo del fago teníamos todo marcado y eso nos facilitó el trabajo, pero también podríamos seleccionar subsets de features de un genoma usando texto o secuencias de aminoácidos.</p>
+<blockquote>
+<p>Esto significa que, si sabemos qué fago es (o sabemos qué clase de integrasa está involucrada en la integración del mismo), y la secuencia flanqueante del mismo está caracterizada, podríamos buscar nosotros mismos la región sin la necesidad de tenerla pre-anotada. </p>
+</blockquote>
+<p>Afortunadamente para nosotros, estas regiones ya han sido previamente identificadas y coloreadas en rosa (código de color 12). Para buscarlas podríamos emplear los métodos que ya aprendimos más arriba, pero una búsqueda avanzada por <code>Feature selector</code> es más apropiada:</p>
+<p><img alt="advanced feature search" src="images/14.png" /></p>
+<p>Todos los genes listados en (6) son aquellos cuyas anotaciones cumplen con los criterios seleccionados. Se pueden copiar/cortar/mover a una nueva entry para aislarlos del resto de la información contenida en <code>spi7.tab</code>. Para ello, primero vamos a crear una entry vacía: <code>Create</code> &gt; <code>New Entry</code>. Veremos que aparece una nueva entrada que se llama, como habrán imaginado, <code>no name</code>.  </p>
+<p>Ahora seleccionamos todos los CDSs mostrados en la lista haciendo click en <code>Select</code> &gt; <code>All</code>. Todas las features deberían estar seleccionadas. Para copiarlas a otra entry (es decir, a otro archivo) hagah click en <code>Edit</code> &gt; <code>Copy Selected Features To</code> &gt; <code>no name</code> (nuestra entry vacía). Cierren las ventanas de selección y vuelvan a la ventana con la sesión del SPI-7. Podrían renombrar <em>no name</em> como <em>phage.tab</em>, por ejemplo. Ahora si desmarcan la cajita de spi7.tab en la barra de entries, deberían quedar solo las features asociadas al fago (provistas por el archivo <em>phage.tab</em> que acabamos de crear).</p>
+<p>Si miran a la ventana con la sesión del SPI7 (y desmarcaron la entry de <code>spi7.tab</code>, dejando solo la <code>phage.tab</code> marcada), podemos intuir que el profago ocupa una porción discreta de todo el SPI-7. Usualmente, es útil crear una nueva feature de DNA para marcar el genoma a partir de estas observaciones. Para esto, apaguen los <em>stop codons</em> y luego usen el botón izquierdo del mouse para generar una selección, arrastrándolo de izquierda a derecha, de lo que consideren ustedes que define al profago. </p>
+<p><img alt="phage.tab" src="images/15.png" /></p>
+<p>Ahora, con la región seleccionada hagan click en <code>Create</code> &gt; <code>Create Feature from base range</code> y una ventana para editar la feature aparecerá en pantalla. Por defecto, Artemis asigna <em>CDS</em> a la <em>key</em> una nueva feature. Esto es incorrecto, ya que lo que buscamos marcar es una región del genoma que no es interesante por su caracter codificante/no-codificante; sino que tiene un fin más bien topográfico. Cambiemos esa key a <em>misc_feature</em>. También pueden agregar calificadores haciendo click en <code>Add Qualifier</code>. Usando calificadores podemos poner cosas como un <code>label</code>, que se usan para mostrar como <em>nombre</em> de una secuencia en el panel de visualización principal. </p>
+<p>Ahora que ya han creado nuestra feature, volvamos a encender el <code>spi7.tab</code> para ver qué tan bien lo hicieron <img alt="🎉" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f389.svg" title=":tada:" />. </p>
+<p>Lo último que harán con este ejercicio es escribir sus nuevas anotaciones (<code>spi7.dna/spi7.tab</code>) en un archivo tipo EMBL para <em>submission</em>; y crear un fichero combinado de anotaciones y secuencia, también en formato EMBL para <em>submission</em>. </p>
+<p>Para hacer esto, copien las anotaciones del .tab en el .dna y luego guarden esa entry como <code>EMBL format</code>. No se preocupen por los mensajes de error que aparecen. Estos errores tiene que ver con que no todas las features son aceptadas en la base de datos EMBL, y el programa nos advierte que éstas no se van a guardar. La siguiente figura muestra un paso a paso para generar el EMBL.</p>
+<p><img alt="phage.tab" src="images/16.png" /></p>
+<p>Si todo salió bien, pueden abrir ahora el EMBL que acaban de guardar y deberían ver algo así</p>
+<p><img alt="phage.tab" src="images/17.png" /></p>
+<p>Verán que los colores de la features han cambiado. Esto ocurre porque no todos los calificadores son válidos/acpetados por la base de datos de EMBL, así que éstos no han sido guardados. El qualifier '/colour', por ejemplo, es uno de ellos, por lo que al importar el archivo Artemis los muestra con los colores por defecto. </p>
+<p>Esto implica que cuando descarguen una secuencia en formato EMBL para poner en artemis, siempre tendrán los colores por defecto. No obstante, podrán editar los colores y agregar todos los calificadores que quieran para facilitar su trabajo dentro de Artemis, aunque luego no puedam volver a ser guardados como EMBL. </p>
+<h3 id="ejercicio-4-busquedas-en-bases-de-datos">Ejercicio 4: Búsquedas en bases de datos</h3>
+<p>Este ejercicio los introducirá a las búsquedas en bases de datos a través de la interfaz de Artemis y cómo podemos usar esta función para anotar genes. </p>
+<p>Volvamos a la ventana de <em>S. typhi</em>. Vamos a trabajar con el gene <em>hpcC</em> (STY1136). Prueben llegar al gen de distintas maneras, así practican. Vamos a analizar el marco de lectura del gene <em>hpcC</em>, y para hacerlo vamos a encender todos los codones de <em>stop</em> y a cerrar todos los gráficos de %GC que abrimos antes. </p>
+<p>Como ven, nuestro gen esta lleno de codones de <em>stop</em>, lo que sugiere que estamos en presencia de <em>pseudo gen</em>. Para corregir esta anotación vamos a realizar una búsqueda en base de datos en tres simples pasos:</p>
+<ol>
+<li>Seleccionamos nuestro <strong>CDS</strong>.</li>
+<li>Clickeamos en <strong>Run &gt; NCBI Searches</strong></li>
+<li>Y mandamos el <strong>blastp</strong></li>
+</ol>
+<p>Este proceso nos presentará una ventan con parámetros customizables para el blast y, haciendo click en <em>OK</em>, daremos comienzo al proceso. Demorará algunos segundos y culiminará enviando un <em>request</em> al NCBI usando.</p>
+<p>Esto nos abrirá una ventana en el navegador en la que podremos seguir el estado del proceso y, eventualmente, visualizar los resultados. </p>
+<p><img alt="blastp" src="images/18.png" /></p>
+<p>¿Pueden ver dónde está introducido el codón de stop en nuestro gen? Fíjense que el último aminoácido que comparte nuestra secuencia con el mejor hit en la base de datos, es una <strong>K</strong>. A partir de esa <strong>K</strong> vemos que las secuencias empiezan a diverger. Acá hay que ponerse meticulosos: Volvamos a la secuencia query y revisemos las secuencias de aminoácidos propuestas en los tres marcos abiertos de lectura. ¿Qué ven cuando lo ven? :3 </p>
+<p><img alt="marcos-de-lectura" src="images/19.png" /></p>
+<p>¡El marco de lectura está corrido! <em>¿Tienen alguna hipótesis de por qué puede pasar esto?</em></p>
+<p>Bien, ya descubrimos el error. Solo nos queda solucionarlo. Para hacerlo vamos a editar la secuencia codificante. Haremos click izquierdo en aminoácido que consideramos correcto después del último que sabemos que está bien (la K). Luego arrastramos hasta el final del gen para seleccionar toda la secuencia codificante. Con esta selección, crearemos una nueva <em>feature</em>: Create &gt; Feature from base range &gt; OK</p>
+<p>Adicionalmente tendremos que editar la anotación anterior para acortarla. Para eso selecccionamos el <em>hpcC</em> original y clickeamos: Edit &gt; Selected features in editor. En la nueva ventana que se abre vamos a cambiar las posiciones de finalización (en este caso sería la posición del último aminoácido que sabemos que está bien, K).</p>
+<p>Finalmente vamos a <em>mergear</em> (si alguien sabe un sinónimo de ésto en castellano me avisa) ambas anotaciones como indica la figura:</p>
+<p><img alt="marcos-de-lectura" src="images/20.png" /></p>
+<ol>
+<li>Selecciono ambas anotaciones (usando shift)</li>
+<li>Click en edit</li>
+<li>Selected features &gt; Merge</li>
+<li>OK</li>
+</ol>
+<p>El resultado va a ser algo así:</p>
+<p><img alt="marcos-de-lectura" src="images/21.png" /></p>
+<p>Si se fijan en sus resultados, van a ver que ambas anotaciones está conectadas por una linea; algo que veremos comunmente en genes con intrones... pero <em>S. tiphy</em>, como buena bacteria que es, no tiene intrones. </p>
+<p>¿Qué alternativa se les ocurre para arreglar este error?</p>
+<p>{% endif %}</p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Volver al principio
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2022 Area Bioinformatica UNSAM
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["search.suggest", "search.highlight", "search.share", "header.autohide", "navigation.tracking", "navigation.tabs", "toc.integrate", "navigation.top"], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "B\u00fasqueda", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version.title": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.a6c66575.min.js"></script>
+      
+        <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
+      
+        <script src="../../javascripts/tablesort.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

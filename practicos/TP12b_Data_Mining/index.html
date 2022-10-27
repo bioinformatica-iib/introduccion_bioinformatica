@@ -1479,7 +1479,7 @@ Este es el botón para descargar materiales, en (#) hay que agregar el link corr
 <p>Por último, cómo vamos a tener que hacer varios plots similares, vamos a aprovechar la oportunidad y vamos a usar por primera vez funciones de <strong>R</strong> creadas por nosotros.</p>
 <h3 id="guardar-el-plot-en-un-pdf">Guardar el plot en un PDF</h3>
 <p>Vamos a crear una función que guarde diferentes plots como PDFs.</p>
-<p><strong>2)</strong> Copien el siguiente código y modifiquen la sección que dice <code>@@EDITAR@@</code> (pueden ver los comentarios para entender mejor ciertas partes del código). Agreguen todos los parámetros necesarios para que al correr la función se replique el plot hecho en el punto <strong>1)</strong> y se guarde en un archivo llamado <strong>01_Sepal_vs_Petal_Length_per_Species.pdf</strong>.</p>
+<p><strong>2)</strong> Copien el siguiente código y modifiquen las secciones que dicen <code>@@EDITAR@@</code>. Para esto vean el punto <strong>1)</strong> y asígnenle a cada parámetro de la función el valor que tenía en dicho punto, por ejemplo <code>x_colname = "Sepal.Length"</code> (el nombre de las columnas vá entre comillas porque estamos usando <code>aes_string()</code> y no <code>aes()</code>). Una vez hecho esto, corran la función para replicar el plot hecho en el punto <strong>1)</strong> y guardarlo en un archivo llamado <strong>01_Sepal_vs_Petal_Length_per_Species.pdf</strong>.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Código</label><label for="__tabbed_1_2">Código con comentarios</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -1511,7 +1511,12 @@ Este es el botón para descargar materiales, en (#) hay que agregar el link corr
 <span class="n">dt_iris</span> <span class="o">&lt;-</span> <span class="nf">as.data.table</span><span class="p">(</span><span class="n">iris</span><span class="p">)</span>
 
 <span class="nf">plotData2PDF_wColor</span><span class="p">(</span><span class="n">data_par</span> <span class="o">=</span> <span class="n">dt_iris</span><span class="p">,</span>
-                    <span class="o">@@</span><span class="n">EDITAR</span><span class="o">@@</span><span class="p">,</span>
+                    <span class="n">x_colname</span> <span class="o">=</span> <span class="s">&quot;@@EDITAR@@&quot;</span><span class="p">,</span> 
+                    <span class="n">y_colname</span> <span class="o">=</span> <span class="s">&quot;@@EDITAR@@&quot;</span><span class="p">,</span> 
+                    <span class="n">color_colname</span> <span class="o">=</span> <span class="s">&quot;@@EDITAR@@&quot;</span><span class="p">,</span>
+                    <span class="n">x_label</span> <span class="o">=</span> <span class="s">&quot;@@EDITAR@@&quot;</span><span class="p">,</span> 
+                    <span class="n">y_label</span> <span class="o">=</span> <span class="s">&quot;@@EDITAR@@&quot;</span><span class="p">,</span> 
+                    <span class="n">plot_title</span> <span class="o">=</span> <span class="s">&quot;@@EDITAR@@&quot;</span><span class="p">,</span>                        
                     <span class="n">pdf_file</span> <span class="o">=</span> <span class="s">&quot;01_Sepal_vs_Petal_Length_per_Species.pdf&quot;</span><span class="p">)</span>    
 </code></pre></div>
 </div>
@@ -1554,7 +1559,12 @@ Este es el botón para descargar materiales, en (#) hay que agregar el link corr
 <span class="n">dt_iris</span> <span class="o">&lt;-</span> <span class="nf">as.data.table</span><span class="p">(</span><span class="n">iris</span><span class="p">)</span>
 
 <span class="nf">plotData2PDF_wColor</span><span class="p">(</span><span class="n">data_par</span> <span class="o">=</span> <span class="n">dt_iris</span><span class="p">,</span>
-                    <span class="o">@@</span><span class="n">EDITAR</span><span class="o">@@</span><span class="p">,</span>
+                    <span class="n">x_colname</span> <span class="o">=</span> <span class="s">&quot;@@EDITAR@@&quot;</span><span class="p">,</span> 
+                    <span class="n">y_colname</span> <span class="o">=</span> <span class="s">&quot;@@EDITAR@@&quot;</span><span class="p">,</span> 
+                    <span class="n">color_colname</span> <span class="o">=</span> <span class="s">&quot;@@EDITAR@@&quot;</span><span class="p">,</span>
+                    <span class="n">x_label</span> <span class="o">=</span> <span class="s">&quot;@@EDITAR@@&quot;</span><span class="p">,</span> 
+                    <span class="n">y_label</span> <span class="o">=</span> <span class="s">&quot;@@EDITAR@@&quot;</span><span class="p">,</span> 
+                    <span class="n">plot_title</span> <span class="o">=</span> <span class="s">&quot;@@EDITAR@@&quot;</span><span class="p">,</span>      
                     <span class="n">pdf_file</span> <span class="o">=</span> <span class="s">&quot;01_Sepal_vs_Petal_Length_per_Species.pdf&quot;</span><span class="p">)</span> 
 </code></pre></div>
 </div>
