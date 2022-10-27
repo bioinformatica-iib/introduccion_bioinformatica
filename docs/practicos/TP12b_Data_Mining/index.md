@@ -302,7 +302,7 @@ Por último, cómo vamos a tener que hacer varios plots similares, vamos a aprov
 
 Vamos a crear una función que guarde diferentes plots como PDFs.
 
-**2)** Copien el siguiente código y modifiquen la sección que dice `@@EDITAR@@` (pueden ver los comentarios para entender mejor ciertas partes del código). Agreguen todos los parámetros necesarios para que al correr la función se replique el plot hecho en el punto **1)** y se guarde en un archivo llamado **01_Sepal_vs_Petal_Length_per_Species.pdf**.
+**2)** Copien el siguiente código y modifiquen las secciones que dicen `@@EDITAR@@`. Para esto vean el punto **1)** y asígnenle a cada parámetro de la función el valor que tenía en dicho punto, por ejemplo `x_colname = "Sepal.Length"` (el nombre de las columnas vá entre comillas porque estamos usando `aes_string()` y no `aes()`). Una vez hecho esto, corran la función para replicar el plot hecho en el punto **1)** y guardarlo en un archivo llamado **01_Sepal_vs_Petal_Length_per_Species.pdf**.
 
 === "Código"
 
@@ -335,7 +335,12 @@ Vamos a crear una función que guarde diferentes plots como PDFs.
     dt_iris <- as.data.table(iris)
 
     plotData2PDF_wColor(data_par = dt_iris,
-                        @@EDITAR@@,
+                        x_colname = "@@EDITAR@@", 
+                        y_colname = "@@EDITAR@@", 
+                        color_colname = "@@EDITAR@@",
+                        x_label = "@@EDITAR@@", 
+                        y_label = "@@EDITAR@@", 
+                        plot_title = "@@EDITAR@@",                        
                         pdf_file = "01_Sepal_vs_Petal_Length_per_Species.pdf")    
     ```
 
@@ -380,7 +385,12 @@ Vamos a crear una función que guarde diferentes plots como PDFs.
     dt_iris <- as.data.table(iris)
 
     plotData2PDF_wColor(data_par = dt_iris,
-                        @@EDITAR@@,
+                        x_colname = "@@EDITAR@@", 
+                        y_colname = "@@EDITAR@@", 
+                        color_colname = "@@EDITAR@@",
+                        x_label = "@@EDITAR@@", 
+                        y_label = "@@EDITAR@@", 
+                        plot_title = "@@EDITAR@@",      
                         pdf_file = "01_Sepal_vs_Petal_Length_per_Species.pdf") 
     ```
 
