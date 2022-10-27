@@ -524,7 +524,7 @@ Por último vamos a querer recrear el plot generado en los puntos **1)** y **2)*
 
 **8.1)** Usen la `cutree` para dividir a los datos obtenidos en **5.2)** en 3 clusters.
 
-**8.2)** Asignen esa información a una nueva columna en la tabla **dt_iris** llamada **CJ_cluster**.
+**8.2)** Asignen esa información a una nueva columna en la tabla **dt_iris** llamada **CJ_cluster** (como en este caso `cutree()` devuelve los datos en el mismo orden que están en la tabla se puede hacer directamente con `<-`, no hace falta usar `merge()`).
 
 **8.3)** Por el momento la variable es numérica, pero para nosotros los números 1, 2 y 3 son categorías que teóricamente corresponden a las especies (aunque no sabemos qué categoría corresponde a que especie). Corran el siguiente código para convertir la columna recién creada en un *factor*:
 
@@ -543,7 +543,7 @@ dt_iris$CJ_cluster <- factor(dt_iris$CJ_cluster, levels = c(1, 2, 3))
 * Modifiquen la función `aes_string()`, agregando la característica `shape` y asignándole el valor del parámetro agregado.
 * Agreguen la función `scale_shape_manual()` a `ggplot` para definir a mano las tres formas. Usen los valores `c(2, 4, 1)`.
 
-**9.2)** Usando la función que acabamos de crear, vean como se distribuyen los puntos al comparar **Sepal.Length** contra **Petal.Length** usando la columna **Species** para determinar el color y la columna **CJ_cluster** para determinar la forma de los diferentes puntos. Guarden este plot en un archivo llamado **21_Sepal_vs_Petal_Width_per_Species_CJ3.pdf**.
+**9.2)** Usando la función que acabamos de crear, vean como se distribuyen los puntos al comparar **Sepal.Length** contra **Petal.Length** usando la columna **Species** para determinar el color y la columna **CJ_cluster** para determinar la forma de los diferentes puntos. Guarden este plot en un archivo llamado **21_Sepal_vs_Petal_Length_per_Species_CJ3.pdf**.
 
 **9.3)** Abran el archivo recién creado. ¿Cuáles especies les parecen mejor agrupadas? Entre este plot y el dendrograma creado en **11_Clustering_jerarquico_complete_linkage.pdf** ¿Cuál les parece la mejor manera de representar este clustering? ¿Por qué?
 
@@ -560,9 +560,9 @@ dt_iris$CJ_cluster <- factor(dt_iris$CJ_cluster, levels = c(1, 2, 3))
 **10.1)** Usando lo aprendido en el TP anterior:
 
 * Usen la función `kmeans()` para crear un nuevo clustering. Usen la cantidad de `centers` que consideren necesarios.
-* Extraigan los clusters del clustering recién creado y asígnenlos a una nueva columna en **dt_iris** llamada **K3_cluster**.
+* Extraigan los clusters del clustering recién creado y asígnenlos a una nueva columna en **dt_iris** llamada **K3_cluster** (como en este caso `kmeans()` devuelve los datos en el mismo orden que están en la tabla se puede hacer directamente con `<-`, no hace falta usar `merge()`).
 * Transformen dicha columna en un *factor*.
-* Usando la función creada en el punto **9)**, vean como se distribuyen los puntos al comparar **Sepal.Length** contra **Petal.Length** usando la columna **Species** para determinar el color y la columna **K3_cluster** para determinar la forma de los diferentes puntos. Guarden este plot en un archivo llamado **22_Sepal_vs_Petal_Width_per_Species_K3.pdf**.
+* Usando la función creada en el punto **9)**, vean como se distribuyen los puntos al comparar **Sepal.Length** contra **Petal.Length** usando la columna **Species** para determinar el color y la columna **K3_cluster** para determinar la forma de los diferentes puntos. Guarden este plot en un archivo llamado **22_Sepal_vs_Petal_Length_per_Species_K3.pdf**.
 
 **10.2)** Abran el archivo recién creado. Basándose solo en lo que pueden observar en este plot, ¿pueden decir algo de si este agrupamiento es mejor, peor o similar al obtenido con el clustering jerárquico? (recuerden que "no" también es una respuesta válida)
 
