@@ -12,6 +12,15 @@
 Este es el botón para descargar materiales, en (#) hay que agregar el link correspondiente
 -->
 
+### Slides mostrados en la clase
+
+* :fontawesome-regular-file-pdf: [Cierre TP](https://drive.google.com/file/d/1jFMlmnG0Aik4L17XbKI2EmzGYo1CH7mJ/view?usp=sharing)
+
+### Videos de la clase grabada
+
+* :octicons-video-16: [Introducción al TP](https://www.youtube.com/watch?v=ID6R3fBj3vo)
+* :octicons-video-16: [Cierre TP](https://www.youtube.com/watch?v=iqwjW6oZKO8)
+
 ### Software a usar
 * R (ya instalado en la VM).
 * RStudio (ya instalado en la VM)
