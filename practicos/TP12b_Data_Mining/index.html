@@ -1678,7 +1678,7 @@ Este es el botón para descargar materiales, en (#) hay que agregar el link corr
 <p>Por último vamos a querer recrear el plot generado en los puntos <strong>1)</strong> y <strong>2)</strong>, pero ahora mostrando información tanto de las especies originales (con el color) como de la agrupación resultante del clustering jerárquico (con la forma). Vamos a utilizar los datos del clustering jerárquico que usa el criterio de agregación <em>complete linkage</em>.</p>
 <p><strong>8)</strong> Lo primero es entonces agregar la información del clustering jerárquico a nuestro <strong>dt_iris</strong>; para ello:</p>
 <p><strong>8.1)</strong> Usen la <code>cutree</code> para dividir a los datos obtenidos en <strong>5.2)</strong> en 3 clusters.</p>
-<p><strong>8.2)</strong> Asignen esa información a una nueva columna en la tabla <strong>dt_iris</strong> llamada <strong>CJ_cluster</strong>.</p>
+<p><strong>8.2)</strong> Asignen esa información a una nueva columna en la tabla <strong>dt_iris</strong> llamada <strong>CJ_cluster</strong> (como en este caso <code>cutree()</code> devuelve los datos en el mismo orden que están en la tabla se puede hacer directamente con <code>&lt;-</code>, no hace falta usar <code>merge()</code>).</p>
 <p><strong>8.3)</strong> Por el momento la variable es numérica, pero para nosotros los números 1, 2 y 3 son categorías que teóricamente corresponden a las especies (aunque no sabemos qué categoría corresponde a que especie). Corran el siguiente código para convertir la columna recién creada en un <em>factor</em>:</p>
 <div class="highlight"><pre><span></span><code><span class="c1">#En este caso poner los levels a mano no es 100% necesario, pero no viene mal</span>
 <span class="c1">#Recuerden que no sabemos que numero corresponde a que especie</span>
@@ -1692,7 +1692,7 @@ Este es el botón para descargar materiales, en (#) hay que agregar el link corr
 <li>Modifiquen la función <code>aes_string()</code>, agregando la característica <code>shape</code> y asignándole el valor del parámetro agregado.</li>
 <li>Agreguen la función <code>scale_shape_manual()</code> a <code>ggplot</code> para definir a mano las tres formas. Usen los valores <code>c(2, 4, 1)</code>.</li>
 </ul>
-<p><strong>9.2)</strong> Usando la función que acabamos de crear, vean como se distribuyen los puntos al comparar <strong>Sepal.Length</strong> contra <strong>Petal.Length</strong> usando la columna <strong>Species</strong> para determinar el color y la columna <strong>CJ_cluster</strong> para determinar la forma de los diferentes puntos. Guarden este plot en un archivo llamado <strong>21_Sepal_vs_Petal_Width_per_Species_CJ3.pdf</strong>.</p>
+<p><strong>9.2)</strong> Usando la función que acabamos de crear, vean como se distribuyen los puntos al comparar <strong>Sepal.Length</strong> contra <strong>Petal.Length</strong> usando la columna <strong>Species</strong> para determinar el color y la columna <strong>CJ_cluster</strong> para determinar la forma de los diferentes puntos. Guarden este plot en un archivo llamado <strong>21_Sepal_vs_Petal_Length_per_Species_CJ3.pdf</strong>.</p>
 <p><strong>9.3)</strong> Abran el archivo recién creado. ¿Cuáles especies les parecen mejor agrupadas? Entre este plot y el dendrograma creado en <strong>11_Clustering_jerarquico_complete_linkage.pdf</strong> ¿Cuál les parece la mejor manera de representar este clustering? ¿Por qué?</p>
 <div class="admonition danger">
 <p class="admonition-title">Importante - Clustering vs Plot</p>
@@ -1704,9 +1704,9 @@ Este es el botón para descargar materiales, en (#) hay que agregar el link corr
 <p><strong>10.1)</strong> Usando lo aprendido en el TP anterior:</p>
 <ul>
 <li>Usen la función <code>kmeans()</code> para crear un nuevo clustering. Usen la cantidad de <code>centers</code> que consideren necesarios.</li>
-<li>Extraigan los clusters del clustering recién creado y asígnenlos a una nueva columna en <strong>dt_iris</strong> llamada <strong>K3_cluster</strong>.</li>
+<li>Extraigan los clusters del clustering recién creado y asígnenlos a una nueva columna en <strong>dt_iris</strong> llamada <strong>K3_cluster</strong> (como en este caso <code>kmeans()</code> devuelve los datos en el mismo orden que están en la tabla se puede hacer directamente con <code>&lt;-</code>, no hace falta usar <code>merge()</code>).</li>
 <li>Transformen dicha columna en un <em>factor</em>.</li>
-<li>Usando la función creada en el punto <strong>9)</strong>, vean como se distribuyen los puntos al comparar <strong>Sepal.Length</strong> contra <strong>Petal.Length</strong> usando la columna <strong>Species</strong> para determinar el color y la columna <strong>K3_cluster</strong> para determinar la forma de los diferentes puntos. Guarden este plot en un archivo llamado <strong>22_Sepal_vs_Petal_Width_per_Species_K3.pdf</strong>.</li>
+<li>Usando la función creada en el punto <strong>9)</strong>, vean como se distribuyen los puntos al comparar <strong>Sepal.Length</strong> contra <strong>Petal.Length</strong> usando la columna <strong>Species</strong> para determinar el color y la columna <strong>K3_cluster</strong> para determinar la forma de los diferentes puntos. Guarden este plot en un archivo llamado <strong>22_Sepal_vs_Petal_Length_per_Species_K3.pdf</strong>.</li>
 </ul>
 <p><strong>10.2)</strong> Abran el archivo recién creado. Basándose solo en lo que pueden observar en este plot, ¿pueden decir algo de si este agrupamiento es mejor, peor o similar al obtenido con el clustering jerárquico? (recuerden que "no" también es una respuesta válida)</p>
 <p><strong>10.3)</strong> Supongamos ahora que estamos en un escenario real, por lo que no tenemos información de a que especie corresponde cada punto. En base a lo visto en el TP anterior, ¿se les ocurre alguna forma de evaluar objetivamente cuál de ambos es el mejor clustering?</p>
