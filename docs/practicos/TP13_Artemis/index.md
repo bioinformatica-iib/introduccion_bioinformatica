@@ -239,45 +239,96 @@ Se abre una nueva ventana donde podemos elegir los criterios de selección. Cada
 
 Pruebe seleccionar `tRNA`, haga click en select y luego elija `View`
 
-- **Qualifier**. Nos permite refinar la búsqueda encontrando un texto determinado en el campo seleccionado (por ej. si elegimos EC_number podemos encontrar las regiones codificantes que pertenezcan a una categoría determinada como hicimos en "Navigator"). Debajo del campo para escribir el texto encontraran 3 cajas más que con opciones para la búsqueda del texto.
+- **Qualifier**. Nos permite refinar la búsqueda encontrando un texto determinado en el campo seleccionado (por ej. si elegimos EC_number podemos encontrar las regiones codificantes que pertenezcan a una categoría determinada como hicimos en *Navigator*). Debajo del campo para escribir el texto encontraran 3 cajas más que con opciones para la búsqueda del texto.
 
 - **Up to/At least**. Aquí podemos restringir la búsqueda por cantidad de bases o exones que contiene la secuencia a seleccionar. No guarda mayores misterios.
 
 - **Amino acid motif**. Por último, podemos buscar regiones que contengan ciertos patrones de aminoácidos y si su búsqueda debe llevarse a cabo en la hebra positiva, negativa o ambas.
 
-Al finalizar la elección de criterios pueden apretar "Select" para seleccionar las regiones que cumplan con la búsqueda, o "View" para que nos dé una lista de los hits, con el mismo formato que la que encontramos bajo el panel principal.
+Al finalizar la elección de criterios pueden apretar *Select* para seleccionar las regiones que cumplan con la búsqueda, o *View* para que nos dé una lista de los hits, con el mismo formato que la que encontramos bajo el panel principal.
+
+* Marquen una región, luego desde el menu del click izquierdo, seleccionen *Zoom to selection*.
+
+## Ejercicio 2: Análisis particulares y globales
+
+### Analizando información específica
+
+<!--
 
 
+Una vez que estén ahí visualizaremos la información específica disponible como se indica en los siguientes puntos.
+-->
+#### Anotaciones
 
-        5. Marquen una región, luego desde el menu del click izquierdo, seleccionen 'Zoom to selection'.
+Si clickean en un *feature* en particular pueden ver la anotación asociada a él.
 
-### Ejercicio 2: Análisis particulares y globales
+* Seleccionen un *CDS feature* ( o cualquier otro *feature*) y clickeen en el menú *View* → *Selected Features* o pueden hacer click derecho ir a *View* → *Selected Features*.
 
-#### Analizando información particular:
+Aparecerá una ventana conteniendo toda la anotación asociada con este CDS. Similar a la que se muestra a continuación.
 
-Por el método de su elección diríjanse a la región localizada entre las bases 2188349 y 2199512 en la secuencia de ADN. Esta región esta *upstream* al gen fbaB, el cual codifica la fructosa bisfosfonato aldolasa. Pueden utilizar el 'Navigator', el 'Feature Selector' o las funciones de 'Goto' discutidas previamente para ir a esta localización. Una vez que estén ahí visualizaremos la información específica disponible:
+![Features](img/6.png){width="500"}
 
-**Anotación**: Si clickean en un "feature" en particular pueden ver la anotación asociada a él: Seleccionen un "CDS feature" ( o cualquier otro "feature" y clickeen en el menú 'Edit' y seleccionen 'Selected Feature in Editor'. Aparecerá una ventana conteniendo toda la anotación asociada con este CDS.
+Ahora haga click derecho y vaya a:
 
-![Features](images/6.png)
+*Write* → *Codon Usage Of Selected Features*
 
-**Visualizando secuencias de aminoácidos:** Clickeen en el menú 'View' y verán varias opciones para visualizar las bases o aminoácidos del "feature" que han seleccionado, en dos formatos, EMBL o FASTA. Esto puede ser muy útil cuando se desea utilizar otros programas que no están integrados en Artemis, e.g. aquellos disponibles en la Web que requieren cortar y pegar la secuencia en ellos.
+* Guarde el archivo e investíguelo con el editor de texto.
+* ¿Qué observa en el archivo?
+* ¿Para qué considera que es útil esta información?
 
-![Plots](images/8.png)
+#### Visualizando secuencias de aminoácidos
 
-**Gráficos**: Se pueden desplegar gráficos de características seleccionando un "CDS feature", luego clickeando en 'View' y 'Feature Plots'. La ventana que aparece muestra gráficos prediciendo hidrofobicidad, hidrofilicidad y alfa-hélices para la proteína codificada por el CDS seleccionado.
+Clickeen en el menú *View* y vayan o bien a *Bases* o bien *Amino Acids*. Hay dos opciones para visualizar los nucleótidos o aminoácidos (según si eligieron *Bases* o *Amino Acids*) del *CDS feature* que seleccionaron.
 
-![Plots](images/7.png)
+Se pueden visualizar en dos formatos, ```EMBL``` (*Aminoacids Of Selection*) o ```FASTA``` (*Aminoacids Of Selection As FASTA*).
 
-#### 	Analizando información global:
+Esto puede ser muy útil cuando se desea utilizar la secuencia en otros programas que no están integrados en Artemis.
 
-Además de visualizar al detalle los "features" anotados también se puede observar las características del ADN en toda la región presentada. Esto puede realizarse adicionando diferentes gráficos mostrando distintas características del ADN. Algunos de estos son utilizados para observar el potencial codificante o marcos de lectura dentro del ADN, como el 'GC frame plot', y otros pueden ser utilizados para buscar regiones de ADN adquirido horizontalmente. En el directorio de este módulo encontrarán una tabla de uso de codones, S_typhi.cod, la cual puede ser utilizada para generar un gráfico de uso de codones cargándola mediante la opción 'Add usage plots' dentro del menú 'Graph'.
+![Plots](img/8.png){width="500"}
 
-Clickeen en el menú 'Graph' para ver todos los gráficos disponibles. Tal vez los gráficos más útiles sean 'GC content (%)' , 'GC Deviation' y 'Karlin Signature Difference' (es un gráfico de frecuencia de dinucleótidos). Despliéguenlos!. Para ajustar la suavidad de los gráficos pueden cambiar el tamaño de la ventana sobre la cual los puntos del gráfico son calculados, utilizando el deslizador vertical a la derecha de los mismos.
+#### Gráficos
 
-![Plots](images/9.png)
+Para abrir gráficos de características de un *CDS feature*, vaya a:
 
-> **Nota**: La información de los gráficos es generada dinámicamente por Artemis y aunque este es un ejercicio relativamente rápido para una pequeña región de ADN, en una vista de genoma completo esto puede demorar un rato, así que, en tal caso, tengan paciencia.
+*View* → *Feature Plots*
+
+Se abre una ventana con gráficos para la región seleccionada de:
+
+* Hidrofobicidad. Kyle-Doolittle Hydrophobicity.
+* Solubilidad en agua del aminoácido según su ubicación en la proteína. Hopp-Woods Hydrophilicity.
+* Probabilidad de formación de Coiled-Coils.
+
+![Plots](img/7.png){ width="500" }
+
+### Analizando información global
+
+Además de visualizar información específica de *features* anotados también se pueden observar las características del ADN en toda la región presentada.
+
+Esto puede realizarse adicionando diferentes gráficos mostrando distintas características del ADN.
+
+<!--
+En el directorio de este módulo encontrarán una tabla de uso de codones, ```S_typhi.cod```, que permite generar un gráfico de uso de codones. Vaya a:
+
+*Graph* → *Add usage plots*
+-->
+
+Clickeen en el menú *Graph* para ver todos los gráficos disponibles.
+
+* Prueben abrir el gráfico de 'GC content (%)'
+
+Para ajustar la suavidad de los gráficos pueden cambiar el tamaño de la ventana sobre la cual los puntos del gráfico son calculados, utilizando el deslizador vertical a la derecha de los mismos.
+
+![Plots](img/9.png){ width="500" }
+
+!!! info "Nota"
+
+    La información de los gráficos es generada dinámicamente por Artemis y aunque este es un ejercicio relativamente rápido para una pequeña región de ADN, en una vista de genoma completo esto puede demorar un rato o colgarse.
+
+Vaya a la región localizada entre las bases 2188349 y 2199512 en la secuencia de ADN.
+
+Esta región esta *upstream* al gen fbaB, el cual codifica la **fructosa bisfosfonato aldolasa**.
+
+Pueden utilizar el *Navigator*, el *Feature Selector* o las funciones de *Goto* discutidas previamente para ir a esta localización.
 
 Observen cómo los gráficos muestran una desviación marcada en la región que están visualizando (cerca del gen fbaB). Para apreciar mejor la anomalía de esta región, agranden un poco la región visualizada. **¿Qué les sugiere el contenido inusual de nucleótidos en esta región del ADN?**
 
