@@ -31,23 +31,23 @@ Siempre que exista un genoma de referencia, lo ideal es mapear en lugar de ensam
 
 **Laboratorio húmedo**: El ADN de la cepa **NV** de *C. trachomatis* es clivado en fragmentos con enzimas o sonicación. Mediante Illumina se secuencian entre 75 y 100 bases de ambos extremos de cada fragmento, generando lecturas pareadas (en inglés "paired-end reads").
 
-**_In silico_**: Se obtienen archivos en formato fastq que contienen las secuencias de cada fragmento (llamadas lecturas o _reads_) y valores de calidad de secuenciación por base. El formato FASTQ es similar al formato FASTA pero contiene una línea con la calidad (Q) codificada en [​ASCII](https://elcodigoascii.com.ar/). Luego cada lectura es alineada y mapeada al genoma de referencia. En este paso se obtiene un archivo en formato SAM, el cual contiene la secuencia, la calidad y además las coordenadas donde se ubica este fragmento respecto al genoma de referencia.
+**_In silico_**: Se obtienen archivos en formato `FASTQ` que contienen las secuencias de cada fragmento (llamadas lecturas o _reads_) y valores de calidad de secuenciación por base. El formato `FASTQ` es similar al formato `FASTA` pero contiene una línea con la calidad (Q) codificada en [​ASCII](https://elcodigoascii.com.ar/). Luego cada lectura es alineada y mapeada al genoma de referencia. En este paso se obtiene un archivo en formato `SAM`, el cual contiene la secuencia, la calidad y además las coordenadas donde se ubica este fragmento respecto al genoma de referencia.
 
 ![Flujo](images/flow.png)
 
-#### Chlamydia trachomatis
+#### *Chlamydia trachomatis*
 
 *Chlamydia trachomatis* es uno de los patógenos humanos de mayor prevalencia en el mundo, capaz de causar una variedad de cuadros clínicos. Las cepas de transmisión sexual pueden ser subdivididas en aquellas restringidas al tracto intestinal y tipos más invasivos como el linfogranuloma venereo o *LGV biovar*. A pesar de las diferencias en la severidad de la enfermedad, hay pocas diferencias genéticas que distinguen a las diferentes cepas de *C. trachomatis*. Como veremos a continuación, la mayoría de las variaciones ocurren al nivel de SNPs.
 
-En este TP, procederemos a mapear las lecturas producidas con Illumina de una nueva variante de *Chlamydia trachomatis* aislada del tracto genital y compararlas con la cepa de referencia **Lb** y otra cepa conocida **L2b**. Esta nueva cepa, llamada **NV**, causó un alerta sanitario en Europa en el año 2006 y comenzó a diseminarse alrededor del mundo. La causa de su expansión es que evade la detección por el test diagnóstico basado en una reacción de PCR. En el desarrollo de este trabajo práctico podrán identificar la razón por la cual esta cepa evadió el ensayo diagnóstico.
+En este trabajo práctico, procederemos a mapear las lecturas producidas con Illumina de una nueva variante de *Chlamydia trachomatis* aislada del tracto genital y compararlas con la cepa de referencia **Lb** y otra cepa conocida **L2b**. Esta nueva cepa, llamada **NV**, causó un alerta sanitario en Europa en el año 2006 y comenzó a diseminarse alrededor del mundo. La causa de su expansión es que evade la detección por el test diagnóstico basado en una reacción de PCR. En el desarrollo de este trabajo práctico podrán identificar la razón por la cual esta cepa evadió el ensayo diagnóstico.
 
 ### Ejercicio 1: Inspección de los datos crudos
 
 Siempre que sea posible, es una buena práctica visualizar los archivos de trabajo. 
-Para comenzar leeremos los archivos crudos de secuenciación de Chlamydia trachomatis, los cuales tienen formato FASTQ.
+Para comenzar leeremos los archivos crudos de secuenciación de *Chlamydia trachomatis*, los cuales tienen formato `FASTQ`.
 
 Abrir una terminal y dirigirse al directorio de descarga de los materiales del TP "Short-Read-Mapping". 
-Leer la primera linea de un archivos fastq con el siguiente comando:
+Leer la primera línea de un archivos fastq con el siguiente comando:
 
 ```Bash 
 zcat NV_1.fastq.gz | head -4 
@@ -57,9 +57,9 @@ zcat NV_1.fastq.gz | head -4
 
 - 1ra línea. `IL7_1788:5:1:34:600/1` es el nombre de la lectura secuenciada y contiene la siguiente información
 
-	| Elemento | Descripción |
+	| Elemento { data-sort-method='none' } | Descripción { data-sort-method='none' } |
 	| :---: | :---: |
-	| IL7_1788 | ID del instrumento y numero de corrida |
+	| IL7_1788 | ID del instrumento y número de corrida |
 	| 5 | _flowcell lane_ o carril |
 	| 1 | _tile_ o casilla en la _flowcell lane_ |
 	| 34 | coordenada 'x' |
@@ -70,14 +70,19 @@ zcat NV_1.fastq.gz | head -4
 
 - 2da línea. La secuencia.
 - 3ra línea. `+` Separador entre la secuencia y la calidad.
-- 4ta línea. Calidad de la secuencia. Hay un caracter para cada nucleótido. El caracter está asociado a un puntaje de calidad de cada nucleótido, lo cual está codificado de la siguiente forma: cada caracter representa un número (N°) según el código decimal [​ASCII](https://elcodigoascii.com.ar/), y la calidad se define como este número menos 33. ¿Y cómo se asocia esto a la probabilidad de error (p) de la base asignada? así: `(N° - 33) = cálidad`
+- 4ta línea. Calidad de la secuencia. Hay un caracter para cada nucleótido. El caracter está asociado a un puntaje de calidad de cada nucleótido, lo cual está codificado de la siguiente forma: cada caracter representa un número (N°) según el código decimal [​ASCII](https://elcodigoascii.com.ar/), y la calidad se define como este número menos 33. ¿Y cómo se asocia esto a la probabilidad de error (p) de la base asignada? así: `(N° - 33) = calidad`
 
+El byte que representa la calidad va de 0x21 (calidad más baja; '!' En ASCII) a 0x7e (calidad más alta; '~' en ASCII). Estos son los caracteres de valor de calidad en orden creciente de calidad de izquierda a derecha:
+
+```
+ ! "# $% & '() * +, -. / 0123456789:; <=>? @ ABCDEFGHIJKLMNOPQRSTUVWXYZ [\] ^ _` abcdefghijklmnopqrstuvwxyz {|} ~
+```
 
 1. Identificar los componentes de la primer lectura: nombre, secuencia, calidad y ubicación física de la lectura en la celda de flujo (es decir, lane, tile, x, y).
 
 2. Usando el código [​ASCII](https://elcodigoascii.com.ar/), determinar la calidad de las primeras 3 bases secuenciadas.
 
-3. Leer la primera lectura del archivo `NV_2.fastq.gz`. ¿Qué similitudes y diferencias encuentra en cada una de las líneas de texto? ¿A qué se deben? 
+3. Leer la primera lectura del archivo `NV_2.fastq.gz`. ¿Qué similitudes y diferencias encuentra en **cada una** de las líneas de texto? ¿A qué se deben? 
 
 ### Ejercicio 2: Análisis de calidad de secuencias
 
@@ -98,20 +103,21 @@ El reporte de FastQC tiene este formato (puede variar entre versiones):
 
 Algunos aspectos a evaluar en un reporte de calidad son:
 
-* Calidad de secuencia por base: Es un indicador global que muestra la distribución de calidad de base (Phred score, en el eje y) por posición en la lectura (eje x). Los Phred scores por encima de 30 suelen considerarse de buena calidad para una lectura de Illumina. En este caso, la lectura comienza con una alta calidad (zona verde), que decrece a medida que aumenta la longitud de la lectura (zonas amarilla, Phred < 30 y rojo, Phred < 20). Debería mantenerse, en lineas generales, dentro de la zona verde; aunque no debemos preocuparnos si cae abruptamente para lecturas largas.
-* Calidad de secuencia según posición en la flowcell: Este indicador permite detectar problemas en regiones físicas especificas del secuenciador. Un problema frecuente es la formación de burbujas. 
-* Contenido de base por secuencia: La frecuencia de cada nucleótido en una lectura debería ser más o menos constante, y visualizarse como lineas horizontales paralelas a lo largo de toda la lectura.
-* Contenido de GC por secuencia: Esta gráfica permite identificar contaminaciones. Un perfil de contenido de GC que no se ajusta a una distribución normal podría indicar presencia de contaminantes. La curva esperada está ajustada a la distribución en humanos, si se trabaja con otro organismo podría verse diferente, pero lo importante es ver un solo pico. 
-* Contenido de N por base: El caracter **N** indica que el proceso de secuenciación fue inconcluyente a la hora de asignar un nucleótido. Un exceso de éstos indica problemas.
-* Niveles de duplicación de secuencia: La aparición de duplicaciones excesivas puede sugerir artefactos durante la generación de la librería que usamos para secuenciar (o problemas en la PCR que usamos para amplificar nuestra muestra, si usamos alguna).
-* Contenido de adaptadores: Aparición de adaptadores propios de la tecnología de secuenciación (no pertenecen a nuestra secuencia de interés y deben ser removidos antes de mapear al genoma de referencia).
+* **Calidad de secuencia por base:** Es un indicador global que muestra la distribución de calidad de base (Phred score, en el eje y) por posición en la lectura (eje x). Los Phred scores por encima de 30 suelen considerarse de buena calidad para una lectura de Illumina. En este caso, la lectura comienza con una alta calidad (zona verde), que decrece a medida que aumenta la longitud de la lectura (zonas amarilla, Phred < 30 y rojo, Phred < 20). Debería mantenerse, en lineas generales, dentro de la zona verde; aunque no debemos preocuparnos si cae abruptamente para lecturas largas.
+* **Calidad de secuencia según posición en la flowcell:** Este indicador permite detectar problemas en regiones físicas especificas del secuenciador. Un problema frecuente es la formación de burbujas. 
+* **Contenido de base por secuencia:** La frecuencia de cada nucleótido en una lectura debería ser más o menos constante, y visualizarse como lineas horizontales paralelas a lo largo de toda la lectura.
+* **Contenido de GC por secuencia:** Esta gráfica permite identificar contaminaciones. Un perfil de contenido de GC que no se ajusta a una distribución normal podría indicar presencia de contaminantes. La curva esperada está ajustada a la distribución en humanos, si se trabaja con otro organismo podría verse diferente, pero lo importante es ver un solo pico. 
+* **Contenido de N por base:** El caracter **N** indica que el proceso de secuenciación fue inconcluyente a la hora de asignar un nucleótido. Un exceso de éstos indica problemas.
+* **Niveles de duplicación de secuencia:** La aparición de duplicaciones excesivas puede sugerir artefactos durante la generación de la librería que usamos para secuenciar (o problemas en la PCR que usamos para amplificar nuestra muestra, si usamos alguna).
+* **Contenido de adaptadores:** Aparición de adaptadores propios de la tecnología de secuenciación (no pertenecen a nuestra secuencia de interés y deben ser removidos antes de mapear al genoma de referencia).
 
 #### Análisis de calidad de las secuencias de *C. trachomatis*
 
 Para realizar el análisis de calidad de la secuenciación con FastQC, ejecute el siguiente comandos:
 
 ```Bash 
-fastqc NV_1.fastq.gz NV_2.fastq.gz
+fastqc NV_1.fastq.gz
+fastqc NV_2.fastq.gz
 ```
 Puede observar con el comando `ls`, que FastQC ha generado nuevos archivos en el directorio donde se encuentra. 
 A continuación, visualice los resultados de cada archivo de secuenciación por separado abriendo el html generado con un navegador:
@@ -193,6 +199,9 @@ Una vez terminada la instalación, convierta el alineamiento de formato SAM a fo
 samtools view -b -S mapping.sam > mapping.bam 
 ```
 
+!!! warning "Si el comando no es encontrado, cierre TODA terminal abierta y vuelva a probar, si ahí no anda, avise"
+
+
 * Compare el tamaño de los archivos SAM y BAM y determine el factor de compresión. 
 
 ??? question "¿Se le ocurre qué comando puede utilizar para ver el tamaño de los archivos?"
@@ -228,6 +237,8 @@ cd ~/Tools/artemis/
 
 #### Vista básica de Artemis
 
+- Abra la secuencia de referencia "L2_cat.fasta". Para esto hacer click en ``'File'`` > ``'Open'`` y abra el archivo correspondiente. 
+
 * Menúes desplegables.
 * Entradas activas. En nuestro caso estará `L2_cat.fasta`.
 * Este es el panel principal de visualización. Las 2 lineas grises centrales representan la hebra de DNA positiva (arriba) y la negativa (abajo). Arriba y abajo de ellas se encuentran los 3 marcos de lectura en cada sentido, respectivamente. Los codones *stop* son señalados con barras negras verticales. Los genes y otros "features" (e.g. dominios Pfam o Prosite) se muestran como cajas coloreadas. Para desplazarse mover el deslizador horizontal (inferior), y para hacer zoom, mover el deslizador vertical (lateral).
@@ -235,14 +246,12 @@ cd ~/Tools/artemis/
 * Este panel lista las anotaciones o "features" presentes en las secuencias en el orden en que ocurren en el DNA, con el gen seleccionado resaltado.
 Nota: para minimizar o expandir los paneles, clickear en los **...** que figuran en el margen superior izquierdo de cada panel. 
 
-- Abrir la secuencia de referencia "L2_cat.fasta". Para esto hacer click en ``'File'`` > ``'Open'`` y abra el archivo correspondiente. 
-
 - Abrir el archivo de anotación denominado "L2_cat.embl". Para esto hacer click en ``'File'`` > ``'Read an Entry'`` y abra el archivo correspondiente. 
 
 - Para visualizar el mapeo de lecturas que acabamos de hacer vamos a cargar en Artemis nuestras lecturas mapeadas en formato BAM, de la siguiente manera: Haga clic en ``'File'`` > ``'Read BAM / VCF '`` > ``'Select'`` y abra el archivo ``NV.bam``
 
 
-!!! info "Recuerden que estas lecturas son de la cepa sueca "NV" mapeadas contra el genoma de referencia de la cepa "L2"." 
+!!! info "Recuerden que estas lecturas son de la cepa sueca **NV** mapeadas contra el genoma de referencia de la cepa **L2**." 
 
 
 Ahora debería ver la ventana BAM en la pantalla de Artemis. Es posible moverse hacer zoom en las secuencias moviendo la barra lateral. Pero dado que cargamos mucha información en el visualizador, la apertura demora. 
@@ -250,7 +259,7 @@ Ahora debería ver la ventana BAM en la pantalla de Artemis. Es posible moverse 
 ![stackview](images/stack.png)
 
 Si clickea una lectura, también se seleccionará la lectura apareada. También notará que si el cursor se detiene por suficiente tiempo sobre una lectura aparecerán los detalles de esa lectura en una pequeña caja.
-Si quieren saber más sobre una lectura, haga click derecho sobre ella y seleccionen en el menú: ``'Show details of: READ NAME'``. Aparecerá una ventana detallando la calidad del mapeo, coordenadas, si es una lectura duplicada o no. Si esta lectura se encontrase en una región interesante, poder acceder facilmente a esta información puede ser muy valioso.
+Si quieren saber más sobre una lectura, haga click derecho sobre ella y seleccionen en el menú: ``'Show details of: READ NAME'``. Aparecerá una ventana detallando la calidad del mapeo, coordenadas, si es una lectura duplicada o no. Si esta lectura se encontrase en una región interesante, poder acceder fácilmente a esta información puede ser muy valioso.
 
 ![details](images/details.png)
 
