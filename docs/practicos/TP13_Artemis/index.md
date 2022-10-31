@@ -332,25 +332,37 @@ Pueden utilizar el *Navigator*, el *Feature Selector* o las funciones de *Goto* 
 
 Observen cómo los gráficos muestran una desviación marcada en la región que están visualizando (cerca del gen fbaB). Para apreciar mejor la anomalía de esta región, agranden un poco la región visualizada. **¿Qué les sugiere el contenido inusual de nucleótidos en esta región del ADN?**
 
-![GC Devs](images/10.png)
+![GC Devs](img/10.png){ width="500" }
 
-Además de visualizar las características de regiones pequeñas del genoma, también se puede alejar la imagen y observar características del genoma como un todo. Para esto primero tengan en cuenta que alejar la imagen rápidamente con todos los "features" desplegados puede bloquear momentáneamente la computadora. Por lo que para realizar este proceso rápidamente, (1) apaguen los indicadores de codones stop haciendo clic derecho sobre la ventana principal. Aparecerá un menú con la opción de deseleccionar los codones stop. (2) También se debe eliminar temporariamente todo los "features" de anotación. Para realizarlo descliqueen la caja de "S_typhi.tab" en la barra de entrada debajo de la barra de menú.
+Además de visualizar las características de regiones pequeñas del genoma, también se puede alejar la imagen y observar características del genoma como un todo. 
 
-![GC Devs](images/11.png)
+!!! warning "Posibilidad de cuelgue de Artemis"
 
-Otro tip importante es ajustar la escala de los gráficos desplegados antes de alejar la imagen. Esto aumenta el tamaño de ventana sobre el cual un punto en cada gráfico es calculado. Para ajustar el escalado (3) cliqueen con el botón derecho del mouse sobre la ventana de un gráfico en particular. Aparecerá un menú con una serie de valores para los tamaños máximos de ventana, seleccionen 500. Esto deben hacerlo para cada gráfico desplegado.
+    Alejar la imagen rápidamente con todos los *features* desplegados puede hacer que artemis se cuelgue. 
 
-Ahora están listos para alejar la imagen haciendo clic sobre el deslizador (4) de la ventana principal y arrastrando hacia abajo.
+Para no correr riesgos:
 
-![GC Devs](images/12.png)
+1. Apaguen los indicadores de codones stop haciendo clic derecho sobre la ventana principal. Aparecerá un menú con la opción de deseleccionar los codones stop.
+2. Eliminar temporariamente todo los "features" de anotación. Para realizarlo descliqueen la caja de "S_typhi.tab" en la barra de entrada debajo de la barra de menú.
 
-### Ejercicio 3: Anotando el genoma
+    ![GC Devs](img/11.png){ width="500"}
 
-Ahora vuelvan a seleccionar `S_typhi.tab` en las entradas activas para volver a visualizar las anotaciones. Vayan a la posición 4409511. Buscaremos aquí una región denominada *Salmonella pathogenicity island (SPI)*. En el genoma con el que estamos trabajando la veremos como "*The major Vi antigen pathogenicity island (SPI 7)*"; una región de ~134 kb de largo que contiene un bacteriófago de ~30 kb. 
+3. Ajustar la escala de los gráficos desplegados antes de alejar la imagen. Esto aumenta el tamaño de ventana sobre el cual un punto en cada gráfico es calculado. Cliqueen con el botón derecho del mouse sobre la ventana de un gráfico en particular. Aparecerá un menú con una serie de valores para los tamaños máximos de ventana, seleccionen 500. Esto deben hacerlo para cada gráfico desplegado.
 
-![SPI7](images/13.png)
+    ![GC Devs](img/12.png){ width="500"}
 
-Esta región es un ejemplo más bien clásico de SPI. La definición exacta de qué constituye una isla de patogénesis es, de hecho, bastante diversa; pero las carcterísticas fundamentales comunmente observadas en estas regiones son, según Hacker *et al*., 1997.
+4. Ahora están listos para alejar la imagen haciendo clic sobre el deslizador de la ventana principal y arrastrando hacia abajo.
+
+
+## Ejercicio 3: Anotando el genoma
+
+Ahora vuelvan a seleccionar `S_typhi.tab` en las entradas activas para volver a visualizar las anotaciones. Vayan a la posición 4409511. Buscaremos aquí una región denominada *Salmonella pathogenicity island (SPI)*.
+
+En el genoma con el que estamos trabajando la veremos como "*The major Vi antigen pathogenicity island (SPI 7)*"; una región de ~134 kb de largo que contiene un bacteriófago de ~30 kb. 
+
+![SPI7](img/13.png){ width="500" }
+
+Esta región es un ejemplo clásico de SPI. La definición exacta de qué constituye una isla de patogénesis es, de hecho, bastante diversa; pero las carcterísticas fundamentales comunmente observadas en estas regiones son, según Hacker *et al*., 1997.
 
 1. Normalmente insertas entre dos RNAs estables flanqueantes.
 2. Contenidos de G+C atípicos.
@@ -359,9 +371,11 @@ Esta región es un ejemplo más bien clásico de SPI. La definición exacta de q
 5. Se trata de un "cassette" inestable y auto-móvil. 
 6. De distribución filogenética limitada.
 
-Para corroborar que efectivamente esta región es un SPI, vamos a extraerla del genoma completo y realizar algunos análisis puntuales. Vamos a apuntar a escribir y guardar un nuevo archivo EMBL, que incluirá nuestras anotaciones para esta región exclusivamente.
+Para corroborar que efectivamente esta región es un SPI, vamos a extraerla del genoma completo y realizar algunos análisis puntuales.
 
-Para ello seleccionaremos nuestro presunto SPI y, en la barra de menús desplegables, iremos a `Edit` > `Subsequence (and Features)`. Esto abrirá una nueva ventana (sí, otra más :poop:). A primera vista no parecerá muy distinta a la ventana anterior (la principal, en la que tenemos cargado nuestro genoma), pero si miran un poco mejor notarán que
+Vamos a apuntar a escribir y guardar un nuevo archivo EMBL, que incluirá nuestras anotaciones para esta región exclusivamente.
+
+Para ello seleccionaremos nuestro presunto SPI y, en la barra de menús desplegables, iremos a `Edit` > `Subsequence (and Features)`. Esto abrirá una nueva ventana. A primera vista no parecerá muy distinta a la ventana anterior (la principal, en la que tenemos cargado nuestro genoma), pero si miran un poco mejor notarán que
 
 - Los nombres de las `entries` han cambiado (*no name*)
 - Se han re-numerado las bases y ahora todas se relativizan a nuestra selección
@@ -369,11 +383,16 @@ Para ello seleccionaremos nuestro presunto SPI y, en la barra de menús desplega
 
 Nótese que en la barra de `entries` de esta nueva ventana, como en la original, también tenemos dos entradas. Si desmarcan una o la otra, notarán que de hecho son las mismas entradas que en la original (contienen la misma información y están en el mismo orden). No obstante, dado que la sub-secuencia ahora es una sesión nueva de Artemis, este comportamiento previene que los originales sean sobre-escritos.
 
-Vamos a guardar estos nuevos archivos con nombres relevantes, para evitar confusiones: Hagan click en `File` > `Save An Entry As` > `New File`. Un nuevo menú nos preguntará cuál de nuestras entries vamos a guardar. 
+Vamos a guardar estos nuevos archivos con nombres relevantes, para evitar confusiones. Vayan a:
 
-> En este punto ambas se llaman *no name*, lo cual puede resultar confuso. Lo único que nos ayudará a saber cuál es cuál es el orden (:poop:). 
+*File* → *Save An Entry As* → *New File*.
+
+Un nuevo menú nos preguntará cuál de nuestras entries vamos a guardar. 
+
+En este punto ambas se llaman *no name*, lo cual puede resultar confuso. Lo único que nos ayudará a saber cuál es cuál es el orden. Por lo tanto: 
  
-Tomen el primero (desde arriba) y guárdenlo como `spi7.dna`. Repitan el proceso para el segundo y llámenlo `spi7.tab`.
+* Tomen el primero (desde arriba) y guárdenlo como `spi7.dna`.
+* Repitan el proceso para el segundo y llámenlo `spi7.tab`.
 
 Ahora que hemos guardado podemos empezar a jugar sin miedo a sobreescribir los originales ni a perder nuestro progreso. Lo primero que haremos será identificar los límites del bacteriofago que está inserto en SPI7. Hallar estos límites será equivalente a hallar los sitios de inserción del fago. 
 
