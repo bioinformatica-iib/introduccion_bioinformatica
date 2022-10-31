@@ -23,25 +23,25 @@
 
 ## Introducción
 
-La re-secuenciación consiste en secuenciar un individuo perteneciente a una especie que ya se ha secuenciada anteriormente. Su objetivo es capturar información de polimorfismos de una base (SNPs), variaciones en el número de copias (CNVs), inserciones y deleciones (indels) en el individuo de interés. 
+La re-secuenciación consiste en secuenciar un individuo perteneciente a una especie que ya se ha secuenciada anteriormente. Su objetivo es capturar información de polimorfismos de una base (SNPs), variaciones en el número de copias (CNVs) e inserciones y deleciones (indels) en el individuo de interés.
 
 Siempre que exista un genoma de referencia, lo ideal es mapear en lugar de ensamblar, ya que el genoma de referencia contiene mucha información acumulada sobre el organismo de interés. Hay que tener en cuenta que al mapear se realizan múltiples asunciones, como por ejemplo, que el organismo de referencia y el analizado tienen la misma arquitectura genómica.
 
-#### Repaso: flujo de trabajo de secuenciación y mapeo
+### *Chlamydia trachomatis*
 
-**Laboratorio húmedo**: El ADN de la cepa **NV** de *C. trachomatis* es clivado en fragmentos con enzimas o sonicación. Mediante Illumina se secuencian entre 75 y 100 bases de ambos extremos de cada fragmento, generando lecturas pareadas (en inglés "paired-end reads").
-
-**_In silico_**: Se obtienen archivos en formato `FASTQ` que contienen las secuencias de cada fragmento (llamadas lecturas o _reads_) y valores de calidad de secuenciación por base. El formato `FASTQ` es similar al formato `FASTA` pero contiene una línea con la calidad (Q) codificada en [​ASCII](https://elcodigoascii.com.ar/). Luego cada lectura es alineada y mapeada al genoma de referencia. En este paso se obtiene un archivo en formato `SAM`, el cual contiene la secuencia, la calidad y además las coordenadas donde se ubica este fragmento respecto al genoma de referencia.
-
-![Flujo](images/flow.png)
-
-#### *Chlamydia trachomatis*
-
-*Chlamydia trachomatis* es uno de los patógenos humanos de mayor prevalencia en el mundo, capaz de causar una variedad de cuadros clínicos. Las cepas de transmisión sexual pueden ser subdivididas en aquellas restringidas al tracto intestinal y tipos más invasivos como el linfogranuloma venereo o *LGV biovar*. A pesar de las diferencias en la severidad de la enfermedad, hay pocas diferencias genéticas que distinguen a las diferentes cepas de *C. trachomatis*. Como veremos a continuación, la mayoría de las variaciones ocurren al nivel de SNPs.
+*Chlamydia trachomatis* es uno de los patógenos humanos de mayor prevalencia en el mundo, capaz de causar una variedad de cuadros clínicos. Las cepas de transmisión sexual pueden ser subdivididas en aquellas restringidas al tracto intestinal y tipos más invasivos como el linfogranuloma venereo o *LGV biovar*. A pesar de las diferencias en la severidad de la enfermedad, hay pocas diferencias genéticas que distinguen a las diferentes cepas de *C. trachomatis*. Como veremos a continuación, la mayoría de las variaciones ocurren al nivel de SNPs.
 
 En este trabajo práctico, procederemos a mapear las lecturas producidas con Illumina de una nueva variante de *Chlamydia trachomatis* aislada del tracto genital y compararlas con la cepa de referencia **Lb** y otra cepa conocida **L2b**. Esta nueva cepa, llamada **NV**, causó un alerta sanitario en Europa en el año 2006 y comenzó a diseminarse alrededor del mundo. La causa de su expansión es que evade la detección por el test diagnóstico basado en una reacción de PCR. En el desarrollo de este trabajo práctico podrán identificar la razón por la cual esta cepa evadió el ensayo diagnóstico.
 
-### Ejercicio 1: Inspección de los datos crudos
+### Flujo de trabajo de secuenciación y mapeo
+
+**Laboratorio húmedo**: El ADN de la cepa **NV** de *C. trachomatis* es clivado en fragmentos con enzimas o sonicación. Mediante Illumina se secuencian entre 75 y 100 bases de ambos extremos de cada fragmento, generando lecturas pareadas (en inglés "paired-end reads").
+
+**_In silico_**: Se obtienen archivos en formato `FASTQ` que contienen las secuencias de cada fragmento (llamadas lecturas o _reads_) y valores de calidad de secuenciación por base. El formato `FASTQ` es similar al formato `FASTA` pero contiene una línea con la calidad (Q) codificada en [ASCII](https://elcodigoascii.com.ar/). Luego cada lectura es alineada y mapeada al genoma de referencia. En este paso se obtiene un archivo en formato `SAM`, el cual contiene la secuencia, la calidad y además las coordenadas donde se ubica este fragmento respecto al genoma de referencia.
+
+![Flujo](images/flow.png)
+
+## Ejercicio 1: Inspección de los datos crudos
 
 Siempre que sea posible, es una buena práctica visualizar los archivos de trabajo. 
 Para comenzar leeremos los archivos crudos de secuenciación de *Chlamydia trachomatis*, los cuales tienen formato `FASTQ`.
@@ -55,7 +55,7 @@ zcat NV_1.fastq.gz | head -4
 
 **Formato FASTQ**
 
-- 1ra línea. `IL7_1788:5:1:34:600/1` es el nombre de la lectura secuenciada y contiene la siguiente información
+- **1ra línea:** `IL7_1788:5:1:34:600/1` es el nombre de la lectura secuenciada y contiene la siguiente información
 
 	| Elemento { data-sort-method='none' } | Descripción { data-sort-method='none' } |
 	| :---: | :---: |
@@ -68,11 +68,11 @@ zcat NV_1.fastq.gz | head -4
 
 ![Flowcell](images/illumina_flowcell.png)
 
-- 2da línea. La secuencia.
-- 3ra línea. `+` Separador entre la secuencia y la calidad.
-- 4ta línea. Calidad de la secuencia. Hay un caracter para cada nucleótido. El caracter está asociado a un puntaje de calidad de cada nucleótido, lo cual está codificado de la siguiente forma: cada caracter representa un número (N°) según el código decimal [​ASCII](https://elcodigoascii.com.ar/), y la calidad se define como este número menos 33. ¿Y cómo se asocia esto a la probabilidad de error (p) de la base asignada? así: `(N° - 33) = calidad`
+- **2da línea:** La secuencia.
+- **3ra línea:** `+` Separador entre la secuencia y la calidad.
+- **4ta línea:** Calidad de la secuencia. Hay un caracter para cada nucleótido. El caracter está asociado a un puntaje de calidad de cada nucleótido, lo cual está codificado de la siguiente forma: cada caracter representa un número (N°) según el código decimal [ASCII](https://elcodigoascii.com.ar/), y la calidad se define como este número menos 33. ¿Y cómo se asocia esto a la probabilidad de error (p) de la base asignada? así: `(N° - 33) = calidad`
 
-El byte que representa la calidad va de 0x21 (calidad más baja; '!' En ASCII) a 0x7e (calidad más alta; '~' en ASCII). Estos son los caracteres de valor de calidad en orden creciente de calidad de izquierda a derecha:
+El número que representa la calidad va de 33 (calidad más baja; `!` En ASCII) a 126 (calidad más alta; `~` en ASCII). Estos son los caracteres de valor de calidad en orden creciente de calidad de izquierda a derecha:
 
 ```
  ! "# $% & '() * +, -. / 0123456789:; <=>? @ ABCDEFGHIJKLMNOPQRSTUVWXYZ [\] ^ _` abcdefghijklmnopqrstuvwxyz {|} ~
@@ -80,15 +80,15 @@ El byte que representa la calidad va de 0x21 (calidad más baja; '!' En ASCII) a
 
 1. Identificar los componentes de la primer lectura: nombre, secuencia, calidad y ubicación física de la lectura en la celda de flujo (es decir, lane, tile, x, y).
 
-2. Usando el código [​ASCII](https://elcodigoascii.com.ar/), determinar la calidad de las primeras 3 bases secuenciadas.
+2. Usando el código [ASCII](https://elcodigoascii.com.ar/), determinar la calidad de las primeras 3 bases secuenciadas.
 
 3. Leer la primera lectura del archivo `NV_2.fastq.gz`. ¿Qué similitudes y diferencias encuentra en **cada una** de las líneas de texto? ¿A qué se deben? 
 
-### Ejercicio 2: Análisis de calidad de secuencias
+## Ejercicio 2: Análisis de calidad de secuencias
 
-Dado que la secuenciación de segunda generación tiene una mayor tasa de error que la de primera generación (Sanger), es importante revisar la calidad de nuestras lecturas. Explorar y entender las características de los datos en crudo, nos dará confianza en los experimentos ulteriores que llevemos adelante con las secuencias.
+Dado que la secuenciación de segunda generación tiene una mayor tasa de error que la de primera generación (Sanger), es importante revisar la calidad de nuestras lecturas. Explorar y entender las características de los datos en crudo nos dará confianza en los experimentos ulteriores que llevemos adelante con las secuencias.
 
-#### FastQC
+### FastQC
 Este programa analiza los datos crudos para realizar gráficas y tablas que muestren la calidad global de los datos. Permite identificar algunos problemas relacionados a distintos aspectos de los datos. 
 
 Para instalar FastQC, ejecutar el siguiente comando en una consola de linux:
@@ -111,7 +111,7 @@ Algunos aspectos a evaluar en un reporte de calidad son:
 * **Niveles de duplicación de secuencia:** La aparición de duplicaciones excesivas puede sugerir artefactos durante la generación de la librería que usamos para secuenciar (o problemas en la PCR que usamos para amplificar nuestra muestra, si usamos alguna).
 * **Contenido de adaptadores:** Aparición de adaptadores propios de la tecnología de secuenciación (no pertenecen a nuestra secuencia de interés y deben ser removidos antes de mapear al genoma de referencia).
 
-#### Análisis de calidad de las secuencias de *C. trachomatis*
+### Análisis de calidad de las secuencias de *C. trachomatis*
 
 Para realizar el análisis de calidad de la secuenciación con FastQC, ejecute el siguiente comandos:
 
@@ -126,56 +126,13 @@ A continuación, visualice los resultados de cada archivo de secuenciación por 
 firefox NV_1_fastqc.html NV_2_fastqc.html
 ```
 
-4. ¿Qué opina de la calidad de los datos? ¿Continuaría trabajando con ellos? Compare con este ejemplo y justifique su decisión:
-- [Example of Conventional Base Calls](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/bad_sequence_fastqc.html)
+4. ¿Qué opina de la calidad de los datos? ¿Continuaría trabajando con ellos? Compare con este ejemplo y justifique su decisión: [Example of Conventional Base Calls](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/bad_sequence_fastqc.html)
 
-### Ejercicio 3: Mapeo de secuencias al genoma de referencia de *C. trachomatis*
-
-!!! Warning "NO EJECUTAR! Es de muestra"
-
-      El software para realizar el mapeo funciona en computadoras con una arquitectura de 64bits (actualmente la mas común). Dado que nuestra máquina virtual tiene una arquitectura de 32bits, usted NO debe ejecutar los comandos de esta etapa. Podrá ver los resultados en su directorio de trabajo. Le brindamos los comandos en caso de querer reproducir el análisis en secuencias de su interés.
-
-
-El software para mapear las lecturas es BWA. Para instalarlo ejecutar:
-
-```Bash
-# NO ejecutar
-sudo apt install bwa
-```
-
-La secuencia de referencia para este ejercicio es la cepa LGV de *Chlamydia trachomatis*, denominada **L2** y se encuentra en el archivo "``L2_cat.fasta``". Este archivo contiene concatenado en formato fasta la secuencia del genoma y de un plásmido.
-
-La mayoría de los programas que trabajan con genomas completos necesitan indexar la secuencia de referencia contra la que se alinearán las lecturas antes de comenzar. 
-Para ello ejecutar:
- 
-```Bash 
-# NO ejecutar
-bwa index L2_cat.fasta 
-```
-
-Realizado el indexado del genoma de referencia, podremos mapear nuestras secuencias crudas empleando el algoritmo BWA-MEM:
-	 
-```Bash 
-# NO ejecutar
-bwa mem L2_cat.fasta NV_1.fastq.gz NV_2.fastq.gz > mapping.sam
-```
-
-#### Compresión de archivos SAM
-
-!!! info "A partir de aqui continúe ejecutando los comandos"
-
+## Ejercicio 3: Mapeo de secuencias al genoma de referencia de *C. trachomatis*
 
 El formato SAM (Sequence Alignment Map) es un formato estandarizado para guardar de secuencias de nucleótidos alineadas (Para mas información ver [SAM format](https://samtools.github.io/hts-specs/SAMv1.pdf)). 
 
-El formato BAM es el equivalente binario y comprimido de SAM, desarrollado para aumentar la velocidad y utilizarse en procesamientos intensivos de datos. 
-
-<!--
-El programa que usaremos para convertir y analizar los archivos SAM y BAM es SAMtools, el cual instalaremos con el siguiente comando:
-
-```Bash
-sudo apt install samtools
-```
--->
+Otro formato similar es el BAM, el cual es el equivalente binario y comprimido de SAM, desarrollado para aumentar la velocidad y utilizarse en procesamientos intensivos de datos. 
 
 Para instalar los programas que usaremos a continuación ejecute el script de instalación ubicado en la carpeta de trabajo con el siguiente comando:
 
@@ -183,7 +140,41 @@ Para instalar los programas que usaremos a continuación ejecute el script de in
 bash update.sh
 ```
 
-Mientras se instalan los programas, abra una nueva ventana de la consola y revise de qué se trata el `.sam` visualizando las primeras líneas del archivo:
+Mientras se instalan los programas (que tarda un rato largo), les contamos que el archivo SAM se genera con un software que funciona en computadoras con una arquitectura de 64bits (actualmente la mas común). Dado que nuestra máquina virtual tiene una arquitectura de 32bits, les vamos a dar ya creado este archivo y contarles como lo conseguimos:
+
+!!! info "Como crear el archivo SAM (NO FUNCIONA EN LA VM!)"
+
+	!!! Warning "NO EJECUTAR EL CÓDIGO A CONTINUACIÓN! Es de muestra"
+
+	Por si no quedó claro con todas las aclaraciones, ustedes NO deben ejecutar los comandos de esta etapa. Podrán ver los resultados ya creados en su directorio de trabajo. Le brindamos los comandos en caso de querer reproducir el análisis en secuencias de su interés.
+
+	El software para mapear las lecturas es BWA. Para instalarlo habría que ejecutar:
+
+	```Bash
+	# NO ejecutar
+	sudo apt install bwa
+	```
+
+	La secuencia de referencia para este ejercicio es la cepa LGV de *Chlamydia trachomatis*, denominada **L2** y se encuentra en el archivo ``L2_cat.fasta``. Este archivo contiene concatenado en formato fasta la secuencia del genoma y de un plásmido.
+
+	La mayoría de los programas que trabajan con genomas completos necesitan indexar la secuencia de referencia contra la que se alinearán las lecturas antes de comenzar. 
+	Para ello habría que ejecutar:
+	 
+	```Bash 
+	# NO ejecutar
+	bwa index L2_cat.fasta 
+	```
+
+	Realizado el indexado del genoma de referencia, podríamos mapear nuestras secuencias crudas empleando el algoritmo BWA-MEM:
+		 
+	```Bash 
+	# NO ejecutar
+	bwa mem L2_cat.fasta NV_1.fastq.gz NV_2.fastq.gz > mapping.sam
+	```
+
+!!! info "A partir de aqui SI continúe ejecutando los comandos"
+
+Probablemente todavía se siguen instalando los programas, así que abra una nueva ventana de la consola y revise de qué se trata el `.sam` visualizando las primeras líneas del archivo:
 
 ```Bash
 head mapping.sam
@@ -193,13 +184,24 @@ Las partes del archivo SAM son las siguientes:
 
 ![sambam](images/sambam.png)
 
+
+### Compresión de archivos SAM
+
+<!--
+El programa que usaremos para convertir y analizar los archivos SAM y BAM es SAMtools, el cual instalaremos con el siguiente comando:
+
+```Bash
+sudo apt install samtools
+```
+-->
+
 Una vez terminada la instalación, convierta el alineamiento de formato SAM a formato BAM:
 
 ```Bash 
 samtools view -b -S mapping.sam > mapping.bam 
 ```
 
-!!! warning "Si el comando no es encontrado, cierre TODA terminal abierta y vuelva a probar, si ahí no anda, avise"
+!!! warning "Si el comando no es encontrado, cierre TODA terminal abierta y vuelva a probar. Si ahí no anda, avise"
 
 
 * Compare el tamaño de los archivos SAM y BAM y determine el factor de compresión. 
@@ -224,9 +226,11 @@ Finalmente indexaremos el archivo en formato BAM:
 samtools index NV.bam
 ```
 
-### Ejercicio 4: Visualización de secuencias mapeadas
+## Ejercicio 4: Visualización de secuencias mapeadas
 
-Artemis permite visualizar datos de secuenciación de tecnologías de nueva generación como Illumina, 454 o Solid (Puede visiar el sitio [NGS Tools](https://www.sanger.ac.uk/science/tools/categories/Sequence%2520data%2520processing/all&sa=D&ust=1548712235814000) para más información y ejemplos). 
+Artemis permite visualizar datos de secuenciación de tecnologías de nueva generación como Illumina, 454 o Solid.
+
+<!-- (Puede visitar el sitio [NGS Tools](https://www.sanger.ac.uk/science/tools/categories/Sequence%2520data%2520processing/all&sa=D&ust=1548712235814000) para más información y ejemplos). -->
 
 Para abrir Artemis ejecutar en la terminal: 
 
@@ -235,20 +239,25 @@ cd ~/Tools/artemis/
 ./art
 ```
 
-#### Vista básica de Artemis
+### Vista básica de Artemis
 
 - Abra la secuencia de referencia "L2_cat.fasta". Para esto hacer click en ``'File'`` > ``'Open'`` y abra el archivo correspondiente. 
 
+De arriba a abajo podemos ver:
+
 * Menúes desplegables.
 * Entradas activas. En nuestro caso estará `L2_cat.fasta`.
-* Este es el panel principal de visualización. Las 2 lineas grises centrales representan la hebra de DNA positiva (arriba) y la negativa (abajo). Arriba y abajo de ellas se encuentran los 3 marcos de lectura en cada sentido, respectivamente. Los codones *stop* son señalados con barras negras verticales. Los genes y otros "features" (e.g. dominios Pfam o Prosite) se muestran como cajas coloreadas. Para desplazarse mover el deslizador horizontal (inferior), y para hacer zoom, mover el deslizador vertical (lateral).
-* Este panel tiene una disposición similar al panel principal pero es un acercamiento. Haga doble click sobre un gen en el panel principal y en este observará un acercamiento del comienzo del gen.
-* Este panel lista las anotaciones o "features" presentes en las secuencias en el orden en que ocurren en el DNA, con el gen seleccionado resaltado.
-Nota: para minimizar o expandir los paneles, clickear en los **...** que figuran en el margen superior izquierdo de cada panel. 
+* Panel principal de visualización. Las 2 lineas grises centrales representan la hebra de DNA positiva (arriba) y la negativa (abajo). Arriba y abajo de ellas se encuentran los 3 marcos de lectura en cada sentido, respectivamente. Los codones *stop* son señalados con barras negras verticales. Los genes y otros "features" (e.g. dominios Pfam o Prosite) se muestran como cajas coloreadas. Para desplazarse mover el deslizador horizontal (inferior), y para hacer zoom, mover el deslizador vertical (lateral).
+* Panel de zoom. Tiene una disposición similar al panel principal pero es un acercamiento. Haga doble click sobre un gen en el panel principal y en este observará un acercamiento del comienzo del gen.
+* Panel de anotaciones. Lista las anotaciones o "features" presentes en las secuencias en el orden en que ocurren en el DNA, con el gen seleccionado resaltado.
 
-- Abrir el archivo de anotación denominado "L2_cat.embl". Para esto hacer click en ``'File'`` > ``'Read an Entry'`` y abra el archivo correspondiente. 
+!!! idea "Tip"
 
-- Para visualizar el mapeo de lecturas que acabamos de hacer vamos a cargar en Artemis nuestras lecturas mapeadas en formato BAM, de la siguiente manera: Haga clic en ``'File'`` > ``'Read BAM / VCF '`` > ``'Select'`` y abra el archivo ``NV.bam``
+	Para minimizar o expandir los paneles, clickear en los **...** que figuran en el margen superior izquierdo de cada panel. 
+
+- Abra el archivo de anotación denominado "L2_cat.embl". Para esto hacer click en ``'File'`` > ``'Read an Entry'`` y abra el archivo correspondiente. 
+
+- Para visualizar el mapeo de lecturas que acabamos de hacer vamos a cargar en Artemis nuestras lecturas mapeadas en formato BAM, de la siguiente manera: Haga clic en ``'File'`` > ``'Read BAM / CRAM / VCF'`` > ``'Select'`` y abra el archivo ``NV.bam``
 
 
 !!! info "Recuerden que estas lecturas son de la cepa sueca **NV** mapeadas contra el genoma de referencia de la cepa **L2**." 
@@ -264,7 +273,7 @@ Si quieren saber más sobre una lectura, haga click derecho sobre ella y selecci
 ![details](images/details.png)
 
 
-#### Calidad de Mapeo
+### Calidad de Mapeo
 
 !!! info ""
 
@@ -272,13 +281,13 @@ Si quieren saber más sobre una lectura, haga click derecho sobre ella y selecci
 
 * Basándose en sus conocimientos de biología y de bioinformática ¿qué aspectos considera que podrían influir en la calidad de mapeo?
 
-A continuación, vamos a filtrar las lecturas para visualizar solo aquellas que tienen una buena calidad de mapeo. Para realizar esto haga click derecho sobre el gráfico de lecturas apiladas , seleccionen ``'Filter'``. Aparecerá una ventana con muchas opciones para filtrar: ``'By Mapping Quality (mapq) cut-off'`` (Lecturas con calidad de mapeo menor a). Prueben con **59**.
+A continuación, vamos a filtrar las lecturas para visualizar solo aquellas que tienen una buena calidad de mapeo. Para realizar esto haga click derecho sobre el gráfico de lecturas apiladas, seleccionen ``'Filter'``. Aparecerá una ventana con muchas opciones para filtrar. En ``'By Mapping Quality (mapq) cut-off'`` prueben con **59** (removiendo asi lecturas con calidad de mapeo menor a dicho número).
 
 !!! idea "Tip"
 
       Filtrar lecturas con regiones repetitivas y ver únicamente lecturas correctamente apareadas puede ser muy útil para hacer el análisis del mapeo.
 
-#### Visualización de las lecturas mapeadas
+### Visualización de las lecturas mapeadas
 
 Artemis tiene varias modalidades de visualización de archivos BAM. Para explorarlas haga click derecho en el panel BAM y seleccionen el menú de opciones 'Views': 
 
@@ -292,7 +301,7 @@ Artemis tiene varias modalidades de visualización de archivos BAM. Para explora
 !!! Question "¿Por qué podrían generarse lecturas duplicadas? ¿Todas las lecturas duplicadas serán útiles?"
 
 Sacaremos provecho de la vistas en nuestro ejemplo biológico. Para ello haga click derecho en el panel BAM y seleccionen la vista 'Stack'. Luego haga click derecho en el panel BAM y seleccionen en Graph la opción 'coverage' (agregando a la vista el gráfico de cobertura). 
-Desde el panel de "features" haga doble click en el ``'fasta_record AM886278.1'`` (el "DNA feature" en marrón) y compare la cobertura del plásmido con la región genómica de **NV**
+Desde el panel de "features" haga doble click en el ``'fasta_record AM886278.1'`` (el "DNA feature" en marrón al principio de la lista) y compare la cobertura del plásmido con la región genómica de **NV**
 
 Su pantalla de Artemis debería verse así:
 
@@ -314,7 +323,7 @@ Su pantalla de Artemis debería verse así:
 
 Observarán que el tamaño inferido de las lecturas pareadas a los lados de esta zona es mucho mayor al tamaño normal observado por fuera de esta región. No observándose ninguna línea gris uniendo lecturas pareadas dentro del rango normal de tamaño cruzando esta región. Esto es indicativo de una **deleción** en la cepa secuenciada comparada con la referencia.
 
-#### Visualización de múltiples archivos BAM
+### Visualización de múltiples archivos BAM
 
 También pueden visualizar múltiples archivos BAM al mismo tiempo. Recuerden que los archivos BAM son un grupo procesado de lecturas alineadas de una bacteria (en este caso) contra una secuencia de referencia. Asi que en principio podriamos observar múltiples aislamientos bacterianos diferentes mapeados contra la misma referencia. La cepa de *C. trachomatis* que va a leer es la **L2b**. Es filogenéticamente más cercana a la cepa de referencia que la que hemos analizado hasta el momento, por eso el nombre similar.
 
@@ -328,14 +337,13 @@ Lo primero que hace Artemis es unir todas las lecturas nuevas a las anteriores e
 
 Veamos la región del plásmido situada al final del genoma y observen la región no mapeada que analizamos previamente (alrededor de la base 1044800). Miren la vista de 'Inferred size' también para comparar (puede que se enlentezcan los desplazamientos, tenga paciencia).
 
-* ¿Por qué razón cree que la cepa **NV** no es detectada en el ensayo diagnóstico estándar pero sí lo es la cepa **L2b**?
-
+* Vuelva a leer en la Introducción la razón por la cuál la cepa **NV** causó un alerta sanitario en Europa en el año 2006. Considerando lo que acabamos de ver, ¿por qué razón cree que la cepa **NV** no es detectada en el ensayo diagnóstico estándar pero sí lo es la cepa **L2b**?
 
 ![cover](images/L2b.png)
 
 <!--¿Qué pasa con la región deleteada en NV para la cepa L2b? ¿Qué pueden decir acerca de las tecnologías de secuenciación usadas para una u otra cepa? -->
 
-### Ejercicio 5: Detección de variantes (SNP e InDel)
+## Ejercicio 5: Detección de variantes (SNP e InDel)
 
 Para comenzar, regresen a la visualización de lecturas apiladas.
 
@@ -352,7 +360,7 @@ Si acerca la visualización de las lecturas apiladas al máximo podrán observar
       Muchos SNPs son bastante claros, sin embargo, esto no es siempre el caso. ¿Qué sucede si la profundidad de lecturas es muy baja? Si solo hay dos lecturas mapeando en un sector, la referencia es T y ambas lecturas son C, ¿Es evidencia suficiente para decir que hay un SNP? ¿Que pasa si hay muchas lecturas mapeando una región y, por ejemplo, de 100, 50 tienen G y las otras 50 tienen T en una posición en particular. ¿Es un SNP? También podria ser una coinfección o una variación en un genoma diploide...
 
 
-#### Calculando con más precisión los SNPs
+### Calculando con más precisión los SNPs
 
 Hasta el momento hemos visto la variación como un simple y homogéneo grupo de SNPs. En realidad se necesitaría más información para entender el efecto que el cambio en la secuencia puede ocasionar en, por ejemplo, la capacidad codificante. Para esto podemos visualizar un tipo de formato denominado "variant call format" (VCF), el cual tiene su forma comprimida denominada "binary variant call format" (BCF).
 
@@ -376,17 +384,17 @@ zcat NV.vcf.gz | head
 
 ![vcf](images/vcf.png)
 
-Ahora leeremos en Artemis el archivo VCF que recien crearon. Para esto diríjanse al menú principal, seleccionen ``'File'`` ,``'Read BAM / VCF'`` , ``'Select...'`` y abran el archivo ``"NV.vcf.gz"``. Como siempre ajusten el tamaño de las ventanas BAM y BCF para poder visualizarlas bien. En un principio, en la ventana VCF solo se muestran los SNPs del cromosoma. Para mostrar los SNPs del plásmido abran el ícono que se encuentra arriba y a la izquierda en el panel de BCF y seleccionen ``'Combine References'``. Ahora ambos serán visibles.
+Ahora leeremos en Artemis el archivo VCF que recien crearon. Para esto diríjanse al menú principal, seleccionen ``'File'`` ,``'Read BAM / CRAM / VCF'`` , ``'Select...'`` y abran el archivo ``"NV.vcf.gz"``. Como siempre ajusten el tamaño de las ventanas BAM y BCF para poder visualizarlas bien. En un principio, en la ventana VCF solo se muestran los SNPs del cromosoma. Para mostrar los SNPs del plásmido abran el ícono que se encuentra arriba y a la izquierda en el panel de BCF y seleccionen ``'Combine References'``. Ahora ambos serán visibles.
 
 Para ver una región con algo de variación genética interesante vayan al gen CTL0578 haciendo  ``'Goto'`` > ``'Navigator'`` > ``'Goto Feature with Gene Name'`` e insertan allí "CTL0578"
 
- (otra vez, usen el deslizador, el menú 'GoTo' o el 'Navigador')
+(otra vez, usen el deslizador, el menú 'GoTo' o el 'Navigator')
 
 ![variants](images/variants.png)
 
 Aquí abajo se lista el esquema de colores y formas utilizado para las variantes en el panel de BCF. Noten que a su vez se incluyen los indels. Muevanse a lo largo de la secuencia y busquen algunas de las variantes:
 
-#### Esquema de colores por defecto
+### Esquema de colores por defecto
 
 | Variante | Identificador |
 | :---: | :---: |
@@ -405,7 +413,7 @@ Aquí abajo se lista el esquema de colores y formas utilizado para las variantes
 	
 * ¿Qué tipos de variantes pueden identificar en el gen CTL0578?
 
-#### Puntuación de calidad
+### Puntuación de calidad
 
 Las variantes pueden colorearse por tipo (por defecto) o por score. Las variantes en nuestro ejemplo están todas en la escala del rojo, siendo aquellas con mayor puntaje, de color más intenso. Pruébenlo con:
 
@@ -419,7 +427,7 @@ Artemis también permite filtrar los archivos BCF. Haciendo clic derecho sobre e
 
 Como la vista de archivos BAM, también pueden remover o incluir SNPs basado en, por ejemplo, el puntaje del mapeo, la profundidad de cobertura, la calidad de secuencia. Todo esto lo pueden hacer desde la sección ``PROPERTY`` del menú de filtrado de SNPs. Valores de corte útiles son de un "DP" de "10" y de un "Qual" de al menos "30".
 
-#### Ejercicio adicional: comparando cepas
+## Ejercicio adicional: comparando cepas
 
 En el directorio de trabajo tiene el archivo BAM de la cepa L2b. Con los comandos vistos, calcule las variantes de esta cepa respecto al genoma de referencia de L2. 
 
