@@ -13,19 +13,20 @@
         <link rel="canonical" href="https://bioinformatica-iib.github.io/2022_introduccion_bioinformatica/practicos/TP13_Artemis/">
       
       <link rel="icon" href="../../img/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.15">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.6">
     
     
       
-        <title>TP N°13 - Introducción a la Bioinformática</title>
+        <title>Index - Introducción a la Bioinformática</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.c382b1dc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.4a0965b7.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.cc9b2e1e.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
         
+      
       
     
     
@@ -69,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#materiales" class="md-skip">
+        <a href="#tp-13-visualizando-genomas-con-artemis" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -101,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              TP N°13
+              Index
             
           </span>
         </div>
@@ -856,6 +857,34 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TP13_Short-Read-Mapping/" class="md-nav__link">
+        TP 13 - Short Read Mapping
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TP14_Genomica_Comparativa/" class="md-nav__link">
+        TP 14 - Genomica Comparativa
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -966,90 +995,217 @@
                 
 
 
-  <h1>TP N°13</h1>
+<p><img _="," align="left" alt="Image" src="img/featured.jpg" width="250" /></p>
+<h1 id="tp-13-visualizando-genomas-con-artemis" markdown="markdown"><strong>TP 13</strong>. Visualizando genomas con Artemis</h1>
+<p><br>
+<br>
+<br>
+<br></p>
+<!--
+## Videos de la clase grabada
 
-<p>{% if page.construccion %}</p>
-<p><strong>Pagina en construccion</strong></p>
-<p>{% else %}</p>
-<p>{% if page.data %}</p>
-<h2 id="materiales">Materiales</h2>
-<p><a href="data/"> Descargar </a></p>
-<p>{% endif %}</p>
-<h2 id="introduccion">Introducción:</h2>
-<p>Artemis es una herramienta de visualización y anotación de DNA gratuita desarrollada por Kim Rutherford ( Rutherford et al.,2000). Es utilizado rutinariamente para la anotación y el análisis de tanto genomas procariotas como eucariotas, y puede ser utilizado para visualizar datos mapeados de secuenciación de segunda generación. Este programa permite al usuario visualizar archivos de secuencias simples, archivos de EMBL/Genbank y los resultados de análisis de secuencias en un formato gráfico altamente interactivo e intuitivo. Multiples conjuntos/tipos de información pueden ser visualizados dentro de diferentes contextos, por ejemplo, en Artemis se puede inspeccionar motivos de secuencia de DNA, arquitecturas genicas locales (e.g. operones), varias kilobases de un genoma o hasta cromosomas enteros en una única pantalla. Se puede incluso realizar análisis dentro de Artemis guardando la salida para acceder luego.</p>
-<h2 id="objetivos">Objetivos:</h2>
-<p>El objetivo de este módulo es familiarizarse con las funciones básicas de Artemis empleando una serie de ejercicios. Estos ejemplos fueron desarrollados para atravesar las funciones más utilizadas. Sin embargo, les recomendamos que exploren otras funciones de Artemis que no estan desarrolladas en los ejercicios de este manual. Como siempre, "si no entienden, por favor pregunten!".</p>
-<h3 id="ejercicio-1">Ejercicio 1:</h3>
-<h4 id="1-iniciar-el-programa">1. Iniciar el programa</h4>
-<p>Para abrir el programa podemos usar la terminal: </p>
+* :octicons-video-16: [Introducción al TP](https://www.youtube.com/watch?v=mzzItpMc7ds)
+* :octicons-video-16: [Resultados Verify y Procheck](https://www.youtube.com/watch?v=t6P6AprFvVg)
+* :octicons-video-16: [Puesta en común del TP](https://www.youtube.com/watch?v=vAtKowbM4oo)
+-->
+
+<p><a class="md-button md-button--primary" href="https://drive.google.com/file/d/1E8YfobRpIbyluM_lqBi2HXyQzl6CKG1A/view?usp=sharing"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M480 352H346.5l-45.25 45.25C289.2 409.3 273.1 416 256 416s-33.16-6.656-45.25-18.75L165.5 352H32c-17.67 0-32 14.33-32 32v96c0 17.67 14.33 32 32 32h448c17.67 0 32-14.33 32-32v-96c0-17.7-14.3-32-32-32zm-48 104c-13.2 0-24-10.8-24-24s10.8-24 24-24 24 10.8 24 24-10.8 24-24 24zm-198.6-81.4c6.2 6.3 14.4 9.4 22.6 9.4s16.38-3.125 22.62-9.375l128-128c12.49-12.5 12.49-32.75 0-45.25-12.5-12.5-32.76-12.5-45.25 0L288 274.8V32c0-17.67-14.33-32-32-32-17.7 0-32 14.33-32 32v242.8l-73.4-73.4c-12.49-12.5-32.75-12.5-45.25 0-12.49 12.5-12.49 32.75 0 45.25L233.4 374.6z"/></svg></span> Materiales</a></p>
+<h2 id="introduccion">Introducción</h2>
+<p>Artemis es una herramienta de visualización y anotación de ADN gratuita desarrollada por Kim Rutherford (Rutherford et al.,2000). Es utilizado rutinariamente para la anotación y el análisis de genomas procariotas y eucariotas. Además, artemis puede ser utilizado para visualizar datos mapeados de secuenciación de segunda generación (NGS, next generation sequencing).</p>
+<p>Artemis permite al usuario visualizar archivos de secuencias simples, archivos en formato EMBL/Genbank y los resultados de análisis de secuencias en un formato gráfico altamente interactivo e intuitivo. Artemis permite inspeccionar distintos tipos de información, por ejemplo, motivos de secuencia de ADN, arquitecturas génicas locales (e.g. operones), varias kilobases de un genoma o  cromosomas enteros en una única pantalla. Artemis también permite guardar el análisis realizado para continuar trabajando luego.</p>
+<h2 id="objetivos">Objetivos</h2>
+<ul>
+<li>Familiarizarse con las funciones básicas de Artemis.</li>
+</ul>
+<h2 id="ejercicio-1-conociendo-artemis">Ejercicio 1. Conociendo Artemis</h2>
+<h3 id="1-iniciar-el-programa">1. Iniciar el programa</h3>
+<p>Antes de iniciar el programa es necesario indicar la versión de java a utilizar para esto ingrese en la terminal:</p>
+<div class="highlight"><pre><span></span><code>sudo update-java-alternatives --set java-1.11.0-openjdk-i386
+</code></pre></div>
+<p>El output en la terminal puede ser similar, aunque no igual, a lo siguiente:</p>
+<div class="highlight"><pre><span></span><code>update-alternatives: error: no hay alternativas para appletviewer
+</code></pre></div>
+<p>Pueden repetirse varias lineas similares a esta o no haber ningún output. Pero sigan adelante y si lo siguiente no funciona nos llaman.</p>
+<p>Para abrir el programa también se usa la terminal: </p>
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span> ~/Tools/artemis/
 ./art
 </code></pre></div>
-<p><img alt="Programa, ventana principal" src="images/0.png" /></p>
-<p>Aparecerá una pequeña ventana de inicio. Cargaremos la secuencia del cromosoma de Salmonella typhi, para esto clickeen en <strong>'File'</strong> y luego <strong>'Open'</strong>. Vayan a la carpeta del TP y abran el archivo <code>S_typhi.dna</code> seleccionándolo y luego clickeando en <strong>'Open'</strong>. Si todo salió bien se les abrirá una ventana de Artemis. Si no fue así, pidan asistencia.</p>
-<p><img alt="Genoma" src="images/1.png" /></p>
-<h4 id="2-cargando-archivos-de-anotacion-entries-en-artemis">2. Cargando archivos de anotación (<em>entries</em>) en Artemis</h4>
-<p>Ahora cargaremos un archivo de anotación para el cromosoma de <em>Salmonella typhi</em>. Esto lo haremos clickeando en <strong>'File'</strong> , <strong>'Read An Entry'</strong> y seleccionando el archivo <strong>'S_typhi.tab'</strong> y luego clickeando en <strong>'Open'</strong>.</p>
-<p><img alt="Anotaciones" src="images/2.png" /></p>
-<h4 id="3-vista-basica-de-artemis">3. Vista básica de Artemis</h4>
-<p>Una vez realizado esto, démosle una mirada a que hay en la ventana ( de arriba hacia abajo):</p>
-<p><img alt="Ventanas" src="images/3.png" /></p>
-<blockquote>
+<p>Aparecerá una pequeña ventana de inicio como la siguiente:</p>
+<p><img alt="Programa, ventana principal" src="img/0.png" /></p>
+<p>Cargaremos la secuencia del cromosoma de <em>Salmonella typhi</em>, para esto vayan a:</p>
+<p><em>File</em> → <em>Open</em>.</p>
+<p>Vayan a la carpeta del TP y abran el archivo <code>S_typhi.dna</code> selecciónelo y clickee en <code>Open</code>. </p>
+<p>Si todo salió bien se les abrirá una ventana de Artemis como la siguiente (si no fue así, pidan asistencia).</p>
+<p><img alt="Genoma" src="img/1.png" /></p>
+<h3 id="2-cargando-archivos-de-anotacion-entries-en-artemis">2. Cargando archivos de anotación (<em>entries</em>) en Artemis</h3>
+<p>Para cargar el archivo de anotación del cromosoma de <em>Salmonella typhi</em> vaya a:</p>
+<p><em>File</em> → <em>Read An Entry</em></p>
+<p>seleccione el archivo <code>S_typhi.tab</code> y clickee en <code>Open</code>.</p>
+<p>Puede ocurrir (o no) que aparezca una ventana como la siguiente:</p>
+<p><img alt="warning" src="img/Entry_Warning.png" /></p>
+<p>So es así. haga click en <code>No</code></p>
+<p>Debería aparecer la siguiente información de la Entry:</p>
+<p><img alt="Anotaciones" src="img/2.png" /></p>
+<h3 id="3-vista-basica-de-artemis">3. Vista básica de Artemis</h3>
+<p>Las diferentes partes de Artemis son:</p>
+<p><img alt="Ventanas" src="img/3.png" /></p>
 <ol>
-<li>Menúes desplegables. Después iremos viendo algunas de sus utilidades.</li>
-<li>La siguiente línea muestra que entradas están activas. En nuestro caso estará <code>S_typhi.dna</code> y <code>S_typhi.tab</code>. Los detalles de los "features" que se encuentran actualmente seleccionados se muestran en el siguiente renglón.</li>
-<li>Este es el panel principal de visualización. Las 2 lineas grises centrales representan la hebra de DNA positiva (arriba) y la negativa (abajo). Arriba y abajo de ellas se encuentran los 3 marcos de lectura en cada sentido, respectivamente. Los codones <em>stop</em> en cada marco de lectura son señalados con barras negras verticales. Los genes y otros "features" (e.g. dominios Pfam o Prosite) se muestran como cajas coloreadas.</li>
-<li>Este panel tiene una disposición similar al panel principal pero es un acercamiento que permite observar la secuencia de nucleotidos y de aminoacidos. Hagan doble click sobre un gen en el panel principal y en este observaran un acercamiento del comienzo del gen.Noten que ambos paneles pueden ser desplazados hacia la izquierda o la derecha con el deslizador horizontal (inferior), y acercar o alejar con el deslizador vertical (lateral).</li>
-<li>Este panel lista los "features" presentes, en el orden en que ocurren en el DNA, con el gen seleccionado resaltado.</li>
-</ol>
-</blockquote>
-<h4 id="4-desplazandose-a-traves-de-artemis">4. Desplazandose a través de Artemis</h4>
-<p>Las 3 maneras principales de ir a región o posición que uno quiere en Artemis son: </p>
-<ul>
-<li>El menu desplegable <strong>Goto</strong>, </li>
-<li>el <strong>Navigator</strong>, </li>
-<li>y el <strong>Feature Selector</strong>. </li>
-</ul>
-<blockquote>
-<p>El mejor método depende de lo que cada uno este tratando de realizar, conocer cual conviene utilizar en cada caso viene con la práctica.</p>
-</blockquote>
-<h6 id="41-el-menu-goto">4.1 El menu 'Goto'</h6>
-<p>Las funciones en este menu (ignoren el Navigator por ahora) son atajos para dirigirse a sitios dentro de "features" seleccionados o para saltar al final o principio de la secuencia de DNA. Son muy intuitivos, asi que pruebenlos!</p>
-<p><img alt="Desplazamientos" src="images/4.png" /></p>
-<blockquote>
-<h6 id="tareas-sugeridas">Tareas sugeridas:</h6>
-<ol>
-<li>Alejen el visualizador, marquen una región grande de secuencia clickeando el botón izquierdo del mouse y arrastrando el cursor, luego vayan al principio y al final de la región seleccionada.</li>
-<li>Seleccionen un gen, vayan al principio y al final.</li>
-<li>Vayan al principio y al final de la secuencia del genoma.</li>
-<li>Seleccionen un gen. Dentro de él, vayan a una base y/o aminoácido que quieran.</li>
-<li>Marquen una región, luego desde el menu del click izquierdo, seleccionen 'Zoom to selection'.</li>
-</ol>
-</blockquote>
-<h6 id="42-navigator">4.2 Navigator</h6>
-<p>El panel del navigator es muy intuitivo, así que ábranlo (Clic en 'Goto', luego en 'Navigator') y pruébenlo!.</p>
-<p><img alt="Desplazamientos con navigator" src="images/5.png" /></p>
-<blockquote>
-<h6 id="sugerencias-a-donde-ir">Sugerencias a donde ir:</h6>
-<ol>
-<li>Piensen un número entre 1 y 4809037 y vayan a esa base.</li>
-<li>Su nombre de gen favorito ( puede que no este, en tal caso prueben 'fts').</li>
-<li>Usen 'Goto Feature With This Qualifier Value' para buscar en todos los qualifiers por un término particular. Por ejemplo, usando la palabra 'pseudogene' te llevará al próximo "feature" que contenga esa palabra en cualquiera de sus qualifiers. Noten que repitiendo el clic en el botón 'Goto' los llevará a lo largo de los pseudogenes a medida que se presentan en el cromosoma.</li>
-<li>Para la anotación de los genomas se utiliza un esquema de clasificación funcional mediante números, similar a los términos GO, denominados '<em>class qualifiers</em>'. A cada CDS se le asigna un 'class qualifier' de acuerdo a su función. Usen la función 'Goto Feature With This Qualifier value' para buscar CDS que pertenecen a una determinada clase. Algunos que pueden buscar son: 0.0.1 (Conservados en Escherichia coli) ; 1.4.0 (Respuestas protectivas) ; 1.4.1 (Muerte celular) ; 1.4.2 (Detoxificación) ; 1.4.4 ( sensitividad a la radiación) 3.1.0 (Biosintesis de aminoácidos) ; 3.1.01 (Biosíntesis de alanina) ; 3.1.09 (Biosíntesis de glicina).</li>
-<li>Genes de tRNAs. Escriban 'tRNA' en el 'Goto Feature With This Key'</li>
-<li>Secuencias consenso de DNA para la unión de reguladores (reales o inventadas!). Noten que se pueden utilizar valores de bases degeneradas (e.g. R = A o G ; Y = C o T; etc) </li>
-<li>Secuencias consenso de aminoácidos (reales o inventadas!). Pueden utilizar 'X'. Noten que estas búsquedas se realizan en todos los marcos de lectura independientemente de si realmente codifican aminoácidos o no.</li>
-</ol>
-</blockquote>
-<p>Claramente hay muchos más funciones de Artemis, las cuales no tendremos tiempo de explicar en detalle. Sin embargo ustedes mismos pueden recorrer los menús. Seguramente encuentren que la mayoría de ellos son intuitivos y simples de entender.</p>
-<h6 id="43-feature-selector">4.3 Feature Selector</h6>
-<p>Para acceder a este menú hay que ir a "Select" y luego a "Feature Selector ...". Al igual que con el Navigator, esto nos abre una nueva ventana donde podemos elegir los criterios de selección. Cada una de las opciones tiene una cajita asociada a su izquierda que nos permite usar o ignorar cada criterio, pudiéndose realizar cualquier combinación de los mismos.</p>
-<ul>
 <li>
-<p><strong>Key</strong>. Desde el menú desplegable se puede elegir que tipo de elemento queremos seleccionar (CDS, tRNA, TMM, etc.). Se lista una gran variedad independientemente si están o no anotados en nuestra secuencia.</p>
+<p><strong>Menúes desplegables.</strong></p>
 </li>
 <li>
-<p><strong>Qualifier</strong>. Nos permite refinar la búsqueda encontrando un texto determinado en el campo seleccionado (por ej. si elegimos EC_number podemos encontrar las regiones codificantes que pertenezcan a una categoría determinada como hicimos en "Navigator"). Debajo del campo para escribir el texto encontraran 3 cajas más que con opciones para la búsqueda del texto.</p>
+<p><strong>Entradas activas.</strong> En nuestro caso son <code>S_typhi.dna</code> y <code>S_typhi.tab</code>. </p>
+<p>Entre 2 y 3 figura un renglón gris que dice: <em>Nothing selected</em>. Al hacer click en alguna parte de la sección 3 aparecen las características (o <em>features</em>) de la región seleccionada.</p>
+</li>
+<li>
+<p><strong>Panel principal de visualización</strong>. Las 2 líneas grises centrales representan la hebra de ADN positiva (arriba) y la negativa (abajo). Arriba y abajo de ellas se encuentran los 3 marcos de lectura en cada sentido, respectivamente.</p>
+<ul>
+<li>
+<p>Los codones <em>stop</em> en cada marco de lectura son señalados con barras negras verticales.</p>
+</li>
+<li>
+<p>Los genes y otros <em>features</em> (por ejemplo, dominios Pfam o Prosite) se muestran como rectángulos coloreados.</p>
+</li>
+</ul>
+<p><strong>Barras de desplazamiento y zoom:</strong></p>
+<ul>
+<li>
+<p>La barra inferior en este panel permite desplazar hacia diferentes posiciones del cromosoma. Es una barra de desplazamiento.</p>
+</li>
+<li>
+<p>La barra derecha en este panel permite hacer <em>zoom in</em> (hacia arriba) o <em>zoom out</em> (hacia abajo).</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Panel de secuencia</strong>. Permite observar la secuencia de nucleótidos y de aminoácidos. </p>
+<p>Si hacen doble click sobre un gen en el <em>panel principal</em>, en el panel de secuencia ocurre un acercamiento del gen, es decir, se enfoca en la región en la cual se hizo doble click.</p>
+<p><strong>Barras de desplazamiento y zoom:</strong></p>
+<ul>
+<li>
+<p>La barra inferior en este panel permite desplazar hacia diferentes posiciones del cromosoma. Es una barra de desplazamiento.</p>
+</li>
+<li>
+<p>La barra derecha en este panel permite hacer <em>zoom in</em> (hacia arriba) o <em>zoom out</em> (hacia abajo).</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Panel de características o <em>features</em></strong>. Muestra las características correspondientes a la entry, en el orden de ocurrencia en el ADN. Si una <em>feature</em> se selecciona en el panel principal o en el panel de secuencia, aparece resaltada en negro.</p>
+<p>Se puede hacer doble click en una <em>feature</em> que será resaltada en el panel principal y en el de secuencia.</p>
+</li>
+</ol>
+<h3 id="4-utilizando-artemis">4. Utilizando Artemis</h3>
+<p>En Artemis, existen distintas maneras para ubicarnos en una región del cromosoma que nos interese.</p>
+<p>El método a utilizar depende de lo que cada uno este tratando de realizar y conocer cual conviene se logra con práctica.</p>
+<h4 id="metodo-1-el-menu-goto">Método 1: El menú 'Goto'</h4>
+<p>Las funciones en este menú son atajos para dirigirse a sitios dentro de <em>features</em> seleccionados o para saltar al final o principio de la secuencia de DNA (con excepción del <code>Navigator</code>). </p>
+<p>Son muy intuitivos, asi que pruebenlos!</p>
+<p><img alt="Desplazamientos" src="img/4.png" /></p>
+<div class="admonition idea">
+<p class="admonition-title">Tareas:<ol>
+<li>
+<p>Hagan <em>zoom out</em> en el panel principal y marquen una región grande de secuencia clickeando el botón izquierdo del mouse y arrastrando el cursor. Vayan al principio y al final de la región seleccionada.</p>
+<p><em>Goto</em> → <em>Start of selection</em></p>
+<p><em>Goto</em> → <em>End of selection</em></p>
+</li>
+<li>
+<p>Seleccionen un CDS (<em>Nucleotide Coding Sequence</em>) en el panel de <em>features</em>, vayan al principio y al final del mismo.</p>
+<p><em>Goto</em> → <em>Feature start</em></p>
+<p><em>Goto</em> → <em>Feature end</em></p>
+</li>
+<li>
+<p>Vayan al principio y al final de la secuencia del cromosoma.</p>
+<p><em>Goto</em> → <em>Start of sequence</em></p>
+<p><em>Goto</em> → <em>End of sequence</em></p>
+</li>
+<li>
+<p>Seleccionen un CDS. Observe la posición inicial y final del mismo. Calcule su longitud como <code>posición final - posición incial + 1</code></p>
+<p>Dentro de él, vayan a una base que quieran.</p>
+<p><em>Goto</em> → <em>Feature base position</em></p>
+<p>¿Qué ocurre si elijen una posición por fuera del rango de posiciones indicadas?</p>
+<p>Pruebe elegir 1. ¿Qué ocurre?</p>
+<p>Como verán, la posición indicada es relativa al inicio del CDS y no absoluta al cromosoma.        </p>
+</li>
+</ol>
+</p>
+</div>
+<h4 id="metodo-2-navigator">Método 2: Navigator</h4>
+<p>Vaya a: </p>
+<p><em>Goto</em> → <em>Navigator</em></p>
+<p>Se abrirá una ventana como la siguiente:</p>
+<p><img alt="Desplazamientos con navigator" src="img/5.png" /></p>
+<div class="admonition idea">
+<p class="admonition-title">Tareas:<ol>
+<li>
+<p><strong>Goto Base:</strong> Permite ir a una base determinada.</p>
+<p>Piensen un número entre 1 y 4809037 y vayan a esa base</p>
+</li>
+<li>
+<p><strong>Goto Feature With Gene Name:</strong>  Permite ir a un gen según su nombre.</p>
+<p>Prueben 'fts'</p>
+</li>
+<li>
+<p><strong>Goto Feature With This Qualifier Value:</strong>  Permite  buscar en todos los <em>qualifiers</em> por un término particular. </p>
+<p>Pruebe usando la palabra <code>pseudogene</code> le llevará al próximo <em>feature</em> que contenga esa palabra en cualquiera de sus qualifiers. Noten que repitiendo el clic en el botón <code>Goto</code> los llevará a lo largo de los pseudogenes a medida que se presentan en el cromosoma.</p>
+<p>Para la anotación de los genomas se utiliza un esquema de clasificación funcional mediante números, similar a los términos GO (<em>Gene Ontology Terms</em>), denominados <em>class qualifiers</em>. A cada CDS se le asigna un <em>class qualifier</em> de acuerdo a su función. </p>
+<p>Usando <em>Goto Feature With This Qualifier Value</em> busque CDS que pertenecen a las siguientes clases:</p>
+<ul>
+<li>0.0.1 (Conservados en Escherichia coli)</li>
+<li>1.4 (Respuestas protectivas)<ul>
+<li>1.4.1 (Muerte celular)</li>
+<li>1.4.2 (Detoxificación)</li>
+<li>1.4.4 (Sensitividad a la radiación)</li>
+</ul>
+</li>
+<li>3.1 (Biosintesis de aminoácidos)<ul>
+<li>3.1.01 (Biosíntesis de alanina)</li>
+<li>3.1.09 (Biosíntesis de glicina)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Goto Feature With This Key:</strong> Permite buscar por las palabras claves que definen el tipo de <em>feature</em> por ejemplo: CDS o misc_feature.</p>
+<ul>
+<li>Pruebe buscar <code>tRNA</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Find Base Pattern:</strong> Permite buscar secuencias consenso de ADN. Pueden ser reales o inventadas.</p>
+<p>Permite utilizar valores de bases degeneradas. La letra <code>R</code> indica las purinas (<code>A</code> o la <code>G</code>) y la letra <code>Y</code> indica las pirimidina (<code>C</code> o la <code>T</code>).
+La letra <code>W</code> indica (<code>A</code> o la <code>T</code>) y la letra <code>S</code> indica (<code>C</code> o la <code>G</code>). 
+Por último, la letra <code>N</code> indica (<code>A</code>,<code>C</code>,<code>G</code> o la <code>T</code>).</p>
+<ul>
+<li>
+<p>Pruebe buscar <code>GATTACA</code>. ¿Aparece solo en la hebra positiva?</p>
+</li>
+<li>
+<p>Pruebe buscar TATA box utilizando la secuencia: <code>TATAWAWR</code></p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Find Amino Acid Pattern:</strong> Permite buscar secuencias consenso de aminoácidos (reales o inventadas). Pueden utilizar 'X' para indicar que cualquiera de los 20 aminoácidos es posible.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Noten que estas búsquedas se realizan en todos los marcos de lectura independientemente de si realmente codifican aminoácidos o no.</p>
+</div>
+</li>
+</ol>
+</p>
+</div>
+<h4 id="metodo-3-feature-selector">Método 3: Feature Selector</h4>
+<p>Vaya a: </p>
+<p><em>Select</em> → <em>Feature Selector...</em></p>
+<p>Se abre una nueva ventana donde podemos elegir los criterios de selección. Cada una de las opciones tiene una checkbox a la izquierda que permite usar o ignorar cada criterio, y por ende combinar los mismos.</p>
+<ul>
+<li><strong>Key</strong>. Desde el menú desplegable se puede elegir que tipo de elemento queremos seleccionar (CDS, tRNA, TMM, etc.). Se lista una gran variedad independientemente si están o no anotados en nuestra secuencia.</li>
+</ul>
+<p>Pruebe seleccionar <code>tRNA</code>, haga click en select y luego elija <code>View</code></p>
+<ul>
+<li>
+<p><strong>Qualifier</strong>. Nos permite refinar la búsqueda encontrando un texto determinado en el campo seleccionado (por ej. si elegimos EC_number podemos encontrar las regiones codificantes que pertenezcan a una categoría determinada como hicimos en <em>Navigator</em>). Debajo del campo para escribir el texto encontraran 3 cajas más que con opciones para la búsqueda del texto.</p>
 </li>
 <li>
 <p><strong>Up to/At least</strong>. Aquí podemos restringir la búsqueda por cantidad de bases o exones que contiene la secuencia a seleccionar. No guarda mayores misterios.</p>
@@ -1058,34 +1214,95 @@
 <p><strong>Amino acid motif</strong>. Por último, podemos buscar regiones que contengan ciertos patrones de aminoácidos y si su búsqueda debe llevarse a cabo en la hebra positiva, negativa o ambas.</p>
 </li>
 </ul>
-<p>Al finalizar la elección de criterios pueden apretar "Select" para seleccionar las regiones que cumplan con la búsqueda, o "View" para que nos dé una lista de los hits, con el mismo formato que la que encontramos bajo el panel principal.</p>
-<h3 id="ejercicio-2-analisis-particulares-y-globales">Ejercicio 2: Análisis particulares y globales</h3>
-<h4 id="analizando-informacion-particular">Analizando información particular:</h4>
-<p>Por el método de su elección diríjanse a la región localizada entre las bases 2188349 y 2199512 en la secuencia de ADN. Esta región esta <em>upstream</em> al gen fbaB, el cual codifica la fructosa bisfosfonato aldolasa. Pueden utilizar el 'Navigator', el 'Feature Selector' o las funciones de 'Goto' discutidas previamente para ir a esta localización. Una vez que estén ahí visualizaremos la información específica disponible:</p>
-<p><strong>Anotación</strong>: Si clickean en un "feature" en particular pueden ver la anotación asociada a él: Seleccionen un "CDS feature" ( o cualquier otro "feature" y clickeen en el menú 'Edit' y seleccionen 'Selected Feature in Editor'. Aparecerá una ventana conteniendo toda la anotación asociada con este CDS.</p>
-<p><img alt="Features" src="images/6.png" /></p>
-<p><strong>Visualizando secuencias de aminoácidos:</strong> Clickeen en el menú 'View' y verán varias opciones para visualizar las bases o aminoácidos del "feature" que han seleccionado, en dos formatos, EMBL o FASTA. Esto puede ser muy útil cuando se desea utilizar otros programas que no están integrados en Artemis, e.g. aquellos disponibles en la Web que requieren cortar y pegar la secuencia en ellos.</p>
-<p><img alt="Plots" src="images/8.png" /></p>
-<p><strong>Gráficos</strong>: Se pueden desplegar gráficos de características seleccionando un "CDS feature", luego clickeando en 'View' y 'Feature Plots'. La ventana que aparece muestra gráficos prediciendo hidrofobicidad, hidrofilicidad y alfa-hélices para la proteína codificada por el CDS seleccionado.</p>
-<p><img alt="Plots" src="images/7.png" /></p>
-<h4 id="analizando-informacion-global">Analizando información global:</h4>
-<p>Además de visualizar al detalle los "features" anotados también se puede observar las características del ADN en toda la región presentada. Esto puede realizarse adicionando diferentes gráficos mostrando distintas características del ADN. Algunos de estos son utilizados para observar el potencial codificante o marcos de lectura dentro del ADN, como el 'GC frame plot', y otros pueden ser utilizados para buscar regiones de ADN adquirido horizontalmente. En el directorio de este módulo encontrarán una tabla de uso de codones, S_typhi.cod, la cual puede ser utilizada para generar un gráfico de uso de codones cargándola mediante la opción 'Add usage plots' dentro del menú 'Graph'.</p>
-<p>Clickeen en el menú 'Graph' para ver todos los gráficos disponibles. Tal vez los gráficos más útiles sean 'GC content (%)' , 'GC Deviation' y 'Karlin Signature Difference' (es un gráfico de frecuencia de dinucleótidos). Despliéguenlos!. Para ajustar la suavidad de los gráficos pueden cambiar el tamaño de la ventana sobre la cual los puntos del gráfico son calculados, utilizando el deslizador vertical a la derecha de los mismos.</p>
-<p><img alt="Plots" src="images/9.png" /></p>
-<blockquote>
-<p><strong>Nota</strong>: La información de los gráficos es generada dinámicamente por Artemis y aunque este es un ejercicio relativamente rápido para una pequeña región de ADN, en una vista de genoma completo esto puede demorar un rato, así que, en tal caso, tengan paciencia.</p>
-</blockquote>
+<p>Al finalizar la elección de criterios pueden apretar <em>Select</em> para seleccionar las regiones que cumplan con la búsqueda, o <em>View</em> para que nos dé una lista de los hits, con el mismo formato que la que encontramos bajo el panel principal.</p>
+<ul>
+<li>Marquen una región, luego desde el menu del click izquierdo, seleccionen <em>Zoom to selection</em>.</li>
+</ul>
+<h2 id="ejercicio-2-analisis-particulares-y-globales">Ejercicio 2: Análisis particulares y globales</h2>
+<h3 id="analizando-informacion-especifica">Analizando información específica</h3>
+<!--
+
+
+Una vez que estén ahí visualizaremos la información específica disponible como se indica en los siguientes puntos.
+-->
+<h4 id="anotaciones">Anotaciones</h4>
+<p>Si clickean en un <em>feature</em> en particular pueden ver la anotación asociada a él.</p>
+<ul>
+<li>Seleccionen un <em>CDS feature</em> ( o cualquier otro <em>feature</em>) y clickeen en el menú <em>View</em> → <em>Selected Features</em> o pueden hacer click derecho ir a <em>View</em> → <em>Selected Features</em>.</li>
+</ul>
+<p>Aparecerá una ventana conteniendo toda la anotación asociada con este CDS. Similar a la que se muestra a continuación.</p>
+<p><img alt="Features" src="img/6.png" width="500" /></p>
+<p>Ahora haga click derecho y vaya a:</p>
+<p><em>Write</em> → <em>Codon Usage Of Selected Features</em></p>
+<ul>
+<li>Guarde el archivo e investíguelo con el editor de texto.</li>
+<li>¿Qué observa en el archivo?</li>
+<li>¿Para qué considera que es útil esta información?</li>
+</ul>
+<h4 id="visualizando-secuencias-de-aminoacidos">Visualizando secuencias de aminoácidos</h4>
+<p>Clickeen en el menú <em>View</em> y vayan o bien a <em>Bases</em> o bien <em>Amino Acids</em>. Hay dos opciones para visualizar los nucleótidos o aminoácidos (según si eligieron <em>Bases</em> o <em>Amino Acids</em>) del <em>CDS feature</em> que seleccionaron.</p>
+<p>Se pueden visualizar en dos formatos, <code>EMBL</code> (<em>Aminoacids Of Selection</em>) o <code>FASTA</code> (<em>Aminoacids Of Selection As FASTA</em>).</p>
+<p>Esto puede ser muy útil cuando se desea utilizar la secuencia en otros programas que no están integrados en Artemis.</p>
+<p><img alt="Plots" src="img/8.png" width="500" /></p>
+<h4 id="graficos">Gráficos</h4>
+<p>Para abrir gráficos de características de un <em>CDS feature</em>, vaya a:</p>
+<p><em>View</em> → <em>Feature Plots</em></p>
+<p>Se abre una ventana con gráficos para la región seleccionada de:</p>
+<ul>
+<li>Hidrofobicidad. Kyle-Doolittle Hydrophobicity.</li>
+<li>Solubilidad en agua del aminoácido según su ubicación en la proteína. Hopp-Woods Hydrophilicity.</li>
+<li>Probabilidad de formación de Coiled-Coils.</li>
+</ul>
+<p><img alt="Plots" src="img/7.png" width="500" /></p>
+<h3 id="analizando-informacion-global">Analizando información global</h3>
+<p>Además de visualizar información específica de <em>features</em> anotados también se pueden observar las características del ADN en toda la región presentada.</p>
+<p>Esto puede realizarse adicionando diferentes gráficos mostrando distintas características del ADN.</p>
+<!--
+En el directorio de este módulo encontrarán una tabla de uso de codones, ```S_typhi.cod```, que permite generar un gráfico de uso de codones. Vaya a:
+
+*Graph* → *Add usage plots*
+-->
+
+<p>Clickeen en el menú <em>Graph</em> para ver todos los gráficos disponibles.</p>
+<ul>
+<li>Prueben abrir el gráfico de 'GC content (%)'</li>
+</ul>
+<p>Para ajustar la suavidad de los gráficos pueden cambiar el tamaño de la ventana sobre la cual los puntos del gráfico son calculados, utilizando el deslizador vertical a la derecha de los mismos.</p>
+<p><img alt="Plots" src="img/9.png" width="500" /></p>
+<div class="admonition info">
+<p class="admonition-title">Nota</p>
+<p>La información de los gráficos es generada dinámicamente por Artemis y aunque este es un ejercicio relativamente rápido para una pequeña región de ADN, en una vista de genoma completo esto puede demorar un rato o colgarse.</p>
+</div>
+<p>Vaya a la región localizada entre las bases 2188349 y 2199512 en la secuencia de ADN.</p>
+<p>Esta región esta <em>upstream</em> al gen fbaB, el cual codifica la <strong>fructosa bisfosfonato aldolasa</strong>.</p>
+<p>Pueden utilizar el <em>Navigator</em>, el <em>Feature Selector</em> o las funciones de <em>Goto</em> discutidas previamente para ir a esta localización.</p>
 <p>Observen cómo los gráficos muestran una desviación marcada en la región que están visualizando (cerca del gen fbaB). Para apreciar mejor la anomalía de esta región, agranden un poco la región visualizada. <strong>¿Qué les sugiere el contenido inusual de nucleótidos en esta región del ADN?</strong></p>
-<p><img alt="GC Devs" src="images/10.png" /></p>
-<p>Además de visualizar las características de regiones pequeñas del genoma, también se puede alejar la imagen y observar características del genoma como un todo. Para esto primero tengan en cuenta que alejar la imagen rápidamente con todos los "features" desplegados puede bloquear momentáneamente la computadora. Por lo que para realizar este proceso rápidamente, (1) apaguen los indicadores de codones stop haciendo clic derecho sobre la ventana principal. Aparecerá un menú con la opción de deseleccionar los codones stop. (2) También se debe eliminar temporariamente todo los "features" de anotación. Para realizarlo descliqueen la caja de "S_typhi.tab" en la barra de entrada debajo de la barra de menú.</p>
-<p><img alt="GC Devs" src="images/11.png" /></p>
-<p>Otro tip importante es ajustar la escala de los gráficos desplegados antes de alejar la imagen. Esto aumenta el tamaño de ventana sobre el cual un punto en cada gráfico es calculado. Para ajustar el escalado (3) cliqueen con el botón derecho del mouse sobre la ventana de un gráfico en particular. Aparecerá un menú con una serie de valores para los tamaños máximos de ventana, seleccionen 500. Esto deben hacerlo para cada gráfico desplegado.</p>
-<p>Ahora están listos para alejar la imagen haciendo clic sobre el deslizador (4) de la ventana principal y arrastrando hacia abajo.</p>
-<p><img alt="GC Devs" src="images/12.png" /></p>
-<h3 id="ejercicio-3-anotando-el-genoma">Ejercicio 3: Anotando el genoma</h3>
-<p>Ahora vuelvan a seleccionar <code>S_typhi.tab</code> en las entradas activas para volver a visualizar las anotaciones. Vayan a la posición 4409511. Buscaremos aquí una región denominada <em>Salmonella pathogenicity island (SPI)</em>. En el genoma con el que estamos trabajando la veremos como "<em>The major Vi antigen pathogenicity island (SPI 7)</em>"; una región de ~134 kb de largo que contiene un bacteriófago de ~30 kb. </p>
-<p><img alt="SPI7" src="images/13.png" /></p>
-<p>Esta región es un ejemplo más bien clásico de SPI. La definición exacta de qué constituye una isla de patogénesis es, de hecho, bastante diversa; pero las carcterísticas fundamentales comunmente observadas en estas regiones son, según Hacker <em>et al</em>., 1997.</p>
+<p><img alt="GC Devs" src="img/10.png" width="500" /></p>
+<p>Además de visualizar las características de regiones pequeñas del genoma, también se puede alejar la imagen y observar características del genoma como un todo. </p>
+<div class="admonition warning">
+<p class="admonition-title">Posibilidad de cuelgue de Artemis</p>
+<p>Alejar la imagen rápidamente con todos los <em>features</em> desplegados puede hacer que artemis se cuelgue. </p>
+</div>
+<p>Para no correr riesgos:</p>
+<ol>
+<li>Apaguen los indicadores de codones stop haciendo clic derecho sobre la ventana principal. Aparecerá un menú con la opción de deseleccionar los codones stop.</li>
+<li>
+<p>Eliminar temporariamente todo los "features" de anotación. Para realizarlo descliqueen la caja de "S_typhi.tab" en la barra de entrada debajo de la barra de menú.</p>
+<p><img alt="GC Devs" src="img/11.png" width="500" /></p>
+</li>
+<li>
+<p>Ajustar la escala de los gráficos desplegados antes de alejar la imagen. Esto aumenta el tamaño de ventana sobre el cual un punto en cada gráfico es calculado. Cliqueen con el botón derecho del mouse sobre la ventana de un gráfico en particular. Aparecerá un menú con una serie de valores para los tamaños máximos de ventana, seleccionen 500. Esto deben hacerlo para cada gráfico desplegado.</p>
+<p><img alt="GC Devs" src="img/12.png" width="500" /></p>
+</li>
+<li>
+<p>Ahora están listos para alejar la imagen haciendo clic sobre el deslizador de la ventana principal y arrastrando hacia abajo.</p>
+</li>
+</ol>
+<h2 id="ejercicio-3-anotando-el-genoma">Ejercicio 3: Anotando el genoma</h2>
+<p>Ahora vuelvan a seleccionar <code>S_typhi.tab</code> en las entradas activas para volver a visualizar las anotaciones. Vayan a la posición 4409511. Buscaremos aquí una región denominada <em>Salmonella pathogenicity island (SPI)</em>.</p>
+<p>En el genoma con el que estamos trabajando la veremos como "<em>The major Vi antigen pathogenicity island (SPI 7)</em>"; una región de ~134 kb de largo que contiene un bacteriófago de ~30 kb. </p>
+<p><img alt="SPI7" src="img/13.png" width="500" /></p>
+<p>Esta región es un ejemplo clásico de SPI. La definición exacta de qué constituye una isla de patogénesis es, de hecho, bastante diversa; pero las carcterísticas fundamentales comunmente observadas en estas regiones son, según Hacker <em>et al</em>., 1997.</p>
 <ol>
 <li>Normalmente insertas entre dos RNAs estables flanqueantes.</li>
 <li>Contenidos de G+C atípicos.</li>
@@ -1094,19 +1311,23 @@
 <li>Se trata de un "cassette" inestable y auto-móvil. </li>
 <li>De distribución filogenética limitada.</li>
 </ol>
-<p>Para corroborar que efectivamente esta región es un SPI, vamos a extraerla del genoma completo y realizar algunos análisis puntuales. Vamos a apuntar a escribir y guardar un nuevo archivo EMBL, que incluirá nuestras anotaciones para esta región exclusivamente.</p>
-<p>Para ello seleccionaremos nuestro presunto SPI y, en la barra de menús desplegables, iremos a <code>Edit</code> &gt; <code>Subsequence (and Features)</code>. Esto abrirá una nueva ventana (sí, otra más <img alt="💩" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4a9.svg" title=":poop:" />). A primera vista no parecerá muy distinta a la ventana anterior (la principal, en la que tenemos cargado nuestro genoma), pero si miran un poco mejor notarán que</p>
+<p>Para corroborar que efectivamente esta región es un SPI, vamos a extraerla del genoma completo y realizar algunos análisis puntuales.</p>
+<p>Vamos a apuntar a escribir y guardar un nuevo archivo EMBL, que incluirá nuestras anotaciones para esta región exclusivamente.</p>
+<p>Para ello seleccionaremos nuestro presunto SPI y, en la barra de menús desplegables, iremos a <code>Edit</code> &gt; <code>Subsequence (and Features)</code>. Esto abrirá una nueva ventana. A primera vista no parecerá muy distinta a la ventana anterior (la principal, en la que tenemos cargado nuestro genoma), pero si miran un poco mejor notarán que</p>
 <ul>
 <li>Los nombres de las <code>entries</code> han cambiado (<em>no name</em>)</li>
 <li>Se han re-numerado las bases y ahora todas se relativizan a nuestra selección</li>
 <li>La nueva ventana se extiende desde el principio y hasta el final del presunto SPI, pero no podemos ver nada del genoma completo por fuera de ésta. </li>
 </ul>
 <p>Nótese que en la barra de <code>entries</code> de esta nueva ventana, como en la original, también tenemos dos entradas. Si desmarcan una o la otra, notarán que de hecho son las mismas entradas que en la original (contienen la misma información y están en el mismo orden). No obstante, dado que la sub-secuencia ahora es una sesión nueva de Artemis, este comportamiento previene que los originales sean sobre-escritos.</p>
-<p>Vamos a guardar estos nuevos archivos con nombres relevantes, para evitar confusiones: Hagan click en <code>File</code> &gt; <code>Save An Entry As</code> &gt; <code>New File</code>. Un nuevo menú nos preguntará cuál de nuestras entries vamos a guardar. </p>
-<blockquote>
-<p>En este punto ambas se llaman <em>no name</em>, lo cual puede resultar confuso. Lo único que nos ayudará a saber cuál es cuál es el orden (<img alt="💩" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4a9.svg" title=":poop:" />). </p>
-</blockquote>
-<p>Tomen el primero (desde arriba) y guárdenlo como <code>spi7.dna</code>. Repitan el proceso para el segundo y llámenlo <code>spi7.tab</code>.</p>
+<p>Vamos a guardar estos nuevos archivos con nombres relevantes, para evitar confusiones. Vayan a:</p>
+<p><em>File</em> → <em>Save An Entry As</em> → <em>New File</em>.</p>
+<p>Un nuevo menú nos preguntará cuál de nuestras entries vamos a guardar. </p>
+<p>En este punto ambas se llaman <em>no name</em>, lo cual puede resultar confuso. Lo único que nos ayudará a saber cuál es cuál es el orden. Por lo tanto: </p>
+<ul>
+<li>Tomen el primero (desde arriba) y guárdenlo como <code>spi7.dna</code>.</li>
+<li>Repitan el proceso para el segundo y llámenlo <code>spi7.tab</code>.</li>
+</ul>
 <p>Ahora que hemos guardado podemos empezar a jugar sin miedo a sobreescribir los originales ni a perder nuestro progreso. Lo primero que haremos será identificar los límites del bacteriofago que está inserto en SPI7. Hallar estos límites será equivalente a hallar los sitios de inserción del fago. </p>
 <p>Es importante notar que el <code>Feature Selector</code> puede usarse de muchas maneras. En el ejemplo del fago teníamos todo marcado y eso nos facilitó el trabajo, pero también podríamos seleccionar subsets de features de un genoma usando texto o secuencias de aminoácidos.</p>
 <blockquote>
@@ -1156,14 +1377,14 @@
 <p><img alt="marcos-de-lectura" src="images/21.png" /></p>
 <p>Si se fijan en sus resultados, van a ver que ambas anotaciones está conectadas por una linea; algo que veremos comunmente en genes con intrones... pero <em>S. tiphy</em>, como buena bacteria que es, no tiene intrones. </p>
 <p>¿Qué alternativa se les ocurre para arreglar este error?</p>
-<p>{% endif %}</p>
 
               
             </article>
+            
           </div>
         </div>
         
-          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
             Volver al principio
           </a>
@@ -1196,10 +1417,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["search.suggest", "search.highlight", "search.share", "header.autohide", "navigation.tracking", "navigation.tabs", "toc.integrate", "navigation.top"], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "B\u00fasqueda", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version.title": "Seleccionar versi\u00f3n"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["search.suggest", "search.highlight", "search.share", "header.autohide", "navigation.tracking", "navigation.tabs", "toc.integrate", "navigation.top"], "search": "../../assets/javascripts/workers/search.85cb4492.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "B\u00fasqueda", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version.title": "Seleccionar versi\u00f3n"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.a6c66575.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a877e258.min.js"></script>
       
         <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
       

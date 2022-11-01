@@ -1,0 +1,1462 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Sitio Web del Curso Introducción a la Bioinformática">
+      
+      
+      
+        <link rel="canonical" href="https://bioinformatica-iib.github.io/2022_introduccion_bioinformatica/practicos/TP14_Genomica_Comparativa/">
+      
+      <link rel="icon" href="../../img/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.6">
+    
+    
+      
+        <title>TP 14 - Genomica Comparativa - Introducción a la Bioinformática</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.4a0965b7.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tp-14-genomica-comparativa-act" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Introducción a la Bioinformática" class="md-header__button md-logo" aria-label="Introducción a la Bioinformática" data-md-component="logo">
+      
+  <img src="../../img/favicon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Introducción a la Bioinformática
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              TP 14 - Genomica Comparativa
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Limpiar" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Inicio
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../acerca/" class="md-tabs__link">
+      Acerca de
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../contenidos/" class="md-tabs__link">
+      Contenidos
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../cronograma/" class="md-tabs__link">
+      Cronograma
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../docentes/" class="md-tabs__link">
+      Docentes
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../teoricas/inicio/" class="md-tabs__link">
+        Teoricas
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../inicio/" class="md-tabs__link md-tabs__link--active">
+        Prácticos
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../instructivos/inicio/" class="md-tabs__link">
+        Instructivos
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Introducción a la Bioinformática" class="md-nav__button md-logo" aria-label="Introducción a la Bioinformática" data-md-component="logo">
+      
+  <img src="../../img/favicon.png" alt="logo">
+
+    </a>
+    Introducción a la Bioinformática
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Inicio
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../acerca/" class="md-nav__link">
+        Acerca de
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contenidos/" class="md-nav__link">
+        Contenidos
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cronograma/" class="md-nav__link">
+        Cronograma
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docentes/" class="md-nav__link">
+        Docentes
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Teoricas
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Teoricas" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Teoricas
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoricas/inicio/" class="md-nav__link">
+        Inicio
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoricas/1-Teorica-Uno/" class="md-nav__link">
+        Teórica 1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoricas/2-Teorica-Dos/" class="md-nav__link">
+        Teórica 2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoricas/3-Teorica-Tres/" class="md-nav__link">
+        Teórica 3
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoricas/4-Teorica-Cuatro/" class="md-nav__link">
+        Teórica 4
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoricas/5-Teorica-Cinco/" class="md-nav__link">
+        Teórica 5
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoricas/6-Teorica-Seis/" class="md-nav__link">
+        Teórica 6
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoricas/7-Teorica-Siete/" class="md-nav__link">
+        Teórica 7
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoricas/8-Teorica-Ocho/" class="md-nav__link">
+        Teórica 8
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoricas/9-Teorica-Nueve/" class="md-nav__link">
+        Teórica 9
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoricas/10-Teorica-Diez/" class="md-nav__link">
+        Teórica 10
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoricas/11-Teorica-Once/" class="md-nav__link">
+        Teórica 11
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoricas/12-Teorica-Doce/" class="md-nav__link">
+        Teórica 12
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          Prácticos
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Prácticos" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Prácticos
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inicio/" class="md-nav__link">
+        Inicio
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TP01_Linux/" class="md-nav__link">
+        TP 1 - Linux
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TP02_EMBOSS/" class="md-nav__link">
+        TP 2 - EMBOSS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TP03_Alineamientos/" class="md-nav__link">
+        TP 3 - Alineamientos de a pares
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TP04_Busqueda_por_similitud/" class="md-nav__link">
+        TP 4 - Búsqueda por similitud
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TP05_PSI-BLAST/" class="md-nav__link">
+        TP 5 - Perfiles de secuencias
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TP06_Filogenia/" class="md-nav__link">
+        TP 6 - Filogenias
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TP07_HMM_ANN/" class="md-nav__link">
+        TP 7 - HMMs & ANNs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TP08a_R/" class="md-nav__link">
+        TP 8a - R - Introducción
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TP08b_R/" class="md-nav__link">
+        TP 8b - R - Aplicación
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TP09_Desorden/" class="md-nav__link">
+        TP 9 - Predicción de Desorden
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TP10_Motivos/" class="md-nav__link">
+        TP 10 - Motivos Lineales
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TP11_Modelado_Por_Homologia/" class="md-nav__link">
+        TP 11 - Modelado por Homología
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TP12a_Clustering/" class="md-nav__link">
+        TP 12a - Clustering
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TP12b_Data_Mining/" class="md-nav__link">
+        TP 12b - Data Mining
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TP13_Short-Read-Mapping/" class="md-nav__link">
+        TP 13 - Short Read Mapping
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          TP 14 - Genomica Comparativa
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        TP 14 - Genomica Comparativa
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduccion" class="md-nav__link">
+    Introducción
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objetivos" class="md-nav__link">
+    Objetivos
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#primera-parte-preparacion-de-los-archivos-de-entrada" class="md-nav__link">
+    Primera Parte: preparación de los archivos de entrada
+  </a>
+  
+    <nav class="md-nav" aria-label="Primera Parte: preparación de los archivos de entrada">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#iniciar-act" class="md-nav__link">
+    Iniciar ACT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#navengando-en-act" class="md-nav__link">
+    Navengando en ACT
+  </a>
+  
+    <nav class="md-nav" aria-label="Navengando en ACT">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#algunas-cositas-mas-para-probar" class="md-nav__link">
+    Algunas cositas más para probar
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#segunda-parte" class="md-nav__link">
+    Segunda Parte:
+  </a>
+  
+    <nav class="md-nav" aria-label="Segunda Parte:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sintenia-o-conservacion-del-orden-de-los-genes" class="md-nav__link">
+    Sintenia o conservación del orden de los genes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prediccion-de-modelos-de-genes" class="md-nav__link">
+    Predicción de modelos de genes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sintenias-camufladas" class="md-nav__link">
+    Sintenias camufladas
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          Instructivos
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Instructivos" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Instructivos
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instructivos/inicio/" class="md-nav__link">
+        Inicio
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instructivos/maquina_virtual/" class="md-nav__link">
+        Máquina Virtual
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instructivos/problemasVM/" class="md-nav__link">
+        Problemas instalando la Máquina Virtual
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instructivos/tipsVM/" class="md-nav__link">
+        Tips and Tricks para usar la Máquina Virtual más cómodos
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<p><img _="," align="left" alt="Image" src="img/featured.jpg" width="250" /></p>
+<h1 id="tp-14-genomica-comparativa-act" markdown="markdown"><strong>TP 14</strong>. Genómica comparativa: ACT</h1>
+<p><br>
+<br>
+<br>
+<br></p>
+<!--
+## Videos de la clase grabada
+
+* :octicons-video-16: [Introducción al TP](https://www.youtube.com/watch?v=mzzItpMc7ds)
+* :octicons-video-16: [Resultados Verify y Procheck](https://www.youtube.com/watch?v=t6P6AprFvVg)
+* :octicons-video-16: [Puesta en común del TP](https://www.youtube.com/watch?v=vAtKowbM4oo)
+-->
+
+<p><a class="md-button md-button--primary" href="https://drive.google.com/file/d/1CylJG-hMV8Bx7pxNVLycKxvx3ibjL4kQ/view?usp=sharing"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M480 352H346.5l-45.25 45.25C289.2 409.3 273.1 416 256 416s-33.16-6.656-45.25-18.75L165.5 352H32c-17.67 0-32 14.33-32 32v96c0 17.67 14.33 32 32 32h448c17.67 0 32-14.33 32-32v-96c0-17.7-14.3-32-32-32zm-48 104c-13.2 0-24-10.8-24-24s10.8-24 24-24 24 10.8 24 24-10.8 24-24 24zm-198.6-81.4c6.2 6.3 14.4 9.4 22.6 9.4s16.38-3.125 22.62-9.375l128-128c12.49-12.5 12.49-32.75 0-45.25-12.5-12.5-32.76-12.5-45.25 0L288 274.8V32c0-17.67-14.33-32-32-32-17.7 0-32 14.33-32 32v242.8l-73.4-73.4c-12.49-12.5-32.75-12.5-45.25 0-12.49 12.5-12.49 32.75 0 45.25L233.4 374.6z"/></svg></span> Materiales</a></p>
+<h2 id="introduccion">Introducción</h2>
+<p>ACT (<em>Artemis Comparision Tool</em>), también creada - entre otros - por Kim Rutherford, fue diseñada para extraer información adicional que solo puede ser obtenida a través de la comparación entre dos secuencias (Carver et al. 2005). </p>
+<p>Para trabajar con ACT es necesario proveerle al programa de tres archivos: dos de secuencias (las que voy a comparar entre sí), y uno de comparación. El archivo de comparación no es otra cosa que un <strong>blastn</strong> (o un tblastx) entre ambas secuencias. ACT puede leer varios formatos de archivo de comparación, pero por practicidad, nosotros usaremos BLAST para generarlo. En cuanto a los archivos de secuencia, ACT puede leer el mismo tipo de archivos de secuencia de Artemis (ej. multi-fasta, genbank, embl, etc.). </p>
+<details class="info">
+<summary>tblastx</summary>
+<p>Se realiza una traducción de las secuencias nucleotídicas en los seis marcos abiertos de lectura (ORFs) y se compara la secuencia aminoacídica.</p>
+</details>
+<h2 id="objetivos">Objetivos</h2>
+<ul>
+<li>Familiarizarse con las funciones básicas de ACT a través de varios casos de uso.</li>
+<li>Entender conceptos básicos de genómica comparativa.</li>
+</ul>
+<h2 id="primera-parte-preparacion-de-los-archivos-de-entrada">Primera Parte: preparación de los archivos de entrada</h2>
+<p>En esta primera parte, vamos a trabajar con dos genomas bacterianos (<em>E. coli</em> y <em>S. tiphy</em>).</p>
+<p>ACT necesita, además de las secuencias, un archivo que contenga una comparación entre ellas. Pero dado que vamos a estar intentando comparar secuencias grandes, este archivo no puede ser simplemente un alineamiento continuo de las dos secuencias. La idea es poder visualizar rearreglos (inversiones, deleciones/inserciones, transposiciones) y para ello es necesario contar con una serie de alineamientos locales delimitados, con scores definidos (por ejemplo tal como los que produce BLAST).</p>
+<!--
+Ver [ACT:Running a comparison](https://www.sanger.ac.uk/science/tools/artemis-comparison-tool-act).
+-->
+
+<p>Para hacer la comparación, pueden usar bl2seq (BLAST 2 Sequences) en la linea de comando</p>
+<div class="highlight"><pre><span></span><code>bl2seq -m T -i EcK12.dna -j S_typhi.dna -p blastn -D 1 &gt; EcK12vsStiphy.blastn
+</code></pre></div>
+<p>donde <code>-m T</code> (Mega BLAST = True) indica a BLAST que debe usar el algoritmo ​<strong>Mega BLAST</strong> para hacer el alineamiento y <code>-D 1</code> le indica que el formato de output sea tabular, que es el formato que requiere ACT.</p>
+<details>
+<summary>Si no funciona</summary>
+<p>En su directorio de trabajo, tienen el archivo pre-calculado con el nombre <code>EcK12vsStiphy.blastn.pre</code>.</p>
+</details>
+<h3 id="iniciar-act">Iniciar ACT</h3>
+<p>Para abrir el programa podemos usar la terminal: </p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span> ~/Tools/artemis/
+./act
+</code></pre></div>
+<blockquote>
+<p>Nota: Aunque lo parece, no es el mismo programa que el TP13!</p>
+</blockquote>
+<p>Vaya a:</p>
+<p><em>File</em> → <em>Open</em></p>
+<p>Cuando se abre un proyecto, el programa pide como entrada los tres archivos con los que estaban trabajando:</p>
+<ul>
+<li><strong>Sequence File 1:</strong> <code>EcK12.dna</code></li>
+<li><strong>Comparison File:</strong> <code>EcK12vsStiphy.blastn</code></li>
+<li><strong>Sequence File 2:</strong> <code>S_tiphy.dna</code></li>
+</ul>
+<h3 id="navengando-en-act">Navengando en ACT</h3>
+<p>ACT está basado en Artemis, por lo que ya estarán familiarizados con muchas de sus funciones generales; y está compuesto esencialmente de tres capas o ventanas.</p>
+<ul>
+<li>
+<p><strong>La ventana superior e inferior</strong> son mini-ventanas de Artemis (con sus funcionalidades heredadas), mostrando la representación lineal de la secuencia de ADN con sus "<em>features</em>" asociados.</p>
+</li>
+<li>
+<p><strong>La ventana del medio,</strong> muestra bloques rojos y azules, que se extienden y conectan regiones conservadas entre las dos secuencias.</p>
+<ul>
+<li>Los bloques rojos son en el sentido directo</li>
+<li>Los bloques azules son en el sentido inverso</li>
+</ul>
+</li>
+</ul>
+<p>Por lo tanto, </p>
+<ul>
+<li>
+<p>Si estuviéramos comparando dos secuencias idénticas en la misma orientación veríamos, en la capa central, un bloque rojo que se extiende a lo largo de la longitud de las dos secuencias. Como se muestra en la figura siguiente en la parte superior.</p>
+</li>
+<li>
+<p>Si una de las secuencias estuviera invertida se observaría un bloque azul entre las dos secuencias. Como se muestra en la figura siguiente en la parte inferior para la región central de los genomas.</p>
+</li>
+<li>
+<p>Regiones únicas en cualquiera de las secuencias, como deleciones o inserciones, se visualizarán como espacios blancos entre los bloques rojos o azules.</p>
+</li>
+</ul>
+<p><img alt="Arreglos" src="img/genome-arrangements.PNG" /></p>
+<p>Veamos cómo se organizan estas ventanas y cómo podemos hacer para navegar a través de ellas:</p>
+<p><img alt="Arreglos" src="img/ventanas.png" width="500" /></p>
+<ol>
+<li><strong>Menúes desplegables.</strong> Son similares a los que vimos para Artemis, pero acá estamos trabajando con dos secuencias y no una, por lo tanto, salvo el menú <code>File</code>, lo primero es seleccionar una de las dos secuencias en la comparación en el menú.</li>
+<li><strong>Panel de la secuencia 1.</strong> La primera que ingresaron al comenzar la sesión de ACT. Es una mini-ventana de Artemis.</li>
+<li><strong>Panel de comparación.</strong> Muestra las regiones de similitud (rojo), diferencia (blanco) e inversiones (azul) entre las dos secuencias.</li>
+<li><strong>Panel de la secuencia 2.</strong> La segunda secuencia que ingresaron al comenzar la sesión.</li>
+<li>Menú desplegable que se abre al hacer click derecho sobre el panel de comparación. </li>
+</ol>
+<p>Arriba y abajo de las secuencias 1 y 2, respectivamente, verán una barra de desplazamiento horizontal; y a los dos lados de ambas, una barra de desplazamiento vertical. Las primeras se usan para desplazarnos rio arriba o rio abajo en el genoma, mientras que las segundas se usan para acercar o alejar el foco.</p>
+<ul>
+<li>Pruebe alejar el foco de ambas secuencias hasta que pueda ver ambos cromosomas completos en pantalla.</li>
+</ul>
+<p>Deberíamos ver algo así (o similar):</p>
+<p><img alt="zoomout" src="img/zoomout.png" width="500" /></p>
+<p>Cuando nos desplazamos horizontalmente en una secuencia, la otra se desplaza acompañando el movimiento.</p>
+<p>Este es el comportamiento por defecto y ocurre porque las secuencias están "bloqueadas" o <code>LOCKED</code>. Se se fijan en la imagen anterior, verán que a la izquierda aparece "LOCKED" indicando que esa opción está activada.</p>
+<p>Generalmente es el comportamiento más conveniente, pero si quisiéramos desactivarlo podemos hacerlo con click derecho sobre el panel de comparación y desmarcando la opción <code>Lock Sequences</code>.</p>
+<p>Se pueden cambiar los umbrales (<em>cutoff</em>) que usa ACT para decidir si dibuja una línea o no conectando a los cromosomas. Esto podría ser útil para visualizar patrones o arreglos genómicos.</p>
+<p><img alt="cutoffs" src="img/cutoffs.png" width="500" /></p>
+<p>Hallarán estos <em>cuttoffs</em> haciendo click derecho en el panel de comparación:</p>
+<p><img alt="cutoffs" src="img/cutoffs-menu.png" width="500" /></p>
+<ul>
+<li>¿Qué patrones o arreglos ven en la comparación de estos cromosomas? </li>
+</ul>
+<p>Agreguen ahora, a <em>S. tiphy</em> las anotaciones con el nombre <code>SPIs.tab</code>. Este archivo contiene todas las islas de patogenicidad de esta <em>Salmonella</em> (incluyendo la SPI-7, con la que trabajamos anteriormente)</p>
+<p>Para incluir las anotaciones que se encuentran en el archivo <code>.tab</code> vaya a:</p>
+<p><code>File</code> → <code>Secuencia</code> → <code>Read an entry</code> </p>
+<p><img alt="menús" src="img/menus.png" width="500" /></p>
+<ul>
+<li>Las islas de patogenicidad ¿Están presentes en <em>E. coli</em> K12? Para verlo más fácilmente haga zoom en la secuencia y recórrala de principio a fin.</li>
+</ul>
+<h4 id="algunas-cositas-mas-para-probar">Algunas cositas más para probar</h4>
+<ol>
+<li>Pueden hacer doble click en las líneas rojas o azules para centrarlas en pantalla</li>
+<li>Inviertan alguna de las secuencias (<code>click derecho</code> &gt; <code>Flip subject/query sequence</code>)</li>
+<li>Para refinar la visualización la barra de desplazamiento vertical del panel de comparación, moviéndola hacia arriba o hacia abajo, permite filtrar la aparición de líneas de comparación en función de la longitud del match (más largas o más cortas, respectivamente).</li>
+</ol>
+<p>Cuando ya se hayan aburrido. Cierren <strong>todo</strong> para arrancar una nueva sesión con el próximo ejercicio.</p>
+<h2 id="segunda-parte">Segunda Parte:</h2>
+<p>Esta segunda parte la haremos con dos genomas de patógenos eucariotas, emparentados taxonómicamente: <em>P. falciparum</em> y <em>P. knowlesi</em>. Ambos son agentes etiológicos de la malaria o paludismo.</p>
+<p><em>P. falciparum</em> ya ha sido secuenciado parcial y completamente y es el de mayor prevalencia como causante de la enfermedad en humanos.</p>
+<p><em>P. knowlesi</em> está menos estudiado ya que está más asociado a paludismo en primates no-humanos</p>
+<p>Basándonos en la abundancia de información del primero y la cercanía evolutiva entre ambos, utilizaremos genómica comparativa para extraer información sobre <em>P. knowlesi</em>. </p>
+<p>El objetivo de esta segunda parte es comparar un fragmento genómico (contig) del cromosoma 13 de <em>P. knowlesi</em> con el cromosoma 13 completo de <em>P. falciparum</em>.</p>
+<p>Esta comparación nos permitirá:
+* Estudiar el grado de conservación del orden génico (sintenia)
+* Identificar/anotar genes de <em>P. knowlesi</em>. 
+* Identificar regiones únicas en las dos secuencias
+* Verificar una serie de anotaciones automáticas realizadas para <em>P. knowlesi</em>.</p>
+<p>Vamos a necesitar los siguientes archivos</p>
+<ul>
+<li><code>Pfal_chr13.embl</code> - Archivo combinado con secuencia y anotaciones de <em>P. falciparum</em> </li>
+<li><code>Pknowlesi_contig.seq</code> - Archivo de secuencia <em>P. knowlesi</em> (sin anotaciones)</li>
+<li><code>Pknowlesi_contig.embl</code> - Archivo de anotaciones automáticas <em>P. knowlesi</em> </li>
+<li><code>Plasmodium_comp.crunch</code> - Comparación entre ambos cromosomas</li>
+</ul>
+<h3 id="sintenia-o-conservacion-del-orden-de-los-genes">Sintenia o conservación del orden de los genes</h3>
+<p>Comencemos por cargar nuestros archivos en el ACT.</p>
+<ul>
+<li><strong>Sequence File 1:</strong> <code>Pfal_chr13.embl</code></li>
+<li><strong>Comparison File:</strong> <code>Plasmodium_comp.crunch</code></li>
+<li><strong>Sequence File 2:</strong> <code>Pknowlesi_contig.seq</code></li>
+</ul>
+<p>Deberían ver algo así:</p>
+<p><img alt="plasmodium-act" src="img/plasmodium-act.png" width="500" /></p>
+<div class="admonition idea">
+<p class="admonition-title">NOTA</p>
+<p><em>P. falciparum</em> tienen un archivo combinado que incluye secuencia y anotaciones (<code>*.embl</code>).</p>
+<p><em>P. knowlesi</em> tienen un archivo de secuencia (<code>*.seq</code>) y un archivo de anotaciones (<code>*.embl</code>) que luego deberan cargar.</p>
+</div>
+<ul>
+<li>
+<p>Incluya las anotaciones de <em>P. knowlesi</em> (<code>Pknowlesi_contig.embl</code>)</p>
+</li>
+<li>
+<p>Utilicen las barras de desplazamiento horizontal para ubicar el contig de <em>P. knowlesi</em> en el cromosoma 13 de <em>P. falciparum</em>.</p>
+</li>
+</ul>
+<blockquote>
+<p>Sugerencia: apaguen los codones de stop para ver mejor las regiones codificantes. Haga click derecho sobre la secuencia y desclickeé <em>codones stop</em>.</p>
+</blockquote>
+<ul>
+<li>¿Qué ven? </li>
+<li>¿Qué hay de diferente entre los arreglos genéticos que vimos para bacterias y los que vemos para estos parásitos?</li>
+<li>¿Hay regiones conservadas entre ambos parásitos?</li>
+<li>¿Qué pasa con el orden de los genes?</li>
+<li>¿Pueden ver alguna región en la que similitud esté "rota"?</li>
+<li>Hagan zoom a alguno de los genes anotados en <em>P. falciparum</em>. ¿Qué pasa con los genes predichos en <em>P. knowlesi</em>?</li>
+<li>¿Pueden identificar genes conservados anotados en <em>P. falciparum</em> que no hayan sido debidamente anotados/predichos en <em>P. knowlesi</em>?</li>
+</ul>
+<p>Ahora concentrémonos en una región particular. Diríjanse a la región delimitada por las coordenadas 815823..829969 en el cromosoma de <em>P. falciparum</em>. Hay una región codificante.</p>
+<ul>
+<li>¿De qué gen se trata? (<code>Click derecho</code> → <code>View</code> → <code>Selected Features</code>)</li>
+<li>¿Está presente en <em>P. knowlesi</em>?</li>
+<li>¿Qué opinión les merece, en términos de relevancia biológica, esta observación?</li>
+</ul>
+<!--
+Si ya llegaron hasta acá, avísenle al instructor para que podamos hacer una puesta en común respecto a esta parte. Mientras esperan al resto de sus compañeros, intenten encontrar más genes que estén presentes en uno y ausentes en el otro para sumar a la discusión.
+
+> Para visualizar las anotaciones, pueden probar algunas opciones adicionales como:
+> - Prender/Apagar `One line per entry`
+> - Prender/Apagar `Feature stack view`
+> - Prender/Apagar `All features on frame lines`
+> - Prender/Apagar `Feature labels`
+
+> Todas las opciones están disponibles haciendo click derecho en la secuencia (como la opción de apagar codones de stop).
+-->
+
+<h3 id="prediccion-de-modelos-de-genes">Predicción de modelos de genes</h3>
+<p>Por último, evaluaremos la capacidad de anotación automática utilizada para crear las anotaciones de <em>P. knowlesi</em>.</p>
+<p>El archivo de anotaciones de <em>P. knowlesi</em> se construyó con un anotador automático: PHAT (<em><strong>P</strong>retty <strong>H</strong>andy <strong>A</strong>nnotation <strong>T</strong>ool</em>, Mol. Biochem. Parasitol. 2001 Dec;118(2):167-74). Existen otros algoritmos con la misma función pero ninguno es perfecto al 100% y en general es necesario curar o refinar las predicciones.</p>
+<p>Diríjanse, en el genoma de <em>P. falciparum</em>, al gen anotado como PFM1010w (o MAL13P1.103) usando el <strong>Navigator</strong>.</p>
+<ul>
+<li>¿Pueden encontrar este gen en ambos parásitos? ¿Qué exon/es está/n conservado/s? Pueden usar el deslizador vertical del panel de comparación para incluir <em>hits</em> más cortos.</li>
+<li>¿Pueden encontrar a todos los exones en el contig de <em>P. knowlesi</em> (ignoren por ahora el <em>Phat4_alternative</em> en rojo)?</li>
+</ul>
+<!--
+Abran, para cada secuencia, los gráficos de %GC. ¿Qué características tiene la gráfica en *P. falciparum*? ¿Dirían que esa característica está conservada en *P. knowlesi* para el gen *Phat4*?
+![Phat4-gen](img/phat4.png)
+-->
+
+<p>Evalúen las siguientes regiones en el cromosoma 13 de <em>P. falciparum</em> en Artemis. </p>
+<ul>
+<li>789034..793351, </li>
+<li>657638..660023, </li>
+<li>672361..673753</li>
+</ul>
+<p>Pueden abrir una sesión de Artemis directamente desde ACT:</p>
+<p><img alt="artemis-edit" src="img/artemis-edit.png" /></p>
+<ul>
+<li>Revisen las regiones intrones (regiones entre exones) observen las dos bases del inicio del intrón y las dos bases nucleotídicas del final del intrón ¿Pueden hallar algún patrón? (Revise la hebra correcta del ADN)</li>
+<li>¿Con qué proceso piensa que este patrón puede estar relacionado?</li>
+<li>A simple vista, ¿observa enriquecimiento en algún par de nucleótidos en los intrones?</li>
+</ul>
+<!--
+The 5′ and 3′ splice site motifs for P. falciparum introns (GU and AG dinucleotides) follow the general eukaryotic pattern 
+P. falciparum introns are comparatively short and extremely AT rich, averaging 179 nucleotides (nt) and 86.5% A+T (11). Some are located at the end of an open reading frame, adding a single amino acid (22), or in an untranslated region (UTR) (33, 34). 
+-->
+
+<h3 id="sintenias-camufladas">Sintenias camufladas</h3>
+<p>Por último, vamos a buscar regiones sinténicas entre dos nuevos parásitos, <em>Trypanosoma brucei</em> y <em>Leishmania major</em>. Ambos son organismos eucariotas taxonómicamente emparentados por familia (<em>Trypanosomatidae</em>). </p>
+<p><em>Trypanosoma brucei</em> es el causante de la enfermedad del sueño, y <em>Leishmania major</em> de la leishmaniasis. En este ejercicio evaluaremos la arquitectura de ambos genomas y la existencia de regiones de sintenia entre éstos.</p>
+<p>Los archivos que usaremos son:</p>
+<ul>
+<li><code>Tbrucei.dna</code> - secuencia <em>T. brucei</em></li>
+<li><code>Tbrucei.embl</code> - anotaciones <em>T. brucei</em> </li>
+<li><code>Leish_vs_Tbrucei.tblastx</code> - archivo de comparación</li>
+<li><code>Leish.dna</code> - secuencia <em>L. major</em> </li>
+<li><code>Leish.embl</code> - anotaciones <em>L. major</em> </li>
+</ul>
+<p>Comiencen cargando las secuencias, apagando codones de stop y agregando las anotaciones.</p>
+<ul>
+<li>¿Qué pasa con la conservación de la arquitectura genómica entre estos dos cromosomas? ¿Dirían que hay o que no hay sintenia?</li>
+</ul>
+<!--
+- ¿Hay regiones conservadas entre los organismos? ¿Cuáles son los productos predichos para los genes en esas regiones?
+-->
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Volver al principio
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Pie" >
+      
+        
+        <a href="../TP13_Short-Read-Mapping/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: TP 13 - Short Read Mapping" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              TP 13 - Short Read Mapping
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../instructivos/inicio/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: Inicio" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Siguiente
+              </span>
+              Inicio
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2022 Area Bioinformatica UNSAM
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["search.suggest", "search.highlight", "search.share", "header.autohide", "navigation.tracking", "navigation.tabs", "toc.integrate", "navigation.top"], "search": "../../assets/javascripts/workers/search.85cb4492.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "B\u00fasqueda", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version.title": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.a877e258.min.js"></script>
+      
+        <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
+      
+        <script src="../../javascripts/tablesort.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
