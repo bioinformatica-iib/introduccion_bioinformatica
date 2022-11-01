@@ -70,7 +70,21 @@ zcat NV_1.fastq.gz | head -4
 
 - **2da línea:** La secuencia.
 - **3ra línea:** `+` Separador entre la secuencia y la calidad.
-- **4ta línea:** Calidad de la secuencia. Hay un caracter para cada nucleótido. El caracter está asociado a un puntaje de calidad de cada nucleótido, lo cual está codificado de la siguiente forma: cada caracter representa un número (N°) según el código decimal [ASCII](https://elcodigoascii.com.ar/), y la calidad se define como este número menos 33. ¿Y cómo se asocia esto a la probabilidad de error (p) de la base asignada? así: `(N° - 33) = calidad`
+- **4ta línea:** Calidad de la secuencia. Hay un caracter para cada nucleótido. El caracter está asociado a un puntaje de calidad de cada nucleótido, lo cual está codificado de la siguiente forma: cada caracter representa un número (N°) según el código decimal [ASCII](https://elcodigoascii.com.ar/), y la calidad se define como este número menos 33. ¿Y cómo se asocia esto a la probabilidad de error (p) de la base asignada?
+
+$$
+Q = -10 \log _{{10}} P
+$$
+
+o bien:
+
+$$
+P=10^{{{\frac  {-Q}{10}}}}
+$$
+
+Donde $Q$ es la calidad:
+
+`(N° - 33) = calidad`
 
 El número que representa la calidad va de 33 (calidad más baja; `!` En ASCII) a 126 (calidad más alta; `~` en ASCII). Estos son los caracteres de valor de calidad en orden creciente de calidad de izquierda a derecha:
 

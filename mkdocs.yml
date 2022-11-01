@@ -150,6 +150,9 @@ nav:
         - TP 11 - Modelado por Homología: 'practicos/TP11_Modelado_Por_Homologia/index.md'
         - TP 12a - Clustering: 'practicos/TP12a_Clustering/index.md'
         - TP 12b - Data Mining: 'practicos/TP12b_Data_Mining/index.md'
+        - TP 13 - Short Read Mapping: 'practicos/TP13_Short-Read-Mapping/index.md'
+        - TP 14 - Genomica Comparativa: 'practicos/TP14_Genomica_Comparativa/index.md'
+
         #- Resumen: 'practicos/resumen.md'
 
     - Instructivos:
