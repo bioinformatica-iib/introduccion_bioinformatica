@@ -148,7 +148,7 @@ Para incluir las anotaciones que se encuentran en el archivo `.tab` vaya a:
 2. Inviertan alguna de las secuencias (``click derecho`` > ``Flip subject/query sequence``)
 3. Para refinar la visualización la barra de desplazamiento vertical del panel de comparación, moviéndola hacia arriba o hacia abajo, permite filtrar la aparición de líneas de comparación en función de la longitud del match (más largas o más cortas, respectivamente).
 
-Cuando ya se hayan aburrido. Cierren **todo** para arrancar una nueva sesión con el próximo ejercicio.
+Cuando ya se hayan aburrido, cierren **todo** para arrancar una nueva sesión con el próximo ejercicio.
 
 ## Segunda Parte:
 
@@ -163,6 +163,7 @@ Basándonos en la abundancia de información del primero y la cercanía evolutiv
 El objetivo de esta segunda parte es comparar un fragmento genómico (contig) del cromosoma 13 de *P. knowlesi* con el cromosoma 13 completo de *P. falciparum*.
 
 Esta comparación nos permitirá:
+
 * Estudiar el grado de conservación del orden génico (sintenia)
 * Identificar/anotar genes de *P. knowlesi*. 
 * Identificar regiones únicas en las dos secuencias
