@@ -16,6 +16,14 @@
 
 [:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1CylJG-hMV8Bx7pxNVLycKxvx3ibjL4kQ/view?usp=sharing){ .md-button .md-button--primary }
 
+### Videos de la clase grabada
+
+* :octicons-video-16: [Cierre TP](https://www.youtube.com/watch?v=JCBzg9Dt_A0)
+
+## Objetivos
+
+* Familiarizarse con las funciones básicas de ACT a través de varios casos de uso.
+* Entender conceptos básicos de genómica comparativa.
 
 ## Introducción
 
@@ -27,11 +35,6 @@ Para trabajar con ACT es necesario proveerle al programa de tres archivos: dos d
 ??? info "tblastx"
 
 	Se realiza una traducción de las secuencias nucleotídicas en los seis marcos abiertos de lectura (ORFs)	y se compara la secuencia aminoacídica.
-
-## Objetivos
-
-* Familiarizarse con las funciones básicas de ACT a través de varios casos de uso.
-* Entender conceptos básicos de genómica comparativa.
 
 ## Primera Parte: preparación de los archivos de entrada
 

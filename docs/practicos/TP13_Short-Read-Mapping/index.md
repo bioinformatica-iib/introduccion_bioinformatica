@@ -15,6 +15,11 @@
 
 [:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1FP6qSeLb4f-aYcu4YBi0QnM7Su4-6uHX/view?usp=sharing){ .md-button .md-button--primary }
 
+### Videos de la clase grabada
+
+* :octicons-video-16: [Introducción al TP](https://www.youtube.com/watch?v=s5voK2P8VgU)
+* :octicons-video-16: [Cierre TP](https://www.youtube.com/watch?v=HoOjlxV0wTQ)
+
 ## Objetivos
 
 * Interpretar los formatos utilizados comúnmente en NGS
