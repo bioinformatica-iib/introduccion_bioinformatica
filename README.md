@@ -1,3 +1,5 @@
+![build-deployment](https://github.com/bioinformatica-iib/introduccion_bioinformatica/actions/workflows/pages/pages-build-deployment/badge.svg)
+
 # Introduccion a la Bioinformática
 
 Materia de Grado de la Licenciatura en Biotecnología (UNSAM)
