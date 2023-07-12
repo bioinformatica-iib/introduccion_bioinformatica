@@ -3,12 +3,12 @@
 site_name: Introducción a la Bioinformática
 site_description: "Sitio Web del Curso Introducción a la Bioinformática"
 #site_author: "Nombre Apellido"
-site_url: https://bioinformatica-iib.github.io/2022_introduccion_bioinformatica/
+site_url: https://bioinformatica-iib.github.io/introduccion_bioinformatica/
 
 # repository
 # --- si el sitio está alojado en un repo, describirlo acá 
-# repo_name: '2022_introduccion_bioinformatica'
-# repo_url: https://github.com/bioinformatica-iib/2022_introduccion_bioinformatica
+# repo_name: 'introduccion_bioinformatica'
+# repo_url: https://github.com/bioinformatica-iib/introduccion_bioinformatica
 
 # theme 
 # --- customizar apariencia editando palette 
@@ -163,4 +163,4 @@ nav:
 
 # copyright
 # --- editar y ajustar de acuerdo al curso
-copyright: Copyright &copy; 2022 Area Bioinformatica UNSAM  
+copyright: Copyright &copy; 2023 Area Bioinformática UNSAM  
