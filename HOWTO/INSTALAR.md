@@ -1,4 +1,4 @@
-Página web de la materia: https://bioinformatica-iib.github.io/2022_introduccion_bioinformatica/
+Página web de la materia: https://bioinformatica-iib.github.io/introduccion_bioinformatica/
 
 ## Instalación 2022 en Ubuntu
 
@@ -20,7 +20,7 @@ curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poet
 ```
 source $HOME/.poetry/env
 ```
-* Una vez instalado Poetry, ir a la carpeta del repositorio de GIT (`2022_introduccion_bioinformatica`) y correr:
+* Una vez instalado Poetry, ir a la carpeta del repositorio de GIT (`introduccion_bioinformatica`) y correr:
 ```
 poetry install 
 ```

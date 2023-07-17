@@ -18,5 +18,9 @@ tags:
 * Dra. Juliana Glavina
 
 ### Ayudantes de 1ra
-* Lic. Heli García Álvarez
-* Lic. Alejandro Ricci
+* Lic. Mercedes Didier Garnham
+* Lic. Guadalupe Romer
+
+### Ayudantes Ad-Scriptos
+* Sebastián Jinich
+* Ramiro Quinteros

@@ -8,7 +8,9 @@ tags:
   - feriados
 ---
 
+Próximamente !!
 
+<!--
 | Fecha  { data-sort-method='none' }     | Hora  { data-sort-method='none' }   | Donde  { data-sort-method='none' }                                 | Clase  { data-sort-method='none' }      | Tipo  { data-sort-method='none' }                              | Docente { data-sort-method='none' } | 
 | ----------- | -------- | :-------------------------------------: | :----------- | :---------------------------------- | :------ |
 | Martes, 02 Agosto 2022 | 9:00 hs |	:material-google-classroom: Online | [T1. Presentación de la materia](/2022_introduccion_bioinformatica/teoricas/1-Teorica-Uno/) | :fontawesome-solid-brain: Teórica |	F. Agüero |
