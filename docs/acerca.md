@@ -76,5 +76,6 @@ Los cupos para estudiantes de posgrado, investigadores y trabajadores de la indu
 
 Aquellas personas que sean aceptadas para el curso serán notificadas el 31 de Julio, 2023
 
-[Inscribirse](https://forms.gle/tge8nxEz8WD9t5737){ .md-button .md-button--primary }
+
+[Inscribirse](https://forms.gle/m1aHE9sXJcavaDYc6){ .md-button .md-button--primary }
 
