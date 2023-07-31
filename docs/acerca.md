@@ -68,13 +68,13 @@ Para inscribirte vas a necesitar:
 -->
 ### Cierre de Inscripción
 
-28 de Julio, 2023
+04 de Agosto, 2023
 
 ### Notificación de Aceptación
 
 Los cupos para estudiantes de posgrado, investigadores y trabajadores de la industria son limitados.
 
-Aquellas personas que sean aceptadas para el curso serán notificadas el 31 de Julio, 2023
+Aquellas personas que sean aceptadas para el curso serán notificadas el 06 de Agosto, 2023
 
 
 [Inscribirse](https://forms.gle/m1aHE9sXJcavaDYc6){ .md-button .md-button--primary }
