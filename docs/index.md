@@ -4,6 +4,6 @@ hide:
   - toc
 ---
 
-# ![Banner](img/banner.png){ width="900" }
+# ![Banner](img/banner_magentaverse.png){ width="600" }
 
 <!-- # ![Banner](img/banner.png){ width="600" } -->

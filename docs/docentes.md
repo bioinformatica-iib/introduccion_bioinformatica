@@ -4,8 +4,6 @@ tags:
   - Instructores
 ---
 
-# Docentes
-
 ### Profesor Titular
 
 * Dr. Fernán Agüero
