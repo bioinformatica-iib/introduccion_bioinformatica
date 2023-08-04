@@ -25,5 +25,16 @@
 }
 
 
+@font-face {
+  font-family: 'Saira', sans-serif;
+  @import url('https://fonts.googleapis.com/css2?family=Saira&display=swap');
+}
 
+@font-face {
+  font-family: 'Cabin', sans-serif;
+  @import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,700;1,400&display=swap');
+}
 
+.md-typeset h1, h2, h3, h4, h5, h6 {
+  font-family: 'Saira';
+}
