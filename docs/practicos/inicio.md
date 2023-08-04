@@ -10,7 +10,7 @@ Esta es la página de inicio de los prácticos de este curso. A continuación un
 ## Consultas y Canales de Comunicación 
 
  * :material-email: Por email a la dirección de la JTP.
- * :fontawesome-brands-slack: en Slack pueden mandar mensajes a todo el grupo en los distintos canales.
+ * :fontawesome-brands-discord: en Discord pueden mandar mensajes a todo el grupo en los distintos canales.
 
 ## Informes
 

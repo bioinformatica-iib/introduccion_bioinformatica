@@ -9,6 +9,7 @@
 Este es el botón para decargar materiales, en (#) hay que agregar el link correspondiente
 --->
 
+<!--
 ### Slides mostrados en la clase
 
 * :fontawesome-regular-file-pdf: [Introducción a la programación](https://drive.google.com/file/d/12HLvmzhoz4HToEn9280HIvPEC6NO2WPN/view?usp=sharing)
@@ -19,6 +20,7 @@ Este es el botón para decargar materiales, en (#) hay que agregar el link corre
 * :octicons-video-16: [Presentacion de la Materia](https://youtu.be/zOnacQHwI-E)
 * :octicons-video-16: [Introducción a la programación](https://youtu.be/d1P_6sJN1og)
 * :octicons-video-16: [Cierre TP](https://youtu.be/pYXT8aejbWE)
+-->
 
 <!--
 ### Software a usar
