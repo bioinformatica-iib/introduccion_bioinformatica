@@ -22,9 +22,6 @@ tags:
 ### Ayudantes Ad-Scriptos
 * Sebastián Jinich
 * Ramiro Quinteros
-<<<<<<< HEAD
 
 ### Ayudante invitada
 * Heli A. García
-=======
->>>>>>> d2d072b95620b04aaaf5440cb974abaa13737abd

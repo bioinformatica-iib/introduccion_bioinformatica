@@ -120,7 +120,7 @@ nav:
     - Contenidos: 'contenidos.md'
     - Cronograma: 'cronograma.md'
     - Docentes: 'docentes.md'
-    - Teoricas:
+    - Teóricas:
         - teoricas/inicio.md
       #  - Teórica 1: teoricas/1-Teorica-Uno/index.md
       #  - Teórica 2: teoricas/2-Teorica-Dos/index.md
