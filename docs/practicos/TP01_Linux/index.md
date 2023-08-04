@@ -4,7 +4,7 @@
 
 <br>
 
-[:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1O8PaR0AoIzyUgPwLl-nNUalnH-VLwoY3/view?usp=sharing){ .md-button .md-button--primary }
+[:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1j-Ys8NpOWFRxqGz453-n8nU5zigy0TCw/view?usp=sharing){ .md-button .md-button--primary }
 <!--
 Este es el botón para decargar materiales, en (#) hay que agregar el link correspondiente
 --->
@@ -29,7 +29,9 @@ Este es el botón para decargar materiales, en (#) hay que agregar el link corre
 --->
 
 ### Recursos Online
+<!--
 * [Command-line bootcamp](https://cli-boot.camp/)
+-->
 * [Programando en Bash](https://atareao.es/tutorial/scripts-en-bash/)
 * [Comando AWK](https://www.tutorialspoint.com/awk/index.htm)
 * [Consola de Linux online](https://bellard.org/jslinux/vm.html?url=alpine-x86.cfg&mem=192) (y [otra](https://copy.sh/v86/?profile=linux26))
@@ -113,7 +115,7 @@ La terminal acepta una variedad de comandos en lenguaje **Bash**, que es el leng
 comando -opciones parametro1 parametro2 etc
 ```
 
-Donde **comando** es el nombre del programa a correr, **opciones** son comunmente una o más letras luego de un guión que indican alguna modificación a las opciones por defecto del programa, y los diferentes **parametros** son cosas que necesita el programa para correr, como puede ser un archivo que esta leyendo. Todo esto va a ir quedando más claro con los diferentes ejemplos.
+Donde **comando** es el nombre del programa a correr, **opciones** son comunmente una o más letras luego de un guión que indican alguna modificación a las opciones por defecto del programa, y los diferentes **parámetros** son cosas que necesita el programa para correr, como puede ser un archivo que esta leyendo. Todo esto va a ir quedando más claro con los diferentes ejemplos.
 
 ### Usted está aquí
 
@@ -129,7 +131,7 @@ ls
 ```
 Si bien por ahora todo lo que ven son carpetas azules, tengan en cuenta que `ls` va a colorear diferentes tipos de archivos (y de carpetas) de diferentes colores.
 
-Este comando es una buena oportunidad de entender un poco mas sobre **opciones** y **parametros**. Por defecto `ls` lista los archivos de la carpeta actual, pero de darle un parámetro muestra los de dicha carpeta. Prueben correr lo siguiente:
+Este comando es una buena oportunidad de entender un poco mas sobre **opciones** y **parámetros**. Por defecto `ls` lista los archivos de la carpeta actual, pero de darle un parámetro muestra los de dicha carpeta. Prueben correr lo siguiente:
 ``` bash
 ls /etc/perl/Net
 ```
@@ -179,7 +181,7 @@ cd ..
 
 Vean ahora en que carpeta están. En todo lo que es Ubuntu y Lubuntu `..` significa "una carpeta para arriba".
 
-¿Qué pasa entonces si estan en **/home/ibioinfo/Escritorio/TP01/Version3/Intento2/Edicion1** y quieren volver a su *home*? ¿Tienen que escribir `cd ..` 5 veces? Tecnicamente funciona, pero por defecto el comando `cd` te lleva a tu *home* si no le das ningun parámetro.
+¿Qué pasa entonces si estan en **/home/ibioinfo/Escritorio/TP01/Version3/Intento2/Edicion1** y quieren volver a su *home*? ¿Tienen que escribir `cd ..` 5 veces? Técnicamente funciona, pero por defecto el comando `cd` te lleva a tu *home* si no le das ningun parámetro.
 
 ``` bash
 cd
@@ -374,9 +376,15 @@ Van a ver que se abre el editor de texto de igual forma que si ubieran hecho dob
 
     Las fuentes que tienen **Mono** en su nombre estan indicando que son monoespaciadas, o sea, que todos sus caracteres tienen el mismo ancho. Esto es ideal para cuando se quieren ver tablas o alineamientos con **Leafpad**, cosa que vamos a hacer bastante en esta materia.
 
+    También resulta útil tener la numeración para comunicarse mejor. Para activarla tienen que ir a **Opciones** :material-arrow-right: **Numeración de Líneas**
+
 **Leafpad** funciona como un editor de texto bastante normal. Agreguen una nueva linea abajo de todo (con cualquier texto) y guarden el archivo.
 
 Al momento sabemos como guardar en un archivo de texto cualquier salida de un comando de Lubuntu, pero, ¿cómo hacemos para poner lo que nosotros queremos en un archivo de texto? Simple, ¡con otro comando de Lubuntu!
+
+!!! Danger
+
+    Recuerden cerrar el **Leafpad** o la concola quedará ocupada.
 
 El comando `echo` hace lo que su nombre indica y devuelve por la terminal el texto que le pases. Prueben escribir `echo TEXTO`, donde **TEXTO** es cualquier oración, por ejemplo:
 
@@ -555,7 +563,7 @@ Las variables son *palabras* que guardan dentro de ellas un número o un *string
 
 En este momento pueden estar pensando que hubiera sido mucho más fácil poner solo `echo "Hola Unsamer, ¿todo bien?"` y ahorrarme el tema de la variable. Tienen razón. Por ahora.
 
-¿Se acuerdan de los **parametros** de los comandos de Bash? Al pasarle parámetros a un script de Bash estos se asignan automaticamente a variables llamadas `$1`, `$2`, etc. Editemos ahora nuestro código anterior:
+¿Se acuerdan de los **parámetros** de los comandos de Bash? Al pasarle parámetros a un script de Bash estos se asignan automaticamente a variables llamadas `$1`, `$2`, etc. Editemos ahora nuestro código anterior:
 
 === "Código"
 
@@ -568,7 +576,7 @@ En este momento pueden estar pensando que hubiera sido mucho más fácil poner s
 === "Código con comentarios"
 
     ``` bash
-    # $1 es el primer parametro que se le pasa al script de Bash
+    # $1 es el primer parámetro que se le pasa al script de Bash
     # Le estoy asignando el valor de una variable a otra variable. $1 sigue existiendo, pero no la uso más
     nombre=$1
 
@@ -591,7 +599,7 @@ bash saludo.sh "Unsamer"
 
 !!! info
 
-    Tecnicamente si estoy pasando solo una palabra las comillas no son necesarias, pero si el *string* que estoy pasando tiene un espacio tengo que ponerlas si o si.
+    Técnicamente si estoy pasando solo una palabra las comillas no son necesarias, pero si el *string* que estoy pasando tiene un espacio tengo que ponerlas si o si.
 
 Hay bastante más para hablar de las *variables*. Existen muchos tipos más de variables, como *booleanos* (variable que es verdadera o falsa), *arreglos* (o vectores) y listas. Otros lenguajes de programación hasta tienen variables más complejas que pueden almacenar tablas enteras. Sin embargo, lo que acabamos de aprender es la base y va a ser suficiente por ahora. Más información sobre las variables en Bash se puede ver en [esta página](https://atareao.es/tutorial/scripts-en-bash/variables-en-bash/).
 
@@ -750,51 +758,53 @@ El objetivo de este ejercicio es hacer un script que:
     ```
     Donde hay que reemplazar **NUMERO** por el número correspondiente (de 6 a 10). Noten que ambas oraciones están en lineas diferentes
 
-Ahora que sabemos nuestro objetivo vayan a **Documentos** y creen una nueva carpeta donde vamos a trabajar llamada **TP01_EJ3**. Dentro de ella creen un archivo vacio llamado **crear_archivos.sh** que va a ser nuestro script.
+Ahora que sabemos nuestro objetivo vayan a **Documentos** y creen una nueva carpeta donde vamos a trabajar llamada **TP01_EJ3**. Dentro de ella creen un archivo vacio llamado **crear_archivos.sh** que va a ser nuestro script y edítenlo con **Leafpad**.
 
-Al momento de hacer programas complejos, especialmente en un lenguaje que recién aprenden, es recomendado ir por partes e ir probando en el medio. Unos posibles pasos a seguir son:
+??? Note "Guía para hacer el script"
 
-!!! info
+    Al momento de hacer programas complejos, especialmente en un lenguaje que recién aprenden, es recomendado ir por partes e ir probando en el medio. Unos posibles pasos a seguir son:
 
-    La idea de hacerlo así es ir probando de a poco si aparece algun error. ¡Prueben el script entre cada paso!
+    !!! info
 
-1. Modifiquen el script para que cree un archivo llamado **archivo_1** que adentro tenga el texto: 
+        La idea de hacerlo así es ir probando de a poco si aparece algun error. ¡Prueben el script entre cada paso!
 
-    ```
-    Primera parte. Este es el archivo 1.
-    ```
+    1. Modifiquen el script para que cree un archivo llamado **archivo_1** que adentro tenga el texto: 
 
-1. Agreguen un *for* que vaya de 1 a 5 y cree los archivos **archivo_1** a **archivo_5** que adentro tengan el texto:
-
-
-    ```
-    Primera parte. Este es el archivo NUMERO.
-    ```
-
-    Donde hay que reemplazar **NUMERO** por el número correspondiente (de 1 a 5).
-
-1. Expandan el *for* para que vaya de 1 a 10. Agreguen un *if* adentro del *for* que haga que los archivos se creen solo para los primeros 5 ciclos.
-
-    !!! tip
-
-        Aca les puede venir bien el comparador `<=`, que significa "menor o igual". Un ejemplo de `<=` seria:
-
-        ``` bash
-        if (($1 <= 7))
+        ```
+        Primera parte. Este es el archivo 1.
         ```
 
-        Que en este caso es verdadero cuando el parámetro `$1` es menor o igual a 7.
+    1. Agreguen un *for* que vaya de 1 a 5 y cree los archivos **archivo_1** a **archivo_5** que adentro tengan el texto:
 
-1. Agreguen un *else* al *if*, recordando que los comandos adentro del *else* se van a ejecutar cuando la condición no sea verdadera. Asumiendo que usaron `<=` en la condición del *if*, modifiquen los comandos adentro del *else* para que en ese caso se creen los archivos **archivo_6** a **archivo_10** que adentro tengan el texto:
 
-    ```
-    Segunda parte.
-    Este es el archivo NUMERO.
-    ```
+        ```
+        Primera parte. Este es el archivo NUMERO.
+        ```
 
-    Donde hay que reemplazar **NUMERO** por el número correspondiente (de 6 a 10).
+        Donde hay que reemplazar **NUMERO** por el número correspondiente (de 1 a 5).
 
-¡Y listo, deberían tener su programa andando!
+    1. Expandan el *for* para que vaya de 1 a 10. Agreguen un *if* adentro del *for* que haga que los archivos se creen solo para los primeros 5 ciclos.
+
+        !!! tip
+
+            Aca les puede venir bien el comparador `<=`, que significa "menor o igual". Un ejemplo de `<=` seria:
+
+            ``` bash
+            if (($1 <= 7))
+            ```
+
+            Que en este caso es verdadero cuando el parámetro `$1` es menor o igual a 7.
+
+    1. Agreguen un *else* al *if*, recordando que los comandos adentro del *else* se van a ejecutar cuando la condición no sea verdadera. Asumiendo que usaron `<=` en la condición del *if*, modifiquen los comandos adentro del *else* para que en ese caso se creen los archivos **archivo_6** a **archivo_10** que adentro tengan el texto:
+
+        ```
+        Segunda parte.
+        Este es el archivo NUMERO.
+        ```
+
+        Donde hay que reemplazar **NUMERO** por el número correspondiente (de 6 a 10).
+
+    ¡Y listo, deberían tener su programa andando!
 
 ## **Bash: Tablas**
 
@@ -877,7 +887,7 @@ Como siempre hay mucho más para decir sobre `awk`, pero por hoy estamos bien. S
 
 El objetivo de este Ejercicio va a ser hacer un script que:
 
-* Reciba un número por consola (vamos a asumir que dicho número va a ser siempre un número entero entre 1 y 1000)
+* Reciba un número por consola (vamos a asumir que dicho número va a ser siempre un número entero entre 1 y 1000) es decir que el usuario ingrese como parámetro del script un número.
 * Recorra todos los números entre 1 y el número que recibió por consola
 * Para cada uno de esos números vea si es par
 * Imprima los números pares por consola

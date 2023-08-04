@@ -13,4 +13,4 @@ Si tu consulta está relacionada con algún problema con la instalación o funci
 
 Si no se encuentra resuelto o no está relacionado con la máquina virtual podes encontrarnos en:
 
-* :fontawesome-brands-slack: en Slack en el canal dedicado consultas-vm o preguntas-y-respuestas si no está relacionado con la máquina virtual.
+* :fontawesome-brands-discord: en Discord en el canal dedicado consultas-vm o preguntas-y-respuestas si no está relacionado con la máquina virtual.
