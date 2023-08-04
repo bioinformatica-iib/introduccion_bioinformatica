@@ -4,6 +4,7 @@ hide:
   - toc
 ---
 
+Acá tiene que ir algo
 <!--
 # ![Banner](img/banner_h.png){ width="900" }
 -->
