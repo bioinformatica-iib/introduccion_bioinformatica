@@ -8,52 +8,50 @@ tags:
   - feriados
 ---
 
-Próximamente !!
+Puede estar sujeto a modificaciones.
 
-<!--
 | Fecha  { data-sort-method='none' }     | Hora  { data-sort-method='none' }   | Donde  { data-sort-method='none' }                                 | Clase  { data-sort-method='none' }      | Tipo  { data-sort-method='none' }                              | Docente { data-sort-method='none' } | 
 | ----------- | -------- | :-------------------------------------: | :----------- | :---------------------------------- | :------ |
-| Martes, 02 Agosto 2022 | 9:00 hs |	:material-google-classroom: Online | [T1. Presentación de la materia](/2022_introduccion_bioinformatica/teoricas/1-Teorica-Uno/) | :fontawesome-solid-brain: Teórica |	F. Agüero |
-| Jueves, 04 Agosto 2022 | 9:00 hs |	:material-google-classroom: Online | [P1. Introducción a UNIX](/2022_introduccion_bioinformatica/practicos/TP01_Linux/) | :fontawesome-solid-hammer: Práctica |	A. Ricci |
-| Martes, 09 Agosto 2022 | 9:00 hs |	:material-google-classroom: Online | [T2. Bases de datos y ontologías](/2022_introduccion_bioinformatica/teoricas/2-Teorica-Dos/) | :fontawesome-solid-brain: Teórica |	F. Agüero |
-| Jueves, 11 Agosto 2022 | 9:00 hs |	:material-google-classroom: Online | [P2. EMBOSS Suite](/2022_introduccion_bioinformatica/practicos/TP02_EMBOSS/) | :fontawesome-solid-hammer: Práctica |	A. Ricci |
-| Martes, 16 Agosto 2022 | 9:00 hs |	:material-google-classroom: Online | [T3. Alineamientos de a pares y Búsqueda de secuencias por Similitud](/2022_introduccion_bioinformatica/teoricas/3-Teorica-Tres/) | :fontawesome-solid-brain: Teórica |	F. Agüero |
-| Jueves, 18 Agosto 2022 | 9:00 hs |	:material-google-classroom: Online | [T4. Alineamientos múltiples](/2022_introduccion_bioinformatica/teoricas/4-Teorica-Cuatro/) | :fontawesome-solid-brain: Teórica |	F. Agüero |
-| Jueves, 18 Agosto 2022 | 14:00 hs |	:fontawesome-solid-map-location: Aula a definir | TE1. Teórica Extra 1 | :fontawesome-solid-brain: Teórica |	F. Agüero |
-| Martes, 23 Agosto 2022 | 9:00 hs |	:material-google-classroom: Online | [P3. Alineamientos de a pares](/2022_introduccion_bioinformatica/practicos/TP03_Alineamientos/) | :fontawesome-solid-hammer: Práctica |	H. García A |
-| Jueves, 25 Agosto 2022 | 9:00 hs |	:material-google-classroom: Online | [P4. Búsqueda de secuencias por similitud y Alineamientos Múltiples](/2022_introduccion_bioinformatica/practicos/TP04_Busqueda_por_similitud/) | :fontawesome-solid-hammer: Práctica |	H. García A |
-| Martes, 30 Agosto 2022 | 9:00 hs |	:material-google-classroom: Online | [T5. Información contenida en alineamientos múltiples](/2022_introduccion_bioinformatica/teoricas/5-Teorica-Cinco/) | :fontawesome-solid-brain: Teórica |	M. Nielsen |
-| Jueves, 01 Septiembre 2022 | 9:00 hs |	:material-google-classroom: Online | [P5. Perfiles de secuencia y PSI-BLAST](/2022_introduccion_bioinformatica/practicos/TP05_PSI-BLAST/) | :fontawesome-solid-hammer: Práctica |	H. García A |
-| Martes, 06 Septiembre 2022 | 9:00 hs |	:material-google-classroom: Online | [T6. Reconstrucción de filogenias](/2022_introduccion_bioinformatica/teoricas/6-Teorica-Seis/) | :fontawesome-solid-brain: Teórica |	F. Agüero |
-| Jueves, 08 Septiembre 2022 | 9:00 hs |	:material-google-classroom: Online | [P6. Filogenias, árboles filogenéticos y filogenómica](/2022_introduccion_bioinformatica/practicos/TP06_Filogenia/) | :fontawesome-solid-hammer: Práctica |	J. Glavina |
-| Martes, 13 Septiembre 2022 | 9:00 hs |	:material-google-classroom: Online | [T7. Métodos de predicción de Machine Learning basados en datos (HMM y ANN)](/2022_introduccion_bioinformatica/teoricas/7-Teorica-Siete/) | :fontawesome-solid-brain: Teórica |	M. Nielsen |
-| Jueves, 15 Septiembre 2022 | 9:00 hs |	:material-google-classroom: Online | [P7. HMM y Redes neuronales](/2022_introduccion_bioinformatica/practicos/TP07_HMM_ANN/) | :fontawesome-solid-hammer: Práctica |	H. García A. |
-| Martes, 20 Septiembre 2022 | 9:00 hs |	:material-google-classroom: Online | [P8a. Programando en Biología](/2022_introduccion_bioinformatica/practicos/TP08a_R/) | :fontawesome-solid-hammer: Práctica |	A. Ricci |
-| Jueves, 22 Septiembre 2022 | 9:00 hs |	:material-google-classroom: Online | [P8b. Programando en Biología](/2022_introduccion_bioinformatica/practicos/TP08b_R/) | :fontawesome-solid-hammer: Práctica |	A. Ricci |
-| Martes, 27 Septiembre 2022 | 9:00 hs |	:material-google-classroom: Online | [T8. Bioinformática Estructural: Desorden](/2022_introduccion_bioinformatica/teoricas/8-Teorica-Ocho/)| :fontawesome-solid-brain: Teórica |	L. Chemes |
-| Jueves, 29 Septiembre 2022 | 9:00 hs |	:material-google-classroom: Online | [P9. Bioinformática Estructural: Predicción de Desorden](/2022_introduccion_bioinformatica/practicos/TP09_Desorden/) | :fontawesome-solid-hammer: Práctica |	J. Glavina |
-| Jueves, 29 Septiembre 2022 | 14:00 hs | :fontawesome-solid-map-location: Aula a definir| TE2. Teórica Extra 2 | :fontawesome-solid-brain: Teórica | L. Chemes |
-| Martes, 04 Octubre 2022 | 9:00 hs |	:material-google-classroom: Online | [T9. Bioinformática Estructural: Motivos lineales](/2022_introduccion_bioinformatica/teoricas/9-Teorica-Nueve/) | :fontawesome-solid-brain: Teórica |	L. Chemes |
-| Jueves, 06 Octubre 2022 | 9:00 hs |	:material-google-classroom: Online | [P10. Bioinformática Estructural: Motivos funcionales en proteínas](/2022_introduccion_bioinformatica/practicos/TP10_Motivos/) | :fontawesome-solid-hammer: Práctica |	J. Glavina |
-| Martes, 11 Octubre 2022 | 9:00 hs |	:material-google-classroom: Online | [T10. Bioinformática Estructural: Dominios](/2022_introduccion_bioinformatica/teoricas/10-Teorica-Diez/) | :fontawesome-solid-brain: Teórica |	L. Chemes |
-| Jueves, 13 Octubre 2022 | 9:00 hs |	:material-google-classroom: Online | [P11. Bioinformática Estructural: Dominios 3D y Modelado por homología](/2022_introduccion_bioinformatica/practicos/TP11_Modelado_Por_Homologia/) | :fontawesome-solid-hammer: Práctica |	J. Glavina |
-| Martes, 18 Octubre 2022 | 9:00 hs |	:material-google-classroom: Online | [T11. Data clustering](/2022_introduccion_bioinformatica/teoricas/11-Teorica-Once/) | :fontawesome-solid-brain: Teórica |	F. Agüero |
-| Jueves, 20 Octubre 2022 | 9:00 hs |	:material-google-classroom: Online | [P12a. Data mining - Clustering](/2022_introduccion_bioinformatica/practicos/TP12a_Clustering) | :fontawesome-solid-hammer: Práctica |	A. Ricci |
-| Jueves, 20 Octubre 2022 | 14:00 hs |	:fontawesome-solid-map-location: Aula a definir| TE3. Teórica Extra 3 | :fontawesome-solid-brain: Teórica |	J. Glavina |
-| Martes, 25 Octubre 2022 | 9:00 hs |	:material-google-classroom: Online | [T12. Secuenciación y ensamblado de genomas](/2022_introduccion_bioinformatica/teoricas/12-Teorica-Doce/) | :fontawesome-solid-brain: Teórica |	F. Agüero |
-| Jueves, 27 Octubre 2022 | 9:00 hs |	:material-google-classroom: Online | [P12b. Data mining](/2022_introduccion_bioinformatica/practicos/TP12b_Data_Mining) | :fontawesome-solid-hammer: Práctica |	A. Ricci |
-| Martes, 01 Noviembre 2022 | 9:00 hs |	:material-google-classroom: Online | [P13. Short Read Mapping](/2022_introduccion_bioinformatica/practicos/TP13_Short-Read-Mapping) | :fontawesome-solid-hammer: Práctica |	J. Glavina |
-| Jueves, 03 Noviembre 2022 | 9:00 hs |	:material-google-classroom: Online | [P14. Genómica comparativa](/2022_introduccion_bioinformatica/practicos/TP14_Genomica_Comparativa) | :fontawesome-solid-hammer: Práctica |	J. Glavina |
-| Martes, 08 Noviembre 2022 | 9:00 hs |	:material-google-classroom: Online | Repaso | :fontawesome-solid-brain: Teórica |	F. Agüero<br>L. Chemes<br> M. Nielsen |
-| Jueves, 10 Noviembre 2022 | 9:00 hs |	A definir | Examen | |	F. Agüero<br>L. Chemes<br> M. Nielsen |
-| Martes, 15 Noviembre 2022 | 9:00 hs |	 | LIBRE | | |
-| Jueves, 17 Noviembre 2022 | 9:00 hs |	:material-google-classroom: Online | Revisión examen | |	F. Agüero<br>L. Chemes<br> M. Nielsen |
-| Martes, 22 Noviembre 2022 | 9:00 hs |	 | LIBRE | | |
-| Jueves, 24 Noviembre 2022 | 9:00 hs |	 | LIBRE | | |
-| Martes, 29 Noviembre 2022 | 9:00 hs |	A definir | Recuperatorio | |	F. Agüero<br>L. Chemes<br> M. Nielsen |
-| Jueves, 1 Diciembre 2022 | 9:00 hs |	:material-google-classroom: Online | Revisión examen | |	F. Agüero<br>L. Chemes<br> M. Nielsen |
- <!-- 
+| Martes, 08 Agosto 2023 | 9:00 hs |	:material-google-classroom: Online | T1. Presentación de la materia | :fontawesome-solid-brain: Teórica |	F. Agüero |
+| Jueves, 10 Agosto 2023 | 9:00 hs |	:material-google-classroom: Online | P1. Introducción a UNIX| :fontawesome-solid-hammer: Práctica |	M. Didier Garnham |
+| Martes, 15 Agosto 2023 | 9:00 hs |	:material-google-classroom: Online | T2. Bases de datos y ontologías | :fontawesome-solid-brain: Teórica |	F. Agüero |
+| Jueves, 17 Agosto 2023 | 9:00 hs |	:material-google-classroom: Online | P2. EMBOSS Suite | :fontawesome-solid-hammer: Práctica |	M. Didier Garnham |
+| Martes, 22 Agosto 2023 | 9:00 hs |	:material-google-classroom: Online | T3. Alineamientos de a pares y Búsqueda de secuencias por Similitud | :fontawesome-solid-brain: Teórica |	F. Agüero |
+| Jueves, 24 Agosto 2023 | 9:00 hs |	:material-google-classroom: Online | P3. Alineamientos de a pares | :fontawesome-solid-hammer: Práctica |	M. Didier Garnham |
+| Martes, 29 Agosto 2023 | 9:00 hs |	:material-google-classroom: Online | T4. Alineamientos múltiples | :fontawesome-solid-brain: Teórica |	F. Agüero |
+| Jueves, 31 Agosto 2023 | 9:00 hs |	:material-google-classroom: Online | P4. Búsqueda de secuencias por similitud y Alineamientos Múltiples | :fontawesome-solid-hammer: Práctica |	M. Didier Garnham |
+| Martes, 05 Septiembre 2023 | 9:00 hs |	:material-google-classroom: Online | P5a. Programando en Biología | :fontawesome-solid-hammer: Práctica |	G. Romer |
+| Jueves, 07 Septiembre 2023 | 9:00 hs |	:material-google-classroom: Online | P5b. Programando en Biología | :fontawesome-solid-hammer: Práctica |	G. Romer |
+| Martes, 12 Septiembre 2023 | 9:00 hs |	:material-google-classroom: Online | T5. Información contenida en alineamientos múltiples | :fontawesome-solid-brain: Teórica |	M. Nielsen |
+| Jueves, 14 Septiembre 2023 | 9:00 hs |	:material-google-classroom: Online | P6. Perfiles de secuencia y PSI-BLAST | :fontawesome-solid-hammer: Práctica |	H. García A |
+| Martes, 19 Septiembre 2023 | 9:00 hs |	:material-google-classroom: Online | T6. Bioinformática Estructural: Desorden | :fontawesome-solid-brain: Teórica |	L. Chemes |
+| Jueves, 21 Septiembre 2023 | 9:00 hs |	:material-google-classroom: Online | P7. Bioinformática Estructural: Predicción de Desorden | :fontawesome-solid-hammer: Práctica |	J. Glavina |
+| Martes, 26 Septiembre 2023 | 9:00 hs |	:material-google-classroom: Online | T7. Bioinformática Estructural: Motivos lineales | :fontawesome-solid-brain: Teórica |	L. Chemes |
+| Jueves, 28 Septiembre 2023 | 9:00 hs |	:material-google-classroom: Online | P8. Bioinformática Estructural: Motivos funcionales en proteínas | :fontawesome-solid-hammer: Práctica |	J. Glavina |
+| Martes, 03 Octubre 2023 | 9:00 hs |	:material-google-classroom: Online | T8. Bioinformática Estructural: Dominios | :fontawesome-solid-brain: Teórica |	L. Chemes |
+| Jueves, 05 Octubre 2023 | 9:00 hs |	:material-google-classroom: Online | P9a. Bioinformática Estructural: Dominios 3D y Modelado por homología | :fontawesome-solid-hammer: Práctica |	J. Glavina |
+| Martes, 10 Octubre 2023 | 9:00 hs |	:material-google-classroom: Online | T9. Data clustering | :fontawesome-solid-brain: Teórica |	F. Agüero |
+| Jueves, 12 Octubre 2023 | 9:00 hs |	:material-google-classroom: Online | P9b. Bioinformática Estructural: Alphafold | :fontawesome-solid-hammer: Práctica |	J. Glavina |
+| Martes, 17 Octubre 2023 | 9:00 hs |	:material-google-classroom: Online | P10a. Data mining - Clustering | :fontawesome-solid-hammer: Práctica |	G. Romer |
+| Jueves, 19 Octubre 2023 | 9:00 hs |	:material-google-classroom: Online | P10b. Data mining | :fontawesome-solid-hammer: Práctica |	G. Romer |
+| Martes, 24 Octubre 2023 | 9:00 hs |	:material-google-classroom: Online | T10. Métodos de predicción de Machine Learning basados en datos (HMM y ANN) | :fontawesome-solid-brain: Teórica |	M. Nielsen |
+| Jueves, 26 Octubre 2023 | 9:00 hs |	:material-google-classroom: Online | P11. HMM y Redes neuronales | :fontawesome-solid-hammer: Práctica |	H. García A. |
+| Martes, 31 Octubre 2023 | 9:00 hs |	:material-google-classroom: Online | T11. Secuenciación y ensamblado de genomas | :fontawesome-solid-brain: Teórica |	F. Agüero |
+| Jueves, 02 Noviembre 2023 | |	| LIBRE | |	|
+| Martes, 07 Noviembre 2023 | 9:00 hs |	:material-google-classroom: Online | P12. Short Read Mapping | :fontawesome-solid-hammer: Práctica |	G. Romer |
+| Jueves, 09 Noviembre 2023 | 9:00 hs |	:material-google-classroom: Online | P13. Genómica comparativa | :fontawesome-solid-hammer: Práctica |	G. Romer |
+| Martes, 14 Noviembre 2023 | 9:00 hs |	:material-google-classroom: Online | T12. Quimioinformática | :fontawesome-solid-brain: Teórica |	F. Agüero |
+| Jueves, 16 Noviembre 2023 | 9:00 hs |	:material-google-classroom: Online | P14. Quimioinformática | :fontawesome-solid-hammer: Práctica |	M. Didier Garnham |
+| Martes, 21 Noviembre 2023 | 9:00 hs |	:material-google-classroom: Online | Repaso | :fontawesome-solid-brain: Teórica |	F. Agüero<br>L. Chemes<br> M. Nielsen |
+| Jueves, 23 Noviembre 2023 | 9:00 hs |	A definir | Examen | |	F. Agüero<br>L. Chemes<br> M. Nielsen |
+| Martes, 28 Noviembre 2023 | 9:00 hs |	 | Exposición grupos de post-grado | | |
+| Jueves, 30 Noviembre 2023 | 9:00 hs |	:material-google-classroom: Online | Revisión examen | |	F. Agüero<br>L. Chemes<br> M. Nielsen |
+| Martes, 05 Diciembre 2023 | 9:00 hs |	 | Exposición grupos de post-grado | | |
+| Jueves, 07 Diciembre 2023 | 9:00 hs |	A definir | Recuperatorio | | F. Agüero<br>L. Chemes<br> M. Nielsen |
+| Martes, 12 Diciembre 2023 | 9:00 hs |	| Libre | |	|
+| Jueves, 19 Diciembre 2023 | 9:00 hs |	:material-google-classroom: Online | Revisión examen | |	F. Agüero<br>L. Chemes<br> M. Nielsen |
 
+<!--
 | Fecha  { data-sort-method='none' }     | Hora  { data-sort-method='none' }   | Donde  { data-sort-method='none' }                                 | Clase  { data-sort-method='none' }      | Tipo  { data-sort-method='none' }                              | Docente { data-sort-method='none' } | 
 |:-------:|:-------------:|:---------:|:------------:|:----------:|:--------------|
 |05/08/2021 |  9 - 13hs| :material-google-classroom: Zoom | Teórica 1 | [T1. Presentación de la materia](/introduccion-bioinformatica/teoricas/teorica1/) | F. Agüero |
