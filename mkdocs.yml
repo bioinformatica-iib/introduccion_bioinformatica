@@ -14,9 +14,12 @@ site_url: https://bioinformatica-iib.github.io/introduccion_bioinformatica/
 # --- customizar apariencia editando palette 
 # --- consultar https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/
 theme:
-  logo: 'img/favicon.png'  # este logo es el que aparece al lado del nombre del curso
-  favicon: img/favicon.png # este logo es el que aparece en la pestaña del chrome
+  logo: 'img/logo-unsam-negro.png'  # este logo es el que aparece al lado del nombre del curso
+  favicon: img/logo-unsam-negro.png # este logo es el que aparece en la pestaña del chrome
   name: material
+  font: 
+    text: Cabin
+    code: Roboto Mono
   language: es 
   features:
     - search.suggest
@@ -33,14 +36,14 @@ theme:
     
   palette: 
     - scheme: default
-      primary: indigo
-      accent: indigo
+      primary: pink
+      accent: pink
       toggle:
         icon: material/toggle-switch 
         name: Cambiar a modo oscuro
     - scheme: slate 
-      primary: indigo
-      accent: indigo
+      primary: pink
+      accent: pink
       toggle: 
         icon: material/toggle-switch-off-outline
         name: Cambiar a modo claro
