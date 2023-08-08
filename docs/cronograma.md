@@ -12,7 +12,7 @@ tags:
 
 | Fecha  { data-sort-method='none' }     | Hora  { data-sort-method='none' }   | Donde  { data-sort-method='none' }                                 | Clase  { data-sort-method='none' }      | Tipo  { data-sort-method='none' }                              | Docente { data-sort-method='none' } | 
 | ----------- | -------- | :-------------------------------------: | :----------- | :---------------------------------- | :------ |
-| Martes, 08 Agosto 2023 | 9:00 hs |	:material-google-classroom: Online | T1. Presentación de la materia | :fontawesome-solid-brain: Teórica |	F. Agüero |
+| Martes, 08 Agosto 2023 | 9:00 hs |	:material-google-classroom: Online | [T1. Presentación de la materia, Conceptos Computación](/introduccion_bioinformatica/teoricas/1-Teorica-Uno/) | :fontawesome-solid-brain: Teórica |	F. Agüero |
 | Jueves, 10 Agosto 2023 | 9:00 hs |	:material-google-classroom: Online | P1. Introducción a UNIX| :fontawesome-solid-hammer: Práctica |	M. Didier Garnham |
 | Martes, 15 Agosto 2023 | 9:00 hs |	:material-google-classroom: Online | T2. Bases de datos y ontologías | :fontawesome-solid-brain: Teórica |	F. Agüero |
 | Jueves, 17 Agosto 2023 | 9:00 hs |	:material-google-classroom: Online | P2. EMBOSS Suite | :fontawesome-solid-hammer: Práctica |	M. Didier Garnham |
