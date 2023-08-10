@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP12a_Clustering/">
       
       <link rel="icon" href="../../img/logo-unsam-negro.png">
-      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-8.5.10">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.6">
     
     
       
@@ -21,14 +21,13 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.975780f9.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.4a0965b7.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
         
       
       
-
     
     
     
@@ -43,11 +42,10 @@
     
       <link rel="stylesheet" href="../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
-    
     
     
    <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
@@ -126,7 +124,6 @@
         
           
           
-          
           <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="pink"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_1">
           
             <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_2" hidden>
@@ -134,7 +131,6 @@
             </label>
           
         
-          
           
           
           <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="pink" data-md-color-accent="pink"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_2">
@@ -162,11 +158,11 @@
       </label>
       <nav class="md-search__options" aria-label="Search">
         
-          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+          <a href="javascript:void(0)" class="md-search__icon md-icon" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
           </a>
         
-        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" aria-label="Limpiar" tabindex="-1">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
         </button>
       </nav>
@@ -640,31 +636,30 @@
             
             
           
-          
-            <div class="md-content" data-md-component="content">
-              <article class="md-content__inner md-typeset">
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
                 
-                  
 
 
-<div><p><a class="glightbox" href="img/clustering2.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img _="," align="left" alt="Image" src="img/clustering2.png" width="250"></a></p>
+<p><a class="glightbox" href="img/clustering2.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img _="," align="left" alt="Image" src="img/clustering2.png" width="250" /></a></p>
 <h1 id="tp-12a-data-mining-clustering" markdown="markdown"><strong>TP 12a</strong>. Data Mining - Clustering</h1>
 <p><br>
 <br></p>
-<p><a class="md-button md-button--primary" href="https://drive.google.com/file/d/1zT1Qt_BgAxqtDTYxBTRK5uqoIMA1EXRw/view?usp=sharing"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32v242.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64v-32c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 104c-13.3 0-24-10.7-24-24s10.7-24 24-24 24 10.7 24 24-10.7 24-24 24z"></path></svg></span> Materiales</a></p>
+<p><a class="md-button md-button--primary" href="https://drive.google.com/file/d/1zT1Qt_BgAxqtDTYxBTRK5uqoIMA1EXRw/view?usp=sharing"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M480 352H346.5l-45.25 45.25C289.2 409.3 273.1 416 256 416s-33.16-6.656-45.25-18.75L165.5 352H32c-17.67 0-32 14.33-32 32v96c0 17.67 14.33 32 32 32h448c17.67 0 32-14.33 32-32v-96c0-17.7-14.3-32-32-32zm-48 104c-13.2 0-24-10.8-24-24s10.8-24 24-24 24 10.8 24 24-10.8 24-24 24zm-198.6-81.4c6.2 6.3 14.4 9.4 22.6 9.4s16.38-3.125 22.62-9.375l128-128c12.49-12.5 12.49-32.75 0-45.25-12.5-12.5-32.76-12.5-45.25 0L288 274.8V32c0-17.67-14.33-32-32-32-17.7 0-32 14.33-32 32v242.8l-73.4-73.4c-12.49-12.5-32.75-12.5-45.25 0-12.49 12.5-12.49 32.75 0 45.25L233.4 374.6z"/></svg></span> Materiales</a></p>
 <!--
 Este es el botón para descargar materiales, en (#) hay que agregar el link correspondiente
 -->
 
 <h3 id="slides-mostrados-en-la-clase">Slides mostrados en la clase</h3>
 <ul>
-<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 384 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M320 464c8.8 0 16-7.2 16-16v-32h48v32c0 35.3-28.7 64-64 64H64c-35.35 0-64-28.7-64-64v-32h48v32c0 8.8 7.16 16 16 16h256zm-64-304c-17.7 0-32-14.3-32-32V48H64c-8.84 0-16 7.16-16 16v128H0V64C0 28.65 28.65 0 64 0h165.5c17 0 33.2 6.743 45.2 18.75l90.6 90.55c12 12 18.7 28.2 18.7 45.2V192h-48v-32h-80zM88 224c30.9 0 56 25.1 56 56s-25.1 56-56 56h-8v32c0 8.8-7.16 16-16 16s-16-7.2-16-16V240c0-8.8 7.16-16 16-16h24zm24 56c0-13.3-10.7-24-24-24h-8v48h8c13.3 0 24-10.7 24-24zm48-40c0-8.8 7.2-16 16-16h24c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48h-24c-8.8 0-16-7.2-16-16V240zm32 112h8c8.8 0 16-7.2 16-16v-64c0-8.8-7.2-16-16-16h-8v96zm144-128c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v32h32c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v48c0 8.8-7.2 16-16 16s-16-7.2-16-16V240c0-8.8 7.2-16 16-16h48z"></path></svg></span> <a href="https://drive.google.com/file/d/1Eh_u3qKrqPI8AgOggD_qW_CvXjk_vNfT/view?usp=sharing">Introducción Clustering Jerárquico</a></li>
-<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 384 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M320 464c8.8 0 16-7.2 16-16v-32h48v32c0 35.3-28.7 64-64 64H64c-35.35 0-64-28.7-64-64v-32h48v32c0 8.8 7.16 16 16 16h256zm-64-304c-17.7 0-32-14.3-32-32V48H64c-8.84 0-16 7.16-16 16v128H0V64C0 28.65 28.65 0 64 0h165.5c17 0 33.2 6.743 45.2 18.75l90.6 90.55c12 12 18.7 28.2 18.7 45.2V192h-48v-32h-80zM88 224c30.9 0 56 25.1 56 56s-25.1 56-56 56h-8v32c0 8.8-7.16 16-16 16s-16-7.2-16-16V240c0-8.8 7.16-16 16-16h24zm24 56c0-13.3-10.7-24-24-24h-8v48h8c13.3 0 24-10.7 24-24zm48-40c0-8.8 7.2-16 16-16h24c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48h-24c-8.8 0-16-7.2-16-16V240zm32 112h8c8.8 0 16-7.2 16-16v-64c0-8.8-7.2-16-16-16h-8v96zm144-128c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v32h32c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v48c0 8.8-7.2 16-16 16s-16-7.2-16-16V240c0-8.8 7.2-16 16-16h48z"></path></svg></span> <a href="https://drive.google.com/file/d/17JlDGAwSoU8ynugUjD-nOSqThE2HOKPC/view?usp=sharing">Cierre TP</a></li>
+<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M320 464c8.8 0 16-7.2 16-16v-32h48v32c0 35.3-28.7 64-64 64H64c-35.35 0-64-28.7-64-64v-32h48v32c0 8.8 7.16 16 16 16h256zm-64-304c-17.7 0-32-14.3-32-32V48H64c-8.84 0-16 7.16-16 16v128H0V64C0 28.65 28.65 0 64 0h165.5c17 0 33.2 6.743 45.2 18.75l90.6 90.55c12 12 18.7 28.2 18.7 45.2V192h-48v-32h-80zM88 224c30.9 0 56 25.1 56 56s-25.1 56-56 56h-8v32c0 8.8-7.16 16-16 16s-16-7.2-16-16V240c0-8.8 7.16-16 16-16h24zm24 56c0-13.3-10.7-24-24-24h-8v48h8c13.3 0 24-10.7 24-24zm48-40c0-8.8 7.2-16 16-16h24c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48h-24c-8.8 0-16-7.2-16-16V240zm32 112h8c8.8 0 16-7.2 16-16v-64c0-8.8-7.2-16-16-16h-8v96zm144-128c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v32h32c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v48c0 8.8-7.2 16-16 16s-16-7.2-16-16V240c0-8.8 7.2-16 16-16h48z"/></svg></span> <a href="https://drive.google.com/file/d/1Eh_u3qKrqPI8AgOggD_qW_CvXjk_vNfT/view?usp=sharing">Introducción Clustering Jerárquico</a></li>
+<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M320 464c8.8 0 16-7.2 16-16v-32h48v32c0 35.3-28.7 64-64 64H64c-35.35 0-64-28.7-64-64v-32h48v32c0 8.8 7.16 16 16 16h256zm-64-304c-17.7 0-32-14.3-32-32V48H64c-8.84 0-16 7.16-16 16v128H0V64C0 28.65 28.65 0 64 0h165.5c17 0 33.2 6.743 45.2 18.75l90.6 90.55c12 12 18.7 28.2 18.7 45.2V192h-48v-32h-80zM88 224c30.9 0 56 25.1 56 56s-25.1 56-56 56h-8v32c0 8.8-7.16 16-16 16s-16-7.2-16-16V240c0-8.8 7.16-16 16-16h24zm24 56c0-13.3-10.7-24-24-24h-8v48h8c13.3 0 24-10.7 24-24zm48-40c0-8.8 7.2-16 16-16h24c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48h-24c-8.8 0-16-7.2-16-16V240zm32 112h8c8.8 0 16-7.2 16-16v-64c0-8.8-7.2-16-16-16h-8v96zm144-128c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v32h32c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v48c0 8.8-7.2 16-16 16s-16-7.2-16-16V240c0-8.8 7.2-16 16-16h48z"/></svg></span> <a href="https://drive.google.com/file/d/17JlDGAwSoU8ynugUjD-nOSqThE2HOKPC/view?usp=sharing">Cierre TP</a></li>
 </ul>
 <h3 id="videos-de-la-clase-grabada">Videos de la clase grabada</h3>
 <ul>
-<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 16 16"><path fill-rule="evenodd" d="M1.75 3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25v-8.5a.25.25 0 0 0-.25-.25H1.75zM0 3.75C0 2.784.784 2 1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0 1 14.25 14H1.75A1.75 1.75 0 0 1 0 12.25v-8.5z"></path><path d="M6 10.559V5.442a.25.25 0 0 1 .379-.215l4.264 2.559a.25.25 0 0 1 0 .428l-4.264 2.559A.25.25 0 0 1 6 10.559z"></path></svg></span> <a href="https://www.youtube.com/watch?v=lmfJhns31fo">Introducción al TP</a></li>
-<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 16 16"><path fill-rule="evenodd" d="M1.75 3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25v-8.5a.25.25 0 0 0-.25-.25H1.75zM0 3.75C0 2.784.784 2 1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0 1 14.25 14H1.75A1.75 1.75 0 0 1 0 12.25v-8.5z"></path><path d="M6 10.559V5.442a.25.25 0 0 1 .379-.215l4.264 2.559a.25.25 0 0 1 0 .428l-4.264 2.559A.25.25 0 0 1 6 10.559z"></path></svg></span> <a href="https://www.youtube.com/watch?v=gkZ0wE_vdfA">Cierre TP</a></li>
+<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.75 3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25v-8.5a.25.25 0 0 0-.25-.25H1.75zM0 3.75C0 2.784.784 2 1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0 1 14.25 14H1.75A1.75 1.75 0 0 1 0 12.25v-8.5z"/><path d="M6 10.559V5.442a.25.25 0 0 1 .379-.215l4.264 2.559a.25.25 0 0 1 0 .428l-4.264 2.559A.25.25 0 0 1 6 10.559z"/></svg></span> <a href="https://www.youtube.com/watch?v=lmfJhns31fo">Introducción al TP</a></li>
+<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.75 3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25v-8.5a.25.25 0 0 0-.25-.25H1.75zM0 3.75C0 2.784.784 2 1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0 1 14.25 14H1.75A1.75 1.75 0 0 1 0 12.25v-8.5z"/><path d="M6 10.559V5.442a.25.25 0 0 1 .379-.215l4.264 2.559a.25.25 0 0 1 0 .428l-4.264 2.559A.25.25 0 0 1 6 10.559z"/></svg></span> <a href="https://www.youtube.com/watch?v=gkZ0wE_vdfA">Cierre TP</a></li>
 </ul>
 <h3 id="software-a-usar">Software a usar</h3>
 <ul>
@@ -695,36 +690,36 @@ Este es el botón para descargar materiales, en (#) hay que agregar el link corr
 <table>
 <thead>
 <tr>
-<th data-sort-method="none" style="text-align: center;">gen</th>
-<th data-sort-method="none" style="text-align: center;">t_0h</th>
-<th data-sort-method="none" style="text-align: center;">t_1h</th>
-<th data-sort-method="none" style="text-align: center;">t_2h</th>
+<th align="center" data-sort-method="none">gen</th>
+<th align="center" data-sort-method="none">t_0h</th>
+<th align="center" data-sort-method="none">t_1h</th>
+<th align="center" data-sort-method="none">t_2h</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;">genA</td>
-<td style="text-align: center;">2</td>
-<td style="text-align: center;">4</td>
-<td style="text-align: center;">8</td>
+<td align="center">genA</td>
+<td align="center">2</td>
+<td align="center">4</td>
+<td align="center">8</td>
 </tr>
 <tr>
-<td style="text-align: center;">genB</td>
-<td style="text-align: center;">-1</td>
-<td style="text-align: center;">-1</td>
-<td style="text-align: center;">-2</td>
+<td align="center">genB</td>
+<td align="center">-1</td>
+<td align="center">-1</td>
+<td align="center">-2</td>
 </tr>
 <tr>
-<td style="text-align: center;">genC</td>
-<td style="text-align: center;">-2</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">1</td>
+<td align="center">genC</td>
+<td align="center">-2</td>
+<td align="center">0</td>
+<td align="center">1</td>
 </tr>
 <tr>
-<td style="text-align: center;">genD</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">-1</td>
-<td style="text-align: center;">-6</td>
+<td align="center">genD</td>
+<td align="center">0</td>
+<td align="center">-1</td>
+<td align="center">-6</td>
 </tr>
 </tbody>
 </table>
@@ -755,41 +750,41 @@ distanciaEuclidiana(genA, genB) = \sqrt{(2 - (-1))^2 + (4 - (-1))^2 + (8 - (-2))
 <table>
 <thead>
 <tr>
-<th style="text-align: center;"></th>
-<th data-sort-method="none" style="text-align: center;">genA</th>
-<th data-sort-method="none" style="text-align: center;">genB</th>
-<th data-sort-method="none" style="text-align: center;">genC</th>
-<th data-sort-method="none" style="text-align: center;">genD</th>
+<th align="center"></th>
+<th align="center" data-sort-method="none">genA</th>
+<th align="center" data-sort-method="none">genB</th>
+<th align="center" data-sort-method="none">genC</th>
+<th align="center" data-sort-method="none">genD</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;">genA</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td align="center">genA</td>
+<td align="center">0</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr>
-<td style="text-align: center;">genB</td>
-<td style="text-align: center;">11,58</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td align="center">genB</td>
+<td align="center">11,58</td>
+<td align="center">0</td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr>
-<td style="text-align: center;">genC</td>
-<td style="text-align: center;">9</td>
-<td style="text-align: center;">3,32</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;"></td>
+<td align="center">genC</td>
+<td align="center">9</td>
+<td align="center">3,32</td>
+<td align="center">0</td>
+<td align="center"></td>
 </tr>
 <tr>
-<td style="text-align: center;">genD</td>
-<td style="text-align: center;">15</td>
-<td style="text-align: center;">4,12</td>
-<td style="text-align: center;">7,35</td>
-<td style="text-align: center;">0</td>
+<td align="center">genD</td>
+<td align="center">15</td>
+<td align="center">4,12</td>
+<td align="center">7,35</td>
+<td align="center">0</td>
 </tr>
 </tbody>
 </table>
@@ -913,7 +908,7 @@ datoEstandarizado(genA, t_0) = \frac{dato(genA, t_0) - promedio(genA)}{desviacio
 <p>Por último vamos a calcular el <em>clustering jerárquico</em> para nuestros datos estandarizados:</p>
 <ol>
 <li>
-<p>Asegúrense que están en la pestaña <strong>Clustering Estandarizado</strong>. Usando la matriz de distancias ubicada en las<br>
+<p>Asegúrense que están en la pestaña <strong>Clustering Estandarizado</strong>. Usando la matriz de distancias ubicada en las<br />
 <strong>Columnas L - P</strong>, calculen a mano el <em>clustering jerárquico</em> para nuestros datos estandarizados usando <em>complete linkage</em>.</p>
 </li>
 <li>
@@ -942,28 +937,28 @@ datoEstandarizado(genA, t_0) = \frac{dato(genA, t_0) - promedio(genA)}{desviacio
 <h4 id="pasar-los-datos-a-una-matriz" markdown="markdown">Pasar los datos a una matriz</h4>
 <p>Queremos crear una matriz de distancias, las cuales se calculan usando la función <code>dist</code>. Para que la matriz de distancias tenga los nombres de los genes en las filas y columnas necesitamos que la tabla que le pasemos también cumpla esta condición, cosa que los <em>Data Tables</em> no hacen (ya que no pueden tener nombres en las filas).</p>
 <p>Por esta razón vamos a transformar nuestro <em>Data Table</em> en una matriz. En <strong>R</strong> las matrices son un tipo de variable (<em>matrix</em>) y son básicamente vectores de dos dimensiones. Hay varias formas de crear una matriz, por ejemplo:</p>
-<div class="highlight"><pre><span></span><code><span class="n">matriz_ejemplo</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">matrix</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">9</span><span class="p">),</span><span class="w"> </span><span class="n">nrow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="n">ncol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="n">byrow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">T</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">matriz_ejemplo</span> <span class="o">&lt;-</span> <span class="nf">matrix</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">9</span><span class="p">),</span> <span class="n">nrow</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span> <span class="n">ncol</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span> <span class="n">byrow</span> <span class="o">=</span> <span class="bp">T</span><span class="p">)</span>
 
 <span class="c1">#Si quisieramos ver por consola algun dato de la matriz podemos hacer:</span>
-<span class="n">matriz_ejemplo</span><span class="w"> </span><span class="c1">#imprimo toda la matriz</span>
-<span class="n">matriz_ejemplo</span><span class="p">[</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="c1">#imprimo la primera fila</span>
-<span class="n">matriz_ejemplo</span><span class="p">[,</span><span class="w"> </span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="c1">#imprimo la primera columna</span>
-<span class="n">matriz_ejemplo</span><span class="p">[</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">]</span><span class="w"> </span><span class="c1">#imprimo el elemento ubicado en la fila 2 y la columna 3</span>
+<span class="n">matriz_ejemplo</span> <span class="c1">#imprimo toda la matriz</span>
+<span class="n">matriz_ejemplo</span><span class="p">[</span><span class="m">1</span><span class="p">,</span> <span class="p">]</span> <span class="c1">#imprimo la primera fila</span>
+<span class="n">matriz_ejemplo</span><span class="p">[,</span> <span class="m">1</span><span class="p">]</span> <span class="c1">#imprimo la primera columna</span>
+<span class="n">matriz_ejemplo</span><span class="p">[</span><span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">]</span> <span class="c1">#imprimo el elemento ubicado en la fila 2 y la columna 3</span>
 </code></pre></div>
 <p>Ahora bien, en nuestro caso no queremos crear una matriz de 0, sino que queremos transformar nuestro <em>Data Table</em> en una matriz, para lo cual tenemos que hacer:</p>
-<div class="highlight"><pre><span></span><code><span class="n">matriz_datos</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">as.matrix</span><span class="p">(</span><span class="n">dt_tabla_ejemplo</span><span class="p">,</span><span class="w"> </span><span class="n">rownames</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">matriz_datos</span> <span class="o">&lt;-</span> <span class="nf">as.matrix</span><span class="p">(</span><span class="n">dt_tabla_ejemplo</span><span class="p">,</span> <span class="n">rownames</span> <span class="o">=</span> <span class="m">1</span><span class="p">)</span>
 </code></pre></div>
 <p>Donde <code>rownames = 1</code> le está indicando a <strong>R</strong> que los valores de la primera columna de <code>dt_tabla_ejemplo</code> van a ser usados como los nombres de cada fila de la matriz.</p>
 <p><strong>2)</strong> Corran el código anterior (sin el ejemplo) e impriman <code>matriz_datos</code> por consola. Van a ver que es similar a como se imprimía el <em>Data Table</em>, solo que las filas tienen nombre. Traten ahora de acceder a los valores de la primera columna de <code>matriz_datos</code>, ¿cómo tienen que hacer para lograrlo?</p>
 <h4 id="crear-la-matriz-de-distancias" markdown="markdown">Crear la matriz de distancias</h4>
 <p>Ahora que tenemos una matriz con los nombres de los genes en las filas y las columnas, queremos usar la función <code>dist</code> para calcular la matriz de distancias. El código es:</p>
-<div class="highlight"><pre><span></span><code><span class="n">matriz_distancias</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">dist</span><span class="p">(</span><span class="n">matriz_datos</span><span class="p">,</span><span class="w"> </span><span class="n">method</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"euclidean"</span><span class="p">,</span><span class="w"> </span><span class="n">diag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">T</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">matriz_distancias</span> <span class="o">&lt;-</span> <span class="nf">dist</span><span class="p">(</span><span class="n">matriz_datos</span><span class="p">,</span> <span class="n">method</span> <span class="o">=</span> <span class="s">&quot;euclidean&quot;</span><span class="p">,</span> <span class="n">diag</span> <span class="o">=</span> <span class="bp">T</span><span class="p">)</span>
 </code></pre></div>
 <p>Donde <code>method = "euclidean"</code> le está diciendo a la función <code>dist</code> que tiene que calcular las distancias euclidianas entre filas y <code>diag = T</code> hace que deje la diagonal de ceros en el output.</p>
 <p><strong>3)</strong> Corran el código anterior e impriman <code>matriz_distancias</code> por consola. ¿Coinciden los datos con la matriz de distancias vista en el <strong>Ejercicio 1</strong>?</p>
 <h4 id="hacer-el-clustering-jerarquico" markdown="markdown">Hacer el clustering jerárquico</h4>
 <p>El <em>clustering jerárquico</em> se hace con la función <code>hclust</code>, la cual se usa:</p>
-<div class="highlight"><pre><span></span><code><span class="n">clustering_jerarquico</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">hclust</span><span class="p">(</span><span class="n">matriz_distancias</span><span class="p">,</span><span class="w"> </span><span class="n">method</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"complete"</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">clustering_jerarquico</span> <span class="o">&lt;-</span> <span class="nf">hclust</span><span class="p">(</span><span class="n">matriz_distancias</span><span class="p">,</span> <span class="n">method</span> <span class="o">=</span> <span class="s">&quot;complete&quot;</span><span class="p">)</span>
 </code></pre></div>
 <p>Donde <code>method = "complete"</code> está indicándole a la función que criterio de agregación usar al momento de combinar elementos. Pueden usar <code>help(hclust)</code> para ver otros posibles criterios.</p>
 <p><strong>4)</strong> Corran el código anterior e impriman <code>clustering_jerarquico</code> por consola. ¿Da alguna información útil a simple vista?</p>
@@ -971,16 +966,16 @@ datoEstandarizado(genA, t_0) = \frac{dato(genA, t_0) - promedio(genA)}{desviacio
 <h4 id="asignando-clusters">Asignando clusters</h4>
 <p>Cuando uno mira el árbol creado en el punto <strong>5)</strong> es común detectar que ciertos genes son más similares entre sí que otros y suponer que entonces pertenecen a un mismo grupo. Esto se puede calcular computacionalmente "cortando" el árbol usando un cierto umbral de similitud y agrupando en un mismo <em>cluster</em> a aquellos elementos que queden por debajo de ese umbral.</p>
 <p>Esto se puede hacer de dos formas, o determinando el umbral de similitud o determinando la cantidad de <em>clusters</em> a crear.</p>
-<div class="highlight"><pre><span></span><code><span class="n">clusters_porAltura</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">cutree</span><span class="p">(</span><span class="n">clustering_jerarquico</span><span class="p">,</span><span class="w"> </span><span class="n">h</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">@@</span><span class="n">EDITAR</span><span class="o">@@</span><span class="p">)</span>
-<span class="n">clusters_porCantidad</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">cutree</span><span class="p">(</span><span class="n">clustering_jerarquico</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">@@</span><span class="n">EDITAR</span><span class="o">@@</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">clusters_porAltura</span> <span class="o">&lt;-</span> <span class="nf">cutree</span><span class="p">(</span><span class="n">clustering_jerarquico</span><span class="p">,</span> <span class="n">h</span> <span class="o">=</span> <span class="o">@@</span><span class="n">EDITAR</span><span class="o">@@</span><span class="p">)</span>
+<span class="n">clusters_porCantidad</span> <span class="o">&lt;-</span> <span class="nf">cutree</span><span class="p">(</span><span class="n">clustering_jerarquico</span><span class="p">,</span> <span class="n">k</span> <span class="o">=</span> <span class="o">@@</span><span class="n">EDITAR</span><span class="o">@@</span><span class="p">)</span>
 </code></pre></div>
 <p>Donde <code>h</code> es el parámetro que recibe la altura de similitud a la cual cortar (eje y en el plot anterior) y <code>k</code> es el parámetro que recibe la cantidad de <em>clusters</em> a crear. Hay que usar uno o el otro.</p>
 <p><strong>6)</strong> Basándose en el plot creado en el punto <strong>5)</strong>, corran el código anterior cambiando <code>@@EDITAR@@</code> por el número correspondiente para agrupar los genes como le parezca mejor. Impriman las variables <code>clusters_porAltura</code> y <code>clusters_porCantidad</code> para confirmar que los genes se agruparon como ustedes querían.</p>
 <details class="info">
 <summary>Extraer esta información a un Data Table</summary>
 <p>La variable <code>clusters_porAltura</code> es un vector con nombres, por lo que si quisiéramos extraer su información y guardarla en un <em>Data Table</em>, tendríamos que hacer:</p>
-<div class="highlight"><pre><span></span><code><span class="n">dt_clusters_porAltura</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.table</span><span class="p">(</span><span class="n">gen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">names</span><span class="p">(</span><span class="n">genes_clusters_porAltura</span><span class="p">),</span>
-<span class="w">                                    </span><span class="n">cluster</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">genes_clusters_porAltura</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">dt_clusters_porAltura</span> <span class="o">&lt;-</span> <span class="nf">data.table</span><span class="p">(</span><span class="n">gen</span> <span class="o">=</span> <span class="nf">names</span><span class="p">(</span><span class="n">genes_clusters_porAltura</span><span class="p">),</span>
+                                    <span class="n">cluster</span> <span class="o">=</span> <span class="n">genes_clusters_porAltura</span><span class="p">)</span>
 </code></pre></div>
 </details>
 <h3 id="datos-estandarizados">Datos estandarizados</h3>
@@ -988,14 +983,14 @@ datoEstandarizado(genA, t_0) = \frac{dato(genA, t_0) - promedio(genA)}{desviacio
 <p>El primer paso para trabajar con estos datos es estandarizarlos como hicimos en el <strong>Ejercicio 1</strong>. Si bien podríamos calcular a mano el promedio (función <code>mean</code>) y la desviación estandar (función <code>sd</code>) de cada fila y luego hacer las cuentas, existe ya en <strong>R</strong> una función que hace esta estandarización por nosotros.</p>
 <p>Esta función es <code>scale</code>, pero un problema que tenemos es que dicha función estandariza por columna, no por fila. Por suerte es bastante fácil en <strong>R</strong> transponer una matriz (lo que básicamente cambia filas por columnas y viceversa). Esto se hace usando la función <code>t</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="c1">#Transpongo la matriz de datos</span>
-<span class="n">t_matriz_datos</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">t</span><span class="p">(</span><span class="n">matriz_datos</span><span class="p">)</span><span class="w"> </span>
+<span class="n">t_matriz_datos</span> <span class="o">&lt;-</span> <span class="nf">t</span><span class="p">(</span><span class="n">matriz_datos</span><span class="p">)</span> 
 
 <span class="c1">#Estandarizo los datos por columna (que ahora son los tres tiempos de cada gen)</span>
 <span class="c1">#*scale* va a devolver una variable que tiene mas informacion que una matriz, pero funciona como matriz</span>
-<span class="n">t_matriz_datos_ST</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">scale</span><span class="p">(</span><span class="n">t_matriz_datos</span><span class="p">)</span><span class="w"> </span>
+<span class="n">t_matriz_datos_ST</span> <span class="o">&lt;-</span> <span class="nf">scale</span><span class="p">(</span><span class="n">t_matriz_datos</span><span class="p">)</span> 
 
 <span class="c1">#Vuelvo a transponer la matriz, lo cual la pone en el orden de antes, ahora estandarizada</span>
-<span class="n">matriz_datos_ST</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">t</span><span class="p">(</span><span class="n">t_matriz_datos_ST</span><span class="p">)</span><span class="w"> </span>
+<span class="n">matriz_datos_ST</span> <span class="o">&lt;-</span> <span class="nf">t</span><span class="p">(</span><span class="n">t_matriz_datos_ST</span><span class="p">)</span> 
 </code></pre></div>
 <p><strong>7)</strong> Corran el código anterior e impriman <code>matriz_datos_ST</code> por consola. ¿Coinciden los datos estandarizados con los obtenidos en el <strong>Ejercicio 1</strong>?</p>
 <h4 id="hacer-el-resto-del-analisis">Hacer el resto del análisis</h4>
@@ -1008,10 +1003,10 @@ datoEstandarizado(genA, t_0) = \frac{dato(genA, t_0) - promedio(genA)}{desviacio
 <span class="nf">set.seed</span><span class="p">(</span><span class="m">1</span><span class="p">)</span>
 
 <span class="c1">#Corro la funcion kmeans para los datos sin estandarizar pidiendole 2 clusters</span>
-<span class="n">clustering_kmeans_k2_ST</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">kmeans</span><span class="p">(</span><span class="n">matriz_datos_ST</span><span class="p">,</span><span class="w"> </span><span class="n">centers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span><span class="p">)</span>
+<span class="n">clustering_kmeans_k2_ST</span> <span class="o">&lt;-</span> <span class="nf">kmeans</span><span class="p">(</span><span class="n">matriz_datos_ST</span><span class="p">,</span> <span class="n">centers</span> <span class="o">=</span> <span class="m">2</span><span class="p">)</span>
 
 <span class="c1">#Extraigo los clusters calculados</span>
-<span class="n">clusters_kmeans_k2_ST</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">clustering_kmeans_k2_ST</span><span class="o">$</span><span class="n">cluster</span>
+<span class="n">clusters_kmeans_k2_ST</span> <span class="o">&lt;-</span> <span class="n">clustering_kmeans_k2_ST</span><span class="o">$</span><span class="n">cluster</span>
 </code></pre></div>
 <p>Donde <code>centers = 2</code> le está diciendo a la función que cree 2 clusters (lo que estoy indicando en el nombre de la variable con <strong>_k2</strong> para que no haya confusión más adelante).</p>
 <div class="admonition tip">
@@ -1034,21 +1029,21 @@ La función `silhouette` no viene por defecto con **R**. Corran el siguiente có
 -->
 
 <p>En <strong>R</strong> Esta función se usa:</p>
-<div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">cluster</span><span class="p">)</span><span class="w"> </span><span class="c1">#paquete que contiene la funcion silhouette()</span>
+<div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">cluster</span><span class="p">)</span> <span class="c1">#paquete que contiene la funcion silhouette()</span>
 
 <span class="c1">#Calculo los silhouette coefficients para los datos estandarizados agrupados en 2 clusters usando kmeans </span>
 <span class="c1">#Tengo que pasarle tambien la matriz de distancias correspondiente para que pueda calcular similitud entre elementos</span>
-<span class="n">silhouette_kmeans_k2_ST</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">silhouette</span><span class="p">(</span><span class="n">clusters_kmeans_k2_ST</span><span class="p">,</span><span class="w"> </span><span class="n">dist</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">matriz_distancias_ST</span><span class="p">)</span>
+<span class="n">silhouette_kmeans_k2_ST</span> <span class="o">&lt;-</span> <span class="nf">silhouette</span><span class="p">(</span><span class="n">clusters_kmeans_k2_ST</span><span class="p">,</span> <span class="n">dist</span> <span class="o">=</span> <span class="n">matriz_distancias_ST</span><span class="p">)</span>
 
 <span class="c1">#La funcion *silhouette* saca los nombres de las filas, por lo cual ahora mis genes estan como numeros</span>
 <span class="c1">#Para recuperar los nombres de las filas (o *rownames*) hago lo siguiente</span>
-<span class="nf">rownames</span><span class="p">(</span><span class="n">silhouette_kmeans_k2_ST</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">rownames</span><span class="p">(</span><span class="n">matriz_datos_ST</span><span class="p">)</span>
+<span class="nf">rownames</span><span class="p">(</span><span class="n">silhouette_kmeans_k2_ST</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="nf">rownames</span><span class="p">(</span><span class="n">matriz_datos_ST</span><span class="p">)</span>
 
 <span class="c1">#Podemos plotear los silhouette coefficients con plot</span>
-<span class="nf">plot</span><span class="p">(</span><span class="n">silhouette_kmeans_k2_ST</span><span class="p">,</span><span class="w"> </span><span class="n">main</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"STD - Kmeans - centers = 2"</span><span class="p">)</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">silhouette_kmeans_k2_ST</span><span class="p">,</span> <span class="n">main</span> <span class="o">=</span> <span class="s">&quot;STD - Kmeans - centers = 2&quot;</span><span class="p">)</span>
 
 <span class="c1">#Y podemos extraer el promedio de los *Silhouette coefficients*</span>
-<span class="n">promedio_silhouette_kmeans_k2_ST</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">summary</span><span class="p">(</span><span class="n">silhouette_kmeans_k2_ST</span><span class="p">)[[</span><span class="m">1</span><span class="p">]][[</span><span class="s">"Mean"</span><span class="p">]]</span>
+<span class="n">promedio_silhouette_kmeans_k2_ST</span> <span class="o">&lt;-</span> <span class="nf">summary</span><span class="p">(</span><span class="n">silhouette_kmeans_k2_ST</span><span class="p">)[[</span><span class="m">1</span><span class="p">]][[</span><span class="s">&quot;Mean&quot;</span><span class="p">]]</span>
 </code></pre></div>
 <p><strong>2)</strong> Corran el código anterior y vean su salida.</p>
 <p><strong>3)</strong> Basándose en los códigos usados en <strong>1)</strong> y en <strong>2)</strong>, vuelvan a agrupar a los cuatro genes en base a sus datos estandarizados pero ahora en 3 clusters. Luego ploteen los <em>Silhouette coefficients</em> de este agrupamiento y calculen su promedio. Guarden estos nuevos datos en variables con diferentes nombres que las anteriores.</p>
@@ -1066,20 +1061,15 @@ La función `silhouette` no viene por defecto con **R**. Corran el siguiente có
 * Online 2 https://en.wikipedia.org/wiki/R_(programming_language)
 -->
 
-<h3 id="consola-de-r"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M13 19v-3h8v3h-8m-4.5-6L2.47 7h4.24l4.96 4.95c.58.59.58 1.55 0 2.12L6.74 19H2.5l6-6Z"></path></svg></span> Consola de R</h3>
+<h3 id="consola-de-r"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 19v-3h8v3h-8m-4.5-6L2.47 7h4.24l4.96 4.95c.58.59.58 1.55 0 2.12L6.74 19H2.5l6-6Z"/></svg></span> Consola de R</h3>
 <ul>
 <li>Comando <code>help()</code></li>
-</ul></div>
+</ul>
 
-
-
-
-
-                
-              </article>
-            </div>
-          
-          
+              
+            </article>
+            
+          </div>
         </div>
         
           <a href="#" class="md-top md-icon" data-md-component="top" hidden>
@@ -1115,11 +1105,10 @@ La función `silhouette` no viene por defecto con **R**. Corran el siguiente có
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["search.suggest", "search.highlight", "search.share", "header.autohide", "navigation.tracking", "navigation.tabs", "toc.integrate", "navigation.top"], "search": "../../assets/javascripts/workers/search.85cb4492.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "B\u00fasqueda", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version.title": "Seleccionar versi\u00f3n"}}</script>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["search.suggest", "search.highlight", "search.share", "header.autohide", "navigation.tracking", "navigation.tabs", "toc.integrate", "navigation.top"], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "B\u00fasqueda", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version.title": "Seleccionar versi\u00f3n"}}</script>
     
-    
-      <script src="../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a877e258.min.js"></script>
       
         <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
       
@@ -1131,7 +1120,6 @@ La función `silhouette` no viene por defecto con **R**. Corran el siguiente có
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
-    
     
   <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>
