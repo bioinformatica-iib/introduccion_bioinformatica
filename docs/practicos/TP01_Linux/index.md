@@ -9,12 +9,12 @@
 Este es el botón para decargar materiales, en (#) hay que agregar el link correspondiente
 --->
 
-<!--
 ### Slides mostrados en la clase
 
-* :fontawesome-regular-file-pdf: [Introducción a la programación](https://drive.google.com/file/d/12HLvmzhoz4HToEn9280HIvPEC6NO2WPN/view?usp=sharing)
-* :fontawesome-regular-file-pdf: [Cierre TP](https://drive.google.com/file/d/1O4924IOzLfZ1_y3epUKKOrvYNC0oomfj/view?usp=sharing)
+* :fontawesome-regular-file-pdf: [Introducción a la programación](https://drive.google.com/file/d/1lfvCd-iWPAyZ5tj96njbOMGPerXAUlJ0/view?usp=drive_link)
+* :fontawesome-regular-file-pdf: [Cierre TP](https://drive.google.com/file/d/1jwUdtQYj9h4uGiz98tJFeol3e942zsu4/view?usp=drive_link)
 
+<!--
 ### Videos de la clase grabada
 
 * :octicons-video-16: [Presentacion de la Materia](https://youtu.be/zOnacQHwI-E)
