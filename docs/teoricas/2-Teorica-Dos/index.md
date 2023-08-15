@@ -9,7 +9,10 @@ tags:
  * :fontawesome-regular-file-pdf: [Slides](basesDeDatos2023.pdf) 
  * :fontawesome-regular-file-pdf: [Slides](ontologias2023.pdf) 
 
-### Clase Grabada del año pasado :octicons-video-16:
+### Clase Grabada de este año :octicons-video-16:
+ ![type:video](https://www.youtube.com/embed/VNxXEKWkUKE)
+
+ ### Clase Grabada del año pasado :octicons-video-16:
  ![type:video](https://www.youtube.com/embed/1cJ5C75S08A)
 
 ## Material de lectura y consulta
