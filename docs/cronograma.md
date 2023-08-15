@@ -14,7 +14,7 @@ tags:
 | ----------- | -------- | :-------------------------------------: | :----------- | :---------------------------------- | :------ |
 | Martes, 08 Agosto 2023 | 9:00 hs |	:material-google-classroom: Online | [T1. Presentación de la materia, Conceptos Computación](/introduccion_bioinformatica/teoricas/1-Teorica-Uno/) | :fontawesome-solid-brain: Teórica |	F. Agüero |
 | Jueves, 10 Agosto 2023 | 9:00 hs |	:material-google-classroom: Online | P1. Introducción a UNIX| :fontawesome-solid-hammer: Práctica |	M. Didier Garnham |
-| Martes, 15 Agosto 2023 | 9:00 hs |	:material-google-classroom: Online | T2. Bases de datos y ontologías | :fontawesome-solid-brain: Teórica |	F. Agüero |
+| Martes, 15 Agosto 2023 | 9:00 hs |	:material-google-classroom: Online | [T2. Bases de datos y ontologías](/introduccion_bioinformatica/teoricas/2-Teorica-Dos/) | :fontawesome-solid-brain: Teórica |	F. Agüero |
 | Jueves, 17 Agosto 2023 | 9:00 hs |	:material-google-classroom: Online | P2. EMBOSS Suite | :fontawesome-solid-hammer: Práctica |	M. Didier Garnham |
 | Martes, 22 Agosto 2023 | 9:00 hs |	:material-google-classroom: Online | T3. Alineamientos de a pares y Búsqueda de secuencias por Similitud | :fontawesome-solid-brain: Teórica |	F. Agüero |
 | Jueves, 24 Agosto 2023 | 9:00 hs |	:material-google-classroom: Online | P3. Alineamientos de a pares | :fontawesome-solid-hammer: Práctica |	M. Didier Garnham |
