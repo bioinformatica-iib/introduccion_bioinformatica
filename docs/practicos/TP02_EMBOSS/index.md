@@ -302,13 +302,17 @@ A continuación se encuentra una lista de 256 programas que contiene EMBOSS y un
     | wosstopic | Find programs by EDAM topic |
     | yank | Add a sequence reference (a full USA) to a list file |
 
-Como obviamente es imposible acordarse de todos estos programas, EMBOSS tiene un comando llamado `wossname` que permite listar comandos que tengan cierta palabra en su descripción (en inglés). Abran la consola y prueben correr:
+Como obviamente es imposible acordarse de todos estos programas, EMBOSS tiene un comando llamado `wossname` que permite listar comandos que tengan cierta palabra en su descripción (en inglés). 
+
+1) Abran la consola y prueben correr:
 
 ```bash
 wossname dna
 ```
 
-Por otro lado, una vez que encuentran un programa que les interesa pueden leer detalladamente como funciona usando el comando `tfm` (*The Funny? Full? Manual*). Por ejemplo pueden ejecutar:
+Por otro lado, una vez que encuentran un programa que les interesa pueden leer detalladamente como funciona usando el comando `tfm` (*The Funny? Full? Manual*). 
+
+2) Por ejemplo pueden ejecutar:
 
 ```bash
 tfm jaspscan
@@ -480,7 +484,7 @@ Nuestro objetivo ahora es crear 3 nuevos archivos FASTA que contengan las difere
 
 Ahora bien, como son solo 3 tags esto se podría hacer a mano copiando y pegando, pero es un buen momento para profundizar en dos conceptos que aprendimos la clase pasada: *scripts* y *ciclos*.
 
-Creen un archivo vacio de texto en esa carpeta y llamenló **agregar_tags.sh**. Dentró del archivo pongan lo siguiente:
+1) Creen un archivo vacio de texto en esa carpeta y llamenló **agregar_tags.sh**. Dentró del archivo pongan lo siguiente:
 
 === "Código"
 
@@ -554,7 +558,7 @@ La segunda novedad es el uso de `*` con el comando `ls`. En todo lo que es Linux
  
 ¿Entienden ahora lo que hace el script? Lean la pestaña **Código con comentarios** para aclarar cualquier duda que tengan sobre él (y si todavía no se entiende no duden en preguntar).
 
-Ahora abran la consola y corran el script que acabamos de crear, generando así los nuevos 3 archivos.
+2) Ahora abran la consola y corran el script que acabamos de crear, generando así los nuevos 3 archivos.
 
 !!! tip
 
@@ -570,7 +574,7 @@ Ahora abran la consola y corran el script que acabamos de crear, generando así 
 
 Nosotros queremos expresar el gen de un organismo en otro organismo. Si bien el código genético es practicamente universal, diferentes organismos pueden tener preferencia para diferentes codones que generan un mismo aminoácido. Por esta razón, al hacer expresión recombinante heteróloga es una buena idea cambiar los codones del gen de interés para que matcheen mejor con los codones que prefiere el organismo huésped (se modifica el ADN pero se sigue produciendo la misma proteína). El primer paso para realizar esta modificación es conocer cuales son los codones preferidos por dicho organismo.
 
-* Busquen usando el comando `wossname` que programas de EMBOSS trabajan con codones (recuerden que está en inglés, asi que tienen que buscar "codon"). Lean la descripción de dichos programas, ¿cual les parece que vamos a usar para calcular la tabla de uso de codones?
+3) Busquen usando el comando `wossname` que programas de EMBOSS trabajan con codones (recuerden que está en inglés, asi que tienen que buscar "codon"). Lean la descripción de dichos programas, ¿cual les parece que vamos a usar para calcular la tabla de uso de codones?
 
     ??? info "Respuesta"
 
@@ -590,7 +594,7 @@ Si bien los comandos que ellos sugieren son un poco complejos, vamos a utilizarl
 
 ### RefSeq - Paso 1 - Bajar y filtrar la tabla con los genomas { markdown data-toc-label='RefSeq - Paso 1' }
 
-El primer paso indicado en el FAQ es descargar el archivo **assembly_summary.txt** y ponerlo en la carpeta de este ejercicio. Esto lo pueden hacer desde la página de **RefSeq** a mano o abriendo la consola en la carpeta de este ejercicio y corriendo:
+4) El primer paso indicado en el FAQ es descargar el archivo **assembly_summary.txt** y ponerlo en la carpeta de este ejercicio. Esto lo pueden hacer desde la página de **RefSeq** a mano o abriendo la consola en la carpeta de este ejercicio y corriendo:
 
 ```bash
 wget ftp://ftp.ncbi.nlm.nih.gov/genomes/refseq/bacteria/assembly_summary.txt
@@ -606,7 +610,7 @@ wget ftp://ftp.ncbi.nlm.nih.gov/genomes/refseq/bacteria/assembly_summary.txt
 
 Una vez descargado ese archivo (que pesa bastante) queremos ver sus contenidos. Sabiendo que es un archivo que tiene más de 250.000 lineas:
 
-* ¿Qué comando usarían para ver que tipo de datos tiene adentro? Pruebenlo.
+5) ¿Qué comando usarían para ver que tipo de datos tiene adentro? Pruebenlo.
 
 Dado que es un archivo con muchas columnas, probablemente les cueste entender lo que están viendo aunque hayan usado el comando correcto.
 
@@ -622,7 +626,7 @@ Hagan doble click sobre el archivo **assembly_summary_temporal.tsv**. La extensi
 
 * Identifiquen la columna correspondiente a la especie (son solo las primeras 20 filas, no van a encontrar a *E. coli*), la cepa y el link a la ubicación del genoma.
 
-Ahora que conocen la estructura de la tabla, y sabiendo que tiene muchos mas organismos que *E. coli*, tenemos que filtrar el archivo y quedarnos solo con nuestro organismo y cepa de interés. Para esto, corran los siguientes comandos uno a la vez:
+6) Ahora que conocen la estructura de la tabla, y sabiendo que tiene muchos mas organismos que *E. coli*, tenemos que filtrar el archivo y quedarnos solo con nuestro organismo y cepa de interés. Para esto, corran los siguientes comandos uno a la vez:
 
 === "Código"
 
@@ -644,7 +648,7 @@ Ahora que conocen la estructura de la tabla, y sabiendo que tiene muchos mas org
 
 ### RefSeq - Paso 2 - Crear un archivo con links a las carpetas de los genomas { markdown data-toc-label='RefSeq - Paso 2' }
 
-Ahora que tenemos y entendemos la tabla con nuestros datos de *E. coli* la podemos abrir en **Gnumeric** haciendo doble click. Van a ver que no hay solo un genoma de *E. coli* BL21, sino varios, por lo cual nuestro objetivo de crear una tabla de codones acaba de volverse un poco más complicado. Lo que vamos a hacer entonces es bajar todos los genomas de *E. coli* BL21 que vemos en la tabla, así que continuamos al segundo paso en el FAQ de **RefSeq**:
+7) Ahora que tenemos y entendemos la tabla con nuestros datos de *E. coli* la podemos abrir en **Gnumeric** haciendo doble click. Van a ver que no hay solo un genoma de *E. coli* BL21, sino varios, por lo cual nuestro objetivo de crear una tabla de codones acaba de volverse un poco más complicado. Lo que vamos a hacer entonces es bajar todos los genomas de *E. coli* BL21 que vemos en la tabla, así que continuamos al segundo paso en el FAQ de **RefSeq**:
 
 ```bash
 awk -F "\t" '{if ($12=="Complete Genome" && $11=="latest") {print $20}}' assembly_summary_coli.tsv > ftpdirpaths
@@ -693,7 +697,7 @@ Donde:
 * `$10` es la columna 10, la cual contiene el nombre del genoma (es el nombre de la última carpeta en el *path*).
 * `print` va a concatenar `$0` (el *path* a la carpeta del genoma), `"/"` (una barra para separar los directorios), `$10` (la primera parte del nombre del archivo a descargar) y `"_cds_from_genomic.fna.gz"` (la segunda parte del nombre del archivo a descargar). `awk` va a hacer esto por cada fila del archivo **ftpdirpaths**.
 
-Una vez que entienden lo que hace este comando abran la terminal y corranló.
+8) Una vez que entienden lo que hace este comando abran la terminal y corranló.
 
 ??? info "Por si se quedaron con curiosidad de el comando que proponía el FAQ de **RefSeq**"
 
@@ -715,7 +719,7 @@ Una vez que entienden lo que hace este comando abran la terminal y corranló.
 
 ### RefSeq - Paso 4 - Descargar genomas de *E. coli* { markdown data-toc-label='RefSeq - Paso 4' }
 
-Ya falta poco para tener nuestros genomas, solo hay que descargar todos los links que tenemos adentro del archivo **ftpfilepaths**.
+9) Ya falta poco para tener nuestros genomas, solo hay que descargar todos los links que tenemos adentro del archivo **ftpfilepaths**.
 
 Esto se puede hacer usando el comando `wget`. Ahora bien, por defecto a `wget` hay que pasarle un link de descarga como hicimos arriba, pero por suerte existe una opción que permite pasarle un archivo de entrada y que descargue todos los links que se encuentran en él.
 
@@ -733,7 +737,7 @@ Tras lo que parece una eternidad por fin tenemos nuestros genomas. Ahora es mome
 
 Como tenemos varios archivos **.fna.gz** vamos a tener que correr el comando `cusp` varias veces, y la mejor forma de hacer esto es creando un script con un ciclo *for each* que lo haga por nosotros. Este ciclo va a recorrer todos los archivos **.fna.gz** que acabamos de descargar, los va a descomprimir y va a ejecutar el comando `cusp` para cada uno.
 
-* Reemplacen los **REEMPLAZAR** en el próximo código por lo que sea adecuado para conseguir nuestro objetivo:
+10) Reemplacen los **REEMPLAZAR** en el próximo código por lo que sea adecuado para conseguir nuestro objetivo:
 
     ```bash
     REEMPLAZAR
@@ -766,7 +770,7 @@ Como tenemos varios archivos **.fna.gz** vamos a tener que correr el comando `cu
 
         Si no les sale pueden ver el *for each* del **Ejercicio 1** para usarlo como base (si bien ese es más complicado)
 
-Una vez creado el script, corranló.
+11) Una vez creado el script, corranló.
 
 ??? warning "Si ven que este script tarda mucho tiempo en correr (varios minutos sin indicar que avanza) lean esto:"
 
@@ -825,7 +829,7 @@ En un principio pareceria que ambos archivos **.cusp** son bastante parecidos, p
 codcmp ARCHIVO_CUSP_1 ARCHIVO_CUSP_2 ARCHIVO_SALIDA
 ```
 
-Usen este comando para comparar los dos archivos **.cusp** que miraron previamente y guarden la comparación en un archivo llamado **cusp_comparison.out**.
+12) Usen este comando para comparar los dos archivos **.cusp** que miraron previamente y guarden la comparación en un archivo llamado **cusp_comparison.out**.
 
 Abran **cusp_comparison.out** y vean los estadísticos calculados. ¿Son compatibles estos resultados con nuestras observaciones previas de que ambos archivos **.cusp** son muy parecidos?
 
@@ -860,7 +864,7 @@ Ahora bien, para hacer esta optimización de secuencias podemos usar otro de los
 backtranseq -auto -sequence ARCHIVO_PROTEINA_FASTA -cfile ARCHIVO_CUSP -outfile ARCHIVO_SALIDA_ADN_FASTA
 ```
 
-Corran este comando 3 veces pasándole los archivos correctos y creen los siguientes archivos (si quieren pueden hacer script con un *for each*, pero no hace falta):
+13) Corran este comando 3 veces pasándole los archivos correctos y creen los siguientes archivos (si quieren pueden hacer script con un *for each*, pero no hace falta):
 
 * **Ecoli-DNA-VpVAN-FLAG-tag.fasta**
 * **Ecoli-DNA-VpVAN-His-tag.fasta**
@@ -874,7 +878,7 @@ Corran este comando 3 veces pasándole los archivos correctos y creen los siguie
 
 El último paso es agregar los sitios de corte de enzimas de restricción a los costados de mi secuencia quimérica, pero antes de eso tengo que asegurarme que dichas enzimas no tengan sitios de corte dentro de mi secuencia. Probablemente ya no les sorprenda que existe un programa de **EMBOSS** para hacer esto llamado `remap`; sin embargo, dicho programa necesita que previamente le hayamos pasado a **EMBOSS** una base de datos de enzimas de restricción.
 
-En los materiales de trabajo van a encontrar dos archivos llamados **proto.207** y **withrefm.207** que contienen la información para crear la base de datos de enzimas de restricción. Copienlos a la carpeta donde estan trabajando y corran el comando:
+14) En los materiales de trabajo van a encontrar dos archivos llamados **proto.207** y **withrefm.207** que contienen la información para crear la base de datos de enzimas de restricción. Copienlos a la carpeta donde estan trabajando y corran el comando:
 
 ```bash
 rebaseextract -infile withrefm.207 -protofile proto.207
@@ -890,7 +894,7 @@ sudo rebaseextract -infile withrefm.207 -protofile proto.207
 
     Solo para que sepan, los archivos **proto.207** y **withrefm.207** se pueden descargar de [aca](ftp://ftp.neb.com/pub/rebase/) o [aca](ftp://ftp.ebi.ac.uk/pub/databases/rebase) usando `wget` (con los links anteriores van a bajar un índice general y luego tienen que pasarle a `wget` el link de los archivos que quieran). Dependiendo de cuando vayan a esa página puede ser que encuentren versiones incluso mas recientes.
 
-Ahora que ya tenemos la base de datos configurada podemos usar `remap`, pero antes veamos un poco mas información sobre nuestras enzimas de restricción. Usando `grep` busquen dentro del archivo **proto.207** a nuestras enzimas de restricción de interés (**BamHI** y **HindIII**).
+15) Ahora que ya tenemos la base de datos configurada podemos usar `remap`, pero antes veamos un poco mas información sobre nuestras enzimas de restricción. Usando `grep` busquen dentro del archivo **proto.207** a nuestras enzimas de restricción de interés (**BamHI** y **HindIII**).
 
 1. ¿Qué longitud tienen los sitios de restricción de **BamHI** y **HindIII**?
 1. ¿Qué piensan que significa el símbolo **^** en el sitio de restricción? (pueden buscar información sobre dichas enzimas online y se van a dar cuenta enseguida)
@@ -916,7 +920,7 @@ Corran este comando 3 veces pasándole los archivos correctos y creen los siguie
 * **enzimas_His.out**
 * **enzimas_MBP.out**
 
-Una vez creados, abran los archivos con **Leafpad**. 
+16) Una vez creados, abran los archivos con **Leafpad**. 
 
 1. ¿Entienden lo que simboliza el archivo? (es necesario que esten usando la fuente **Ubuntu Mono** en **Leafpad** para verlo bien)
 1. Busquen nuestras enzimas de restricción de interés. ¿Las encuentran? ¿En que categoría están? ¿Se pueden usar entonces estas enzimas de restricción para insertar nuestra secuencia en un plásmido?
