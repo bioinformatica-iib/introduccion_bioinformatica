@@ -11,12 +11,12 @@ Este es el botón para decargar materiales, en (#) hay que agregar el link corre
 
 ### Slides mostrados en la clase
 
-* :fontawesome-regular-file-pdf: [Cierre TP](https://drive.google.com/file/d/1-9Yxt8fzUcKjwVFqeLa7aYE4_siGU6vU/view?usp=sharing)
+# * :fontawesome-regular-file-pdf: [Cierre TP](https://drive.google.com/file/d/1-9Yxt8fzUcKjwVFqeLa7aYE4_siGU6vU/view?usp=sharing)
 
 ### Videos de la clase grabada
 
-* :octicons-video-16: [Introducción al TP](https://www.youtube.com/watch?v=Kx1LzcTHCpw)
-* :octicons-video-16: [Cierre TP](https://www.youtube.com/watch?v=bULActJNfWU)
+# * :octicons-video-16: [Introducción al TP](https://www.youtube.com/watch?v=Kx1LzcTHCpw)
+# * :octicons-video-16: [Cierre TP](https://www.youtube.com/watch?v=bULActJNfWU)
 
 ### Software a usar
 * EMBOSS (ya instalado en la VM).
