@@ -921,7 +921,14 @@ Corran este comando 3 veces pasándole los archivos correctos y creen los siguie
 * **enzimas_His.out**
 * **enzimas_MBP.out**
 
-16) Una vez creados, abran los archivos con **Leafpad**. 
+1. ¿Qué le falta a las secuencias?
+
+??? info "Respuesta"
+    Le falta la secuencia del codón de STOP después del TAG!
+
+16) Agregá la secuencia faltante después del TAG.
+
+17) Una vez creados, abran los archivos con **Leafpad**. 
 
 1. ¿Entienden lo que simboliza el archivo? (es necesario que esten usando la fuente **Ubuntu Mono** en **Leafpad** para verlo bien)
 1. Busquen nuestras enzimas de restricción de interés. ¿Las encuentran? ¿En que categoría están? ¿Se pueden usar entonces estas enzimas de restricción para insertar nuestra secuencia en un plásmido?
