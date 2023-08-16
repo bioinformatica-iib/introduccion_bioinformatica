@@ -2574,9 +2574,19 @@ zcat $archivo_genoma | cusp -auto -sequence "stdin" -outfile "${archivo_genoma}.
 <ul>
 <li><strong>enzimas_FLAG.out</strong></li>
 <li><strong>enzimas_His.out</strong></li>
-<li><strong>enzimas_MBP.out</strong></li>
+<li>
+<p><strong>enzimas_MBP.out</strong></p>
+</li>
+<li>
+<p>¿Qué le falta a las secuencias?</p>
+</li>
 </ul>
-<p>16) Una vez creados, abran los archivos con <strong>Leafpad</strong>. </p>
+<details class="info">
+<summary>Respuesta</summary>
+<p>Le falta la secuencia del codón de STOP después del TAG!</p>
+</details>
+<p>16) Agregá la secuencia faltante después del TAG.</p>
+<p>17) Una vez creados, abran los archivos con <strong>Leafpad</strong>. </p>
 <ol>
 <li>¿Entienden lo que simboliza el archivo? (es necesario que esten usando la fuente <strong>Ubuntu Mono</strong> en <strong>Leafpad</strong> para verlo bien)</li>
 <li>Busquen nuestras enzimas de restricción de interés. ¿Las encuentran? ¿En que categoría están? ¿Se pueden usar entonces estas enzimas de restricción para insertar nuestra secuencia en un plásmido?</li>
