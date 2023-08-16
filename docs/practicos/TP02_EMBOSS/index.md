@@ -4,7 +4,7 @@
 
 <br>
 
-[:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/15-HiP0T4f1VLRJyqKi3hkoxT3VUXh9Fs/view?usp=sharing){ .md-button .md-button--primary }
+[:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1bL5zX--SZOezaojH2yjfa6FV85ghlR0O/view?usp=sharing){ .md-button .md-button--primary }
 <!--
 Este es el botón para decargar materiales, en (#) hay que agregar el link correspondiente.
 -->
@@ -607,7 +607,7 @@ wget ftp://ftp.ncbi.nlm.nih.gov/genomes/refseq/bacteria/assembly_summary.txt
 
 !!! warning
 
-    Si el comando `wget` tarda mucho o ven que tiene errores bajensé este archivo desde [este link](https://drive.google.com/file/d/1Z96oCHg7iyHZEtbVHuvfMY0XbnSj2maJ/view?usp=sharing)
+    Si el comando `wget` tarda mucho o ven que tiene errores bajensé este archivo desde [este link](https://drive.google.com/file/d/1rWe7F6QSGdTvrcGO2flp_RIQyr9ay_8t/view?usp=sharing)
 
 Una vez descargado ese archivo (que pesa bastante) queremos ver sus contenidos. Sabiendo que es un archivo que tiene más de 250.000 lineas:
 
