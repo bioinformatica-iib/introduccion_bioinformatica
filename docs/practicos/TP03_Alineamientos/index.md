@@ -11,7 +11,7 @@
 <br>
 
 !!! abstract "Atención: Este TP tiene informe."
-
+<!--
 ### Slides mostrados en la clase
 
 * :fontawesome-regular-file-pdf: [Cierre TP](https://docs.google.com/presentation/d/149-D1Q8JrO0rNxO4NKSnUyB32bNV_RfVwmRgwV9zQ64/edit?usp=sharing)
@@ -21,6 +21,7 @@
 * :octicons-video-16: [Introducción al TP](
 https://www.youtube.com/watch?v=KwMh9fVVuo4)
 * :octicons-video-16: [Cierre TP](https://www.youtube.com/watch?v=9nF_utYbm8c)
+-->
 
 ## **Objetivos**
 
@@ -458,7 +459,7 @@ Mathys L, Balzarini J. Several N-Glycans on the HIV Envelope Glycoprotein gp120 
 
 !!! info 
 
-    <span style="font-weight:bold;">Fecha límite de entrega:</span> Domingo, 28 de Agosto 2022, 23:59hs.
+    <span style="font-weight:bold;">Fecha límite de entrega:</span> Domingo, 3 de Septiembre 2023, 23:59hs.
 
 [:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/13hzApnpVqZqkNiayMfDDL6gpVypqj18a/view?usp=sharing){ .md-button .md-button--primary }
 
