@@ -19,3 +19,6 @@ tags:
   * :paperclip: Computational methods for Gene Orthology inference. Kristensen DM, Wolf YI, Mushegian AR, Koonin EV (2011) [Briefings in Bioinformatics 12: 379–391](https://doi.org/10.1093/bib/bbr030).
   * :paperclip: Simple chained guide trees give high-quality protein multiple sequence alignments. Boyce K, Sievers F, and Higgins DG (2014). [PNAS 111, 10556-10561](https://www.pnas.org/doi/full/10.1073/pnas.1405628111).
   * :octicons-book-16: Chapter 10 PSI-BLAST Tutorial (Comparative Genomics: Volumes 1 and 2) (2007). [NCBI Bookshelf](https://www.ncbi.nlm.nih.gov/books/NBK2590/)
+  * :paperclip: Having a BLAST with bioinformatics (and avoiding BLASTphemy). Pertsemlidis, A., Fondon, J.W. (2001) [Genome Biol 2, reviews2002.1](https://genomebiology.biomedcentral.com/articles/10.1186/gb-2001-2-10-reviews2002)
+  * :fontawesome-solid-file-pdf: Selecting the Right Similarity-Scoring Matrix. Pearson, W. R. (2013) [Curr. Prot. Bioinformatics Chapter 3: Unit 3.5](https://fasta.bioch.virginia.edu/wrpearson/papers/wrp_cpbio_0305.pdf)
+  * :fontawesome-solid-file-pdf: An Introduction to Similarity ("Homology") Searching. Pearson, W. R. (2013) [Curr. Prot. Bioinformatics Chapter 3: Unit 3.1](https://fasta.bioch.virginia.edu/wrpearson/papers/wrp_cpbio_0301.pdf)

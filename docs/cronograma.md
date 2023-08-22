@@ -16,9 +16,9 @@ tags:
 | Jueves, 10 Agosto 2023 | 9:00 hs |	:material-google-classroom: Online | [P1. Introducción a UNIX](/introduccion_bioinformatica/practicos/TP01_Linux/)| :fontawesome-solid-hammer: Práctica |	M. Didier Garnham |
 | Martes, 15 Agosto 2023 | 9:00 hs |	:material-google-classroom: Online | [T2. Bases de datos y ontologías](/introduccion_bioinformatica/teoricas/2-Teorica-Dos/) | :fontawesome-solid-brain: Teórica |	F. Agüero |
 | Jueves, 17 Agosto 2023 | 9:00 hs |	:material-google-classroom: Online | [P2. EMBOSS Suite](/introduccion_bioinformatica/practicos/TP02_EMBOSS/) | :fontawesome-solid-hammer: Práctica |	M. Didier Garnham |
-| Martes, 22 Agosto 2023 | 9:00 hs |	:material-google-classroom: Online | T3. Alineamientos de a pares y Búsqueda de secuencias por Similitud | :fontawesome-solid-brain: Teórica |	F. Agüero |
+| Martes, 22 Agosto 2023 | 9:00 hs |	:material-google-classroom: Online | [T3. Alineamientos de secuencias](/introduccion_bioinformatica/teoricas/3-Teorica-Tres/) | :fontawesome-solid-brain: Teórica |	F. Agüero |
 | Jueves, 24 Agosto 2023 | 9:00 hs |	:material-google-classroom: Online | [P3. Alineamientos de a pares](/introduccion_bioinformatica/practicos/TP03_Alineamientos/) | :fontawesome-solid-hammer: Práctica |	M. Didier Garnham |
-| Martes, 29 Agosto 2023 | 9:00 hs |	:material-google-classroom: Online | T4. Alineamientos múltiples | :fontawesome-solid-brain: Teórica |	F. Agüero |
+| Martes, 29 Agosto 2023 | 9:00 hs |	:material-google-classroom: Online | T4. Búsqueda de secuencias por Similitud y Alineamientos múltiples | :fontawesome-solid-brain: Teórica |	F. Agüero |
 | Jueves, 31 Agosto 2023 | 9:00 hs |	:material-google-classroom: Online | P4. Búsqueda de secuencias por similitud y Alineamientos Múltiples | :fontawesome-solid-hammer: Práctica |	M. Didier Garnham |
 | Martes, 05 Septiembre 2023 | 9:00 hs |	:material-google-classroom: Online | P5a. Programando en Biología | :fontawesome-solid-hammer: Práctica |	G. Romer |
 | Jueves, 07 Septiembre 2023 | 9:00 hs |	:material-google-classroom: Online | P5b. Programando en Biología | :fontawesome-solid-hammer: Práctica |	G. Romer |
