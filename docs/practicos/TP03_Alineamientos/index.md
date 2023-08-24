@@ -11,17 +11,14 @@
 <br>
 
 !!! abstract "Atención: Este TP tiene informe."
-<!--
+
 ### Slides mostrados en la clase
 
-* :fontawesome-regular-file-pdf: [Cierre TP](https://docs.google.com/presentation/d/149-D1Q8JrO0rNxO4NKSnUyB32bNV_RfVwmRgwV9zQ64/edit?usp=sharing)
+* :fontawesome-regular-file-pdf: [Cierre TP](https://drive.google.com/file/d/1-VsjPb35cYRSE-HpdMwp7jLBQyQvwvCE/view?usp=sharing)
 
 ### Videos de la clase grabada
+* :octicons-video-16: [Cierre TP](https://youtu.be/nXBOrHCMRZQ)
 
-* :octicons-video-16: [Introducción al TP](
-https://www.youtube.com/watch?v=KwMh9fVVuo4)
-* :octicons-video-16: [Cierre TP](https://www.youtube.com/watch?v=9nF_utYbm8c)
--->
 
 ## **Objetivos**
 
