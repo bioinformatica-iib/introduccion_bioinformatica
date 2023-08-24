@@ -482,7 +482,7 @@ Para solucionarlo decide utilizar las herramientas que aprendió en el trabajo p
 
 1. Comparar la secuencia del nuevo aislamiento con la que crea más conveniente de su conjunto de secuencias. ¿Pertenece el nuevo aislamiento a un coronavirus? Para responder a esta pregunta le sugerimos que realice un dotplot que le permita visualizar el alineamiento entre su secuencia incógnita y la(s) secuencias de su interés. Identifique y reporte qué patrones observa en el dotplot.
 
-2. Ahora quisiera saber a qué coronavirus se parece más, para esto decide determinar el % de similitud que posee su secuencia con el conjunto de secuencias con las que usted trabaja comúnmente.
+2. Ahora quisiera saber a qué coronavirus se parece más, para esto decide determinar el % de identidad que posee su secuencia con el conjunto de secuencias con las que usted trabaja comúnmente.
 
 !!! tip "Tip"
 
