@@ -14,7 +14,7 @@
 
 ### Slides mostrados en la clase
 
-* :fontawesome-regular-file-pdf: [Cierre TP](https://drive.google.com/file/d/1-VsjPb35cYRSE-HpdMwp7jLBQyQvwvCE/view?usp=sharing)
+* :fontawesome-regular-file-pdf: [Slides](https://drive.google.com/file/d/1-VsjPb35cYRSE-HpdMwp7jLBQyQvwvCE/view?usp=sharing)
 
 ### Videos de la clase grabada
 * :octicons-video-16: [Cierre TP](https://youtu.be/nXBOrHCMRZQ)
