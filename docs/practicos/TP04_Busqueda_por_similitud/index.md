@@ -10,15 +10,6 @@
 
 <br>
 
-### Slides mostrados en la clase
-
-* :fontawesome-regular-file-pdf: [Cierre TP](https://docs.google.com/presentation/d/1262JSFr3PDzcf_c72llMNDGn8aK23FxdP61LJHI3A74/edit?usp=sharing)
-
-### Videos de la clase grabada
-
-* :octicons-video-16: [Introducción al TP](https://www.youtube.com/watch?v=gzSc5G8QVRE)
-* :octicons-video-16: [Cierre TP](https://www.youtube.com/watch?v=Ji7eJBvrdFo)
-
 ## **Objetivos**
 
  * Familiarizarse con el uso de programas de búsqueda de secuencias en bases de datos (BLAST y FASTA), y en particular con el uso de estos programas en la línea de comando.
