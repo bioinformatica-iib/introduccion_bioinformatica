@@ -11,17 +11,14 @@
 <br>
 
 !!! abstract "Atención: Este TP tiene informe."
-<!--
+
 ### Slides mostrados en la clase
 
-* :fontawesome-regular-file-pdf: [Cierre TP](https://docs.google.com/presentation/d/149-D1Q8JrO0rNxO4NKSnUyB32bNV_RfVwmRgwV9zQ64/edit?usp=sharing)
+* :fontawesome-regular-file-pdf: [Slides](https://drive.google.com/file/d/1-VsjPb35cYRSE-HpdMwp7jLBQyQvwvCE/view?usp=sharing)
 
 ### Videos de la clase grabada
+* :octicons-video-16: [Cierre TP](https://youtu.be/nXBOrHCMRZQ)
 
-* :octicons-video-16: [Introducción al TP](
-https://www.youtube.com/watch?v=KwMh9fVVuo4)
-* :octicons-video-16: [Cierre TP](https://www.youtube.com/watch?v=9nF_utYbm8c)
--->
 
 ## **Objetivos**
 
@@ -482,7 +479,7 @@ Para solucionarlo decide utilizar las herramientas que aprendió en el trabajo p
 
 1. Comparar la secuencia del nuevo aislamiento con la que crea más conveniente de su conjunto de secuencias. ¿Pertenece el nuevo aislamiento a un coronavirus? Para responder a esta pregunta le sugerimos que realice un dotplot que le permita visualizar el alineamiento entre su secuencia incógnita y la(s) secuencias de su interés. Identifique y reporte qué patrones observa en el dotplot.
 
-2. Ahora quisiera saber a qué coronavirus se parece más, para esto decide determinar el % de similitud que posee su secuencia con el conjunto de secuencias con las que usted trabaja comúnmente.
+2. Ahora quisiera saber a qué coronavirus se parece más, para esto decide determinar el % de identidad que posee su secuencia con el conjunto de secuencias con las que usted trabaja comúnmente.
 
 !!! tip "Tip"
 
