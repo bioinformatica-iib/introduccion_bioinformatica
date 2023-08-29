@@ -4,13 +4,17 @@ tags:
   - teoricas
 ---
 
-## Alineamientos múltiples
- Clase teórica de alineamientos múltiples
+## Búsquedas de Secuencias por Similitud + Alineamientos múltiples
+ Clase teórica de búsquedas de secuencias por similitud: fuerza bruta, FASTA, BLAST. 
+ Alineamientos múltiples.
 
- * :fontawesome-regular-file-pdf: [Slides](alineamientosMultiples2022.pdf) 
- 
-![type:video](https://www.youtube.com/embed/EgOkJf-JWKA)
+ * :fontawesome-regular-file-pdf: [Slides](alineamientosMultiples2023.pdf) 
 
+### Primera parte  
+![type:video](https://www.youtube.com/embed/qNvW595WnJs)
+
+### Segunda parte (luego del intervalo)
+![type:video](https://www.youtube.com/embed/AOnReITkzvo)
 
 ## Material de lectura y consulta
 
