@@ -10,6 +10,13 @@
 
 <br>
 
+### Slides mostrados en la clase
+
+* :fontawesome-regular-file-pdf: [Slides](https://drive.google.com/file/d/1MvR473-8E7vUnG5_MUEtWqn_oLaunZBp/view?usp=sharing)
+
+### Videos de la clase grabada
+* :octicons-video-16: [Cierre TP](https://youtu.be/1MfMQc1uwxE)
+
 ## **Objetivos**
 
  * Familiarizarse con el uso de programas de búsqueda de secuencias en bases de datos (BLAST y FASTA), y en particular con el uso de estos programas en la línea de comando.
