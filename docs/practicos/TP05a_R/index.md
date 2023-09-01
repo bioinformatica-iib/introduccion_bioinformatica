@@ -1,6 +1,6 @@
 ![Image](img/banner.jpg){ width="250", align="left" }
 
-# **TP 8a**. R - Programando en biología - Parte 1 { markdown data-toc-label = 'TP 8a' }
+# **TP 5a**. R - Programando en biología - Parte 1 { markdown data-toc-label = 'TP 8a' }
 
 <br>
 <br>
