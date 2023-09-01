@@ -1,6 +1,6 @@
 ![Image](img/banner.jpg){ width="250", align="left" }
 
-# **TP 5a**. R - Programando en biología - Parte 1 { markdown data-toc-label = 'TP 8a' }
+# **TP 8a**. R - Programando en biología - Parte 1 { markdown data-toc-label = 'TP 8a' }
 
 <br>
 <br>
@@ -15,11 +15,6 @@
 <!--
 Este es el botón para decargar materiales, en (#) hay que agregar el link correspondiente
 -->
-
-### Videos de la clase grabada
-
-* :octicons-video-16: [Introducción a la programación en R](https://www.youtube.com/watch?v=xah7gbyHXuU)
-* :octicons-video-16: [Puesta en común del TP e introducción a funciones](https://www.youtube.com/watch?v=3Q7XacgdIRs)
 
 ### Software a usar
 * R (ya instalado en la VM).
@@ -41,7 +36,7 @@ Este es el botón para decargar materiales, en (#) hay que agregar el link corre
 
 En los últimos años se produjo un crecimiento exponencial tanto en nuestra capacidad de producir información biológica como en nuestra capacidad de analizarla. Ensayos de alto rendimiento, o *high-throughput*, nos permiten analizar miles a millones de interacciones biológicas a la vez, mientras que computadoras de nueva generación o *clusters* de ellas nos permiten procesar en días u horas lo que en otra época hubiera tomado años.
 
-Al momento de analizar datos a esta escala muchos programas conocidos se quedan atrás. Si bien **Excell** o **Google Sheets** van a poder abrir y procesar una tabla con unos pocos miles de filas, probablemente se cuelguen de tratar de hacer lo mismo para una tabla que contenga millones de ellas. No solo eso, sino que hojas de cálculo de ese estilo son bastante limitadas en lo que permiten hacer, donde es muy dificil realizar un análisis o plot que no esté entre los predeterminados por ellos.
+Al momento de analizar datos a esta escala muchos programas conocidos se quedan atrás. Si bien **Excel** o **Google Sheets** van a poder abrir y procesar una tabla con unas pocas miles de filas, probablemente se cuelguen al tratar de hacer lo mismo para una tabla que contenga millones de ellas. No solo eso, sino que hojas de cálculo de ese estilo son bastante limitadas en lo que permiten hacer, donde es muy dificil realizar un análisis o plot que no esté entre los predeterminados por ellos.
 
 En este trabajo práctico vamos a aprender a usar el lenguaje de programación **R**, el cual es uno de los lenguajes más utilizados hoy en día al momento de analizar datos biológicos (junto a **Python**) debido a su practicidad al momento de leer, modificar o hacer estadística con tablas de gran tamaño, asi como la gran variedad de figuras (o *plots*) que permite crear.
 
@@ -53,13 +48,13 @@ En este trabajo práctico vamos a aprender a usar el lenguaje de programación *
 
 * La primera versión oficial de **R** fue publicada en 1995 bajo una licencia de código abierto *GNU General Public License*. Esta licencia fue creada originalmente para el desarrollo de **GNU** y **Linux**, pero hoy en día es muy común al momento de distribuir programas gratis o de código abierto.
 
-* En 1997 se crea **CRAN** (*Comprehensive R Archive Network*), un repositorio oficial para **R** así como los paquetes creados por usuarios agregaban nuevas funcionalidades a **R**. Originalmente había solo 12 paquetes, pero a principios del 2022 ya existían más de 18.500 diferentes paquetes de **R** en **CRAN**.
+* En 1997 se crea **CRAN** (*Comprehensive R Archive Network*), un repositorio oficial para **R**. Originalmente había solo 12 paquetes (los cuales agregaban nuevas funcionalidades a **R**), y a principios del 2022 ya existían más de 18.500 diferentes paquetes de **R** en **CRAN**.
 
 ## **RStudio**
 
-Cuando nosotros programamos en **Bash** lo hicimos usando **Leafpad**, un editor de texto genérico de Lubuntu. Luego al momento de ejecutar nuestro *script* ibamos a la terminal de Lubuntu y lo ejecutabamos con el comando `bash`. Si bien esto funciona bien para códigos simples, al momento de crear programas complejos puede resultar un poco lento y engorroso.
+Cuando nosotros programamos en **Bash** lo hicimos usando **Leafpad**, un editor de texto genérico de Lubuntu. Luego, al momento de ejecutar nuestro *script*, ibamos a la terminal de Lubuntu y lo ejecutabamos con el comando `bash`. Si bien esto funciona bien para códigos simples, al momento de crear programas complejos puede resultar un poco lento y engorroso.
 
-En programación existen programas denominados *entornos de desarrollo* o **IDE**s (*Integrated Development Environment*) que nos permiten programar, encontrar errores (*debuguear*) y correr el *script* todo desde el mismo lugar. No solo esto, sino que varios **IDE**s también ayudan en el proceso de programar, insertando estructuras vacias (*ifs*, *fors*) o autocompletando los comandos o parámetros mientras uno los escribe.
+En programación existen programas denominados *entornos de desarrollo* o **IDE**s (*Integrated Development Environment*) que nos permiten programar, encontrar errores (*debuguear*) y correr el *script* todo desde un mismo lugar. No solo esto, sino que varios **IDE**s también ayudan en el proceso de programar, insertando estructuras vacias (*ifs*, *fors*) o autocompletando los comandos o parámetros mientras uno los escribe.
 
 Antiguamente los **IDEs** funcionaban casi exclusivamente para un solo lenguaje de programación, pero los **IDEs** más recientes suelen funcionar para varios lenguajes (tras un poco de configuración).
 
@@ -69,7 +64,7 @@ Antiguamente los **IDEs** funcionaban casi exclusivamente para un solo lenguaje 
 
 !!! important "Importante"
 
-    Si les pregunta de actualizar pongan **"Ignore Update"**.
+    Si les pregunta si quieren actualizar pongan **"Ignore Update"**.
 
 ??? warning "Si no estan usando la Maquina Virtual de Introducción a la Bioinformática lean esto:"
 
@@ -111,7 +106,7 @@ Ahora sí, deberían ver lo siguiente:
 
     De ser posible va a mostrar el valor de la variable y de no serlo va a mostrar alguna información al respecto (como el largo de una lista). Para el caso de tablas, pueden hacer click sobre ellas y se abrirán en una nueva pestaña del panel superior izquierdo.
 
-    Tener esta lista de variables es muy útil para aprender a programar en **R** así como para encontrar errores (o *debugear*).
+    Tener esta lista de variables es muy útil para aprender a programar en **R**, así como para encontrar errores (o *debugear*).
 
     La pestaña **History** tiene una lista de los últimos comandos usados y la pestaña **Connections** se usa para unir bases de datos. No vamos a utilizar ninguna de estas pestañas en esta materia.
 
@@ -210,7 +205,7 @@ No se si se dan cuenta lo que acaba de pasar, pero estan imprimiendo en la conso
 
 La forma correcta de trabajar es ir dejando en nuestro *script* un registro de las órdenes correctas para llegar al output deseado. También es buena práctica comentar las instrucciones más importantes para que se pueda entender por quien tenga que reutilizar el código. Es algo así como el **cuaderno de laboratorio bioinformático**.
 
-De poner solo el nombre de una variable es equivalente a hacer un `print`, o sea los siguiente dos comandos son equivalentes:
+Poner solo el nombre de una variable es equivalente a hacer un `print`, o sea los siguiente dos comandos son equivalentes:
 
 ```R
 print(saludo)
