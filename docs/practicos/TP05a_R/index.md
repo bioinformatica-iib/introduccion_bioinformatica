@@ -1,6 +1,6 @@
 ![Image](img/banner.jpg){ width="250", align="left" }
 
-# **TP 8a**. R - Programando en biología - Parte 1 { markdown data-toc-label = 'TP 8a' }
+# **TP 5a**. R - Programando en biología - Parte 1 { markdown data-toc-label = 'TP 8a' }
 
 <br>
 <br>
@@ -32,33 +32,25 @@ Este es el botón para decargar materiales, en (#) hay que agregar el link corre
 * Ver como los mismos conceptos de programación se transladan de un lenguaje a otro.
 * Utilizar herramientas de programación para resolver problemas biológicos.
 
-## **Introducción al Tema**
+## **Introduccion a R**
 
-En los últimos años se produjo un crecimiento exponencial tanto en nuestra capacidad de producir información biológica como en nuestra capacidad de analizarla. Ensayos de alto rendimiento, o *high-throughput*, nos permiten analizar miles a millones de interacciones biológicas a la vez, mientras que computadoras de nueva generación o *clusters* de ellas nos permiten procesar en días u horas lo que en otra época hubiera tomado años.
+En este trabajo práctico vamos a aprender R, uno de los lenguajes de programación más utilizados hoy en día al momento de analizar datos biológicos (junto a Python). Esto se debe a su practicidad al momento de leer, modificar o hacer estadística con tablas de gran tamaño, asi como la gran variedad de figuras (o plots) que permite crear.
 
-Al momento de analizar datos a esta escala muchos programas conocidos se quedan atrás. Si bien **Excel** o **Google Sheets** van a poder abrir y procesar una tabla con unas pocas miles de filas, probablemente se cuelguen al tratar de hacer lo mismo para una tabla que contenga millones de ellas. No solo eso, sino que hojas de cálculo de ese estilo son bastante limitadas en lo que permiten hacer, donde es muy dificil realizar un análisis o plot que no esté entre los predeterminados por ellos.
+??? important "Un poco de historia"
 
-En este trabajo práctico vamos a aprender a usar el lenguaje de programación **R**, el cual es uno de los lenguajes más utilizados hoy en día al momento de analizar datos biológicos (junto a **Python**) debido a su practicidad al momento de leer, modificar o hacer estadística con tablas de gran tamaño, asi como la gran variedad de figuras (o *plots*) que permite crear.
+    * En 1976 se crea **S**, un lenguaje de programación diseñado para análisis estadísticos. **S** fue creado en Bell Labs, que es el mismo lugar mismo lugar donde se creo **Unix** (pero por otras personas).
 
-## **Historia de R**
+    * En 1991, Ross Ihaka (estadístico) y Robert Gentleman (estadístico y bioinformático) empiezan a trabajar en una versión gratis y de código abierto de **S**. Debido a sus nombres le ponen **R** a dicho lenguaje.
 
-* En 1976 se crea **S**, un lenguaje de programación diseñado para análisis estadísticos. **S** fue creado en Bell Labs, que es el mismo lugar mismo lugar donde se creo **Unix** (pero por otras personas).
+    * La primera versión oficial de **R** fue publicada en 1995 bajo una licencia de código abierto *GNU General Public License*. Esta licencia fue creada originalmente para el desarrollo de **GNU** y **Linux**, pero hoy en día es muy común al momento de distribuir programas gratis o de código abierto.
 
-* En 1991, Ross Ihaka (estadístico) y Robert Gentleman (estadístico y bioinformático) empiezan a trabajar en una versión gratis y de código abierto de **S**. Debido a sus nombres le ponen **R** a dicho lenguaje.
+    * En 1997 se crea **CRAN** (*Comprehensive R Archive Network*), un repositorio oficial para **R**. Originalmente había solo 12 paquetes (los cuales agregaban nuevas funcionalidades a **R**), y a principios del 2022 ya existían más de 18.500 diferentes paquetes de **R** en **CRAN**.
 
-* La primera versión oficial de **R** fue publicada en 1995 bajo una licencia de código abierto *GNU General Public License*. Esta licencia fue creada originalmente para el desarrollo de **GNU** y **Linux**, pero hoy en día es muy común al momento de distribuir programas gratis o de código abierto.
+## **RStudio - Empezamos con el TP**
 
-* En 1997 se crea **CRAN** (*Comprehensive R Archive Network*), un repositorio oficial para **R**. Originalmente había solo 12 paquetes (los cuales agregaban nuevas funcionalidades a **R**), y a principios del 2022 ya existían más de 18.500 diferentes paquetes de **R** en **CRAN**.
-
-## **RStudio**
-
-Cuando nosotros programamos en **Bash** lo hicimos usando **Leafpad**, un editor de texto genérico de Lubuntu. Luego, al momento de ejecutar nuestro *script*, ibamos a la terminal de Lubuntu y lo ejecutabamos con el comando `bash`. Si bien esto funciona bien para códigos simples, al momento de crear programas complejos puede resultar un poco lento y engorroso.
-
-En programación existen programas denominados *entornos de desarrollo* o **IDE**s (*Integrated Development Environment*) que nos permiten programar, encontrar errores (*debuguear*) y correr el *script* todo desde un mismo lugar. No solo esto, sino que varios **IDE**s también ayudan en el proceso de programar, insertando estructuras vacias (*ifs*, *fors*) o autocompletando los comandos o parámetros mientras uno los escribe.
+**RStudio** es el *entorno de desarrollo* o **IDE** (*Integrated Development Environment*) más conocido del lenguaje de programación **R** y nos va a ayudar a programar en dicho lenguaje. Los **IDE**s son programas que permiten programar, encontrar errores (*debuguear*) y correr el *script* todo desde un mismo lugar. Además, varios **IDE**s también ayudan en el proceso de programar, insertando estructuras vacias (*ifs*, *fors*) o autocompletando los comandos o parámetros mientras uno los escribe.
 
 Antiguamente los **IDEs** funcionaban casi exclusivamente para un solo lenguaje de programación, pero los **IDEs** más recientes suelen funcionar para varios lenguajes (tras un poco de configuración).
-
-**RStudio** es el **IDE** más conocido del lenguaje de programación **R** y nos va a ayudar a programar en dicho lenguaje. 
 
 **1)** Abran RStudio en sus computadoras (acceso directo en el escritorio, o desde **Inicio** :material-arrow-right: **Programación** :material-arrow-right: **RStudio**).
 
@@ -88,19 +80,22 @@ Ahora sí, deberían ver lo siguiente:
 ![RStudio](img/RStudio.png)
 </figure>
 
-* **Panel superior izquierdo: Editor de Scripts**
+* **Paneles de R**
+
+??? important "Panel superior izquierdo: Editor de Scripts"
 
     En este panel está el *script* que acabamos de crear. Igual que en **Bash**, un *script* no es más que un archivo de texto con instrucciones para un lenguaje de programación específico, que en este caso es **R**.
 
-    Este panel puede contener varias pestañas al mismo tiempo, cada una con un *script* diferente. También puede contener pestañas con visualizaciones de tablas.
+    Este panel puede contener varias pestañas al mismo tiempo, cada una con un *script* diferente. También puede contener pestañas con visualizaciones de tablas..
 
-* **Panel inferior izquierdo: Consola**
+
+??? important "Panel inferior izquierdo: Consola"
 
     La consola (pestaña **Console**) es similar a la terminal de Lubuntu, pero para el lenguaje de programación **R**. En ella podemos escribir comandos en **R** directamente y serán corridos. Tambíen es donde vamos a ver la salida de nuestro *script* de correrlo dentro de RStudio.
 
     Hablando de la terminal de Lubuntu, la pestaña **Terminal** es literalmente eso. No vamos a utilizar esta pestaña en esta materia.
 
-* **Panel superior derecho: Variables**
+??? important "Panel superior derecho: Variable"
 
     La pestaña **Environment** tiene una lista de todas las variables cargadas en el *"entorno"* que están trabajando, o sea, todas las variables que crearon desde que abrieron RStudio (esto va a quedar más claro cuando corramos código). 
 
@@ -110,7 +105,7 @@ Ahora sí, deberían ver lo siguiente:
 
     La pestaña **History** tiene una lista de los últimos comandos usados y la pestaña **Connections** se usa para unir bases de datos. No vamos a utilizar ninguna de estas pestañas en esta materia.
 
-* **Panel inferior derecho: Archivos, Plots y Ayuda**
+??? important "Panel inferior derecho: Archivos, Plots y Ayuda"
 
     La pestaña **Files** es simplemente un explorador de archivos donde pueden navegar entre las carpetas disponibles y visualizar los archivos que encuentren. Es especialmente útil cuando estan trabajando en proyectos grandes con varios *scripts*.
 
@@ -180,6 +175,21 @@ Van a ver que **Rstudio** le agrega automáticamente la extensión **.R**, que e
     ```
 
     Como siempre, reemplazando **ARCHIVO_SCRIPT.R** por el nombre de su archivo.
+
+## **Working Directory**
+
+Establecer el directorio de trabajo antes de empezar a trabajar es una práctica que nos va a ayudar a mantener nuestros archivos y scripts ordenados. El *Working Directory* es el *path* en donde estoy trabajando y comparándolo con lo que hicimos en **Bash** se puede pensar como en que carpeta está ahora la terminal.
+
+En **R** el comando para saber en que *path* estoy "parado" es la función `getwd()`.
+
+Si quiero cambiar este *path*, tengo que usar la función `setwd("PATH_ABSOLUTO")`.
+
+**1)** Creen una carpeta donde van a trabajar, por ejemplo **\~/Documentos/TP_08**
+
+**2)** Usen la función `getwd()` para ver el *Working Directory* actual
+
+**3)** Usen la función `setwd()` para asignar la carpeta creada en **1)** como *Working Directory* (recuerden que tienen que pasarle como parámetro el *path* absoluto de dicha carpeta)
+
 
 ## **R: Variables**
 
@@ -542,19 +552,19 @@ El **AND** y el **OR** son operaciones entre dos booleanos, mientras que **NOT**
 
 ??? tip "Detalles de **AND**, **OR** y **NOT**"
 
-    | Booleano 1 { data-sort-method='none' } | Booleano 2 { data-sort-method='none' } | AND (&) { data-sort-method='none' } | OR (\|) { data-sort-method='none' } |
+    | Booleano1 { data-sort-method='none' } | Booleano2 { data-sort-method='none' } | AND (Booleano1 & Booleano2) { data-sort-method='none' } | OR (Booleano1 \| Booleano2) { data-sort-method='none' } |
     | :---: | :---: | :---: | :---: |
     | **TRUE**{ .green_text } | **TRUE**{ .green_text } | **TRUE**{ .green_text } | **TRUE**{ .green_text } |
     | **TRUE**{ .green_text } | **FALSE**{ .red_text } | **FALSE**{ .red_text } | **TRUE**{ .green_text } |
     | **FALSE**{ .red_text } | **TRUE**{ .green_text } | **FALSE**{ .red_text } | **TRUE**{ .green_text } |
     | **FALSE**{ .red_text } | **FALSE**{ .red_text } | **FALSE**{ .red_text } | **FALSE**{ .red_text } |
 
-    | Booleano 1 { data-sort-method='none' } | NOT (!) { data-sort-method='none' } |
+    | Booleano1 { data-sort-method='none' } | NOT (!Booleano1) { data-sort-method='none' } |
     | :---: | :---: |    
     | **TRUE**{ .green_text } | **FALSE**{ .red_text } |
     | **FALSE**{ .red_text } | **TRUE**{ .green_text } |
 
-Las variables booleanas se pueden usar en los directamente en las condiciones de los *ifs*. Si bien se pueden comparar contra **TRUE**{ .green_text } y **FALSE**{ .red_text }, de poner solo la variable en la condición del *if*, es equivalente a preguntar si esa variable es **TRUE**{ .green_text }. Vean las siguientes tres pestañas para entenderlo mejor:
+Las variables booleanas se pueden usar directamente en las condiciones de los *ifs*. Si bien se pueden comparar contra **TRUE**{ .green_text } y **FALSE**{ .red_text }, de poner solo la variable en la condición del *if*, es equivalente a preguntar si esa variable es **TRUE**{ .green_text }. Vean las siguientes tres pestañas para entenderlo mejor:
 
 === "Código"
 
@@ -620,7 +630,7 @@ En **R** todos los ciclos *for* tienen una estructura similar a lo que nosotros 
 === "Código"
 
     ```R
-    for (i in 1:1000) {
+    for (i in 1:10) {
         print(i)
     }
     ```
@@ -631,14 +641,14 @@ En **R** todos los ciclos *for* tienen una estructura similar a lo que nosotros 
     # *for* es una de las estructuras más usadas para hacer ciclos
     # *i* es el nombre de la variable que va a cambiar de valor en cada ciclo. Se le podria poner cualquier nombre a 
     # ésta variable, por ejemplo *numero* en nuestro caso, pero es costumbre ponele *i*
-    # En este caso, *i* va a recorrer cada valor del rango 1:1000 (es decir, del número 1 al número 1000)
-    for (i in 1:1000) {
+    # En este caso, *i* va a recorrer cada valor del rango 1:10 (es decir, del número 1 al número 10)
+    for (i in 1:10) {
         # El código entre las llaves se va a ejecutar una vez para cada posible *i* en el rango
         print(i)
     }
     ```
 
-En este caso el *for* va a recorrer todos los elementos de un vector de números que vá entre 1 y 1000. También podemos recorrer en el *for* los elementos de un vector previamente declarado, por ejemplo:
+En este caso el *for* va a recorrer todos los elementos de un vector de números que vá entre 1 y 10 e imprimir el valor de i en cada ciclo. También podemos recorrer en el *for* los elementos de un vector previamente declarado, por ejemplo:
 
 === "Código"
 
@@ -669,7 +679,7 @@ El *for* es muy útil, pero tiene el problema de que uno necesita saber cuantas 
     ```R
     contador <- 1
 
-    while(contador <= 1000) {
+    while(contador <= 10) {
         print(contador)
 
         contador <- contador + 1
@@ -683,7 +693,7 @@ El *for* es muy útil, pero tiene el problema de que uno necesita saber cuantas 
     contador <- 1
 
     # Todo lo que esta adentro del ciclo *while* se va a repetir mientras la condición *contador <= 1000* sea TRUE
-    while(contador <= 1000) {
+    while(contador <= 10) {
         # Imprimo la variable *contador* en la terminal
         print(contador)
 
@@ -693,16 +703,16 @@ El *for* es muy útil, pero tiene el problema de que uno necesita saber cuantas 
     }
     ```
 
-Tal vez no se dan cuenta, pero este programa va a hacer lo mismo que el `for (i in 1:1000)` que usamos arriba: La variable `contador` va a empezar en 1 y al final de cada ciclo va a aumentarse en 1 gracias al comando `contador <- contador + 1`. Cuando `contador` llegue a 1001, la condición `contador <= 1000` va a ser **FALSE**{ .red_text } y el *while* va a terminar (es decir, el número 1001 nunca se imprime en la terminal).
+Tal vez no se dan cuenta, pero este programa va a hacer lo mismo que el `for (i in 1:10)` que usamos arriba: La variable `contador` va a empezar en 1 y al final de cada ciclo va a aumentarse en 1 gracias al comando `contador <- contador + 1`. Cuando `contador` llegue a 1001, la condición `contador <= 10` va a ser **FALSE**{ .red_text } y el *while* va a terminar (es decir, el número 1001 nunca se imprime en la terminal).
 
-Ahora bien, para el caso anterior no tiene mucho sentido usar un ciclo *while* ya que se podría haber hecho perfectamente con un *for*. Supongamos entonces que queremos escribir las potencias de 2 que son menores a 1.000.000, en ese caso podemos hacer:
+Ahora bien, para el caso anterior no tiene mucho sentido usar un ciclo *while* ya que se podría haber hecho perfectamente con un *for*. Supongamos entonces que queremos escribir las potencias de 2 que son menores a 1.000, en ese caso podemos hacer:
 
 === "Código"
 
     ```R
     numero <- 1
 
-    while(numero < 1000000) {
+    while(numero < 1000) {
         print(numero)
 
         numero <- numero * 2
@@ -716,7 +726,7 @@ Ahora bien, para el caso anterior no tiene mucho sentido usar un ciclo *while* y
     numero <- 1
 
     # El loop este va a seguir mientras *numero* sea menor a 1 millon
-    while(numero < 1000000) {
+    while(numero < 1000) {
         # Imprimo *numero* en la terminal
         print(numero)
         
@@ -799,6 +809,7 @@ El problema es que las variables *Data Tables* no vienen por defecto con **R**, 
 Por más que esté instalado el paquete, es necesario cargarlo cada vez que abramos **R**. Es común cargar al principio de cada *script* todos los paquetes que uno va a usar (no hay problemas al intentar cargar un paquete ya cargado):
 
 ```R
+install.packages("data.table") #Esto instala el paquete data.table, solo lo tienen que hacer una vez en caso de que no lo tengan instalado
 library(data.table) # Esto carga el paquete data.table para poder usar el tipo de variable Data Tables
 
 genes <- c("ERT2", "TTR4", "REC1")
@@ -873,20 +884,6 @@ dt[esencial == FALSE]
     * Tiene funciones internas que permiten calcular promedio por grupos, por ejemplo
     * ¡Y muchas más!
 
-### Working Directory
-
-Esto es algo que lo veníamos posponiendo desde el principio de este TP, pero ahora vamos a querer leer y escribir archivos de disco, por lo que es necesario. El *Working Directory* es el *path* en donde estoy trabajando y comparándolo con lo que hicimos en **Bash** se puede pensar como en que carpeta está ahora la terminal.
-
-En **R** el comando para saber en que *path* estoy "parado" es la función `getwd()`.
-
-Si quiero cambiar este *path*, tengo que usar la función `setwd("PATH_ABSOLUTO")`.
-
-**1)** Creen una carpeta donde van a trabajar, por ejemplo **\~/Documentos/TP_08**
-
-**2)** Usen la función `getwd()` para ver el *Working Directory* actual
-
-**3)** Usen la función `setwd()` para asignar la carpeta creada en **1)** como *Working Directory* (recuerden que tienen que pasarle como parámetro el *path* absoluto de dicha carpeta)
-
 ### Escribir Tablas
 
 Hay varias funciones para escribir tablas, pero la que vamos a usar nosotros es `write.table`, por ejemplo:
@@ -907,7 +904,7 @@ Los parámetros de `write.table` que estamos usando son:
 
 **4)** Existen algunas tablas en **R** que estan siempre cargadas en memoria y sirven para probar cosas. Una de estas tablas es **iris**. Usen `print` para ver esta tabla y luego usen `help(iris)` para ver la ayuda relacionada a esta tabla (que explica un poco las columnas).
 
-**5)** Guarden la tabla **iris** en un archivo llamado **iris.tsv** dentro de la carpeta creada en el punto **1)**. Usen los parámetros usados en el ejemplo de arriba. Confirmen que se creo el archivo.
+**5)** Guarden la tabla **iris** en un archivo llamado **iris.tsv** dentro de la carpeta creada al principio de esta guía. Usen los parámetros usados en el ejemplo de arriba. Confirmen que se creo el archivo.
 
 !!! info "Comillas en los archivos **.tsv**"
 
@@ -1017,6 +1014,7 @@ El paquete `ggplot2` es uno de los más usados, debido a su gran variedad de plo
 **1)** La función principal del paquete `ggplot2` se llama `ggplot` y comunmente es usada con *Data Frames* o *Data Tables*. Entonces, corran el siguiente código que usa la tabla **iris** para hacer un ejemplo de un plot simple con `ggplot`:
 
 ```R
+install.packages("ggplot2")
 library(ggplot2)
 
 ggplot(data = iris, aes(x = Sepal.Length, y = Petal.Length)) +
@@ -1040,26 +1038,113 @@ Como dijimos antes hay muchas funciones de ploteo, cada una con muchos parámeto
 
 **3)** El siguiente código es un ejemplo más "completo" de un plot hecho con `ggplot`. Corran el siguiente código y vean el plot. Fijense si pueden inferir en base a su nombre que hacen algunos de los parámetros que le pasamos a `ggplot` (pueden ver el [cheatsheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf)):
 
-```R
-ggplot(data = iris, aes(x = Sepal.Length, y = Petal.Length, color = Species)) +
-    geom_point(size = 1.5) +
-    xlim(c(1, 8)) +
-    ylim(c(1, 8)) +
-    theme_bw() +
-    xlab("Sepal Length") +
-    ylab("Petal Length") +
-    ggtitle("Sepal vs Petal Length per Species") +
-    theme(plot.title = element_text(size = 16, hjust = 0.5),
-          axis.title = element_text(size = 14),
-          axis.text = element_text(size = 12)) +
-    scale_color_discrete(labels = c("Setosa", "Versicolor", "Virginica"))
-```
+=== "Código"
+    ```R
+    ggplot(data = iris, aes(x = Sepal.Length, y = Petal.Length, color = Species)) +
+        geom_point(size = 1.5) +
+        xlim(c(1, 8)) +
+        ylim(c(1, 8)) +
+        theme_bw() +
+        xlab("Sepal Length") +
+        ylab("Petal Length") +
+        ggtitle("Sepal vs Petal Length per Species") +
+        theme(plot.title = element_text(size = 16, hjust = 0.5),
+            axis.title = element_text(size = 14),
+            axis.text = element_text(size = 12)) +
+        scale_color_discrete(labels = c("Setosa", "Versicolor", "Virginica"))
+    ```
+
+=== "Código con comentarios"
+    ```R
+    ggplot(data = iris, aes(x = Sepal.Length, y = Petal.Length, color = Species)) +
+        #con data especifico la tabla que voy a graficar
+        #en aes selecciono las columnas para los datos en los ejes x e y, 
+        #tambien determino que columna se va a usar para colorear los puntos
+        geom_point(size = 1.5) +
+        #tamaño del punto
+        xlim(c(1, 8)) +
+        ylim(c(1, 8)) +
+        #limites de los ejes
+        theme_bw() +
+        #tema del grafico
+        xlab("Sepal Length") +
+        ylab("Petal Length") +
+        #etiquetas de los ejes
+        ggtitle("Sepal vs Petal Length per Species") +
+        #titulo del grafico
+        theme(plot.title = element_text(size = 16, hjust = 0.5),
+                axis.title = element_text(size = 14),
+                axis.text = element_text(size = 12)) +
+        #personalizo el titulo y los ejes
+        scale_color_discrete(labels = c("Setosa", "Versicolor", "Virginica"))
+        #agrego etiquetas a la leyenda
+    ```
+
 
 <figure markdown>
 ![GGplot](img/ggplot2_example.png)
 </figure>
 
 ## **R: Variables más complejas**
+
+### Factores
+
+Los factores son un tipo de variable que es usada para cuando tenemos variables categóricas, por ejemplo la columna **Species** en la tabla **iris** que vimos anteriormente era una variable de tipo *factor*. Para entenderlo mejor supongamos que tenemos 5 individuos que fueron tratados con diferentes niveles de una droga y mostraron diferentes resultados. Queremos entonces plotear boxplots mostrando los resultados por cada nivel de tratamiento:
+
+**1)** Prueben correr el próximo código y vean si funciona (spoiler: no va a funcionar).
+
+```R
+niveles_tratamiento <- c("bajo", "medio", "alto", "alto", "bajo")
+resultados_tratamiento <- c(2, 5, 8, 9, 4)
+
+plot(x = niveles_tratamiento, y = resultados_tratamiento)
+```
+
+El problema con el código anterior es que `plot` no sabe que hacer cuando uno le pasa un vector de *strings*, es decir, no entiende que son categorías. Necesitamos entonces transformar nuestros datos en factores.
+
+**2)** Vean que pasa de correr el siguiente código:
+
+```R
+niveles_tratamiento <- c("bajo", "medio", "alto", "alto", "bajo")
+resultados_tratamiento <- c(2, 5, 8, 9, 4)
+
+factor_niveles_tratamiento <- factor(niveles_tratamiento)
+
+plot(x = factor_niveles_tratamiento, y = resultados_tratamiento)
+```
+
+En este momento aunque sea vemos un plot, pero si se fijan en el eje X tenemos un problema: los niveles de tratamiento no están en un órden lógico. Cuando uno crea factores puede asignar este orden a mano.
+
+**3)** Cambien entonces el código anterior al código siguiente y corranló:
+
+```R
+niveles_tratamiento <- c("bajo", "medio", "alto", "alto", "bajo")
+resultados_tratamiento <- c(2, 5, 8, 9, 4)
+
+factor_niveles_tratamiento <- factor(niveles_tratamiento, levels = c("bajo", "medio", "alto"))
+
+plot(x = factor_niveles_tratamiento, y = resultados_tratamiento)
+```
+
+Como ven el parámetro `levels` nos permite indicar a mano el orden de los factores.
+
+**4)** Impriman por consola a **niveles_tratamiento** y a **factor_niveles_tratamiento** y vean las diferencias.
+
+!!! info "Factores y ggplot2"
+
+    La función `ggplot` transforma lista de *strings* a factores automaticamente al momento de plotear, por lo que no va a dar error de haber usado **niveles_tratamiento** (en una columna de un *Data Table*). Sin embargo, los factores siguen siendo útiles en estos casos para controlar el órden en los que se plotean las variables categóricas.
+
+!!! info "Estructura interna de los factores"
+
+    Esto es un poco técnico, pero otro beneficio de los factores es que ahorran memoria. Esto se debe a que en realidad no se guardan como una lista de *strings*, sino que **R** le asigna un número a cada `level` y eso es lo que realmente guarda para todos los datos. Esto se puede ver con la función `as.numeric()`:
+
+    ```R
+    as.numeric(factor_niveles_tratamiento)
+    ```
+    ```R
+    [1] 1 2 3 3 1
+    ```
+
 
 ### Listas
 
@@ -1075,7 +1160,7 @@ lista_mixta <- list(3,4,7,"perro")
 
 Si bien los nombres indicarían que creamos tres "tipos" de lista, en realidad a las listas les da lo mismo si todos sus elementos son del mismo tipo o no. 
 
-**1)** Impriman por pantalla a la `lista_mixta`. Deberían ver lo siguiente:
+**5)** Impriman por pantalla a la `lista_mixta`. Deberían ver lo siguiente:
 
 ```
 [[1]]
@@ -1126,65 +1211,7 @@ Como sospecharan por los índices que aparecen, al momento de querer un elemento
 
 Si bien las listas tienen sus usos, en esta materia nos vamos a enfocar más en usar vectores. Dicho esto, existen funciones de **R** que van a devolver listas por defecto. Para transformar estas listas en vectores pueden usar la función `unlist`. 
 
-**2)** Prueben usar `unlist` con la variable `lista_super_mixta` y vean que pasa.
-
-### Factores
-
-Los factores son un tipo de variable que es usada para cuando tenemos variables categóricas, por ejemplo la columna **Species** en la tabla **iris** que vimos anteriormente era una variable de tipo *factor*. Para entenderlo mejor supongamos que tenemos 5 individuos que fueron tratados con diferentes niveles de una droga y mostraron diferentes resultados. Queremos entonces plotear boxplots mostrando los resultados por cada nivel de tratamiento:
-
-**3)** Prueben correr el próximo código y vean si funciona (spoiler: no va a funcionar).
-
-```R
-niveles_tratamiento <- c("bajo", "medio", "alto", "alto", "bajo")
-resultados_tratamiento <- c(2, 5, 8, 9, 4)
-
-plot(x = niveles_tratamiento, y = resultados_tratamiento)
-```
-
-El problema con el código anterior es que `plot` no sabe que hacer cuando uno le pasa un vector de *strings*, es decir, no entiende que son categorías. Necesitamos entonces transformar nuestros datos en factores.
-
-**4)** Vean que pasa de correr el siguiente código:
-
-```R
-niveles_tratamiento <- c("bajo", "medio", "alto", "alto", "bajo")
-resultados_tratamiento <- c(2, 5, 8, 9, 4)
-
-factor_niveles_tratamiento <- factor(niveles_tratamiento)
-
-plot(x = factor_niveles_tratamiento, y = resultados_tratamiento)
-```
-
-En este momento aunque sea vemos un plot, pero si se fijan en el eje X tenemos un problema: los niveles de tratamiento no están en un órden lógico. Cuando uno crea factores puede asignar este orden a mano.
-
-**5)** Cambien entonces el código anterior al código siguiente y corranló:
-
-```R
-niveles_tratamiento <- c("bajo", "medio", "alto", "alto", "bajo")
-resultados_tratamiento <- c(2, 5, 8, 9, 4)
-
-factor_niveles_tratamiento <- factor(niveles_tratamiento, levels = c("bajo", "medio", "alto"))
-
-plot(x = factor_niveles_tratamiento, y = resultados_tratamiento)
-```
-
-Como ven el parámetro `levels` nos permite indicar a mano el orden de los factores.
-
-**6)** Impriman por consola a **niveles_tratamiento** y a **factor_niveles_tratamiento** y vean las diferencias.
-
-!!! info "Factores y ggplot2"
-
-    La función `ggplot` transforma lista de *strings* a factores automaticamente al momento de plotear, por lo que no va a dar error de haber usado **niveles_tratamiento** (en una columna de un *Data Table*). Sin embargo, los factores siguen siendo útiles en estos casos para controlar el órden en los que se plotean las variables categóricas.
-
-!!! info "Estructura interna de los factores"
-
-    Esto es un poco técnico, pero otro beneficio de los factores es que ahorran memoria. Esto se debe a que en realidad no se guardan como una lista de *strings*, sino que **R** le asigna un número a cada `level` y eso es lo que realmente guarda para todos los datos. Esto se puede ver con la función `as.numeric()`:
-
-    ```R
-    as.numeric(factor_niveles_tratamiento)
-    ```
-    ```R
-    [1] 1 2 3 3 1
-    ```
+**6)** Prueben usar `unlist` con la variable `lista_super_mixta` y vean que pasa.
 
 ### Averiguar el tipo de las variables  { markdown data-toc-label='Tipos de las variables' }
 
@@ -1228,6 +1255,37 @@ moneda <- sample(x = c("Cara", "Seca"), size = 1)
 Donde `sample` devuelve un sampleo al azar de `size` elementos (en este caso `1`) del vector `x` (en este caso `c("Cara", "Seca")`). En definitiva esto quiere decir que cada vez que ejecuten esa línea `moneda` va a recibir el valor **"Cara"** o el valor **"Seca"** al azar.
 
 Ejecuten el código anterior varias veces y vean si los números aleatorios funcionan bien en **R** o si está todo arreglado.
+
+## **Ejercicio Adicional 2** { markdown data-toc-label='Ejercicio Adicional 2' }
+
+En este ejercicio vamos a crear, parecido a lo que vimos en el TP1, una función que nos diga como hacer una chocotorta. Para estoy vamos a hacer un script que:
+
+* Use una funcion
+* Considere en que vamos a remojar las galletitas y el numero de capas
+* Imprima todos los pasos necesarios para armar la chocotorta
+
+## **Ejercicio Adicional 3** { markdown data-toc-label='Ejercicio Adicional 3' }
+
+En R hay muchisimos paquetes que nos pueden servir para distintos tipos de análisis. Para que se den una idea de la variedad de paquetes, vamos a mostrarles el paquete **CatterPlots**, que como su nombre lo indica, hace *gráficos con gatitos*. Primero prueben correr esto en RStudio:
+
+```R
+install.packages("remotes")
+remotes::install_github("Gibbsdavidl/CatterPlots")
+library(CatterPlots)
+
+# Datos de muestra
+x <- seq(0, 15, 0.5)
+y <- sin(x)
+
+catplot(x, y,
+        cat = 2,       # Tipo de gato
+        catcolor = "blue",  # Color del gato
+        type = "line", # "line" o "justcats"
+        linecolor = 1) # Color de la línea
+```
+Pueden ver mas información sobre **CatterPlots** en [esta página](https://r-charts.com/es/miscelanea/catterplots/)
+
+Ahora prueben crear su propio gráfico de gatitos. Armen dos vectores x e y, y prueben graficarlos cambiando alguno/s de los parámetros de catplot, como el tipo de gato o el color.
 
 ## **Bibliografía**
 
