@@ -10,7 +10,7 @@
       
       
       
-        <link rel="canonical" href="https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP08a_R/">
+        <link rel="canonical" href="https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP05a_R/">
       
       <link rel="icon" href="../../img/logo-unsam-negro.png">
       <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-8.5.10">
@@ -83,7 +83,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#tp-8a-r-programando-en-biologia-parte-1" class="md-skip">
+        <a href="#tp-5a-r-programando-en-biologia-parte-1" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -732,7 +732,7 @@
 
 
 <div><p><a class="glightbox" href="img/banner.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img _="," align="left" alt="Image" src="img/banner.jpg" width="250"></a></p>
-<h1 id="tp-8a-r-programando-en-biologia-parte-1" markdown="markdown"><strong>TP 8a</strong>. R - Programando en biología - Parte 1</h1>
+<h1 id="tp-5a-r-programando-en-biologia-parte-1" markdown="markdown"><strong>TP 5a</strong>. R - Programando en biología - Parte 1</h1>
 <p><br>
 <br>
 <br>
@@ -746,11 +746,6 @@
 Este es el botón para decargar materiales, en (#) hay que agregar el link correspondiente
 -->
 
-<h3 id="videos-de-la-clase-grabada">Videos de la clase grabada</h3>
-<ul>
-<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 16 16"><path fill-rule="evenodd" d="M1.75 3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25v-8.5a.25.25 0 0 0-.25-.25H1.75zM0 3.75C0 2.784.784 2 1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0 1 14.25 14H1.75A1.75 1.75 0 0 1 0 12.25v-8.5z"></path><path d="M6 10.559V5.442a.25.25 0 0 1 .379-.215l4.264 2.559a.25.25 0 0 1 0 .428l-4.264 2.559A.25.25 0 0 1 6 10.559z"></path></svg></span> <a href="https://www.youtube.com/watch?v=xah7gbyHXuU">Introducción a la programación en R</a></li>
-<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 16 16"><path fill-rule="evenodd" d="M1.75 3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25v-8.5a.25.25 0 0 0-.25-.25H1.75zM0 3.75C0 2.784.784 2 1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0 1 14.25 14H1.75A1.75 1.75 0 0 1 0 12.25v-8.5z"></path><path d="M6 10.559V5.442a.25.25 0 0 1 .379-.215l4.264 2.559a.25.25 0 0 1 0 .428l-4.264 2.559A.25.25 0 0 1 6 10.559z"></path></svg></span> <a href="https://www.youtube.com/watch?v=3Q7XacgdIRs">Puesta en común del TP e introducción a funciones</a></li>
-</ul>
 <h3 id="software-a-usar">Software a usar</h3>
 <ul>
 <li>R (ya instalado en la VM).</li>
@@ -769,11 +764,10 @@ Este es el botón para decargar materiales, en (#) hay que agregar el link corre
 <li>Ver como los mismos conceptos de programación se transladan de un lenguaje a otro.</li>
 <li>Utilizar herramientas de programación para resolver problemas biológicos.</li>
 </ul>
-<h2 id="introduccion-al-tema"><strong>Introducción al Tema</strong></h2>
-<p>En los últimos años se produjo un crecimiento exponencial tanto en nuestra capacidad de producir información biológica como en nuestra capacidad de analizarla. Ensayos de alto rendimiento, o <em>high-throughput</em>, nos permiten analizar miles a millones de interacciones biológicas a la vez, mientras que computadoras de nueva generación o <em>clusters</em> de ellas nos permiten procesar en días u horas lo que en otra época hubiera tomado años.</p>
-<p>Al momento de analizar datos a esta escala muchos programas conocidos se quedan atrás. Si bien <strong>Excell</strong> o <strong>Google Sheets</strong> van a poder abrir y procesar una tabla con unos pocos miles de filas, probablemente se cuelguen de tratar de hacer lo mismo para una tabla que contenga millones de ellas. No solo eso, sino que hojas de cálculo de ese estilo son bastante limitadas en lo que permiten hacer, donde es muy dificil realizar un análisis o plot que no esté entre los predeterminados por ellos.</p>
-<p>En este trabajo práctico vamos a aprender a usar el lenguaje de programación <strong>R</strong>, el cual es uno de los lenguajes más utilizados hoy en día al momento de analizar datos biológicos (junto a <strong>Python</strong>) debido a su practicidad al momento de leer, modificar o hacer estadística con tablas de gran tamaño, asi como la gran variedad de figuras (o <em>plots</em>) que permite crear.</p>
-<h2 id="historia-de-r"><strong>Historia de R</strong></h2>
+<h2 id="introduccion-a-r"><strong>Introduccion a R</strong></h2>
+<p>En este trabajo práctico vamos a aprender R, uno de los lenguajes de programación más utilizados hoy en día al momento de analizar datos biológicos (junto a Python). Esto se debe a su practicidad al momento de leer, modificar o hacer estadística con tablas de gran tamaño, asi como la gran variedad de figuras (o plots) que permite crear.</p>
+<details class="important">
+<summary>Un poco de historia</summary>
 <ul>
 <li>
 <p>En 1976 se crea <strong>S</strong>, un lenguaje de programación diseñado para análisis estadísticos. <strong>S</strong> fue creado en Bell Labs, que es el mismo lugar mismo lugar donde se creo <strong>Unix</strong> (pero por otras personas).</p>
@@ -785,18 +779,17 @@ Este es el botón para decargar materiales, en (#) hay que agregar el link corre
 <p>La primera versión oficial de <strong>R</strong> fue publicada en 1995 bajo una licencia de código abierto <em>GNU General Public License</em>. Esta licencia fue creada originalmente para el desarrollo de <strong>GNU</strong> y <strong>Linux</strong>, pero hoy en día es muy común al momento de distribuir programas gratis o de código abierto.</p>
 </li>
 <li>
-<p>En 1997 se crea <strong>CRAN</strong> (<em>Comprehensive R Archive Network</em>), un repositorio oficial para <strong>R</strong> así como los paquetes creados por usuarios agregaban nuevas funcionalidades a <strong>R</strong>. Originalmente había solo 12 paquetes, pero a principios del 2022 ya existían más de 18.500 diferentes paquetes de <strong>R</strong> en <strong>CRAN</strong>.</p>
+<p>En 1997 se crea <strong>CRAN</strong> (<em>Comprehensive R Archive Network</em>), un repositorio oficial para <strong>R</strong>. Originalmente había solo 12 paquetes (los cuales agregaban nuevas funcionalidades a <strong>R</strong>), y a principios del 2022 ya existían más de 18.500 diferentes paquetes de <strong>R</strong> en <strong>CRAN</strong>.</p>
 </li>
 </ul>
-<h2 id="rstudio"><strong>RStudio</strong></h2>
-<p>Cuando nosotros programamos en <strong>Bash</strong> lo hicimos usando <strong>Leafpad</strong>, un editor de texto genérico de Lubuntu. Luego al momento de ejecutar nuestro <em>script</em> ibamos a la terminal de Lubuntu y lo ejecutabamos con el comando <code>bash</code>. Si bien esto funciona bien para códigos simples, al momento de crear programas complejos puede resultar un poco lento y engorroso.</p>
-<p>En programación existen programas denominados <em>entornos de desarrollo</em> o <strong>IDE</strong>s (<em>Integrated Development Environment</em>) que nos permiten programar, encontrar errores (<em>debuguear</em>) y correr el <em>script</em> todo desde el mismo lugar. No solo esto, sino que varios <strong>IDE</strong>s también ayudan en el proceso de programar, insertando estructuras vacias (<em>ifs</em>, <em>fors</em>) o autocompletando los comandos o parámetros mientras uno los escribe.</p>
+</details>
+<h2 id="rstudio-empezamos-con-el-tp"><strong>RStudio - Empezamos con el TP</strong></h2>
+<p><strong>RStudio</strong> es el <em>entorno de desarrollo</em> o <strong>IDE</strong> (<em>Integrated Development Environment</em>) más conocido del lenguaje de programación <strong>R</strong> y nos va a ayudar a programar en dicho lenguaje. Los <strong>IDE</strong>s son programas que permiten programar, encontrar errores (<em>debuguear</em>) y correr el <em>script</em> todo desde un mismo lugar. Además, varios <strong>IDE</strong>s también ayudan en el proceso de programar, insertando estructuras vacias (<em>ifs</em>, <em>fors</em>) o autocompletando los comandos o parámetros mientras uno los escribe.</p>
 <p>Antiguamente los <strong>IDEs</strong> funcionaban casi exclusivamente para un solo lenguaje de programación, pero los <strong>IDEs</strong> más recientes suelen funcionar para varios lenguajes (tras un poco de configuración).</p>
-<p><strong>RStudio</strong> es el <strong>IDE</strong> más conocido del lenguaje de programación <strong>R</strong> y nos va a ayudar a programar en dicho lenguaje. </p>
 <p><strong>1)</strong> Abran RStudio en sus computadoras (acceso directo en el escritorio, o desde <strong>Inicio</strong> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg></span> <strong>Programación</strong> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg></span> <strong>RStudio</strong>).</p>
 <div class="admonition important">
 <p class="admonition-title">Importante</p>
-<p>Si les pregunta de actualizar pongan <strong>"Ignore Update"</strong>.</p>
+<p>Si les pregunta si quieren actualizar pongan <strong>"Ignore Update"</strong>.</p>
 </div>
 <details class="warning">
 <summary>Si no estan usando la Maquina Virtual de Introducción a la Bioinformática lean esto:</summary>
@@ -813,31 +806,32 @@ Este es el botón para decargar materiales, en (#) hay que agregar el link corre
 <p><a class="glightbox" href="img/RStudio.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="RStudio" src="img/RStudio.png"></a></p>
 </figure>
 <ul>
-<li>
-<p><strong>Panel superior izquierdo: Editor de Scripts</strong></p>
+<li><strong>Paneles de R</strong></li>
+</ul>
+<details class="important">
+<summary>Panel superior izquierdo: Editor de Scripts</summary>
 <p>En este panel está el <em>script</em> que acabamos de crear. Igual que en <strong>Bash</strong>, un <em>script</em> no es más que un archivo de texto con instrucciones para un lenguaje de programación específico, que en este caso es <strong>R</strong>.</p>
-<p>Este panel puede contener varias pestañas al mismo tiempo, cada una con un <em>script</em> diferente. También puede contener pestañas con visualizaciones de tablas.</p>
-</li>
-<li>
-<p><strong>Panel inferior izquierdo: Consola</strong></p>
+<p>Este panel puede contener varias pestañas al mismo tiempo, cada una con un <em>script</em> diferente. También puede contener pestañas con visualizaciones de tablas..</p>
+</details>
+<details class="important">
+<summary>Panel inferior izquierdo: Consola</summary>
 <p>La consola (pestaña <strong>Console</strong>) es similar a la terminal de Lubuntu, pero para el lenguaje de programación <strong>R</strong>. En ella podemos escribir comandos en <strong>R</strong> directamente y serán corridos. Tambíen es donde vamos a ver la salida de nuestro <em>script</em> de correrlo dentro de RStudio.</p>
 <p>Hablando de la terminal de Lubuntu, la pestaña <strong>Terminal</strong> es literalmente eso. No vamos a utilizar esta pestaña en esta materia.</p>
-</li>
-<li>
-<p><strong>Panel superior derecho: Variables</strong></p>
+</details>
+<details class="important">
+<summary>Panel superior derecho: Variable</summary>
 <p>La pestaña <strong>Environment</strong> tiene una lista de todas las variables cargadas en el <em>"entorno"</em> que están trabajando, o sea, todas las variables que crearon desde que abrieron RStudio (esto va a quedar más claro cuando corramos código). </p>
 <p>De ser posible va a mostrar el valor de la variable y de no serlo va a mostrar alguna información al respecto (como el largo de una lista). Para el caso de tablas, pueden hacer click sobre ellas y se abrirán en una nueva pestaña del panel superior izquierdo.</p>
-<p>Tener esta lista de variables es muy útil para aprender a programar en <strong>R</strong> así como para encontrar errores (o <em>debugear</em>).</p>
+<p>Tener esta lista de variables es muy útil para aprender a programar en <strong>R</strong>, así como para encontrar errores (o <em>debugear</em>).</p>
 <p>La pestaña <strong>History</strong> tiene una lista de los últimos comandos usados y la pestaña <strong>Connections</strong> se usa para unir bases de datos. No vamos a utilizar ninguna de estas pestañas en esta materia.</p>
-</li>
-<li>
-<p><strong>Panel inferior derecho: Archivos, Plots y Ayuda</strong></p>
+</details>
+<details class="important">
+<summary>Panel inferior derecho: Archivos, Plots y Ayuda</summary>
 <p>La pestaña <strong>Files</strong> es simplemente un explorador de archivos donde pueden navegar entre las carpetas disponibles y visualizar los archivos que encuentren. Es especialmente útil cuando estan trabajando en proyectos grandes con varios <em>scripts</em>.</p>
 <p>La pestaña <strong>Plots</strong> es donde apareceran todos los gráficos que vayan generando (o <em>plots</em>). Más adelante veremos más información sobre los diferentes botones de esta pestaña.</p>
 <p>Desde la pestaña <strong>Help</strong> podrán acceder a toda la ayuda disponible de <strong>R</strong> y de todos los paquetes y funciones que quieran usar (similar a <code>man</code> en <strong>Bash</strong>). Pueden buscar información sobre una función desde la caja de texto junto a la lupa o seleccionando dicho comando en el editor de scripts y apretando <span class="keys"><kbd class="key-f1">F1</kbd></span>.</p>
 <p>La pestaña <strong>Packages</strong> tiene información sobre los paquetes de <strong>R</strong> instalados y la pestaña <strong>Viewer</strong> es usada para visualizar contenido web local. No vamos a utilizar ninguna de estas pestañas en esta materia.</p>
-</li>
-</ul>
+</details>
 <div class="admonition info">
 <p class="admonition-title">Archivos .RHistory</p>
 <p>En la pestaña <strong>Files</strong> pueden ver un archivo llamado <strong>.RHistory</strong>. Este es un archivo creado por RStudio que guarda los últimos comandos corridos (que pueden recorrer en la consola con <span class="keys"><kbd class="key-arrow-up">Up</kbd></span> y <span class="keys"><kbd class="key-arrow-down">Down</kbd></span>). Estos archivos pesan poco, pero se van a crear en varios directorios donde trabajemos con <strong>R</strong>. Si les molesta y no les importa guardar los últimos comandos usados pueden borrarlos sin problema.</p>
@@ -879,6 +873,13 @@ Este es el botón para decargar materiales, en (#) hay que agregar el link corre
 </code></pre></div>
 <p>Como siempre, reemplazando <strong>ARCHIVO_SCRIPT.R</strong> por el nombre de su archivo.</p>
 </div>
+<h2 id="working-directory"><strong>Working Directory</strong></h2>
+<p>Establecer el directorio de trabajo antes de empezar a trabajar es una práctica que nos va a ayudar a mantener nuestros archivos y scripts ordenados. El <em>Working Directory</em> es el <em>path</em> en donde estoy trabajando y comparándolo con lo que hicimos en <strong>Bash</strong> se puede pensar como en que carpeta está ahora la terminal.</p>
+<p>En <strong>R</strong> el comando para saber en que <em>path</em> estoy "parado" es la función <code>getwd()</code>.</p>
+<p>Si quiero cambiar este <em>path</em>, tengo que usar la función <code>setwd("PATH_ABSOLUTO")</code>.</p>
+<p><strong>1)</strong> Creen una carpeta donde van a trabajar, por ejemplo <strong>~/Documentos/TP_08</strong></p>
+<p><strong>2)</strong> Usen la función <code>getwd()</code> para ver el <em>Working Directory</em> actual</p>
+<p><strong>3)</strong> Usen la función <code>setwd()</code> para asignar la carpeta creada en <strong>1)</strong> como <em>Working Directory</em> (recuerden que tienen que pasarle como parámetro el <em>path</em> absoluto de dicha carpeta)</p>
 <h2 id="r-variables"><strong>R: Variables</strong></h2>
 <p>Como dijimos cuando vimos <strong>Bash</strong>, diferentes lenguajes tienen elementos similares, pero se usan ligeramente diferente. Vamos a entonces a aprender como se usan las variables en <strong>R</strong>.</p>
 <p><strong>1)</strong> Escriban en el editor de scripts la siguiente línea y corranlá:</p>
@@ -891,7 +892,7 @@ Este es el botón para decargar materiales, en (#) hay que agregar el link corre
 </code></pre></div>
 <p>No se si se dan cuenta lo que acaba de pasar, pero estan imprimiendo en la consola el valor de una variable que declararon previamente. Esto es un gran beneficio de <strong>RStudio</strong>, que nos permite guardar valores de variables y usarlos en el futuro, sin tener que correr todo el <em>script</em> de arriba a abajo cada vez que queremos modificar algo. Sin embargo, un gran poder conlleva una gran responsabilidad, ya que este sistema también hace posible estar usando un valor "viejo" o "equivocado" en una variable.</p>
 <p>La forma correcta de trabajar es ir dejando en nuestro <em>script</em> un registro de las órdenes correctas para llegar al output deseado. También es buena práctica comentar las instrucciones más importantes para que se pueda entender por quien tenga que reutilizar el código. Es algo así como el <strong>cuaderno de laboratorio bioinformático</strong>.</p>
-<p>De poner solo el nombre de una variable es equivalente a hacer un <code>print</code>, o sea los siguiente dos comandos son equivalentes:</p>
+<p>Poner solo el nombre de una variable es equivalente a hacer un <code>print</code>, o sea los siguiente dos comandos son equivalentes:</p>
 <div class="highlight"><pre><span></span><code><span class="nf">print</span><span class="p">(</span><span class="n">saludo</span><span class="p">)</span>
 <span class="n">saludo</span>
 </code></pre></div>
@@ -1173,10 +1174,10 @@ Este es el botón para decargar materiales, en (#) hay que agregar el link corre
 <table>
 <thead>
 <tr>
-<th data-sort-method="none" style="text-align: center;">Booleano 1</th>
-<th data-sort-method="none" style="text-align: center;">Booleano 2</th>
-<th data-sort-method="none" style="text-align: center;">AND (&amp;)</th>
-<th data-sort-method="none" style="text-align: center;">OR (|)</th>
+<th data-sort-method="none" style="text-align: center;">Booleano1</th>
+<th data-sort-method="none" style="text-align: center;">Booleano2</th>
+<th data-sort-method="none" style="text-align: center;">AND (Booleano1 &amp; Booleano2)</th>
+<th data-sort-method="none" style="text-align: center;">OR (Booleano1 | Booleano2)</th>
 </tr>
 </thead>
 <tbody>
@@ -1209,8 +1210,8 @@ Este es el botón para decargar materiales, en (#) hay que agregar el link corre
 <table>
 <thead>
 <tr>
-<th data-sort-method="none" style="text-align: center;">Booleano 1</th>
-<th data-sort-method="none" style="text-align: center;">NOT (!)</th>
+<th data-sort-method="none" style="text-align: center;">Booleano1</th>
+<th data-sort-method="none" style="text-align: center;">NOT (!Booleano1)</th>
 </tr>
 </thead>
 <tbody>
@@ -1225,7 +1226,7 @@ Este es el botón para decargar materiales, en (#) hay que agregar el link corre
 </tbody>
 </table>
 </details>
-<p>Las variables booleanas se pueden usar en los directamente en las condiciones de los <em>ifs</em>. Si bien se pueden comparar contra <strong class="green_text">TRUE</strong> y <strong class="red_text">FALSE</strong>, de poner solo la variable en la condición del <em>if</em>, es equivalente a preguntar si esa variable es <strong class="green_text">TRUE</strong>. Vean las siguientes tres pestañas para entenderlo mejor:</p>
+<p>Las variables booleanas se pueden usar directamente en las condiciones de los <em>ifs</em>. Si bien se pueden comparar contra <strong class="green_text">TRUE</strong> y <strong class="red_text">FALSE</strong>, de poner solo la variable en la condición del <em>if</em>, es equivalente a preguntar si esa variable es <strong class="green_text">TRUE</strong>. Vean las siguientes tres pestañas para entenderlo mejor:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="3:3"><input checked id="__tabbed_3_1" name="__tabbed_3" type="radio"><input id="__tabbed_3_2" name="__tabbed_3" type="radio"><input id="__tabbed_3_3" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="__tabbed_3_1">Código</label><label for="__tabbed_3_2">Código con comentarios</label><label for="__tabbed_3_3">Código - Versión mínima</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -1282,7 +1283,7 @@ Este es el botón para decargar materiales, en (#) hay que agregar el link corre
 <div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked id="__tabbed_4_1" name="__tabbed_4" type="radio"><input id="__tabbed_4_2" name="__tabbed_4" type="radio"><div class="tabbed-labels"><label for="__tabbed_4_1">Código</label><label for="__tabbed_4_2">Código con comentarios</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="nf">for </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">1000</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<div class="highlight"><pre><span></span><code><span class="nf">for </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nf">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div>
@@ -1291,8 +1292,8 @@ Este es el botón para decargar materiales, en (#) hay que agregar el link corre
 <div class="highlight"><pre><span></span><code><span class="c1"># *for* es una de las estructuras más usadas para hacer ciclos</span>
 <span class="c1"># *i* es el nombre de la variable que va a cambiar de valor en cada ciclo. Se le podria poner cualquier nombre a </span>
 <span class="c1"># ésta variable, por ejemplo *numero* en nuestro caso, pero es costumbre ponele *i*</span>
-<span class="c1"># En este caso, *i* va a recorrer cada valor del rango 1:1000 (es decir, del número 1 al número 1000)</span>
-<span class="nf">for </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">1000</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="c1"># En este caso, *i* va a recorrer cada valor del rango 1:10 (es decir, del número 1 al número 10)</span>
+<span class="nf">for </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="c1"># El código entre las llaves se va a ejecutar una vez para cada posible *i* en el rango</span>
 <span class="w">    </span><span class="nf">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 <span class="p">}</span>
@@ -1300,7 +1301,7 @@ Este es el botón para decargar materiales, en (#) hay que agregar el link corre
 </div>
 </div>
 </div>
-<p>En este caso el <em>for</em> va a recorrer todos los elementos de un vector de números que vá entre 1 y 1000. También podemos recorrer en el <em>for</em> los elementos de un vector previamente declarado, por ejemplo:</p>
+<p>En este caso el <em>for</em> va a recorrer todos los elementos de un vector de números que vá entre 1 y 10 e imprimir el valor de i en cada ciclo. También podemos recorrer en el <em>for</em> los elementos de un vector previamente declarado, por ejemplo:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked id="__tabbed_5_1" name="__tabbed_5" type="radio"><input id="__tabbed_5_2" name="__tabbed_5" type="radio"><div class="tabbed-labels"><label for="__tabbed_5_1">Código</label><label for="__tabbed_5_2">Código con comentarios</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -1328,7 +1329,7 @@ Este es el botón para decargar materiales, en (#) hay que agregar el link corre
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="n">contador</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">1</span>
 
-<span class="nf">while</span><span class="p">(</span><span class="n">contador</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="m">1000</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="nf">while</span><span class="p">(</span><span class="n">contador</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="m">10</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nf">print</span><span class="p">(</span><span class="n">contador</span><span class="p">)</span>
 
 <span class="w">    </span><span class="n">contador</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">contador</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">1</span>
@@ -1340,7 +1341,7 @@ Este es el botón para decargar materiales, en (#) hay que agregar el link corre
 <span class="n">contador</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">1</span>
 
 <span class="c1"># Todo lo que esta adentro del ciclo *while* se va a repetir mientras la condición *contador &lt;= 1000* sea TRUE</span>
-<span class="nf">while</span><span class="p">(</span><span class="n">contador</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="m">1000</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="nf">while</span><span class="p">(</span><span class="n">contador</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="m">10</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="c1"># Imprimo la variable *contador* en la terminal</span>
 <span class="w">    </span><span class="nf">print</span><span class="p">(</span><span class="n">contador</span><span class="p">)</span>
 
@@ -1352,14 +1353,14 @@ Este es el botón para decargar materiales, en (#) hay que agregar el link corre
 </div>
 </div>
 </div>
-<p>Tal vez no se dan cuenta, pero este programa va a hacer lo mismo que el <code>for (i in 1:1000)</code> que usamos arriba: La variable <code>contador</code> va a empezar en 1 y al final de cada ciclo va a aumentarse en 1 gracias al comando <code>contador &lt;- contador + 1</code>. Cuando <code>contador</code> llegue a 1001, la condición <code>contador &lt;= 1000</code> va a ser <strong class="red_text">FALSE</strong> y el <em>while</em> va a terminar (es decir, el número 1001 nunca se imprime en la terminal).</p>
-<p>Ahora bien, para el caso anterior no tiene mucho sentido usar un ciclo <em>while</em> ya que se podría haber hecho perfectamente con un <em>for</em>. Supongamos entonces que queremos escribir las potencias de 2 que son menores a 1.000.000, en ese caso podemos hacer:</p>
+<p>Tal vez no se dan cuenta, pero este programa va a hacer lo mismo que el <code>for (i in 1:10)</code> que usamos arriba: La variable <code>contador</code> va a empezar en 1 y al final de cada ciclo va a aumentarse en 1 gracias al comando <code>contador &lt;- contador + 1</code>. Cuando <code>contador</code> llegue a 1001, la condición <code>contador &lt;= 10</code> va a ser <strong class="red_text">FALSE</strong> y el <em>while</em> va a terminar (es decir, el número 1001 nunca se imprime en la terminal).</p>
+<p>Ahora bien, para el caso anterior no tiene mucho sentido usar un ciclo <em>while</em> ya que se podría haber hecho perfectamente con un <em>for</em>. Supongamos entonces que queremos escribir las potencias de 2 que son menores a 1.000, en ese caso podemos hacer:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked id="__tabbed_7_1" name="__tabbed_7" type="radio"><input id="__tabbed_7_2" name="__tabbed_7" type="radio"><div class="tabbed-labels"><label for="__tabbed_7_1">Código</label><label for="__tabbed_7_2">Código con comentarios</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="n">numero</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">1</span>
 
-<span class="nf">while</span><span class="p">(</span><span class="n">numero</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">1000000</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="nf">while</span><span class="p">(</span><span class="n">numero</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">1000</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nf">print</span><span class="p">(</span><span class="n">numero</span><span class="p">)</span>
 
 <span class="w">    </span><span class="n">numero</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">numero</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">2</span>
@@ -1371,7 +1372,7 @@ Este es el botón para decargar materiales, en (#) hay que agregar el link corre
 <span class="n">numero</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">1</span>
 
 <span class="c1"># El loop este va a seguir mientras *numero* sea menor a 1 millon</span>
-<span class="nf">while</span><span class="p">(</span><span class="n">numero</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">1000000</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="nf">while</span><span class="p">(</span><span class="n">numero</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">1000</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="c1"># Imprimo *numero* en la terminal</span>
 <span class="w">    </span><span class="nf">print</span><span class="p">(</span><span class="n">numero</span><span class="p">)</span>
 
@@ -1441,7 +1442,8 @@ Este es el botón para decargar materiales, en (#) hay que agregar el link corre
 <p>Si bien los <em>Data Frames</em> tienen bastantes funcionalidades, existe un tipo de variable llamada <em>Data Table</em> que básicamente es un <em>Data Frame</em> con muchas mejoras, por lo que va a ser la variable que vamos a usar nosotros al momento de trabajar con tablas.</p>
 <p>El problema es que las variables <em>Data Tables</em> no vienen por defecto con <strong>R</strong>, sino que necesitamos usar un paquete externo llamado <strong>data.table</strong>. Este paquete de <strong>R</strong> ya está preinstalado en sus máquinas virtuales, pero pueden ver como se instala de 0 en la sección <strong>RStudio</strong> al principio de esta guia.</p>
 <p>Por más que esté instalado el paquete, es necesario cargarlo cada vez que abramos <strong>R</strong>. Es común cargar al principio de cada <em>script</em> todos los paquetes que uno va a usar (no hay problemas al intentar cargar un paquete ya cargado):</p>
-<p></p><div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span><span class="w"> </span><span class="c1"># Esto carga el paquete data.table para poder usar el tipo de variable Data Tables</span>
+<p></p><div class="highlight"><pre><span></span><code><span class="nf">install.packages</span><span class="p">(</span><span class="s">"data.table"</span><span class="p">)</span><span class="w"> </span><span class="c1">#Esto instala el paquete data.table, solo lo tienen que hacer una vez en caso de que no lo tengan instalado</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span><span class="w"> </span><span class="c1"># Esto carga el paquete data.table para poder usar el tipo de variable Data Tables</span>
 
 <span class="n">genes</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">"ERT2"</span><span class="p">,</span><span class="w"> </span><span class="s">"TTR4"</span><span class="p">,</span><span class="w"> </span><span class="s">"REC1"</span><span class="p">)</span>
 <span class="n">esencialidad</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="bp">F</span><span class="p">,</span><span class="w"> </span><span class="bp">F</span><span class="p">,</span><span class="w"> </span><span class="bp">T</span><span class="p">)</span>
@@ -1499,13 +1501,6 @@ Fijense que <code>summary</code> va a devolver información en base a que contie
 <li>¡Y muchas más!</li>
 </ul>
 </details>
-<h3 id="working-directory">Working Directory</h3>
-<p>Esto es algo que lo veníamos posponiendo desde el principio de este TP, pero ahora vamos a querer leer y escribir archivos de disco, por lo que es necesario. El <em>Working Directory</em> es el <em>path</em> en donde estoy trabajando y comparándolo con lo que hicimos en <strong>Bash</strong> se puede pensar como en que carpeta está ahora la terminal.</p>
-<p>En <strong>R</strong> el comando para saber en que <em>path</em> estoy "parado" es la función <code>getwd()</code>.</p>
-<p>Si quiero cambiar este <em>path</em>, tengo que usar la función <code>setwd("PATH_ABSOLUTO")</code>.</p>
-<p><strong>1)</strong> Creen una carpeta donde van a trabajar, por ejemplo <strong>~/Documentos/TP_08</strong></p>
-<p><strong>2)</strong> Usen la función <code>getwd()</code> para ver el <em>Working Directory</em> actual</p>
-<p><strong>3)</strong> Usen la función <code>setwd()</code> para asignar la carpeta creada en <strong>1)</strong> como <em>Working Directory</em> (recuerden que tienen que pasarle como parámetro el <em>path</em> absoluto de dicha carpeta)</p>
 <h3 id="escribir-tablas">Escribir Tablas</h3>
 <p>Hay varias funciones para escribir tablas, pero la que vamos a usar nosotros es <code>write.table</code>, por ejemplo:</p>
 <div class="highlight"><pre><span></span><code><span class="nf">write.table</span><span class="p">(</span><span class="n">dt</span><span class="p">,</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"ARCHIVO_DT"</span><span class="p">,</span><span class="w"> </span><span class="n">col.names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">T</span><span class="p">,</span><span class="w"> </span><span class="n">row.names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">F</span><span class="p">,</span><span class="w"> </span><span class="n">sep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"\t"</span><span class="p">,</span><span class="w"> </span><span class="n">quote</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">T</span><span class="p">)</span>
@@ -1523,7 +1518,7 @@ Fijense que <code>summary</code> va a devolver información en base a que contie
 <li><code>quote</code> indica si queremos colocar comillas bordeando a los <em>strings</em> que tengamos en la tabla. Puede ser <strong class="green_text">T</strong> o <strong class="red_text">F</strong>, o tambíen puede ser un vector numérico que indica a las columnas a las que hay que ponerle comillas (con la primera siendo la número 1)</li>
 </ul>
 <p><strong>4)</strong> Existen algunas tablas en <strong>R</strong> que estan siempre cargadas en memoria y sirven para probar cosas. Una de estas tablas es <strong>iris</strong>. Usen <code>print</code> para ver esta tabla y luego usen <code>help(iris)</code> para ver la ayuda relacionada a esta tabla (que explica un poco las columnas).</p>
-<p><strong>5)</strong> Guarden la tabla <strong>iris</strong> en un archivo llamado <strong>iris.tsv</strong> dentro de la carpeta creada en el punto <strong>1)</strong>. Usen los parámetros usados en el ejemplo de arriba. Confirmen que se creo el archivo.</p>
+<p><strong>5)</strong> Guarden la tabla <strong>iris</strong> en un archivo llamado <strong>iris.tsv</strong> dentro de la carpeta creada al principio de esta guía. Usen los parámetros usados en el ejemplo de arriba. Confirmen que se creo el archivo.</p>
 <div class="admonition info">
 <p class="admonition-title">Comillas en los archivos <strong>.tsv</strong></p>
 <p>Si abren con <strong>Leafpad</strong> el archivo <strong>iris.tsv</strong> recién creado van a ver que los nombres de las columnas y todos los valores de la columna <strong>Species</strong> estan rodeados por comillas. Estas comillas no son parte de los nombres o valores de las columnas, sino que es la forma que usamos para indicar que lo que está dentro de ellas es un <em>string</em>. Estas comillas aparecen por haber usado el parámetro <code>quote = T</code> y son útiles para varios casos, por ejemplo de trabajar con <em>strings</em> con espacios.</p>
@@ -1613,7 +1608,8 @@ Fijense que <code>summary</code> va a devolver información en base a que contie
 <p>Si bien la funciones <code>plot</code> e <code>hist</code> se pueden usar para hacer muchos tipos de plots, la mayoría de los plots hechos por <strong>R</strong> que uno puede llegar a ver en papers o similar estan hechos con paquetes de <strong>R</strong> que se especializan en plots.</p>
 <p>El paquete <code>ggplot2</code> es uno de los más usados, debido a su gran variedad de plots y a que le permite al usuario modificar practicamente cualquier detalle del plot (con más o menos dificultad).</p>
 <p><strong>1)</strong> La función principal del paquete <code>ggplot2</code> se llama <code>ggplot</code> y comunmente es usada con <em>Data Frames</em> o <em>Data Tables</em>. Entonces, corran el siguiente código que usa la tabla <strong>iris</strong> para hacer un ejemplo de un plot simple con <code>ggplot</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="nf">install.packages</span><span class="p">(</span><span class="s">"ggplot2"</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
 
 <span class="nf">ggplot</span><span class="p">(</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">iris</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Sepal.Length</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Petal.Length</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
 <span class="w">    </span><span class="nf">geom_point</span><span class="p">()</span>
@@ -1631,6 +1627,9 @@ Fijense que <code>summary</code> va a devolver información en base a que contie
 </code></pre></div>
 <p>Como dijimos antes hay muchas funciones de ploteo, cada una con muchos parámetos posibles. Lo más normal al usar <code>ggplot</code> es googlear el uso específico que uno quiere hacer en ese momento y ver como se hace.</p>
 <p><strong>3)</strong> El siguiente código es un ejemplo más "completo" de un plot hecho con <code>ggplot</code>. Corran el siguiente código y vean el plot. Fijense si pueden inferir en base a su nombre que hacen algunos de los parámetros que le pasamos a <code>ggplot</code> (pueden ver el <a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf">cheatsheet</a>):</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="8:2"><input checked id="__tabbed_8_1" name="__tabbed_8" type="radio"><input id="__tabbed_8_2" name="__tabbed_8" type="radio"><div class="tabbed-labels"><label for="__tabbed_8_1">Código</label><label for="__tabbed_8_2">Código con comentarios</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="nf">ggplot</span><span class="p">(</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">iris</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Sepal.Length</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Petal.Length</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Species</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
 <span class="w">    </span><span class="nf">geom_point</span><span class="p">(</span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1.5</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
 <span class="w">    </span><span class="nf">xlim</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">8</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
@@ -1640,14 +1639,82 @@ Fijense que <code>summary</code> va a devolver información en base a que contie
 <span class="w">    </span><span class="nf">ylab</span><span class="p">(</span><span class="s">"Petal Length"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
 <span class="w">    </span><span class="nf">ggtitle</span><span class="p">(</span><span class="s">"Sepal vs Petal Length per Species"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
 <span class="w">    </span><span class="nf">theme</span><span class="p">(</span><span class="n">plot.title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element_text</span><span class="p">(</span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">16</span><span class="p">,</span><span class="w"> </span><span class="n">hjust</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.5</span><span class="p">),</span>
-<span class="w">          </span><span class="n">axis.title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element_text</span><span class="p">(</span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">14</span><span class="p">),</span>
-<span class="w">          </span><span class="n">axis.text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element_text</span><span class="p">(</span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">12</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">        </span><span class="n">axis.title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element_text</span><span class="p">(</span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">14</span><span class="p">),</span>
+<span class="w">        </span><span class="n">axis.text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element_text</span><span class="p">(</span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">12</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
 <span class="w">    </span><span class="nf">scale_color_discrete</span><span class="p">(</span><span class="n">labels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">"Setosa"</span><span class="p">,</span><span class="w"> </span><span class="s">"Versicolor"</span><span class="p">,</span><span class="w"> </span><span class="s">"Virginica"</span><span class="p">))</span>
 </code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nf">ggplot</span><span class="p">(</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">iris</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Sepal.Length</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Petal.Length</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Species</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="c1">#con data especifico la tabla que voy a graficar</span>
+<span class="w">    </span><span class="c1">#en aes selecciono las columnas para los datos en los ejes x e y, </span>
+<span class="w">    </span><span class="c1">#tambien determino que columna se va a usar para colorear los puntos</span>
+<span class="w">    </span><span class="nf">geom_point</span><span class="p">(</span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1.5</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="c1">#tamaño del punto</span>
+<span class="w">    </span><span class="nf">xlim</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">8</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="nf">ylim</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">8</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="c1">#limites de los ejes</span>
+<span class="w">    </span><span class="nf">theme_bw</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="c1">#tema del grafico</span>
+<span class="w">    </span><span class="nf">xlab</span><span class="p">(</span><span class="s">"Sepal Length"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="nf">ylab</span><span class="p">(</span><span class="s">"Petal Length"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="c1">#etiquetas de los ejes</span>
+<span class="w">    </span><span class="nf">ggtitle</span><span class="p">(</span><span class="s">"Sepal vs Petal Length per Species"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="c1">#titulo del grafico</span>
+<span class="w">    </span><span class="nf">theme</span><span class="p">(</span><span class="n">plot.title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element_text</span><span class="p">(</span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">16</span><span class="p">,</span><span class="w"> </span><span class="n">hjust</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.5</span><span class="p">),</span>
+<span class="w">            </span><span class="n">axis.title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element_text</span><span class="p">(</span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">14</span><span class="p">),</span>
+<span class="w">            </span><span class="n">axis.text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element_text</span><span class="p">(</span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">12</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="c1">#personalizo el titulo y los ejes</span>
+<span class="w">    </span><span class="nf">scale_color_discrete</span><span class="p">(</span><span class="n">labels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">"Setosa"</span><span class="p">,</span><span class="w"> </span><span class="s">"Versicolor"</span><span class="p">,</span><span class="w"> </span><span class="s">"Virginica"</span><span class="p">))</span>
+<span class="w">    </span><span class="c1">#agrego etiquetas a la leyenda</span>
+</code></pre></div>
+</div>
+</div>
+</div>
 <figure>
 <p><a class="glightbox" href="img/ggplot2_example.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="GGplot" src="img/ggplot2_example.png"></a></p>
 </figure>
 <h2 id="r-variables-mas-complejas"><strong>R: Variables más complejas</strong></h2>
+<h3 id="factores">Factores</h3>
+<p>Los factores son un tipo de variable que es usada para cuando tenemos variables categóricas, por ejemplo la columna <strong>Species</strong> en la tabla <strong>iris</strong> que vimos anteriormente era una variable de tipo <em>factor</em>. Para entenderlo mejor supongamos que tenemos 5 individuos que fueron tratados con diferentes niveles de una droga y mostraron diferentes resultados. Queremos entonces plotear boxplots mostrando los resultados por cada nivel de tratamiento:</p>
+<p><strong>1)</strong> Prueben correr el próximo código y vean si funciona (spoiler: no va a funcionar).</p>
+<div class="highlight"><pre><span></span><code><span class="n">niveles_tratamiento</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">"bajo"</span><span class="p">,</span><span class="w"> </span><span class="s">"medio"</span><span class="p">,</span><span class="w"> </span><span class="s">"alto"</span><span class="p">,</span><span class="w"> </span><span class="s">"alto"</span><span class="p">,</span><span class="w"> </span><span class="s">"bajo"</span><span class="p">)</span>
+<span class="n">resultados_tratamiento</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">5</span><span class="p">,</span><span class="w"> </span><span class="m">8</span><span class="p">,</span><span class="w"> </span><span class="m">9</span><span class="p">,</span><span class="w"> </span><span class="m">4</span><span class="p">)</span>
+
+<span class="nf">plot</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">niveles_tratamiento</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">resultados_tratamiento</span><span class="p">)</span>
+</code></pre></div>
+<p>El problema con el código anterior es que <code>plot</code> no sabe que hacer cuando uno le pasa un vector de <em>strings</em>, es decir, no entiende que son categorías. Necesitamos entonces transformar nuestros datos en factores.</p>
+<p><strong>2)</strong> Vean que pasa de correr el siguiente código:</p>
+<div class="highlight"><pre><span></span><code><span class="n">niveles_tratamiento</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">"bajo"</span><span class="p">,</span><span class="w"> </span><span class="s">"medio"</span><span class="p">,</span><span class="w"> </span><span class="s">"alto"</span><span class="p">,</span><span class="w"> </span><span class="s">"alto"</span><span class="p">,</span><span class="w"> </span><span class="s">"bajo"</span><span class="p">)</span>
+<span class="n">resultados_tratamiento</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">5</span><span class="p">,</span><span class="w"> </span><span class="m">8</span><span class="p">,</span><span class="w"> </span><span class="m">9</span><span class="p">,</span><span class="w"> </span><span class="m">4</span><span class="p">)</span>
+
+<span class="n">factor_niveles_tratamiento</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">factor</span><span class="p">(</span><span class="n">niveles_tratamiento</span><span class="p">)</span>
+
+<span class="nf">plot</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">factor_niveles_tratamiento</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">resultados_tratamiento</span><span class="p">)</span>
+</code></pre></div>
+<p>En este momento aunque sea vemos un plot, pero si se fijan en el eje X tenemos un problema: los niveles de tratamiento no están en un órden lógico. Cuando uno crea factores puede asignar este orden a mano.</p>
+<p><strong>3)</strong> Cambien entonces el código anterior al código siguiente y corranló:</p>
+<div class="highlight"><pre><span></span><code><span class="n">niveles_tratamiento</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">"bajo"</span><span class="p">,</span><span class="w"> </span><span class="s">"medio"</span><span class="p">,</span><span class="w"> </span><span class="s">"alto"</span><span class="p">,</span><span class="w"> </span><span class="s">"alto"</span><span class="p">,</span><span class="w"> </span><span class="s">"bajo"</span><span class="p">)</span>
+<span class="n">resultados_tratamiento</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">5</span><span class="p">,</span><span class="w"> </span><span class="m">8</span><span class="p">,</span><span class="w"> </span><span class="m">9</span><span class="p">,</span><span class="w"> </span><span class="m">4</span><span class="p">)</span>
+
+<span class="n">factor_niveles_tratamiento</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">factor</span><span class="p">(</span><span class="n">niveles_tratamiento</span><span class="p">,</span><span class="w"> </span><span class="n">levels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">"bajo"</span><span class="p">,</span><span class="w"> </span><span class="s">"medio"</span><span class="p">,</span><span class="w"> </span><span class="s">"alto"</span><span class="p">))</span>
+
+<span class="nf">plot</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">factor_niveles_tratamiento</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">resultados_tratamiento</span><span class="p">)</span>
+</code></pre></div>
+<p>Como ven el parámetro <code>levels</code> nos permite indicar a mano el orden de los factores.</p>
+<p><strong>4)</strong> Impriman por consola a <strong>niveles_tratamiento</strong> y a <strong>factor_niveles_tratamiento</strong> y vean las diferencias.</p>
+<div class="admonition info">
+<p class="admonition-title">Factores y ggplot2</p>
+<p>La función <code>ggplot</code> transforma lista de <em>strings</em> a factores automaticamente al momento de plotear, por lo que no va a dar error de haber usado <strong>niveles_tratamiento</strong> (en una columna de un <em>Data Table</em>). Sin embargo, los factores siguen siendo útiles en estos casos para controlar el órden en los que se plotean las variables categóricas.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Estructura interna de los factores</p>
+<p>Esto es un poco técnico, pero otro beneficio de los factores es que ahorran memoria. Esto se debe a que en realidad no se guardan como una lista de <em>strings</em>, sino que <strong>R</strong> le asigna un número a cada <code>level</code> y eso es lo que realmente guarda para todos los datos. Esto se puede ver con la función <code>as.numeric()</code>:</p>
+<p></p><div class="highlight"><pre><span></span><code><span class="nf">as.numeric</span><span class="p">(</span><span class="n">factor_niveles_tratamiento</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">1</span>
+</code></pre></div>
+</div>
 <h3 id="listas">Listas</h3>
 <p>El concepto de las listas es similar al de los vectores, solo que las listas pueden contener elementos de diferentes tipos (incluyendo vectores, plots, tablas u otras listas). Sin embargo, las listas son estructuras un poco más complejas, por lo que de querer multiplicar cada elemento de una lista por dos no alcanza con hacer <code>lista * 2</code>.</p>
 <p>Las listas se crean de la siguiente forma:</p>
@@ -1656,7 +1723,7 @@ Fijense que <code>summary</code> va a devolver información en base a que contie
 <span class="n">lista_mixta</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">7</span><span class="p">,</span><span class="s">"perro"</span><span class="p">)</span>
 </code></pre></div>
 <p>Si bien los nombres indicarían que creamos tres "tipos" de lista, en realidad a las listas les da lo mismo si todos sus elementos son del mismo tipo o no. </p>
-<p><strong>1)</strong> Impriman por pantalla a la <code>lista_mixta</code>. Deberían ver lo siguiente:</p>
+<p><strong>5)</strong> Impriman por pantalla a la <code>lista_mixta</code>. Deberían ver lo siguiente:</p>
 <div class="highlight"><pre><span></span><code>[[1]]
 [1] 3
 
@@ -1671,7 +1738,7 @@ Fijense que <code>summary</code> va a devolver información en base a que contie
 </code></pre></div>
 <p>Hay 2 cosas de interés. Primero que cada elemento esta en su propia fila con un encabezado con su índice <code>[[i]]</code>, y segundo que los números aca no tienen comillas (como pasaba en los vectores al mezclar tipos de datos) por lo que siguen siendo números.</p>
 <p>Como sospecharan por los índices que aparecen, al momento de querer un elemento específico de una lista hay que usar doble corchete, por ejemplo:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="8:2"><input checked id="__tabbed_8_1" name="__tabbed_8" type="radio"><input id="__tabbed_8_2" name="__tabbed_8" type="radio"><div class="tabbed-labels"><label for="__tabbed_8_1">Código</label><label for="__tabbed_8_2">Código con comentarios</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="9:2"><input checked id="__tabbed_9_1" name="__tabbed_9" type="radio"><input id="__tabbed_9_2" name="__tabbed_9" type="radio"><div class="tabbed-labels"><label for="__tabbed_9_1">Código</label><label for="__tabbed_9_2">Código con comentarios</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="n">lista_super_mixta</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">7</span><span class="p">,</span><span class="s">"perro"</span><span class="p">,</span><span class="nf">c</span><span class="p">(</span><span class="m">20</span><span class="o">:</span><span class="m">30</span><span class="p">))</span>
@@ -1701,47 +1768,7 @@ Fijense que <code>summary</code> va a devolver información en base a que contie
 </div>
 </div>
 <p>Si bien las listas tienen sus usos, en esta materia nos vamos a enfocar más en usar vectores. Dicho esto, existen funciones de <strong>R</strong> que van a devolver listas por defecto. Para transformar estas listas en vectores pueden usar la función <code>unlist</code>. </p>
-<p><strong>2)</strong> Prueben usar <code>unlist</code> con la variable <code>lista_super_mixta</code> y vean que pasa.</p>
-<h3 id="factores">Factores</h3>
-<p>Los factores son un tipo de variable que es usada para cuando tenemos variables categóricas, por ejemplo la columna <strong>Species</strong> en la tabla <strong>iris</strong> que vimos anteriormente era una variable de tipo <em>factor</em>. Para entenderlo mejor supongamos que tenemos 5 individuos que fueron tratados con diferentes niveles de una droga y mostraron diferentes resultados. Queremos entonces plotear boxplots mostrando los resultados por cada nivel de tratamiento:</p>
-<p><strong>3)</strong> Prueben correr el próximo código y vean si funciona (spoiler: no va a funcionar).</p>
-<div class="highlight"><pre><span></span><code><span class="n">niveles_tratamiento</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">"bajo"</span><span class="p">,</span><span class="w"> </span><span class="s">"medio"</span><span class="p">,</span><span class="w"> </span><span class="s">"alto"</span><span class="p">,</span><span class="w"> </span><span class="s">"alto"</span><span class="p">,</span><span class="w"> </span><span class="s">"bajo"</span><span class="p">)</span>
-<span class="n">resultados_tratamiento</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">5</span><span class="p">,</span><span class="w"> </span><span class="m">8</span><span class="p">,</span><span class="w"> </span><span class="m">9</span><span class="p">,</span><span class="w"> </span><span class="m">4</span><span class="p">)</span>
-
-<span class="nf">plot</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">niveles_tratamiento</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">resultados_tratamiento</span><span class="p">)</span>
-</code></pre></div>
-<p>El problema con el código anterior es que <code>plot</code> no sabe que hacer cuando uno le pasa un vector de <em>strings</em>, es decir, no entiende que son categorías. Necesitamos entonces transformar nuestros datos en factores.</p>
-<p><strong>4)</strong> Vean que pasa de correr el siguiente código:</p>
-<div class="highlight"><pre><span></span><code><span class="n">niveles_tratamiento</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">"bajo"</span><span class="p">,</span><span class="w"> </span><span class="s">"medio"</span><span class="p">,</span><span class="w"> </span><span class="s">"alto"</span><span class="p">,</span><span class="w"> </span><span class="s">"alto"</span><span class="p">,</span><span class="w"> </span><span class="s">"bajo"</span><span class="p">)</span>
-<span class="n">resultados_tratamiento</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">5</span><span class="p">,</span><span class="w"> </span><span class="m">8</span><span class="p">,</span><span class="w"> </span><span class="m">9</span><span class="p">,</span><span class="w"> </span><span class="m">4</span><span class="p">)</span>
-
-<span class="n">factor_niveles_tratamiento</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">factor</span><span class="p">(</span><span class="n">niveles_tratamiento</span><span class="p">)</span>
-
-<span class="nf">plot</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">factor_niveles_tratamiento</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">resultados_tratamiento</span><span class="p">)</span>
-</code></pre></div>
-<p>En este momento aunque sea vemos un plot, pero si se fijan en el eje X tenemos un problema: los niveles de tratamiento no están en un órden lógico. Cuando uno crea factores puede asignar este orden a mano.</p>
-<p><strong>5)</strong> Cambien entonces el código anterior al código siguiente y corranló:</p>
-<div class="highlight"><pre><span></span><code><span class="n">niveles_tratamiento</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">"bajo"</span><span class="p">,</span><span class="w"> </span><span class="s">"medio"</span><span class="p">,</span><span class="w"> </span><span class="s">"alto"</span><span class="p">,</span><span class="w"> </span><span class="s">"alto"</span><span class="p">,</span><span class="w"> </span><span class="s">"bajo"</span><span class="p">)</span>
-<span class="n">resultados_tratamiento</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">5</span><span class="p">,</span><span class="w"> </span><span class="m">8</span><span class="p">,</span><span class="w"> </span><span class="m">9</span><span class="p">,</span><span class="w"> </span><span class="m">4</span><span class="p">)</span>
-
-<span class="n">factor_niveles_tratamiento</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">factor</span><span class="p">(</span><span class="n">niveles_tratamiento</span><span class="p">,</span><span class="w"> </span><span class="n">levels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">"bajo"</span><span class="p">,</span><span class="w"> </span><span class="s">"medio"</span><span class="p">,</span><span class="w"> </span><span class="s">"alto"</span><span class="p">))</span>
-
-<span class="nf">plot</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">factor_niveles_tratamiento</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">resultados_tratamiento</span><span class="p">)</span>
-</code></pre></div>
-<p>Como ven el parámetro <code>levels</code> nos permite indicar a mano el orden de los factores.</p>
-<p><strong>6)</strong> Impriman por consola a <strong>niveles_tratamiento</strong> y a <strong>factor_niveles_tratamiento</strong> y vean las diferencias.</p>
-<div class="admonition info">
-<p class="admonition-title">Factores y ggplot2</p>
-<p>La función <code>ggplot</code> transforma lista de <em>strings</em> a factores automaticamente al momento de plotear, por lo que no va a dar error de haber usado <strong>niveles_tratamiento</strong> (en una columna de un <em>Data Table</em>). Sin embargo, los factores siguen siendo útiles en estos casos para controlar el órden en los que se plotean las variables categóricas.</p>
-</div>
-<div class="admonition info">
-<p class="admonition-title">Estructura interna de los factores</p>
-<p>Esto es un poco técnico, pero otro beneficio de los factores es que ahorran memoria. Esto se debe a que en realidad no se guardan como una lista de <em>strings</em>, sino que <strong>R</strong> le asigna un número a cada <code>level</code> y eso es lo que realmente guarda para todos los datos. Esto se puede ver con la función <code>as.numeric()</code>:</p>
-<p></p><div class="highlight"><pre><span></span><code><span class="nf">as.numeric</span><span class="p">(</span><span class="n">factor_niveles_tratamiento</span><span class="p">)</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">1</span>
-</code></pre></div>
-</div>
+<p><strong>6)</strong> Prueben usar <code>unlist</code> con la variable <code>lista_super_mixta</code> y vean que pasa.</p>
 <h3 id="averiguar-el-tipo-de-las-variables" markdown="markdown">Averiguar el tipo de las variables</h3>
 <p>Muchas veces queremos operar con variables y obtenemos errores puesto que son de un tipo distinto al que esperábamos. ¿Cómo podemos averiguar entonces de que tipo son las variables? Sabemos que si tienen comillas es texto, pero esto no alcanza.</p>
 <p>La forma correcta de saber que tipo de variable es una variable es usando las funciones <code>class()</code> o <code>typeof()</code>. No vamos a detallar mucho estas funciones, pero <code>class()</code> suele devolver el nombre de la variable a la que estamos acostumbrados (<em>numeric</em>, <em>factor</em>, etc), mientras que <code>typeof()</code> devuelve como se almacena esa variable internamente.</p>
@@ -1773,6 +1800,31 @@ Fijense que <code>summary</code> va a devolver información en base a que contie
 </code></pre></div>
 <p>Donde <code>sample</code> devuelve un sampleo al azar de <code>size</code> elementos (en este caso <code>1</code>) del vector <code>x</code> (en este caso <code>c("Cara", "Seca")</code>). En definitiva esto quiere decir que cada vez que ejecuten esa línea <code>moneda</code> va a recibir el valor <strong>"Cara"</strong> o el valor <strong>"Seca"</strong> al azar.</p>
 <p>Ejecuten el código anterior varias veces y vean si los números aleatorios funcionan bien en <strong>R</strong> o si está todo arreglado.</p>
+<h2 id="ejercicio-adicional-2" markdown="markdown"><strong>Ejercicio Adicional 2</strong></h2>
+<p>En este ejercicio vamos a crear, parecido a lo que vimos en el TP1, una función que nos diga como hacer una chocotorta. Para estoy vamos a hacer un script que:</p>
+<ul>
+<li>Use una funcion</li>
+<li>Considere en que vamos a remojar las galletitas y el numero de capas</li>
+<li>Imprima todos los pasos necesarios para armar la chocotorta</li>
+</ul>
+<h2 id="ejercicio-adicional-3" markdown="markdown"><strong>Ejercicio Adicional 3</strong></h2>
+<p>En R hay muchisimos paquetes que nos pueden servir para distintos tipos de análisis. Para que se den una idea de la variedad de paquetes, vamos a mostrarles el paquete <strong>CatterPlots</strong>, que como su nombre lo indica, hace <em>gráficos con gatitos</em>. Primero prueben correr esto en RStudio:</p>
+<p></p><div class="highlight"><pre><span></span><code><span class="nf">install.packages</span><span class="p">(</span><span class="s">"remotes"</span><span class="p">)</span>
+<span class="n">remotes</span><span class="o">::</span><span class="nf">install_github</span><span class="p">(</span><span class="s">"Gibbsdavidl/CatterPlots"</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">CatterPlots</span><span class="p">)</span>
+
+<span class="c1"># Datos de muestra</span>
+<span class="n">x</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">seq</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">15</span><span class="p">,</span><span class="w"> </span><span class="m">0.5</span><span class="p">)</span>
+<span class="n">y</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="nf">catplot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span>
+<span class="w">        </span><span class="n">cat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w">       </span><span class="c1"># Tipo de gato</span>
+<span class="w">        </span><span class="n">catcolor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"blue"</span><span class="p">,</span><span class="w">  </span><span class="c1"># Color del gato</span>
+<span class="w">        </span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"line"</span><span class="p">,</span><span class="w"> </span><span class="c1"># "line" o "justcats"</span>
+<span class="w">        </span><span class="n">linecolor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">)</span><span class="w"> </span><span class="c1"># Color de la línea</span>
+</code></pre></div>
+Pueden ver mas información sobre <strong>CatterPlots</strong> en <a href="https://r-charts.com/es/miscelanea/catterplots/">esta página</a>
+<p>Ahora prueben crear su propio gráfico de gatitos. Armen dos vectores x e y, y prueben graficarlos cambiando alguno/s de los parámetros de catplot, como el tipo de gato o el color.</p>
 <h2 id="bibliografia"><strong>Bibliografía</strong></h2>
 <!--
 ### :material-bookshelf: Libros
