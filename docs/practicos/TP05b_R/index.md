@@ -10,20 +10,11 @@
 <br>
 <br>
  
-[:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/133TQL4mzP8ZNIb3vzP5bbqt1KZa1iWrO/view?usp=sharing){ .md-button .md-button--primary }
+[:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1-RkLAL5jrNtOravsoH9rfQ31hg4p0UYP/view?usp=sharing){ .md-button .md-button--primary }
 
 <!--
 Este es el botón para descargar materiales, en (#) hay que agregar el link correspondiente
 -->
-
-### Videos de la clase grabada
-
-* :octicons-video-16: [Introducción al TP](https://www.youtube.com/watch?v=MoGWtBkaVIU)
-* :octicons-video-16: [Puesta en común del TP](https://www.youtube.com/watch?v=0KKRWkZDvXw)
-
-### Códigos resueltos
-
-* :octicons-file-code-16: [Códigos completos](https://drive.google.com/file/d/1fBpEtMAAMvbx9zmbow4ovosQY7fu9kJc/view?usp=sharing) (tienen que setear el *Working Directory*) (si corren el 3, 4 y 5 llegan al **PDF**)
 
 ### Software a usar
 * R (ya instalado en la VM).
@@ -61,7 +52,7 @@ Por suerte nuestra enzima de interés tiene como producto un compuesto fluoresce
 
 Una forma de analizar varios compuestos y concentraciones a la vez es usar el equipo **FilterMax F5**, el cual permite hacer mediciones puntuales de absorbancia y fluorescencia (entre otros) en placas de wells de 96, 384 y 1536. Incluso permite hacer mediciones a distintos tiempos (por ejemplo, se le puede programar para hacer mediciones cada ciertos intervalos temporales).
 
-En nuestro ejemplo (datos reales, nombres ficticios), vamos a utilizar el **FilterMax F5** para evaluar varias placas de 384 wells y vamos a hacer 4 evaluaciones por placa, una cada 5 minutos. Cada columna de la placa corresponde compuesto distinto (22 compuestos, 1 por columna) y cada fila tiene concentraciones diferentes de cada compuesto (16 concentraciones, diluciones seriadas). Un esquema de este experimento se puede ver en [esta planilla](https://docs.google.com/spreadsheets/d/1ey-c3nuc2zd4Cqj6B_uYcq1gAx0FPybLJUDCbV56my4/edit?usp=sharing).
+En nuestro ejemplo (datos reales, nombres ficticios), vamos a utilizar el **FilterMax F5** para evaluar varias placas de 384 wells y vamos a hacer 4 evaluaciones por placa, una cada 5 minutos. Cada columna de la placa corresponde compuesto distinto (22 compuestos, 1 por columna) y cada fila tiene concentraciones diferentes de cada compuesto (16 concentraciones, diluciones seriadas). Un esquema de este experimento se puede ver en [esta planilla](https://docs.google.com/spreadsheets/d/1vRxMHGdWBAOXpJZ8g4Ox4y4kiCES01sg/edit?usp=sharing&ouid=101472650200585443790&rtpof=true&sd=true).
 
 ## **Paso 1 - Familiarizarnos con el Archivo** { markdown data-toc-label='Paso 1 - Familiarizarnos' }
 
