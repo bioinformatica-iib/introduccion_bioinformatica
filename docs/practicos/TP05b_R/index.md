@@ -868,13 +868,13 @@ for (compuesto_for in unique_compuestos) {
     dt_IC50 <- @@EDITAR@@
 
     #Ploteo la regresion (les recomiendo poner el numero de compuesto y el IC 50 en el titulo)
+    #Este grafico tambien tiene informacion de GOF (goodness of fit), que en este caso es el R2, y nos sirve para conocer que tan bien se ajusta el modelo a nuestros datos
     titulo_plot <- @@EDITAR@@
     plot(regresion_sigmoidea,
          main = titulo_plot,
          xlab = "Log10 Concentracion (micromolar)",
          ylab = "Actividad",
          ylim = c(0, 1.5),
-         showGOF = F,
          xaxt = "n")
     #Reescribo el eje X para que se entienda que es logaritmico
     axis(side = 1, at = c(0, 0.5, 1, 1.5, 2), labels = c(expression(10^0), expression(10^0.5), expression(10^1), expression(10^1.5), expression(10^2)))
