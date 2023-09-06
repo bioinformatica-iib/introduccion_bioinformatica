@@ -21,7 +21,7 @@ tags:
 | Martes, 29 Agosto 2023 | 9:00 hs |	:material-google-classroom: Online | [T4. Búsqueda de secuencias por Similitud y Alineamientos múltiples](/introduccion_bioinformatica/teoricas/4-Teorica-Cuatro/) | :fontawesome-solid-brain: Teórica |	F. Agüero |
 | Jueves, 31 Agosto 2023 | 9:00 hs |	:material-google-classroom: Online | [P4. Búsqueda de secuencias por similitud y Alineamientos Múltiples](/introduccion_bioinformatica/practicos/TP04_Busqueda_por_similitud) | :fontawesome-solid-hammer: Práctica |	M. Didier Garnham |
 | Martes, 05 Septiembre 2023 | 9:00 hs |	:material-google-classroom: Online | [P5a. Programando en Biología](/introduccion_bioinformatica/practicos/TP05a_R) | :fontawesome-solid-hammer: Práctica |	G. Romer |
-| Jueves, 07 Septiembre 2023 | 9:00 hs |	:material-google-classroom: Online | P5b. Programando en Biología | :fontawesome-solid-hammer: Práctica |	G. Romer |
+| Jueves, 07 Septiembre 2023 | 9:00 hs |	:material-google-classroom: Online | [P5b. Programando en Biología](/introduccion_bioinformatica/practicos/TP05b_R) | :fontawesome-solid-hammer: Práctica |	G. Romer |
 | Martes, 12 Septiembre 2023 | 9:00 hs |	:material-google-classroom: Online | T5. Información contenida en alineamientos múltiples | :fontawesome-solid-brain: Teórica |	M. Nielsen |
 | Jueves, 14 Septiembre 2023 | 9:00 hs |	:material-google-classroom: Online | P6. Perfiles de secuencia y PSI-BLAST | :fontawesome-solid-hammer: Práctica |	H. García A |
 | Martes, 19 Septiembre 2023 | 9:00 hs |	:material-google-classroom: Online | T6. Bioinformática Estructural: Desorden | :fontawesome-solid-brain: Teórica |	L. Chemes |
