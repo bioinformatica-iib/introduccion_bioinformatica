@@ -1,6 +1,6 @@
 ![Image](img/banner.jpg){ width="250", align="left" }
 
-# **TP 8b**. R - Programando en biología - Parte 2 { markdown data-toc-label = 'TP 8a' }
+# **TP 5b**. R - Programando en biología - Parte 2 { markdown data-toc-label = 'TP 8a' }
 
 <br>
 <br>
@@ -15,6 +15,14 @@
 <!--
 Este es el botón para descargar materiales, en (#) hay que agregar el link correspondiente
 -->
+### Slides mostrados en clase
+* :fontawesome-regular-file-pdf: [Slides TP](https://drive.google.com/file/d/1_0sLD3ICSRE7ZC5IiyIDMEtt7RXsgHRz/view?usp=sharing)
+
+### Codigo completo
+* :fontawesome-regular-file-code: [Archivo .R visto en el cierre](https://drive.google.com/file/d/1N1vXsJFuGojUooAEG5SgcyE2bMqW0B9C/view?usp=sharing)
+
+### Video de la clase grabada
+* :octicons-video-16: [Cierre de tp](https://youtu.be/yrtMNj23f9U)
 
 ### Software a usar
 * R (ya instalado en la VM).
