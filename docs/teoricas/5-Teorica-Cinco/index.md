@@ -16,12 +16,15 @@ tags:
 
 * :fontawesome-regular-file-pdf: [Ejercicios - Logo](./files/Ex_Logo.pdf)
 
+<!--
     * :fontawesome-regular-file-pdf: [Answers - Logo](./files/Ex_Logo_ans.pdf)
+-->
 
 * :fontawesome-regular-file-pdf: [Ejercicios - Pseudocounts](./files/Estimationofpseudocounts_2010.pdf)
 
+<!--
     * :fontawesome-regular-file-pdf: [Answers - Pseudocounts](./files/Estimationofpseudocounts_2010.pdf)
-
+-->
 <!--
 ![type:video](https://www.youtube.com/embed/2f_ZSic28ko)
 -->
