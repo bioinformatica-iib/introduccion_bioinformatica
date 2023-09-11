@@ -22,7 +22,9 @@ tags:
 
     * :fontawesome-regular-file-pdf: [Answers - Pseudocounts](./files/Estimationofpseudocounts_2010.pdf)
 
+<!--
 ![type:video](https://www.youtube.com/embed/2f_ZSic28ko)
+-->
 
 ### Sequence profiles
 
@@ -30,9 +32,10 @@ tags:
 
 * :fontawesome-regular-file-pdf: [Ejercicios](./files/Psi_blast_ex.pdf)
 
+<!--
 ![type:video](https://www.youtube.com/embed/ZWxALGN_400)
+-->
 
  <!--
 ![type:video]()
-
 -->
