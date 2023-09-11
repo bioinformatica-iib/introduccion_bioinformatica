@@ -1,6 +1,6 @@
 ![Image](img/banner.jpg){ width="250", align="left" }
 
-# **TP 5**. Perfiles de secuencias y PSI-BLAST { markdown data-toc-label = 'TP 5' }
+# **TP 6**. Perfiles de secuencias y PSI-BLAST { markdown data-toc-label = 'TP 6' }
 
 <br>
 <br>
@@ -16,8 +16,10 @@
 
 ### Videos de la clase grabada
 
+<!--
 * :octicons-video-16: [Introducción al TP](https://www.youtube.com/watch?v=LMhaZZ7XgtY)
 * :octicons-video-16: [Cierre TP](https://www.youtube.com/watch?v=uF1vyWWRT_0)
+-->
 
 ## **Construcción de Logos y Matrices peso-específicas**
 
