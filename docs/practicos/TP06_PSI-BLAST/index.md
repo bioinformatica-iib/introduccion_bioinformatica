@@ -14,9 +14,9 @@
 
 !!! abstract "Atención: Este TP tiene informe."
 
-### Videos de la clase grabada
 
 <!--
+### Videos de la clase grabada
 * :octicons-video-16: [Introducción al TP](https://www.youtube.com/watch?v=LMhaZZ7XgtY)
 * :octicons-video-16: [Cierre TP](https://www.youtube.com/watch?v=uF1vyWWRT_0)
 -->
@@ -417,7 +417,7 @@ Por esta razón, teniendo en cuenta lo realizado con el servidor Blast2logo, vam
 
 !!! info 
 
-    <span style="font-weight:bold;">Fecha límite de entrega:</span> Viernes, 16 de Septiembre 2022, 23:59hs.
+    <span style="font-weight:bold;">Fecha límite de entrega:</span> Viernes, 29 de Septiembre 2023, 23:59hs.
 
 ### Enunciado
 
