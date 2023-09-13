@@ -72,8 +72,7 @@ En el resultado de la búsqueda podemos ver las posiciones *anchor* principales 
 
 **b.** ¿Qué otras posiciones muestran preferencias de residuos? ¿Qué residuos son preferidos en estas posiciones? 
 
-**c.** ¿Qué característica del conjunto de péptidos creen que puede estar diferenciando a las posiciones *anchor* del resto de las posiciones de los péptidos? 
-Recuérdenla para el ejercicio de logos de secuencia.
+**c.** ¿Qué diferencia observa para las posiciones *anchor* en el conjunto de péptidos en comparación al resto de las posiciones? Recuérdenla para el ejercicio de logos de secuencia.
 
 **2.** Repitan el mismo análisis para el alelo **HLA-B\*27**. ¿Coinciden las posiciones *anchor* con las del alelo **HLA-A\*02:01**?, ¿y los residuos preferidos?
 
@@ -112,7 +111,7 @@ Por convención los colores que se utilizan son:
 **3.** En Materiales pueden encontrar los archivos **HLA-A0201** y **HLA-B27**, los cuales contienen ligandos de cada uno de estos alelos de MHC. 
 Úsenlos para generar logos que muestren sus motivos de preferencia. **Utilicen como opción de clustering Heuristics.** 
 
-Usamos para el resto de las opciones los valores *default*.Identifiquen las posiciones ancla y las preferencias de cada alelo. 
+Usamos para el resto de las opciones los valores *default*. Identifiquen las posiciones ancla y las preferencias de cada alelo. 
 
 **a.** ¿El logo obtenido para **HLA-A02:01** y **HLA-B27** se condice con lo que encontró en la base de datos en el punto anterior? 
 
@@ -164,7 +163,7 @@ Observando el logo generado:
     Son los que están por encima de y=0.
 
 <br>
-**6.**¿Cuántos aminoácidos diferentes hay en P1 (en y>=0)? ¿Cuáles se encuentran datos de entrada? ¿Cuáles en el logo generado?
+**6.** ¿Cuántos aminoácidos diferentes hay en P1 (en y>=0)? ¿Cuáles se encuentran datos de entrada? ¿Cuáles en el logo generado?
 
 **7.** ¿A qué se debe esta diferencia?  
 
@@ -188,7 +187,7 @@ Para evaluar el desempeño de nuestro modelo utilizaremos el archivo **Evaluacio
 !!! attention "Atención"
       Una buena práctica antes de comezar a hacer cualquier cosa con nuestros datos es observarlos y entender el formato en el que están almacenados.
 
-Por ejemplo, si hacemos un ```cat``` del archivo **Entrenamiento_chico.set**, nos encontramos con lo siguiente:
+Por ejemplo, si hacemos un ```cat``` del archivo **Entrenamiento_chico.set** (si están con la VM o bien pueden abrir el archivo con el "Block de notas" haciendo click derecho sobre el archivo y *Abrir con...* elegir el block de notas entre las opciones), nos encontramos con lo siguiente:
 
 <p style="text-align:center">
 <img src="./img/formato_entrenamiento_chico.png" alt="Entre_chico" style="max-width:50%">
@@ -333,7 +332,7 @@ Vayan a la pagina de [BLAST](https://blast.ncbi.nlm.nih.gov/Blast.cgi) y utilice
 <img src="./img/psiblast_1.png" alt="psiblast1" style="max-width:60%">
 </p>
 
-**1.** ¿Cuántos *hits* con E-value < 0.005 encuentran? Vuelvan atrás y, en **Program selection: Algorithm**, seleccionen PSI-BLAST. ¿Cambió el resultado en comparación a lo que habían obtenido anteriormente?
+**1.** ¿Cuántos *hits* con E-value < 0.05 encuentran? Vuelvan atrás y, en **Program selection: Algorithm**, seleccionen PSI-BLAST. ¿Cambió el resultado en comparación a lo que habían obtenido anteriormente?
 
 ### Usando PSI-BLAST
 
