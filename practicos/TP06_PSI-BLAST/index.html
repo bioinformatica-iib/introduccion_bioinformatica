@@ -1055,8 +1055,7 @@
 <p><strong>1.</strong> Respondan a las siguientes preguntas :</p>
 <p><strong>a.</strong> ¿Qué posiciones identifican como <em>anchors</em>? ¿Qué residuos son preferidos en estas posiciones? ¿Y en los <em>auxiliary anchors</em>?</p>
 <p><strong>b.</strong> ¿Qué otras posiciones muestran preferencias de residuos? ¿Qué residuos son preferidos en estas posiciones? </p>
-<p><strong>c.</strong> ¿Qué característica del conjunto de péptidos creen que puede estar diferenciando a las posiciones <em>anchor</em> del resto de las posiciones de los péptidos? 
-Recuérdenla para el ejercicio de logos de secuencia.</p>
+<p><strong>c.</strong> ¿Qué diferencia observa para las posiciones <em>anchor</em> en el conjunto de péptidos en comparación al resto de las posiciones? Recuérdenla para el ejercicio de logos de secuencia.</p>
 <p><strong>2.</strong> Repitan el mismo análisis para el alelo <strong>HLA-B*27</strong>. ¿Coinciden las posiciones <em>anchor</em> con las del alelo <strong>HLA-A*02:01</strong>?, ¿y los residuos preferidos?</p>
 <h3 id="logos-de-secuencias">Logos de secuencias</h3>
 <p>Los logos son una herramienta muy útil para visualizar motivos de unión. En un logo de secuencia se grafica en el eje y el <strong>contenido de información</strong> de cada posición del motivo, generalmente expresado en <em>bits</em>. A su vez, la frecuencia con la que aparece una letra (nucleótido u amininoácido) en una dada posición se grafica con un tamaño proporcional a dicha magnitud.</p>
@@ -1085,7 +1084,7 @@ Recuérdenla para el ejercicio de logos de secuencia.</p>
 </div>
 <p><strong>3.</strong> En Materiales pueden encontrar los archivos <strong>HLA-A0201</strong> y <strong>HLA-B27</strong>, los cuales contienen ligandos de cada uno de estos alelos de MHC. 
 Úsenlos para generar logos que muestren sus motivos de preferencia. <strong>Utilicen como opción de clustering Heuristics.</strong> </p>
-<p>Usamos para el resto de las opciones los valores <em>default</em>.Identifiquen las posiciones ancla y las preferencias de cada alelo. </p>
+<p>Usamos para el resto de las opciones los valores <em>default</em>. Identifiquen las posiciones ancla y las preferencias de cada alelo. </p>
 <p><strong>a.</strong> ¿El logo obtenido para <strong>HLA-A02:01</strong> y <strong>HLA-B27</strong> se condice con lo que encontró en la base de datos en el punto anterior? </p>
 <p><strong>b.</strong> ¿Qué magnitud es la que está diferenciando a las posiciones <em>anchor</em> del resto? ¿En qué unidad aparece representada en el logo? ¿Coincide con lo supuesto en el punto <strong>1.c</strong>?</p>
 <h3 id="construccion-de-matrices-peso-especificas-pssm">Construcción de matrices peso-específicas (PSSM)</h3>
@@ -1119,7 +1118,7 @@ Hagan <em>Submit query</em> y observen la salida. Allí podrán encontrar inform
 <p>Son los que están por encima de y=0.</p>
 </details>
 <p><br>
-<strong>6.</strong>¿Cuántos aminoácidos diferentes hay en P1 (en y&gt;=0)? ¿Cuáles se encuentran datos de entrada? ¿Cuáles en el logo generado?</p>
+<strong>6.</strong> ¿Cuántos aminoácidos diferentes hay en P1 (en y&gt;=0)? ¿Cuáles se encuentran datos de entrada? ¿Cuáles en el logo generado?</p>
 <p><strong>7.</strong> ¿A qué se debe esta diferencia?  </p>
 <p><strong>8.</strong> Realice el mismo ejercicio pero ahora elija un <em>weight on prior</em> β=0. ¿Cambian sus respuestas para los puntos <strong>5.</strong>, <strong>6.</strong> y <strong>7.</strong>?</p>
 <h3 id="prediccion-de-union-a-mhc">Predicción de unión a MHC</h3>
@@ -1139,7 +1138,7 @@ Hagan <em>Submit query</em> y observen la salida. Allí podrán encontrar inform
 <p class="admonition-title">Atención</p>
 <p>Una buena práctica antes de comezar a hacer cualquier cosa con nuestros datos es observarlos y entender el formato en el que están almacenados.</p>
 </div>
-<p>Por ejemplo, si hacemos un <code>cat</code> del archivo <strong>Entrenamiento_chico.set</strong>, nos encontramos con lo siguiente:</p>
+<p>Por ejemplo, si hacemos un <code>cat</code> del archivo <strong>Entrenamiento_chico.set</strong> (si están con la VM o bien pueden abrir el archivo con el "Block de notas" haciendo click derecho sobre el archivo y <em>Abrir con...</em> elegir el block de notas entre las opciones), nos encontramos con lo siguiente:</p>
 <p style="text-align:center">
 <a class="glightbox" href="./img/formato_entrenamiento_chico.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="./img/formato_entrenamiento_chico.png" alt="Entre_chico" style="max-width:50%"></a>
 </p>
@@ -1250,7 +1249,7 @@ QGRVGPNEFRILKENYTVFTIEDLRKLYDEAGLVVLE
 <a class="glightbox" href="./img/psiblast_1.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="./img/psiblast_1.png" alt="psiblast1" style="max-width:60%"></a>
 </p>
 
-<p><strong>1.</strong> ¿Cuántos <em>hits</em> con E-value &lt; 0.005 encuentran? Vuelvan atrás y, en <strong>Program selection: Algorithm</strong>, seleccionen PSI-BLAST. ¿Cambió el resultado en comparación a lo que habían obtenido anteriormente?</p>
+<p><strong>1.</strong> ¿Cuántos <em>hits</em> con E-value &lt; 0.05 encuentran? Vuelvan atrás y, en <strong>Program selection: Algorithm</strong>, seleccionen PSI-BLAST. ¿Cambió el resultado en comparación a lo que habían obtenido anteriormente?</p>
 <h3 id="usando-psi-blast">Usando PSI-BLAST</h3>
 <div class="admonition attention">
 <p class="admonition-title">Atención</p>
