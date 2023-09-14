@@ -430,7 +430,7 @@ Para poder identificarla, y sabiendo que es un *Betacoronavirus*, usted decide u
 
 Para recolectar más información de su secuencia, decide acceder al GenBank yendo a la pestaña **Alignments** de la salida del BLASTn y cliqueando en el accession number correspondiente.
 
-Su jefe está muy interesado en estudiar qué proteínas de esta variante de coronavirus contienen ligandos del alelo **HLA-A*02:01**. Para eso a usted se le ocurre realizar predicciones utilizando la matriz peso-específica del alelo correspondiente que ya había generado en un curso de Bioinformática (TP5) tiempo atrás y que sabe que funciona muy bien. 
+Su jefe está muy interesado en estudiar qué proteínas de esta variante de coronavirus contienen ligandos del alelo **HLA-A*02:01**. Para eso a usted se le ocurre realizar predicciones utilizando la matriz peso-específica del alelo correspondiente que ya había generado en un curso de Bioinformática (TP6) tiempo atrás y que sabe que funciona muy bien. 
 
 Puede encontrar una descripción de coronavirus y sus proteínas en [ViralZone de Expasy](https://viralzone.expasy.org/764?outline=all_by_species).
 
