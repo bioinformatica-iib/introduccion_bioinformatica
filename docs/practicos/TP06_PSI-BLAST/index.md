@@ -10,6 +10,8 @@
 
 [:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1yfCSpn7mLNCOrmQSzKKEd9eY0LsCVoB2/view?usp=sharing){ .md-button .md-button--primary }
 
+### Videos de la clase grabada
+* :octicons-video-16: [Cierre TP](https://youtu.be/ZYU3zi94qUk)
 <br>
 
 !!! abstract "Atención: Este TP tiene informe."
