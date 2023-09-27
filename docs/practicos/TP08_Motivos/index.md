@@ -1,15 +1,17 @@
 ![Image](img/featured.png){ width="250", align="left" }
 
-# **TP 10**. Motivos lineales { markdown data-toc-label = 'TP 10' }
+# **TP 08**. Motivos lineales { markdown data-toc-label = 'TP 08' }
 
 <br>
 <br>
 <br>
 
+<!--
 ## Videos de la clase grabada
 
 * :octicons-video-16: [Introducción al TP](https://www.youtube.com/watch?v=erSvL81NsRg)
 * :octicons-video-16: [Puesta en común del TP](https://www.youtube.com/watch?v=cZVEAZy0Wx8)
+-->
 
 !!! abstract "Atención: Este TP tiene informe."
 
@@ -204,7 +206,7 @@ Abra en una nueva pestaña la página de ELM. Vaya de nuevo a la pestaña de pre
 ### Ejercicio 3. Identificación de motivos cortos de interacción en p53 en un alineamiento propio.
 La región amino terminal de p53 posee un motivo de unión a la E3 ligasa MDM2, el cual está caracterizado por una secuencia conservada que puede representarse por una expresión regular.
 
-1. Entre en la base de datos ELM y busque la expresión regular del motivo con el ID: `DEG_MDM2_SWIB_1`. Para esto ingrese el ID en la parte superior derecha donde dice: Search ELM database. La expresión regular se encuentra marcada como *"Pattern"*. A continuación, busque las ocurrencias de esta expresión regular en las secuencias de p53. Para ello, abra en **Jalview** el alineamiento de p53 con el cuál estuvo trabajando en la clase de *TP N°9 - Predicción de desorden*. **Jalview** permite la búsqueda de motivos por expresiones regulares. Para hacerlo, utilice la función:
+1. Entre en la base de datos ELM y busque la expresión regular del motivo con el ID: `DEG_MDM2_SWIB_1`. Para esto ingrese el ID en la parte superior derecha donde dice: Search ELM database. La expresión regular se encuentra marcada como *"Pattern"*. A continuación, busque las ocurrencias de esta expresión regular en las secuencias de p53. Para ello, abra en **Jalview** el alineamiento de p53 con el cuál estuvo trabajando en la clase de *TP N°7 - Predicción de desorden*. **Jalview** permite la búsqueda de motivos por expresiones regulares. Para hacerlo, utilice la función:
 
     *Select* → *Find*
 
@@ -218,30 +220,41 @@ La región amino terminal de p53 posee un motivo de unión a la E3 ligasa MDM2, 
 
 !!! info ""
 
-      **Fecha límite de entrega:** Viernes, 14 de Octubre 2022, 23:59hs.
+      **Fecha límite de entrega:** Viernes, 13 de Octubre 2023, 23:59hs.
 
 ### Enunciado
 
-Su jefe también está interesado en que Ud. entienda más sobre los mecanismos de entrada del virus a la célula, la cual está mediada por la enzima convertidora de angiotensina 2 (ACE2) (Uniprot ID: ACE2_HUMAN2, Q9BYF1). Luego de unirse la proteína Spike a ACE2, se desencadena la entrada del virus SARS-CoV-2 a las células pulmonares por un mecanismo llamado endocitosis mediada por receptor, en el cual participan muchos motivos lineales.
+**Parte I** - El aislamiento que le proporcionaron está avanzando rápidamente en latinoamérica!.
+Dada la importancia de la proteína N de la nucleocápside en la replicación viral, su jefe considera que es un blanco posible de drogas.
+La proteína N forma la nucleocápside viral de SARS-CoV2 y empaqueta el genoma viral de ARN formando una
+ribonucleocápside. La estructura de la proteína es altamente desordenada y posee dos dominios globulares
+pequeños en el N-terminal (Dominio N) y C terminal (Dominio C). 
 
-**1.** Según los métodos utilizados en el trabajo práctico de desorden identifique las regiones desordenadas del receptor, e investigue ¿En qué compartimento celular se encuentran esta/s región/es?
+1. Usando IUPred, long, identifique las regiones desordenadas y globulares.
+* ¿Puede identificar fácilmente los dominios globulares con el umbral de 0.5? ¿y con el umbral de 0.4? *Justifique los resultados en base al funcionamiento del algoritmo.*
+
+2. Si desearía cristalizar el dominio N ¿Qué regiones no incluiría?
+
+3. Analice la proporción de residuos predichos como ordenados y como desordenados utilizando el umbral de 0.4 ¿Se correlaciona esto con lo estudiado en la literatura? *Si encuentra diferencias, ¿podría hipotetizar a qué se deben?*
+
+**Parte II** - Su jefe también está interesado en que Ud. entienda más sobre los mecanismos de entrada del virus a la célula, la cual está mediada por la enzima convertidora de angiotensina 2 (ACE2) (Uniprot ID: ACE2_HUMAN2, Q9BYF1). Luego de unirse la proteína Spike a ACE2, se desencadena la entrada del virus SARS-CoV-2 a las células pulmonares por un mecanismo llamado endocitosis mediada por receptor, en el cual participan muchos motivos lineales.
+
+**1.** Según los métodos utilizados en el trabajo práctico de desorden identifique las regiones desordenadas del receptor, e investigue ¿En qué compartimento celular se encuentran esta/s región/es desordenada/s?
 
 **2.** Algunos de los motivos conocidos involucrados en la vía de endocitosis mediada por receptor son: `TRG_ENDOCYTIC_2`, `LIG_LIR_Gen_1`, `LIG_PTB_APO2`.
 
 * ¿En qué compartimentos celulares deberían encontrarse proteínas como ACE2?
 * Estos motivos ¿se encuentran en la secuencia humana del receptor?
-* ¿Cuántas instancias de cada uno de los motivos encuentra, en qué posiciones y cuáles creen que son buenos candidatos?
-* De los tres motivos ¿Existen algunos candidatos que son mejores que otros? Si es así, responda ¿Por qué son mejores?
+* ¿Cuántas instancias de cada uno de los motivos encuentra, en qué posiciones y cuáles de estas instancias considera que son buenos candidatos o posibles motivos funcionales?
 
 !!! warning "Atención"
-
 
     Siempre que reporte una región o instancia de un motivo indique las posiciones de inicio y final de la misma. Para cada respuesta, indicar los algoritmos, base de datos y métodos utilizados, y el criterio usado en cada caso para clasificar/identificar.
 
 
 **3.** Un criterio para clasificar un buen motivo candidato es que esté conservado en >50% de un conjunto de secuencias divergentes. Utilizando las expresiones regulares y el conjunto de secuencias de ACE2 (que se encuentran en el archivo `ACE2_secuencias.fasta`), indique cuáles de las instancias de los motivos seleccionados en (2) son buenos candidatos según su conservación.
 
-* Si bien es un alineamiento de proteínas homólogas ¿Encuentra variaciones en la secuencia de los motivos en las diferentes secuencias? ¿Cuáles?
+* Si bien es un alineamiento de proteínas homólogas ¿Encuentra variaciones en la secuencia de los motivos en las diferentes secuencias? ¿Cuáles? Una buena manera de reportar las variaciones de secuencia en un motivo es indicando qué abundancia (porcentaje) de cada aminoácido se observa en las posiciones fijas y variables del motivo.
 
 **Extra! (y por ende opcional)**
 
@@ -260,7 +273,7 @@ Su jefe también está interesado en que Ud. entienda más sobre los mecanismos 
 
 [:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1uAo-m-gFXRnq-Ms8-yeAVy3bhC4pJLvL/view?usp=sharing){ .md-button .md-button--primary }
 
-<!--
+
 ## Ejercicios Adicionales
 
 ### Ejercicio adicional 1. Un poquito más de expresiones regulares
@@ -328,6 +341,8 @@ ProViz es una herramienta que colecta y muestra información desde distintas fue
 * Compare el número de instancias humanas con el número de instancias virales.
 * ¿Por qué hay tantas proteínas virales que interactúan con retinoblastoma? (Pista: La respuesta está en el abstract de la clase del motivo LIG_Rb_LxCxE_1)
 
+
+<!--
 ### Ejercicio Adicional 3. Motivos lineales en proteínas virales
  
 La familia viral Adenoviridae (adenovirus) son virus ADNdc desnudos. Los adenovirus que infectan a humanos son responsables de muchas enfermedades respiratorias y de numerosos casos de gastroenteritis en niños. El único género de adenovirus que posee la proteína E1A es el género *Mastadenovirus* que infecta a **mamíferos**. Hasta la fecha, no existe ningún homólogo reportado en los restantes géneros de esta familia viral. La proteína E1A posee un rol importante en la replicación del genoma viral ya que desregula el ciclo celular induciendo la división celular. Esta estimulación de la progresión de la fase G1 a la fase S, permite que el virus use la maquinaria celular de replicación del ADN para replicar su propio genoma. Una vez expresada la proteína E1A su localización en la célula infectada es **nuclear** y minoritariamente **citosólica**.
