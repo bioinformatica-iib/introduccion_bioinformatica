@@ -6,14 +6,15 @@
 <br>
 <br>
 
-<!--
+### Slides mostrados en la clase
+
+* :fontawesome-regular-file-pdf: [Slides](https://drive.google.com/file/d/18wOB2xp4Lod8PEO6pEGkSouRJafmm5-Y/view?usp=sharing)
 ## Videos de la clase grabada
 
-* :octicons-video-16: [Introducción al TP](https://www.youtube.com/watch?v=i8YJJR6eqG4)
-* :octicons-video-16: [Puesta en común del TP](https://www.youtube.com/watch?v=ogw6Sp7jLms)
+* :octicons-video-16: [Puesta en común del TP](https://youtu.be/YEJWqRwUBRY)
 
+<!--
 !!! abstract "Atención: Este TP tiene informe."
-
 -->
 
 [:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1wh5zn1GZ4s_Rp8V5lekZZbIKzM7BOKc8/view?usp=sharing){ .md-button .md-button--primary }
