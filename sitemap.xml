@@ -106,11 +106,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP06_Filogenia/</loc>
-         <lastmod>2023-10-03</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP06_PSI-BLAST/</loc>
          <lastmod>2023-10-03</lastmod>
          <changefreq>daily</changefreq>
@@ -121,37 +116,47 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP07_HMM_ANN/</loc>
-         <lastmod>2023-10-03</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP08_Motivos/</loc>
          <lastmod>2023-10-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP11_Modelado_Por_Homologia/</loc>
+         <loc>https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP09a_Modelado_Por_Homologia/</loc>
          <lastmod>2023-10-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP12a_Clustering/</loc>
+         <loc>https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP10a_Clustering/</loc>
          <lastmod>2023-10-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP12b_Data_Mining/</loc>
+         <loc>https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP10b_Data_Mining/</loc>
          <lastmod>2023-10-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP13_Short-Read-Mapping/</loc>
+         <loc>https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP11_HMM_ANN/</loc>
          <lastmod>2023-10-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP14_Genomica_Comparativa/</loc>
+         <loc>https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP12_Short-Read-Mapping/</loc>
+         <lastmod>2023-10-03</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP13_Genomica_Comparativa/</loc>
+         <lastmod>2023-10-03</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP9b_AlphaFold/</loc>
+         <lastmod>2023-10-03</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TPXX_Filogenia/</loc>
          <lastmod>2023-10-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -181,11 +186,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bioinformatica-iib.github.io/introduccion_bioinformatica/teoricas/12-Teorica-Doce/</loc>
-         <lastmod>2023-10-03</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://bioinformatica-iib.github.io/introduccion_bioinformatica/teoricas/2-Teorica-Dos/</loc>
          <lastmod>2023-10-03</lastmod>
          <changefreq>daily</changefreq>
@@ -211,17 +211,22 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bioinformatica-iib.github.io/introduccion_bioinformatica/teoricas/6-Teorica-Seis-Filogenia-Old/</loc>
-         <lastmod>2023-10-03</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://bioinformatica-iib.github.io/introduccion_bioinformatica/teoricas/7-Teorica-Siete/</loc>
          <lastmod>2023-10-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bioinformatica-iib.github.io/introduccion_bioinformatica/teoricas/7-Teorica-Siete-hmm/</loc>
+         <loc>https://bioinformatica-iib.github.io/introduccion_bioinformatica/teoricas/8-Teorica-Ocho/</loc>
+         <lastmod>2023-10-03</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://bioinformatica-iib.github.io/introduccion_bioinformatica/teoricas/9-Teorica-Nueve/</loc>
+         <lastmod>2023-10-03</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://bioinformatica-iib.github.io/introduccion_bioinformatica/teoricas/xx-Teorica-Seis-Filogenia-Old/</loc>
          <lastmod>2023-10-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
