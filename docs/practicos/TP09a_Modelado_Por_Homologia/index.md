@@ -1,12 +1,12 @@
 ![Image](img/featured.png){ width="250", align="left" }
-# **TP 11**. Modelado por Homología { markdown data-toc-label = 'TP 11' }
+# **TP 09a**. Modelado por Homología { markdown data-toc-label = 'TP 09a' }
 
 <br>
 <br>
 <br>
 <br>
 
-
+<!--
 ## Videos de la clase grabada
 
 * :octicons-video-16: [Introducción al TP](https://www.youtube.com/watch?v=mzzItpMc7ds)
@@ -15,6 +15,7 @@
 
 
 !!! abstract "Atención: Este TP tiene informe."
+-->
 
 [:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1fgYENsbk0R3jsujwxkoHT7s141aiBt0H/view?usp=sharing){ .md-button .md-button--primary }
 
@@ -39,7 +40,7 @@ YLARVS
 * ¿por qué es el más conveniente?
 * ¿Cuál es el PDB ID y a qué cadena corresponde?
 * ¿Que e-value tiene?
-* ¿que porcentaje de identidad y qué porcentaje de similitud posee con su proteína misteriosa (en la pate inferior está el alineamiento)?
+* ¿que porcentaje de identidad y qué porcentaje de similitud posee con su proteína misteriosa (en la parte inferior de la web está el alineamiento)?
 
 Luego seleccione en la parte superior **Model using selection**. 
 
@@ -204,6 +205,7 @@ Desconfiando de los resultados de su becario, Ud. decide analizar la calidad del
 
 * Ud. Se sacó un nuevo subsidio donde tiene plata para seguir haciendo estudios estructurales de esta proteína: le daría alguna indicación a su nuevo becario, para que tenga más suerte al intentar cristalizarla?
 
+<!--
 ## Ejercicio a informar
 
 !!! Abstract "Fecha Límite de Entrega: Viernes, 21 de Octubre 2022, 23:59hs"
@@ -217,7 +219,6 @@ Su jefe sigue interesado en la proteína N que forma la nucleocápside viral de 
 
 **3.** Según este análisis, si desearía cristalizar el dominio N ¿Qué regiones no incluiría?
 
-<!--
 ## Ejercicios Adicionales (No hay que informarlos)
 ### Ejercicio Adicional 1.
 Después del exitoso resultado que obtuvo, ahora más relajado luego de haber salvado a la población porcina, decide rechequear los resultados obtenidos con la proteína misteriosa patogénica 1 utilizando otro programa que requiere más tiempo para modelar su proteína.

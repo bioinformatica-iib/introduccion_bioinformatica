@@ -29,7 +29,7 @@ tags:
 | Martes, 26 Septiembre 2023 | 9:00 hs |	:material-google-classroom: Online | [P7. Bioinformática Estructural: Predicción de Desorden](/introduccion_bioinformatica/practicos/TP07_Desorden) | :fontawesome-solid-hammer: Práctica |	J. Glavina |
 | Jueves, 28 Septiembre 2023 | 9:00 hs |	:material-google-classroom: Online | [P8. Bioinformática Estructural: Motivos funcionales en proteínas](/introduccion_bioinformatica/practicos/TP08_Motivos) | :fontawesome-solid-hammer: Práctica |	J. Glavina |
 | Martes, 03 Octubre 2023 | 9:00 hs |	:material-google-classroom: Online | [T8. Bioinformática Estructural: Dominios](/introduccion_bioinformatica/teoricas/8-Teorica-Ocho/) | :fontawesome-solid-brain: Teórica |	L. Chemes |
-| Jueves, 05 Octubre 2023 | 9:00 hs |	:material-google-classroom: Online | P9a. Bioinformática Estructural: Dominios 3D y Modelado por homología | :fontawesome-solid-hammer: Práctica |	J. Glavina |
+| Jueves, 05 Octubre 2023 | 9:00 hs |	:material-google-classroom: Online | [P9a. Bioinformática Estructural: Dominios 3D y Modelado por homología](/introduccion_bioinformatica/practicos/TP09a_Modelado_Por_Homologia) | :fontawesome-solid-hammer: Práctica |	J. Glavina |
 | Martes, 10 Octubre 2023 | 9:00 hs |	:material-google-classroom: Online | T9. Data clustering | :fontawesome-solid-brain: Teórica |	F. Agüero |
 | Jueves, 12 Octubre 2023 | 9:00 hs |	:material-google-classroom: Online | P9b. Bioinformática Estructural: Alphafold | :fontawesome-solid-hammer: Práctica |	J. Glavina |
 | Martes, 17 Octubre 2023 | 9:00 hs |	:material-google-classroom: Online | P10a. Data mining - Clustering | :fontawesome-solid-hammer: Práctica |	G. Romer |
