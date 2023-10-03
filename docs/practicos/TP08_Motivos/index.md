@@ -6,12 +6,14 @@
 <br>
 <br>
 
-<!--
+### Slides mostrados en la clase
+
+* :fontawesome-regular-file-pdf: [Slides](https://drive.google.com/file/d/1FrkOPVGtcpjWmMT5gRQvvJ9v9CasImNy/view?usp=sharing)
+
 ## Videos de la clase grabada
 
-* :octicons-video-16: [Introducción al TP](https://www.youtube.com/watch?v=erSvL81NsRg)
-* :octicons-video-16: [Puesta en común del TP](https://www.youtube.com/watch?v=cZVEAZy0Wx8)
--->
+* :octicons-video-16: [Puesta en común del TP](https://youtu.be/Yf4B51xwX8Q)
+
 
 !!! abstract "Atención: Este TP tiene informe."
 
