@@ -109,7 +109,7 @@ regiones:
 
   *File → Open*
 
-**10.** Para tener una noción de cuán similar es la estructura de dos proteínas, podemos realizar un **Alineamiento Estructural**, que consiste en superponer las estructuras de ambas proteínas en el espacio intentando alinear sus cadenas aminoacídicas. Alinear estructuras en chimera es muy fácil, sólo requiere un comando.  
+**10.** Para tener una noción de cuán similar es la estructura de dos proteínas, podemos realizar un **Alineamiento Estructural**, que consiste en superponer las estructuras de ambas proteínas en el espacio intentando alinear sus cadenas aminoacídicas. Para esto:  
   
 Vaya a *Tools → Structure Comparison → MatchMaker*
     
@@ -121,9 +121,16 @@ Se abrirá una nueva ventana.
 
 * En *Reference structure* (el panel de la izquierda) seleccione la cadena correcta de la estructura utilizada como molde.
 
+!!! warning "Antes de seguir..."
+
+    Piense y conteste:
+
+    * ¿Porqué está utilizando el PDB:1F46?
+    * ¿Qué cadena debe elegir?
+
+
 * En *Matching* asegurése que *Iterate by pruning long atom pairs untilo no pair exceeds* está clickeado.
 
-* Piense, ¿Porqué está utilizando el PDB:1F46?
 
 * Observe el resultado del alineamiento: ¿Son parecidas las estructuras? ¿En donde se observan las mayores diferencias?
 
@@ -144,6 +151,41 @@ Se abrirá una nueva ventana.
 **III.** En la parte superior de la ventana del alineamiento de secuencia vaya a Headers y seleccione RMSD:*ca*
 
 * ¿Qué regiones poseen mayor RMSD? ¿A qué elementos estructurales corresponden? Para responder esto, seleccione estas regiones con el mouse en el alineamiento y visualícelas en la estructura alineada.
+
+**IV.** Para calcular el RMSD manualmente es necesario tener ambas moléculas en un mismo archivo y con un sistema de coordenadas relacionado.
+
+Para guardar el archivo pdb incluyendo ambas moléculas vaya a *File* → *Save PDB...*
+
+En la ventana que se abre:
+
+* En la sección *Save models* asegúrese que ambos modelos estén seleccionados.
+* Chequee que la única casilla tildada sea *Save relative to model:*
+* Asegúrese que en *Save multiple models in* esté seleccionado *a single file*
+* Elija la ubicación y nombre para el archivo.
+
+Abra el archivo con el **Leafpad** o **block de notas**.
+
+* ¿Se encuentran ambas moléculas en el archivo? (Pista, ¿cuantas cadenas ve y como se llaman?)
+
+!!! info "Calculo de RMSD"
+
+    $$
+    \operatorname{RMSD(v,w)} = \sqrt{\frac{1}{n} \sum_{i=0}^{n} \, ((v_{ix} - w_{ix} )^2 + (v_{iy} - w_{iy} )^2 + (v_{iz} - w_{iz} )^2) \, }
+    $$
+
+* Calcule el RMSD entre los carbonos alpha del residuo serina 253 del modelo obtenido y la glicina 55 de del templado utilizado.
+
+* En la fórmula de RMSD:
+
+      * ¿Cuánto vale *n* en este caso?
+      * ¿A qué corresponde *v* y a qué corresponde *w*?
+
+* Verifique su resultado en chimera (en el alineamiento obtenido por match align debe seleccionar ambos residuos a la vez y el RMSD aparece en la parte inferior del recuadro) ¿Obtuvo el mismo resultado?
+
+<!--
+ATOM    402  CA  SER X 253      18.759  16.006  35.757  1.00114.95           C
+ATOM   1479  CA  GLY B  55      19.585  14.558  34.795  1.00 21.07           C
+-->
 
 **12.** Para cuantificar el alineamiento de secuencia obtenido, podemos calcular el % de identidad de secuencia. Para ello, en la ventana del alineamiento de secuencias vaya a:
 
