@@ -17,7 +17,7 @@
 !!! abstract "Atención: Este TP tiene informe."
 -->
 
-[:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1fgYENsbk0R3jsujwxkoHT7s141aiBt0H/view?usp=sharing){ .md-button .md-button--primary }
+[:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1N_HP4wbfMm06KtF7n7HjRrW8VEdzL3sK/view?usp=sharing){ .md-button .md-button--primary }
 
 ## Ejercicio 1. Modelado mistery protein.
 Luego de dos años y numerosos intentos fallidos, usted logra determinar por resonancia magnética nuclear una región de una proteína misteriosa y deposita la estructura en la base de datos de proteínas PDB (PDB: 1F46).
