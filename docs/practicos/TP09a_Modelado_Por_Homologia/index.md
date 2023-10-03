@@ -142,6 +142,12 @@ Se abrirá una nueva ventana.
 
 *Tools → Structure comparison → “Match->Align”*
 
+Asegúrese que:
+
+* Estén seleccionadas las cadenas correctas
+
+* En *Residue-residue distance cutoff (angstroms)* diga 2.0
+
 **Ahora, observando la estructura y el alineamiento responda:**  
 
 **I.** ¿Qué son las regiones marcadas en rosa en el alineamiento?  
