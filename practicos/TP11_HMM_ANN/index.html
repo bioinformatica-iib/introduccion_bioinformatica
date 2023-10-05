@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP11_HMM_ANN/">
       
       <link rel="icon" href="../../img/logo-unsam-negro.png">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.6">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-8.5.10">
     
     
       
@@ -21,13 +21,14 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.4a0965b7.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.975780f9.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
         
       
       
+
     
     
     
@@ -42,10 +43,11 @@
     
       <link rel="stylesheet" href="../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
+    
     
     
    <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
@@ -124,6 +126,7 @@
         
           
           
+          
           <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="pink"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_1">
           
             <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_2" hidden>
@@ -131,6 +134,7 @@
             </label>
           
         
+          
           
           
           <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="pink" data-md-color-accent="pink"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_2">
@@ -158,11 +162,11 @@
       </label>
       <nav class="md-search__options" aria-label="Search">
         
-          <a href="javascript:void(0)" class="md-search__icon md-icon" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
           </a>
         
-        <button type="reset" class="md-search__icon md-icon" aria-label="Limpiar" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
         </button>
       </nav>
@@ -860,32 +864,33 @@
             
             
           
-          <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset">
-              
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
                 
+                  
 
 
-<p><a class="glightbox" href="img/banner.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img _="," align="left" alt="Image" src="img/banner.jpg" width="250" /></a></p>
+<div><p><a class="glightbox" href="img/banner.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img _="," align="left" alt="Image" src="img/banner.jpg" width="250"></a></p>
 <h1 id="tp-7-artificial-neural-networks-anns-y-hidden-markov-models-hmms" markdown="markdown"><strong>TP 7</strong>. Artificial Neural Networks (ANNs) y Hidden Markov Models (HMMs)</h1>
 <p><br>
 <br>
 <br></p>
-<p><a class="md-button md-button--primary" href="https://drive.google.com/file/d/1GrCbM-rWvnxdrJ_dJeGaoaYstEUpMMYN/view?usp=sharing"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M480 352H346.5l-45.25 45.25C289.2 409.3 273.1 416 256 416s-33.16-6.656-45.25-18.75L165.5 352H32c-17.67 0-32 14.33-32 32v96c0 17.67 14.33 32 32 32h448c17.67 0 32-14.33 32-32v-96c0-17.7-14.3-32-32-32zm-48 104c-13.2 0-24-10.8-24-24s10.8-24 24-24 24 10.8 24 24-10.8 24-24 24zm-198.6-81.4c6.2 6.3 14.4 9.4 22.6 9.4s16.38-3.125 22.62-9.375l128-128c12.49-12.5 12.49-32.75 0-45.25-12.5-12.5-32.76-12.5-45.25 0L288 274.8V32c0-17.67-14.33-32-32-32-17.7 0-32 14.33-32 32v242.8l-73.4-73.4c-12.49-12.5-32.75-12.5-45.25 0-12.49 12.5-12.49 32.75 0 45.25L233.4 374.6z"/></svg></span> Materiales</a></p>
+<p><a class="md-button md-button--primary" href="https://drive.google.com/file/d/1GrCbM-rWvnxdrJ_dJeGaoaYstEUpMMYN/view?usp=sharing"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32v242.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64v-32c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 104c-13.3 0-24-10.7-24-24s10.7-24 24-24 24 10.7 24 24-10.7 24-24 24z"></path></svg></span> Materiales</a></p>
 <p><br></p>
 <div class="admonition abstract">
 <p class="admonition-title">Atención: Este TP tiene informe.</p>
 </div>
 <h3 id="slides-mostrados-en-la-clase">Slides mostrados en la clase</h3>
 <ul>
-<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M320 464c8.8 0 16-7.2 16-16v-32h48v32c0 35.3-28.7 64-64 64H64c-35.35 0-64-28.7-64-64v-32h48v32c0 8.8 7.16 16 16 16h256zm-64-304c-17.7 0-32-14.3-32-32V48H64c-8.84 0-16 7.16-16 16v128H0V64C0 28.65 28.65 0 64 0h165.5c17 0 33.2 6.743 45.2 18.75l90.6 90.55c12 12 18.7 28.2 18.7 45.2V192h-48v-32h-80zM88 224c30.9 0 56 25.1 56 56s-25.1 56-56 56h-8v32c0 8.8-7.16 16-16 16s-16-7.2-16-16V240c0-8.8 7.16-16 16-16h24zm24 56c0-13.3-10.7-24-24-24h-8v48h8c13.3 0 24-10.7 24-24zm48-40c0-8.8 7.2-16 16-16h24c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48h-24c-8.8 0-16-7.2-16-16V240zm32 112h8c8.8 0 16-7.2 16-16v-64c0-8.8-7.2-16-16-16h-8v96zm144-128c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v32h32c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v48c0 8.8-7.2 16-16 16s-16-7.2-16-16V240c0-8.8 7.2-16 16-16h48z"/></svg></span> <a href="https://docs.google.com/presentation/d/1QJHn0rxV3sIW3Prb9-loM91DgPnVwR0M6PQTYYzjYMQ/edit?usp=sharing">Explicación ANNs</a></li>
-<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M320 464c8.8 0 16-7.2 16-16v-32h48v32c0 35.3-28.7 64-64 64H64c-35.35 0-64-28.7-64-64v-32h48v32c0 8.8 7.16 16 16 16h256zm-64-304c-17.7 0-32-14.3-32-32V48H64c-8.84 0-16 7.16-16 16v128H0V64C0 28.65 28.65 0 64 0h165.5c17 0 33.2 6.743 45.2 18.75l90.6 90.55c12 12 18.7 28.2 18.7 45.2V192h-48v-32h-80zM88 224c30.9 0 56 25.1 56 56s-25.1 56-56 56h-8v32c0 8.8-7.16 16-16 16s-16-7.2-16-16V240c0-8.8 7.16-16 16-16h24zm24 56c0-13.3-10.7-24-24-24h-8v48h8c13.3 0 24-10.7 24-24zm48-40c0-8.8 7.2-16 16-16h24c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48h-24c-8.8 0-16-7.2-16-16V240zm32 112h8c8.8 0 16-7.2 16-16v-64c0-8.8-7.2-16-16-16h-8v96zm144-128c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v32h32c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v48c0 8.8-7.2 16-16 16s-16-7.2-16-16V240c0-8.8 7.2-16 16-16h48z"/></svg></span> <a href="https://docs.google.com/presentation/d/107NFfznzLTd0RDTQ_dmyBzrBs3Ri8tqbkyoru28FjYU/edit?usp=sharing">Explicación HMMs</a></li>
+<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 384 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M320 464c8.8 0 16-7.2 16-16v-32h48v32c0 35.3-28.7 64-64 64H64c-35.35 0-64-28.7-64-64v-32h48v32c0 8.8 7.16 16 16 16h256zm-64-304c-17.7 0-32-14.3-32-32V48H64c-8.84 0-16 7.16-16 16v128H0V64C0 28.65 28.65 0 64 0h165.5c17 0 33.2 6.743 45.2 18.75l90.6 90.55c12 12 18.7 28.2 18.7 45.2V192h-48v-32h-80zM88 224c30.9 0 56 25.1 56 56s-25.1 56-56 56h-8v32c0 8.8-7.16 16-16 16s-16-7.2-16-16V240c0-8.8 7.16-16 16-16h24zm24 56c0-13.3-10.7-24-24-24h-8v48h8c13.3 0 24-10.7 24-24zm48-40c0-8.8 7.2-16 16-16h24c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48h-24c-8.8 0-16-7.2-16-16V240zm32 112h8c8.8 0 16-7.2 16-16v-64c0-8.8-7.2-16-16-16h-8v96zm144-128c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v32h32c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v48c0 8.8-7.2 16-16 16s-16-7.2-16-16V240c0-8.8 7.2-16 16-16h48z"></path></svg></span> <a href="https://docs.google.com/presentation/d/1QJHn0rxV3sIW3Prb9-loM91DgPnVwR0M6PQTYYzjYMQ/edit?usp=sharing">Explicación ANNs</a></li>
+<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 384 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M320 464c8.8 0 16-7.2 16-16v-32h48v32c0 35.3-28.7 64-64 64H64c-35.35 0-64-28.7-64-64v-32h48v32c0 8.8 7.16 16 16 16h256zm-64-304c-17.7 0-32-14.3-32-32V48H64c-8.84 0-16 7.16-16 16v128H0V64C0 28.65 28.65 0 64 0h165.5c17 0 33.2 6.743 45.2 18.75l90.6 90.55c12 12 18.7 28.2 18.7 45.2V192h-48v-32h-80zM88 224c30.9 0 56 25.1 56 56s-25.1 56-56 56h-8v32c0 8.8-7.16 16-16 16s-16-7.2-16-16V240c0-8.8 7.16-16 16-16h24zm24 56c0-13.3-10.7-24-24-24h-8v48h8c13.3 0 24-10.7 24-24zm48-40c0-8.8 7.2-16 16-16h24c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48h-24c-8.8 0-16-7.2-16-16V240zm32 112h8c8.8 0 16-7.2 16-16v-64c0-8.8-7.2-16-16-16h-8v96zm144-128c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v32h32c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v48c0 8.8-7.2 16-16 16s-16-7.2-16-16V240c0-8.8 7.2-16 16-16h48z"></path></svg></span> <a href="https://docs.google.com/presentation/d/107NFfznzLTd0RDTQ_dmyBzrBs3Ri8tqbkyoru28FjYU/edit?usp=sharing">Explicación HMMs</a></li>
 </ul>
 <h3 id="videos-de-la-clase-grabada">Videos de la clase grabada</h3>
 <ul>
-<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.75 3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25v-8.5a.25.25 0 0 0-.25-.25H1.75zM0 3.75C0 2.784.784 2 1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0 1 14.25 14H1.75A1.75 1.75 0 0 1 0 12.25v-8.5z"/><path d="M6 10.559V5.442a.25.25 0 0 1 .379-.215l4.264 2.559a.25.25 0 0 1 0 .428l-4.264 2.559A.25.25 0 0 1 6 10.559z"/></svg></span> <a href="https://www.youtube.com/watch?v=XFBQW5qKXdE">Introducción ANNs</a></li>
-<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.75 3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25v-8.5a.25.25 0 0 0-.25-.25H1.75zM0 3.75C0 2.784.784 2 1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0 1 14.25 14H1.75A1.75 1.75 0 0 1 0 12.25v-8.5z"/><path d="M6 10.559V5.442a.25.25 0 0 1 .379-.215l4.264 2.559a.25.25 0 0 1 0 .428l-4.264 2.559A.25.25 0 0 1 6 10.559z"/></svg></span> <a href="https://www.youtube.com/watch?v=EXrwYBp6FQw">Puesta en común ANNs</a></li>
-<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.75 3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25v-8.5a.25.25 0 0 0-.25-.25H1.75zM0 3.75C0 2.784.784 2 1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0 1 14.25 14H1.75A1.75 1.75 0 0 1 0 12.25v-8.5z"/><path d="M6 10.559V5.442a.25.25 0 0 1 .379-.215l4.264 2.559a.25.25 0 0 1 0 .428l-4.264 2.559A.25.25 0 0 1 6 10.559z"/></svg></span> <a href="https://www.youtube.com/watch?v=5Rpo7dZaTyQ">Ejercicio guiado HMMer</a></li>
+<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 16 16"><path fill-rule="evenodd" d="M1.75 3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25v-8.5a.25.25 0 0 0-.25-.25H1.75zM0 3.75C0 2.784.784 2 1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0 1 14.25 14H1.75A1.75 1.75 0 0 1 0 12.25v-8.5z"></path><path d="M6 10.559V5.442a.25.25 0 0 1 .379-.215l4.264 2.559a.25.25 0 0 1 0 .428l-4.264 2.559A.25.25 0 0 1 6 10.559z"></path></svg></span> <a href="https://www.youtube.com/watch?v=XFBQW5qKXdE">Introducción ANNs</a></li>
+<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 16 16"><path fill-rule="evenodd" d="M1.75 3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25v-8.5a.25.25 0 0 0-.25-.25H1.75zM0 3.75C0 2.784.784 2 1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0 1 14.25 14H1.75A1.75 1.75 0 0 1 0 12.25v-8.5z"></path><path d="M6 10.559V5.442a.25.25 0 0 1 .379-.215l4.264 2.559a.25.25 0 0 1 0 .428l-4.264 2.559A.25.25 0 0 1 6 10.559z"></path></svg></span> <a href="https://www.youtube.com/watch?v=EXrwYBp6FQw">Puesta en común ANNs</a></li>
+<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 16 16"><path fill-rule="evenodd" d="M1.75 3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25v-8.5a.25.25 0 0 0-.25-.25H1.75zM0 3.75C0 2.784.784 2 1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0 1 14.25 14H1.75A1.75 1.75 0 0 1 0 12.25v-8.5z"></path><path d="M6 10.559V5.442a.25.25 0 0 1 .379-.215l4.264 2.559a.25.25 0 0 1 0 .428l-4.264 2.559A.25.25 0 0 1 6 10.559z"></path></svg></span> <a href="https://www.youtube.com/watch?v=5Rpo7dZaTyQ">Ejercicio guiado HMMer</a></li>
 </ul>
 <h2 id="objetivos">Objetivos</h2>
 <ul>
@@ -996,21 +1001,21 @@ Este modelo será utilizado en el ejercicio a entregar de este TP.</p>
 <p><strong>HMMer</strong> es un paquete de programas que nuclea varias funciones para realizar búsquedas en bases de datos mediante la utilización de perfiles de secuencias. Está basado en <em>profile Hidden Markov Models</em>, presentados por Anders Krogh (Krogh <em>et al.</em>, 1994). Estos perfiles son una aproximación estadística del consenso de un alineamiento múltiple y utilizan un sistema de puntaje posición-específico, en contraste con métodos ya vistos como BLAST o FASTA en donde la matriz de puntajes utilizada es la misma en cada posición.</p>
 <h3 id="construccion-de-un-perfil">Construcción de un perfil</h3>
 <p>Supongamos que trabajamos con globinas y queremos buscar homólogos lejanos. Para ello contamos con 50 secuencias de globinas las cuales alineamos y guardamos en el archivo <em>globins50.msf</em>. Como primer paso para realizar la búsqueda debemos generar un <em>profile</em> o perfil que las represente. Para crear el <em>profile</em> utilizamos la función <code>hmm2build</code> de la siguiente manera:</p>
-<div class="highlight"><pre><span></span><code>hmm2build globin.hmm globins50.msf
+<div class="highlight"><pre><span></span><code>hmm2build<span class="w"> </span>globin.hmm<span class="w"> </span>globins50.msf
 </code></pre></div>
 <p><code>hmm2build</code> recibe como argumentos el archivo en el cual va a guardar el perfil (<em>globin.hmm</em>) y el archivo con el cual crearlo (<em>globins50.msf</em>). Si bien el contenido del archivo donde se guardó el perfil es legible, su contenido no debería tener sentido para ustedes (más allá del encabezado con información sobre las opciones que se utilizaron para crearlo) porque únicamente almacena los pesos de las transiciones de estado del HMM.</p>
 <h3 id="calibracion-del-perfil">Calibración del perfil</h3>
 <p>Este paso no es imprescindible pero sí aconsejable. La calibración del perfil le otorga mayor sensibilidad en la búsqueda ya que modifica la estimación del E-value de los <em>hits</em> encontrados. Si recuerdan, la búsqueda contra bases de datos nos devuelve junto con cada alineamiento un score y un E-value, este último nos da una idea sobre la cantidad de <em>hits</em> que esperamos encontrar con ese score en una base de datos construida con secuencias aleatorias y se calcula según la longitud de la secuencia <em>query</em> y <em>subject</em>, el tamaño de la base de datos y la matriz de <em>scoring</em>.</p>
 <p>En el caso de HMMer, la estimación del E-value es analítica y resulta muy conservativa, por lo que se dejan de lado posibles <em>hits</em> (como homólogos lejanos). Utilizando <code>hmm2calibrate</code> podemos calibrar el cálculo de E-values de manera empírica incrementando de manera significativa la sensibilidad de la búsqueda.</p>
-<p><div class="highlight"><pre><span></span><code>hmm2calibrate globin.hmm
+<p></p><div class="highlight"><pre><span></span><code>hmm2calibrate<span class="w"> </span>globin.hmm
 </code></pre></div>
-<code>hmm2calibrate</code> lee un archivo con un modelo HMM como <strong>globin.hmm</strong> y puntúa un número grande de secuencias sintetizadas al azar (por default 5000 secuencias) con este modelo. Luego ajusta una EVD (Extreme Value Distribution) al histograma de los puntajes obtenidos y guarda nuevamente el modelo HMM con estos nuevos parámetros.</p>
+<code>hmm2calibrate</code> lee un archivo con un modelo HMM como <strong>globin.hmm</strong> y puntúa un número grande de secuencias sintetizadas al azar (por default 5000 secuencias) con este modelo. Luego ajusta una EVD (Extreme Value Distribution) al histograma de los puntajes obtenidos y guarda nuevamente el modelo HMM con estos nuevos parámetros.
 <p>Como para realizar este cálculo se sintetizan secuencias al azar, estableceremos una semilla (o <em>seed</em>) para poder reproducir nuestros resultados. Entonces el comando se modifica de la siguiente forma, </p>
-<div class="highlight"><pre><span></span><code>hmm2calibrate --seed <span class="m">1</span> globin.hmm  
+<div class="highlight"><pre><span></span><code>hmm2calibrate<span class="w"> </span>--seed<span class="w"> </span><span class="m">1</span><span class="w"> </span>globin.hmm<span class="w">  </span>
 </code></pre></div>
 <h3 id="busqueda-en-bases-de-datos">Búsqueda en bases de datos</h3>
 <p>El comando para utilizar nuestro flamante <em>profile</em> en una búsqueda es <code>hmm2search</code>. En este caso lo vamos a utilizar contra el archivo Artemia.fa que contiene una única secuencia de globina en búsqueda de dominios pertenecientes a nuestra familia de interés.</p>
-<div class="highlight"><pre><span></span><code>hmm2search globin.hmm Artemia.fa
+<div class="highlight"><pre><span></span><code>hmm2search<span class="w"> </span>globin.hmm<span class="w"> </span>Artemia.fa
 </code></pre></div>
 <p>La salida de este comando es más larga que las anteriores, consta de un encabezado con la información sobre el programa y los parámetros que utilizamos en la búsqueda:</p>
 <div class="highlight"><pre><span></span><code>hmmsearch - search a sequence database with a profile HMM
@@ -1143,8 +1148,8 @@ tophits_s report:
 </code></pre></div>
 <h3 id="busqueda-en-bases-de-datos-reales">Búsqueda en bases de datos reales</h3>
 <p>HMMer puede leer los formatos de la mayoría de las bases de datos conocidas. A diferencia de BLAST no es necesario indexar la base de datos. Si recuerdan de la práctica de BLAST/FASTA, uno podía crear su propia base de datos donde realizar los alineamientos a partir de un archivo multifasta utilizando el comando <strong>formatdb</strong>, el cual crea todo el sistema de índices de <em>ktuplas</em> y demás archivos para facilitar la búsqueda. En este caso HMMer puede realizar la búsqueda directamente sobre el multifasta sin necesidad de más procesamiento. En nuestro servidor podemos realizar la búsqueda utilizando:</p>
-<div class="highlight"><pre><span></span><code>hmm2search globin.hmm ~/Swissprot_db/Swissprot.fasta &gt; globin.swissprot.search
-less globin.swissprot.search
+<div class="highlight"><pre><span></span><code>hmm2search<span class="w"> </span>globin.hmm<span class="w"> </span>~/Swissprot_db/Swissprot.fasta<span class="w"> </span>&gt;<span class="w"> </span>globin.swissprot.search
+less<span class="w"> </span>globin.swissprot.search
 </code></pre></div>
 <div class="admonition attention">
 <p class="admonition-title">Atención</p>
@@ -1164,23 +1169,23 @@ La secuencia proteica de este receptor se encuentra en el archivo <strong>7LES_D
 <p>¿Qué dominios fueron identificados en esta proteína? Recuerde estos resultados para contrastarlo con lo que hará más adelante. </p>
 <p>Las bases de datos de <em>profiles</em> no son más que múltiples HMMs concatenados, por lo que el comando para construirlas es también <strong>hmm2build</strong>, pero vamos a utilizar la opción <strong>-A</strong> (append) para agregar nuevos <em>profiles</em> a nuestro archivo de HMMs original.</p>
 <p>Por ejemplo, si queremos construir una base de datos <strong>"myhmms"</strong> que contiene perfiles de dominios <strong>rrm</strong> de reconocimiento de ARN, <strong>fn3</strong> de fibronectina tipo III y <strong>pkinase</strong> del dominio catalítico de las kinasas podemos realizarlo fácilmente con:</p>
-<div class="highlight"><pre><span></span><code>hmm2build -A myhmms rrm.sto
-hmm2build -A myhmms fn3.sto
-hmm2build -A myhmms pkinase.sto
+<div class="highlight"><pre><span></span><code>hmm2build<span class="w"> </span>-A<span class="w"> </span>myhmms<span class="w"> </span>rrm.sto
+hmm2build<span class="w"> </span>-A<span class="w"> </span>myhmms<span class="w"> </span>fn3.sto
+hmm2build<span class="w"> </span>-A<span class="w"> </span>myhmms<span class="w"> </span>pkinase.sto
 </code></pre></div>
 <p>Para realizar búsquedas en nuestra nueva base de datos utilizamos el comando <code>hmm2pfam</code>. En este caso empleamos nuevamente, como ejemplo, a la proteína codificada por el gen <em>Sevenless</em> de <em>Drosophila melanogaster</em> (archivo <strong>7LES_DROME</strong>):</p>
-<div class="highlight"><pre><span></span><code>hmm2pfam myhmms 7LES_DROME
+<div class="highlight"><pre><span></span><code>hmm2pfam<span class="w"> </span>myhmms<span class="w"> </span>7LES_DROME
 </code></pre></div>
 <p>La salida es muy parecida a la de <strong>hmm2search</strong> pero los hits reportados no serán secuencias sino dominios contenidos en la base de datos. </p>
 <p>En nuestro caso particular podrán notar que tenemos un hit contra un dominio RRM aún cuando nuestra proteína query no contiene ningún dominio de este tipo. </p>
 <p>Relacionado con esto mismo, ¿recuerdan si la base de datos PFAM identificó este dominio en la proteína de estudio?</p>
 <p>Nos podemos dar cuenta que este hit es al menos sospechoso debido a su score negativo y su E-value cercano a 1. Por defecto el límite de E-value, al igual que BLAST es 10, este umbral es extremadamente permisivo y proclive a devolver ruido. Si queremos ser más quisquillosos podemos utilizar la opción <strong>-E</strong> seguida del umbral deseado. Por ejemplo:</p>
-<div class="highlight"><pre><span></span><code>hmm2pfam -E <span class="m">0</span>.1 myhmms 7LES_DROME
+<div class="highlight"><pre><span></span><code>hmm2pfam<span class="w"> </span>-E<span class="w"> </span><span class="m">0</span>.1<span class="w"> </span>myhmms<span class="w"> </span>7LES_DROME
 </code></pre></div>
 <h3 id="adicional-alineamientos-multiples-con-hmm">Adicional: Alineamientos múltiples con HMM</h3>
 <p>Otro uso que se les da a los <em>profiles</em> es el de asistir a la hora de llevar a cabo alineamientos múltiples de grandes cantidades de secuencias. En general este proceso suele ser lento y los alineamientos resultantes contienen errores que requieren curarse a mano. Utilizando HMMs construidos a partir de un alineamiento de unas pocas secuencias representativas, se pueden alinear grandes cantidades de secuencias relacionadas fácilmente. </p>
 <p>Siguiendo con nuestras globinas, tenemos un archivo (<strong>globins630.fa</strong>), que como habrán deducido, contiene 630 secuencias de globinas que vamos a alinear utilizando el comando <code>hmm2align</code>:</p>
-<div class="highlight"><pre><span></span><code>hmm2align -o globins630.ali globin.hmm globins630.fa
+<div class="highlight"><pre><span></span><code>hmm2align<span class="w"> </span>-o<span class="w"> </span>globins630.ali<span class="w"> </span>globin.hmm<span class="w"> </span>globins630.fa
 </code></pre></div>
 <p>mediante la opción <code>-o</code> indicamos el archivo en el que deseamos guardar el alineamiento (<strong>globins630.ali</strong>), y como argumentos debemos indicar el profile que vamos a utilizar como "semilla" y el archivo con las secuencias a alinear (<strong>globin.hmm</strong> y <strong>globins630.fa</strong> respectivamente). </p>
 <p>Noten que también se puede utilizar la opción <code>--outformat</code> para cambiar el formato del alineamiento producido. Por defecto se utiliza el formato <em>Stockholm</em>, pero también puede producir alineamientos en formato <em>MSF</em>, <em>Clustal</em>, <em>Phylip</em> y <em>SELEX</em>.</p>
@@ -1219,12 +1224,17 @@ hmm2build -A myhmms pkinase.sto
 <li><a href="http://www.cookbook-r.com/Graphs/Scatterplots_(ggplot2)/">Scatterplot en ggplot2</a></li>
 </ul>
 </div>
-<p><br></p>
+<p><br></p></div>
 
-              
-            </article>
-            
-          </div>
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
         </div>
         
           <a href="#" class="md-top md-icon" data-md-component="top" hidden>
@@ -1260,10 +1270,11 @@ hmm2build -A myhmms pkinase.sto
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["search.suggest", "search.highlight", "search.share", "header.autohide", "navigation.tracking", "navigation.tabs", "toc.integrate", "navigation.top"], "search": "../../assets/javascripts/workers/search.85cb4492.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "B\u00fasqueda", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version.title": "Seleccionar versi\u00f3n"}}</script>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["search.suggest", "search.highlight", "search.share", "header.autohide", "navigation.tracking", "navigation.tabs", "toc.integrate", "navigation.top"], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "B\u00fasqueda", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version.title": "Seleccionar versi\u00f3n"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.a877e258.min.js"></script>
+      <script src="../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
       
         <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
       
@@ -1275,6 +1286,7 @@ hmm2build -A myhmms pkinase.sto
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
+    
     
   <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>
