@@ -6,16 +6,14 @@
 <br>
 <br>
 
-<!--
+## Slides mostrados en la clase
+
+* :fontawesome-regular-file-pdf: [Slides](https://docs.google.com/presentation/d/1xYu3aSyGvJW7u0tw0Z1iIwHhwLfVKlue/edit?usp=sharing&ouid=115287066011570616875&rtpof=true&sd=true)
+
 ## Videos de la clase grabada
+* :octicons-video-16: [Puesta en común del TP](https://youtu.be/l--R0Vs12Lo)
 
-* :octicons-video-16: [Introducción al TP](https://www.youtube.com/watch?v=mzzItpMc7ds)
-* :octicons-video-16: [Resultados Verify y Procheck](https://www.youtube.com/watch?v=t6P6AprFvVg)
-* :octicons-video-16: [Puesta en común del TP](https://www.youtube.com/watch?v=vAtKowbM4oo)
-
-
-!!! abstract "Atención: Este TP tiene informe."
--->
+<br>
 
 [:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1N_HP4wbfMm06KtF7n7HjRrW8VEdzL3sK/view?usp=sharing){ .md-button .md-button--primary }
 
