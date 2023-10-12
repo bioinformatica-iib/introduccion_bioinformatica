@@ -1207,7 +1207,6 @@ MHGDTPTLHEYMLDLQPETTDLYCYEQLNDSSEEEDEIDGPAGQAEPDRAHYNIVTFCCKCDSTLRLCVQSTHVDIRTLE
 <li>
 <p>Localice el archivo descargado y descomprímalo (el nombre del archivo comienza con <code>E7_MONOMERO</code>). Encontrará varios archivos, en particular:</p>
 <ul>
-<li><code>*_template_domain_names.json</code> Tiene los templados utilizados por AlphaFold2 si es que se usaron.</li>
 <li><code>Cite.bibtex</code> Contiene todas las citas correspondientes a los papers relacionados.</li>
 <li><code>Config.json</code> Contiene todos los parámetros utilizados en la corrida.</li>
 <li><code>*.a3m</code> Alineamiento</li>
@@ -1215,15 +1214,17 @@ MHGDTPTLHEYMLDLQPETTDLYCYEQLNDSSEEEDEIDGPAGQAEPDRAHYNIVTFCCKCDSTLRLCVQSTHVDIRTLE
 <li><code>*_PAE.png</code> Gráfico del PAE por pares de residuos para todos los modelos.</li>
 <li><code>*_plddt.png</code> Gráfico del plddt por posición</li>
 <li><code>*_predicted_aligned_error_v1.json</code> Tiene los valores de PAE para todos los pares de todos los modelos.</li>
-<li><code>*_relaxed_*_model_*.pdb</code> Son los 5 modelos generados.</li>
-<li><code>*_relaxed_*_model_*.json</code> Son el PAE y pLDDT de cada modelo que se pueden utilizar para graficar.</li>
+<li><code>*_relaxed_*_model_*.pdb</code> Son los modelos generados y relajados.</li>
+<li><code>*_unrelaxed_*_model_*.pdb</code> Son los 5 modelos generados sin relajar.</li>
+<li><code>*_model_*.json</code> Son el PAE y pLDDT de cada modelo que se pueden utilizar para graficar.</li>
+<li>En la carpeta<code>*_env*</code> Tiene los templados utilizados por AlphaFold2 si es que se usaron.</li>
 </ul>
 </li>
 <li>
-<p>Abra Chimera y cargue uno de los modelos relajados (si no recuerda <em>File</em> → <em>Open …</em>).</p>
+<p>Abra Chimera y cargue el modelo relajado (<em>relaxed</em>) (si no recuerda <em>File</em> → <em>Open …</em>).</p>
 </li>
 <li>
-<p>Abra el pdb: 2b9d.</p>
+<p>Abra el pdb: 2b9d. (Puede descargalo realizando <em>File</em> → <em>Fetch by ID</em> o bien yendo a la web de la <a href="">rcsb</a>)</p>
 <ul>
 <li>¿Estaba esta estructura entre los templados?</li>
 <li>¿Por qué método fue determinada?</li>
@@ -1270,7 +1271,7 @@ MHGDTPTLHEYMLDLQPETTDLYCYEQLNDSSEEEDEIDGPAGQAEPDRAHYNIVTFCCKCDSTLRLCVQSTHVDIRTLE
 <p>Los valores de pLDDT están almacenados en la columna del pdb que corresponde a los b-factors.
 Para colorear por b-factors, utilizaremos la <em>command line</em> que Chimera trae integrada. Para esto vaya a: <em>Favorites</em> → <em>Command line</em>. En la parte inferior de la pantalla se abrirá un renglón donde puede ingresar los comandos necesarios.</p>
 <p>Para colorear los modelos según el atributo b-factor donde está almacenado el plDDT ingrese en la <em>command line</em>:</p>
-<div class="highlight"><pre><span></span><code>rangecolor bfactor 0 orange red 50 white 100 dodger blue
+<div class="highlight"><pre><span></span><code>rangecolor bfactor min orange red mid white max dodger blue
 </code></pre></div>
 <ul>
 <li>¿Qué observa?</li>
@@ -1279,6 +1280,9 @@ Para colorear por b-factors, utilizaremos la <em>command line</em> que Chimera t
 <ul>
 <li>¿Cuáles son el mínimo y el máximo?</li>
 </ul>
+<p>Ahora en lugar de que Chimera elija los valores observados como mínimo y máximo de la escala, los vamos a configurar con el siguiente comando:</p>
+<div class="highlight"><pre><span></span><code>rangecolor bfactor 0 orange red 50 white 100 dodger blue
+</code></pre></div>
 <p>Ahora cambie el valor mínimo a min (se elige el valor mínimo presente en la columna de b-factors) y el valor intermedio que antes era 50, a 70:</p>
 <div class="highlight"><pre><span></span><code>rangecolor bfactor min orange red 70 white 100 dodger blue
 </code></pre></div>
@@ -1324,7 +1328,7 @@ Para colorear por b-factors, utilizaremos la <em>command line</em> que Chimera t
 
 <span class="nf">setwd</span><span class="p">(</span><span class="o">*</span><span class="n">DIRECTORIO</span> <span class="n">DE</span> <span class="n">TRABAJO</span> <span class="n">DESEADO</span><span class="o">*</span><span class="p">)</span>
 
-<span class="n">directorio</span> <span class="o">&lt;-</span> <span class="s">&quot;/directorio/donde/estan/los/modelos&quot;</span>
+<span class="n">directorio</span> <span class="o">&lt;-</span> <span class="s">&quot;/directorio/donde/estan/los/modelos/&quot;</span>
 
 <span class="n">archivos</span> <span class="o">&lt;-</span> <span class="nf">list.files</span><span class="p">(</span><span class="n">path</span> <span class="o">=</span> <span class="n">directorio</span><span class="p">,</span><span class="n">pattern</span> <span class="o">=</span> <span class="s">&quot;_unrelaxed_&quot;</span><span class="p">,)</span>
 
@@ -1396,7 +1400,7 @@ En el campo sequence query ingrese las secuencias de la proteína E7 de HPV16. <
 <p>En <strong>num_relax</strong> elija 1</p>
 </li>
 <li>
-<p>En template mode elija none</p>
+<p>En <strong>template mode</strong> elija none</p>
 </li>
 <li>
 <p>Vaya a <em>Runtime</em> → <em>Run all</em>, o presione <code>Ctrl</code>+<code>F9</code></p>
@@ -1479,7 +1483,7 @@ delete element.H
 </ul>
 </li>
 <li>
-<p>Abra en chimera los 5 modelos relajados que se generaron. Luego, alinee utilizando matchmaker y seleccionaremos las cisteínas que coordinan la unión al zinc.</p>
+<p>Abra en chimera los 5 modelos no relajados que se generaron. Luego, alinee utilizando matchmaker y seleccionaremos las cisteínas que coordinan la unión al zinc.</p>
 <div class="highlight"><pre><span></span><code>sel #1-5:58,61,91,94; display sel; color blue,a sel; color byhet sel; ~sel
 </code></pre></div>
 <p>Coloree las cadenas A y B de los modelos predichos de distinto color</p>
