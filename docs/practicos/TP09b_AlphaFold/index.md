@@ -528,9 +528,13 @@ Su jefe sigue interesado en la proteína N que forma la nucleocápside viral de 
 
 **3.** Usted sin embargo, es muy ambicioso y quiere obtener la estructura de la proteína completa. Modele utilizando AlphaFold2 la proteína N.
 
-**4.** Según los valores de pLDDT predichos por AlphaFold ¿que puede decir acerca de las distintas regiones de la proteína y la calidad del modelado?
+**4.** Según los valores de pLDDT predichos por AlphaFold ¿que puede decir acerca de las distintas regiones de la proteína y la calidad del modelado? 
 
-**6.** Según este análisis, si desearía cristalizar el dominio N ¿Qué regiones no incluiría?
+!!! info "Recordatorio"
+
+    Para analizar la calidad del modelado deberían comparar su modelo contra un modelo conocido de cada dominio, pero el infomre se haría ya muy largo.
+
+**6.** Según los análisis realizados con ambas herramientas, si desearía cristalizar el dominio N ¿Qué regiones no incluiría?
 
 **Extra! (y por ende opcional)**
 
