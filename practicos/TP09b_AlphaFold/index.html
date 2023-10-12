@@ -1,0 +1,1747 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Sitio Web del Curso Introducción a la Bioinformática">
+      
+      
+      
+        <link rel="canonical" href="https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP09b_AlphaFold/">
+      
+      <link rel="icon" href="../../img/logo-unsam-negro.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.6">
+    
+    
+      
+        <title>TP 9b - Modelado usando AlphaFold - Introducción a la Bioinformática</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.4a0965b7.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Cabin";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="pink">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tp-9b-modelado-usando-alphafold2" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Introducción a la Bioinformática" class="md-header__button md-logo" aria-label="Introducción a la Bioinformática" data-md-component="logo">
+      
+  <img src="../../img/logo-unsam-negro.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Introducción a la Bioinformática
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              TP 9b - Modelado usando AlphaFold
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="pink"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="pink" data-md-color-accent="pink"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Limpiar" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Inicio
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../acerca/" class="md-tabs__link">
+      Acerca de
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../contenidos/" class="md-tabs__link">
+      Contenidos
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../cronograma/" class="md-tabs__link">
+      Cronograma
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../docentes/" class="md-tabs__link">
+      Docentes
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../teoricas/inicio/" class="md-tabs__link">
+        Teóricas
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../inicio/" class="md-tabs__link md-tabs__link--active">
+        Prácticos
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../instructivos/inicio/" class="md-tabs__link">
+        Instructivos
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Introducción a la Bioinformática" class="md-nav__button md-logo" aria-label="Introducción a la Bioinformática" data-md-component="logo">
+      
+  <img src="../../img/logo-unsam-negro.png" alt="logo">
+
+    </a>
+    Introducción a la Bioinformática
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Inicio
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../acerca/" class="md-nav__link">
+        Acerca de
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contenidos/" class="md-nav__link">
+        Contenidos
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cronograma/" class="md-nav__link">
+        Cronograma
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docentes/" class="md-nav__link">
+        Docentes
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Teóricas
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Teóricas" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Teóricas
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoricas/inicio/" class="md-nav__link">
+        Inicio
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoricas/1-Teorica-Uno/" class="md-nav__link">
+        Teórica 1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoricas/2-Teorica-Dos/" class="md-nav__link">
+        Teórica 2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoricas/3-Teorica-Tres/" class="md-nav__link">
+        Teórica 3
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoricas/4-Teorica-Cuatro/" class="md-nav__link">
+        Teórica 4
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoricas/5-Teorica-Cinco/" class="md-nav__link">
+        Teórica 5
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoricas/6-Teorica-Seis/" class="md-nav__link">
+        Teórica 6
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoricas/7-Teorica-Siete/" class="md-nav__link">
+        Teórica 7
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoricas/8-Teorica-Ocho/" class="md-nav__link">
+        Teórica 8
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoricas/9-Teorica-Nueve/" class="md-nav__link">
+        Teórica 9
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          Prácticos
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Prácticos" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Prácticos
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inicio/" class="md-nav__link">
+        Inicio
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TP01_Linux/" class="md-nav__link">
+        TP 1 - Linux
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TP02_EMBOSS/" class="md-nav__link">
+        TP 2 - EMBOSS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TP03_Alineamientos/" class="md-nav__link">
+        TP 3 - Alineamientos de a pares
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TP04_Busqueda_por_similitud/" class="md-nav__link">
+        TP 4 - Búsqueda por similitud
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TP05a_R/" class="md-nav__link">
+        TP 5a - R - Introduccion
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TP05b_R/" class="md-nav__link">
+        TP 5b - R - Aplicación
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TP06_PSI-BLAST/" class="md-nav__link">
+        TP 6 - PSI-BLAST
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TP07_Desorden/" class="md-nav__link">
+        TP 7 - Predicción de Desorden
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TP08_Motivos/" class="md-nav__link">
+        TP 8 - Motivos Lineales
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TP09a_Modelado_Por_Homologia/" class="md-nav__link">
+        TP 9a - Modelado por Homología
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          TP 9b - Modelado usando AlphaFold
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        TP 9b - Modelado usando AlphaFold
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#recursos-online" class="md-nav__link">
+    Recursos Online
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requisitos" class="md-nav__link">
+    Requisitos
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objetivos" class="md-nav__link">
+    Objetivos
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#que-es-google-colab" class="md-nav__link">
+    ¿Qué es Google Colab?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alphafold2-af2" class="md-nav__link">
+    AlphaFold2 (AF2)
+  </a>
+  
+    <nav class="md-nav" aria-label="AlphaFold2 (AF2)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arquitectura" class="md-nav__link">
+    Arquitectura
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metricas-de-confianza" class="md-nav__link">
+    Métricas de confianza
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#costo-computacional" class="md-nav__link">
+    Costo computacional
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alphafold2-ejercicios" class="md-nav__link">
+    AlphaFold2 - Ejercicios
+  </a>
+  
+    <nav class="md-nav" aria-label="AlphaFold2 - Ejercicios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-1-modelado-de-un-monomero-de-e7" class="md-nav__link">
+    Ejercicio 1. Modelado de un Monómero de E7
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-2-modelado-de-un-dimero-de-e7" class="md-nav__link">
+    Ejercicio 2. Modelado de un dímero de E7
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-3-modelado-de-un-motivo-unido-a-un-dominio-globular-en-alphafold2" class="md-nav__link">
+    Ejercicio 3. Modelado de un motivo unido a un dominio globular en Alphafold2
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-a-informar" class="md-nav__link">
+    Ejercicio a informar
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-a-informar_1" class="md-nav__link">
+    Ejercicio a informar
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicio a informar">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enunciado" class="md-nav__link">
+    Enunciado
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#otros-recursos" class="md-nav__link">
+    Otros Recursos
+  </a>
+  
+    <nav class="md-nav" aria-label="Otros Recursos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-interpret-alphafold2-structures" class="md-nav__link">
+    How to interpret AlphaFold2 structures
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alphafold-protein-structure-database" class="md-nav__link">
+    AlphaFold Protein structure database
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          Instructivos
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Instructivos" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Instructivos
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instructivos/inicio/" class="md-nav__link">
+        Inicio
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instructivos/maquina_virtual/" class="md-nav__link">
+        Máquina Virtual
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instructivos/problemasVM/" class="md-nav__link">
+        Problemas instalando la Máquina Virtual
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instructivos/tipsVM/" class="md-nav__link">
+        Tips and Tricks para usar la Máquina Virtual más cómodos
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<p><a class="glightbox" href="img/featured.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img _="," align="left" alt="Image" src="img/featured.png" width="250" /></a></p>
+<h1 id="tp-9b-modelado-usando-alphafold2" markdown="markdown"><strong>TP 9b</strong>. Modelado usando AlphaFold2</h1>
+<p><br>
+<br>
+<br></p>
+<div class="admonition abstract">
+<p class="admonition-title">Atención: Este TP tiene informe.</p>
+</div>
+<h2 id="recursos-online">Recursos Online</h2>
+<ul>
+<li>ColabFold For AlphaFold2 using MMseqs2: <a href="https://colab.research.google.com/github/sokrypton/ColabFold/blob/main/AlphaFold2.ipynb">Aquí</a></li>
+</ul>
+<h2 id="requisitos">Requisitos</h2>
+<p>Para este ejercicio es necesario poseer una cuenta de gmail para poder acceder a las notebooks del Colab.</p>
+<h2 id="objetivos">Objetivos</h2>
+<ul>
+<li>Familiarizarse con el uso del predictor AlphaFold2 y criterios que permiten evaluar los resultados obtenidos, los alcances y las limitaciones de las predicciones obtenidas.</li>
+</ul>
+<h2 id="que-es-google-colab">¿Qué es Google Colab?</h2>
+<p>Colab, o Colaboratory, permite escribir y ejecutar Python en nuestro navegador. Nos da acceso a una máquina de manera remota.</p>
+<p>Las ventajas son:</p>
+<ul>
+<li>
+<p>No es necesaria ninguna configuración</p>
+</li>
+<li>
+<p>Es fácil de compartir</p>
+</li>
+<li>
+<p>Podemos utilizar fácilmente procesadores GPU (<strong>G</strong>raphics <strong>P</strong>rocessing <strong>U</strong>nit) que se diferencia del procesador “común”, el CPU (<strong>C</strong>entral <strong>P</strong>rocessing <strong>U</strong>nit) porque tiene más núcleos, más especializados y por lo tanto permite realizar cómputos más complejos de manera más rápida.</p>
+</li>
+</ul>
+<p>En esta clase, utilizaremos una <strong>Notebook</strong> donde ya está implementado AlphaFold2.</p>
+<h2 id="alphafold2-af2">AlphaFold2 (AF2)</h2>
+<p>En los últimos años, hubo un crecimiento continuo en el número de estructuras de proteínas determinadas experimentalmente depositadas en el PDB (actualmente ~170.000). Esto, junto con la explosión de la secuenciación (millones de secuencias) y el desarrollo de técnicas de deep learning benefició el desarrollo de algoritmos de predicción de estructura tridimensional de proteínas. Hasta el 2021, los algoritmos de predicción de estructura tridimensional de proteínas se basan en dos aspectos complementarios: las interacciones físicas (o contactos) o la historia evolutiva de la proteína. Sin embargo, y a pesar de los avances, la mayoría de los algoritmos de predicción no son muy precisos si se carece de un homólogo cercano con una estructura tridimensional resuelta experimentalmente.
+A partir de la secuencia primaria de una proteína (Fig 1), AlphaFold2 utiliza una red neuronal para la predicción estructural de alta precisión (en la mayoría de los casos), la cual aumenta con el uso de estructuras homólogas. AlphaFold2 puede incluso predecir con alta precisión las cadenas laterales si el backbone es preciso.</p>
+<p><a class="glightbox" href="img/alphafold_fig1.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="alphafold_fig1" src="img/alphafold_fig1.png" /></a></p>
+<p><strong>Fig 1.</strong> Algoritmo de predicción de estructuras AlphaFold2.</p>
+<p><br>
+<br></p>
+<h3 id="arquitectura">Arquitectura</h3>
+<p>AlphaFold2 utiliza una arquitectura de red que utiliza como inputs el alineamiento de secuencias (MSAs) y una representación de todos los pares de residuos de la secuencia. Mediante un algoritmo iterativo que se basa en la arquitectura Evoformer, se procesan los inputs y en conjunto con un módulo estructural se genera una representación tridimensional de la proteína query. </p>
+<h3 id="metricas-de-confianza">Métricas de confianza</h3>
+<p>AlphaFold2 incorpora métricas de confianza de la predicción.</p>
+<ul>
+<li>
+<p>La principal métrica de confianza es el test <strong>pLDDT</strong> (predicted local-distance difference test) el cual es un predictor confiable del test de diferencias en las distancias Cα (IDDT-Cα) y evalúa principalmente la correctitud del modelo a nivel local (estimando el error en distancias de un Cα con Cα vecinos en un rango de 15Å).</p>
+</li>
+<li>
+<p>La segunda métrica se denomina <strong>PAE</strong> (por Predicted Aligned error) y compara el error en la predicción de pares de residuos, esto es el error sobre el residuo y cuando las estructuras real y predicha son alineadas sobre el residuo x. Esta medida permite la identificación global de unidades de plegamiento (dominios) y permite predecir si dos dominios guardan relaciones espaciales definidas, o si tienen variabilidad (por ejemplo, si están conectadas por un linker flexible.</p>
+</li>
+</ul>
+<p><a class="glightbox" href="img/pae-3.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="alphafold_fig2a" src="img/pae-3.png" width="400" /></a></p>
+<p><a class="glightbox" href="img/pae-8.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="alphafold_fig2b" src="img/pae-8.png" width="400" /></a></p>
+<p><strong>Fig 2.</strong> <em>Arriba.</em> Se pueden observar dos dominios globulares, pero se desconoce la disposición espacial relativa entre ellos. <em>Abajo.</em> Se puede observar que además de identificar los dominios globulares, se predien correctamente pares de residuos interdominios.</p>
+<p><br>
+<br></p>
+<h3 id="costo-computacional">Costo computacional</h3>
+<p>AlphaFold2 consume muchísimos recursos. Por lo tanto, muchas proteínas de organismos modelos están siendo modeladas y puestas a disposición de la comunidad científica en una base de datos: <a href="https://alphafold.ebi.ac.uk/">https://alphafold.ebi.ac.uk/</a>.</p>
+<p>Afortunadamente, la comunidad científica rápidamente desarrolló distintas “colabs” o “notebooks” que permiten correr AlphaFold2 en una máquina remota. Una “desventaja” es que se debe contar con una cuenta de mail de gmail, <strong>cada cuenta de gmail puede usar un colab a la vez</strong>.</p>
+<p>Otra desventaja es que en la versión gratuita de colab, debido al espacio en disco y capacidad de cómputo que se adjudica, sólo se pueden correr proteínas o complejos con menos de 1000 residuos y luego de estar corriendo unas cinco proteínas, hay que esperar a que se renueve el tiempo de cómputo de esa cuenta. </p>
+<p>Otra desventaja, es que no se pueden modificar muchos parámetros del modelado al usar un colab, en comparación con correr la simulación desde un script en una computadora o server propio. Sin embargo, los parámetros usados en el ColabFold de AlphaFold2 son los que fueron más ampliamente validados durante el desarrollo del método.</p>
+<p>Existen distintos colabs que implementan AlphaFold2. En este curso utilizaremos uno en particular: <a href="https://colab.research.google.com/github/sokrypton/ColabFold/blob/main/AlphaFold2.ipynb">AlphaFold2 using MMseqs2</a>.</p>
+<p>Todas las versiones de las distintas NoteBooks están disponibles en el github: <a href="https://github.com/sokrypton/ColabFold">https://github.com/sokrypton/ColabFold</a></p>
+<h2 id="alphafold2-ejercicios">AlphaFold2 - Ejercicios</h2>
+<p>Los papilomavirus (PVs) son virus desnudos icosaédricos y poseen un genoma ADN doble cadena circular entre 5-8 Kb. Sus hospedadores incluyen una amplia variedad de vertebrados desde peces, reptiles, aves y mamíferos. Los PV infectan el epitelio mucoso y queratinizado y producen lesiones denominadas condilomas o papilomas y verrugas respectivamente y en humanos algunos PVs están asociados al cáncer cervical uterino, de la formación de tumores en el tracto urogenital y en las vı́as aéreas superiores.</p>
+<p>La proteína E7 del papilomavirus comparte similitudes funcionales con la proteína E1A de adenovirus y el antígeno T del poliomavirus SV40. Las tres proteínas poseen actividades transformantes e interaccionan con la proteína retinoblastoma.</p>
+<p>La interacción de la proteína E7 con Rb es responsable de la inducción de la síntesis de ADN y proliferación celular. La inmortalización y transformación de la célula infectada inducida por E7 es consecuencia de la interacción de E7 con Rb y numerosos blancos proteicos involucrados en crecimiento celular, transformación, transcripción, apoptosis y síntesis de ADN.</p>
+<h3 id="ejercicio-1-modelado-de-un-monomero-de-e7">Ejercicio 1. Modelado de un Monómero de E7</h3>
+<ol>
+<li>
+<p>Ingrese al ColabFold que implementa MMseq2 <a href="https://colab.research.google.com/github/sokrypton/ColabFold/blob/main/AlphaFold2.ipynb">Aquí</a>.</p>
+<div class="admonition info">
+<p class="admonition-title">Info<p>Si quiere que los cambios que realice sean guardados deberá agregar la notebook a su drive. Pero esto no es necesario.</p>
+</p>
+</div>
+</li>
+<li>
+<p>En la parte superior, haga click en <em>Runtime</em> → <em>Change Runtime</em> y asegúrese que:</p>
+<ul>
+<li>
+<p><strong>Runtime type:</strong> sea <em>Python 3</em></p>
+</li>
+<li>
+<p><strong>Hardware accelerator:</strong> este seleccionado <em>T4 GPU</em></p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Preparando la corrida.</strong></p>
+<p>En el campo sequence query ingrese la secuencia (<strong>sin</strong> el encabezado indicado por el signo <code>&gt;</code>) de la proteína E7 de HPV16.</p>
+<div class="highlight"><pre><span></span><code>&gt;sp|P03129|VE7_HPV16 Protein E7 OS=Human papillomavirus type 16 OX=333760 GN=E7 PE=1 SV=1
+MHGDTPTLHEYMLDLQPETTDLYCYEQLNDSSEEEDEIDGPAGQAEPDRAHYNIVTFCCKCDSTLRLCVQSTHVDIRTLEDLLMGTLGIVCPICSQKP
+</code></pre></div>
+<ul>
+<li>
+<p>En el campo <strong>jobname</strong> ingrese: E7_MONOMERO.</p>
+</li>
+<li>
+<p>En el campo <strong>num_relax</strong> elija: 1</p>
+</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p><strong>num_relax</strong> es el número de modelos a relajar con Amber. Esta notebook produce hasta 5 modelos máximo por proteína. </p>
+<p>Amber permite mejorar la geometría de la unión peptídica y posición de rotámeros luego de la relajación de la estructura. Si bien no mejora la predicción, remueve violaciones estereoquímicas.</p>
+</div>
+<ul>
+<li>
+<p>En template mode elija pdb100 ¿Qué le parece que es este campo?</p>
+</li>
+<li>
+<p>Vaya a  <em>Runtime</em> →  <em>Run all</em>, o presione <code>Ctrl</code>+<code>F9</code></p>
+</li>
+<li>
+<p>Como por defecto este ColabFold crea 5 modelos hay que esperar (unos 20 minutos).</p>
+</li>
+</ul>
+<div class="admonition danger">
+<p class="admonition-title">IMPORTANTE</p>
+<p>No cierre la ventana y tampoco cierre la laptop porque la corrida entonces se detiene (no pasa nada si entra en suspensión).</p>
+</div>
+<p>Al finalizar la corrida, los resultados serán descargados automáticamente como un archivo zip. Si esto no llegara a suceder, puede acceder al mismo haciendo click en el icono con forma de carpeta que se encuentra a la izquierda.</p>
+</li>
+<li>
+<p>Una vez que terminó de correr, comience con el Ejercicio 2 (La corrida en AlphaFold2) y vuelva a este ejercicio.</p>
+</li>
+<li>
+<p>Localice el archivo descargado y descomprímalo (el nombre del archivo comienza con <code>E7_MONOMERO</code>). Encontrará varios archivos, en particular:</p>
+<ul>
+<li><code>*_template_domain_names.json</code> Tiene los templados utilizados por AlphaFold2 si es que se usaron.</li>
+<li><code>Cite.bibtex</code> Contiene todas las citas correspondientes a los papers relacionados.</li>
+<li><code>Config.json</code> Contiene todos los parámetros utilizados en la corrida.</li>
+<li><code>*.a3m</code> Alineamiento</li>
+<li><code>*_coverage.png</code> Gráfico de la cobertura del alineamiento</li>
+<li><code>*_PAE.png</code> Gráfico del PAE por pares de residuos para todos los modelos.</li>
+<li><code>*_plddt.png</code> Gráfico del plddt por posición</li>
+<li><code>*_predicted_aligned_error_v1.json</code> Tiene los valores de PAE para todos los pares de todos los modelos.</li>
+<li><code>*_relaxed_*_model_*.pdb</code> Son los 5 modelos generados.</li>
+<li><code>*_relaxed_*_model_*.json</code> Son el PAE y pLDDT de cada modelo que se pueden utilizar para graficar.</li>
+</ul>
+</li>
+<li>
+<p>Abra Chimera y cargue uno de los modelos relajados (si no recuerda <em>File</em> → <em>Open …</em>).</p>
+</li>
+<li>
+<p>Abra el pdb: 2b9d.</p>
+<ul>
+<li>¿Estaba esta estructura entre los templados?</li>
+<li>¿Por qué método fue determinada?</li>
+<li>¿A qué proteína corresponde? ¿De qué organismo?</li>
+</ul>
+</li>
+<li>
+<p>Alinee las estructuras utilizando Matchmaker (si no recuerda, <em>Tools</em> → <em>Structure comparison</em> → <em>Matchmaker</em>)</p>
+<ul>
+<li>¿Cuál es el RMSD global?</li>
+</ul>
+<p>Si quieren ver el RMSD por posición sobre la estructura</p>
+<p><em>Structure Comparison</em> → <em>Match align</em></p>
+<p>Seleccione el par de modelos adecuado. <em>En residue-residue distance cutoff</em> seleccione el mismo umbral que utilizó en <em>Matchmaker</em> para <em>pruned atoms</em> (Por defecto es 2)</p>
+<p>Para colorear la estructura por RMSD para eso vaya a: <em>Tools</em> → <em>Depiction</em> → <em>Render by Attribute</em></p>
+<p>En <strong>attributes</strong> of asegúrese que esté seleccionado residues</p>
+<p>En el <strong>recuadro de Models</strong> asegúrese que estén ambos modelos seleccionados.</p>
+<p>En la pestaña <strong>Render</strong> seleccione <strong>mavRMSDca</strong> y luego haga clic en <code>Ok</code>.</p>
+</li>
+<li>
+<p>Cierre el modelo correspondiente al pdb 2b9d. Via terminal tiene que ingresar el comando close seguido del número del modelo, por ejemplo:</p>
+<div class="highlight"><pre><span></span><code>close #0
+</code></pre></div>
+<p>cierra el modelo 0.</p>
+<p>O bien, en el <strong>model panel</strong>, seleccione el modelo correspondiente y haga clic en <em>close</em>.</p>
+</li>
+<li>
+<p>Ahora abra los 4 modelos restantes, para eso, <em>File</em> → <em>Open…</em> y con el mouse seleccione los modelos manteniendo la tecla ctrl presionada.</p>
+</li>
+<li>
+<p>Alinee los modelos ranqueados de 2 a 5 contra el modelo 1, </p>
+<ul>
+<li>Explore el <em>Reply log</em> ¿cuál es el RMSD global de cada par alineado?</li>
+</ul>
+</li>
+<li>
+<p>Utilice <strong>Match Align</strong> para ver el alineamiento. Recuerde utilizar el umbral adecuado!.</p>
+<ul>
+<li>¿Qué observa?</li>
+<li>¿Porque si las secuencias son todas iguales no aparece el n-terminal alineado?</li>
+</ul>
+</li>
+<li>
+<p>Los valores de pLDDT están almacenados en la columna del pdb que corresponde a los b-factors.
+Para colorear por b-factors, utilizaremos la <em>command line</em> que Chimera trae integrada. Para esto vaya a: <em>Favorites</em> → <em>Command line</em>. En la parte inferior de la pantalla se abrirá un renglón donde puede ingresar los comandos necesarios.</p>
+<p>Para colorear los modelos según el atributo b-factor donde está almacenado el plDDT ingrese en la <em>command line</em>:</p>
+<div class="highlight"><pre><span></span><code>rangecolor bfactor 0 orange red 50 white 100 dodger blue
+</code></pre></div>
+<ul>
+<li>¿Qué observa?</li>
+</ul>
+<p>En el <em>reply log</em> se reportan los valores mínimo, medio y máximo encontrados en la columna de b-factors.</p>
+<ul>
+<li>¿Cuáles son el mínimo y el máximo?</li>
+</ul>
+<p>Ahora cambie el valor mínimo a min (se elige el valor mínimo presente en la columna de b-factors) y el valor intermedio que antes era 50, a 70:</p>
+<div class="highlight"><pre><span></span><code>rangecolor bfactor min orange red 70 white 100 dodger blue
+</code></pre></div>
+<ul>
+<li>¿Observa diferencias con lo anterior? ¿Cuáles?</li>
+</ul>
+<p>Ahora corra:</p>
+<div class="highlight"><pre><span></span><code>rangecolor bfactor 50 orange red 70 white 100 dodger blue
+</code></pre></div>
+<ul>
+<li>
+<p>¿Observa diferencias con lo anterior? ¿Cuáles?</p>
+</li>
+<li>
+<p>¿Porqué considera que elegimos 50 como valor mínimo?</p>
+</li>
+<li>
+<p>¿De qué posición a qué posición consideraría que el modelo es de confianza?</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Investigue el gráfico de pLDDT que se descargó con el modelo.</p>
+<ul>
+<li>
+<p>¿Qué observa?</p>
+</li>
+<li>
+<p>¿Puede identificar las regiones con un pLDDT mayor a 70?</p>
+</li>
+<li>
+<p>¿Puede identificar las regiones con un pLDDT entre 50 a 70?</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Abra R Studio. Ahora graficaremos los pLDDT por posición para cada uno de los modelos.</p>
+<div class="highlight"><pre><span></span><code><span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;bio3d&quot;</span><span class="p">)</span>
+<span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;reshape2&quot;</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">bio3d</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">reshape2</span><span class="p">)</span>
+
+<span class="nf">setwd</span><span class="p">(</span><span class="o">*</span><span class="n">DIRECTORIO</span> <span class="n">DE</span> <span class="n">TRABAJO</span> <span class="n">DESEADO</span><span class="o">*</span><span class="p">)</span>
+
+<span class="n">directorio</span> <span class="o">&lt;-</span> <span class="s">&quot;/directorio/donde/estan/los/modelos&quot;</span>
+
+<span class="n">archivos</span> <span class="o">&lt;-</span> <span class="nf">list.files</span><span class="p">(</span><span class="n">path</span> <span class="o">=</span> <span class="n">directorio</span><span class="p">,</span><span class="n">pattern</span> <span class="o">=</span> <span class="s">&quot;_unrelaxed_&quot;</span><span class="p">,)</span>
+
+<span class="n">miarchivo</span> <span class="o">&lt;-</span> <span class="nf">paste</span><span class="p">(</span><span class="n">directorio</span><span class="p">,</span><span class="n">archivos</span><span class="p">[</span><span class="m">1</span><span class="p">],</span><span class="n">sep</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">)</span>
+<span class="n">mipdb</span> <span class="o">&lt;-</span> <span class="nf">read.pdb</span><span class="p">(</span><span class="n">miarchivo</span><span class="p">)</span>
+
+<span class="n">datos</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">Residue</span> <span class="o">=</span> <span class="n">mipdb</span><span class="o">$</span><span class="n">atom</span><span class="p">[</span><span class="n">mipdb</span><span class="o">$</span><span class="n">calpha</span><span class="p">,</span><span class="s">&quot;resno&quot;</span><span class="p">],</span>
+                    <span class="n">Rank_1</span> <span class="o">=</span> <span class="n">mipdb</span><span class="o">$</span><span class="n">atom</span><span class="p">[</span><span class="n">mipdb</span><span class="o">$</span><span class="n">calpha</span><span class="p">,</span><span class="s">&quot;b&quot;</span><span class="p">]</span>
+<span class="p">)</span>
+
+<span class="nf">for</span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">2</span><span class="o">:</span><span class="nf">length</span><span class="p">(</span><span class="n">archivos</span><span class="p">)){</span>
+    <span class="n">miarchivo2</span> <span class="o">&lt;-</span> <span class="nf">paste</span><span class="p">(</span><span class="n">directorio</span><span class="p">,</span><span class="n">archivos</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">sep</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">)</span>
+    <span class="n">mipdb2</span> <span class="o">&lt;-</span> <span class="nf">read.pdb</span><span class="p">(</span><span class="n">miarchivo2</span><span class="p">)</span>
+    <span class="n">nuevaColumna</span> <span class="o">&lt;-</span> <span class="nf">paste</span><span class="p">(</span><span class="s">&quot;Rank&quot;</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s">&quot;_&quot;</span><span class="p">)</span>
+    <span class="n">datos</span><span class="p">[</span><span class="n">nuevaColumna</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="n">mipdb2</span><span class="o">$</span><span class="n">atom</span><span class="p">[</span><span class="n">mipdb2</span><span class="o">$</span><span class="n">calpha</span><span class="p">,</span><span class="s">&quot;b&quot;</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="n">fileOUT</span> <span class="o">&lt;-</span> <span class="nf">paste</span><span class="p">(</span><span class="n">directorio</span><span class="p">,</span><span class="s">&quot;E7_Monomero.png&quot;</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">)</span>
+
+<span class="n">datos2</span> <span class="o">&lt;-</span> <span class="nf">melt</span><span class="p">(</span><span class="n">datos</span><span class="p">,</span> <span class="n">id</span><span class="o">=</span><span class="s">&quot;Residue&quot;</span><span class="p">)</span>
+<span class="n">datos2</span><span class="o">$</span><span class="n">variable</span> <span class="o">&lt;-</span> <span class="nf">as.factor</span><span class="p">(</span><span class="n">datos2</span><span class="o">$</span><span class="n">variable</span><span class="p">)</span>
+
+<span class="n">p1</span> <span class="o">&lt;-</span> <span class="nf">ggplot</span><span class="p">(</span><span class="n">datos2</span><span class="p">,</span> <span class="n">mapping</span><span class="o">=</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">Residue</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="n">value</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="n">variable</span><span class="p">))</span> <span class="o">+</span> 
+<span class="nf">geom_line</span><span class="p">()</span> <span class="o">+</span> <span class="nf">theme_bw</span><span class="p">()</span> <span class="o">+</span>
+<span class="nf">scale_x_continuous</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;E7 Residue&quot;</span><span class="p">,</span> <span class="n">breaks</span> <span class="o">=</span> <span class="nf">seq</span><span class="p">(</span><span class="m">5</span><span class="p">,</span><span class="m">100</span><span class="p">,</span><span class="n">by</span><span class="o">=</span><span class="m">5</span><span class="p">),</span><span class="n">limits</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">100</span><span class="p">),</span><span class="n">expand</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">))</span> <span class="o">+</span>
+<span class="nf">scale_y_continuous</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;Predicted lDDT&quot;</span><span class="p">,</span> <span class="n">breaks</span> <span class="o">=</span> <span class="nf">seq</span><span class="p">(</span><span class="m">5</span><span class="p">,</span><span class="m">100</span><span class="p">,</span><span class="n">by</span><span class="o">=</span><span class="m">5</span><span class="p">),</span><span class="n">limits</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">101</span><span class="p">),</span><span class="n">expand</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">))</span> <span class="o">+</span>
+<span class="nf">geom_hline</span><span class="p">(</span><span class="n">yintercept</span> <span class="o">=</span> <span class="m">90</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s">&quot;blue&quot;</span><span class="p">)</span><span class="o">+</span>
+<span class="nf">geom_hline</span><span class="p">(</span><span class="n">yintercept</span> <span class="o">=</span> <span class="m">70</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s">&quot;orange2&quot;</span><span class="p">)</span><span class="o">+</span>
+<span class="nf">geom_hline</span><span class="p">(</span><span class="n">yintercept</span> <span class="o">=</span> <span class="m">50</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s">&quot;red&quot;</span><span class="p">)</span>
+<span class="n">p1</span>
+
+<span class="nf">ggsave</span><span class="p">(</span><span class="n">filename</span> <span class="o">=</span> <span class="n">fileOUT</span><span class="p">,</span><span class="n">plot</span> <span class="o">=</span> <span class="n">p1</span><span class="p">,</span><span class="n">device</span> <span class="o">=</span> <span class="s">&quot;png&quot;</span><span class="p">,</span><span class="n">width</span> <span class="o">=</span> <span class="m">20</span><span class="p">,</span><span class="n">height</span> <span class="o">=</span> <span class="m">10</span><span class="p">,</span><span class="n">units</span> <span class="o">=</span> <span class="s">&quot;cm&quot;</span><span class="p">,</span><span class="n">dpi</span> <span class="o">=</span> <span class="m">300</span><span class="p">)</span>
+</code></pre></div>
+</li>
+<li>
+<p>Encuentre el archivo corespondiente al gráfico del PAE.</p>
+<ul>
+<li>¿Qué interpreta?</li>
+</ul>
+</li>
+<li>
+<p>En base a los resultados obtenidos, </p>
+<ul>
+<li>¿Qué puede decir de la estructura de la proteína?</li>
+<li>¿Cuántos dominios posee? ¿ordenados o desordenados?</li>
+<li>¿Puede decir aproximadamente los límites?</li>
+</ul>
+</li>
+<li>
+<p>Guarde la sesión (<em>Save Session As...</em> ) y cierre chimera.</p>
+</li>
+</ol>
+<h3 id="ejercicio-2-modelado-de-un-dimero-de-e7">Ejercicio 2. Modelado de un dímero de E7</h3>
+<ol>
+<li>
+<p>En la parte superior, haga click en <strong>Runtime</strong> → <strong>Disconnect</strong> and delete Runtime</p>
+</li>
+<li>
+<p>Preparando la corrida.</p>
+<p>Para indicar que se quiere correr un multímero se debe ingresar las secuencias separadas por <code>:</code>.
+En el campo sequence query ingrese las secuencias de la proteína E7 de HPV16. </p>
+<div class="highlight"><pre><span></span><code>MHGDTPTLHEYMLDLQPETTDLYCYEQLNDSSEEEDEIDGPAGQAEPDRAHYNIVTFCCKCDSTLRLCVQSTHVDIRTLEDLLMGTLGIVCPICSQKP:MHGDTPTLHEYMLDLQPETTDLYCYEQLNDSSEEEDEIDGPAGQAEPDRAHYNIVTFCCKCDSTLRLCVQSTHVDIRTLEDLLMGTLGIVCPICSQKP
+</code></pre></div>
+<ul>
+<li>
+<p>En el campo <strong>jobname</strong> ingrese: E7_DIMERO.</p>
+</li>
+<li>
+<p>En <strong>num_relax</strong> elija 1</p>
+</li>
+<li>
+<p>En template mode elija none</p>
+</li>
+<li>
+<p>Vaya a <em>Runtime</em> → <em>Run all</em>, o presione <code>Ctrl</code>+<code>F9</code></p>
+</li>
+<li>
+<p>Vuelta a esperar ... unos 20 minutos.</p>
+</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Atención</p>
+<p>Antes de seguir adelante vaya al ejercicio 3 y ponga a correr el modelado siguiente!</p>
+</div>
+</li>
+<li>
+<p>Abra Chimera. Y abra el pdb: 2F8B.</p>
+<p>Para eso ingrese en el <em>command line</em>:</p>
+<div class="highlight"><pre><span></span><code>open 2f8b
+</code></pre></div>
+<ul>
+<li>
+<p>¿Qué observa? ¿A qué se debe?</p>
+</li>
+<li>
+<p>Investigue en el <a href="https://www.rcsb.org/">rcsb</a> la técnica por la que se obtuvo esta estructura y a qué proteína pertenece.</p>
+</li>
+<li>
+<p>¿Este pdb es utilizado como templado para el modelado? ¿por qué?</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Abra el model Panel: <em>Favorites</em> → <em>Model Panel</em></p>
+<p>Para que sea más fácil las observaciones vamos a trabajar con un único submodelo de cada cadena. Para esto, ingrese en la línea de comando:</p>
+<div class="highlight"><pre><span></span><code>close #0.2-15
+</code></pre></div>
+<ul>
+<li>¿Cuál es el estado de oligomerización de E7?</li>
+</ul>
+</li>
+<li>
+<p>Coloree el modelo de blanco y oculte todos los residuos utilizando los siguientes comandos</p>
+<div class="highlight"><pre><span></span><code>color white #0
+~display
+</code></pre></div>
+</li>
+<li>
+<p>La proteína E7 en el dominio de dimerización contiene un sitio de unión a Zinc. Ubique el zn en la estructura.</p>
+<div class="highlight"><pre><span></span><code>display @ZN; color red @ZN
+</code></pre></div>
+<p>Ahora vamos a seleccionar los residuos más cercanos al zinc:</p>
+<div class="highlight"><pre><span></span><code>sel :@zn zr&lt;3
+display sel; color red,a sel; color byhet sel;~sel
+delete element.H
+</code></pre></div>
+<ul>
+<li>¿Qué residuos se encuentran coordinando la unión a zinc?</li>
+</ul>
+</li>
+<li>
+<p>Ubique el archivo zip que se generó con ColabFold y descomprímalo en su computadora. </p>
+</li>
+<li>
+<p>Identifique el archivo que corresponde al pLDDT.</p>
+<ul>
+<li>¿Qué región está modelada con alta confianza y cual no?</li>
+</ul>
+</li>
+<li>
+<p>Identifique el archivo que corresponde al PAE.</p>
+<ul>
+<li>Interprete el gráfico.</li>
+<li>¿Cuál de los 4 gráficos muestra los valores correspondientes para los pares de residuos de la cadena A, cual para la cadena B y cual para los pares de residuos de de las cadenas A y B?</li>
+<li>¿Cuáles son los límites el dominio globular, aproximadamente?</li>
+</ul>
+</li>
+<li>
+<p>Elija el modelo mejor mejor ranqueado y alineelo utilizando Matchmaker contra la estructura de 2F8B.</p>
+<ul>
+<li>¿Cuál es el RMSD global?</li>
+</ul>
+</li>
+<li>
+<p>Abra en chimera los 5 modelos relajados que se generaron. Luego, alinee utilizando matchmaker y seleccionaremos las cisteínas que coordinan la unión al zinc.</p>
+<div class="highlight"><pre><span></span><code>sel #1-5:58,61,91,94; display sel; color blue,a sel; color byhet sel; ~sel
+</code></pre></div>
+<p>Coloree las cadenas A y B de los modelos predichos de distinto color</p>
+<div class="highlight"><pre><span></span><code>sel #1-5:.A; color orange,r sel; ~sel
+sel #1-5:.B; color purple,r sel; ~sel
+</code></pre></div>
+<p>Observe de cerca la ubicación de las cisteínas y responda:</p>
+<ul>
+<li>¿Considera que la predicción del sitio de unión de zinc es buena aún cuando no se incluye el ión en el modelado?</li>
+</ul>
+</li>
+<li>
+<p>Coloree las cadenas de los modelos predichos según los valores de pLDDT.:</p>
+<div class="highlight"><pre><span></span><code>rangecolor bfactor 50 orange red 50 white 100 dodger blue
+</code></pre></div>
+<ul>
+<li>¿Qué observa?</li>
+</ul>
+<p>En base a todas las características observadas: pLDDT, PAE, coordinación de zinc,</p>
+<ul>
+<li>
+<p>¿Pudo AF2 predecir el estado de oligomerización?</p>
+</li>
+<li>
+<p>¿Pudo AF2 predecir la coordinación del zinc?</p>
+</li>
+<li>
+<p>¿Qué opina del modelo?</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Guarde la sesión y cierre chimera.</p>
+</li>
+</ol>
+<h3 id="ejercicio-3-modelado-de-un-motivo-unido-a-un-dominio-globular-en-alphafold2">Ejercicio 3. Modelado de un motivo unido a un dominio globular en Alphafold2</h3>
+<p>La proteína retinoblastoma (Rb) regula el avance del ciclo celular de la fase G1 → S. La proteína Rb posee un dominio globular llamado Dominio pocket que está formado por dos subdominios A y B unidos por un loop.</p>
+<p>Uno de los blancos celulares de Rb es la Histone desacetilasa 1 (HDAC) que posee el motivo lineal de interacción LxCxE. Sin embargo la afinidad de HDAC1 por Rb, es mucho menor (20µM) en comparación a la afinidad del motivo de la proteína viral E7 de papilomavirus (5nM).</p>
+<p>Una estructura tridimensional permite entender desde el aspecto molecular las diferencias en las interacciones que podrían llevar a diferencias en afinidades. Sin embargo, hasta la fecha, no se posee una estructura del complejo Rb-HDAC1.</p>
+<ol>
+<li>
+<p>Modele el complejo utilizando el colab: <a href="https://colab.research.google.com/github/sokrypton/ColabFold/blob/main/AlphaFold2.ipynb">AlphaFold2</a>.</p>
+<p>Para tardar menos en el modelado vamos a realizar algunas modificaciones.</p>
+<p>En lugar de ingresar la secuencia completa de la proteína retinoblastoma, vamos a ingresar únicamente la correspondiente al dominio pocket de la proteína retinoblastoma, donde los loops se encuentran reemplazados por secuencias más cortas.</p>
+<p>Al final, indicaremos con el <code>:</code> el inicio de la cadena correspondiente al motivo HDAC (<code>DKRIACEEEFSD</code>).</p>
+<p>Obteniendo finalmente:</p>
+<div class="highlight"><pre><span></span><code>NTIQQLMMILNSASDQPSENLISYFNNCTVNPKESILKRVKDIGYIFKEKFAKAVGQGCVEIGSQRYKLGVRLYYRVMESMLKSEEERLSIQNFSKLLNDNIFHMSLLACALEVVMATYSRSTSQNLDSGTDLSFPWILNVLNLKAFDFYKVIESFIKAEGNLTREMIKHLERCEHRIMESLAWLSDSPLFDLIKQSKLVPRGSKSTSLSLFYKKVYRLAYLRLNTLCERLLSEHPELEHIIWTLFQHTLQNEYELMRDRHLDQIMMCSMYGICKVKNIDLKFKIIVTAYKDLPHAVQETFKRVLIKEEEYDSIIVFYNSVFMQRLKTNILQYASTRPPTLSPIPHIPR:DKRIACEEEFSD
+</code></pre></div>
+<ul>
+<li>
+<p>En <em>num_relax</em> elija 1.</p>
+</li>
+<li>
+<p>En <em>template_mode</em> elija: <strong>none</strong>.</p>
+</li>
+</ul>
+<p>Luego, corra todo con <code>ctrl+F9</code> o vaya a <em>Runtime → Runall</em></p>
+</li>
+<li>
+<p>Abra el modelo relajado obtenido por AlphaFold2 en chimera.</p>
+</li>
+<li>Abra el pdb 1GUX</li>
+<li>
+<p>Alinee ambos complejos utilizando matchmaker.</p>
+<p>Los siguientes pasos se hacen en la <em>command line</em> de Chimera:</p>
+</li>
+<li>
+<p>Oculte las posiciones que se observan.</p>
+<div class="highlight"><pre><span></span><code>~display
+</code></pre></div>
+</li>
+<li>
+<p>Coloree por cadenas.</p>
+<div class="highlight"><pre><span></span><code>rainbow chain
+</code></pre></div>
+</li>
+<li>
+<p>Seleccione cada motivo y pongale un nombre (ojo, preste atención a la numeración de los modelos y los nombres de las cadenas, este comando es un ejemplo de como debería ser)</p>
+<div class="highlight"><pre><span></span><code>sel #0:.E; namesel E7
+sel #1:.B; namesel HDAC
+</code></pre></div>
+</li>
+<li>
+<p>Represente ambos motivos en licorice (recuerde seleccionar cada cadena correspondiente antes!)</p>
+<div class="highlight"><pre><span></span><code>ribscale licorice E7
+ribscale licorice HDAC
+</code></pre></div>
+</li>
+<li>
+<p>Elimine las aguas e hidrógenos ya que no los utilizaremos para analizar.</p>
+<div class="highlight"><pre><span></span><code>delete :HOH
+delete element.H
+</code></pre></div>
+</li>
+<li>
+<p>Muestre las cadenas laterales de los motivos coloreando por heteroatomos.</p>
+<div class="highlight"><pre><span></span><code>display E7
+display HDAC
+color byhet E7
+color byhet HDAC
+</code></pre></div>
+</li>
+<li>
+<p>Observe el modo de interacción, ¿Se encuentran conservado?</p>
+</li>
+<li>
+<p>¿Por qué podría tener más baja afinidad HDAC1 que E7?</p>
+</li>
+<li>
+<p>Coloree por b-factors el modelo obtenido por AlphaFold (Recuerde que contienen el plDDT y asegúrese que su modelo es el indicado en el comando #1)</p>
+<div class="highlight"><pre><span></span><code>rangecolor bfactor 50 orange red 70 white 100 dodger blue #1
+</code></pre></div>
+<ul>
+<li>A ojo, ¿Cuál es la calidad del modelado del péptido que contiene el motivo (HDAC)?</li>
+</ul>
+</li>
+<li>
+<p>Investigue el gráfico de PAE que se descarga con los modelos.</p>
+<ul>
+<li>¿Qué nivel de confianza observa en la ubicación relativa del péptido HDAC respecto del dominio Rb?</li>
+</ul>
+</li>
+<li>
+<p>En base a las observaciones realizadas: ¿AlphaFold se puede utilizar para analizar la interacción de motivos con dominios globulares?</p>
+</li>
+</ol>
+<h2 id="ejercicio-a-informar">Ejercicio a informar</h2>
+<h2 id="ejercicio-a-informar_1">Ejercicio a informar</h2>
+<div class="admonition abstract">
+<p class="admonition-title">Fecha Límite de Entrega: Viernes, 27 de Octubre 2023, 23:59hs</p>
+</div>
+<h3 id="enunciado">Enunciado</h3>
+<p>Su jefe sigue interesado en la proteína N que forma la nucleocápside viral de SARS-CoV2 y empaqueta el genoma viral de ARN formando una ribonucleocápside. Usted ya comprobó que la estructura de la proteína N es altamente desordenada y posee dos dominios globulares pequeños en el N-terminal (Dominio N) y C terminal (Dominio C). Dada la importancia de la proteína en la replicación viral, consideran que es un blanco posible de drogas. Por lo tanto, decide realizar un modelado por homología del dominio N-terminal de la proteína N del <strong>aislamiento</strong> original utilizando las herramientas que conoce.</p>
+<p><strong>1.</strong> Modele por <strong>homología</strong> el dominio <strong>N-terminal</strong>. Evalúe según las herramientas que conoce si su modelo es bueno y recuerde incluir el molde que seleccionó para crearlo justificando la elección e indicando a qué virus pertenece (incluir en el reporte el screenshot de la lista devuelta por HHPred porque los resultados varían).</p>
+<p><strong>2.</strong> Elija una estructura contra la cual comparará su modelo y justifique brevemente la elección. Recuerde reportar el RMSD global y que regiones alinean mejor.</p>
+<p><strong>3.</strong> Usted sin embargo, es muy ambicioso y quiere obtener la estructura de la proteína completa. Modele utilizando AlphaFold2 la proteína N.</p>
+<p><strong>4.</strong> Según los valores de pLDDT predichos por AlphaFold ¿que puede decir acerca de las distintas regiones de la proteína y la calidad del modelado? </p>
+<div class="admonition info">
+<p class="admonition-title">Recordatorio</p>
+<p>Para analizar la calidad del modelado deberían comparar su modelo contra un modelo conocido de cada dominio, pero el infomre se haría ya muy largo.</p>
+</div>
+<p><strong>6.</strong> Según los análisis realizados con ambas herramientas, si desearía cristalizar el dominio N ¿Qué regiones no incluiría?</p>
+<p><strong>Extra! (y por ende opcional)</strong></p>
+<p>Compare el resultado de pLDDT con los predicho por IUPred2A.</p>
+<p>Distintas formas de hacerlo:
+<strong>1.</strong> Graficar en el mismo plot por posición los valores de IUpred y de plDDT</p>
+<details class="hint">
+<summary>Pista</summary>
+<div class="highlight"><pre><span></span><code><span class="nf">ggplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">iupred</span><span class="p">)</span> <span class="o">+</span> 
+    <span class="nf">geom_line</span><span class="p">(</span><span class="n">mapping</span><span class="o">=</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">posicion</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="n">iupred</span><span class="p">))</span> <span class="o">+</span>
+    <span class="nf">geom_line</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">AlphaFold</span><span class="p">,</span> <span class="n">mapping</span><span class="o">=</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">posicion</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">plddt</span><span class="p">))</span>
+</code></pre></div>
+</details>
+<p><strong>2.</strong> Graficar en el <strong>eje x</strong> el valor de IUPred (va entre 0 y 1 donde 1 es desordenado) y en el <strong>eje y</strong> los valores de plDDT que van entre 0 (menor confianza o sea desordenado) y 100 (mayor confianza o sea ordenado). </p>
+<details class="hint">
+<summary>Pista</summary>
+<p>Den vuelta los límites del <strong>eje y</strong> y dividen los valores de plDDT por 100.</p>
+</details>
+<p>¿Son similares los perfiles de IUpred y plDDT?</p>
+<h2 id="otros-recursos">Otros Recursos</h2>
+<h3 id="how-to-interpret-alphafold2-structures">How to interpret AlphaFold2 structures</h3>
+<p><a href="https://www.youtube.com/watch?v=UqeQfRDA8Yk">https://www.youtube.com/watch?v=UqeQfRDA8Yk</a></p>
+<h3 id="alphafold-protein-structure-database">AlphaFold Protein structure database</h3>
+<p><a href="https://alphafold.ebi.ac.uk/">https://alphafold.ebi.ac.uk/</a></p>
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Volver al principio
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Pie" >
+      
+        
+        <a href="../TP09a_Modelado_Por_Homologia/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: TP 9a - Modelado por Homología" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              TP 9a - Modelado por Homología
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../instructivos/inicio/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: Inicio" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Siguiente
+              </span>
+              Inicio
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2023 Area Bioinformática UNSAM
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["search.suggest", "search.highlight", "search.share", "header.autohide", "navigation.tracking", "navigation.tabs", "toc.integrate", "navigation.top"], "search": "../../assets/javascripts/workers/search.85cb4492.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "B\u00fasqueda", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version.title": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.a877e258.min.js"></script>
+      
+        <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
+      
+        <script src="../../javascripts/tablesort.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+</html>
