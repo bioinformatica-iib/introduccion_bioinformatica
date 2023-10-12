@@ -140,7 +140,6 @@ La interacción de la proteína E7 con Rb es responsable de la inducción de la 
 4. Una vez que terminó de correr, comience con el Ejercicio 2 (La corrida en AlphaFold2) y vuelva a este ejercicio.
 
 5. Localice el archivo descargado y descomprímalo (el nombre del archivo comienza con `E7_MONOMERO`). Encontrará varios archivos, en particular:
-    * `*_template_domain_names.json` Tiene los templados utilizados por AlphaFold2 si es que se usaron.
     * `Cite.bibtex` Contiene todas las citas correspondientes a los papers relacionados.
     * `Config.json` Contiene todos los parámetros utilizados en la corrida.
     * `*.a3m` Alineamiento
@@ -148,12 +147,14 @@ La interacción de la proteína E7 con Rb es responsable de la inducción de la 
     * `*_PAE.png` Gráfico del PAE por pares de residuos para todos los modelos.
     * `*_plddt.png` Gráfico del plddt por posición
     * `*_predicted_aligned_error_v1.json` Tiene los valores de PAE para todos los pares de todos los modelos.
-    * `*_relaxed_*_model_*.pdb` Son los 5 modelos generados.
-    * `*_relaxed_*_model_*.json` Son el PAE y pLDDT de cada modelo que se pueden utilizar para graficar.
+    * `*_relaxed_*_model_*.pdb` Son los modelos generados y relajados.
+    * `*_unrelaxed_*_model_*.pdb` Son los 5 modelos generados sin relajar.
+    * `*_model_*.json` Son el PAE y pLDDT de cada modelo que se pueden utilizar para graficar.
+    * En la carpeta`*_env*` Tiene los templados utilizados por AlphaFold2 si es que se usaron.
 
-6. Abra Chimera y cargue uno de los modelos relajados (si no recuerda *File* → *Open …*).
+6. Abra Chimera y cargue el modelo relajado (*relaxed*) (si no recuerda *File* → *Open …*).
 
-7. Abra el pdb: 2b9d.
+7. Abra el pdb: 2b9d. (Puede descargalo realizando *File* → *Fetch by ID* o bien yendo a la web de la [rcsb]())
     * ¿Estaba esta estructura entre los templados?
     * ¿Por qué método fue determinada?
     * ¿A qué proteína corresponde? ¿De qué organismo?
@@ -201,7 +202,7 @@ Para colorear por b-factors, utilizaremos la *command line* que Chimera trae int
     Para colorear los modelos según el atributo b-factor donde está almacenado el plDDT ingrese en la *command line*:
 
     ```
-    rangecolor bfactor 0 orange red 50 white 100 dodger blue
+    rangecolor bfactor min orange red mid white max dodger blue
     ```
 
     * ¿Qué observa?
@@ -209,6 +210,12 @@ Para colorear por b-factors, utilizaremos la *command line* que Chimera trae int
     En el *reply log* se reportan los valores mínimo, medio y máximo encontrados en la columna de b-factors.
 
     * ¿Cuáles son el mínimo y el máximo?
+
+    Ahora en lugar de que Chimera elija los valores observados como mínimo y máximo de la escala, los vamos a configurar con el siguiente comando:
+
+    ```
+    rangecolor bfactor 0 orange red 50 white 100 dodger blue
+    ```
     
     Ahora cambie el valor mínimo a min (se elige el valor mínimo presente en la columna de b-factors) y el valor intermedio que antes era 50, a 70:
 
@@ -249,7 +256,7 @@ Para colorear por b-factors, utilizaremos la *command line* que Chimera trae int
 
     setwd(*DIRECTORIO DE TRABAJO DESEADO*)
 
-    directorio <- "/directorio/donde/estan/los/modelos"
+    directorio <- "/directorio/donde/estan/los/modelos/"
 
     archivos <- list.files(path = directorio,pattern = "_unrelaxed_",)
 
@@ -311,7 +318,7 @@ Para colorear por b-factors, utilizaremos la *command line* que Chimera trae int
 
     * En **num_relax** elija 1
 
-    * En template mode elija none
+    * En **template mode** elija none
 
     * Vaya a *Runtime* → *Run all*, o presione `Ctrl`+`F9`
 
@@ -383,7 +390,7 @@ Para colorear por b-factors, utilizaremos la *command line* que Chimera trae int
 
     * ¿Cuál es el RMSD global?
 
-11. Abra en chimera los 5 modelos relajados que se generaron. Luego, alinee utilizando matchmaker y seleccionaremos las cisteínas que coordinan la unión al zinc.
+11. Abra en chimera los 5 modelos no relajados que se generaron. Luego, alinee utilizando matchmaker y seleccionaremos las cisteínas que coordinan la unión al zinc.
 
     ```
     sel #1-5:58,61,91,94; display sel; color blue,a sel; color byhet sel; ~sel
