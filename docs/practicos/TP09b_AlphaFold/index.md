@@ -6,6 +6,13 @@
 <br>
 <br>
 
+## Slides mostrados en la clase
+
+* :fontawesome-regular-file-pdf: [Slides](https://docs.google.com/presentation/d/1hew6bpDCEkimy0laRLyx-_iOwTBu5QpO/edit?usp=sharing&ouid=115287066011570616875&rtpof=true&sd=true)
+
+## Videos de la clase grabada
+* :octicons-video-16: [Puesta en común del TP](https://youtu.be/JRahkmtFuIA)
+
 !!! abstract "Atención: Este TP tiene informe."
 
 ## Recursos Online
