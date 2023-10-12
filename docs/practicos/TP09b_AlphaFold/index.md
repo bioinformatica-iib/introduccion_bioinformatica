@@ -539,6 +539,7 @@ Su jefe sigue interesado en la proteína N que forma la nucleocápside viral de 
 Compare el resultado de pLDDT con los predicho por IUPred2A.
 
 Distintas formas de hacerlo:
+
 **1.** Graficar en el mismo plot por posición los valores de IUpred y de plDDT
 
 ??? hint "Pista"
