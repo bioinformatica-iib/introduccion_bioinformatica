@@ -514,8 +514,6 @@ Una estructura tridimensional permite entender desde el aspecto molecular las di
 
 ## Ejercicio a informar
 
-## Ejercicio a informar
-
 !!! Abstract "Fecha Límite de Entrega: Viernes, 27 de Octubre 2023, 23:59hs"
 
 ### Enunciado
