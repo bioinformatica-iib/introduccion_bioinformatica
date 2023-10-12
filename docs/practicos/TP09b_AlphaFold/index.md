@@ -2,6 +2,11 @@
 
 # **TP 9b**. Modelado usando AlphaFold2 { markdown data-toc-label = 'TP 9b' }
 
+<br>
+<br>
+<br>
+
+!!! abstract "Atención: Este TP tiene informe."
 
 ## Recursos Online
 
@@ -171,7 +176,7 @@ La interacción de la proteína E7 con Rb es responsable de la inducción de la 
     
     En la pestaña **Render** seleccione **mavRMSDca** y luego haga clic en `Ok`.
 
-8. Cierre el modelo correspondiente al pdb 2b9d. Via terminal tiene que ingresar el comando close seguido del número del modelo, por ejemplo:
+9. Cierre el modelo correspondiente al pdb 2b9d. Via terminal tiene que ingresar el comando close seguido del número del modelo, por ejemplo:
 
     ```
     close #0
@@ -179,18 +184,21 @@ La interacción de la proteína E7 con Rb es responsable de la inducción de la 
 
     cierra el modelo 0.
 
-    O bien, en el **model panel**, seleccione el modelo correspondiente y haga clic en close.
+    O bien, en el **model panel**, seleccione el modelo correspondiente y haga clic en *close*.
 
-9. Ahora abra los 4 modelos restantes, para eso, *File* → *Open…* y con el mouse seleccione los modelos manteniendo la tecla ctrl presionada.
+10. Ahora abra los 4 modelos restantes, para eso, *File* → *Open…* y con el mouse seleccione los modelos manteniendo la tecla ctrl presionada.
 
-10. Alinee los 5 modelos,
-    * ¿cuál es el RMSD global?
+11. Alinee los modelos ranqueados de 2 a 5 contra el modelo 1, 
+    * Explore el *Reply log* ¿cuál es el RMSD global de cada par alineado?
 
-11. Utilice **Match Align** para ver el alineamiento.
+12. Utilice **Match Align** para ver el alineamiento. Recuerde utilizar el umbral adecuado!.
     * ¿Qué observa?
     * ¿Porque si las secuencias son todas iguales no aparece el n-terminal alineado?
 
-10. Los valores de pLDDT están almacenados en la columna del pdb que corresponde a los b-factors. Coloree los modelos según este atributo ingresando en la command line:
+13. Los valores de pLDDT están almacenados en la columna del pdb que corresponde a los b-factors.
+Para colorear por b-factors, utilizaremos la *command line* que Chimera trae integrada. Para esto vaya a: *Favorites* → *Command line*. En la parte inferior de la pantalla se abrirá un renglón donde puede ingresar los comandos necesarios.
+
+    Para colorear los modelos según el atributo b-factor donde está almacenado el plDDT ingrese en la *command line*:
 
     ```
     rangecolor bfactor 0 orange red 50 white 100 dodger blue
@@ -198,14 +206,14 @@ La interacción de la proteína E7 con Rb es responsable de la inducción de la 
 
     * ¿Qué observa?
 
-    En el reply log se reportan los valores minimo, medio y máximo encontrados en la columna de b-factors.
+    En el *reply log* se reportan los valores mínimo, medio y máximo encontrados en la columna de b-factors.
 
-    *  ¿Cuáles son el mínimo y el máximo?
+    * ¿Cuáles son el mínimo y el máximo?
     
-    Ahora cambie el valor mínimo a min (se elige el valor mínimo) y el valor intermedio que antes era 50, a 80:
+    Ahora cambie el valor mínimo a min (se elige el valor mínimo presente en la columna de b-factors) y el valor intermedio que antes era 50, a 70:
 
     ```
-    rangecolor bfactor min orange red 80 white 100 dodger blue
+    rangecolor bfactor min orange red 70 white 100 dodger blue
     ```
 
     * ¿Observa diferencias con lo anterior? ¿Cuáles?
@@ -213,23 +221,26 @@ La interacción de la proteína E7 con Rb es responsable de la inducción de la 
     Ahora corra:
 
     ```
-    rangecolor bfactor 50 orange red 80 white 100 dodger blue
+    rangecolor bfactor 50 orange red 70 white 100 dodger blue
     ```
     
     * ¿Observa diferencias con lo anterior? ¿Cuáles?
+
     * ¿Porqué considera que elegimos 50 como valor mínimo?
+
     * ¿De qué posición a qué posición consideraría que el modelo es de confianza?
 
-9. Por ahora investigue el gráfico de pLDDT.
+14. Investigue el gráfico de pLDDT que se descargó con el modelo.
 
     * ¿Qué observa?
-    * ¿Puede identificar las ragiones con un pLDDT mayor a 70?
-    * ¿Puede identificar las ragiones con un pLDDT entre 50 a 70?
 
+    * ¿Puede identificar las regiones con un pLDDT mayor a 70?
 
-10. Abra R Studio. Ahora graficaremos los pLDDT por posición para cada uno de los modelos.
+    * ¿Puede identificar las regiones con un pLDDT entre 50 a 70?
 
-    ```R
+15. Abra R Studio. Ahora graficaremos los pLDDT por posición para cada uno de los modelos.
+
+    ```r
     install.packages("bio3d")
     install.packages("reshape2")
     library(bio3d)
@@ -250,17 +261,16 @@ La interacción de la proteína E7 con Rb es responsable de la inducción de la 
     )
 
     for(i in 2:length(archivos)){
-    miarchivo2 <- paste(directorio,archivos[i],sep="")
-    mipdb2 <- read.pdb(miarchivo2)
-    nuevaColumna <- paste("Rank",i,sep="_")
-    datos[nuevaColumna] <- mipdb2$atom[mipdb2$calpha,"b"]
+        miarchivo2 <- paste(directorio,archivos[i],sep="")
+        mipdb2 <- read.pdb(miarchivo2)
+        nuevaColumna <- paste("Rank",i,sep="_")
+        datos[nuevaColumna] <- mipdb2$atom[mipdb2$calpha,"b"]
     }
 
     fileOUT <- paste(directorio,"E7_Monomero.png",sep="")
 
     datos2 <- melt(datos, id="Residue")
     datos2$variable <- as.factor(datos2$variable)
-
 
     p1 <- ggplot(datos2, mapping=aes(x=Residue,y=value,color=variable)) + 
     geom_line() + theme_bw() +
@@ -273,19 +283,18 @@ La interacción de la proteína E7 con Rb es responsable de la inducción de la 
 
     ggsave(filename = fileOUT,plot = p1,device = "png",width = 20,height = 10,units = "cm",dpi = 300)
     ```
-----
 
-10. Encuentre el archivo corespondiente al gráfico del PAE.
+16. Encuentre el archivo corespondiente al gráfico del PAE.
     * ¿Qué interpreta?
 
-10. En base a los resultados obtenidos, 
+17. En base a los resultados obtenidos, 
     * ¿Qué puede decir de la estructura de la proteína?
     * ¿Cuántos dominios posee? ¿ordenados o desordenados?
     * ¿Puede decir aproximadamente los límites?
 
-10. Guarde la sesión y cierre chimera.
+18. Guarde la sesión (*Save Session As...* ) y cierre chimera.
 
-## Ejercicio 2. Modelado de un dímero de E7
+### Ejercicio 2. Modelado de un dímero de E7
 
 1. En la parte superior, haga click en **Runtime** → **Disconnect** and delete Runtime
 
@@ -298,8 +307,9 @@ La interacción de la proteína E7 con Rb es responsable de la inducción de la 
     MHGDTPTLHEYMLDLQPETTDLYCYEQLNDSSEEEDEIDGPAGQAEPDRAHYNIVTFCCKCDSTLRLCVQSTHVDIRTLEDLLMGTLGIVCPICSQKP:MHGDTPTLHEYMLDLQPETTDLYCYEQLNDSSEEEDEIDGPAGQAEPDRAHYNIVTFCCKCDSTLRLCVQSTHVDIRTLEDLLMGTLGIVCPICSQKP
     ```
 
-    * En el campo jobname ingrese E7_DIMERO.
-    * Asegúrese que use amber esté tildado.
+    * En el campo **jobname** ingrese: E7_DIMERO.
+
+    * En **num_relax** elija 1
 
     * En template mode elija none
 
@@ -307,17 +317,22 @@ La interacción de la proteína E7 con Rb es responsable de la inducción de la 
 
     * Vuelta a esperar ... unos 20 minutos.
 
+    !!! warning "Atención"
+
+        Antes de seguir adelante vaya al ejercicio 3 y ponga a correr el modelado siguiente!
 
 3. Abra Chimera. Y abra el pdb: 2F8B.
 
-    Para eso ingrese en el command line:
+    Para eso ingrese en el *command line*:
 
     ```
     open 2f8b
     ```
 
     * ¿Qué observa? ¿A qué se debe?
-    * Investigue en el rcsb la técnica por la que se obtuvo esta estructura y a qué proteína pertenece.
+
+    * Investigue en el [rcsb](https://www.rcsb.org/) la técnica por la que se obtuvo esta estructura y a qué proteína pertenece.
+
     * ¿Este pdb es utilizado como templado para el modelado? ¿por qué?
 
 4. Abra el model Panel: *Favorites* → *Model Panel*
@@ -353,19 +368,22 @@ La interacción de la proteína E7 con Rb es responsable de la inducción de la 
 
     * ¿Qué residuos se encuentran coordinando la unión a zinc?
 
-6. Ubique el archivo zip que se generó con ColabFold y descomprímalo en su computadora. 
-7. Identifique el archivo que corresponde al pLDDT.
+7. Ubique el archivo zip que se generó con ColabFold y descomprímalo en su computadora. 
+
+8. Identifique el archivo que corresponde al pLDDT.
     * ¿Qué región está modelada con alta confianza y cual no?
-8. Identifique el archivo que corresponde al PAE.
+
+9. Identifique el archivo que corresponde al PAE.
 
     * Interprete el gráfico.
     * ¿Cuál de los 4 gráficos muestra los valores correspondientes para los pares de residuos de la cadena A, cual para la cadena B y cual para los pares de residuos de de las cadenas A y B?
     * ¿Cuáles son los límites el dominio globular, aproximadamente?
 
-9. Elija el modelo mejor mejor ranqueado y alineelo utilizando Matchmaker contra la estructura de 2f8b.
+10. Elija el modelo mejor mejor ranqueado y alineelo utilizando Matchmaker contra la estructura de 2F8B.
+
     * ¿Cuál es el RMSD global?
 
-10. Abra en chimera los 5 modelos relajados que se generaron. Luego, alinee utilizando matchmaker y seleccionaremos las cisteínas que coordinan la unión al zinc.
+11. Abra en chimera los 5 modelos relajados que se generaron. Luego, alinee utilizando matchmaker y seleccionaremos las cisteínas que coordinan la unión al zinc.
 
     ```
     sel #1-5:58,61,91,94; display sel; color blue,a sel; color byhet sel; ~sel
@@ -378,10 +396,11 @@ La interacción de la proteína E7 con Rb es responsable de la inducción de la 
     sel #1-5:.B; color purple,r sel; ~sel
     ```
 
-    Observe de cerca la ubicación de las cisteínas y responda.
+    Observe de cerca la ubicación de las cisteínas y responda:
+
     * ¿Considera que la predicción del sitio de unión de zinc es buena aún cuando no se incluye el ión en el modelado?
 
-8. Coloree las cadenas de los modelos predichos según los valores de pLDDT.:
+12. Coloree las cadenas de los modelos predichos según los valores de pLDDT.:
 
     ```
     rangecolor bfactor 50 orange red 50 white 100 dodger blue
@@ -390,146 +409,152 @@ La interacción de la proteína E7 con Rb es responsable de la inducción de la 
     * ¿Qué observa?
 
     En base a todas las características observadas: pLDDT, PAE, coordinación de zinc,
+
     * ¿Pudo AF2 predecir el estado de oligomerización?
+
     * ¿Pudo AF2 predecir la coordinación del zinc?
+
     * ¿Qué opina del modelo?
 
-9. Guarde la sesión y cierre chimera.
+13. Guarde la sesión y cierre chimera.
 
-### Ejercicio 3. Predicción de la proteína de la cápside de los Flavivirus
+### Ejercicio 3. Modelado de un motivo unido a un dominio globular en Alphafold2
 
-Los flavivirus son virus envueltos y poseen un genoma ARN positivo simple cadena. El género incluye virus como ZIKA, Dengue, West nile virus y el virus de la fiebre amarilla de alta relevancia epidemiológica. Posee un amplio rango de hospedadores vertebrados y artrópodos.
+La proteína retinoblastoma (Rb) regula el avance del ciclo celular de la fase G1 → S. La proteína Rb posee un dominio globular llamado Dominio pocket que está formado por dos subdominios A y B unidos por un loop.
 
-El genoma ARN positivo se traduce como una poliproteína que luego es clivada en distintas proteínas, estructurales y no estructurales. Entre las proteínas estructurales se encuentra la proteína de la Cápside. Además del rol estructural de encapsidación del ARN viral, la proteína de la cápside interactúa con distintas proteínas del hospedador promoviendo la proliferación viral y por lo tanto, posee un rol importante en el ciclo reproductivo del virus.
+Uno de los blancos celulares de Rb es la Histone desacetilasa 1 (HDAC) que posee el motivo lineal de interacción LxCxE. Sin embargo la afinidad de HDAC1 por Rb, es mucho menor (20µM) en comparación a la afinidad del motivo de la proteína viral E7 de papilomavirus (5nM).
 
-1. En la parte superior, haga click en *Runtime* → *Disconnect* and delete Runtime
+Una estructura tridimensional permite entender desde el aspecto molecular las diferencias en las interacciones que podrían llevar a diferencias en afinidades. Sin embargo, hasta la fecha, no se posee una estructura del complejo Rb-HDAC1.
 
-2. Modele en el ColabFold la proteína de la cápside del virus de dengue 2 (DENV2), utilice como nombre del trabajo, C_DENV2: 
+1. Modele el complejo utilizando el colab: [AlphaFold2](https://colab.research.google.com/github/sokrypton/ColabFold/blob/main/AlphaFold2.ipynb).
+
+    Para tardar menos en el modelado vamos a realizar algunas modificaciones.
+
+    En lugar de ingresar la secuencia completa de la proteína retinoblastoma, vamos a ingresar únicamente la correspondiente al dominio pocket de la proteína retinoblastoma, donde los loops se encuentran reemplazados por secuencias más cortas.
+
+    Al final, indicaremos con el `:` el inicio de la cadena correspondiente al motivo HDAC (`DKRIACEEEFSD`).
+
+    Obteniendo finalmente:
 
     ```
-    >sp|P14340|POLG_DEN2N|C|1-100
-    MNNQRKKARNTPFNMLKRERNRVSTVQQLTKRFSLGMLQGRGPLKLFMALVAFLRFLTIPPTAGILKRWGTIKKSKAINVLRGFRKEIGRMLNILNRRRR
+    NTIQQLMMILNSASDQPSENLISYFNNCTVNPKESILKRVKDIGYIFKEKFAKAVGQGCVEIGSQRYKLGVRLYYRVMESMLKSEEERLSIQNFSKLLNDNIFHMSLLACALEVVMATYSRSTSQNLDSGTDLSFPWILNVLNLKAFDFYKVIESFIKAEGNLTREMIKHLERCEHRIMESLAWLSDSPLFDLIKQSKLVPRGSKSTSLSLFYKKVYRLAYLRLNTLCERLLSEHPELEHIIWTLFQHTLQNEYELMRDRHLDQIMMCSMYGICKVKNIDLKFKIIVTAYKDLPHAVQETFKRVLIKEEEYDSIIVFYNSVFMQRLKTNILQYASTRPPTLSPIPHIPR:DKRIACEEEFSD
     ```
 
-3. Mientras espera, abra Chimera y cargué el PDB: 1R6R.
-    * ¿Qué observa?
-    * ¿Cuántos modelos son? (Observe el reply log)
-    * Investigue en el RCSB qué proteína y a qué organismo pertenece.
+    * En *num_relax* elija 1.
 
-4. Quédese con un único modelo.
+    * En *template_mode* elija: **none**.
+
+    Luego, corra todo con `ctrl+F9` o vaya a *Runtime → Runall*
+
+2. Abra el modelo relajado obtenido por AlphaFold2 en chimera.
+3. Abra el pdb 1GUX
+4. Alinee ambos complejos utilizando matchmaker.
+
+    Los siguientes pasos se hacen en la *command line* de Chimera:
+
+5. Oculte las posiciones que se observan.
+
     ```
-    close #0.2-21
+    ~display
     ```
-5. Coloree las cadenas:
+
+6. Coloree por cadenas.
 
     ```
     rainbow chain
     ```
-    * ¿Cuántas cadenas hay?
 
-6. Para trabajar más fácil vamos a quedarnos con una única cadena. Pero primero vamos a ver que las cadenas son muy similares entre sí. Para esto debemos hacer que cada cadena sea un modelo utilizando el siguiente comando:
+7. Seleccione cada motivo y pongale un nombre (ojo, preste atención a la numeración de los modelos y los nombres de las cadenas, este comando es un ejemplo de como debería ser)
 
     ```
-    split #0
+    sel #0:.E; namesel E7
+    sel #1:.B; namesel HDAC
     ```
+
+8. Represente ambos motivos en licorice (recuerde seleccionar cada cadena correspondiente antes!)
+
+    ```
+    ribscale licorice E7
+    ribscale licorice HDAC
+    ```
+
+9. Elimine las aguas e hidrógenos ya que no los utilizaremos para analizar.
+
+    ```
+    delete :HOH
+    delete element.H
+    ```
+
+10. Muestre las cadenas laterales de los motivos coloreando por heteroatomos.
+
+    ```
+    display E7
+    display HDAC
+    color byhet E7
+    color byhet HDAC
+    ```
+
+   * Observe el modo de interacción, ¿Se encuentran conservado?
+
+   * ¿Por qué podría tener más baja afinidad HDAC1 que E7?
+
+11. Coloree por b-factors el modelo obtenido por AlphaFold (Recuerde que contienen el plDDT y asegúrese que su modelo es el indicado en el comando #1)
+
+    ```
+    rangecolor bfactor 50 orange red 70 white 100 dodger blue #1
+    ```
+
+    * A ojo, ¿Cuál es la calidad del modelado del péptido que contiene el motivo (HDAC)?
+
+12. Investigue el gráfico de PAE que se descarga con los modelos.
+
+    * ¿Qué nivel de confianza observa en la ubicación relativa del péptido HDAC respecto del dominio Rb?
     
-    Luego, las alineamos con Matchmaker seleccionando sólo las cadenas que pertenezcan al pdb (recuerda seleccionar una como referencia y las restantes en “to match”).
+13. En base a las observaciones realizadas: ¿AlphaFold se puede utilizar para analizar la interacción de motivos con dominios globulares?
 
-    * ¿Observa diferencias significativas? ¿Cuál es el RMSD?
+## Ejercicio a informar
 
-    Cierre las cadenas que no serán utilizadas
+## Ejercicio a informar
 
-    ```
-    close #0.2
-    ```
+!!! Abstract "Fecha Límite de Entrega: Viernes, 27 de Octubre 2023, 23:59hs"
 
-7. Coloree por hélices.
+### Enunciado
 
-    ```
-    rainbow helix
-    ```
-    
-8. Ubique los extremos de las cadenas. A continuación representaremos los residuos N-terminal y el C-terminal para ubicarnos más fácilmente.
+Su jefe sigue interesado en la proteína N que forma la nucleocápside viral de SARS-CoV2 y empaqueta el genoma viral de ARN formando una ribonucleocápside. Usted ya comprobó que la estructura de la proteína N es altamente desordenada y posee dos dominios globulares pequeños en el N-terminal (Dominio N) y C terminal (Dominio C). Dada la importancia de la proteína en la replicación viral, consideran que es un blanco posible de drogas. Por lo tanto, decide realizar un modelado por homología del dominio N-terminal de la proteína N del **aislamiento** original utilizando las herramientas que conoce.
 
-    ```
-    sel #0:21; namesel Nterminal
-    represent stick Nterminal; display Nterminal 
-    color white,a Nterminal
-    sel #0:100; namesel Cterminal
-    represent stick Cterminal; display Cterminal 
-    color purple,a Cterminal
-    ```
+**1.** Modele por **homología** el dominio **N-terminal**. Evalúe según las herramientas que conoce si su modelo es bueno y recuerde incluir el molde que seleccionó para crearlo justificando la elección e indicando a qué virus pertenece (incluir en el reporte el screenshot de la lista devuelta por HHPred porque los resultados varían).
 
-9. Cargué el PDB: 1SFK (Si no lo ve, aleje el zoom)
-    * ¿Cuántos modelos son?
-    * ¿Cuántas cadenas hay?
-    * Investigue en el RCSB qué proteína y a qué organismo pertenece.
+**2.** Elija una estructura contra la cual comparará su modelo y justifique brevemente la elección. Recuerde reportar el RMSD global y que regiones alinean mejor.
 
-10. Coloree las cadenas:
+**3.** Usted sin embargo, es muy ambicioso y quiere obtener la estructura de la proteína completa. Modele utilizando AlphaFold2 la proteína N.
 
-    ```
-    rainbow chain #1
-    ```
-    * ¿Puede encontrar los dímeros?
+**4.** Según los valores de pLDDT predichos por AlphaFold ¿que puede decir acerca de las distintas regiones de la proteína y la calidad del modelado?
 
-9. Para trabajar más fácil vamos a quedarnos nuevamente con una única cadena de 1SFK. 
+**6.** Según este análisis, si desearía cristalizar el dominio N ¿Qué regiones no incluiría?
 
-    ```
-    split #1
+**Extra! (y por ende opcional)**
+
+Compare el resultado de pLDDT con los predicho por IUPred2A.
+
+Distintas formas de hacerlo:
+**1.** Graficar en el mismo plot por posición los valores de IUpred y de plDDT
+
+??? hint "Pista"
+
+    ``` r
+    ggplot(data=iupred) + 
+        geom_line(mapping=aes(x=posicion,y=iupred)) +
+        geom_line(data=AlphaFold, mapping=aes(x=posicion, y=plddt))
     ```
 
-    Cierre las cadenas que no serán utilizadas
+**2.** Graficar en el **eje x** el valor de IUPred (va entre 0 y 1 donde 1 es desordenado) y en el **eje y** los valores de plDDT que van entre 0 (menor confianza o sea desordenado) y 100 (mayor confianza o sea ordenado). 
 
-    ```
-    close #1.2-8
-    ```
+??? hint "Pista"
 
-10. Coloree por hélices.
+    Den vuelta los límites del **eje y** y dividen los valores de plDDT por 100.
 
-    ```
-    rainbow helix
-    ```
-    * ¿Puede observar la correspondencia con la proteína de la cápside de Dengue?
 
-11. Alinee las dos estructuras.
-
-    * ¿Qué observa?
-    * ¿Qué ocurre con la hélice N-terminal? ¿Tiene movilidad?
-
-12. Ubique los modelos predichos por AF2 para dengue, y carguelos en Chimera. Coloree por hélice. 
-
-    ```
-    rainbow helix
-    ```
-    
-    * ¿Tienen el mismo número de hélices?
-    * ¿Qué ocurre con la hélice N-terminal que se observaba en Dengue y Kunji?
-
-13. Observe el gráfico de pLDDT.
-
-    * ¿Qué puede decir de la predicción local del modelo?
-    * ¿Puede identificar los límites de la raigón globular? ¿Esta región incluye a la hélice?
-
-13. Coloree la estructura por pLDDT
-
-    ```
-    rangecolor bfactor 50 orange red 50 white 100 dodger blue #2-6
-    ```
-
-    Y oculte los modelos de DENV2
-
-    ```
-    ~ribbon #0-1;~display
-    ```
-
-    * ¿Qué puede decir de la predicción en la hélice N-terminal?
-
-<!--
-## Recordings
-
-- Cierre [[MP4]](https://drive.google.com/file/d/1UiJ63uHfmIrcOE7K7mzEWRgX_c2CfeXv/view?usp=sharing)
-
--->
+¿Son similares los perfiles de IUpred y plDDT?
 
 ## Otros Recursos
 ### How to interpret AlphaFold2 structures
