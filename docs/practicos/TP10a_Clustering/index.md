@@ -25,7 +25,7 @@
 * RStudio (ya instalado en la VM)
 
 ### Recursos Online
-* Introducción a **R**, **TP 8** de esta materia: [Parte 1](../TP05a_R) y [Parte 2](../TP05b_R)
+* Introducción a **R**, **TP 5** de esta materia: [Parte 1](../TP05a_R) y [Parte 2](../TP05b_R)
 * [Clustering jerárquico en **R**](https://www.datanovia.com/en/lessons/agglomerative-hierarchical-clustering/)
 * [Detalles del cálculo de Silhouette (y mucho más)](https://www.cienciadedatos.net/documentos/37_clustering_y_heatmaps#Average_silhouette_method)
 
