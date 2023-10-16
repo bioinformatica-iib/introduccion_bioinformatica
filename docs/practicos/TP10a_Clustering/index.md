@@ -1,32 +1,31 @@
 ![Image](img/clustering2.png){ width="250", align="left" }
 
-# **TP 12a**. Data Mining - Clustering { markdown data-toc-label = 'TP 12a' }
+# **TP 10a**. Data Mining - Clustering { markdown data-toc-label = 'TP 10a' }
 
 <br>
 <br>
  
-[:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1zT1Qt_BgAxqtDTYxBTRK5uqoIMA1EXRw/view?usp=sharing){ .md-button .md-button--primary }
+[:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1LbpQTMPxr9Y7FP6Uha75N7hT4b7JwnU_/view?usp=drive_link){ .md-button .md-button--primary }
 
 <!--
-Este es el botón para descargar materiales, en (#) hay que agregar el link correspondiente
--->
-
 ### Slides mostrados en la clase
 
 * :fontawesome-regular-file-pdf: [Introducción Clustering Jerárquico](https://drive.google.com/file/d/1Eh_u3qKrqPI8AgOggD_qW_CvXjk_vNfT/view?usp=sharing)
 * :fontawesome-regular-file-pdf: [Cierre TP](https://drive.google.com/file/d/17JlDGAwSoU8ynugUjD-nOSqThE2HOKPC/view?usp=sharing)
 
+
 ### Videos de la clase grabada
 
 * :octicons-video-16: [Introducción al TP](https://www.youtube.com/watch?v=lmfJhns31fo)
 * :octicons-video-16: [Cierre TP](https://www.youtube.com/watch?v=gkZ0wE_vdfA)
+-->
 
 ### Software a usar
 * R (ya instalado en la VM).
 * RStudio (ya instalado en la VM)
 
 ### Recursos Online
-* Introducción a **R**, **TP 8** de esta materia: [Parte 1](../TP08a_R) y [Parte 2](../TP08b_R)
+* Introducción a **R**, **TP 8** de esta materia: [Parte 1](../TP05a_R) y [Parte 2](../TP05b_R)
 * [Clustering jerárquico en **R**](https://www.datanovia.com/en/lessons/agglomerative-hierarchical-clustering/)
 * [Detalles del cálculo de Silhouette (y mucho más)](https://www.cienciadedatos.net/documentos/37_clustering_y_heatmaps#Average_silhouette_method)
 
@@ -38,9 +37,9 @@ Este es el botón para descargar materiales, en (#) hay que agregar el link corr
 
 ## **Introducción al Tema**
 
-Hoy vamos a retomar el trabajo con **R**. Recomendamos repasar o tener a mano el **TP 8** de esta materia por si necesitan recordar como hacer ciertos comandos ([Parte 1](../TP08a_R) y [Parte 2](../TP08b_R)).
+Hoy vamos a retomar el trabajo con **R**. Recomendamos repasar o tener a mano el **TP 5** de esta materia por si necesitan recordar como hacer ciertos comandos ([Parte 1](../TP05a_R) y [Parte 2](../TP05b_R)).
 
-Como mencionamos en el **TP 8**, es cada vez más normal que experimentos biológicos nos permitan analizar miles a millones de interacciones biológicas a la vez, lo que resulta en tablas con millones de datos. Esto hace necesario entonces saber utilizar herramientas que nos permitan extraer, o *minar*, información de estos enormes conjuntos de datos. A este proceso lo vamos a denominar *Data Mining*.
+Como mencionamos en el **TP 5**, es cada vez más normal que experimentos biológicos nos permitan analizar miles a millones de interacciones biológicas a la vez, lo que resulta en tablas con millones de datos. Esto hace necesario entonces saber utilizar herramientas que nos permitan extraer, o *minar*, información de estos enormes conjuntos de datos. A este proceso lo vamos a denominar *Data Mining*.
 
 En este TP nos vamos a enfocar en métodos de clustering, los cuales nos permiten agrupar elementos analizados en base a datos observados sobre ellos. Esto tiene muchas utilidades, como puede ser entender mejor las diferencias entre grupos conocidos, encontrar diferentes grupos dentro del conjunto datos analizado, o remover datos redundantes, entre otros.
 
@@ -123,7 +122,7 @@ Si no entienden algunos de estos conceptos pueden leer un poco más sobre ellos 
     * **Complete Linkage:** la nueva distancia es la ***mayor*** entre las distancias $dist(genA, genB)$ y $dist(genA, genC)$
     * **Average Linkage:** la nueva distancia es el ***promedio*** de las distancias $dist(genA, genB)$ y $dist(genA, genC)$
 
-1. Para agilizar un poco este Ejercicio les vamos a dar una planilla de Google Sheets que contiene la base de lo que vamos a necesitar. Abran [esta planilla de Google Sheets](https://docs.google.com/spreadsheets/d/1RBQNAsE1N6PPfKLWCqtYuuiYVqlTcPUQeeQX3PZmre8/edit?usp=sharing) y hagan una copia. Leyendo la siguiente información, traten de entender que hacen las diferentes partes de dicha planilla (desde ya, hay partes vacías que vamos a completar).
+1. Para agilizar un poco este Ejercicio les vamos a dar una planilla de Google Sheets que contiene la base de lo que vamos a necesitar. Abran [esta planilla de Google Sheets](https://docs.google.com/spreadsheets/d/16JTliaN7vLlzHpYmre82WbSsiUQ7K4gq/edit?usp=sharing&ouid=101472650200585443790&rtpof=true&sd=true) y hagan una copia. Leyendo la siguiente información, traten de entender que hacen las diferentes partes de dicha planilla (desde ya, hay partes vacías que vamos a completar).
 
     * Pestaña **Plot Señal**
 
@@ -324,7 +323,7 @@ La función `kmeans` viene con **R** y se usa:
 #Esta funcion controla el aspecto azaroso de kmeans para que nos de igual a todos
 set.seed(1)
 
-#Corro la funcion kmeans para los datos sin estandarizar pidiendole 2 clusters
+#Corro la funcion kmeans para los datos estandarizados pidiendole 2 clusters
 clustering_kmeans_k2_ST <- kmeans(matriz_datos_ST, centers = 2)
 
 #Extraigo los clusters calculados
