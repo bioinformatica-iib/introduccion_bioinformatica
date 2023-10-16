@@ -17,7 +17,7 @@
     
     
       
-        <title>Index - Introducción a la Bioinformática</title>
+        <title>TP 10a - Clustering - Introducción a la Bioinformática</title>
       
     
     
@@ -83,7 +83,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#tp-12a-data-mining-clustering" class="md-skip">
+        <a href="#tp-10a-data-mining-clustering" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Index
+              TP 10a - Clustering
             
           </span>
         </div>
@@ -281,13 +281,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../inicio/" class="md-tabs__link">
+      <a href="../inicio/" class="md-tabs__link md-tabs__link--active">
         Prácticos
       </a>
     </li>
@@ -598,12 +600,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" checked>
       
       
       
@@ -788,6 +792,226 @@
 
             
           
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          TP 10a - Clustering
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        TP 10a - Clustering
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#software-a-usar" class="md-nav__link">
+    Software a usar
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recursos-online" class="md-nav__link">
+    Recursos Online
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objetivos" class="md-nav__link">
+    Objetivos
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduccion-al-tema" class="md-nav__link">
+    Introducción al Tema
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-1-clustering-jerarquico-manual" class="md-nav__link">
+    Ejercicio 1 - Clustering Manual
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-2-clustering-jerarquico-con-r" class="md-nav__link">
+    Ejercicio 2 - Clustering con R
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicio 2 - Clustering con R">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#datos-sin-estandarizar" class="md-nav__link">
+    Datos sin estandarizar
+  </a>
+  
+    <nav class="md-nav" aria-label="Datos sin estandarizar">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#leer-los-datos" class="md-nav__link">
+    Leer los datos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pasar-los-datos-a-una-matriz" class="md-nav__link">
+    Pasarlos a una matriz
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#crear-la-matriz-de-distancias" class="md-nav__link">
+    Matriz de distancias
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hacer-el-clustering-jerarquico" class="md-nav__link">
+    Clustering jerárquico
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asignando-clusters" class="md-nav__link">
+    Asignando clusters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datos-estandarizados" class="md-nav__link">
+    Datos estandarizados
+  </a>
+  
+    <nav class="md-nav" aria-label="Datos estandarizados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#estandarizar-los-datos" class="md-nav__link">
+    Estandarizar los datos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hacer-el-resto-del-analisis" class="md-nav__link">
+    Hacer el resto del análisis
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-3-k-means-y-silhouette" class="md-nav__link">
+    Ejercicio 3 - K-means
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicio 3 - K-means">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#k-means" class="md-nav__link">
+    K-means
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#silhouette" class="md-nav__link">
+    Silhouette
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bibliografia" class="md-nav__link">
+    Bibliografía
+  </a>
+  
+    <nav class="md-nav" aria-label="Bibliografía">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#consola-de-r" class="md-nav__link">
+     Consola de R
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -900,24 +1124,23 @@
 
 
 <div><p><a class="glightbox" href="img/clustering2.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img _="," align="left" alt="Image" src="img/clustering2.png" width="250"></a></p>
-<h1 id="tp-12a-data-mining-clustering" markdown="markdown"><strong>TP 12a</strong>. Data Mining - Clustering</h1>
+<h1 id="tp-10a-data-mining-clustering" markdown="markdown"><strong>TP 10a</strong>. Data Mining - Clustering</h1>
 <p><br>
 <br></p>
-<p><a class="md-button md-button--primary" href="https://drive.google.com/file/d/1zT1Qt_BgAxqtDTYxBTRK5uqoIMA1EXRw/view?usp=sharing"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32v242.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64v-32c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 104c-13.3 0-24-10.7-24-24s10.7-24 24-24 24 10.7 24 24-10.7 24-24 24z"></path></svg></span> Materiales</a></p>
+<p><a class="md-button md-button--primary" href="https://drive.google.com/file/d/1LbpQTMPxr9Y7FP6Uha75N7hT4b7JwnU_/view?usp=drive_link"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32v242.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64v-32c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 104c-13.3 0-24-10.7-24-24s10.7-24 24-24 24 10.7 24 24-10.7 24-24 24z"></path></svg></span> Materiales</a></p>
 <!--
-Este es el botón para descargar materiales, en (#) hay que agregar el link correspondiente
+### Slides mostrados en la clase
+
+* :fontawesome-regular-file-pdf: [Introducción Clustering Jerárquico](https://drive.google.com/file/d/1Eh_u3qKrqPI8AgOggD_qW_CvXjk_vNfT/view?usp=sharing)
+* :fontawesome-regular-file-pdf: [Cierre TP](https://drive.google.com/file/d/17JlDGAwSoU8ynugUjD-nOSqThE2HOKPC/view?usp=sharing)
+
+
+### Videos de la clase grabada
+
+* :octicons-video-16: [Introducción al TP](https://www.youtube.com/watch?v=lmfJhns31fo)
+* :octicons-video-16: [Cierre TP](https://www.youtube.com/watch?v=gkZ0wE_vdfA)
 -->
 
-<h3 id="slides-mostrados-en-la-clase">Slides mostrados en la clase</h3>
-<ul>
-<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 384 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M320 464c8.8 0 16-7.2 16-16v-32h48v32c0 35.3-28.7 64-64 64H64c-35.35 0-64-28.7-64-64v-32h48v32c0 8.8 7.16 16 16 16h256zm-64-304c-17.7 0-32-14.3-32-32V48H64c-8.84 0-16 7.16-16 16v128H0V64C0 28.65 28.65 0 64 0h165.5c17 0 33.2 6.743 45.2 18.75l90.6 90.55c12 12 18.7 28.2 18.7 45.2V192h-48v-32h-80zM88 224c30.9 0 56 25.1 56 56s-25.1 56-56 56h-8v32c0 8.8-7.16 16-16 16s-16-7.2-16-16V240c0-8.8 7.16-16 16-16h24zm24 56c0-13.3-10.7-24-24-24h-8v48h8c13.3 0 24-10.7 24-24zm48-40c0-8.8 7.2-16 16-16h24c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48h-24c-8.8 0-16-7.2-16-16V240zm32 112h8c8.8 0 16-7.2 16-16v-64c0-8.8-7.2-16-16-16h-8v96zm144-128c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v32h32c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v48c0 8.8-7.2 16-16 16s-16-7.2-16-16V240c0-8.8 7.2-16 16-16h48z"></path></svg></span> <a href="https://drive.google.com/file/d/1Eh_u3qKrqPI8AgOggD_qW_CvXjk_vNfT/view?usp=sharing">Introducción Clustering Jerárquico</a></li>
-<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 384 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M320 464c8.8 0 16-7.2 16-16v-32h48v32c0 35.3-28.7 64-64 64H64c-35.35 0-64-28.7-64-64v-32h48v32c0 8.8 7.16 16 16 16h256zm-64-304c-17.7 0-32-14.3-32-32V48H64c-8.84 0-16 7.16-16 16v128H0V64C0 28.65 28.65 0 64 0h165.5c17 0 33.2 6.743 45.2 18.75l90.6 90.55c12 12 18.7 28.2 18.7 45.2V192h-48v-32h-80zM88 224c30.9 0 56 25.1 56 56s-25.1 56-56 56h-8v32c0 8.8-7.16 16-16 16s-16-7.2-16-16V240c0-8.8 7.16-16 16-16h24zm24 56c0-13.3-10.7-24-24-24h-8v48h8c13.3 0 24-10.7 24-24zm48-40c0-8.8 7.2-16 16-16h24c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48h-24c-8.8 0-16-7.2-16-16V240zm32 112h8c8.8 0 16-7.2 16-16v-64c0-8.8-7.2-16-16-16h-8v96zm144-128c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v32h32c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v48c0 8.8-7.2 16-16 16s-16-7.2-16-16V240c0-8.8 7.2-16 16-16h48z"></path></svg></span> <a href="https://drive.google.com/file/d/17JlDGAwSoU8ynugUjD-nOSqThE2HOKPC/view?usp=sharing">Cierre TP</a></li>
-</ul>
-<h3 id="videos-de-la-clase-grabada">Videos de la clase grabada</h3>
-<ul>
-<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 16 16"><path fill-rule="evenodd" d="M1.75 3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25v-8.5a.25.25 0 0 0-.25-.25H1.75zM0 3.75C0 2.784.784 2 1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0 1 14.25 14H1.75A1.75 1.75 0 0 1 0 12.25v-8.5z"></path><path d="M6 10.559V5.442a.25.25 0 0 1 .379-.215l4.264 2.559a.25.25 0 0 1 0 .428l-4.264 2.559A.25.25 0 0 1 6 10.559z"></path></svg></span> <a href="https://www.youtube.com/watch?v=lmfJhns31fo">Introducción al TP</a></li>
-<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 16 16"><path fill-rule="evenodd" d="M1.75 3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25v-8.5a.25.25 0 0 0-.25-.25H1.75zM0 3.75C0 2.784.784 2 1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0 1 14.25 14H1.75A1.75 1.75 0 0 1 0 12.25v-8.5z"></path><path d="M6 10.559V5.442a.25.25 0 0 1 .379-.215l4.264 2.559a.25.25 0 0 1 0 .428l-4.264 2.559A.25.25 0 0 1 6 10.559z"></path></svg></span> <a href="https://www.youtube.com/watch?v=gkZ0wE_vdfA">Cierre TP</a></li>
-</ul>
 <h3 id="software-a-usar">Software a usar</h3>
 <ul>
 <li>R (ya instalado en la VM).</li>
@@ -925,7 +1148,7 @@ Este es el botón para descargar materiales, en (#) hay que agregar el link corr
 </ul>
 <h3 id="recursos-online">Recursos Online</h3>
 <ul>
-<li>Introducción a <strong>R</strong>, <strong>TP 8</strong> de esta materia: <a href="../TP08a_R">Parte 1</a> y <a href="../TP08b_R">Parte 2</a></li>
+<li>Introducción a <strong>R</strong>, <strong>TP 8</strong> de esta materia: <a href="../TP05a_R">Parte 1</a> y <a href="../TP05b_R">Parte 2</a></li>
 <li><a href="https://www.datanovia.com/en/lessons/agglomerative-hierarchical-clustering/">Clustering jerárquico en <strong>R</strong></a></li>
 <li><a href="https://www.cienciadedatos.net/documentos/37_clustering_y_heatmaps#Average_silhouette_method">Detalles del cálculo de Silhouette (y mucho más)</a></li>
 </ul>
@@ -936,8 +1159,8 @@ Este es el botón para descargar materiales, en (#) hay que agregar el link corr
 <li>Explorar algunas medidas de calidad de los clusters, como la silueta o <em>silhouette</em>.</li>
 </ul>
 <h2 id="introduccion-al-tema"><strong>Introducción al Tema</strong></h2>
-<p>Hoy vamos a retomar el trabajo con <strong>R</strong>. Recomendamos repasar o tener a mano el <strong>TP 8</strong> de esta materia por si necesitan recordar como hacer ciertos comandos (<a href="../TP08a_R">Parte 1</a> y <a href="../TP08b_R">Parte 2</a>).</p>
-<p>Como mencionamos en el <strong>TP 8</strong>, es cada vez más normal que experimentos biológicos nos permitan analizar miles a millones de interacciones biológicas a la vez, lo que resulta en tablas con millones de datos. Esto hace necesario entonces saber utilizar herramientas que nos permitan extraer, o <em>minar</em>, información de estos enormes conjuntos de datos. A este proceso lo vamos a denominar <em>Data Mining</em>.</p>
+<p>Hoy vamos a retomar el trabajo con <strong>R</strong>. Recomendamos repasar o tener a mano el <strong>TP 5</strong> de esta materia por si necesitan recordar como hacer ciertos comandos (<a href="../TP05a_R">Parte 1</a> y <a href="../TP05b_R">Parte 2</a>).</p>
+<p>Como mencionamos en el <strong>TP 5</strong>, es cada vez más normal que experimentos biológicos nos permitan analizar miles a millones de interacciones biológicas a la vez, lo que resulta en tablas con millones de datos. Esto hace necesario entonces saber utilizar herramientas que nos permitan extraer, o <em>minar</em>, información de estos enormes conjuntos de datos. A este proceso lo vamos a denominar <em>Data Mining</em>.</p>
 <p>En este TP nos vamos a enfocar en métodos de clustering, los cuales nos permiten agrupar elementos analizados en base a datos observados sobre ellos. Esto tiene muchas utilidades, como puede ser entender mejor las diferencias entre grupos conocidos, encontrar diferentes grupos dentro del conjunto datos analizado, o remover datos redundantes, entre otros.</p>
 <p>Si bien este TP vamos a enfocarnos más que nada en aprender las técnicas, el objetivo final de este proceso es identificar agrupamientos naturales en los datos con alguna relevancia biológica.</p>
 <h2 id="ejercicio-1-clustering-jerarquico-manual" markdown="markdown"><strong>Ejercicio 1 - Clustering Jerárquico Manual</strong></h2>
@@ -1078,7 +1301,7 @@ distanciaEuclidiana(genA, genB) = \sqrt{(2 - (-1))^2 + (4 - (-1))^2 + (8 - (-2))
 </details>
 <ol>
 <li>
-<p>Para agilizar un poco este Ejercicio les vamos a dar una planilla de Google Sheets que contiene la base de lo que vamos a necesitar. Abran <a href="https://docs.google.com/spreadsheets/d/1RBQNAsE1N6PPfKLWCqtYuuiYVqlTcPUQeeQX3PZmre8/edit?usp=sharing">esta planilla de Google Sheets</a> y hagan una copia. Leyendo la siguiente información, traten de entender que hacen las diferentes partes de dicha planilla (desde ya, hay partes vacías que vamos a completar).</p>
+<p>Para agilizar un poco este Ejercicio les vamos a dar una planilla de Google Sheets que contiene la base de lo que vamos a necesitar. Abran <a href="https://docs.google.com/spreadsheets/d/16JTliaN7vLlzHpYmre82WbSsiUQ7K4gq/edit?usp=sharing&amp;ouid=101472650200585443790&amp;rtpof=true&amp;sd=true">esta planilla de Google Sheets</a> y hagan una copia. Leyendo la siguiente información, traten de entender que hacen las diferentes partes de dicha planilla (desde ya, hay partes vacías que vamos a completar).</p>
 <ul>
 <li>
 <p>Pestaña <strong>Plot Señal</strong></p>
@@ -1259,7 +1482,7 @@ datoEstandarizado(genA, t_0) = \frac{dato(genA, t_0) - promedio(genA)}{desviacio
 <div class="highlight"><pre><span></span><code><span class="c1">#Esta funcion controla el aspecto azaroso de kmeans para que nos de igual a todos</span>
 <span class="nf">set.seed</span><span class="p">(</span><span class="m">1</span><span class="p">)</span>
 
-<span class="c1">#Corro la funcion kmeans para los datos sin estandarizar pidiendole 2 clusters</span>
+<span class="c1">#Corro la funcion kmeans para los datos estandarizados pidiendole 2 clusters</span>
 <span class="n">clustering_kmeans_k2_ST</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">kmeans</span><span class="p">(</span><span class="n">matriz_datos_ST</span><span class="p">,</span><span class="w"> </span><span class="n">centers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span><span class="p">)</span>
 
 <span class="c1">#Extraigo los clusters calculados</span>
@@ -1342,6 +1565,42 @@ La función `silhouette` no viene por defecto con **R**. Corran el siguiente có
       </main>
       
         <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Pie" >
+      
+        
+        <a href="../TP09b_AlphaFold/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: TP 9b - Modelado usando AlphaFold" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              TP 9b - Modelado usando AlphaFold
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../instructivos/inicio/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: Inicio" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Siguiente
+              </span>
+              Inicio
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
