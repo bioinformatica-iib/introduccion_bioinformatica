@@ -7,18 +7,14 @@
  
 [:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1LbpQTMPxr9Y7FP6Uha75N7hT4b7JwnU_/view?usp=drive_link){ .md-button .md-button--primary }
 
-<!--
 ### Slides mostrados en la clase
 
-* :fontawesome-regular-file-pdf: [Introducción Clustering Jerárquico](https://drive.google.com/file/d/1Eh_u3qKrqPI8AgOggD_qW_CvXjk_vNfT/view?usp=sharing)
-* :fontawesome-regular-file-pdf: [Cierre TP](https://drive.google.com/file/d/17JlDGAwSoU8ynugUjD-nOSqThE2HOKPC/view?usp=sharing)
+* :fontawesome-regular-file-pdf: [Slides](https://docs.google.com/presentation/d/1aIxCVauHHm0_JO56852GrEKHfUHPW9wJ-b92f71Z5LE/edit?usp=sharing)
 
 
 ### Videos de la clase grabada
 
-* :octicons-video-16: [Introducción al TP](https://www.youtube.com/watch?v=lmfJhns31fo)
-* :octicons-video-16: [Cierre TP](https://www.youtube.com/watch?v=gkZ0wE_vdfA)
--->
+* :octicons-video-16: [Cierre TP](https://youtu.be/w7nTlIkw-k8)
 
 ### Software a usar
 * R (ya instalado en la VM).
