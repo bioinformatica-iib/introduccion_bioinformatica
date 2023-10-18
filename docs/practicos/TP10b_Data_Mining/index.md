@@ -1,25 +1,24 @@
 ![Image](img/banner.jpg){ width="250", align="left" }
 
-# **TP 12b**. Data Mining { markdown data-toc-label = 'TP 12b' }
+# **TP 10b**. Data Mining { markdown data-toc-label = 'TP 10b' }
 
 <br>
 <br>
 <br>
  
-[:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1rJFe_Q5_oKo5OOoo2HXIsVMqtKlGNheV/view?usp=sharing){ .md-button .md-button--primary }
+[:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1AH55g4Fq7J8rHC5NCURW56d8KHzjeYfg/view?usp=sharing){ .md-button .md-button--primary }
 
 <!--
-Este es el botón para descargar materiales, en (#) hay que agregar el link correspondiente
--->
-
 ### Slides mostrados en la clase
 
-* :fontawesome-regular-file-pdf: [Cierre TP](https://drive.google.com/file/d/1jFMlmnG0Aik4L17XbKI2EmzGYo1CH7mJ/view?usp=sharing)
+* :fontawesome-regular-file-pdf: [Slides TP](https://drive.google.com/file/d/1jFMlmnG0Aik4L17XbKI2EmzGYo1CH7mJ/view?usp=sharing)
 
 ### Videos de la clase grabada
 
-* :octicons-video-16: [Introducción al TP](https://www.youtube.com/watch?v=ID6R3fBj3vo)
 * :octicons-video-16: [Cierre TP](https://www.youtube.com/watch?v=iqwjW6oZKO8)
+
+-->
+
 
 ### Software a usar
 * R (ya instalado en la VM).
@@ -39,19 +38,19 @@ Este es el botón para descargar materiales, en (#) hay que agregar el link corr
 
 ## **Introducción al Tema**
 
-Este TP retoma lo empezado en el **TP 12a**, donde aprendimos métodos de clustering como *clustering jerárquico* o *K-means* y los aplicamos a un ejemplo mínimo de una tabla con solo 4 filas.
+Este TP retoma lo empezado en el **TP 10a**, donde aprendimos métodos de clustering como *clustering jerárquico* o *K-means* y los aplicamos a un ejemplo mínimo de una tabla con solo 4 filas.
 
 Vamos ahora a utilizar los mismos métodos para trabajar con data sets más grandes y tratar de ir entendiendo cuándo, cómo y por qué es conveniente agrupar nuestros datos.
 
 A su vez vamos a desarrollar algunos temas de **R** que son muy útiles, pero para los cuales no nos alcanzó el tiempo en los TPs anteriores: plotear usando `ggplot2` y utilizar funciones creadas por nosotros.
 
-Para hacer esto vamos a utilizar 2 data sets. En el **Ejercicio 1** vamos a trabajar con el ya conocido data set **iris** que tiene 150 filas y viene por defecto con **R**. En el **Ejercicio 2** vamos a trabajar con datos de un estudio de transcriptómica que nos devolvió 9 datos para cada uno de 11.106 genes estudiados. Este trabajo es un segundo paso de lo realizado en el **TP 8b** cuando buscábamos inhibidores para la **Enzima Z**.
+Para hacer esto vamos a utilizar 2 data sets. En el **Ejercicio 1** vamos a trabajar con el ya conocido data set **iris** que tiene 150 filas y viene por defecto con **R**. En el **Ejercicio 2** vamos a trabajar con datos de un estudio de transcriptómica que nos devolvió 9 datos para cada uno de 11.106 genes estudiados. Este trabajo es un segundo paso de lo realizado en el **TP 5b** cuando buscábamos inhibidores para la **Enzima Z**.
 
 ## **Mejores plots: ggplot2**
 
 ### Bases de ggplot2
 
-En el **TP 8a** mencionamos rápidamente al paquete `ggplot2`, el cual es uno de las formas más populares de hacer plots en **R**. Este paquete es bastante complicado y tiene un sinfín de funcionalidades, pero hoy vamos a darle un vistazo a su funcionalidad básica (el [cheatsheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf) es una forma rápida de ver todas las posibilidades que tiene).
+En el **TP 5a** mencionamos rápidamente al paquete `ggplot2`, el cual es uno de las formas más populares de hacer plots en **R**. Este paquete es bastante complicado y tiene un sinfín de funcionalidades, pero hoy vamos a darle un vistazo a su funcionalidad básica (el [cheatsheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf) es una forma rápida de ver todas las posibilidades que tiene).
 
 Un ejemplo muy simple de hacer un plot con la función `ggplot` sería:
 
@@ -589,7 +588,7 @@ dt_iris$CJ_cluster <- factor(dt_iris$CJ_cluster, levels = c(1, 2, 3))
 
 ## **Ejercicio 2 - Analizando el efecto de dos inhibidores** { markdown data-toc-label='Ejercicio 2' }
 
-En el **TP 8b** hicimos un ejercicio donde usábamos el equipo **FilterMax F5** para analizar 22 inhibidores de una llamada **Enzima Z**, la cual resulta que era la cruzipaína, es decir, la cisteín proteasa principal de *Trypanosoma cruzi*, el parásito causante de la enfermedad de Chagas.
+En el **TP 5b** hicimos un ejercicio donde usábamos el equipo **FilterMax F5** para analizar 22 inhibidores de una llamada **Enzima Z**, la cual resulta que era la cruzipaína, es decir, la cisteín proteasa principal de *Trypanosoma cruzi*, el parásito causante de la enfermedad de Chagas.
 
 En esta segunda fase del experimento se eligieron 2 inhibidores y se realizó un análisis más detallado, estudiando como varía la expresión de miles de genes en presencia o ausencia de dichos inhibidores. Para esto se hizo un estudio de transcriptómica (RNA-seq) donde se extrajo el ARN y se lo analizó con **Illumina**. Luego, cada *read* encontrado se mapeó contra el genoma de referencia y se llegó a una tabla de conteo para cada uno de las transcriptos del genoma.
 
@@ -599,7 +598,7 @@ Nuestro objetivo va a ser entonces obtener una lista de los genes que son más a
 
 ### Leer los datos
 
-**1)** Lean los archivos **control_data.tsv**, **drug1_data.tsv** y **drug2_data.tsv** que se encuentran en sus materiales de trabajo y guárdenlos en diferentes variables llamadas **control_data**, **drug1_data** y **drug2_data** respectivamente.
+**1)** Lean los archivos **control_data.tsv**, **drug1_data.tsv** y **drug2_data.tsv** que se encuentran en sus materiales de trabajo y guárdenlos en diferentes variables llamadas **control_data**, **drug1_data** y **drug2_data** respectivamente. Asegurense que las variables son del tipo *Data Table*
 
 ### Estandarizar los datos
 
@@ -754,7 +753,7 @@ Por esta razón queremos convertir nuestros datos a una escala logarítmica. Com
 
 El *heatmap* es un tipo de plot que no vimos hasta el momento, pero que tal vez conozcan. La versión básica del heatmap nos permite graficar valores numéricos como una escala de colores lo que nos permite ver diferencias entre filas rápidamente e incluso encontrar filas similares o patrones.
 
-A continuación mostramos un ejemplo que usa los datos estandarizados del **Ejercicio 2** del **TP 12a** (la tabla ejemplo con los 4 genes, **matriz_datos_ST**):
+A continuación mostramos un ejemplo que usa los datos estandarizados del **Ejercicio 2** del **TP 10a** (la tabla ejemplo con los 4 genes, **matriz_datos_ST**):
 
 <figure markdown>
 ![HeatmapEjemplo](img/heatmapEjemplo.png)

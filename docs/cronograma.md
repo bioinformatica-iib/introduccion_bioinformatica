@@ -33,7 +33,7 @@ tags:
 | Martes, 10 Octubre 2023 | 9:00 hs |	:material-google-classroom: Online | [T9. Data clustering](/introduccion_bioinformatica/teoricas/9-Teorica-Nueve/) | :fontawesome-solid-brain: Teórica |	F. Agüero |
 | Jueves, 12 Octubre 2023 | 9:00 hs |	:material-google-classroom: Online | [P9b. Bioinformática Estructural: Alphafold](/introduccion_bioinformatica/practicos/TP09b_AlphaFold) | :fontawesome-solid-hammer: Práctica |	J. Glavina |
 | Martes, 17 Octubre 2023 | 9:00 hs |	:material-google-classroom: Online | [P10a. Data mining - Clustering](/introduccion_bioinformatica/practicos/TP10a_Clustering) | :fontawesome-solid-hammer: Práctica |	G. Romer |
-| Jueves, 19 Octubre 2023 | 9:00 hs |	:material-google-classroom: Online | P10b. Data mining | :fontawesome-solid-hammer: Práctica |	G. Romer |
+| Jueves, 19 Octubre 2023 | 9:00 hs |	:material-google-classroom: Online | [P10b. Data mining](/introduccion_bioinformatica/practicos/TP10b_Data_Mining) | :fontawesome-solid-hammer: Práctica |	G. Romer |
 | Martes, 24 Octubre 2023 | 9:00 hs |	:material-google-classroom: Online | T10. Métodos de predicción de Machine Learning basados en datos (HMM y ANN) | :fontawesome-solid-brain: Teórica |	M. Nielsen |
 | Jueves, 26 Octubre 2023 | 9:00 hs |	:material-google-classroom: Online | P11. HMM y Redes neuronales | :fontawesome-solid-hammer: Práctica |	H. García A. |
 | Martes, 31 Octubre 2023 | 9:00 hs |	:material-google-classroom: Online | T11. Secuenciación y ensamblado de genomas | :fontawesome-solid-brain: Teórica |	F. Agüero |
