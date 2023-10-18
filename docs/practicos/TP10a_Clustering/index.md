@@ -9,7 +9,7 @@
 
 ### Slides mostrados en la clase
 
-* :fontawesome-regular-file-pdf: [Slides](https://docs.google.com/presentation/d/1aIxCVauHHm0_JO56852GrEKHfUHPW9wJ-b92f71Z5LE/edit?usp=sharing)
+* :fontawesome-regular-file-pdf: [Slides](https://drive.google.com/file/d/1HkR10Hl4YRFTE6E8YFJS-mpdpiXv-jFY/view?usp=sharing)
 
 
 ### Videos de la clase grabada
