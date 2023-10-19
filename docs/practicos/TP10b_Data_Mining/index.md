@@ -8,16 +8,15 @@
  
 [:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1AH55g4Fq7J8rHC5NCURW56d8KHzjeYfg/view?usp=sharing){ .md-button .md-button--primary }
 
-<!--
+
 ### Slides mostrados en la clase
 
-* :fontawesome-regular-file-pdf: [Slides TP](https://drive.google.com/file/d/1jFMlmnG0Aik4L17XbKI2EmzGYo1CH7mJ/view?usp=sharing)
+* :fontawesome-regular-file-pdf: [Slides TP](https://docs.google.com/presentation/d/1HtQb1Flv8BUBiSt9WaKAr09wrQimp7OOfHVsVwVN9uA/edit?usp=sharing)
 
 ### Videos de la clase grabada
 
-* :octicons-video-16: [Cierre TP](https://www.youtube.com/watch?v=iqwjW6oZKO8)
+* :octicons-video-16: [Cierre TP](https://youtu.be/sVNfC4hKA6c)
 
--->
 
 
 ### Software a usar
