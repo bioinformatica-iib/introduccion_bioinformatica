@@ -162,7 +162,7 @@ nav:
         - TP 9a - Modelado por Homología: 'practicos/TP09a_Modelado_Por_Homologia/index.md'
         - TP 9b - Modelado usando AlphaFold: 'practicos/TP09b_AlphaFold/index.md'
         - TP 10a - Clustering: 'practicos/TP10a_Clustering/index.md'
-      #  - TP 10b - Data Mining: 'practicos/TP10b_Data_Mining/index.md'
+        - TP 10b - Data Mining: 'practicos/TP10b_Data_Mining/index.md'
       #  - TP 11 - HMMs & ANNs: 'practicos/TP11_HMM_ANN/index.md'
       #  - TP 12 - Short Read Mapping: 'practicos/TP12_Short-Read-Mapping/index.md'
       #  - TP 13 - Genomica Comparativa: 'practicos/TP13_Genomica_Comparativa/index.md'
