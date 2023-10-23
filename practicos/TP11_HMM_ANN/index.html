@@ -1171,18 +1171,18 @@ https://www.youtube.com/watch?v=XFBQW5qKXdE)
 <li>Crear una base de datos de perfiles de secuencias y utilizar la misma para identificar dominios conservados en secuencias <em>query</em>.</li>
 </ul>
 <h2 id="parte-i-artificial-neural-networks">Parte I. Artificial neural networks</h2>
-<p>En esta sección vamos a utilizar redes neuronales para hacer predicciones como habíamos hecho anteriormente con las PSSM. La idea es similar a la del TP5 donde entrenamos un modelo con péptidos que se unen a MHC. Variaremos los parámetros de modelo para mejorarlo, sensando en cada corrida los indicadores de desempeño del mismo (<strong>Aroc</strong> y <strong>Pearson correlation coefficient</strong>). </p>
+<p>En esta sección vamos a utilizar redes neuronales para hacer predicciones como habíamos hecho anteriormente con las PSSM. La idea es similar a la del TP6 donde entrenamos un modelo con péptidos que se unen a MHC. Variaremos los parámetros de modelo para mejorarlo, sensando en cada corrida los indicadores de desempeño del mismo (<strong>Aroc</strong> y <strong>Pearson correlation coefficient</strong>). </p>
 <div class="admonition attention">
 <p class="admonition-title">Atención</p>
-<p>Si no recuerdan qué significan las métricas <strong>Aroc</strong> y <strong>Pearson correlation coefficient (PCC)</strong> diríjanse al TP5 para refrescar estos conceptos.</p>
+<p>Si no recuerdan qué significan las métricas <strong>Aroc</strong> y <strong>Pearson correlation coefficient (PCC)</strong> diríjanse al TP6 para refrescar estos conceptos.</p>
 </div>
 <p>Para esto vamos a volver a utilizar <a href="https://services.healthtech.dtu.dk/service.php?EasyPred-1.0">EasyPred</a> y los archivos de <strong>Entrenamiento.set</strong> y <strong>Evaluacion.set</strong> en la carpeta del TP (que descargaron al inicio).</p>
 <ul>
 <li><strong>Entrenamiento.set</strong> contiene 1200 péptidos de longitud 9, con un valor asociado de afinidad de unión a HLA-A*02:01 transformado entre 0 y 1. Recuerde que mientras más cercano a 1 el péptido tiene mayor afinidad de unión y que a partir de 0.426 se considera que el péptido es un ligando. </li>
 <li><strong>Evaluacion.set</strong> contiene 66 péptidos, también con sus valores correspondientes de afinidad de unión. </li>
 </ul>
-<p>Para el entrenamiento del modelo se particionará el archivo <strong>Entrenamiento.set</strong>, de tal manera que una parte se usará para entrenar y la restante se empleará para ir monitoreando el proceso de entrenamiento y así evitar el sobreajuste de los pesos de nuestra red.
-Luego el archivo <strong>Evaluacion.set</strong> contiene datos independientes, que se utilizarán para evaluar la capacidad de generalización de nuestro modelo. </p>
+<p>Para el entrenamiento del modelo se particionará el archivo <strong>Entrenamiento.set</strong>, de tal manera que una parte se usará para entrenar y la restante se empleará para ir monitoreando el proceso de entrenamiento y así evitar el sobreajuste de los pesos de nuestra red.</p>
+<p>Luego el archivo <strong>Evaluacion.set</strong> contiene datos independientes, que se utilizarán para evaluar la capacidad de generalización de nuestro modelo. </p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Es recomendable abrir los archivos y ver qué es lo que contienen. Esto SIEMPRE es una buena práctica.</p>
@@ -1436,8 +1436,12 @@ less globin.swissprot.search
 <h3 id="bases-de-datos-de-hmm">Bases de datos de HMM</h3>
 <p>Así como nos es posible realizar búsquedas de <em>profiles</em> contra bases de datos de secuencias, podemos crear una base de datos de <em>profiles</em> y utilizar como <em>query</em> a una secuencia. Este es el caso de la base de datos <strong>PFAM</strong> (Sonnhammer <em>et al.</em>, 1997; Sonnhammer <em>et al.</em>, 1998) que nuclea <em>profiles</em> de una gran variedad de dominios y es una herramienta sumamente utilizada para analizar secuencias de proteínas de las cuales no tenemos información previa.</p>
 <p>Como ejemplo, tomemos el producto del gen <em>Sevenless</em> de <em>Drosophila melanogaster</em> que codifica un receptor de <em>tyrosine kinase</em> esencial para el desarrollo de las células R7 del ojo de la mosca. 
-La secuencia proteica de este receptor se encuentra en el archivo <strong>7LES_DROME</strong>. Realice una búsqueda de esta secuencia en <a href="http://pfam.xfam.org/search#tabview=tab0">PFAM</a>. Para esto haga click en la pestaña <em>Sequence</em> en el menú de la izquierda y pegue la secuencia en el recuadro correspondiente. </p>
-<p>¿Qué dominios fueron identificados en esta proteína? Recuerde estos resultados para contrastarlo con lo que hará más adelante. </p>
+La secuencia proteica de este receptor se encuentra en el archivo <strong>7LES_DROME</strong>. Realice una búsqueda de esta secuencia en <a href="http://pfam-legacy.xfam.org/">PFAM</a>. Para esto ingrese en <strong>JUMP TO</strong> el accession number de la secuencia: P13368.
+En la tabla de resultados vaya al final y haga click en <em>Show</em> donde dice: <em>Show or hide domain scores.</em></p>
+<p>Inspeccione la tabla y conteste:</p>
+<ul>
+<li>¿Qué dominios fueron identificados en esta proteína y en qué posiciones se encuentran? Recuerde estos resultados para contrastarlo con lo que hará más adelante. </li>
+</ul>
 <p>Las bases de datos de <em>profiles</em> no son más que múltiples HMMs concatenados, por lo que el comando para construirlas es también <strong>hmm2build</strong>, pero vamos a utilizar la opción <strong>-A</strong> (append) para agregar nuevos <em>profiles</em> a nuestro archivo de HMMs original.</p>
 <p>Por ejemplo, si queremos construir una base de datos <strong>"myhmms"</strong> que contiene perfiles de dominios <strong>rrm</strong> de reconocimiento de ARN, <strong>fn3</strong> de fibronectina tipo III y <strong>pkinase</strong> del dominio catalítico de las kinasas podemos realizarlo fácilmente con:</p>
 <div class="highlight"><pre><span></span><code>hmm2build -A myhmms rrm.sto
@@ -1463,21 +1467,29 @@ hmm2build -A myhmms pkinase.sto
 <h2 id="ejercicio-a-informar">Ejercicio a informar</h2>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p><span style="font-weight:bold;">Fecha límite de entrega:</span> Viernes, 30 de Septiembre 2022, 23:59hs.</p>
+<p><span style="font-weight:bold;">Fecha límite de entrega:</span> Viernes, 10 de Noviembre 2023, 23:59hs.</p>
 </div>
 <h3 id="enunciado">Enunciado</h3>
 <p>Su jefe analizó los resultados de la identificación de ligandos de HLA-A02*01 utilizando una PSSM. Lamentablemente no está muy conforme con los resultados porque considera que hay métodos mejores para realizar esta predicción.</p>
-<p>Por lo tanto, usted decide volver a realizar las predicciones, utilizando la red que entrenó en la cuarta prueba del TP7, para las mismas proteínas de la variante de coronavirus que está estudiando actualmente. Recordemos que eran las siguientes: proteína <strong>S</strong> (spike o proteína de glicoproteína de superficie), <strong>E</strong> (proteína de la envoltura), <strong>M</strong> (proteína de membrana) y <strong>N</strong> (fosfoproteína de la nucleocápside).</p>
+<p>Por lo tanto, usted decide volver a realizar las predicciones, utilizando la red que entrenó en la cuarta prueba del TP11, para las mismas proteínas de la variante de coronavirus que está estudiando actualmente. Recordemos que eran las siguientes: proteína <strong>S</strong> (spike o proteína de glicoproteína de superficie), <strong>E</strong> (proteína de la envoltura), <strong>M</strong> (proteína de membrana) y <strong>N</strong> (fosfoproteína de la nucleocápside).</p>
 <p>Para lograr su objetivo utilizará la herramienta <strong>EasyPred</strong>. Como va a realizar una predicción, siga los mismos pasos que realizó para hacer la predicción con la PSSM con la diferencia de que en <strong>Load saved prediction method</strong> debe subir el archivo con los pesos de la red. Seleccione <strong>Sort output on predicted values</strong> y apriete el botón <strong>Submit query</strong>.</p>
 <ol>
 <li>Interprete la salida que obtiene al correr <strong>Easypred</strong>. ¿Cuántas redes se utilizan para realizar las predicciones?</li>
-<li>¿Cuántos péptidos se podrían considerar ligandos en cada caso? Recuerde los umbrales para la clasificación de ligandos que enunciamos en los TP5 y TP7.</li>
+<li>¿Cuántos péptidos se podrían considerar ligandos en cada caso? Recuerde los umbrales para la clasificación de ligandos que enunciamos en los TP6 y TP11.</li>
 <li>¿Cuáles son los péptidos que elegiría para testear en el laboratorio de cada una de las proteínas analizadas? Tenga en cuenta que puede elegir como máximo 5 péptidos en total.</li>
 <li>Teniendo en cuenta su respuesta al punto 2., ¿tiene sentido este resultado considerando la alta especificidad del MHC analizado?</li>
 <li>Ingrese a Seq2Logo y genere un logo con todos los péptidos que etiquetó como ligandos. Ajuste los parámetros según su criterio. </li>
 <li>En base a los conocimientos adquiridos, ¿le parece razonable el motivo hallado para el alelo HLA-A*02:01? ¿Puede ver claramente las posiciones ancla? ¿Qué aminoácidos son los preferidos para estas posiciones?</li>
-<li>Compare el logo obtenido con el que construyó para el ejercicio final del TP5 (péptidos con un puntaje predicho mayor a 1). ¿Qué diferencias y similitudes observa? ¿Qué diferencia observa en el information content (eje y), y a qué se lo atribuye? ¿Por qué cree que el motivo generado por redes neuronales es más parecido a lo ya conocido en la literatura que el motivo construído a partir de la PSSM?</li>
-<li>Ahora compare <strong>todas</strong> las predicciones realizadas con la PSSM con las obtenidas utilizando la red neuronal. Calcule el coeficiente de correlación de Pearson y Spearman entre ambos conjuntos de predicciones. Investigue cuál de estas dos métricas sería la más adecuada para realizar esta comparación (Pista: ¿Notó que las predicciones están en diferentes escalas?). Para completar esta tarea puede usar Excel (ver Extras) o cualquier otro programa de su preferencia. A su jefe le gustan las figuras, así que decide realizar un plot o gráfico de dispersión de los datos, además de calcular las métricas enunciadas anteriormente. </li>
+<li>
+<p>Compare el logo obtenido con el que construyó para el ejercicio final del TP6 (péptidos con un puntaje predicho mayor a 1).</p>
+<ul>
+<li>¿Qué diferencias y similitudes observa? ¿Qué diferencia observa en el information content (eje y), y a qué se lo atribuye?</li>
+<li>¿Por qué cree que el motivo generado por redes neuronales es más parecido a lo ya conocido en la literatura que el motivo construído a partir de la PSSM?</li>
+</ul>
+</li>
+<li>
+<p>Ahora compare <strong>todas</strong> las predicciones realizadas con la PSSM con las obtenidas utilizando la red neuronal. Calcule el coeficiente de correlación de Pearson y Spearman entre ambos conjuntos de predicciones. Investigue cuál de estas dos métricas sería la más adecuada para realizar esta comparación (Pista: ¿Notó que las predicciones están en diferentes escalas?). Para completar esta tarea puede usar Excel (ver Extras) o cualquier otro programa de su preferencia. A su jefe le gustan las figuras, así que decide realizar un plot o gráfico de dispersión de los datos, además de calcular las métricas enunciadas anteriormente. </p>
+</li>
 </ol>
 <div class="admonition example">
 <p class="admonition-title">Extras (y por ende opcionales):</p>
