@@ -1,5 +1,5 @@
 ---
-title: Teorica Siete
+title: Teorica Diez
 tags: 
   - teoricas
 ---

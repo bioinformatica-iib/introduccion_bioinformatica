@@ -142,7 +142,7 @@ nav:
         - Teórica 7: teoricas/7-Teorica-Siete/index.md
         - Teórica 8: teoricas/8-Teorica-Ocho/index.md
         - Teórica 9: teoricas/9-Teorica-Nueve/index.md
-      #  - Teórica 10: teoricas/10-Teorica-Diez/index.md
+        - Teórica 10: teoricas/10-Teorica-Diez/index.md
       #  - Teórica 11: teoricas/11-Teorica-Once/index.md
       #  - Teórica 12: teoricas/12-Teorica-Doce/index.md
         #- Resumen: teoricas/resumen.md
@@ -163,7 +163,7 @@ nav:
         - TP 9b - Modelado usando AlphaFold: 'practicos/TP09b_AlphaFold/index.md'
         - TP 10a - Clustering: 'practicos/TP10a_Clustering/index.md'
         - TP 10b - Data Mining: 'practicos/TP10b_Data_Mining/index.md'
-      #  - TP 11 - HMMs & ANNs: 'practicos/TP11_HMM_ANN/index.md'
+        - TP 11 - HMMs & ANNs: 'practicos/TP11_HMM_ANN/index.md'
       #  - TP 12 - Short Read Mapping: 'practicos/TP12_Short-Read-Mapping/index.md'
       #  - TP 13 - Genomica Comparativa: 'practicos/TP13_Genomica_Comparativa/index.md'
       #  - TP 6 - Filogenias: 'practicos/TP06_Filogenia/index.md'
