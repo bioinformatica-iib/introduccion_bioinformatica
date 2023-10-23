@@ -18,8 +18,6 @@ tags:
 
 ![type:video](https://www.youtube.com/embed/hlmJDkSPWLU)
 
-https://youtu.be/
-
 ### Neural Networks (ANN)
 
 * :fontawesome-regular-file-pdf: [Slides](./files/NNtalk_w_answers_2020.pdf)
