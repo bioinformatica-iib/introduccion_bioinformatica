@@ -1001,26 +1001,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#ejercicio-a-informar" class="md-nav__link">
-    Ejercicio a informar
-  </a>
-  
-    <nav class="md-nav" aria-label="Ejercicio a informar">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#enunciado" class="md-nav__link">
-    Enunciado
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1148,7 +1128,7 @@
 <p><a class="md-button md-button--primary" href="https://drive.google.com/file/d/1rs-ZHYblgmhGAae6JsCNrG26mzTcU6Kb/view?usp=share_link"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M480 352H346.5l-45.25 45.25C289.2 409.3 273.1 416 256 416s-33.16-6.656-45.25-18.75L165.5 352H32c-17.67 0-32 14.33-32 32v96c0 17.67 14.33 32 32 32h448c17.67 0 32-14.33 32-32v-96c0-17.7-14.3-32-32-32zm-48 104c-13.2 0-24-10.8-24-24s10.8-24 24-24 24 10.8 24 24-10.8 24-24 24zm-198.6-81.4c6.2 6.3 14.4 9.4 22.6 9.4s16.38-3.125 22.62-9.375l128-128c12.49-12.5 12.49-32.75 0-45.25-12.5-12.5-32.76-12.5-45.25 0L288 274.8V32c0-17.67-14.33-32-32-32-17.7 0-32 14.33-32 32v242.8l-73.4-73.4c-12.49-12.5-32.75-12.5-45.25 0-12.49 12.5-12.49 32.75 0 45.25L233.4 374.6z"/></svg></span> Materiales</a></p>
 <p><br></p>
 <div class="admonition abstract">
-<p class="admonition-title">Atención: Este TP tiene informe.</p>
+<p class="admonition-title">Atención: Este TP NO tiene informe.</p>
 </div>
 <!--
 ### Slides mostrados en la clase
@@ -1464,49 +1444,45 @@ hmm2build -A myhmms pkinase.sto
 </code></pre></div>
 <p>mediante la opción <code>-o</code> indicamos el archivo en el que deseamos guardar el alineamiento (<strong>globins630.ali</strong>), y como argumentos debemos indicar el profile que vamos a utilizar como "semilla" y el archivo con las secuencias a alinear (<strong>globin.hmm</strong> y <strong>globins630.fa</strong> respectivamente). </p>
 <p>Noten que también se puede utilizar la opción <code>--outformat</code> para cambiar el formato del alineamiento producido. Por defecto se utiliza el formato <em>Stockholm</em>, pero también puede producir alineamientos en formato <em>MSF</em>, <em>Clustal</em>, <em>Phylip</em> y <em>SELEX</em>.</p>
-<h2 id="ejercicio-a-informar">Ejercicio a informar</h2>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p><span style="font-weight:bold;">Fecha límite de entrega:</span> Viernes, 10 de Noviembre 2023, 23:59hs.</p>
-</div>
-<h3 id="enunciado">Enunciado</h3>
-<p>Su jefe analizó los resultados de la identificación de ligandos de HLA-A02*01 utilizando una PSSM. Lamentablemente no está muy conforme con los resultados porque considera que hay métodos mejores para realizar esta predicción.</p>
-<p>Por lo tanto, usted decide volver a realizar las predicciones, utilizando la red que entrenó en la cuarta prueba del TP11, para las mismas proteínas de la variante de coronavirus que está estudiando actualmente. Recordemos que eran las siguientes: proteína <strong>S</strong> (spike o proteína de glicoproteína de superficie), <strong>E</strong> (proteína de la envoltura), <strong>M</strong> (proteína de membrana) y <strong>N</strong> (fosfoproteína de la nucleocápside).</p>
-<p>Para lograr su objetivo utilizará la herramienta <strong>EasyPred</strong>. Como va a realizar una predicción, siga los mismos pasos que realizó para hacer la predicción con la PSSM con la diferencia de que en <strong>Load saved prediction method</strong> debe subir el archivo con los pesos de la red. Seleccione <strong>Sort output on predicted values</strong> y apriete el botón <strong>Submit query</strong>.</p>
-<ol>
-<li>Interprete la salida que obtiene al correr <strong>Easypred</strong>. ¿Cuántas redes se utilizan para realizar las predicciones?</li>
-<li>¿Cuántos péptidos se podrían considerar ligandos en cada caso? Recuerde los umbrales para la clasificación de ligandos que enunciamos en los TP6 y TP11.</li>
-<li>¿Cuáles son los péptidos que elegiría para testear en el laboratorio de cada una de las proteínas analizadas? Tenga en cuenta que puede elegir como máximo 5 péptidos en total.</li>
-<li>Teniendo en cuenta su respuesta al punto 2., ¿tiene sentido este resultado considerando la alta especificidad del MHC analizado?</li>
-<li>Ingrese a Seq2Logo y genere un logo con todos los péptidos que etiquetó como ligandos. Ajuste los parámetros según su criterio. </li>
-<li>En base a los conocimientos adquiridos, ¿le parece razonable el motivo hallado para el alelo HLA-A*02:01? ¿Puede ver claramente las posiciones ancla? ¿Qué aminoácidos son los preferidos para estas posiciones?</li>
-<li>
-<p>Compare el logo obtenido con el que construyó para el ejercicio final del TP6 (péptidos con un puntaje predicho mayor a 1).</p>
-<ul>
-<li>¿Qué diferencias y similitudes observa? ¿Qué diferencia observa en el information content (eje y), y a qué se lo atribuye?</li>
-<li>¿Por qué cree que el motivo generado por redes neuronales es más parecido a lo ya conocido en la literatura que el motivo construído a partir de la PSSM?</li>
-</ul>
-</li>
-<li>
-<p>Ahora compare <strong>todas</strong> las predicciones realizadas con la PSSM con las obtenidas utilizando la red neuronal. Calcule el coeficiente de correlación de Pearson y Spearman entre ambos conjuntos de predicciones. Investigue cuál de estas dos métricas sería la más adecuada para realizar esta comparación (Pista: ¿Notó que las predicciones están en diferentes escalas?). Para completar esta tarea puede usar Excel (ver Extras) o cualquier otro programa de su preferencia. A su jefe le gustan las figuras, así que decide realizar un plot o gráfico de dispersión de los datos, además de calcular las métricas enunciadas anteriormente. </p>
-</li>
-</ol>
-<div class="admonition example">
-<p class="admonition-title">Extras (y por ende opcionales):</p>
-<ol>
-<li>
-<p>Puede realizar un <code>for</code> loop junto con un <code>awk</code> para seleccionar los péptidos relevantes de cada una de las proteínas (recuerde que en un TP se realizó un <code>awk</code> para seleccionar columnas).</p>
-</li>
-<li>
-<p>Para completar el punto 8., puede usar R para calcular las métricas y ggplot2 para realizar el gráfico de dispersión. </p>
-</li>
-</ol>
-<p>Algunos links que les pueden resultar útiles para resolver el punto 8. y los extras:</p>
-<ul>
-<li><a href="https://cran.r-project.org/web/packages/correlation/vignettes/types.html">Cálculo de coeficientes de correlación en R</a></li>
-<li><a href="http://www.cookbook-r.com/Graphs/Scatterplots_(ggplot2)/">Scatterplot en ggplot2</a></li>
-</ul>
-</div>
+<!--
+## Ejercicio a informar
+
+!!! info 
+
+    <span style="font-weight:bold;">Fecha límite de entrega:</span> Viernes, 10 de Noviembre 2023, 23:59hs.
+
+### Enunciado
+
+Su jefe analizó los resultados de la identificación de ligandos de HLA-A02*01 utilizando una PSSM. Lamentablemente no está muy conforme con los resultados porque considera que hay métodos mejores para realizar esta predicción.
+
+Por lo tanto, usted decide volver a realizar las predicciones, utilizando la red que entrenó en la cuarta prueba del TP11, para las mismas proteínas de la variante de coronavirus que está estudiando actualmente. Recordemos que eran las siguientes: proteína **S** (spike o proteína de glicoproteína de superficie), **E** (proteína de la envoltura), **M** (proteína de membrana) y **N** (fosfoproteína de la nucleocápside).
+
+Para lograr su objetivo utilizará la herramienta **EasyPred**. Como va a realizar una predicción, siga los mismos pasos que realizó para hacer la predicción con la PSSM con la diferencia de que en **Load saved prediction method** debe subir el archivo con los pesos de la red. Seleccione **Sort output on predicted values** y apriete el botón **Submit query**.
+
+1. Interprete la salida que obtiene al correr **Easypred**. ¿Cuántas redes se utilizan para realizar las predicciones?
+1. ¿Cuántos péptidos se podrían considerar ligandos en cada caso? Recuerde los umbrales para la clasificación de ligandos que enunciamos en los TP6 y TP11.
+1. ¿Cuáles son los péptidos que elegiría para testear en el laboratorio de cada una de las proteínas analizadas? Tenga en cuenta que puede elegir como máximo 5 péptidos en total.
+1. Teniendo en cuenta su respuesta al punto 2., ¿tiene sentido este resultado considerando la alta especificidad del MHC analizado?
+1. Ingrese a Seq2Logo y genere un logo con todos los péptidos que etiquetó como ligandos. Ajuste los parámetros según su criterio. 
+1. En base a los conocimientos adquiridos, ¿le parece razonable el motivo hallado para el alelo HLA-A*02:01? ¿Puede ver claramente las posiciones ancla? ¿Qué aminoácidos son los preferidos para estas posiciones?
+1. Compare el logo obtenido con el que construyó para el ejercicio final del TP6 (péptidos con un puntaje predicho mayor a 1).
+
+    * ¿Qué diferencias y similitudes observa? ¿Qué diferencia observa en el information content (eje y), y a qué se lo atribuye?
+    * ¿Por qué cree que el motivo generado por redes neuronales es más parecido a lo ya conocido en la literatura que el motivo construído a partir de la PSSM?
+
+1. Ahora compare **todas** las predicciones realizadas con la PSSM con las obtenidas utilizando la red neuronal. Calcule el coeficiente de correlación de Pearson y Spearman entre ambos conjuntos de predicciones. Investigue cuál de estas dos métricas sería la más adecuada para realizar esta comparación (Pista: ¿Notó que las predicciones están en diferentes escalas?). Para completar esta tarea puede usar Excel (ver Extras) o cualquier otro programa de su preferencia. A su jefe le gustan las figuras, así que decide realizar un plot o gráfico de dispersión de los datos, además de calcular las métricas enunciadas anteriormente. 
+
+!!! example "Extras (y por ende opcionales):"
+
+    1. Puede realizar un `for` loop junto con un `awk` para seleccionar los péptidos relevantes de cada una de las proteínas (recuerde que en un TP se realizó un `awk` para seleccionar columnas).
+
+    1. Para completar el punto 8., puede usar R para calcular las métricas y ggplot2 para realizar el gráfico de dispersión. 
+
+    Algunos links que les pueden resultar útiles para resolver el punto 8. y los extras:
+
+    * [Cálculo de coeficientes de correlación en R](https://cran.r-project.org/web/packages/correlation/vignettes/types.html)
+    * [Scatterplot en ggplot2](http://www.cookbook-r.com/Graphs/Scatterplots_(ggplot2)/)
+-->
 <p><br></p>
 
               
