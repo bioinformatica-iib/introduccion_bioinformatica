@@ -1114,7 +1114,7 @@ Recopila información sobre estructuras químicas, identificadores, propiedades 
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 </code></pre></div>
 <p>A lo largo de este práctico vamos a estar explorando las bases de datos quimioinformáticos y trabajando con los comandos básicos de RDKit para trabajar con moléculas.</p>
-<h3 id="analisis-de-datos-quimioinformaticos">Análisis de datos quimioinformáticos</h3>
+<h2 id="analisis-de-datos-quimioinformaticos">Análisis de datos quimioinformáticos</h2>
 <p>RDKit es un software quimioinformático de código abierto.</p>
 <p><a class="glightbox" href="https://www.rdkit.org/docs/_static/logo.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="texto" src="https://www.rdkit.org/docs/_static/logo.png"></a></p>
 <p>Fue desarrollado por Greg Landrum con numerosas contribuciones adicionales de la comunidad de código abierto RDKit. Tiene una interfaz de programación de aplicaciones para Python, Java, C++ y C#</p>
@@ -1126,7 +1126,7 @@ Recopila información sobre estructuras químicas, identificadores, propiedades 
 <li>Tutorials (https://github.com/rdkit/rdkit-tutorials) Jupyter-based tutorials for using the RDKit</li>
 <li>KNIME integration (https://github.com/rdkit/knime-rdkit) RDKit nodes for KNIME</li>
 </ul>
-<h4 id="generar-una-molecula-a-partir-de-smiles">Generar una molécula a partir de SMILES</h4>
+<h3 id="generar-una-molecula-a-partir-de-smiles">Generar una molécula a partir de SMILES</h3>
 <p>Para comenzar a trabajar necesitamos ingresar a la computadora el compuesto con el que vamos a trabajar, para eso vamos a generar una variable con la notación del compuesto. En este caso, vamos a usar la notación en smiles.</p>
 <p>En programación se llama "variable" a la asignación de una palabra para identificar un objeto. En este caso, la palabra "smiles" la vamos a usar como variable para identificar la secuencia en smiles del Benznidazol.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Generar la variable "smiles" que corresponde al smiles del Benznidazol</span>
@@ -1147,14 +1147,16 @@ Vamos a usarla mucho, a medida que la usemos vamos a ver que se puede hacer con 
 <div class="highlight"><pre><span></span><code><span class="c1"># Generar una molécula a partir del smiles del Benznidazol</span>
 <span class="n">molecula_benznidazol</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="n">smiles_benznidazol</span><span class="p">)</span>
 </code></pre></div>
+<h4 id="actividad">Actividad:</h4>
 <p>💭 ¿Qué pasa si ahora imprimimos la variable?</p>
 <p>Ahora vamos a visualizarla!</p>
 <p>Para hacerlo, sólo tienen que ejecutar el nombre de la variabl</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Visualizar la molécula</span>
 <span class="n">molecula_benznidazol</span>
 </code></pre></div>
+<h4 id="actividad_1">Actividad:</h4>
 <p>💭 ¿Lo que observas en la celda anterior corresponde con lo que viste en PubChem y en ChEMBL?</p>
-<h4 id="obtener-moleculas-de-las-bases-de-datos">Obtener moléculas de las bases de datos</h4>
+<h3 id="obtener-moleculas-de-las-bases-de-datos">Obtener moléculas de las bases de datos</h3>
 <p>Tanto PubChem como ChEMBL tienen herramientas informáticas para obtener moléculas de sus bases de datos. En este práctico vamos a usar ChEMBL.</p>
 <p>Para trabajar con esta base de datos
 vamos a usar la libreria <code>chembl_webresource_client</code>. Esta libreria nos permite acceder a la información disponible en la base de datos. De esa librería la importamos <code>new_client</code> y le indicamos que queremos buscar en la base de datos. Podemos ver los recursos disponibles usando el comando que se encuentra a continuación:</p>
@@ -1171,6 +1173,7 @@ vamos a usar la libreria <code>chembl_webresource_client</code>. Esta libreria n
 <span class="n">moleculas_con_pirazina</span> <span class="o">=</span> <span class="n">new_client</span><span class="o">.</span><span class="n">substructure</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">smiles</span><span class="o">=</span><span class="n">pirazina</span><span class="p">,</span> <span class="n">max_phase</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">only</span><span class="p">([</span> <span class="s1">'molecule_structures'</span><span class="p">])</span>
 <span class="nb">len</span><span class="p">(</span><span class="n">moleculas_con_pirazina</span><span class="p">)</span>
 </code></pre></div>
+<h4 id="actividad_2">Actividad:</h4>
 <p>💭 ¿Que hay en la variable <code>moleculas_con_pirazina</code>?</p>
 <p>La librería <code>chembl_webresource_client</code> descarga los datos en forma de diccionario. Vamos a procesar esos datos en formato dataframe para poder trabajar con ellos. Además, vamos generar las moléculas de RDKit usando PandasTools</p>
 <div class="highlight"><pre><span></span><code><span class="c1">#Generar un DataFrame vacío</span>
@@ -1193,7 +1196,7 @@ vamos a usar la libreria <code>chembl_webresource_client</code>. Esta libreria n
 <span class="nb">print</span><span class="p">(</span><span class="n">df_moleculas_con_pirazina</span><span class="p">)</span>
 </code></pre></div>
 <p>💭 ¿Que información tenemos en el DataFrame?</p>
-<h3 id="propiedades-fisicoquimicas">Propiedades fisicoquímicas</h3>
+<h2 id="propiedades-fisicoquimicas">Propiedades fisicoquímicas</h2>
 <p>Ahora vamos a calcular los predictores de la clase. </p>
 <p>Para hacerlo, vamos a usar la función <code>Descriptors</code> y <code>Chem</code> de RDKit.</p>
 <p>Esta función permite indicar que tipo de descriptor queremos calcular para una molécula.</p>
@@ -1220,6 +1223,7 @@ vamos a usar la libreria <code>chembl_webresource_client</code>. Esta libreria n
 <span class="c1"># Calcular el número de enlaces rotativos en la molécula</span>
 <span class="n">rotatable_bonds</span> <span class="o">=</span> <span class="n">Descriptors</span><span class="o">.</span><span class="n">NumRotatableBonds</span><span class="p">(</span><span class="n">molecula</span><span class="p">)</span>
 </code></pre></div>
+<h4 id="actividad_3">Actividad:</h4>
 <p>💭 Calculen las propiedades para <code>molecula_benznidazol</code></p>
 <p>Para calcular todas las propiedades en un sólo paso podemos definir una función que haga todos los pasos:</p>
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">drug_likness_decriptors</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
@@ -1287,6 +1291,7 @@ vamos a usar la libreria <code>chembl_webresource_client</code>. Esta libreria n
 <p>Y ahora usamos esa función en el <code>df_moleculas_con_pirazina</code></p>
 <div class="highlight"><pre><span></span><code><span class="n">df_moleculas_con_pirazina</span> <span class="o">=</span> <span class="n">drug_likness_decriptors</span><span class="p">(</span><span class="n">df_moleculas_con_pirazina</span><span class="p">)</span>
 </code></pre></div>
+<h4 id="actividad_4">Actividad:</h4>
 <p>💭 ¿Que información tenemos ahora en el DataFrame?</p>
 <p>Es dificil visualizar la información en una tabla, entonces vamos a realizar histogramas de las propiedades que calculamos.</p>
 <p>Existen dos librerías para graficar en python:</p>
@@ -1297,6 +1302,7 @@ vamos a usar la libreria <code>chembl_webresource_client</code>. Esta libreria n
 <p>¡Vamos a probar como se ve el grafico de tipo hisograma en Seaborn!</p>
 <div class="highlight"><pre><span></span><code><span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">df_moleculas_con_pirazina</span><span class="p">[</span><span class="s1">'nRotB'</span><span class="p">])</span>
 </code></pre></div>
+<h4 id="actividad_5">Actividad:</h4>
 <p>💭 Realizá el gráfico de peso molecular</p>
 <p>También pueden graficar todos los parámetros juntos usando el siguiente comando:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Crear una figura con un arreglo de subplots de 2 filas y 2 columnas, con un tamaño de 8x8 pulgadas</span>
@@ -1321,6 +1327,7 @@ vamos a usar la libreria <code>chembl_webresource_client</code>. Esta libreria n
 <span class="c1"># Guardar la figura como un archivo PNG</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">'sns_histogramas.png'</span><span class="p">)</span>
 </code></pre></div>
+<h4 id="actividad_6">Actividad:</h4>
 <p>💭 Editá el comando para agregar el gráfico de número de enlaces rotativos en la molécula.</p>
 <p>Si quieren leer más al respecto de histogramas en Seaborn pueden ingresar al siguiente <a href="https://seaborn.pydata.org/generated/seaborn.histplot.html#seaborn.histplot">link</a></p>
 <h2 id="ejercicio-integrador">Ejercicio integrador</h2>
