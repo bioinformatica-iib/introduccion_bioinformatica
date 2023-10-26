@@ -259,7 +259,7 @@ molecula_benznidazol = Chem.MolFromSmiles(smiles_benznidazol)
 
 Ahora vamos a visualizarla!
 
-Para hacerlo, sólo tienen que ejecutar el nombre de la variabl
+Para hacerlo, sólo tienen que ejecutar el nombre de la variable
 
 ```Python
 # Visualizar la molécula
