@@ -10,7 +10,7 @@
 
 <br>
 
-!!! abstract "Atención: Este TP tiene informe."
+!!! abstract "Atención: Este TP NO tiene informe."
 
 <!--
 ### Slides mostrados en la clase
@@ -402,6 +402,7 @@ mediante la opción `-o` indicamos el archivo en el que deseamos guardar el alin
 
 Noten que también se puede utilizar la opción `--outformat` para cambiar el formato del alineamiento producido. Por defecto se utiliza el formato *Stockholm*, pero también puede producir alineamientos en formato *MSF*, *Clustal*, *Phylip* y *SELEX*.
 
+<!--
 ## Ejercicio a informar
 
 !!! info 
@@ -439,7 +440,7 @@ Para lograr su objetivo utilizará la herramienta **EasyPred**. Como va a realiz
 
     * [Cálculo de coeficientes de correlación en R](https://cran.r-project.org/web/packages/correlation/vignettes/types.html)
     * [Scatterplot en ggplot2](http://www.cookbook-r.com/Graphs/Scatterplots_(ggplot2)/)
-
+-->
 <br>
 
 
