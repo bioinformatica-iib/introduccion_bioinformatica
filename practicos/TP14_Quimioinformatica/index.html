@@ -1204,12 +1204,24 @@ vamos a usar la libreria <code>chembl_webresource_client</code>. Esta libreria n
 <p>Ahora vamos a calcular los predictores de la clase. </p>
 <p>Para hacerlo, vamos a usar la función <code>Descriptors</code> y <code>Chem</code> de RDKit.</p>
 <p>Esta función permite indicar que tipo de descriptor queremos calcular para una molécula.</p>
-<p>Vamos a calcular:
-* El número de donodores de enlaces de hidrógeno en la molécula 
-* El número de aceptores de enlaces de hidrógeno en la molécula
-* El peso molecular de la molécula
-* El logP (coeficiente de partición octanol-agua) de la molécula
-* El número de enlaces rotativos en la molécula</p>
+<p>Vamos a calcular:</p>
+<ul>
+<li>
+<p>El número de donodores de enlaces de hidrógeno en la molécula </p>
+</li>
+<li>
+<p>El número de aceptores de enlaces de hidrógeno en la molécula</p>
+</li>
+<li>
+<p>El peso molecular de la molécula</p>
+</li>
+<li>
+<p>El logP (coeficiente de partición octanol-agua) de la molécula</p>
+</li>
+<li>
+<p>El número de enlaces rotativos en la molécula</p>
+</li>
+</ul>
 <p>RDKit permite calcular más descriptores, pero estos son los más usados. Si quieren saber más sobre esto pueden acceder al <a href="https://www.rdkit.org/docs/source/rdkit.Chem.rdMolDescriptors.html">manual de RDKit</a></p>
 <p>Para calcular las propiedades podemos usar este código reemplazando <strong>molecula</strong> por el nombre de la molecula que quieran usar:
 </p><div class="highlight"><pre><span></span><code><span class="c1"># Calcular el peso molecular exacto de la molécula</span>
