@@ -156,6 +156,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP14_Quimioinformatica/</loc>
+         <lastmod>2023-10-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TPXX_Filogenia/</loc>
          <lastmod>2023-10-26</lastmod>
          <changefreq>daily</changefreq>
