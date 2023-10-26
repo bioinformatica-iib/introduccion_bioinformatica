@@ -341,10 +341,15 @@ Para hacerlo, vamos a usar la función `Descriptors` y `Chem` de RDKit.
 Esta función permite indicar que tipo de descriptor queremos calcular para una molécula.
 
 Vamos a calcular:
+
 * El número de donodores de enlaces de hidrógeno en la molécula 
+
 * El número de aceptores de enlaces de hidrógeno en la molécula
+
 * El peso molecular de la molécula
+
 * El logP (coeficiente de partición octanol-agua) de la molécula
+
 * El número de enlaces rotativos en la molécula
 
 RDKit permite calcular más descriptores, pero estos son los más usados. Si quieren saber más sobre esto pueden acceder al [manual de RDKit](https://www.rdkit.org/docs/source/rdkit.Chem.rdMolDescriptors.html)
