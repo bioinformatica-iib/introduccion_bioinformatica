@@ -253,6 +253,9 @@ molecula_benznidazol = Chem.MolFromSmiles(smiles_benznidazol)
 #### Actividad:
 
 💭 ¿Qué pasa si ahora imprimimos la variable?
+```Python
+#Escribí el código acá
+```
 
 Ahora vamos a visualizarla!
 
@@ -299,6 +302,9 @@ len(moleculas_con_pirazina)
 #### Actividad:
 
 💭 ¿Que hay en la variable `moleculas_con_pirazina`?
+```Python
+#Escribí el código acá
+```
 
 La librería `chembl_webresource_client` descarga los datos en forma de diccionario. Vamos a procesar esos datos en formato dataframe para poder trabajar con ellos. Además, vamos generar las moléculas de RDKit usando PandasTools
 
@@ -364,6 +370,9 @@ rotatable_bonds = Descriptors.NumRotatableBonds(molecula)
 #### Actividad:
 
 💭 Calculen las propiedades para `molecula_benznidazol`
+```Python
+#Escribí el código acá
+```
 
 Para calcular todas las propiedades en un sólo paso podemos definir una función que haga todos los pasos:
 
@@ -440,6 +449,9 @@ df_moleculas_con_pirazina = drug_likness_decriptors(df_moleculas_con_pirazina)
 #### Actividad:
 
 💭 ¿Que información tenemos ahora en el DataFrame?
+```Python
+#Escribí el código acá
+```
 
 Es dificil visualizar la información en una tabla, entonces vamos a realizar histogramas de las propiedades que calculamos.
 
@@ -457,6 +469,9 @@ sns.histplot(df_moleculas_con_pirazina['nRotB'])
 #### Actividad:
 
 💭 Realizá el gráfico de peso molecular
+```Python
+#Escribí el código acá
+```
 
 También pueden graficar todos los parámetros juntos usando el siguiente comando:
 
@@ -487,6 +502,9 @@ plt.savefig('sns_histogramas.png')
 #### Actividad:
 
 💭 Editá el comando para agregar el gráfico de número de enlaces rotativos en la molécula.
+```Python
+#Escribí el código acá
+```
 
 Si quieren leer más al respecto de histogramas en Seaborn pueden ingresar al siguiente [link](https://seaborn.pydata.org/generated/seaborn.histplot.html#seaborn.histplot)
 
