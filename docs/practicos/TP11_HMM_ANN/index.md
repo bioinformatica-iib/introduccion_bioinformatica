@@ -1,28 +1,29 @@
 ![Image](img/banner.jpg){ width="250", align="left" }
 
-# **TP 7**. Artificial Neural Networks (ANNs) y Hidden Markov Models (HMMs) { markdown data-toc-label = 'TP 7' }
+# **TP 11**. Artificial Neural Networks (ANNs) y Hidden Markov Models (HMMs) { markdown data-toc-label = 'TP 11' }
 
 <br>
 <br>
 <br>
 
-[:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1GrCbM-rWvnxdrJ_dJeGaoaYstEUpMMYN/view?usp=sharing){ .md-button .md-button--primary }
+[:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1rs-ZHYblgmhGAae6JsCNrG26mzTcU6Kb/view?usp=share_link){ .md-button .md-button--primary }
 
 <br>
 
-!!! abstract "Atención: Este TP tiene informe."
+!!! abstract "Atención: Este TP NO tiene informe."
 
+<!--
 ### Slides mostrados en la clase
 
 * :fontawesome-regular-file-pdf: [Explicación ANNs](https://docs.google.com/presentation/d/1QJHn0rxV3sIW3Prb9-loM91DgPnVwR0M6PQTYYzjYMQ/edit?usp=sharing)
 * :fontawesome-regular-file-pdf: [Explicación HMMs](https://docs.google.com/presentation/d/107NFfznzLTd0RDTQ_dmyBzrBs3Ri8tqbkyoru28FjYU/edit?usp=sharing)
-
 ### Videos de la clase grabada
 
 * :octicons-video-16: [Introducción ANNs](
 https://www.youtube.com/watch?v=XFBQW5qKXdE)
 * :octicons-video-16: [Puesta en común ANNs](https://www.youtube.com/watch?v=EXrwYBp6FQw)
 * :octicons-video-16: [Ejercicio guiado HMMer](https://www.youtube.com/watch?v=5Rpo7dZaTyQ)
+-->
 
 
 ## Objetivos
@@ -35,11 +36,11 @@ https://www.youtube.com/watch?v=XFBQW5qKXdE)
 
 ## Parte I. Artificial neural networks
 
-En esta sección vamos a utilizar redes neuronales para hacer predicciones como habíamos hecho anteriormente con las PSSM. La idea es similar a la del TP5 donde entrenamos un modelo con péptidos que se unen a MHC. Variaremos los parámetros de modelo para mejorarlo, sensando en cada corrida los indicadores de desempeño del mismo (**Aroc** y **Pearson correlation coefficient**). 
+En esta sección vamos a utilizar redes neuronales para hacer predicciones como habíamos hecho anteriormente con las PSSM. La idea es similar a la del TP6 donde entrenamos un modelo con péptidos que se unen a MHC. Variaremos los parámetros de modelo para mejorarlo, sensando en cada corrida los indicadores de desempeño del mismo (**Aroc** y **Pearson correlation coefficient**). 
 
 !!! attention "Atención"
 
-    Si no recuerdan qué significan las métricas **Aroc** y **Pearson correlation coefficient (PCC)** diríjanse al TP5 para refrescar estos conceptos.
+    Si no recuerdan qué significan las métricas **Aroc** y **Pearson correlation coefficient (PCC)** diríjanse al TP6 para refrescar estos conceptos.
 
 Para esto vamos a volver a utilizar [EasyPred](https://services.healthtech.dtu.dk/service.php?EasyPred-1.0) y los archivos de **Entrenamiento.set** y **Evaluacion.set** en la carpeta del TP (que descargaron al inicio).
 
@@ -47,6 +48,7 @@ Para esto vamos a volver a utilizar [EasyPred](https://services.healthtech.dtu.d
 - **Evaluacion.set** contiene 66 péptidos, también con sus valores correspondientes de afinidad de unión. 
 
 Para el entrenamiento del modelo se particionará el archivo **Entrenamiento.set**, de tal manera que una parte se usará para entrenar y la restante se empleará para ir monitoreando el proceso de entrenamiento y así evitar el sobreajuste de los pesos de nuestra red.
+
 Luego el archivo **Evaluacion.set** contiene datos independientes, que se utilizarán para evaluar la capacidad de generalización de nuestro modelo. 
 
 !!! tip "Tip"
@@ -351,9 +353,12 @@ Por defecto `hmm2build` lleva a cabo alineamientos que son globales con respecto
 Así como nos es posible realizar búsquedas de *profiles* contra bases de datos de secuencias, podemos crear una base de datos de *profiles* y utilizar como *query* a una secuencia. Este es el caso de la base de datos **PFAM** (Sonnhammer *et al.*, 1997; Sonnhammer *et al.*, 1998) que nuclea *profiles* de una gran variedad de dominios y es una herramienta sumamente utilizada para analizar secuencias de proteínas de las cuales no tenemos información previa.
 
 Como ejemplo, tomemos el producto del gen *Sevenless* de *Drosophila melanogaster* que codifica un receptor de *tyrosine kinase* esencial para el desarrollo de las células R7 del ojo de la mosca. 
-La secuencia proteica de este receptor se encuentra en el archivo **7LES_DROME**. Realice una búsqueda de esta secuencia en [PFAM](http://pfam.xfam.org/search#tabview=tab0). Para esto haga click en la pestaña *Sequence* en el menú de la izquierda y pegue la secuencia en el recuadro correspondiente. 
+La secuencia proteica de este receptor se encuentra en el archivo **7LES_DROME**. Realice una búsqueda de esta secuencia en [PFAM](http://pfam-legacy.xfam.org/). Para esto ingrese en **JUMP TO** el accession number de la secuencia: P13368.
+En la tabla de resultados vaya al final y haga click en *Show* donde dice: *Show or hide domain scores.*
 
-¿Qué dominios fueron identificados en esta proteína? Recuerde estos resultados para contrastarlo con lo que hará más adelante. 
+Inspeccione la tabla y conteste:
+
+* ¿Qué dominios fueron identificados en esta proteína y en qué posiciones se encuentran? Recuerde estos resultados para contrastarlo con lo que hará más adelante. 
 
 Las bases de datos de *profiles* no son más que múltiples HMMs concatenados, por lo que el comando para construirlas es también **hmm2build**, pero vamos a utilizar la opción **-A** (append) para agregar nuevos *profiles* a nuestro archivo de HMMs original.
 
@@ -397,27 +402,32 @@ mediante la opción `-o` indicamos el archivo en el que deseamos guardar el alin
 
 Noten que también se puede utilizar la opción `--outformat` para cambiar el formato del alineamiento producido. Por defecto se utiliza el formato *Stockholm*, pero también puede producir alineamientos en formato *MSF*, *Clustal*, *Phylip* y *SELEX*.
 
+<!--
 ## Ejercicio a informar
 
 !!! info 
 
-    <span style="font-weight:bold;">Fecha límite de entrega:</span> Viernes, 30 de Septiembre 2022, 23:59hs.
+    <span style="font-weight:bold;">Fecha límite de entrega:</span> Viernes, 10 de Noviembre 2023, 23:59hs.
 
 ### Enunciado
 
 Su jefe analizó los resultados de la identificación de ligandos de HLA-A02*01 utilizando una PSSM. Lamentablemente no está muy conforme con los resultados porque considera que hay métodos mejores para realizar esta predicción.
 
-Por lo tanto, usted decide volver a realizar las predicciones, utilizando la red que entrenó en la cuarta prueba del TP7, para las mismas proteínas de la variante de coronavirus que está estudiando actualmente. Recordemos que eran las siguientes: proteína **S** (spike o proteína de glicoproteína de superficie), **E** (proteína de la envoltura), **M** (proteína de membrana) y **N** (fosfoproteína de la nucleocápside).
+Por lo tanto, usted decide volver a realizar las predicciones, utilizando la red que entrenó en la cuarta prueba del TP11, para las mismas proteínas de la variante de coronavirus que está estudiando actualmente. Recordemos que eran las siguientes: proteína **S** (spike o proteína de glicoproteína de superficie), **E** (proteína de la envoltura), **M** (proteína de membrana) y **N** (fosfoproteína de la nucleocápside).
 
 Para lograr su objetivo utilizará la herramienta **EasyPred**. Como va a realizar una predicción, siga los mismos pasos que realizó para hacer la predicción con la PSSM con la diferencia de que en **Load saved prediction method** debe subir el archivo con los pesos de la red. Seleccione **Sort output on predicted values** y apriete el botón **Submit query**.
 
 1. Interprete la salida que obtiene al correr **Easypred**. ¿Cuántas redes se utilizan para realizar las predicciones?
-1. ¿Cuántos péptidos se podrían considerar ligandos en cada caso? Recuerde los umbrales para la clasificación de ligandos que enunciamos en los TP5 y TP7.
+1. ¿Cuántos péptidos se podrían considerar ligandos en cada caso? Recuerde los umbrales para la clasificación de ligandos que enunciamos en los TP6 y TP11.
 1. ¿Cuáles son los péptidos que elegiría para testear en el laboratorio de cada una de las proteínas analizadas? Tenga en cuenta que puede elegir como máximo 5 péptidos en total.
 1. Teniendo en cuenta su respuesta al punto 2., ¿tiene sentido este resultado considerando la alta especificidad del MHC analizado?
 1. Ingrese a Seq2Logo y genere un logo con todos los péptidos que etiquetó como ligandos. Ajuste los parámetros según su criterio. 
 1. En base a los conocimientos adquiridos, ¿le parece razonable el motivo hallado para el alelo HLA-A*02:01? ¿Puede ver claramente las posiciones ancla? ¿Qué aminoácidos son los preferidos para estas posiciones?
-1. Compare el logo obtenido con el que construyó para el ejercicio final del TP5 (péptidos con un puntaje predicho mayor a 1). ¿Qué diferencias y similitudes observa? ¿Qué diferencia observa en el information content (eje y), y a qué se lo atribuye? ¿Por qué cree que el motivo generado por redes neuronales es más parecido a lo ya conocido en la literatura que el motivo construído a partir de la PSSM?
+1. Compare el logo obtenido con el que construyó para el ejercicio final del TP6 (péptidos con un puntaje predicho mayor a 1).
+
+    * ¿Qué diferencias y similitudes observa? ¿Qué diferencia observa en el information content (eje y), y a qué se lo atribuye?
+    * ¿Por qué cree que el motivo generado por redes neuronales es más parecido a lo ya conocido en la literatura que el motivo construído a partir de la PSSM?
+
 1. Ahora compare **todas** las predicciones realizadas con la PSSM con las obtenidas utilizando la red neuronal. Calcule el coeficiente de correlación de Pearson y Spearman entre ambos conjuntos de predicciones. Investigue cuál de estas dos métricas sería la más adecuada para realizar esta comparación (Pista: ¿Notó que las predicciones están en diferentes escalas?). Para completar esta tarea puede usar Excel (ver Extras) o cualquier otro programa de su preferencia. A su jefe le gustan las figuras, así que decide realizar un plot o gráfico de dispersión de los datos, además de calcular las métricas enunciadas anteriormente. 
 
 !!! example "Extras (y por ende opcionales):"
@@ -430,7 +440,7 @@ Para lograr su objetivo utilizará la herramienta **EasyPred**. Como va a realiz
 
     * [Cálculo de coeficientes de correlación en R](https://cran.r-project.org/web/packages/correlation/vignettes/types.html)
     * [Scatterplot en ggplot2](http://www.cookbook-r.com/Graphs/Scatterplots_(ggplot2)/)
-
+-->
 <br>
 
 

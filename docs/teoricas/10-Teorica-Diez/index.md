@@ -1,5 +1,5 @@
 ---
-title: Teorica Siete
+title: Teorica Diez
 tags: 
   - teoricas
 ---
@@ -16,9 +16,11 @@ tags:
 
 * :fontawesome-regular-file-pdf: [Ejercicios](./files/handout_viterbi_HMM.pdf)
 
-![type:video](https://www.youtube.com/embed/hlmJDkSPWLU)
+* :octicons-video-16: [HMM Video de la Clase](https://youtu.be/RBUJQZIwr3c)
 
-https://youtu.be/
+<!--
+![type:video](https://www.youtube.com/embed/hlmJDkSPWLU)
+-->
 
 ### Neural Networks (ANN)
 
@@ -28,7 +30,13 @@ https://youtu.be/
 
 * :fontawesome-regular-file-pdf: [Ejercicios 2](./files/NN_handout.pdf)
 
+* :octicons-video-16: [ANN Video de la Clase - Parte 1](https://youtu.be/NcBtARhch18)
+
+* :octicons-video-16: [ANN Video de la Clase - Parte 2](https://youtu.be/ue8_3wzUqoo)
+
+<!--
 ![type:video](https://www.youtube.com/embed/MvAGSjdWbUs)
+-->
 
 ### Material de lectura y consulta
 
