@@ -197,7 +197,7 @@ import seaborn as sns
 
 A lo largo de este práctico vamos a estar explorando las bases de datos quimioinformáticos y trabajando con los comandos básicos de RDKit para trabajar con moléculas.
 
-### Análisis de datos quimioinformáticos
+## Análisis de datos quimioinformáticos
 RDKit es un software quimioinformático de código abierto.
 
 ![texto](https://www.rdkit.org/docs/_static/logo.png)
@@ -211,7 +211,7 @@ Fue desarrollado por Greg Landrum con numerosas contribuciones adicionales de la
 - Tutorials (https://github.com/rdkit/rdkit-tutorials) Jupyter-based tutorials for using the RDKit
 - KNIME integration (https://github.com/rdkit/knime-rdkit) RDKit nodes for KNIME
 
-#### Generar una molécula a partir de SMILES
+### Generar una molécula a partir de SMILES
 Para comenzar a trabajar necesitamos ingresar a la computadora el compuesto con el que vamos a trabajar, para eso vamos a generar una variable con la notación del compuesto. En este caso, vamos a usar la notación en smiles.
 
 En programación se llama "variable" a la asignación de una palabra para identificar un objeto. En este caso, la palabra "smiles" la vamos a usar como variable para identificar la secuencia en smiles del Benznidazol.
@@ -250,6 +250,8 @@ Vamos a generar la variable <b>molecula</b> para guardar la molécula de Benznid
 molecula_benznidazol = Chem.MolFromSmiles(smiles_benznidazol)
 ```
 
+#### Actividad:
+
 💭 ¿Qué pasa si ahora imprimimos la variable?
 
 Ahora vamos a visualizarla!
@@ -261,9 +263,11 @@ Para hacerlo, sólo tienen que ejecutar el nombre de la variabl
 molecula_benznidazol
 ```
 
+#### Actividad:
+
 💭 ¿Lo que observas en la celda anterior corresponde con lo que viste en PubChem y en ChEMBL?
 
-#### Obtener moléculas de las bases de datos
+### Obtener moléculas de las bases de datos
 
 Tanto PubChem como ChEMBL tienen herramientas informáticas para obtener moléculas de sus bases de datos. En este práctico vamos a usar ChEMBL.
 
@@ -291,6 +295,8 @@ pirazina = "C1CNCCN1"
 moleculas_con_pirazina = new_client.substructure.filter(smiles=pirazina, max_phase=4).only([ 'molecule_structures'])
 len(moleculas_con_pirazina)
 ```
+
+#### Actividad:
 
 💭 ¿Que hay en la variable `moleculas_con_pirazina`?
 
@@ -320,7 +326,7 @@ print(df_moleculas_con_pirazina)
 💭 ¿Que información tenemos en el DataFrame?
 
 
-### Propiedades fisicoquímicas
+## Propiedades fisicoquímicas
 
 Ahora vamos a calcular los predictores de la clase. 
 
@@ -354,6 +360,8 @@ h_bond_acceptors = Descriptors.NumHAcceptors(molecula)
 # Calcular el número de enlaces rotativos en la molécula
 rotatable_bonds = Descriptors.NumRotatableBonds(molecula)
 ```
+
+#### Actividad:
 
 💭 Calculen las propiedades para `molecula_benznidazol`
 
@@ -429,6 +437,8 @@ Y ahora usamos esa función en el `df_moleculas_con_pirazina`
 df_moleculas_con_pirazina = drug_likness_decriptors(df_moleculas_con_pirazina)
 ```
 
+#### Actividad:
+
 💭 ¿Que información tenemos ahora en el DataFrame?
 
 Es dificil visualizar la información en una tabla, entonces vamos a realizar histogramas de las propiedades que calculamos.
@@ -443,6 +453,8 @@ Existen dos librerías para graficar en python:
 ```Python
 sns.histplot(df_moleculas_con_pirazina['nRotB'])
 ```
+
+#### Actividad:
 
 💭 Realizá el gráfico de peso molecular
 
@@ -471,6 +483,8 @@ fig.tight_layout()
 # Guardar la figura como un archivo PNG
 plt.savefig('sns_histogramas.png')
 ```
+
+#### Actividad:
 
 💭 Editá el comando para agregar el gráfico de número de enlaces rotativos en la molécula.
 
