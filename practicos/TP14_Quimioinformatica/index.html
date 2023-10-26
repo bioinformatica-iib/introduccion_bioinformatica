@@ -1148,7 +1148,9 @@ Vamos a usarla mucho, a medida que la usemos vamos a ver que se puede hacer con 
 <span class="n">molecula_benznidazol</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="n">smiles_benznidazol</span><span class="p">)</span>
 </code></pre></div>
 <h4 id="actividad">Actividad:</h4>
-<p>💭 ¿Qué pasa si ahora imprimimos la variable?</p>
+<p>💭 ¿Qué pasa si ahora imprimimos la variable?
+</p><div class="highlight"><pre><span></span><code><span class="c1">#Escribí el código acá</span>
+</code></pre></div>
 <p>Ahora vamos a visualizarla!</p>
 <p>Para hacerlo, sólo tienen que ejecutar el nombre de la variabl</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Visualizar la molécula</span>
@@ -1174,7 +1176,9 @@ vamos a usar la libreria <code>chembl_webresource_client</code>. Esta libreria n
 <span class="nb">len</span><span class="p">(</span><span class="n">moleculas_con_pirazina</span><span class="p">)</span>
 </code></pre></div>
 <h4 id="actividad_2">Actividad:</h4>
-<p>💭 ¿Que hay en la variable <code>moleculas_con_pirazina</code>?</p>
+<p>💭 ¿Que hay en la variable <code>moleculas_con_pirazina</code>?
+</p><div class="highlight"><pre><span></span><code><span class="c1">#Escribí el código acá</span>
+</code></pre></div>
 <p>La librería <code>chembl_webresource_client</code> descarga los datos en forma de diccionario. Vamos a procesar esos datos en formato dataframe para poder trabajar con ellos. Además, vamos generar las moléculas de RDKit usando PandasTools</p>
 <div class="highlight"><pre><span></span><code><span class="c1">#Generar un DataFrame vacío</span>
 <span class="n">df_moleculas_con_pirazina</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
@@ -1224,7 +1228,9 @@ vamos a usar la libreria <code>chembl_webresource_client</code>. Esta libreria n
 <span class="n">rotatable_bonds</span> <span class="o">=</span> <span class="n">Descriptors</span><span class="o">.</span><span class="n">NumRotatableBonds</span><span class="p">(</span><span class="n">molecula</span><span class="p">)</span>
 </code></pre></div>
 <h4 id="actividad_3">Actividad:</h4>
-<p>💭 Calculen las propiedades para <code>molecula_benznidazol</code></p>
+<p>💭 Calculen las propiedades para <code>molecula_benznidazol</code>
+</p><div class="highlight"><pre><span></span><code><span class="c1">#Escribí el código acá</span>
+</code></pre></div>
 <p>Para calcular todas las propiedades en un sólo paso podemos definir una función que haga todos los pasos:</p>
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">drug_likness_decriptors</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
     <span class="c1"># Desactivar las advertencias de asignación encadenada en pandas</span>
@@ -1292,7 +1298,9 @@ vamos a usar la libreria <code>chembl_webresource_client</code>. Esta libreria n
 <div class="highlight"><pre><span></span><code><span class="n">df_moleculas_con_pirazina</span> <span class="o">=</span> <span class="n">drug_likness_decriptors</span><span class="p">(</span><span class="n">df_moleculas_con_pirazina</span><span class="p">)</span>
 </code></pre></div>
 <h4 id="actividad_4">Actividad:</h4>
-<p>💭 ¿Que información tenemos ahora en el DataFrame?</p>
+<p>💭 ¿Que información tenemos ahora en el DataFrame?
+</p><div class="highlight"><pre><span></span><code><span class="c1">#Escribí el código acá</span>
+</code></pre></div>
 <p>Es dificil visualizar la información en una tabla, entonces vamos a realizar histogramas de las propiedades que calculamos.</p>
 <p>Existen dos librerías para graficar en python:</p>
 <ul>
@@ -1303,7 +1311,9 @@ vamos a usar la libreria <code>chembl_webresource_client</code>. Esta libreria n
 <div class="highlight"><pre><span></span><code><span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">df_moleculas_con_pirazina</span><span class="p">[</span><span class="s1">'nRotB'</span><span class="p">])</span>
 </code></pre></div>
 <h4 id="actividad_5">Actividad:</h4>
-<p>💭 Realizá el gráfico de peso molecular</p>
+<p>💭 Realizá el gráfico de peso molecular
+</p><div class="highlight"><pre><span></span><code><span class="c1">#Escribí el código acá</span>
+</code></pre></div>
 <p>También pueden graficar todos los parámetros juntos usando el siguiente comando:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Crear una figura con un arreglo de subplots de 2 filas y 2 columnas, con un tamaño de 8x8 pulgadas</span>
 <span class="c1"># Definir los anchos deseados para cada subplot</span>
@@ -1328,7 +1338,9 @@ vamos a usar la libreria <code>chembl_webresource_client</code>. Esta libreria n
 <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">'sns_histogramas.png'</span><span class="p">)</span>
 </code></pre></div>
 <h4 id="actividad_6">Actividad:</h4>
-<p>💭 Editá el comando para agregar el gráfico de número de enlaces rotativos en la molécula.</p>
+<p>💭 Editá el comando para agregar el gráfico de número de enlaces rotativos en la molécula.
+</p><div class="highlight"><pre><span></span><code><span class="c1">#Escribí el código acá</span>
+</code></pre></div>
 <p>Si quieren leer más al respecto de histogramas en Seaborn pueden ingresar al siguiente <a href="https://seaborn.pydata.org/generated/seaborn.histplot.html#seaborn.histplot">link</a></p>
 <h2 id="ejercicio-integrador">Ejercicio integrador</h2>
 <p>La Piperidina es un grupo funcional con el siguiente SMILES: <code>C1CCNCC1</code>. Teniendo en cuenta esto, realizar las siguientes actitivades:
