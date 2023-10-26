@@ -16,7 +16,11 @@ tags:
 
 * :fontawesome-regular-file-pdf: [Ejercicios](./files/handout_viterbi_HMM.pdf)
 
+* :octicons-video-16: [HMM Video de la Clase](https://youtu.be/RBUJQZIwr3c)
+
+<!--
 ![type:video](https://www.youtube.com/embed/hlmJDkSPWLU)
+-->
 
 ### Neural Networks (ANN)
 
@@ -26,7 +30,13 @@ tags:
 
 * :fontawesome-regular-file-pdf: [Ejercicios 2](./files/NN_handout.pdf)
 
+* :octicons-video-16: [ANN Video de la Clase - Parte 1](https://youtu.be/NcBtARhch18)
+
+* :octicons-video-16: [ANN Video de la Clase - Parte 2](https://youtu.be/ue8_3wzUqoo)
+
+<!--
 ![type:video](https://www.youtube.com/embed/MvAGSjdWbUs)
+-->
 
 ### Material de lectura y consulta
 
