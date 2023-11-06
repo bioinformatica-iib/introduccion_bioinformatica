@@ -13,11 +13,11 @@
         <link rel="canonical" href="https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP12_Short-Read-Mapping/">
       
       <link rel="icon" href="../../img/logo-unsam-negro.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-8.5.10">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-8.5.10">
     
     
       
-        <title>Index - Introducción a la Bioinformática</title>
+        <title>TP 12 - Short Read Mapping - Introducción a la Bioinformática</title>
       
     
     
@@ -83,7 +83,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#tp-13-short-read-mapping" class="md-skip">
+        <a href="#tp-12-short-read-mapping" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Index
+              TP 12 - Short Read Mapping
             
           </span>
         </div>
@@ -281,13 +281,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../inicio/" class="md-tabs__link">
+      <a href="../inicio/" class="md-tabs__link md-tabs__link--active">
         Prácticos
       </a>
     </li>
@@ -626,12 +628,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" checked>
       
       
       
@@ -858,6 +862,226 @@
 
             
           
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          TP 12 - Short Read Mapping
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        TP 12 - Short Read Mapping
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objetivos" class="md-nav__link">
+    Objetivos
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduccion" class="md-nav__link">
+    Introducción
+  </a>
+  
+    <nav class="md-nav" aria-label="Introducción">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chlamydia-trachomatis" class="md-nav__link">
+    Chlamydia trachomatis
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flujo-de-trabajo-de-secuenciacion-y-mapeo" class="md-nav__link">
+    Flujo de trabajo de secuenciación y mapeo
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-1-inspeccion-de-los-datos-crudos" class="md-nav__link">
+    Ejercicio 1: Inspección de los datos crudos
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-2-analisis-de-calidad-de-secuencias" class="md-nav__link">
+    Ejercicio 2: Análisis de calidad de secuencias
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicio 2: Análisis de calidad de secuencias">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fastqc" class="md-nav__link">
+    FastQC
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analisis-de-calidad-de-las-secuencias-de-c-trachomatis" class="md-nav__link">
+    Análisis de calidad de las secuencias de C. trachomatis
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-3-mapeo-de-secuencias-al-genoma-de-referencia-de-c-trachomatis" class="md-nav__link">
+    Ejercicio 3: Mapeo de secuencias al genoma de referencia de C. trachomatis
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicio 3: Mapeo de secuencias al genoma de referencia de C. trachomatis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#compresion-de-archivos-sam" class="md-nav__link">
+    Compresión de archivos SAM
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-4-visualizacion-de-secuencias-mapeadas" class="md-nav__link">
+    Ejercicio 4: Visualización de secuencias mapeadas
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicio 4: Visualización de secuencias mapeadas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vista-basica-de-artemis" class="md-nav__link">
+    Vista básica de Artemis
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calidad-de-mapeo" class="md-nav__link">
+    Calidad de Mapeo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visualizacion-de-las-lecturas-mapeadas" class="md-nav__link">
+    Visualización de las lecturas mapeadas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visualizacion-de-multiples-archivos-bam" class="md-nav__link">
+    Visualización de múltiples archivos BAM
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-5-deteccion-de-variantes-snp-e-indel" class="md-nav__link">
+    Ejercicio 5: Detección de variantes (SNP e InDel)
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicio 5: Detección de variantes (SNP e InDel)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#calculando-con-mas-precision-los-snps" class="md-nav__link">
+    Calculando con más precisión los SNPs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#esquema-de-colores-por-defecto" class="md-nav__link">
+    Esquema de colores por defecto
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#puntuacion-de-calidad" class="md-nav__link">
+    Puntuación de calidad
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-adicional-comparando-cepas" class="md-nav__link">
+    Ejercicio adicional: comparando cepas
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -970,25 +1194,19 @@
 
 
 <div><p><a class="glightbox" href="images/featured.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img _="," align="left" alt="Image" src="images/featured.jpg" width="250"></a></p>
-<h1 id="tp-13-short-read-mapping" markdown="markdown"><strong>TP 13</strong>. Short Read Mapping</h1>
+<h1 id="tp-12-short-read-mapping" markdown="markdown"><strong>TP 12</strong>. Short Read Mapping</h1>
 <p><br>
 <br>
 <br>
 <br></p>
+<p><a class="md-button md-button--primary" href="https://drive.google.com/file/d/1PyRdK9EocaQoT5tpVR53iXeR7tV3NSCG/view?usp=sharing"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32v242.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64v-32c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 104c-13.3 0-24-10.7-24-24s10.7-24 24-24 24 10.7 24 24-10.7 24-24 24z"></path></svg></span> Materiales</a></p>
 <!--
-## Videos de la clase grabada
+### Videos de la clase grabada
 
-* :octicons-video-16: [Introducción al TP](https://www.youtube.com/watch?v=mzzItpMc7ds)
-* :octicons-video-16: [Resultados Verify y Procheck](https://www.youtube.com/watch?v=t6P6AprFvVg)
-* :octicons-video-16: [Puesta en común del TP](https://www.youtube.com/watch?v=vAtKowbM4oo)
+* :octicons-video-16: [Introducción al TP](https://www.youtube.com/watch?v=s5voK2P8VgU)
+* :octicons-video-16: [Cierre TP](https://www.youtube.com/watch?v=HoOjlxV0wTQ)
 -->
 
-<p><a class="md-button md-button--primary" href="https://drive.google.com/file/d/1FP6qSeLb4f-aYcu4YBi0QnM7Su4-6uHX/view?usp=sharing"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32v242.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64v-32c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 104c-13.3 0-24-10.7-24-24s10.7-24 24-24 24 10.7 24 24-10.7 24-24 24z"></path></svg></span> Materiales</a></p>
-<h3 id="videos-de-la-clase-grabada">Videos de la clase grabada</h3>
-<ul>
-<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 16 16"><path fill-rule="evenodd" d="M1.75 3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25v-8.5a.25.25 0 0 0-.25-.25H1.75zM0 3.75C0 2.784.784 2 1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0 1 14.25 14H1.75A1.75 1.75 0 0 1 0 12.25v-8.5z"></path><path d="M6 10.559V5.442a.25.25 0 0 1 .379-.215l4.264 2.559a.25.25 0 0 1 0 .428l-4.264 2.559A.25.25 0 0 1 6 10.559z"></path></svg></span> <a href="https://www.youtube.com/watch?v=s5voK2P8VgU">Introducción al TP</a></li>
-<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 16 16"><path fill-rule="evenodd" d="M1.75 3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25v-8.5a.25.25 0 0 0-.25-.25H1.75zM0 3.75C0 2.784.784 2 1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0 1 14.25 14H1.75A1.75 1.75 0 0 1 0 12.25v-8.5z"></path><path d="M6 10.559V5.442a.25.25 0 0 1 .379-.215l4.264 2.559a.25.25 0 0 1 0 .428l-4.264 2.559A.25.25 0 0 1 6 10.559z"></path></svg></span> <a href="https://www.youtube.com/watch?v=HoOjlxV0wTQ">Cierre TP</a></li>
-</ul>
 <h2 id="objetivos">Objetivos</h2>
 <ul>
 <li>Interpretar los formatos utilizados comúnmente en NGS</li>
@@ -1384,6 +1602,42 @@ tabix<span class="w"> </span>L2b.vcf.gz
       </main>
       
         <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Pie" >
+      
+        
+        <a href="../TP11_HMM_ANN/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: TP 11 - HMMs &amp; ANNs" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              TP 11 - HMMs & ANNs
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../instructivos/inicio/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: Inicio" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Siguiente
+              </span>
+              Inicio
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
