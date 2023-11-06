@@ -1,24 +1,19 @@
 ![Image](images/featured.jpg){ width="250", align="left" }
-# **TP 13**. Short Read Mapping { markdown data-toc-label = 'TP 13' }
+# **TP 12**. Short Read Mapping { markdown data-toc-label = 'TP 13' }
 
 <br>
 <br>
 <br>
 <br>
+
+[:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1PyRdK9EocaQoT5tpVR53iXeR7tV3NSCG/view?usp=sharing){ .md-button .md-button--primary }
+
 <!--
-## Videos de la clase grabada
-
-* :octicons-video-16: [Introducción al TP](https://www.youtube.com/watch?v=mzzItpMc7ds)
-* :octicons-video-16: [Resultados Verify y Procheck](https://www.youtube.com/watch?v=t6P6AprFvVg)
-* :octicons-video-16: [Puesta en común del TP](https://www.youtube.com/watch?v=vAtKowbM4oo)
--->
-
-[:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1FP6qSeLb4f-aYcu4YBi0QnM7Su4-6uHX/view?usp=sharing){ .md-button .md-button--primary }
-
 ### Videos de la clase grabada
 
 * :octicons-video-16: [Introducción al TP](https://www.youtube.com/watch?v=s5voK2P8VgU)
 * :octicons-video-16: [Cierre TP](https://www.youtube.com/watch?v=HoOjlxV0wTQ)
+-->
 
 ## Objetivos
 
