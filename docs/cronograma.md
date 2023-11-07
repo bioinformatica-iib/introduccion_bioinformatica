@@ -44,8 +44,8 @@ tags:
 | Jueves, 16 Noviembre 2023 | 9:00 hs |	:material-google-classroom: Online | P14. Quimioinformática | :fontawesome-solid-hammer: Práctica |	M. Didier Garnham |
 | Martes, 21 Noviembre 2023 | 9:00 hs |	:material-google-classroom: Online | Repaso | :fontawesome-solid-brain: Teórica |	F. Agüero<br>L. Chemes<br> M. Nielsen |
 | Jueves, 23 Noviembre 2023 | 9:00 hs |	| LIBRE | |	|
-| Martes, 28 Noviembre 2023 | 9:00 hs |	 | Examen para grado | | F. Agüero<br>L. Chemes<br> M. Nielsen |
-| Jueves, 30 Noviembre 2023 | 9:00 hs |	:material-google-classroom: Online | Exposición grupos de post-grado | |	F. Agüero<br>L. Chemes<br> M. Nielsen |
+| Martes, 28 Noviembre 2023 | 9:00 hs |	 | Exposición grupos de post-grado | | F. Agüero<br>L. Chemes<br> M. Nielsen |
+| Jueves, 30 Noviembre 2023 | 9:00 hs |	:material-google-classroom: Online | Examen grado | |	F. Agüero<br>L. Chemes<br> M. Nielsen |
 | Martes, 05 Diciembre 2023 | 9:00 hs |	:material-google-classroom: Online | Revisión examen | | F. Agüero<br>L. Chemes<br> M. Nielsen |
 | Jueves, 07 Diciembre 2023 | 9:00 hs |	A definir | Recuperatorio | | F. Agüero<br>L. Chemes<br> M. Nielsen |
 | Martes, 12 Diciembre 2023 | 9:00 hs |	| Libre | |	|
