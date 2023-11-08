@@ -8,6 +8,10 @@
 
 [:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1PyRdK9EocaQoT5tpVR53iXeR7tV3NSCG/view?usp=sharing){ .md-button .md-button--primary }
 
+### Slides mostrados en la clase
+
+* :fontawesome-regular-file-pdf: [Slides TP](https://drive.google.com/file/d/1kIoMHE83zdSImJMPKC-8bOnziIWsWKVY/view?usp=sharing)
+
 <!--
 ### Videos de la clase grabada
 

@@ -39,7 +39,7 @@ tags:
 | Martes, 31 Octubre 2023 | 9:00 hs |	:material-google-classroom: Online | [T11. Secuenciación y ensamblado de genomas](/introduccion_bioinformatica/teoricas/11-Teorica-Once/) | :fontawesome-solid-brain: Teórica |	F. Agüero |
 | Jueves, 02 Noviembre 2023 | |	| LIBRE | |	|
 | Martes, 07 Noviembre 2023 | 9:00 hs |	:material-google-classroom: Online | [P12. Short Read Mapping](/introduccion_bioinformatica/practicos/TP12_Short-Read-Mapping/) | :fontawesome-solid-hammer: Práctica |	G. Romer |
-| Jueves, 09 Noviembre 2023 | 9:00 hs |	:material-google-classroom: Online | P13. Genómica comparativa | :fontawesome-solid-hammer: Práctica |	G. Romer |
+| Jueves, 09 Noviembre 2023 | 9:00 hs |	:material-google-classroom: Online | [P13. Genómica comparativa](/introduccion_bioinformatica/practicos/TP13_Genomica_Comparativa/) | :fontawesome-solid-hammer: Práctica |	G. Romer |
 | Martes, 14 Noviembre 2023 | 9:00 hs |	:material-google-classroom: Online | T12. Quimioinformática | :fontawesome-solid-brain: Teórica |	F. Agüero |
 | Jueves, 16 Noviembre 2023 | 9:00 hs |	:material-google-classroom: Online | P14. Quimioinformática | :fontawesome-solid-hammer: Práctica |	M. Didier Garnham |
 | Martes, 21 Noviembre 2023 | 9:00 hs |	:material-google-classroom: Online | Repaso | :fontawesome-solid-brain: Teórica |	F. Agüero<br>L. Chemes<br> M. Nielsen |

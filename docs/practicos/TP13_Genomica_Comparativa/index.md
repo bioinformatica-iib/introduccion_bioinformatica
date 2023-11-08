@@ -1,5 +1,5 @@
 ![Image](img/featured.jpg){ width="250", align="left" }
-# **TP 14**. Genómica comparativa: ACT { markdown data-toc-label = 'TP 14' }
+# **TP 13**. Genómica comparativa: ACT { markdown data-toc-label = 'TP 13' }
 
 <br>
 <br>
@@ -10,15 +10,10 @@
 ## Videos de la clase grabada
 
 * :octicons-video-16: [Introducción al TP](https://www.youtube.com/watch?v=mzzItpMc7ds)
-* :octicons-video-16: [Resultados Verify y Procheck](https://www.youtube.com/watch?v=t6P6AprFvVg)
-* :octicons-video-16: [Puesta en común del TP](https://www.youtube.com/watch?v=vAtKowbM4oo)
 -->
 
-[:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1CylJG-hMV8Bx7pxNVLycKxvx3ibjL4kQ/view?usp=sharing){ .md-button .md-button--primary }
+[:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1Km3Z3jdSjFIBKJ3gXeUq6xJ3PLPbMfxi/view?usp=sharing){ .md-button .md-button--primary }
 
-### Videos de la clase grabada
-
-* :octicons-video-16: [Cierre TP](https://www.youtube.com/watch?v=JCBzg9Dt_A0)
 
 ## Objetivos
 
@@ -69,9 +64,9 @@ cd ~/Tools/artemis/
 ./act
 ```
 
-> Nota: Aunque lo parece, no es el mismo programa que el TP13!
+> Nota: Aunque lo parece, no es el mismo programa que el TP12!
 
-Vaya a:
+Vayan a:
 
 *File* → *Open*
 
@@ -113,9 +108,9 @@ Veamos cómo se organizan estas ventanas y cómo podemos hacer para navegar a tr
 
 Arriba y abajo de las secuencias 1 y 2, respectivamente, verán una barra de desplazamiento horizontal; y a los dos lados de ambas, una barra de desplazamiento vertical. Las primeras se usan para desplazarnos rio arriba o rio abajo en el genoma, mientras que las segundas se usan para acercar o alejar el foco.
 
-* Pruebe alejar el foco de ambas secuencias hasta que pueda ver ambos cromosomas completos en pantalla.
+* Prueben alejar el foco de ambas secuencias hasta que puedan ver ambos cromosomas completos en pantalla.
 
-Deberíamos ver algo así (o similar):
+Deberían ver algo así (o similar):
 
 ![zoomout](img/zoomout.png){ width="500" }
 
@@ -137,7 +132,7 @@ Hallarán estos *cuttoffs* haciendo click derecho en el panel de comparación:
 
 Agreguen ahora, a *S. tiphy* las anotaciones con el nombre ``SPIs.tab``. Este archivo contiene todas las islas de patogenicidad de esta *Salmonella* (incluyendo la SPI-7, con la que trabajamos anteriormente)
 
-Para incluir las anotaciones que se encuentran en el archivo `.tab` vaya a:
+Para incluir las anotaciones que se encuentran en el archivo `.tab` vayan a:
 
 `File` → `Secuencia` → `Read an entry` 
 
@@ -198,7 +193,7 @@ Deberían ver algo así:
 	*P. knowlesi* tienen un archivo de secuencia (``*.seq``) y un archivo de anotaciones (``*.embl``) que luego deberan cargar.
 
 
-* Incluya las anotaciones de *P. knowlesi* (``Pknowlesi_contig.embl``)
+* Incluyan las anotaciones de *P. knowlesi* (``Pknowlesi_contig.embl``)
 
 * Utilicen las barras de desplazamiento horizontal para ubicar el contig de *P. knowlesi* en el cromosoma 13 de *P. falciparum*.
 
@@ -219,7 +214,7 @@ Ahora concentrémonos en una región particular. Diríjanse a la región delimit
 * ¿Qué opinión les merece, en términos de relevancia biológica, esta observación?
 
 <!--
-Si ya llegaron hasta acá, avísenle al instructor para que podamos hacer una puesta en común respecto a esta parte. Mientras esperan al resto de sus compañeros, intenten encontrar más genes que estén presentes en uno y ausentes en el otro para sumar a la discusión.
+Si ya llegaron hasta acá, avísen a lxs docentes para que podamos hacer una puesta en común respecto a esta parte. Mientras esperan al resto de sus compañeros, intenten encontrar más genes que estén presentes en uno y ausentes en el otro para sumar a la discusión.
 
 > Para visualizar las anotaciones, pueden probar algunas opciones adicionales como:
 > -	Prender/Apagar `One line per entry`
@@ -256,9 +251,9 @@ Pueden abrir una sesión de Artemis directamente desde ACT:
 
 ![artemis-edit](img/artemis-edit.png)
 
-* Revisen las regiones intrones (regiones entre exones) observen las dos bases del inicio del intrón y las dos bases nucleotídicas del final del intrón ¿Pueden hallar algún patrón? (Revise la hebra correcta del ADN)
-* ¿Con qué proceso piensa que este patrón puede estar relacionado?
-* A simple vista, ¿observa enriquecimiento en algún par de nucleótidos en los intrones?
+* Revisen las regiones intrones (regiones entre exones). Observen las dos bases del inicio del intrón y las dos bases nucleotídicas del final del intrón ¿Pueden hallar algún patrón? (Revisen la hebra correcta del ADN)
+* ¿Con qué proceso piensan que este patrón puede estar relacionado?
+* A simple vista, ¿observan enriquecimiento en algún par de nucleótidos en los intrones?
 
 <!--
 The 5′ and 3′ splice site motifs for P. falciparum introns (GU and AG dinucleotides) follow the general eukaryotic pattern 
