@@ -6,13 +6,16 @@
 <br>
 <br>
 
-<!--
-## Videos de la clase grabada
-
-* :octicons-video-16: [Introducción al TP](https://www.youtube.com/watch?v=mzzItpMc7ds)
--->
 
 [:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1Km3Z3jdSjFIBKJ3gXeUq6xJ3PLPbMfxi/view?usp=sharing){ .md-button .md-button--primary }
+
+### Slides mostrados en la clase
+
+* :fontawesome-regular-file-pdf: [Slides TP](https://docs.google.com/presentation/d/1HGSibhwkrWc1I4MY9iSIgqRwAYJwMaK-xfnHi6UcKBE/edit?usp=sharing)
+
+### Videos de la clase grabada
+
+* :octicons-video-16: [Cierre](https://youtu.be/a4_qwTVj2_E)
 
 
 ## Objetivos

@@ -12,12 +12,9 @@
 
 * :fontawesome-regular-file-pdf: [Slides TP](https://drive.google.com/file/d/1kIoMHE83zdSImJMPKC-8bOnziIWsWKVY/view?usp=sharing)
 
-<!--
 ### Videos de la clase grabada
+* :octicons-video-16: [Cierre TP](https://youtu.be/odbnwyOwYGY)
 
-* :octicons-video-16: [Introducción al TP](https://www.youtube.com/watch?v=s5voK2P8VgU)
-* :octicons-video-16: [Cierre TP](https://www.youtube.com/watch?v=HoOjlxV0wTQ)
--->
 
 ## Objetivos
 
