@@ -1135,25 +1135,15 @@ Recopila información sobre estructuras químicas, identificadores, propiedades 
 <p>Luego le vamos a pedir que "tenga a mano" las librerías que vamos a usar con el comando <code>import</code>. De esta manera las tiene abiertas dentro de Google Colab para que estén disponibles para usar.</p>
 <p>Si compararáramos las librerías de Python con libros físicos, podríamos decir que <code>!pip install</code> es el equivalente a comprar el libro y tenerlo en nuestra estantería y que <code>import</code> es el equivalente a agarrarlo de la estanteria y a abrirlo en nuestro escritorio.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Instalar las librerias</span>
-<span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="n">pandas</span> <span class="n">rdkit</span> <span class="n">tqdm</span> <span class="n">chembl_downloader</span> <span class="n">chembl_webresource_client</span> <span class="n">seaborn</span>
+<span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="n">rdkit</span>
 </code></pre></div>
 <p>Ahora vamos a importar las librerias que vamos a usar</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Importar librerias para guardar trabajar con tablas y grandes cantidades de datos</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="c1"># Importar libreria de RDKit</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Importar libreria de RDKit</span>
 <span class="kn">from</span> <span class="nn">rdkit</span> <span class="kn">import</span> <span class="n">Chem</span>
 <span class="kn">from</span> <span class="nn">rdkit.Chem</span> <span class="kn">import</span> <span class="n">AllChem</span>
+<span class="kn">from</span> <span class="nn">rdkit.Chem</span> <span class="kn">import</span> <span class="n">Descriptors</span>
 <span class="kn">from</span> <span class="nn">rdkit.Chem</span> <span class="kn">import</span> <span class="n">Draw</span>
-<span class="kn">from</span> <span class="nn">rdkit.Chem</span> <span class="kn">import</span> <span class="n">PandasTools</span>
 <span class="kn">from</span> <span class="nn">rdkit.Chem.Draw</span> <span class="kn">import</span> <span class="n">rdMolDraw2D</span>
-
-<span class="c1"># Importar libreria de ChEMBL</span>
-<span class="kn">from</span> <span class="nn">chembl_webresource_client.new_client</span> <span class="kn">import</span> <span class="n">new_client</span>
-
-<span class="c1"># Importar las librerias para graficar</span>
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 </code></pre></div>
 <p>A lo largo de este práctico vamos a estar explorando las bases de datos quimioinformáticos y trabajando con los comandos básicos de RDKit para trabajar con moléculas.</p>
 <h2 id="analisis-de-datos-quimioinformaticos">Análisis de datos quimioinformáticos</h2>
@@ -1171,13 +1161,13 @@ Recopila información sobre estructuras químicas, identificadores, propiedades 
 <h3 id="generar-una-molecula-a-partir-de-smiles">Generar una molécula a partir de SMILES</h3>
 <p>Para comenzar a trabajar necesitamos ingresar a la computadora el compuesto con el que vamos a trabajar, para eso vamos a generar una variable con la notación del compuesto. En este caso, vamos a usar la notación en smiles.</p>
 <p>En programación se llama "variable" a la asignación de una palabra para identificar un objeto. En este caso, la palabra "smiles" la vamos a usar como variable para identificar la secuencia en smiles del Benznidazol.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Generar la variable "smiles" que corresponde al smiles del Benznidazol</span>
-<span class="n">smiles_benznidazol</span> <span class="o">=</span> <span class="s1">'C1=CC=C(C=C1)CNC(=O)CN2C=CN=C2[N+](=O)[O-]'</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Generar la variable "smiles"</span>
+<span class="n">smiles</span> <span class="o">=</span> <span class="s1">'C1=CC=C(C=C1)CNC(=O)CN2C=CN=C2[N+](=O)[O-]'</span>
 </code></pre></div>
 <p>Al generar la variable llamada smiles, guardamos la estructura en una palabra que podemos usar en el resto del código.</p>
 <p>Vamos a ver que pasa si imprimimos la variable usando el comando print():</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Imprimir la variable</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">smiles_benznidazol</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">smiles</span><span class="p">)</span>
 </code></pre></div>
 <p>RDKit cuenta con un módulo llamado <code>Chem()</code></p>
 <p>Usando la analogía del comienzo, un módulo es un cápitulo del libro de RDKit.</p>
@@ -1186,8 +1176,8 @@ Vamos a usarla mucho, a medida que la usemos vamos a ver que se puede hacer con 
 <p>En este link encontrarán todas las opciones posibles: https://www.rdkit.org/docs/source/rdkit.Chem.html</p>
 <p>En este caso, el módulo va a estar seguido de la función <code>MolFromSmiles()</code>, porque queremos que transforme el <i>string</i> que generamos a una <i>molécula</i>.</p>
 <p>Vamos a generar la variable <b>molecula</b> para guardar la molécula de Benznidazol generada.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Generar una molécula a partir del smiles del Benznidazol</span>
-<span class="n">molecula_benznidazol</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="n">smiles_benznidazol</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Generar una molécula a partir del smiles</span>
+<span class="n">molecula</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="n">smiles</span><span class="p">)</span>
 </code></pre></div>
 <h4 id="actividad">Actividad:</h4>
 <p>💭 ¿Qué pasa si ahora imprimimos la variable?
@@ -1196,54 +1186,79 @@ Vamos a usarla mucho, a medida que la usemos vamos a ver que se puede hacer con 
 <p>Ahora vamos a visualizarla!</p>
 <p>Para hacerlo, sólo tienen que ejecutar el nombre de la variable</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Visualizar la molécula</span>
-<span class="n">molecula_benznidazol</span>
+<span class="n">molecula</span>
 </code></pre></div>
 <h4 id="actividad_1">Actividad:</h4>
 <p>💭 ¿Lo que observas en la celda anterior corresponde con lo que viste en PubChem y en ChEMBL?</p>
-<h3 id="obtener-moleculas-de-las-bases-de-datos">Obtener moléculas de las bases de datos</h3>
-<p>Tanto PubChem como ChEMBL tienen herramientas informáticas para obtener moléculas de sus bases de datos. En este práctico vamos a usar ChEMBL.</p>
-<p>Para trabajar con esta base de datos
-vamos a usar la libreria <code>chembl_webresource_client</code>. Esta libreria nos permite acceder a la información disponible en la base de datos. De esa librería la importamos <code>new_client</code> y le indicamos que queremos buscar en la base de datos. Podemos ver los recursos disponibles usando el comando que se encuentra a continuación:</p>
-<div class="highlight"><pre><span></span><code><span class="c1">#Mostrar los recursos disponibles de la libreria chembl_webresource_client.new_client</span>
-<span class="n">available_resources</span> <span class="o">=</span> <span class="p">[</span><span class="n">resource</span> <span class="k">for</span> <span class="n">resource</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="n">new_client</span><span class="p">)</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">resource</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">'_'</span><span class="p">)]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">available_resources</span><span class="p">)</span>
-</code></pre></div>
-<p>En este práctico vamos a usarlo para traer todas las moléculas que contengan una pirazina. Este es un  es un compuesto orgánico aromático heterocíclico con la siguiente estructura:</p>
-<p><br></p>
-<p><a class="glightbox" href="img/pirazina.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img _="," align="center" alt="Image" src="img/pirazina.png" width="250"></a></p>
-<p><br></p>
-<p>Además, le vamos a pedir que nos traiga la información de aquellas moléculas que estén aprobadas por la FDA (max_phase=4) y que solo nos devuelva la información relacionada a su estructura:</p>
-<div class="highlight"><pre><span></span><code><span class="n">pirazina</span> <span class="o">=</span> <span class="s2">"C1CNCCN1"</span>
-<span class="n">moleculas_con_pirazina</span> <span class="o">=</span> <span class="n">new_client</span><span class="o">.</span><span class="n">substructure</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">smiles</span><span class="o">=</span><span class="n">pirazina</span><span class="p">,</span> <span class="n">max_phase</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">only</span><span class="p">([</span> <span class="s1">'molecule_structures'</span><span class="p">])</span>
-<span class="nb">len</span><span class="p">(</span><span class="n">moleculas_con_pirazina</span><span class="p">)</span>
+<h3 id="generar-una-molecula-a-partir-de-inchi">Generar una molécula a partir de InChI</h3>
+<p>Vamos a repetir el paso anterior pero usando la nomenclatura en InChI:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Generar la variable "InChI"</span>
+<span class="n">inchi</span> <span class="o">=</span> <span class="s2">"InChI=1S/C12H12N4O3/c17-11(14-8-10-4-2-1-3-5-10)9-15-7-6-13-12(15)16(18)19/h1-7H,8-9H2,(H,14,17)"</span>
 </code></pre></div>
 <h4 id="actividad_2">Actividad:</h4>
-<p>💭 ¿Que hay en la variable <code>moleculas_con_pirazina</code>?
+<p>💭 ¿Qué pasa si ahora imprimimos la variable?</p>
+<p>Ahora vamos a generar la molécula usando RDKit</p>
+<p></p><div class="highlight"><pre><span></span><code><span class="c1"># Generar una molécula a partir del InChI</span>
+<span class="n">molecula</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromInchi</span><span class="p">(</span><span class="n">inchi</span><span class="p">)</span>
+</code></pre></div>
+Este tipo de objeto nos va a permitir realizar trabajar directamente con la molécula.
+<p>Ahora vamos a visualizarla!</p>
+<p>Para hacerlo, sólo tienen que ejecutar el nombre de la variable: 👇</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Visualizar la molécula</span>
+<span class="n">molecula</span>
+</code></pre></div>
+<p>Y podemos transformar la nomenclatura de la molécula a InchiKey usando el siguiente comando:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Generar el InchiKey de una molécula</span>
+<span class="n">inchikey</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolToInchiKey</span><span class="p">(</span><span class="n">molecula</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">inchikey</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="recorrer-los-atomos-de-una-molecula">Recorrer los átomos de una molécula</h2>
+<p>Ahora vamos a trabajar con esta molécula:
+<code>CC(C)CC1=CC=C(C=C1)C(C)C(=O)O</code></p>
+<p>Realizá los siguientes pasos:</p>
+<ol>
+<li>
+<p>Identificar como se llama este compuesto</p>
+</li>
+<li>
+<p>Generá la molécula usando RDKit</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="c1">#Escribí el código acá</span>
+</code></pre></div>
+<p>Ahora vamos a recorrer los átomos de la molécula. Podemos recorrer individualmente los átomos que forman la molécula usando la función <code>GetAtomWithIdx()</code></p>
+<p>A la función tenemos que indicarle cual átomo queremos ver. RDKit le otorga un número a cada átomo, podemos verlo usando el siguiente comando:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">#Imprimir el número de átomo para cada átomo de la molécula</span>
+<span class="k">for</span> <span class="n">atom</span> <span class="ow">in</span> <span class="n">molecula</span><span class="o">.</span><span class="n">GetAtoms</span><span class="p">():</span>
+    <span class="n">atom</span><span class="o">.</span><span class="n">SetAtomMapNum</span><span class="p">(</span><span class="n">atom</span><span class="o">.</span><span class="n">GetIdx</span><span class="p">())</span>
+
+<span class="c1"># Imprimir la molécula</span>
+<span class="n">molecula</span>
+</code></pre></div>
+<p><b> Usando los números o indices que representan a cada átomo, podemos obtener diferentes parámetros. </b></p>
+<p>Con la función <code>.GetSymbol()</code> podemos obtener el simbolo atómico.</p>
+<p>Vamos a probarlo con el átomo del indice 7</p>
+<p></p><div class="highlight"><pre><span></span><code><span class="c1"># Obtener el símbolo atómico del átomo número 7</span>
+<span class="n">molecula</span><span class="o">.</span><span class="n">GetAtomWithIdx</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span><span class="o">.</span><span class="n">GetSymbol</span><span class="p">()</span>
+</code></pre></div>
+💭 ¿Cuál es el simbolo del átomo correspondiente al indice 13?
+<div class="highlight"><pre><span></span><code><span class="c1">#Escribí el código acá</span>
+</code></pre></div>
+<p>Con la función <code>.GetAtomicNum()</code> podemos obtener el número atómico.</p>
+<p>Vamos a probarlo con el átomo del indice 7</p>
+<p>👇</p>
+<p></p><div class="highlight"><pre><span></span><code><span class="c1"># Obtener el número atómico del átomo número 7</span>
+<span class="n">molecula</span><span class="o">.</span><span class="n">GetAtomWithIdx</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span><span class="o">.</span><span class="n">GetAtomicNum</span><span class="p">()</span>
+</code></pre></div>
+💭 ¿Cuál es el número atómico correspondiente al indice 14?
+<div class="highlight"><pre><span></span><code><span class="c1">#Escribí el código acá</span>
+</code></pre></div>
+<p>💭 Recorre los átomos de la molécula y calcula su peso molecular
 </p><div class="highlight"><pre><span></span><code><span class="c1">#Escribí el código acá</span>
 </code></pre></div>
-<p>La librería <code>chembl_webresource_client</code> descarga los datos en forma de diccionario. Vamos a procesar esos datos en formato dataframe para poder trabajar con ellos. Además, vamos generar las moléculas de RDKit usando PandasTools</p>
-<div class="highlight"><pre><span></span><code><span class="c1">#Generar un DataFrame vacío</span>
-<span class="n">df_moleculas_con_pirazina</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
-<span class="n">smiles_list</span> <span class="o">=</span> <span class="p">[]</span>
-
-<span class="c1">#Recolectar los SMILES del diccionario obtenido de ChEMBL</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">moleculas_con_pirazina</span><span class="p">)):</span>
-    <span class="n">estructura</span> <span class="o">=</span> <span class="n">moleculas_con_pirazina</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s2">"molecule_structures"</span><span class="p">]</span>
-    <span class="n">smiles</span> <span class="o">=</span> <span class="n">estructura</span><span class="p">[</span><span class="s1">'canonical_smiles'</span><span class="p">]</span>
-    <span class="n">smiles_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">smiles</span><span class="p">)</span>
-
-<span class="c1">#Agregar una columna con los SMILES al DataFrame</span>
-<span class="n">df_moleculas_con_pirazina</span><span class="p">[</span><span class="s2">"smiles"</span><span class="p">]</span><span class="o">=</span><span class="n">smiles_list</span>
-
-<span class="c1">#Generar las moléculas con RDKit a partir de la columna con los SMILES</span>
-<span class="n">PandasTools</span><span class="o">.</span><span class="n">AddMoleculeColumnToFrame</span><span class="p">(</span><span class="n">df_moleculas_con_pirazina</span><span class="p">,</span> <span class="n">smilesCol</span><span class="o">=</span><span class="s1">'smiles'</span><span class="p">)</span>
-
-<span class="c1">#Visualizar el DataFrame</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">df_moleculas_con_pirazina</span><span class="p">)</span>
-</code></pre></div>
-<p>💭 ¿Que información tenemos en el DataFrame?</p>
+<p>💭 Buscá la molécula en las bases de dados e indica de que molécula se trata</p>
 <h2 id="propiedades-fisicoquimicas">Propiedades fisicoquímicas</h2>
-<p>Ahora vamos a calcular los predictores de la clase. </p>
+<p>Ahora vamos a algunas propiedades fisicoquímicas. </p>
 <p>Para hacerlo, vamos a usar la función <code>Descriptors</code> y <code>Chem</code> de RDKit.</p>
 <p>Esta función permite indicar que tipo de descriptor queremos calcular para una molécula.</p>
 <p>Vamos a calcular:</p>
@@ -1282,135 +1297,51 @@ vamos a usar la libreria <code>chembl_webresource_client</code>. Esta libreria n
 <span class="n">rotatable_bonds</span> <span class="o">=</span> <span class="n">Descriptors</span><span class="o">.</span><span class="n">NumRotatableBonds</span><span class="p">(</span><span class="n">molecula</span><span class="p">)</span>
 </code></pre></div>
 <h4 id="actividad_3">Actividad:</h4>
-<p>💭 Calculen las propiedades para <code>molecula_benznidazol</code>
+<p>💭 Coincide con peso molecular calculado en el punto anterior con el obtenido por RDKit?
 </p><div class="highlight"><pre><span></span><code><span class="c1">#Escribí el código acá</span>
 </code></pre></div>
-<p>Para calcular todas las propiedades en un sólo paso podemos definir una función que haga todos los pasos:</p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">drug_likness_decriptors</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
-    <span class="c1"># Desactivar las advertencias de asignación encadenada en pandas</span>
-    <span class="n">pd</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">mode</span><span class="o">.</span><span class="n">chained_assignment</span> <span class="o">=</span> <span class="kc">None</span>
-
-    <span class="c1"># Crear listas vacías para almacenar los descriptores</span>
-    <span class="n">NumHDonors_list</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">NumHAcceptors_list</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">MW_list</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">LogP_list</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">rotatable_bonds_list</span> <span class="o">=</span> <span class="p">[]</span>
-
-    <span class="c1"># Calcular los descriptores para cada molécula en la columna 'ROMol'</span>
-    <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="s1">'ROMol'</span><span class="p">]:</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="c1"># Calcular el número de donadores de enlaces de hidrógeno</span>
-            <span class="n">NumHDonors</span> <span class="o">=</span> <span class="n">Descriptors</span><span class="o">.</span><span class="n">NumHDonors</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
-            <span class="n">NumHDonors_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">NumHDonors</span><span class="p">)</span>
-        <span class="k">except</span><span class="p">:</span>
-            <span class="n">NumHDonors_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'N/A'</span><span class="p">)</span>  <span class="c1"># Si ocurre una excepción, agregar 'N/A' a la lista</span>
-            <span class="k">pass</span>
-
-        <span class="k">try</span><span class="p">:</span>
-            <span class="c1"># Calcular el número de aceptores de enlaces de hidrógeno</span>
-            <span class="n">NumHAcceptors</span> <span class="o">=</span> <span class="n">Descriptors</span><span class="o">.</span><span class="n">NumHAcceptors</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
-            <span class="n">NumHAcceptors_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">NumHAcceptors</span><span class="p">)</span>
-        <span class="k">except</span><span class="p">:</span>
-            <span class="n">NumHAcceptors_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'N/A'</span><span class="p">)</span>  <span class="c1"># Si ocurre una excepción, agregar 'N/A' a la lista</span>
-            <span class="k">pass</span>
-
-        <span class="k">try</span><span class="p">:</span>
-            <span class="c1"># Calcular el peso molecular exacto</span>
-            <span class="n">MW</span> <span class="o">=</span> <span class="n">Descriptors</span><span class="o">.</span><span class="n">ExactMolWt</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
-            <span class="n">MW_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">MW</span><span class="p">)</span>
-        <span class="k">except</span><span class="p">:</span>
-            <span class="n">MW_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'N/A'</span><span class="p">)</span>  <span class="c1"># Si ocurre una excepción, agregar 'N/A' a la lista</span>
-            <span class="k">pass</span>
-
-        <span class="k">try</span><span class="p">:</span>
-            <span class="c1"># Calcular el logP</span>
-            <span class="n">LogP</span> <span class="o">=</span> <span class="n">Descriptors</span><span class="o">.</span><span class="n">MolLogP</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
-            <span class="n">LogP_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">LogP</span><span class="p">)</span>
-        <span class="k">except</span><span class="p">:</span>
-            <span class="n">LogP_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'N/A'</span><span class="p">)</span>  <span class="c1"># Si ocurre una excepción, agregar 'N/A' a la lista</span>
-            <span class="k">pass</span>
-
-        <span class="k">try</span><span class="p">:</span>
-            <span class="c1"># Calcular el número de enlaces rotativos</span>
-            <span class="n">rotatable_bonds</span> <span class="o">=</span> <span class="n">Descriptors</span><span class="o">.</span><span class="n">NumRotatableBonds</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
-            <span class="n">rotatable_bonds_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rotatable_bonds</span><span class="p">)</span>
-        <span class="k">except</span><span class="p">:</span>
-            <span class="n">rotatable_bonds_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'N/A'</span><span class="p">)</span>  <span class="c1"># Si ocurre una excepción, agregar 'N/A' a la lista</span>
-            <span class="k">pass</span>
-
-    <span class="c1"># Agregar las listas de descriptores al DataFrame</span>
-    <span class="n">df</span><span class="p">[</span><span class="s1">'HBD'</span><span class="p">]</span> <span class="o">=</span> <span class="n">NumHDonors_list</span>
-    <span class="n">df</span><span class="p">[</span><span class="s1">'HBA'</span><span class="p">]</span> <span class="o">=</span> <span class="n">NumHAcceptors_list</span>
-    <span class="n">df</span><span class="p">[</span><span class="s1">'MW'</span><span class="p">]</span> <span class="o">=</span> <span class="n">MW_list</span>
-    <span class="n">df</span><span class="p">[</span><span class="s1">'logP'</span><span class="p">]</span> <span class="o">=</span> <span class="n">LogP_list</span>
-    <span class="n">df</span><span class="p">[</span><span class="s1">'nRotB'</span><span class="p">]</span> <span class="o">=</span> <span class="n">rotatable_bonds_list</span>
-
-    <span class="k">return</span> <span class="n">df</span>
+Notaron que la molécula con la que estamos trabajando no contiene hidrógenos? Si no lo notaron, corran el siguiente comando para visualizarla 👇
+<div class="highlight"><pre><span></span><code><span class="c1"># Imprimir la molécula</span>
+<span class="n">molecula</span>
 </code></pre></div>
-<p>Y ahora usamos esa función en el <code>df_moleculas_con_pirazina</code></p>
-<div class="highlight"><pre><span></span><code><span class="n">df_moleculas_con_pirazina</span> <span class="o">=</span> <span class="n">drug_likness_decriptors</span><span class="p">(</span><span class="n">df_moleculas_con_pirazina</span><span class="p">)</span>
+<p>Cuando RDKit genera una molécula pero no le agrega hidrógenos automáticamente a la visualización.</p>
+<p>Se pueden agregar usando la función .AddHs(). Vamos a generar una nueva variable llamada molecula_h para llamar a la molécula con hidrógenos.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Agregar hidrógenos a una molécula</span>
+<span class="n">molecula_h</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">AddHs</span><span class="p">(</span><span class="n">molecula</span><span class="p">)</span>
+<span class="n">molecula_h</span>
 </code></pre></div>
-<h4 id="actividad_4">Actividad:</h4>
-<p>💭 ¿Que información tenemos ahora en el DataFrame?
-</p><div class="highlight"><pre><span></span><code><span class="c1">#Escribí el código acá</span>
+<p>Vamos a verificar que los hidrógenos fueron adicionados contando la cantidad total de átomos de cada molécula</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Imprimir el número de átomos de la molécula sin hidrógenos</span>
+<span class="n">molecula</span><span class="o">.</span><span class="n">GetNumAtoms</span><span class="p">()</span>
 </code></pre></div>
-<p>Es dificil visualizar la información en una tabla, entonces vamos a realizar histogramas de las propiedades que calculamos.</p>
-<p>Existen dos librerías para graficar en python:</p>
-<ul>
-<li><a href="https://matplotlib.org/">Matplotlib</a></li>
-<li><a href="https://seaborn.pydata.org/">Seaborn</a></li>
-</ul>
-<p>¡Vamos a probar como se ve el grafico de tipo hisograma en Seaborn!</p>
-<div class="highlight"><pre><span></span><code><span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">df_moleculas_con_pirazina</span><span class="p">[</span><span class="s1">'nRotB'</span><span class="p">])</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Imprimir el número de átomos de la molécula con hidrógenos</span>
+<span class="n">molecula_h</span><span class="o">.</span><span class="n">GetNumAtoms</span><span class="p">()</span>
 </code></pre></div>
-<h4 id="actividad_5">Actividad:</h4>
-<p>💭 Realizá el gráfico de peso molecular
-</p><div class="highlight"><pre><span></span><code><span class="c1">#Escribí el código acá</span>
+<p>💭 En base al número de átomos obtenidos, ¿Consideras que se agregaron la cantidad correcta de hidrógenos?</p>
+<p>Vamos a comparar la molécula con y sin hidrógenos</p>
+<p>👇 Podemos dibujar ambas moléculas usando el siguiente comando 👇</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Dibujar la molécula con y sin hidrógenos</span>
+<span class="n">Draw</span><span class="o">.</span><span class="n">MolsToGridImage</span><span class="p">([</span><span class="n">molecula</span><span class="p">,</span><span class="n">molecula_h</span><span class="p">],</span><span class="n">legends</span><span class="o">=</span><span class="p">[</span><span class="s1">'molecula sin hidrogenos'</span><span class="p">,</span><span class="s1">'molecula con hidrogenos'</span><span class="p">])</span>
 </code></pre></div>
-<p>También pueden graficar todos los parámetros juntos usando el siguiente comando:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Crear una figura con un arreglo de subplots de 2 filas y 2 columnas, con un tamaño de 8x8 pulgadas</span>
-<span class="c1"># Definir los anchos deseados para cada subplot</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="c1"># Crear un histograma de la columna 'MW' de la tabla_CHEMBL674637 y asignarlo al subplot en la posición [0, 0]</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">df_moleculas_con_pirazina</span><span class="p">[</span><span class="s1">'MW'</span><span class="p">],</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
-
-<span class="c1"># Crear un histograma de la columna 'HBD' de la tabla_CHEMBL674637 y asignarlo al subplot en la posición [0, 1]</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">df_moleculas_con_pirazina</span><span class="p">[</span><span class="s1">'HBD'</span><span class="p">],</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
-
-<span class="c1"># Crear un histograma de la columna 'HBA' de la tabla_CHEMBL674637 y asignarlo al subplot en la posición [1, 0]</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">df_moleculas_con_pirazina</span><span class="p">[</span><span class="s1">'HBA'</span><span class="p">],</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
-
-<span class="c1"># Crear un histograma de la columna 'logP' de la tabla_CHEMBL674637 y asignarlo al subplot en la posición [1, 1]</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">df_moleculas_con_pirazina</span><span class="p">[</span><span class="s1">'logP'</span><span class="p">],</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
-
-<span class="c1"># Ajustar el diseño de los subplots para evitar superposiciones</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-
-<span class="c1"># Guardar la figura como un archivo PNG</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">'sns_histogramas.png'</span><span class="p">)</span>
-</code></pre></div>
-<h4 id="actividad_6">Actividad:</h4>
-<p>💭 Editá el comando para agregar el gráfico de número de enlaces rotativos en la molécula.
-</p><div class="highlight"><pre><span></span><code><span class="c1">#Escribí el código acá</span>
-</code></pre></div>
-<p>Si quieren leer más al respecto de histogramas en Seaborn pueden ingresar al siguiente <a href="https://seaborn.pydata.org/generated/seaborn.histplot.html#seaborn.histplot">link</a></p>
+<p>Pueden ver todos las funciones de este módulo entrando a este <a href="https://www.rdkit.org/docs/source/rdkit.Chem.rdchem.html">link</a></p>
+<p>En el caso de que quieras profundizar en alguna (o buscar nuevas) ahi encontrarás toda la información</p>
 <h2 id="ejercicio-integrador">Ejercicio integrador</h2>
-<p>La Piperidina es un grupo funcional con el siguiente SMILES: <code>C1CCNCC1</code>. Teniendo en cuenta esto, realizar las siguientes actitivades:
-1. Buscar la información disponible en PubChem y en ChEMBL</p>
+<p>Vamos a trabajar con la molécula con PubChem CID 5202</p>
 <ol>
 <li>
-<p>Recolectar las moléculas de ChEMBL que tengan esta subestructura y que estén aprobadas por la FDA</p>
+<p>Buscá la molécula en PubChem</p>
 </li>
 <li>
-<p>Generar un DataFrame con los smiles de las moléculas obtenidas de ChEMBL</p>
+<p>Buscar el InChI de la molécula</p>
 </li>
 <li>
-<p>Calcular las propiedades fisicoquímicas de las moléculas obtenidas de ChEMBL</p>
+<p>Generar la molécula usando RDKit</p>
 </li>
 <li>
-<p>Graficar las propiedades en histogramas</p>
+<p>Dibujar la estructura de la molécula</p>
+</li>
+<li>
+<p>Calcular sus propiedades fisicoquímicas</p>
 </li>
 </ol>
 <h2 id="material-de-lectura-y-consulta">Material de lectura y consulta</h2>
