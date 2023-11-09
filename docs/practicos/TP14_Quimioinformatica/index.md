@@ -171,28 +171,18 @@ Si compararáramos las librerías de Python con libros físicos, podríamos deci
 
 ```Python
 # Instalar las librerias
-!pip install pandas rdkit tqdm chembl_downloader chembl_webresource_client seaborn
+!pip install rdkit
 ```
 
 Ahora vamos a importar las librerias que vamos a usar
 
 ```Python
-# Importar librerias para guardar trabajar con tablas y grandes cantidades de datos
-import pandas as pd
-import numpy as np
-
 # Importar libreria de RDKit
 from rdkit import Chem
 from rdkit.Chem import AllChem
+from rdkit.Chem import Descriptors
 from rdkit.Chem import Draw
-from rdkit.Chem import PandasTools
 from rdkit.Chem.Draw import rdMolDraw2D
-
-# Importar libreria de ChEMBL
-from chembl_webresource_client.new_client import new_client
-
-# Importar las librerias para graficar
-import seaborn as sns
 ```
 
 A lo largo de este práctico vamos a estar explorando las bases de datos quimioinformáticos y trabajando con los comandos básicos de RDKit para trabajar con moléculas.
@@ -218,8 +208,8 @@ En programación se llama "variable" a la asignación de una palabra para identi
 
 
 ```Python
-# Generar la variable "smiles" que corresponde al smiles del Benznidazol
-smiles_benznidazol = 'C1=CC=C(C=C1)CNC(=O)CN2C=CN=C2[N+](=O)[O-]'
+# Generar la variable "smiles"
+smiles = 'C1=CC=C(C=C1)CNC(=O)CN2C=CN=C2[N+](=O)[O-]'
 ```
 
 Al generar la variable llamada smiles, guardamos la estructura en una palabra que podemos usar en el resto del código.
@@ -229,7 +219,7 @@ Vamos a ver que pasa si imprimimos la variable usando el comando print():
 
 ```Python
 # Imprimir la variable
-print(smiles_benznidazol)
+print(smiles)
 ```
 
 RDKit cuenta con un módulo llamado `Chem()`
@@ -246,8 +236,8 @@ En este caso, el módulo va a estar seguido de la función `MolFromSmiles()`, po
 Vamos a generar la variable <b>molecula</b> para guardar la molécula de Benznidazol generada.
 
 ```Python
-# Generar una molécula a partir del smiles del Benznidazol
-molecula_benznidazol = Chem.MolFromSmiles(smiles_benznidazol)
+# Generar una molécula a partir del smiles
+molecula = Chem.MolFromSmiles(smiles)
 ```
 
 #### Actividad:
@@ -263,78 +253,119 @@ Para hacerlo, sólo tienen que ejecutar el nombre de la variable
 
 ```Python
 # Visualizar la molécula
-molecula_benznidazol
+molecula
 ```
 
 #### Actividad:
 
 💭 ¿Lo que observas en la celda anterior corresponde con lo que viste en PubChem y en ChEMBL?
 
-### Obtener moléculas de las bases de datos
+### Generar una molécula a partir de InChI
 
-Tanto PubChem como ChEMBL tienen herramientas informáticas para obtener moléculas de sus bases de datos. En este práctico vamos a usar ChEMBL.
-
-Para trabajar con esta base de datos
-vamos a usar la libreria `chembl_webresource_client`. Esta libreria nos permite acceder a la información disponible en la base de datos. De esa librería la importamos `new_client` y le indicamos que queremos buscar en la base de datos. Podemos ver los recursos disponibles usando el comando que se encuentra a continuación:
+Vamos a repetir el paso anterior pero usando la nomenclatura en InChI:
 
 ```Python
-#Mostrar los recursos disponibles de la libreria chembl_webresource_client.new_client
-available_resources = [resource for resource in dir(new_client) if not resource.startswith('_')]
-print(available_resources)
+# Generar la variable "InChI"
+inchi = "InChI=1S/C12H12N4O3/c17-11(14-8-10-4-2-1-3-5-10)9-15-7-6-13-12(15)16(18)19/h1-7H,8-9H2,(H,14,17)"
 ```
-
-En este práctico vamos a usarlo para traer todas las moléculas que contengan una pirazina. Este es un  es un compuesto orgánico aromático heterocíclico con la siguiente estructura:
-
-<br>
-
-![Image](img/pirazina.png){ width="250", align="center" }
-
-<br>
-
-Además, le vamos a pedir que nos traiga la información de aquellas moléculas que estén aprobadas por la FDA (max_phase=4) y que solo nos devuelva la información relacionada a su estructura:
-
-```Python
-pirazina = "C1CNCCN1"
-moleculas_con_pirazina = new_client.substructure.filter(smiles=pirazina, max_phase=4).only([ 'molecule_structures'])
-len(moleculas_con_pirazina)
-```
-
 #### Actividad:
+💭 ¿Qué pasa si ahora imprimimos la variable?
 
-💭 ¿Que hay en la variable `moleculas_con_pirazina`?
+Ahora vamos a generar la molécula usando RDKit
+
+```Python
+# Generar una molécula a partir del InChI
+molecula = Chem.MolFromInchi(inchi)
+```
+Este tipo de objeto nos va a permitir realizar trabajar directamente con la molécula.
+
+Ahora vamos a visualizarla!
+
+Para hacerlo, sólo tienen que ejecutar el nombre de la variable: 👇
+
+```Python
+# Visualizar la molécula
+molecula
+```
+
+Y podemos transformar la nomenclatura de la molécula a InchiKey usando el siguiente comando:
+
+
+```Python
+# Generar el InchiKey de una molécula
+inchikey = Chem.MolToInchiKey(molecula)
+print(inchikey)
+```
+## Recorrer los átomos de una molécula
+Ahora vamos a trabajar con esta molécula:
+`CC(C)CC1=CC=C(C=C1)C(C)C(=O)O`
+
+Realizá los siguientes pasos:
+
+
+1.  Identificar como se llama este compuesto
+
+2.  Generá la molécula usando RDKit
+
 ```Python
 #Escribí el código acá
 ```
 
-La librería `chembl_webresource_client` descarga los datos en forma de diccionario. Vamos a procesar esos datos en formato dataframe para poder trabajar con ellos. Además, vamos generar las moléculas de RDKit usando PandasTools
+Ahora vamos a recorrer los átomos de la molécula. Podemos recorrer individualmente los átomos que forman la molécula usando la función `GetAtomWithIdx()`
+
+A la función tenemos que indicarle cual átomo queremos ver. RDKit le otorga un número a cada átomo, podemos verlo usando el siguiente comando:
 
 ```Python
-#Generar un DataFrame vacío
-df_moleculas_con_pirazina = pd.DataFrame()
-smiles_list = []
+#Imprimir el número de átomo para cada átomo de la molécula
+for atom in molecula.GetAtoms():
+    atom.SetAtomMapNum(atom.GetIdx())
 
-#Recolectar los SMILES del diccionario obtenido de ChEMBL
-for i in range(len(moleculas_con_pirazina)):
-    estructura = moleculas_con_pirazina[i]["molecule_structures"]
-    smiles = estructura['canonical_smiles']
-    smiles_list.append(smiles)
-
-#Agregar una columna con los SMILES al DataFrame
-df_moleculas_con_pirazina["smiles"]=smiles_list
-
-#Generar las moléculas con RDKit a partir de la columna con los SMILES
-PandasTools.AddMoleculeColumnToFrame(df_moleculas_con_pirazina, smilesCol='smiles')
-
-#Visualizar el DataFrame
-print(df_moleculas_con_pirazina)
+# Imprimir la molécula
+molecula
 ```
 
-💭 ¿Que información tenemos en el DataFrame?
+<b> Usando los números o indices que representan a cada átomo, podemos obtener diferentes parámetros. </b>
 
+Con la función `.GetSymbol()` podemos obtener el simbolo atómico.
+
+Vamos a probarlo con el átomo del indice 7
+
+```Python
+# Obtener el símbolo atómico del átomo número 7
+molecula.GetAtomWithIdx(7).GetSymbol()
+```
+💭 ¿Cuál es el simbolo del átomo correspondiente al indice 13?
+
+```Python
+#Escribí el código acá
+```
+
+Con la función `.GetAtomicNum()` podemos obtener el número atómico.
+
+Vamos a probarlo con el átomo del indice 7
+
+👇
+
+```Python
+# Obtener el número atómico del átomo número 7
+molecula.GetAtomWithIdx(7).GetAtomicNum()
+```
+💭 ¿Cuál es el número atómico correspondiente al indice 14?
+
+```Python
+#Escribí el código acá
+```
+
+💭 Recorre los átomos de la molécula y calcula su peso molecular
+```Python
+#Escribí el código acá
+```
+
+💭 Buscá la molécula en las bases de dados e indica de que molécula se trata
 
 ## Propiedades fisicoquímicas
 
-Ahora vamos a calcular los predictores de la clase. 
+Ahora vamos a algunas propiedades fisicoquímicas. 
 
 Para hacerlo, vamos a usar la función `Descriptors` y `Chem` de RDKit.
 
@@ -374,157 +405,67 @@ rotatable_bonds = Descriptors.NumRotatableBonds(molecula)
 
 #### Actividad:
 
-💭 Calculen las propiedades para `molecula_benznidazol`
+💭 Coincide con peso molecular calculado en el punto anterior con el obtenido por RDKit?
 ```Python
 #Escribí el código acá
 ```
-
-Para calcular todas las propiedades en un sólo paso podemos definir una función que haga todos los pasos:
-
-```Python
-def drug_likness_decriptors(df):
-    # Desactivar las advertencias de asignación encadenada en pandas
-    pd.options.mode.chained_assignment = None
-
-    # Crear listas vacías para almacenar los descriptores
-    NumHDonors_list = []
-    NumHAcceptors_list = []
-    MW_list = []
-    LogP_list = []
-    rotatable_bonds_list = []
-
-    # Calcular los descriptores para cada molécula en la columna 'ROMol'
-    for element in df['ROMol']:
-        try:
-            # Calcular el número de donadores de enlaces de hidrógeno
-            NumHDonors = Descriptors.NumHDonors(element)
-            NumHDonors_list.append(NumHDonors)
-        except:
-            NumHDonors_list.append('N/A')  # Si ocurre una excepción, agregar 'N/A' a la lista
-            pass
-
-        try:
-            # Calcular el número de aceptores de enlaces de hidrógeno
-            NumHAcceptors = Descriptors.NumHAcceptors(element)
-            NumHAcceptors_list.append(NumHAcceptors)
-        except:
-            NumHAcceptors_list.append('N/A')  # Si ocurre una excepción, agregar 'N/A' a la lista
-            pass
-
-        try:
-            # Calcular el peso molecular exacto
-            MW = Descriptors.ExactMolWt(element)
-            MW_list.append(MW)
-        except:
-            MW_list.append('N/A')  # Si ocurre una excepción, agregar 'N/A' a la lista
-            pass
-
-        try:
-            # Calcular el logP
-            LogP = Descriptors.MolLogP(element)
-            LogP_list.append(LogP)
-        except:
-            LogP_list.append('N/A')  # Si ocurre una excepción, agregar 'N/A' a la lista
-            pass
-
-        try:
-            # Calcular el número de enlaces rotativos
-            rotatable_bonds = Descriptors.NumRotatableBonds(element)
-            rotatable_bonds_list.append(rotatable_bonds)
-        except:
-            rotatable_bonds_list.append('N/A')  # Si ocurre una excepción, agregar 'N/A' a la lista
-            pass
-
-    # Agregar las listas de descriptores al DataFrame
-    df['HBD'] = NumHDonors_list
-    df['HBA'] = NumHAcceptors_list
-    df['MW'] = MW_list
-    df['logP'] = LogP_list
-    df['nRotB'] = rotatable_bonds_list
-
-    return df
-```
-
-Y ahora usamos esa función en el `df_moleculas_con_pirazina`
+Notaron que la molécula con la que estamos trabajando no contiene hidrógenos? Si no lo notaron, corran el siguiente comando para visualizarla 👇
 
 ```Python
-df_moleculas_con_pirazina = drug_likness_decriptors(df_moleculas_con_pirazina)
+# Imprimir la molécula
+molecula
 ```
 
-#### Actividad:
+Cuando RDKit genera una molécula pero no le agrega hidrógenos automáticamente a la visualización.
 
-💭 ¿Que información tenemos ahora en el DataFrame?
-```Python
-#Escribí el código acá
-```
-
-Es dificil visualizar la información en una tabla, entonces vamos a realizar histogramas de las propiedades que calculamos.
-
-Existen dos librerías para graficar en python:
-
-* [Matplotlib](https://matplotlib.org/)
-* [Seaborn](https://seaborn.pydata.org/)
-
-¡Vamos a probar como se ve el grafico de tipo hisograma en Seaborn!
+Se pueden agregar usando la función .AddHs(). Vamos a generar una nueva variable llamada molecula_h para llamar a la molécula con hidrógenos.
 
 ```Python
-sns.histplot(df_moleculas_con_pirazina['nRotB'])
+# Agregar hidrógenos a una molécula
+molecula_h = Chem.AddHs(molecula)
+molecula_h
 ```
 
-#### Actividad:
-
-💭 Realizá el gráfico de peso molecular
-```Python
-#Escribí el código acá
-```
-
-También pueden graficar todos los parámetros juntos usando el siguiente comando:
+Vamos a verificar que los hidrógenos fueron adicionados contando la cantidad total de átomos de cada molécula
 
 ```Python
-# Crear una figura con un arreglo de subplots de 2 filas y 2 columnas, con un tamaño de 8x8 pulgadas
-# Definir los anchos deseados para cada subplot
-fig, axs = plt.subplots(2, 2, figsize=(8, 8), sharey=True)
-
-# Crear un histograma de la columna 'MW' de la tabla_CHEMBL674637 y asignarlo al subplot en la posición [0, 0]
-sns.histplot(df_moleculas_con_pirazina['MW'], ax=axs[0, 0])
-
-# Crear un histograma de la columna 'HBD' de la tabla_CHEMBL674637 y asignarlo al subplot en la posición [0, 1]
-sns.histplot(df_moleculas_con_pirazina['HBD'], ax=axs[0, 1])
-
-# Crear un histograma de la columna 'HBA' de la tabla_CHEMBL674637 y asignarlo al subplot en la posición [1, 0]
-sns.histplot(df_moleculas_con_pirazina['HBA'], ax=axs[1, 0])
-
-# Crear un histograma de la columna 'logP' de la tabla_CHEMBL674637 y asignarlo al subplot en la posición [1, 1]
-sns.histplot(df_moleculas_con_pirazina['logP'], ax=axs[1, 1])
-
-# Ajustar el diseño de los subplots para evitar superposiciones
-fig.tight_layout()
-
-# Guardar la figura como un archivo PNG
-plt.savefig('sns_histogramas.png')
+# Imprimir el número de átomos de la molécula sin hidrógenos
+molecula.GetNumAtoms()
 ```
 
-#### Actividad:
-
-💭 Editá el comando para agregar el gráfico de número de enlaces rotativos en la molécula.
 ```Python
-#Escribí el código acá
+# Imprimir el número de átomos de la molécula con hidrógenos
+molecula_h.GetNumAtoms()
 ```
 
-Si quieren leer más al respecto de histogramas en Seaborn pueden ingresar al siguiente [link](https://seaborn.pydata.org/generated/seaborn.histplot.html#seaborn.histplot)
+💭 En base al número de átomos obtenidos, ¿Consideras que se agregaron la cantidad correcta de hidrógenos?
+
+Vamos a comparar la molécula con y sin hidrógenos
+
+👇 Podemos dibujar ambas moléculas usando el siguiente comando 👇
+
+```Python
+# Dibujar la molécula con y sin hidrógenos
+Draw.MolsToGridImage([molecula,molecula_h],legends=['molecula sin hidrogenos','molecula con hidrogenos'])
+```
+
+Pueden ver todos las funciones de este módulo entrando a este [link](https://www.rdkit.org/docs/source/rdkit.Chem.rdchem.html)
+
+En el caso de que quieras profundizar en alguna (o buscar nuevas) ahi encontrarás toda la información
 
 ## Ejercicio integrador
 
-La Piperidina es un grupo funcional con el siguiente SMILES: `C1CCNCC1`. Teniendo en cuenta esto, realizar las siguientes actitivades:
-1. Buscar la información disponible en PubChem y en ChEMBL
+Vamos a trabajar con la molécula con PubChem CID 5202
 
-2. Recolectar las moléculas de ChEMBL que tengan esta subestructura y que estén aprobadas por la FDA
+1. Buscá la molécula en PubChem
 
-3. Generar un DataFrame con los smiles de las moléculas obtenidas de ChEMBL
+2. Buscar el InChI de la molécula
 
-4. Calcular las propiedades fisicoquímicas de las moléculas obtenidas de ChEMBL
+3. Generar la molécula usando RDKit
 
-5. Graficar las propiedades en histogramas
+4. Dibujar la estructura de la molécula
+
+5. Calcular sus propiedades fisicoquímicas
 
 ## Material de lectura y consulta
 
