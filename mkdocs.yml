@@ -144,7 +144,7 @@ nav:
         - Teórica 9: teoricas/9-Teorica-Nueve/index.md
         - Teórica 10: teoricas/10-Teorica-Diez/index.md
         - Teórica 11: teoricas/11-Teorica-Once/index.md
-      #  - Teórica 12: teoricas/12-Teorica-Doce/index.md
+        - Teórica 12: teoricas/12-Teorica-Doce/index.md
         #- Resumen: teoricas/resumen.md
 
     - Prácticos: 
