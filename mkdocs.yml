@@ -36,14 +36,14 @@ theme:
     
   palette: 
     - scheme: default
-      primary: pink
-      accent: pink
+      primary: LightSalmon
+      accent: LightSalmon
       toggle:
         icon: material/toggle-switch 
         name: Cambiar a modo oscuro
     - scheme: slate 
-      primary: pink
-      accent: pink
+      primary: LightSalmon
+      accent: LightSalmon
       toggle: 
         icon: material/toggle-switch-off-outline
         name: Cambiar a modo claro
