@@ -171,11 +171,11 @@ nav:
 
         #- Resumen: 'practicos/resumen.md'
 
-    - Instructivos:
-        - instructivos/inicio.md
-        - Máquina Virtual: 'instructivos/maquina_virtual/index.md'
-        - Problemas instalando la Máquina Virtual: 'instructivos/problemasVM/index.md'
-        - Tips and Tricks para usar la Máquina Virtual más cómodos: 'instructivos/tipsVM/index.md'
+    # - Instructivos:
+    #     - instructivos/inicio.md
+    #     - Máquina Virtual: 'instructivos/maquina_virtual/index.md'
+    #     - Problemas instalando la Máquina Virtual: 'instructivos/problemasVM/index.md'
+    #     - Tips and Tricks para usar la Máquina Virtual más cómodos: 'instructivos/tipsVM/index.md'
 
 # copyright
 # --- editar y ajustar de acuerdo al curso
