@@ -8,7 +8,9 @@
 * Alineamientos múltiples
 * Sequence profiles, Hidden Markov Models (I y II)
 * Información contenida en alineamientos múltiples
+<!--
 * Métodos de predicción basados en datos, machine learning
+-->
 * Bioinformática estructural
 * Data clustering
 * Secuenciación y ensamblado de genomas
@@ -21,7 +23,10 @@
 * Alineamientos de a pares
 * Búsquedas de secuencias por similitud y alineamientos múltiples
 * Perfiles de secuencia, HMM y PSI-BLAST
-* HMM y Redes Neuronales
+* HMM
+<!--
+ y Redes Neuronales
+ -->
 * Programando en Biología
 * Bioinformática estructural: Predicción de desorden
 * Bioinformática estructural: Motivos funcionales en proteínas
