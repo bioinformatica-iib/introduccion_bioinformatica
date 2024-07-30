@@ -226,7 +226,7 @@ Ambos tipos de paths tienen sus ventajas y desventajas. Los paths absolutos tien
     1. `cd ././ibioinfo`
     1. `cd ./home/ibioinfo`
 
-1. ¿Cambiarian la respuesta en algunos de los puntos anteriores si el usuario logueado actualmente en la computadora no es **ibioinfo**? ¿Por qué?
+1. ¿Cambiarían la respuesta en algunos de los puntos anteriores si el usuario logueado actualmente en la computadora no es **ibioinfo**? ¿Por qué?
 
 1. Identifique en la siguiente lista cuales paths son **paths relativos**:
 
