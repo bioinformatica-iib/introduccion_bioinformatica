@@ -1,18 +1,18 @@
 ![Image](img/banner.jpg){ width="250", align="left" }
 
-# **TP 1**. Introducción a Lubuntu, Bash y Programación { markdown data-toc-label = 'TP 1' }
+# **TP 1**. Introducción a Ubuntu, Bash y Programación { markdown data-toc-label = 'TP 1' }
 
 <br>
 
 [:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1j-Ys8NpOWFRxqGz453-n8nU5zigy0TCw/view?usp=sharing){ .md-button .md-button--primary }
 <!--
 Este es el botón para decargar materiales, en (#) hay que agregar el link correspondiente
---->
 
 ### Slides mostrados en la clase
 
 * :fontawesome-regular-file-pdf: [Introducción a la programación](https://drive.google.com/file/d/1lfvCd-iWPAyZ5tj96njbOMGPerXAUlJ0/view?usp=drive_link)
 * :fontawesome-regular-file-pdf: [Cierre TP](https://drive.google.com/file/d/1jwUdtQYj9h4uGiz98tJFeol3e942zsu4/view?usp=drive_link)
+--->
 
 <!--
 ### Videos de la clase grabada
@@ -36,22 +36,23 @@ Este es el botón para decargar materiales, en (#) hay que agregar el link corre
 * [Comando AWK](https://www.tutorialspoint.com/awk/index.htm)
 * [Consola de Linux online](https://bellard.org/jslinux/vm.html?url=alpine-x86.cfg&mem=192) (y [otra](https://copy.sh/v86/?profile=linux26))
 * [Compilador de Bash online](https://replit.com/languages/bash) (y [otro](https://www.onlinegdb.com/online_bash_shell))
+* [Instalación de Linux en windows](AGREGAR LINK)
 
 ### Objetivos
 
-* Familiarizarse un poco con Lubuntu y su estructura de directorios
+* Familiarizarse un poco con Ubuntu y su estructura de directorios
 * Familiarizarse con el uso básico de los comandos de Bash
 * Familiarizarse con los bloques lógicos básicos de la programación
 
 ## **Introducción al Tema**
-En este trabajo práctico vamos a aprender a usar la **línea de comando** de Lubuntu (también referida como *terminal*, *consola* o *shell*). Para muchos de nosotros, que estamos acostumbrados a la interfaz gráfica de sistemas operativos como los de Windows o *GUI* (por las siglas en ingles: *Graphic User Interface*), la linea de comando puede parecer un desafío, pero con práctica y algo de paciencia descubrirán que puede resultar amena. Su uso tiene dos ventajas destacables para nuestro campo:
+En este trabajo práctico vamos a aprender a usar la **línea de comando** de Ubuntu (también referida como *terminal*, *consola* o *shell*). Para muchos de nosotros, que estamos acostumbrados a la interfaz gráfica de sistemas operativos como los de Windows o *GUI* (por las siglas en ingles: *Graphic User Interface*), la línea de comando puede parecer un desafío, pero con práctica y algo de paciencia descubrirán que puede resultar amena. Su uso tiene dos ventajas destacables para nuestro campo:
 
 * Nos permitirá trabajar en entornos o programas sin interfaz gráfica (GUI)
 * Mediante el uso de programas o *scripts*, nos permitirá automatizar procesos, acelerando el trabajo y minimizando la cantidad de errores que podemos cometer con tareas repetitivas
 
-## **¿Unix? ¿Linux? ¿Ubuntu? ¿Lubuntu?** { markdown data-toc-label='¿Unix? ¿Linux? ¿Lubuntu?' }  
+## **¿Unix? ¿Linux? ¿Ubuntu? ** { markdown data-toc-label='¿Unix? ¿Linux?' }  
 
-Dependiendo que tan familiares esten con Linux, todos estos nombres pueden resultar un poco confusos. Vamos por partes:
+Dependiendo que tan familiares estén con Linux, todos estos nombres pueden resultar un poco confusos. Vamos por partes:
 
 * **Unix** es un sistema operativo creado en 1969 por dos programadores estadounidenses que trabajaban para Bell Labs, una companía de investigación y desarrollo científico que en su momento era propiedad de AT&T (compañia estadounidense de teléfonos). Al ser un sistema operativo portable, multitarea y multiusuario se hizo rápidamente popular y se difundió por instituciones académicas y empresas
 
@@ -63,29 +64,29 @@ Dependiendo que tan familiares esten con Linux, todos estos nombres pueden resul
 
 * **Ubuntu** es una distribución de Linux creada en 2004 basada en Debian. Al día de la fecha es la distrubución más popular de Linux con más del 50% de los usuarios.
 
-* **Lubuntu** es una distribución de Linux creada en 2009 basada Ubuntu. Es bastante similar a Ubuntu en todo lo que es consola, pero tiene una interfaz gráfica que consume menos recursos, haciendolo ideal para maquinas más viejas (o en nuestro caso, maquinas virtuales que pesen lo menos posible).
+* **Lubuntu**, que es el sistema operativo que usábamos en la máquina virtual, es una distribución de Linux creada en 2009 basada en Ubuntu. Es bastante similar a Ubuntu en todo lo que es consola, pero tiene una interfaz gráfica que consume menos recursos, haciéndolo ideal para máquinas más viejas (o en nuestro caso, máquinas virtuales que pesen lo menos posible).
 
-## **Estructura de directorios de Lubuntu** { markdown data-toc-label='Estructura de directorios' }  
+## **Estructura de directorios de Ubuntu** { markdown data-toc-label='Estructura de directorios' }  
 
 La organización de archivos en Ubuntu y Lubuntu es bastante diferente a la de Windows. Si bien no vamos a detallar completamente toda la estructura y que es cada carpeta (porque el 95% no lo van a usar en esta materia), es importante tener una idea de lo básico:
 
 * **/** :material-arrow-right: Carpeta raiz, o *root*. Contiene al resto de las carpetas
     * **/etc** :material-arrow-right: Configuraciones del sistema para todos los usuarios (mucho cuidado al tocar)
     * **/home** :material-arrow-right: Ubicación de los directorios de los diferentes usuarios (o en este caso el único usuario)
-        * **/home/ibioinfo** :material-arrow-right: Directorio del usuario *ibioinfo*. Es el lugar donde van a trabajar la mayoría del tiempo (incluye tanto el Escritorio como Documentos) y donde se abre por defecto la terminal (más sobre esto en un ratito). Comunmente referida como *home directory* o *home* del usuario *ibioinfo*
+        * **/home/ibioinfo** :material-arrow-right: Directorio del usuario *ibioinfo*. Es el lugar donde van a trabajar la mayoría del tiempo (incluye tanto el Escritorio como Documentos) y donde se abre por defecto la terminal (más sobre esto en un ratito). Comúnmente referida como *home directory* o *home* del usuario *ibioinfo*
     * **/media** :material-arrow-right: Si fuera una computadora normal (no VM) aca aparecerían los pendrives. En nuestro caso aca aparecen por defecto las carpetas compartidas con la PC host
     * **/tmp** :material-arrow-right: Ubicación de los archivos temporales de los programas
     * **/var** :material-arrow-right: Ubicación de los archivos variables de los programas, como logs, bases de datos, paginas webs, etc
         * **/var/log** :material-arrow-right: Probablemente la subcarpeta más usada de **/var**. Contiene los logs de los programas (que a veces es la única forma de saber porque algo no anduvo)
 
-Esto es simplemente un vistazo rápido. Si quieren la lista completa de subdirectorios de Lubuntu la pueden encontrar en [esta página](https://help.ubuntu.com/community/LinuxFilesystemTreeOverview), pero tengan en cuenta que tocar cualquier cosa fuera de **/home** conlleva la posibilidad de arruinar la computadora. En esta materia vamos a usar principalmente **/home** y **/media**.
+Esto es simplemente un vistazo rápido. Si quieren la lista completa de subdirectorios de Ubuntu la pueden encontrar en [esta página](https://help.ubuntu.com/community/LinuxFilesystemTreeOverview), pero tengan en cuenta que tocar cualquier cosa fuera de **/home** conlleva la posibilidad de arruinar la computadora. En esta materia vamos a usar principalmente **/home** y **/media**.
 
 ## **Línea de comando**
 
 Como ya dijimos en la introducción la línea de comando tiene varios nombres, y en esta guia nos vamos a referir a ella como *terminal* o *consola*. Hay varias formas de abrir la terminal:
 
 * Desde cualquier lado: ++ctrl+alt+t++
-* Desde cualquier lado: **Inicio** *(menu de abajo a la izquierda)* :material-arrow-right: **Herramientas del sistema** :material-arrow-right: **LXterminal**
+* Desde cualquier lado: **Inicio** *(menu de abajo a la izquierda)* :material-arrow-right: **Herramientas del sistema** :material-arrow-right: **Terminal**
 * Desde afuera de una carpeta: **Boton derecho en la carpeta** :material-arrow-right: **Abrir en el terminal**
 * Desde adentro de una carpeta: **Herramientas** :material-arrow-right: **Abrir la carpeta actual en un terminal** (o apretar ++f4++)
 
@@ -98,14 +99,14 @@ Abran la terminal en **/home/ibioinfo** y deberian ver algo así:
 ibioinfo@ibioinfo-VirtualBox:~$
 ```
 
-Donde **ibioinfo** es el nombre del usuario actual e **ibioinfo-VirtualBox** el nombre de la computadora (que justo en este caso son similares, pero no es necesario). El **\~** después de los dos puntos (conocido como "virgulilla", "tílde" o "cosito de la ñ") parece ser parte de la terminal, pero en realidad está indicando la carpeta en la que se encuentra en este momento. Como cada usuario trabaja mas que nada en su carpeta, Lubuntu le asigna el símbolo **\~** a esa carpeta para simplificar los directorios que aparecen en la terminal. En nuestro caso **\~** equivale a **/home/ibioinfo** y puede ser que nos refiramos a esa carpeta como su *home directory* o simplemente su *home*.
+Donde **ibioinfo** es el nombre del usuario actual e **ibioinfo-VirtualBox** el nombre de la computadora (que justo en este caso son similares, pero no es necesario). El **\~** después de los dos puntos (conocido como "virgulilla", "tilde" o "cosito de la ñ") parece ser parte de la terminal, pero en realidad está indicando la carpeta en la que se encuentra en este momento. Como cada usuario trabaja mas que nada en su carpeta, Ubuntu le asigna el símbolo **\~** a esa carpeta para simplificar los directorios que aparecen en la terminal. En nuestro caso **\~** equivale a **/home/ibioinfo** y puede ser que nos refiramos a esa carpeta como su *home directory* o simplemente su *home*.
 
 !!! info
 
     Aclaraciones por si son fanáticos de los atajos de teclado:
 
-    * Para copiar texto en la terminal hay que usar ++ctrl+shift+c++. En en resto de Lubuntu es normal (++ctrl+c++).
-    * Para pegar texto en la terminal hay que usar ++ctrl+shift+v++. En en resto de Lubuntu es normal (++ctrl+v++).
+    * Para copiar texto en la terminal hay que usar ++ctrl+shift+c++. En en resto de Ubuntu es normal (++ctrl+c++).
+    * Para pegar texto en la terminal hay que usar ++ctrl+shift+v++. En en resto de Ubuntu es normal (++ctrl+v++).
     * De apretar ++ctrl+c++ en la terminal le estan diciendo que corte forzosamente el programa que está corriendo. Si bien hay que tener cuidado con no cortar un proceso importante a la mitad, este atajo del teclado es util si un programa se te quedó colgado o similar.
 
 ## **Bash: Ubicarse en la terminal**
@@ -145,7 +146,7 @@ En este caso están viendo los contenidos de una carpeta diferente a donde estam
 ls -l /etc/perl/Net
 ```
 
-Donde la opcion `-l` agrega información sobre los permisos del archivo (quien puede leerlo o modificarlo). Con un poco de suerte esta es la primera y ultima vez en toda la materia que vamos a hablar de los permisos de Lubuntu (y de como a veces dan dolores de cabeza).
+Donde la opcion `-l` agrega información sobre los permisos del archivo (quien puede leerlo o modificarlo). Con un poco de suerte esta es la primera y ultima vez en toda la materia que vamos a hablar de los permisos de Ubuntu (y de como a veces dan dolores de cabeza).
 
 !!! info
 
@@ -179,7 +180,7 @@ Ahora quiero volver a su *home* y para eso escribo:
 cd ..
 ```
 
-Vean ahora en que carpeta están. En todo lo que es Ubuntu y Lubuntu `..` significa "una carpeta para arriba".
+Vean ahora en que carpeta están. En todo lo que es Ubuntu `..` significa "una carpeta para arriba".
 
 ¿Qué pasa entonces si estan en **/home/ibioinfo/Escritorio/TP01/Version3/Intento2/Edicion1** y quieren volver a su *home*? ¿Tienen que escribir `cd ..` 5 veces? Técnicamente funciona, pero por defecto el comando `cd` te lleva a tu *home* si no le das ningun parámetro.
 
@@ -191,7 +192,7 @@ cd
 
 Cuando corrimos `ls /etc/perl/Net` estaban ubicados en su *home* (**/home/ibioinfo**) y si vemos las carpetas dentro de *home* resulta que no existe ninguna llamada **/etc**.
 
-* ¿Dónde está la carpeta **/etc** en relación a **/home/ibioinfo**? (ver **Estructura de directorio de Lubuntu** arriba si no se acuerdan)
+* ¿Dónde está la carpeta **/etc** en relación a **/home/ibioinfo**? (ver **Estructura de directorio de Ubuntu** arriba si no se acuerdan)
 * ¿Cómo pudimos acceder a **/etc/perl/Net** si la terminal estaba ubicada en una carpeta sin ninguna relación?
 
 La respuesta a todo esto son los paths relativos y absolutos:
@@ -271,19 +272,19 @@ Por defecto este comando solo puede eliminar directorios vacios (lo cual puede n
 
 !!! danger "Tip muy importante"
 
-    Este es un buen momento para hablar de que nombres ponerles a las cosas que uno crea un Lubuntu. Si bien cualquier nombre funciona en un principio, por un tema de compatibilidad entre los diferentes programas que pueden llegar a usar se recomienda:
+    Este es un buen momento para hablar de que nombres ponerles a las cosas que uno crea un Ubuntu. Si bien cualquier nombre funciona en un principio, por un tema de compatibilidad entre los diferentes programas que pueden llegar a usar se recomienda:
 
     * **Muy recomendado:** No usar comillas dobles, simples o apóstrofes
     * **Recomendado:** No usar espacios, paréntesis, Ñ, acentos, diéresis u otros diacríticos (el espacio comunmente se remplaza por un guión o guión bajo)
 
 ### Crear y eliminar archivos
 
-Hay varias formas de crear archivos en Lubuntu y la mas simple es `touch ARCHIVO`, que crea un archivo de texto vacio donde **ARCHIVO** es el nombre del archivo (que puede incluir un path antes). Para entender lo que quiero decir vayan a su *home* y corran:
+Hay varias formas de crear archivos en Ubuntu y la mas simple es `touch ARCHIVO`, que crea un archivo de texto vacio donde **ARCHIVO** es el nombre del archivo (que puede incluir un path antes). Para entender lo que quiero decir vayan a su *home* y corran:
 
 ``` 
 touch Documentos/testfile
 ```
-Aca estoy usando un path relativo para crear el archivo. Se van a dar cuenta que el archivo no tiene extensión (por ejemplo **.txt**). En Lubuntu van a ver muchos archivos de texto sin extensión, pero se la pueden agregar sin problema si quieren. Entren a **Documentos** y vean si el archivo realmente existe.
+Aca estoy usando un path relativo para crear el archivo. Se van a dar cuenta que el archivo no tiene extensión (por ejemplo **.txt**). En Ubuntu van a ver muchos archivos de texto sin extensión, pero se la pueden agregar sin problema si quieren. Entren a **Documentos** y vean si el archivo realmente existe.
 
 Lo que le vamos a enseñar a continuación es probablemente uno de los comandos más peligrosos de Bash si se usa incorrectamente. `rm` es el comando usado para eliminar archivos (o carpetas, o discos enteros) y es la base de cientos de historias en internet de como alguien se quedó sin trabajo. El comando se usa:
 
@@ -346,7 +347,7 @@ mv FOLDER_ORIGEN FOLDER_DESTINO
 
 ### Escribir archivos de texto
 
-En Lubuntu hay varias formas de escribir en archivos de texto, pero una de las más útiles para nosotros va a ser el `>` quien redirige la salida de información de la consola. Se usa:
+En Ubuntu hay varias formas de escribir en archivos de texto, pero una de las más útiles para nosotros va a ser el `>` quien redirige la salida de información de la consola. Se usa:
 
 ```bash
 comando -opciones parametro1 parametro2 > ARCHIVO_DESTINO
@@ -360,7 +361,7 @@ ls -l > Documentos/output_de_ls
 
 Verán que en un principio parece que no paso nada. Entren ahora a **Documentos** y van a ver que hay un nuevo archivo con el nombre **output_de_ls**.
 
-Vamos a abir el archivo usando **Leafpad**, el editor de texto de la interfaz ǵráfica de Lubuntu. Asegurandose que estan **Documentos**, en la consola escriban:
+Vamos a abir el archivo usando **Leafpad**, el editor de texto de la interfaz ǵráfica de Ubuntu. Asegurándose que estan **Documentos**, en la consola escriban:
 
 ```bash
 leafpad output_de_ls
@@ -380,7 +381,7 @@ Van a ver que se abre el editor de texto de igual forma que si ubieran hecho dob
 
 **Leafpad** funciona como un editor de texto bastante normal. Agreguen una nueva linea abajo de todo (con cualquier texto) y guarden el archivo.
 
-Al momento sabemos como guardar en un archivo de texto cualquier salida de un comando de Lubuntu, pero, ¿cómo hacemos para poner lo que nosotros queremos en un archivo de texto? Simple, ¡con otro comando de Lubuntu!
+Al momento sabemos como guardar en un archivo de texto cualquier salida de un comando de Ubuntu, pero, ¿cómo hacemos para poner lo que nosotros queremos en un archivo de texto? Simple, ¡con otro comando de Ubuntu!
 
 !!! Danger
 
@@ -511,7 +512,7 @@ Para este ejercicio vamos a seguir usando el archivo **martin_fierro**.
 
 Los *scripts* de Bash son básicamente una lista de muchos de los comandos que nosotros corrimos en la terminal, pero escritos dentro de un archivo. Al ejecutar ese archivo todos los comandos dentro de él serán corridos uno a uno de arriba a abajo.
 
-Para simplificar un poco la tarea y enfocarnos en lo que importa en esta sección, vamos a utilizar la interfaz gráfica de Lubuntu. Vayan a **Documentos** y creen un archivo llamado **primer_programa.sh** (Boton derecho :material-arrow-right: Crear nuevo... :material-arrow-right: Archivo vacío). Luego abran el archivo en **Leafpad** (doble click) y escriban lo siguiente:
+Para simplificar un poco la tarea y enfocarnos en lo que importa en esta sección, vamos a utilizar la interfaz gráfica de Ubuntu. Vayan a **Documentos** y creen un archivo llamado **primer_programa.sh** (Boton derecho :material-arrow-right: Crear nuevo... :material-arrow-right: Archivo vacío). Luego abran el archivo en **Leafpad** (doble click) y escriban lo siguiente:
 
 ```bash
 echo "----------------"
@@ -730,7 +731,7 @@ Hay otra versión del *for* que comunmente se denomina *for each*. En este caso 
     # Como ahora la variable son elementos de una lista le pongo el nombre *color* para que se sepa que es, 
     # pero podría ser *i*
     # Esta es una forma bastante mala de usar listas de elementos, donde la estoy declarando en el mismo *for*;
-    # comunmente las listas existen de antes en el programa o las obtengo de un archivo o comando de Lubuntu
+    # comunmente las listas existen de antes en el programa o las obtengo de un archivo o comando de Ubuntu
     for color in rojo amarillo verde
     do
         echo "Este es el color $color"
@@ -808,7 +809,7 @@ Ahora que sabemos nuestro objetivo vayan a **Documentos** y creen una nueva carp
 
 ## **Bash: Tablas**
 
-Lo ultimo que vamos a aprender hoy es un pequeño vistazo a como se pueden manipular tablas desde la consola de Lubuntu. Descarguen el archivo **mtcars** que se encuentra en los materiales del TP (boton al principio de todo) y ponganlo en **Documentos**. Esta tabla viene por defecto con el lenguaje de programación **R** y nos va a servir para aprender como manipular tablas en Bash. 
+Lo ultimo que vamos a aprender hoy es un pequeño vistazo a como se pueden manipular tablas desde la consola de Ubuntu. Descarguen el archivo **mtcars** que se encuentra en los materiales del TP (boton al principio de todo) y ponganlo en **Documentos**. Esta tabla viene por defecto con el lenguaje de programación **R** y nos va a servir para aprender como manipular tablas en Bash. 
 
 Abran el archivo con **Leafpad** (doble click). Podemos ver que es una tabla en formato texto, donde la primera línea es el encabezado o *header* de la tabla y en cada líńea las columnas están separadas entre ellas con un ++tab++ (a estos archivos se los conoce como **TSV** o "Tab-Separated Values"). Es bioinformática es muy común querer seleccionar columnas específicas en una tabla, o filtrar filas debido al valor de una de sus columnas; esto es lo que vamos a aprender a continuación.
 
