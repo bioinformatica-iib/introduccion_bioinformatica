@@ -9,7 +9,6 @@ tags:
 * Dr. Fernán Agüero
 
 ### Profesores invitados
-* Dr. Morten Nielsen
 * Dra. Lucía B. Chemes
 
 ### Jefa de Trabajos Prácticos
@@ -19,9 +18,11 @@ tags:
 * Lic. Mercedes Didier Garnham
 * Lic. Guadalupe Romer
 
-### Ayudantes Ad-Scriptos
-* Sebastián Jinich
+### Ayudante de 1ra Ad-honorem
+* Heli A. García
 * Ramiro Quinteros
 
-### Ayudante invitada
-* Heli A. García
+### Ayudantes Ad-Scriptos
+* Sebastián Jinich
+
+

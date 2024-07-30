@@ -36,14 +36,14 @@ theme:
     
   palette: 
     - scheme: default
-      primary: LightSalmon
-      accent: LightSalmon
+      primary: deep orange
+      accent: deep orange
       toggle:
         icon: material/toggle-switch 
         name: Cambiar a modo oscuro
     - scheme: slate 
-      primary: LightSalmon
-      accent: LightSalmon
+      primary: deep orange
+      accent: deep orange
       toggle: 
         icon: material/toggle-switch-off-outline
         name: Cambiar a modo claro
@@ -129,44 +129,44 @@ nav:
     - Inicio: 'index.md'
     - Acerca de: 'acerca.md'
     - Contenidos: 'contenidos.md'
-    - Cronograma: 'cronograma.md'
+    #- Cronograma: 'cronograma.md'
     - Docentes: 'docentes.md'
     - Teóricas:
         - teoricas/inicio.md
-        - Teórica 1: teoricas/1-Teorica-Uno/index.md
-        - Teórica 2: teoricas/2-Teorica-Dos/index.md
-        - Teórica 3: teoricas/3-Teorica-Tres/index.md
-        - Teórica 4: teoricas/4-Teorica-Cuatro/index.md
-        - Teórica 5: teoricas/5-Teorica-Cinco/index.md
-        - Teórica 6: teoricas/6-Teorica-Seis/index.md
-        - Teórica 7: teoricas/7-Teorica-Siete/index.md
-        - Teórica 8: teoricas/8-Teorica-Ocho/index.md
-        - Teórica 9: teoricas/9-Teorica-Nueve/index.md
-        - Teórica 10: teoricas/10-Teorica-Diez/index.md
-        - Teórica 11: teoricas/11-Teorica-Once/index.md
-        - Teórica 12: teoricas/12-Teorica-Doce/index.md
+        # - Teórica 1: teoricas/1-Teorica-Uno/index.md
+        # - Teórica 2: teoricas/2-Teorica-Dos/index.md
+        # - Teórica 3: teoricas/3-Teorica-Tres/index.md
+        # - Teórica 4: teoricas/4-Teorica-Cuatro/index.md
+        # - Teórica 5: teoricas/5-Teorica-Cinco/index.md
+        # - Teórica 6: teoricas/6-Teorica-Seis/index.md 
+        # - Teórica 7: teoricas/7-Teorica-Siete/index.md
+        # - Teórica 8: teoricas/8-Teorica-Ocho/index.md
+        # - Teórica 9: teoricas/9-Teorica-Nueve/index.md
+        # - Teórica 10: teoricas/10-Teorica-Diez/index.md
+        # - Teórica 11: teoricas/11-Teorica-Once/index.md
+        # - Teórica 12: teoricas/12-Teorica-Doce/index.md
         #- Resumen: teoricas/resumen.md
 
     - Prácticos: 
         - 'practicos/inicio.md'
         #- TPs: 'practicos/tpsGrid.md'
-        - TP 1 - Linux: 'practicos/TP01_Linux/index.md'
-        - TP 2 - EMBOSS: 'practicos/TP02_EMBOSS/index.md'
-        - TP 3 - Alineamientos de a pares: 'practicos/TP03_Alineamientos/index.md'
-        - TP 4 - Búsqueda por similitud: 'practicos/TP04_Busqueda_por_similitud/index.md'
-        - TP 5a - R - Introduccion: 'practicos/TP05a_R/index.md'
-        - TP 5b - R - Aplicación: 'practicos/TP05b_R/index.md' 
-        - TP 6 - PSI-BLAST: 'practicos/TP06_PSI-BLAST/index.md'
-        - TP 7 - Predicción de Desorden: 'practicos/TP07_Desorden/index.md'
-        - TP 8 - Motivos Lineales: 'practicos/TP08_Motivos/index.md'
-        - TP 9a - Modelado por Homología: 'practicos/TP09a_Modelado_Por_Homologia/index.md'
-        - TP 9b - Modelado usando AlphaFold: 'practicos/TP09b_AlphaFold/index.md'
-        - TP 10a - Clustering: 'practicos/TP10a_Clustering/index.md'
-        - TP 10b - Data Mining: 'practicos/TP10b_Data_Mining/index.md'
-        - TP 11 - HMMs & ANNs: 'practicos/TP11_HMM_ANN/index.md'
-        - TP 12 - Short Read Mapping: 'practicos/TP12_Short-Read-Mapping/index.md'
-        - TP 13 - Genomica Comparativa: 'practicos/TP13_Genomica_Comparativa/index.md'
-        - TP 14 - Quimioinformatica: 'practicos/TP14_Quimioinformatica/index.md'
+        #- TP 1 - Linux: 'practicos/TP01_Linux/index.md'
+        #- TP 2 - EMBOSS: 'practicos/TP02_EMBOSS/index.md'
+        #- TP 3 - Alineamientos de a pares: 'practicos/TP03_Alineamientos/index.md'
+        #- TP 4 - Búsqueda por similitud: 'practicos/TP04_Busqueda_por_similitud/index.md'
+        #- TP 5a - R - Introduccion: 'practicos/TP05a_R/index.md'
+        #- TP 5b - R - Aplicación: 'practicos/TP05b_R/index.md' 
+        #- TP 6 - PSI-BLAST: 'practicos/TP06_PSI-BLAST/index.md'
+        #- TP 7 - Predicción de Desorden: 'practicos/TP07_Desorden/index.md'
+        #- TP 8 - Motivos Lineales: 'practicos/TP08_Motivos/index.md'
+        #- TP 9a - Modelado por Homología: 'practicos/TP09a_Modelado_Por_Homologia/index.md'
+        #- TP 9b - Modelado usando AlphaFold: 'practicos/TP09b_AlphaFold/index.md'
+        #- TP 10a - Clustering: 'practicos/TP10a_Clustering/index.md'
+        #- TP 10b - Data Mining: 'practicos/TP10b_Data_Mining/index.md'
+        #- TP 11 - HMMs & ANNs: 'practicos/TP11_HMM_ANN/index.md'
+        #- TP 12 - Short Read Mapping: 'practicos/TP12_Short-Read-Mapping/index.md'
+        #- TP 13 - Genomica Comparativa: 'practicos/TP13_Genomica_Comparativa/index.md'
+        #- TP 14 - Quimioinformatica: 'practicos/TP14_Quimioinformatica/index.md'
       #  - TP 6 - Filogenias: 'practicos/TP06_Filogenia/index.md'
 
         #- Resumen: 'practicos/resumen.md'
