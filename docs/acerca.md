@@ -19,14 +19,16 @@ tags:
 * Conocimientos básicos de estadística: distribuciones, probabilidades.
 * Manejo básico de computadoras. 
 
+<!--
 ## Costos
 
 * **Alumnos de Grado y Doctorado UNSAM:** Sin costo.
 * **Estudiantes y profesionales de otras Universidades Públicas Argentinas:** $15000
 * **Alumnos de Post-grado de Universidades Privadas:** $35000
 * **Empresas/Profesionales Independientes:** $85000
+-->
 
-## Horarios 2do Cuatrimestre 2023 (Virtual)
+## Horarios 2do Cuatrimestre 2024 (Presencial)
 
 * **Virtual:** Martes y Jueves 9 a 13hs.
 
@@ -59,13 +61,16 @@ Para inscribirte vas a necesitar:
 
 - Si sos alumno UNSAM:
     * [x] Hay que inscribirse por el SIU.
+<!--
 - Si sos posgrado, investigador o trabajas en la industria:
     * [x] Breve descripción de tu línea de trabajo.
     * [x] Breve descripción de como el curso ayudaría a tu formación/línea de trabajo.
+-->
 
 <!--
 - Si vas a solicitar beca:
 -->
+<!--
 ### Cierre de Inscripción
 
 04 de Agosto, 2023
@@ -78,4 +83,4 @@ Aquellas personas que sean aceptadas para el curso serán notificadas el 06 de A
 
 
 [Inscribirse](https://forms.gle/m1aHE9sXJcavaDYc6){ .md-button .md-button--primary }
-
+-->
