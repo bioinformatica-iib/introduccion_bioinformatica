@@ -12,8 +12,10 @@
       
         <link rel="canonical" href="https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP02_EMBOSS/">
       
+      
+      
       <link rel="icon" href="../../img/logo-unsam-negro.png">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.6">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.15">
     
     
       
@@ -21,13 +23,13 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.4a0965b7.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.26e3688c.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
-        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ecc896b0.min.css">
       
       
+
     
     
     
@@ -42,10 +44,11 @@
     
       <link rel="stylesheet" href="../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
+    
     
     
    <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
@@ -69,7 +72,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="deep-orange">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="peachfuzz">
   
     
     
@@ -120,27 +123,31 @@
       </div>
     </div>
     
-      <form class="md-header__option" data-md-component="palette">
-        
+      
+        <form class="md-header__option" data-md-component="palette">
           
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="peachfuzz"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_1">
+            
+              <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+              </label>
+            
           
-          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="deep-orange"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_1">
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="peachfuzz" data-md-color-accent="peachfuzz"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_2">
+            
+              <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+              </label>
+            
           
-            <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_2" hidden>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
-            </label>
-          
-        
-          
-          
-          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="deep-orange"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_2">
-          
-            <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_1" hidden>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
-            </label>
-          
-        
-      </form>
+        </form>
+      
     
     
     
@@ -156,13 +163,13 @@
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
       </label>
-      <nav class="md-search__options" aria-label="Search">
+      <nav class="md-search__options" aria-label="Buscar">
         
-          <a href="javascript:void(0)" class="md-search__icon md-icon" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Compartir" aria-label="Compartir" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
           </a>
         
-        <button type="reset" class="md-search__icon md-icon" aria-label="Limpiar" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
         </button>
       </nav>
@@ -176,7 +183,7 @@
           <div class="md-search-result__meta">
             Inicializando búsqueda
           </div>
-          <ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
         </div>
       </div>
     </div>
@@ -195,7 +202,7 @@
           
             
 <nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
-  <div class="md-tabs__inner md-grid">
+  <div class="md-grid">
     <ul class="md-tabs__list">
       
         
@@ -382,17 +389,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_5">
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
           Teóricas
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Teóricas" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
           Teóricas
@@ -430,17 +438,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_6">
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
           Prácticos
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Prácticos" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_6">
           <span class="md-nav__icon md-icon"></span>
           Prácticos
@@ -475,27 +484,28 @@
             
             
           
-          <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset">
-              
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
                 
+                  
 
 
-<p><a class="glightbox" href="img/banner.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img _="," align="left" alt="Banner" src="img/banner.jpg" width="250" /></a></p>
+<div><p><a class="glightbox" href="img/banner.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img _="," align="left" alt="Banner" src="img/banner.jpg" width="250"></a></p>
 <h1 id="tp-2-emboss" markdown="markdown"><strong>TP 2</strong>. EMBOSS</h1>
 <p><br></p>
-<p><a class="md-button md-button--primary" href="https://drive.google.com/file/d/1bL5zX--SZOezaojH2yjfa6FV85ghlR0O/view?usp=sharing"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M480 352H346.5l-45.25 45.25C289.2 409.3 273.1 416 256 416s-33.16-6.656-45.25-18.75L165.5 352H32c-17.67 0-32 14.33-32 32v96c0 17.67 14.33 32 32 32h448c17.67 0 32-14.33 32-32v-96c0-17.7-14.3-32-32-32zm-48 104c-13.2 0-24-10.8-24-24s10.8-24 24-24 24 10.8 24 24-10.8 24-24 24zm-198.6-81.4c6.2 6.3 14.4 9.4 22.6 9.4s16.38-3.125 22.62-9.375l128-128c12.49-12.5 12.49-32.75 0-45.25-12.5-12.5-32.76-12.5-45.25 0L288 274.8V32c0-17.67-14.33-32-32-32-17.7 0-32 14.33-32 32v242.8l-73.4-73.4c-12.49-12.5-32.75-12.5-45.25 0-12.49 12.5-12.49 32.75 0 45.25L233.4 374.6z"/></svg></span> Materiales</a></p>
+<p><a class="md-button md-button--primary" href="https://drive.google.com/file/d/1bL5zX--SZOezaojH2yjfa6FV85ghlR0O/view?usp=sharing"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32v242.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64v-32c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"></path></svg></span> Materiales</a></p>
 <!--
 Este es el botón para decargar materiales, en (#) hay que agregar el link correspondiente.
 -->
 
 <h3 id="slides-mostrados-en-la-clase">Slides mostrados en la clase</h3>
 <ul>
-<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M320 464c8.8 0 16-7.2 16-16v-32h48v32c0 35.3-28.7 64-64 64H64c-35.35 0-64-28.7-64-64v-32h48v32c0 8.8 7.16 16 16 16h256zm-64-304c-17.7 0-32-14.3-32-32V48H64c-8.84 0-16 7.16-16 16v128H0V64C0 28.65 28.65 0 64 0h165.5c17 0 33.2 6.743 45.2 18.75l90.6 90.55c12 12 18.7 28.2 18.7 45.2V192h-48v-32h-80zM88 224c30.9 0 56 25.1 56 56s-25.1 56-56 56h-8v32c0 8.8-7.16 16-16 16s-16-7.2-16-16V240c0-8.8 7.16-16 16-16h24zm24 56c0-13.3-10.7-24-24-24h-8v48h8c13.3 0 24-10.7 24-24zm48-40c0-8.8 7.2-16 16-16h24c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48h-24c-8.8 0-16-7.2-16-16V240zm32 112h8c8.8 0 16-7.2 16-16v-64c0-8.8-7.2-16-16-16h-8v96zm144-128c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v32h32c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v48c0 8.8-7.2 16-16 16s-16-7.2-16-16V240c0-8.8 7.2-16 16-16h48z"/></svg></span> <a href="https://drive.google.com/file/d/1MsFtQ10qk7yI3MxR_vZ9-yszcTndbxZw/view?usp=sharing">Slides TP</a></li>
+<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M64 464h32v48H64c-35.3 0-64-28.7-64-64V64C0 28.7 28.7 0 64 0h165.5c17 0 33.3 6.7 45.3 18.7l90.5 90.5c12 12 18.7 28.3 18.7 45.3V288h-48V160h-80c-17.7 0-32-14.3-32-32V48H64c-8.8 0-16 7.2-16 16v384c0 8.8 7.2 16 16 16zm112-112h32c30.9 0 56 25.1 56 56s-25.1 56-56 56h-16v32c0 8.8-7.2 16-16 16s-16-7.2-16-16V368c0-8.8 7.2-16 16-16zm32 80c13.3 0 24-10.7 24-24s-10.7-24-24-24h-16v48h16zm96-80h32c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48h-32c-8.8 0-16-7.2-16-16V368c0-8.8 7.2-16 16-16zm32 128c8.8 0 16-7.2 16-16v-64c0-8.8-7.2-16-16-16h-16v96h16zm80-112c0-8.8 7.2-16 16-16h48c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v32h32c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v48c0 8.8-7.2 16-16 16s-16-7.2-16-16V368z"></path></svg></span> <a href="https://drive.google.com/file/d/1MsFtQ10qk7yI3MxR_vZ9-yszcTndbxZw/view?usp=sharing">Slides TP</a></li>
 </ul>
 <h3 id="videos-de-la-clase-grabada">Videos de la clase grabada</h3>
 <ul>
-<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.75 3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25v-8.5a.25.25 0 0 0-.25-.25H1.75zM0 3.75C0 2.784.784 2 1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0 1 14.25 14H1.75A1.75 1.75 0 0 1 0 12.25v-8.5z"/><path d="M6 10.559V5.442a.25.25 0 0 1 .379-.215l4.264 2.559a.25.25 0 0 1 0 .428l-4.264 2.559A.25.25 0 0 1 6 10.559z"/></svg></span> <a href="https://youtu.be/07GGMh5aRDQ">Cierre TP</a></li>
+<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 16 16"><path d="M0 3.75C0 2.784.784 2 1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0 1 14.25 14H1.75A1.75 1.75 0 0 1 0 12.25Zm1.75-.25a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25v-8.5a.25.25 0 0 0-.25-.25Z"></path><path d="M6 10.559V5.442a.25.25 0 0 1 .379-.215l4.264 2.559a.25.25 0 0 1 0 .428l-4.264 2.559A.25.25 0 0 1 6 10.559Z"></path></svg></span> <a href="https://youtu.be/07GGMh5aRDQ">Cierre TP</a></li>
 </ul>
 <h3 id="software-a-usar">Software a usar</h3>
 <ul>
@@ -1558,18 +1568,18 @@ Este es el botón para decargar materiales, en (#) hay que agregar el link corre
 </details>
 <p>Como obviamente es imposible acordarse de todos estos programas, EMBOSS tiene un comando llamado <code>wossname</code> que permite listar comandos que tengan cierta palabra en su descripción (en inglés). </p>
 <p>1) Abran la consola y prueben correr:</p>
-<div class="highlight"><pre><span></span><code>wossname dna
+<div class="highlight"><pre><span></span><code>wossname<span class="w"> </span>dna
 </code></pre></div>
 <p>Por otro lado, una vez que encuentran un programa que les interesa pueden leer detalladamente como funciona usando el comando <code>tfm</code> (<em>The Funny? Full? Manual</em>). </p>
 <p>2) Por ejemplo pueden ejecutar:</p>
-<div class="highlight"><pre><span></span><code>tfm jaspscan
+<div class="highlight"><pre><span></span><code>tfm<span class="w"> </span>jaspscan
 </code></pre></div>
 <p>El texto que aparece funciona similar al comando <code>less</code> que vimos en el TP 1, donde <span class="keys"><kbd class="key-space">Space</kbd></span> pasa a la próxima página y apretando <span class="keys"><kbd class="key-q">Q</kbd></span> deja de leerlo.</p>
 <p>Como mencionamos antes es posible hacer bioinformática sin usar EMBOSS, ya sea porque queremos controlar hasta el último detalle que hace nuestro programa, porque queremos agregar alguna opción que EMBOSS no tiene, o simplemente porque era una tarea simple y no queríamos aprender a usar un programa de EMBOSS para hacerla. Son todas razones válidas. Lo que queremos que se lleven hoy es que EMBOSS existe y que puede hacer algunas tareas que les van a resultar útiles en el día a día de hacer bioinformática.</p>
 <details class="warning">
 <summary>Si no estan usando la Maquina Virtual de Introducción a la Bioinformática lean esto:</summary>
 <p>EMBOSS y su documentación está ya instalado en la máquina virtual que les pasamos. Si no estas usando la máquina virtual tenes que instalarlo usando:</p>
-<div class="highlight"><pre><span></span><code>sudo apt-get install emboss emboss-data emboss-doc 
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>emboss<span class="w"> </span>emboss-data<span class="w"> </span>emboss-doc<span class="w"> </span>
 </code></pre></div>
 </details>
 <h2 id="aplicaciones-en-biotecnologia"><strong>Aplicaciones en Biotecnología</strong></h2>
@@ -1578,12 +1588,12 @@ Este es el botón para decargar materiales, en (#) hay que agregar el link corre
 <p>Una de las industrias biotecnológicas más antigua es la industria alimenticia. Centenares de microorganismos distintos y decenas de enzimas son utilizados en esta industria para distintos procesos. Algunos de estos procesos son muy complejos, como la fermentación de un vino, mientras que otros son simples y puntuales, como la degradación de lactosa en productos lácteos para personas intolerantes a este azúcar. Los procesos enzimáticos simples pueden resolverse fácilmente mediante la producción de la enzima de interés en forma heteróloga.</p>
 <p>Con el fin de dar rienda suelta a nuestro emprendedor interior, montaremos las bases de una empresa biotecnológica: vamos a producir enzimas. La primera enzima que queremos producir es la <strong>VpVan</strong>, la cual es la encargada de convertir el ácido ferúlico en <strong>vanillina</strong>. La <strong>vainillina</strong> es un compuesto de alto interés económico debido a su uso como saborizante (a que no adivinan que sabor tiene).</p>
 <figure>
-<p><a class="glightbox" href="img/vainilina_new_version.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Vainillina" src="img/vainilina_new_version.png" width="800" /></a></p>
+<p><a class="glightbox" href="img/vainilina_new_version.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Vainillina" src="img/vainilina_new_version.png" width="800"></a></p>
 </figure>
 <h3 id="archivos-fasta">Archivos FASTA</h3>
 <p>Esta enzima ha sido aislada (y secuenciada) a partir de <em>Vanilla planifolia</em>. Encontrarán la secuencia correspondiente entre sus materiales de trabajo (<strong>VpVAN.fasta</strong>) y más información sobre el descubrimiento en este <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4083428/">paper</a>.</p>
 <p>Por si no lo saben o no lo recuerdan, el formato <strong>FASTA</strong> es la forma más usada para trabajar secuencias biológicas (ADN, ARN, aminoácidos) en forma digital. Son archivos de texto plano, donde se asume un formato muy sencillo de interpretar para el ojo humano:</p>
-<p><a class="glightbox" href="img/fasta.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="FASTA" src="img/fasta.png" /></a></p>
+<p><a class="glightbox" href="img/fasta.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="FASTA" src="img/fasta.png"></a></p>
 <p>Un archivo FASTA tiene dos elementos importantes:</p>
 <ul>
 <li><strong>Header</strong>: Está indicado con un <strong>&gt;</strong> . Es la línea con el nombre o identificador de la secuencia. Puede contener información adicional como alguna descripción extra sobre la secuencia, tal como las condiciones en que fue obtenida u otra descripción opcional.</li>
@@ -1607,7 +1617,7 @@ Este es el botón para decargar materiales, en (#) hay que agregar el link corre
 <p>Los plásmidos son moléculas de ADN de forma circular presentes principalmente en bacterias, arqueas y levaduras. Estas moléculas se encuentran fuera de los cromosomas y se replican de manera autónoma. </p>
 <p>Debido a estas características, es posible generar plásmidos artificiales con el objetivo de amplificar (<em>vector de clonación</em>) o de expresar (<em>vector de expresión</em>) un gen de interés. Esto generalmente se realiza cuando la expresión de dicho gen en su organismo original no es factible, ya sea por problemas de volumen, logística o ética.</p>
 <p><figure markdown>
-<a class="glightbox" href="img/plasmidos.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="FASTA" src="img/plasmidos.png" /></a>
+<a class="glightbox" href="img/plasmidos.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="FASTA" src="img/plasmidos.png"></a>
 </figure></p>
 <p>Los principales componentes de vector de expresión son:</p>
 <ul>
@@ -1623,19 +1633,19 @@ Este es el botón para decargar materiales, en (#) hay que agregar el link corre
 <p>Las enzimas de restricción son proteínas que reconocen una secuencia específica de nucleótidos dentro de una molécula de ADN y cortan el ADN en ese punto en concreto o en un punto cercano. A esas secuencias de ADN se las denomina sitios de restricción y tienen entre cuatro a seis pares de bases.</p>
 <p>Hay dos grandes grupos de enzimas de restricción, aquellas que dejan extremos cohesivos y aquellas que dejan extremos romos:</p>
 <p><figure markdown>
-<a class="glightbox" href="img/restri_enzymes.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Enzimas de restricción" src="img/restri_enzymes.png" width="600" /></a>
+<a class="glightbox" href="img/restri_enzymes.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Enzimas de restricción" src="img/restri_enzymes.png" width="600"></a>
 </figure></p>
 <p>Al momento de insertar genes en plásmidos se usan generalmente enzimas de restricción que dejan extremos cohesivos ya que facilitan la inserción del gen debido a su especificidad y a que pueden volverse a unir espontaneamente.</p>
 <p>La idea detrás de su uso es colocar un sitio de restricción en el plásmido y colocar el mismo sitio de restricción a cada lado del gen de interés (en el ADN que uno sintetiza). Luego los plásmidos vacios se colocan en una solución con el ADN sintético y se les agrega la enzima de restricción correspondiente que va a cortar el ADN dejando los extremos cohesivos en cada sitio de restricción. </p>
 <p><figure markdown>
-<a class="glightbox" href="img/agregar_gen_2.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Agregar un gen" src="img/agregar_gen_2.png" width="600" /></a>
+<a class="glightbox" href="img/agregar_gen_2.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Agregar un gen" src="img/agregar_gen_2.png" width="600"></a>
 </figure></p>
 <p>Como el sitio de restricción es el mismo en el plástido y en la secuencia de ADN, es posible entonces que el ADN sintético se inserté en el plásmido, ya sea espontaneamente o ayudado por una ligasa. <a href="https://www.khanacademy.org/science/biology/biotech-dna-technology/dna-cloning-tutorial/a/restriction-enzymes-dna-ligase">Esta página</a> tiene muy buenos esquemas sobre el proceso.</p>
 <p>En el experimento anterior, luego de cortar el sitio de restricción con la enzima, pueden pasar tres cosas: </p>
 <ul>
-<li>El plásmido se vuelve a cerrar sin ningun inserto <span class="twemoji red_text"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25-6.2 6.25-14.4 9.35-22.6 9.35s-16.38-3.125-22.62-9.375L160 301.3 54.63 406.6C48.38 412.9 40.19 416 32 416s-16.37-3.1-22.625-9.4c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg></span></li>
-<li>Se inserta el gen de interés en la dirección correcta (respecto al promotor en el plásmido) <span class="twemoji green_text"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.7 0 45.2l-256 256c-12.5 12.5-32.7 12.5-45.2 0L9.372 278.6c-12.496-12.5-12.496-32.7 0-45.2 12.498-12.5 32.758-12.5 45.258 0L159.1 338.7l234.3-233.3c12.5-12.52 32.7-12.52 45.2 0z"/></svg></span></li>
-<li>Se inserta el gen de interés en la dirección contraria (respecto al promotor en el plásmido) <span class="twemoji red_text"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25-6.2 6.25-14.4 9.35-22.6 9.35s-16.38-3.125-22.62-9.375L160 301.3 54.63 406.6C48.38 412.9 40.19 416 32 416s-16.37-3.1-22.625-9.4c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg></span></li>
+<li>El plásmido se vuelve a cerrar sin ningun inserto <span class="twemoji red_text"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 384 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3l105.4 105.3c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256l105.3-105.4z"></path></svg></span></li>
+<li>Se inserta el gen de interés en la dirección correcta (respecto al promotor en el plásmido) <span class="twemoji green_text"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7l233.4-233.3c12.5-12.5 32.8-12.5 45.3 0z"></path></svg></span></li>
+<li>Se inserta el gen de interés en la dirección contraria (respecto al promotor en el plásmido) <span class="twemoji red_text"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 384 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3l105.4 105.3c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256l105.3-105.4z"></path></svg></span></li>
 </ul>
 <p>Es posible evitar el caso donde el gen se inserta en la dirección contraria combinando 2 enzimas de restricción diferentes, donde ahora va a haber 2 sitios de restricción en el plásmido (uno para cada enzima) y los dos sitios de restricción en el ADN sintético van a ser diferentes (uno para cada enzima, en el mismo orden que en el plásmido). Si bien en esta versión no es posible que el gen sea insertado en la dirección contraria, sí es posible que se vuelva a insertar el fragmento de plásmido entre los sitios de restricción, pero hay formas de controlar estos casos. Cuando usamos 2 enzimas de reestricción en esta forma decimos que estamos "clonando en forma direccional".</p>
 <div class="admonition danger">
@@ -1649,7 +1659,7 @@ Este es el botón para decargar materiales, en (#) hay que agregar el link corre
 <p>Una vez que nuestros organismos huésped tienen el vector de expresión con el gen de interés, se los deja crecer, reproducirse y expresar la proteína de interés en grandes cantidades. Una vez hecho esto, es necesario extraer esa proteína de la solución, lo que no es trivial.</p>
 <p>Hay varias formas de purificar proteínas y una de ellas es la cromatografía por afinidad, la cual se basa en la unión reversible entre el analito de interés (en nuestro caso la <em>VpVan</em>) y un ligando específico, inmovilizado en un soporte sólido inerte. Cuando la muestra pasa por la columna, sólo son retenidas las moléculas que se unen de manera selectiva al ligando por afinidad y las que no se unen avanzan con la fase móvil. La figura a continuación muestra un ejemplo donde se usan anticuerpos inmovilizados en una columna para purificar a la proteína roja del resto de la solución:</p>
 <p><figure markdown>
-<a class="glightbox" href="img/cromatografia_afinidad.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Agregar un gen" src="img/cromatografia_afinidad.jpg" width="400" /></a>
+<a class="glightbox" href="img/cromatografia_afinidad.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Agregar un gen" src="img/cromatografia_afinidad.jpg" width="400"></a>
 </figure></p>
 <p>Uno podría asumir entonces que para poder construir estas columnas es necesario conseguir un ligando que reconozca a nuestra proteína de interés. Si bien esto es teóricamente cierto, como nosotros estamos sintetizando el ADN desde cero podemos pensar lateralmente y agregarle a nuestra proteína una secuencía aminoacídica en uno de sus extremos para la cual ya conozcamos ligandos. Estas secuencias pueden ser desde pocos aminoácidos hasta a proteínas pequeñas y son denominadas <strong>tags</strong>.</p>
 </details>
@@ -1694,21 +1704,21 @@ Este es el botón para decargar materiales, en (#) hay que agregar el link corre
 <p>Nuestro objetivo ahora es crear 3 nuevos archivos FASTA que contengan las diferentes construcciones (<em>VpVan</em> + cada uno de los tags). Vamos a llamarlos <strong>VpVan-FLAG-tag.fasta</strong> y similar (reemplazando el nombre del tag en cada caso).</p>
 <p>Ahora bien, como son solo 3 tags esto se podría hacer a mano copiando y pegando, pero es un buen momento para profundizar en dos conceptos que aprendimos la clase pasada: <em>scripts</em> y <em>ciclos</em>.</p>
 <p>1) Creen un archivo vacio de texto en esa carpeta y llamenló <strong>agregar_tags.sh</strong>. Dentró del archivo pongan lo siguiente:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Código</label><label for="__tabbed_1_2">Código con comentarios</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Código</label><label for="__tabbed_1_2">Código con comentarios</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="nv">vpvan_sequence</span><span class="o">=</span><span class="sb">`</span>cat VpVAN.fasta <span class="p">|</span> grep -v <span class="s2">&quot;&gt;&quot;</span><span class="sb">`</span>
-<span class="nv">lista_de_archivos_tags</span><span class="o">=</span><span class="sb">`</span>ls *-tag.fasta<span class="sb">`</span>
+<div class="highlight"><pre><span></span><code><span class="nv">vpvan_sequence</span><span class="o">=</span><span class="sb">`</span>cat<span class="w"> </span>VpVAN.fasta<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-v<span class="w"> </span><span class="s2">"&gt;"</span><span class="sb">`</span>
+<span class="nv">lista_de_archivos_tags</span><span class="o">=</span><span class="sb">`</span>ls<span class="w"> </span>*-tag.fasta<span class="sb">`</span>
 
-<span class="k">for</span> archivo_tag <span class="k">in</span> <span class="nv">$lista_de_archivos_tags</span>
-<span class="k">do</span> 
-    <span class="nv">tag_sequence</span><span class="o">=</span><span class="sb">`</span>cat <span class="nv">$archivo_tag</span> <span class="p">|</span> grep -v <span class="s2">&quot;&gt;&quot;</span><span class="sb">`</span>
+<span class="k">for</span><span class="w"> </span>archivo_tag<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nv">$lista_de_archivos_tags</span>
+<span class="k">do</span><span class="w"> </span>
+<span class="w">    </span><span class="nv">tag_sequence</span><span class="o">=</span><span class="sb">`</span>cat<span class="w"> </span><span class="nv">$archivo_tag</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-v<span class="w"> </span><span class="s2">"&gt;"</span><span class="sb">`</span>
 
-    <span class="nv">new_header</span><span class="o">=</span><span class="s2">&quot;&gt;VpVAN-</span><span class="nv">$archivo_tag</span><span class="s2">&quot;</span>
-    <span class="nv">combined_sequence</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$vpvan_sequence$tag_sequence</span><span class="s2">&quot;</span>
+<span class="w">    </span><span class="nv">new_header</span><span class="o">=</span><span class="s2">"&gt;VpVAN-</span><span class="nv">$archivo_tag</span><span class="s2">"</span>
+<span class="w">    </span><span class="nv">combined_sequence</span><span class="o">=</span><span class="s2">"</span><span class="nv">$vpvan_sequence$tag_sequence</span><span class="s2">"</span>
 
-    <span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$new_header</span><span class="s2">&quot;</span> &gt; VpVAN-<span class="nv">$archivo_tag</span>
-    <span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$combined_sequence</span><span class="s2">&quot;</span> &gt;&gt; VpVAN-<span class="nv">$archivo_tag</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="nv">$new_header</span><span class="s2">"</span><span class="w"> </span>&gt;<span class="w"> </span>VpVAN-<span class="nv">$archivo_tag</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="nv">$combined_sequence</span><span class="s2">"</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>VpVAN-<span class="nv">$archivo_tag</span>
 <span class="k">done</span>
 </code></pre></div>
 </div>
@@ -1718,28 +1728,28 @@ Este es el botón para decargar materiales, en (#) hay que agregar el link corre
 
 <span class="c1"># Leemos el FASTA de VpVAN y nos quedamos solo con la secuencia</span>
 <span class="c1"># (estamos removiendo con grep cualquier linea que tenga &gt;, que aca es solo el header)</span>
-<span class="nv">vpvan_sequence</span><span class="o">=</span><span class="sb">`</span>cat VpVAN.fasta <span class="p">|</span> grep -v <span class="s2">&quot;&gt;&quot;</span><span class="sb">`</span> 
+<span class="nv">vpvan_sequence</span><span class="o">=</span><span class="sb">`</span>cat<span class="w"> </span>VpVAN.fasta<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-v<span class="w"> </span><span class="s2">"&gt;"</span><span class="sb">`</span><span class="w"> </span>
 
 <span class="c1"># Creamos una lista que contiene a todos los archivos que terminan con -tag.fasta</span>
 <span class="c1"># (esto va a mirar solo archivos que estén en la carpeta donde se corre el script)</span>
-<span class="nv">lista_de_archivos_tags</span><span class="o">=</span><span class="sb">`</span>ls *-tag.fasta<span class="sb">`</span>
+<span class="nv">lista_de_archivos_tags</span><span class="o">=</span><span class="sb">`</span>ls<span class="w"> </span>*-tag.fasta<span class="sb">`</span>
 
 <span class="c1"># Este es una estructura a la que llamamos *for each* en el TP 1. Es un *for*, pero en vez de tener </span>
 <span class="c1"># una cantidad determinada de ciclos, recorre cada uno de los elementos de una lista</span>
-<span class="k">for</span> archivo_tag <span class="k">in</span> <span class="nv">$lista_de_archivos_tags</span>
-<span class="k">do</span> 
-    <span class="c1"># Leemos el FASTA del tag y nos quedamos solo con la secuencia</span>
-    <span class="nv">tag_sequence</span><span class="o">=</span><span class="sb">`</span>cat <span class="nv">$archivo_tag</span> <span class="p">|</span> grep -v <span class="s2">&quot;&gt;&quot;</span><span class="sb">`</span>
+<span class="k">for</span><span class="w"> </span>archivo_tag<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nv">$lista_de_archivos_tags</span>
+<span class="k">do</span><span class="w"> </span>
+<span class="w">    </span><span class="c1"># Leemos el FASTA del tag y nos quedamos solo con la secuencia</span>
+<span class="w">    </span><span class="nv">tag_sequence</span><span class="o">=</span><span class="sb">`</span>cat<span class="w"> </span><span class="nv">$archivo_tag</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-v<span class="w"> </span><span class="s2">"&gt;"</span><span class="sb">`</span>
 
-    <span class="c1"># Creamos una variable que almacene el nuevo header para la secuencia de VpVAN + tag</span>
-    <span class="nv">new_header</span><span class="o">=</span><span class="s2">&quot;&gt;VpVAN-</span><span class="nv">$archivo_tag</span><span class="s2">&quot;</span>
+<span class="w">    </span><span class="c1"># Creamos una variable que almacene el nuevo header para la secuencia de VpVAN + tag</span>
+<span class="w">    </span><span class="nv">new_header</span><span class="o">=</span><span class="s2">"&gt;VpVAN-</span><span class="nv">$archivo_tag</span><span class="s2">"</span>
 
-    <span class="c1"># Calculamos la nueva secuencia VpVAN + tag</span>
-    <span class="nv">combined_sequence</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$vpvan_sequence$tag_sequence</span><span class="s2">&quot;</span>
+<span class="w">    </span><span class="c1"># Calculamos la nueva secuencia VpVAN + tag</span>
+<span class="w">    </span><span class="nv">combined_sequence</span><span class="o">=</span><span class="s2">"</span><span class="nv">$vpvan_sequence$tag_sequence</span><span class="s2">"</span>
 
-    <span class="c1"># Escribimos el nuevo header y la nueva secuencia en un nuevo archivo</span>
-    <span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$new_header</span><span class="s2">&quot;</span> &gt; VpVAN-<span class="nv">$archivo_tag</span>
-    <span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$combined_sequence</span><span class="s2">&quot;</span> &gt;&gt; VpVAN-<span class="nv">$archivo_tag</span>
+<span class="w">    </span><span class="c1"># Escribimos el nuevo header y la nueva secuencia en un nuevo archivo</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="nv">$new_header</span><span class="s2">"</span><span class="w"> </span>&gt;<span class="w"> </span>VpVAN-<span class="nv">$archivo_tag</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="nv">$combined_sequence</span><span class="s2">"</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>VpVAN-<span class="nv">$archivo_tag</span>
 <span class="k">done</span>
 </code></pre></div>
 </div>
@@ -1757,7 +1767,7 @@ Este es el botón para decargar materiales, en (#) hay que agregar el link corre
 <li><code>for</code>, <code>in</code>, <code>do</code> y <code>done</code> son todas partes del ciclo <em>for each</em>. El código entre <code>do</code> y <code>done</code> se va a repetir por cada elemento en <code>$lista_de_archivos_tags</code>, donde en cada iteración la variable <code>$archivo_tag</code> toma el valor de uno de esos elementos</li>
 </ul>
 <p>Hay dos cosas en este script que no vimos en el TP 1. La primera es que estamos ejecutando comandos de Bash y guardando su salida en variables. En estos casos es necesario rodear el comando con <code>`</code>, llamado acento grave o comilla invertida. Por ejemplo:</p>
-<div class="highlight"><pre><span></span><code><span class="nv">variable</span><span class="o">=</span><span class="sb">`</span>comando -opciones parametro1 parametro2<span class="sb">`</span>
+<div class="highlight"><pre><span></span><code><span class="nv">variable</span><span class="o">=</span><span class="sb">`</span>comando<span class="w"> </span>-opciones<span class="w"> </span>parametro1<span class="w"> </span>parametro2<span class="sb">`</span>
 </code></pre></div>
 <p>La segunda novedad es el uso de <code>*</code> con el comando <code>ls</code>. En todo lo que es Linux el caracter <code>*</code> funciona como comodín, tomando cualquier valor. Esto quiere decir que <code>ls *-tag.fasta</code> va a listar todos los archivos cuyos nombres terminen con <strong>"-tag.fasta"</strong>, sin importar como empiecen (pueden probar correr el comando <code>ls *-tag.fasta</code> a mano en la consola y ver que devuelve).</p>
 <p>¿Entienden ahora lo que hace el script? Lean la pestaña <strong>Código con comentarios</strong> para aclarar cualquier duda que tengan sobre él (y si todavía no se entiende no duden en preguntar).</p>
@@ -1788,7 +1798,7 @@ Este es el botón para decargar materiales, en (#) hay que agregar el link corre
 </div>
 <h3 id="refseq-paso-1-bajar-y-filtrar-la-tabla-con-los-genomas" markdown="markdown">RefSeq - Paso 1 - Bajar y filtrar la tabla con los genomas</h3>
 <p>4) El primer paso indicado en el FAQ es descargar el archivo <strong>assembly_summary.txt</strong> y ponerlo en la carpeta de este ejercicio. Esto lo pueden hacer desde la página de <strong>RefSeq</strong> a mano o abriendo la consola en la carpeta de este ejercicio y corriendo:</p>
-<div class="highlight"><pre><span></span><code>wget ftp://ftp.ncbi.nlm.nih.gov/genomes/refseq/bacteria/assembly_summary.txt
+<div class="highlight"><pre><span></span><code>wget<span class="w"> </span>ftp://ftp.ncbi.nlm.nih.gov/genomes/refseq/bacteria/assembly_summary.txt
 </code></pre></div>
 <div class="admonition question">
 <p class="admonition-title">Question</p>
@@ -1802,7 +1812,7 @@ Este es el botón para decargar materiales, en (#) hay que agregar el link corre
 <p>5) ¿Qué comando usarían para ver que tipo de datos tiene adentro? Pruebenlo.</p>
 <p>Dado que es un archivo con muchas columnas, probablemente les cueste entender lo que están viendo aunque hayan usado el comando correcto.</p>
 <p>Para entender la estructura de nuestro archivo vamos a crear un archivo temporal que tenga solo las primeras 20 filas de este archivo:</p>
-<div class="highlight"><pre><span></span><code>head -20 assembly_summary.txt &gt; assembly_summary_temporal.tsv
+<div class="highlight"><pre><span></span><code>head<span class="w"> </span>-20<span class="w"> </span>assembly_summary.txt<span class="w"> </span>&gt;<span class="w"> </span>assembly_summary_temporal.tsv
 </code></pre></div>
 <p>Lo único que les debería llamar la atención del comando anterior es que el nuevo archivo tiene la extensión <strong>tsv</strong>. Esto lo mencionamos por arriba en el TP 1, pero los archivos <strong>TSV</strong> o "Tab-Separated Values" son archivos de texto que contienen una tabla donde sus columnas están separadas entre ellas por un <span class="keys"><kbd class="key-tab">Tab</kbd></span>, lo cual es exactamente el caso de la tabla actual.</p>
 <p>Hagan doble click sobre el archivo <strong>assembly_summary_temporal.tsv</strong>. La extensión <strong>tsv</strong> en nuestra máquina virtual está asociada al programa <strong>Gnumeric</strong> (similar a Excell o a Google Sheets). Gnumeric va a detectar automáticamente que las columnas están separadas por <span class="keys"><kbd class="key-tab">Tab</kbd></span>.</p>
@@ -1810,27 +1820,27 @@ Este es el botón para decargar materiales, en (#) hay que agregar el link corre
 <li>Identifiquen la columna correspondiente a la especie (son solo las primeras 20 filas, no van a encontrar a <em>E. coli</em>), la cepa y el link a la ubicación del genoma.</li>
 </ul>
 <p>6) Ahora que conocen la estructura de la tabla, y sabiendo que tiene muchos mas organismos que <em>E. coli</em>, tenemos que filtrar el archivo y quedarnos solo con nuestro organismo y cepa de interés. Para esto, corran los siguientes comandos uno a la vez:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Código</label><label for="__tabbed_2_2">Código con comentarios</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Código</label><label for="__tabbed_2_2">Código con comentarios</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code>head -2 assembly_summary.txt &gt; assembly_summary_coli.tsv
-grep <span class="s2">&quot;Escherichia coli&quot;</span> assembly_summary.txt <span class="p">|</span> grep <span class="s2">&quot;BL21&quot;</span> &gt;&gt; assembly_summary_coli.tsv
+<div class="highlight"><pre><span></span><code>head<span class="w"> </span>-2<span class="w"> </span>assembly_summary.txt<span class="w"> </span>&gt;<span class="w"> </span>assembly_summary_coli.tsv
+grep<span class="w"> </span><span class="s2">"Escherichia coli"</span><span class="w"> </span>assembly_summary.txt<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s2">"BL21"</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>assembly_summary_coli.tsv
 </code></pre></div>
 </div>
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="c1"># Generamos un nuevo archivo con el header de la tabla (que en este caso son 2 filas)</span>
-head -2 assembly_summary.txt &gt; assembly_summary_coli.tsv
+head<span class="w"> </span>-2<span class="w"> </span>assembly_summary.txt<span class="w"> </span>&gt;<span class="w"> </span>assembly_summary_coli.tsv
 
-<span class="c1"># Buscamos dentro del archivo las filas que contengan &quot;Escherichia coli&quot; y &quot;BL21&quot; y </span>
+<span class="c1"># Buscamos dentro del archivo las filas que contengan "Escherichia coli" y "BL21" y </span>
 <span class="c1"># las agregamos a la nuevo archivo</span>
-grep <span class="s2">&quot;Escherichia coli&quot;</span> assembly_summary.txt <span class="p">|</span> grep <span class="s2">&quot;BL21&quot;</span> &gt;&gt; assembly_summary_coli.tsv
+grep<span class="w"> </span><span class="s2">"Escherichia coli"</span><span class="w"> </span>assembly_summary.txt<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s2">"BL21"</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>assembly_summary_coli.tsv
 </code></pre></div>
 </div>
 </div>
 </div>
 <h3 id="refseq-paso-2-crear-un-archivo-con-links-a-las-carpetas-de-los-genomas" markdown="markdown">RefSeq - Paso 2 - Crear un archivo con links a las carpetas de los genomas</h3>
 <p>7) Ahora que tenemos y entendemos la tabla con nuestros datos de <em>E. coli</em> la podemos abrir en <strong>Gnumeric</strong> haciendo doble click. Van a ver que no hay solo un genoma de <em>E. coli</em> BL21, sino varios, por lo cual nuestro objetivo de crear una tabla de codones acaba de volverse un poco más complicado. Lo que vamos a hacer entonces es bajar todos los genomas de <em>E. coli</em> BL21 que vemos en la tabla, así que continuamos al segundo paso en el FAQ de <strong>RefSeq</strong>:</p>
-<div class="highlight"><pre><span></span><code>awk -F <span class="s2">&quot;\t&quot;</span> <span class="s1">&#39;{if ($12==&quot;Complete Genome&quot; &amp;&amp; $11==&quot;latest&quot;) {print $20}}&#39;</span> assembly_summary_coli.tsv &gt; ftpdirpaths
+<div class="highlight"><pre><span></span><code>awk<span class="w"> </span>-F<span class="w"> </span><span class="s2">"\t"</span><span class="w"> </span><span class="s1">'{if ($12=="Complete Genome" &amp;&amp; $11=="latest") {print $20}}'</span><span class="w"> </span>assembly_summary_coli.tsv<span class="w"> </span>&gt;<span class="w"> </span>ftpdirpaths
 </code></pre></div>
 <p>Al comando <code>awk</code> lo vimos brevemente al final del TP 1 y sirve para trabajar con tablas en Bash (entre otras cosas). Las diferentes partes de este comando son:</p>
 <ul>
@@ -1856,7 +1866,7 @@ grep <span class="s2">&quot;Escherichia coli&quot;</span> assembly_summary.txt <
 <p>Donde el nombre del archivo es el nombre de la última carpeta + <strong>"_cds_from_genomic.fna.gz"</strong></p>
 <p>Los archivos terminados en <strong>.fna.gz</strong> son secuencias en formato FASTA (<em>f</em>) de nucleótidos (<em>na</em>) comprimidas (<em>gz</em>).</p>
 <p>Hay varias formas de crear estos nuevos links. Nosotros lo vamos a hacer de la siguiente manera:</p>
-<div class="highlight"><pre><span></span><code>awk -F <span class="s2">&quot;/&quot;</span> <span class="s1">&#39;{print $0 &quot;/&quot; $10 &quot;_cds_from_genomic.fna.gz&quot;}&#39;</span> ftpdirpaths &gt; ftpfilepaths
+<div class="highlight"><pre><span></span><code>awk<span class="w"> </span>-F<span class="w"> </span><span class="s2">"/"</span><span class="w"> </span><span class="s1">'{print $0 "/" $10 "_cds_from_genomic.fna.gz"}'</span><span class="w"> </span>ftpdirpaths<span class="w"> </span>&gt;<span class="w"> </span>ftpfilepaths
 </code></pre></div>
 <p>Donde:</p>
 <ul>
@@ -1869,7 +1879,7 @@ grep <span class="s2">&quot;Escherichia coli&quot;</span> assembly_summary.txt <
 <details class="info">
 <summary>Por si se quedaron con curiosidad de el comando que proponía el FAQ de <strong>RefSeq</strong></summary>
 <p>El comando <code>awk</code> que sugeria el FAQ de <strong>RefSeq</strong> es un poco más complejo, pero llegaba al mismo resultado. Noten que en este comando el archivo tiene la extensión <strong>.gbff.gz</strong> que hace referencia al formato de <strong>GenBank</strong>, que no es el con el que vamos a trabajar. Hay que cambiarlo por <strong>"cds_from_genomic.fna.gz"</strong></p>
-<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;BEGIN{FS=OFS=&quot;/&quot;;filesuffix=&quot;genomic.gbff.gz&quot;}{ftpdir=$0;asm=$10;file=asm&quot;_&quot;filesuffix;print ftpdir,file}&#39;</span> ftpdirpaths &gt; ftpfilepaths
+<div class="highlight"><pre><span></span><code>awk<span class="w"> </span><span class="s1">'BEGIN{FS=OFS="/";filesuffix="genomic.gbff.gz"}{ftpdir=$0;asm=$10;file=asm"_"filesuffix;print ftpdir,file}'</span><span class="w"> </span>ftpdirpaths<span class="w"> </span>&gt;<span class="w"> </span>ftpfilepaths
 </code></pre></div>
 <p>No es necesario que lo entiendan 100%, pero vamos a aclarar algunas cosas:</p>
 <ul>
@@ -1944,7 +1954,7 @@ zcat $archivo_genoma | cusp -auto -sequence "stdin" -outfile "${archivo_genoma}.
 <details class="tip">
 <summary>Si en la tabla dentro del archivo <strong>.cusp</strong> las columnas no están alineadas lean esto:</summary>
 <p>Por defecto <strong>Leafpad</strong> usa una fuente llamada <strong>"Ubuntu"</strong>, que si bien sirve para escribir cuentos, nos va a dar problemas al momento de ver ciertos archivos que vamos a usar en esta materia.</p>
-<p>En <strong>Leafpad</strong> vayan a <strong>Opciones</strong> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg></span> <strong>Tipografía...</strong>, seleccionen la fuente <strong>"Ubuntu Mono"</strong> y aprieten <strong>Aceptar</strong>.</p>
+<p>En <strong>Leafpad</strong> vayan a <strong>Opciones</strong> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg></span> <strong>Tipografía...</strong>, seleccionen la fuente <strong>"Ubuntu Mono"</strong> y aprieten <strong>Aceptar</strong>.</p>
 <p>Las fuentes que tienen <strong>Mono</strong> en su nombre estan indicando que son monoespaciadas, o sea, que todos sus caracteres tienen el mismo ancho. Esto es ideal para cuando se quieren ver tablas o alineamientos con <strong>Leafpad</strong>, cosa que vamos a hacer bastante en esta materia.</p>
 </details>
 <details class="info">
@@ -2078,7 +2088,7 @@ zcat $archivo_genoma | cusp -auto -sequence "stdin" -outfile "${archivo_genoma}.
 <li>Ahora abran otro archivo <strong>.cusp</strong>, ¿notan diferencias entre las frecuencias de uso de codones de los distintos proyectos genoma de <em>E.Coli</em> BL21?</li>
 </ol>
 <p>En un principio pareceria que ambos archivos <strong>.cusp</strong> son bastante parecidos, pero queremos estar seguros. <strong>EMBOSS</strong> tiene un programa llamado <code>codcmp</code> que permite comparar tablas de codones, calculando ciertos estadísticos. El programa se usa:</p>
-<div class="highlight"><pre><span></span><code>codcmp ARCHIVO_CUSP_1 ARCHIVO_CUSP_2 ARCHIVO_SALIDA
+<div class="highlight"><pre><span></span><code>codcmp<span class="w"> </span>ARCHIVO_CUSP_1<span class="w"> </span>ARCHIVO_CUSP_2<span class="w"> </span>ARCHIVO_SALIDA
 </code></pre></div>
 <p>12) Usen este comando para comparar los dos archivos <strong>.cusp</strong> que miraron previamente y guarden la comparación en un archivo llamado <strong>cusp_comparison.out</strong>.</p>
 <p>Abran <strong>cusp_comparison.out</strong> y vean los estadísticos calculados. ¿Son compatibles estos resultados con nuestras observaciones previas de que ambos archivos <strong>.cusp</strong> son muy parecidos?</p>
@@ -2109,7 +2119,7 @@ zcat $archivo_genoma | cusp -auto -sequence "stdin" -outfile "${archivo_genoma}.
 <li>Elijan alguno de los archivos <strong>.cusp</strong> creados en el Ejercicio 3, copienlo a la nueva carpeta y cambienlé el nombre a <strong>ecoli_BL21_codon_table.cusp</strong>.</li>
 </ul>
 <p>Ahora bien, para hacer esta optimización de secuencias podemos usar otro de los programas de <strong>EMBOSS</strong> llamado <code>backtranseq</code>. Este programa toma una secuencia de aminoácidos correspondiente a una proteína de interés y una tabla de frecuencia de uso de codones y usa ambos para hacer una traducción inversa desde la secuencia proteíca hacia la secuencia de ADN que, con mayor probabilidad, le dio origen. Es decir, <code>backtranseq</code> devuelve una secuencia de ADN a partir de una secuencia de aminoácidos. Este comando se usa:</p>
-<div class="highlight"><pre><span></span><code>backtranseq -auto -sequence ARCHIVO_PROTEINA_FASTA -cfile ARCHIVO_CUSP -outfile ARCHIVO_SALIDA_ADN_FASTA
+<div class="highlight"><pre><span></span><code>backtranseq<span class="w"> </span>-auto<span class="w"> </span>-sequence<span class="w"> </span>ARCHIVO_PROTEINA_FASTA<span class="w"> </span>-cfile<span class="w"> </span>ARCHIVO_CUSP<span class="w"> </span>-outfile<span class="w"> </span>ARCHIVO_SALIDA_ADN_FASTA
 </code></pre></div>
 <p>13) Corran este comando 3 veces pasándole los archivos correctos y creen los siguientes archivos (si quieren pueden hacer script con un <em>for each</em>, pero no hace falta):</p>
 <ul>
@@ -2124,10 +2134,10 @@ zcat $archivo_genoma | cusp -auto -sequence "stdin" -outfile "${archivo_genoma}.
 <h2 id="ejercicio-5-agregar-enzimas-de-restriccion" markdown="markdown"><strong>Ejercicio 5. Agregar enzimas de restricción</strong></h2>
 <p>El último paso es agregar los sitios de corte de enzimas de restricción a los costados de mi secuencia quimérica, pero antes de eso tengo que asegurarme que dichas enzimas no tengan sitios de corte dentro de mi secuencia. Probablemente ya no les sorprenda que existe un programa de <strong>EMBOSS</strong> para hacer esto llamado <code>remap</code>; sin embargo, dicho programa necesita que previamente le hayamos pasado a <strong>EMBOSS</strong> una base de datos de enzimas de restricción.</p>
 <p>14) En los materiales de trabajo van a encontrar dos archivos llamados <strong>proto.207</strong> y <strong>withrefm.207</strong> que contienen la información para crear la base de datos de enzimas de restricción. Copienlos a la carpeta donde estan trabajando y corran el comando:</p>
-<div class="highlight"><pre><span></span><code>rebaseextract -infile withrefm.207 -protofile proto.207
+<div class="highlight"><pre><span></span><code>rebaseextract<span class="w"> </span>-infile<span class="w"> </span>withrefm.207<span class="w"> </span>-protofile<span class="w"> </span>proto.207
 </code></pre></div>
 <p>Este comando les va a tirar un error, pero no porque esté mal escrito. El problema es que este comando quiere editar archivos que no son del usuario <em>ibioinfo</em>, por lo que en un principio no tenemos permisos para editarlos. En estos casos hay que agregar el prefijo <code>sudo</code> y puede ser que Lubuntu les pida la contraseña (parece que no escribe nada, pero eso es por seguridad, si se las pide escriban "unsam" y aprieten <span class="keys"><kbd class="key-enter">Enter</kbd></span>). Asi que corran:</p>
-<div class="highlight"><pre><span></span><code>sudo rebaseextract -infile withrefm.207 -protofile proto.207
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>rebaseextract<span class="w"> </span>-infile<span class="w"> </span>withrefm.207<span class="w"> </span>-protofile<span class="w"> </span>proto.207
 </code></pre></div>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
@@ -2139,7 +2149,7 @@ zcat $archivo_genoma | cusp -auto -sequence "stdin" -outfile "${archivo_genoma}.
 <li>¿Qué piensan que significa el símbolo <strong>^</strong> en el sitio de restricción? (pueden buscar información sobre dichas enzimas online y se van a dar cuenta enseguida)</li>
 </ol>
 <p>Ahora que sabemos un poco más sobre nuestras enzimas vamos a usar el comando <code>remap</code> con las siguientes opciones:</p>
-<div class="highlight"><pre><span></span><code>remap -auto -sequence ARCHIVO_ADN_FASTA -width <span class="m">80</span> -commercial -sitelen <span class="m">6</span> -frame <span class="m">1</span> -enzymes all -outfile ARCHIVO_SALIDA_REMAP
+<div class="highlight"><pre><span></span><code>remap<span class="w"> </span>-auto<span class="w"> </span>-sequence<span class="w"> </span>ARCHIVO_ADN_FASTA<span class="w"> </span>-width<span class="w"> </span><span class="m">80</span><span class="w"> </span>-commercial<span class="w"> </span>-sitelen<span class="w"> </span><span class="m">6</span><span class="w"> </span>-frame<span class="w"> </span><span class="m">1</span><span class="w"> </span>-enzymes<span class="w"> </span>all<span class="w"> </span>-outfile<span class="w"> </span>ARCHIVO_SALIDA_REMAP
 </code></pre></div>
 <p>Donde:</p>
 <ul>
@@ -2176,22 +2186,27 @@ zcat $archivo_genoma | cusp -auto -sequence "stdin" -outfile "${archivo_genoma}.
 </ol>
 <p><strong>¡Felicitaciones, tenemos nuestra secuencia lista para mandar a secuenciar!</strong></p>
 <h2 id="bibliografia">Bibliografía</h2>
-<h3 id="online"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2m-5.15 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56M14.34 14H9.66c-.1-.66-.16-1.32-.16-2 0-.68.06-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2M12 19.96c-.83-1.2-1.5-2.53-1.91-3.96h3.82c-.41 1.43-1.08 2.76-1.91 3.96M8 8H5.08A7.923 7.923 0 0 1 9.4 4.44C8.8 5.55 8.35 6.75 8 8m-2.92 8H8c.35 1.25.8 2.45 1.4 3.56A8.008 8.008 0 0 1 5.08 16m-.82-2C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2M12 4.03c.83 1.2 1.5 2.54 1.91 3.97h-3.82c.41-1.43 1.08-2.77 1.91-3.97M18.92 8h-2.95a15.65 15.65 0 0 0-1.38-3.56c1.84.63 3.37 1.9 4.33 3.56M12 2C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2Z"/></svg></span> Online</h3>
+<h3 id="online"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2m-5.15 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56M14.34 14H9.66c-.1-.66-.16-1.32-.16-2 0-.68.06-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2M12 19.96c-.83-1.2-1.5-2.53-1.91-3.96h3.82c-.41 1.43-1.08 2.76-1.91 3.96M8 8H5.08A7.923 7.923 0 0 1 9.4 4.44C8.8 5.55 8.35 6.75 8 8m-2.92 8H8c.35 1.25.8 2.45 1.4 3.56A8.008 8.008 0 0 1 5.08 16m-.82-2C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2M12 4.03c.83 1.2 1.5 2.54 1.91 3.97h-3.82c.41-1.43 1.08-2.77 1.91-3.97M18.92 8h-2.95a15.65 15.65 0 0 0-1.38-3.56c1.84.63 3.37 1.9 4.33 3.56M12 2C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2Z"></path></svg></span> Online</h3>
 <ul>
 <li><a href="https://www.khanacademy.org/science/biology/biotech-dna-technology/dna-cloning-tutorial/a/restriction-enzymes-dna-ligase">Insertar secuencias de ADN en plásmidos</a></li>
 <li><a href="https://cienciadelux.com/2015/08/16/cromatografia-por-afinidad/">Cromatografía de afinidad</a></li>
-</ul>
+</ul></div>
 
-              
-            </article>
-            
-          </div>
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
         </div>
         
-          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
             Volver al principio
-          </a>
+          </button>
         
       </main>
       
@@ -2221,10 +2236,11 @@ zcat $archivo_genoma | cusp -auto -sequence "stdin" -outfile "${archivo_genoma}.
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["search.suggest", "search.highlight", "search.share", "header.autohide", "navigation.tracking", "navigation.tabs", "toc.integrate", "navigation.top"], "search": "../../assets/javascripts/workers/search.85cb4492.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "B\u00fasqueda", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version.title": "Seleccionar versi\u00f3n"}}</script>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["search.suggest", "search.highlight", "search.share", "header.autohide", "navigation.tracking", "navigation.tabs", "toc.integrate", "navigation.top"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.a877e258.min.js"></script>
+      <script src="../../assets/javascripts/bundle.b4d07000.min.js"></script>
       
         <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
       
