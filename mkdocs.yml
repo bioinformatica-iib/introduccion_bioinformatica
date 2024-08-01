@@ -36,14 +36,14 @@ theme:
     
   palette: 
     - scheme: default
-      primary: deep orange
-      accent: deep orange
+      primary: custom
+      accent: peachfuzz
       toggle:
         icon: material/toggle-switch 
         name: Cambiar a modo oscuro
     - scheme: slate 
-      primary: deep orange
-      accent: deep orange
+      primary: peachfuzz
+      accent: peachfuzz
       toggle: 
         icon: material/toggle-switch-off-outline
         name: Cambiar a modo claro
