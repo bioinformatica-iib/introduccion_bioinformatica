@@ -4,10 +4,10 @@ hide:
 tags:
   - teoricas
 ---
-
+<!--
 ![Barbie](hola-barbie.png){ align=right width=400px}
 ## Hola! :material-star-outline:
-
+-->
 Esta es la página de inicio de la parte Teórica del curso. 
 
 ## Consultas y canales de comunicación 
