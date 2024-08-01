@@ -8,7 +8,7 @@ tags:
 
 * Dr. Fernán Agüero
 
-### Profesores invitados
+### Profesora invitada
 * Dra. Lucía B. Chemes
 
 ### Jefa de Trabajos Prácticos
@@ -18,11 +18,11 @@ tags:
 * Lic. Mercedes Didier Garnham
 * Lic. Guadalupe Romer
 
-### Ayudante de 1ra Ad-honorem
+### Ayudantes de 1ra Ad-honorem
 * Heli A. García
 * Ramiro Quinteros
 
-### Ayudantes Ad-Scriptos
+### Ayudante Ad-Scriptos
 * Sebastián Jinich
 
 
