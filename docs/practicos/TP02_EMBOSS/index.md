@@ -9,13 +9,14 @@
 Este es el botón para decargar materiales, en (#) hay que agregar el link correspondiente.
 -->
 
-
+<!--
 ### Slides mostrados en la clase
 
 * :fontawesome-regular-file-pdf: [Slides TP](https://drive.google.com/file/d/1MsFtQ10qk7yI3MxR_vZ9-yszcTndbxZw/view?usp=sharing)
 
 ### Videos de la clase grabada
 * :octicons-video-16: [Cierre TP](https://youtu.be/07GGMh5aRDQ)
+-->
 
 ### Software a usar
 * EMBOSS (ya instalado en la VM).
@@ -36,7 +37,7 @@ Este es el botón para decargar materiales, en (#) hay que agregar el link corre
 
 * Maneja información biológica en varios formatos para realizar distintos tipos de tareas.
 * Es muy rápida, lo cual significa que es computacionalmente escalable.
-* Si bien cada uno de sus programas individuales podrían ser reemplazados por otros softwares o un script propio, EMBOSS agrupa todos estos programas en un solo paquete y le provee al usuario una interfaz unificada para todas las aplicaciones.
+* Si bien cada uno de sus programas individuales podrían ser reemplazados por otros softwares o un script propio, EMBOSS agrupa todos estos programas en un sólo paquete y le provee al usuario una interfaz unificada para todas las aplicaciones.
 
 A continuación se encuentra una lista de 256 programas que contiene EMBOSS y un resumen corto de lo que hace cada uno:
 
@@ -443,9 +444,10 @@ Volviendo a nuestro experimento, queremos insertar el gen de *VpVan* en un vecto
 
 * *E. coli* BL21
 
-Como queremos clonar en forma direccional tenemos que usar dos **enzimas de restricción**. Ellas son:
+Como queremos clonar en forma direccional tenemos que usar dos **enzimas de restricción**. En el laboratorio están disponibles:
 
 * BamHI
+* ApoI
 * HindIII
 
 Al momento de purificar necesitamos agregarle un **tag** a la proteína. Vamos a probar 3 tags diferentes:
@@ -483,7 +485,7 @@ Nuestro objetivo ahora es crear 3 nuevos archivos FASTA que contengan las difere
 
 Ahora bien, como son solo 3 tags esto se podría hacer a mano copiando y pegando, pero es un buen momento para profundizar en dos conceptos que aprendimos la clase pasada: *scripts* y *ciclos*.
 
-1) Creen un archivo vacio de texto en esa carpeta y llamenló **agregar_tags.sh**. Dentró del archivo pongan lo siguiente:
+1) Creen un archivo vacío de texto en esa carpeta y llamenlo **agregar_tags.sh**. Dentro del archivo pongan lo siguiente:
 
 === "Código"
 
@@ -575,11 +577,11 @@ Nosotros queremos expresar el gen de un organismo en otro organismo. Si bien el 
 
 3) Busquen usando el comando `wossname` que programas de EMBOSS trabajan con codones (recuerden que está en inglés, asi que tienen que buscar "codon"). Lean la descripción de dichos programas, ¿cual les parece que vamos a usar para calcular la tabla de uso de codones?
 
-    ??? info "Respuesta"
+??? info "Respuesta"
 
-        `cusp`, cuya descripción es "Create a codon usage table from nucleotide sequence(s)"
+    `cusp`, cuya descripción es "Create a codon usage table from nucleotide sequence(s)"
 
-Si leen la descripción del programa, verán que pide una secuencia de nucleótidos, es decir, que necesitamos un FASTA del genoma completo de *E. coli* (ya que éste es nuestro organismo huésped).
+Si leen la descripción del programa, verán que pide una secuencia de nucleótidos, es decir, que necesitamos un FASTA del genoma completo de *E. coli* (ya que éste es nuestro organismo hospedador).
 
 Un buen lugar para obtener información de genomas, genes, y proteínas es **RefSeq**, que es una colección curada de secuencias nucleotídicas y sus productos. En su FAQ (*Frequently Asked Questions*, o *preguntas frecuentes*) hay una pregunta que es básicamente lo que queremos hacer nosotros:
 
@@ -607,13 +609,13 @@ wget ftp://ftp.ncbi.nlm.nih.gov/genomes/refseq/bacteria/assembly_summary.txt
 
     Si el comando `wget` tarda mucho o ven que tiene errores bajensé este archivo desde [este link](https://drive.google.com/file/d/1rWe7F6QSGdTvrcGO2flp_RIQyr9ay_8t/view?usp=sharing)
 
-Una vez descargado ese archivo (que pesa bastante) queremos ver sus contenidos. Sabiendo que es un archivo que tiene más de 250.000 lineas:
+Una vez descargado ese archivo (que pesa bastante) queremos ver sus contenidos. Sabiendo que es un archivo que tiene más de 250.000 líneas:
 
-5) ¿Qué comando usarían para ver que tipo de datos tiene adentro? Pruebenlo.
+5) ¿Qué comando usarían para ver que tipo de datos tiene adentro? Pruébenlo.
 
 Dado que es un archivo con muchas columnas, probablemente les cueste entender lo que están viendo aunque hayan usado el comando correcto.
 
-Para entender la estructura de nuestro archivo vamos a crear un archivo temporal que tenga solo las primeras 20 filas de este archivo:
+Para entender la estructura de nuestro archivo vamos a crear un archivo temporal que tenga sólo las primeras 20 filas de este archivo:
 
 ```bash
 head -20 assembly_summary.txt > assembly_summary_temporal.tsv
@@ -769,7 +771,7 @@ Como tenemos varios archivos **.fna.gz** vamos a tener que correr el comando `cu
 
         Si no les sale pueden ver el *for each* del **Ejercicio 1** para usarlo como base (si bien ese es más complicado)
 
-11) Una vez creado el script, corranló.
+11) Una vez creado el script, córranlo.
 
 ??? warning "Si ven que este script tarda mucho tiempo en correr (varios minutos sin indicar que avanza) lean esto:"
 
@@ -883,20 +885,22 @@ El último paso es agregar los sitios de corte de enzimas de restricción a los 
 rebaseextract -infile withrefm.207 -protofile proto.207
 ```
 
+<!--
 Este comando les va a tirar un error, pero no porque esté mal escrito. El problema es que este comando quiere editar archivos que no son del usuario *ibioinfo*, por lo que en un principio no tenemos permisos para editarlos. En estos casos hay que agregar el prefijo `sudo` y puede ser que Lubuntu les pida la contraseña (parece que no escribe nada, pero eso es por seguridad, si se las pide escriban "unsam" y aprieten ++enter++). Asi que corran:
 
 ```bash
 sudo rebaseextract -infile withrefm.207 -protofile proto.207
-```
+```-->
 
 !!! info
 
     Solo para que sepan, los archivos **proto.207** y **withrefm.207** se pueden descargar de [aca](ftp://ftp.neb.com/pub/rebase/) o [aca](ftp://ftp.ebi.ac.uk/pub/databases/rebase) usando `wget` (con los links anteriores van a bajar un índice general y luego tienen que pasarle a `wget` el link de los archivos que quieran). Dependiendo de cuando vayan a esa página puede ser que encuentren versiones incluso mas recientes.
 
-15) Ahora que ya tenemos la base de datos configurada podemos usar `remap`, pero antes veamos un poco mas información sobre nuestras enzimas de restricción. Usando `grep` busquen dentro del archivo **proto.207** a nuestras enzimas de restricción de interés (**BamHI** y **HindIII**).
+15) Ahora que ya tenemos la base de datos configurada podemos usar `remap`, pero antes veamos un poco mas información sobre nuestras enzimas de restricción. Usando `grep` busquen dentro del archivo **proto.207** a nuestras enzimas de restricción de interés (**BamHI**, **ApoI** y **HindIII**).
 
-1. ¿Qué longitud tienen los sitios de restricción de **BamHI** y **HindIII**?
+1. ¿Qué longitud tienen los sitios de restricción de **ApoI**, **BamHI** y **HindIII**?
 1. ¿Qué piensan que significa el símbolo **^** en el sitio de restricción? (pueden buscar información sobre dichas enzimas online y se van a dar cuenta enseguida)
+1. Observe la secuencia de ApoI, ¿nota algo raro? ¿Qué le parece que indica?
 
 Ahora que sabemos un poco más sobre nuestras enzimas vamos a usar el comando `remap` con las siguientes opciones:
 
@@ -929,8 +933,10 @@ Corran este comando 3 veces pasándole los archivos correctos y creen los siguie
 17) Una vez creados, abran los archivos con **Leafpad**. 
 
 1. ¿Entienden lo que simboliza el archivo? (es necesario que esten usando la fuente **Ubuntu Mono** en **Leafpad** para verlo bien)
-1. Busquen nuestras enzimas de restricción de interés. ¿Las encuentran? ¿En que categoría están? ¿Se pueden usar entonces estas enzimas de restricción para insertar nuestra secuencia en un plásmido?
-1. ¿Hay algún tag de los tres que estabamos considerando que no se pueda usar debido a las enzimas de restricción que elegimos?
+1. Busquen nuestras enzimas de restricción de interés.
+    * ¿Las encuentran? ¿En que categoría está cada una?
+    * ¿Se pueden usar entonces cualquiera de nuestras enzimas de restricción para insertar nuestra secuencia en un plásmido?
+1. ¿Hay algún tag de los tres que estábamos considerando que no se pueda usar debido a las enzimas de restricción que elegimos?
 1. Elijan el tag que quieren usar, copien su construcción **Ecoli-DNA-VpVAN-???-tag.fasta** a un nuevo archivo y luego cambienlé el nombre a **secuencia_final.fasta**.
 1. Abran **secuencia_final.fasta** en **Leafpad** y agreguen a mano el sitio de restricción de **BamHI** al principio y el de **HindIII** al final.
 
