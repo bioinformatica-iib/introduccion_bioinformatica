@@ -23,7 +23,6 @@
 * Alineamientos de a pares
 * Búsquedas de secuencias por similitud y alineamientos múltiples
 * Perfiles de secuencia, HMM y PSI-BLAST
-* HMM
 <!--
  y Redes Neuronales
  -->

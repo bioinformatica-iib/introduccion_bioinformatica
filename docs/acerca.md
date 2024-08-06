@@ -30,11 +30,11 @@ tags:
 
 ## Horarios 2do Cuatrimestre 2024 (Presencial)
 
-* **Virtual:** Martes y Jueves 9 a 13hs.
+* **Presencial:** Martes y Jueves 9 a 13hs.
 
 ## Asistencia
 
-* **Teóricas:** Asistencia opcional
+* **Teóricas:** Asistencia opcional (Recomendable asistir)
 * **Prácticas:** Asistencia obligatoria al 80% de los TPs (Hasta 3 ausentes)
 
 ## Evaluación
@@ -43,7 +43,7 @@ tags:
 Un examen hacia el final de la cursada, con recuperatorio. El examen se divide en bloques temáticos que deben ser aprobados por separado. Cada bloque se aprueba con 5.
 
 * **Evaluación práctica:**
-Informes de trabajos prácticos. Se aprueban con 5.
+Informes de trabajos prácticos y parcialitos. Se aprueban con 5.
 
 * **Promoción:** 
 Tener aprobadas todas las instancias evaluatorios y un promedio de todas las instancias evaluatorias (teórico + práctico) con puntaje de 7 o más (ya sea en primera instancia o recuperatorio).
