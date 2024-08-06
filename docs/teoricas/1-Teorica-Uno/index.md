@@ -9,16 +9,15 @@ tags:
 
 Docentes, modo de cursada, cronograma, evaluaciones, etc.
 
- * :fontawesome-regular-file-pdf: [Slides](presentacionDeLaMateria-2023.pdf) 
+ * :fontawesome-regular-file-pdf: [Slides](presentacionDeLaMateria-2024.pdf) 
  
 ## Conceptos elementales de computación y algoritmos
 
- * :fontawesome-regular-file-pdf: [Slides](IntroduccionComputacion2023.pdf) 
- 
+ * :fontawesome-regular-file-pdf: [Slides](IntroduccionComputacion2024.pdf) 
+<!-- 
 ### Clase Grabada del año pasado :octicons-video-16:
  ![type:video](https://www.youtube.com/embed/CAwG3cIv2LA)
 
-<!-- 
 
 ## Experimentos en bioinformática
 
