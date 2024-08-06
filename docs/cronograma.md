@@ -20,39 +20,33 @@ tags:
 | Jueves, 22 Agosto 2024 | 9:00 hs |	:material-google-classroom: Presencial | P3. Alineamientos de secuencias de a pares | :fontawesome-solid-hammer: Práctica |	G. Romer |
 | Martes, 27 Agosto 2024 | 9:00 hs |	:material-google-classroom: Presencial | T4. Alineamientos múltiples | :fontawesome-solid-brain: Teórica |	F. Agüero |
 | Jueves, 29 Agosto 2024 | 9:00 hs |	:material-google-classroom: Presencial | P4. Búsqueda de secuencias por similitud y Alineamientos Múltiples | :fontawesome-solid-hammer: Práctica |	G. Romer |
-
-<!--
-| Martes, 05 Septiembre 2024 | 9:00 hs |	:material-google-classroom: Presencial | [P5a. Programando en Biología](/introduccion_bioinformatica/practicos/TP05a_R) | :fontawesome-solid-hammer: Práctica |	G. Romer |
-| Jueves, 07 Septiembre 2024 | 9:00 hs |	:material-google-classroom: Presencial | [P5b. Programando en Biología](/introduccion_bioinformatica/practicos/TP05b_R) | :fontawesome-solid-hammer: Práctica |	G. Romer |
-| Martes, 12 Septiembre 2024 | 9:00 hs |	:material-google-classroom: Presencial | [T5. Información contenida en alineamientos múltiples](/introduccion_bioinformatica/teoricas/5-Teorica-Cinco/) | :fontawesome-solid-brain: Teórica |	M. Nielsen |
-| Jueves, 14 Septiembre 2024 | 9:00 hs |	:material-google-classroom: Presencial | [P6. Perfiles de secuencia y PSI-BLAST](/introduccion_bioinformatica/practicos/TP06_PSI-BLAST) | :fontawesome-solid-hammer: Práctica |	H. García A |
-| Martes, 19 Septiembre 2024 | 9:00 hs |	:material-google-classroom: Presencial | [T6. Bioinformática Estructural: Desorden](/introduccion_bioinformatica/teoricas/6-Teorica-Seis/) | :fontawesome-solid-brain: Teórica |	L. Chemes |
-| Jueves, 21 Septiembre 2024 | 9:00 hs |	:material-google-classroom: Presencial | [T7. Bioinformática Estructural: Motivos lineales](/introduccion_bioinformatica/teoricas/7-Teorica-Siete/) | :fontawesome-solid-brain: Teórica |	L. Chemes |
-| Martes, 26 Septiembre 2024 | 9:00 hs |	:material-google-classroom: Presencial | [P7. Bioinformática Estructural: Predicción de Desorden](/introduccion_bioinformatica/practicos/TP07_Desorden) | :fontawesome-solid-hammer: Práctica |	J. Glavina |
-| Jueves, 28 Septiembre 2024 | 9:00 hs |	:material-google-classroom: Presencial | [P8. Bioinformática Estructural: Motivos funcionales en proteínas](/introduccion_bioinformatica/practicos/TP08_Motivos) | :fontawesome-solid-hammer: Práctica |	J. Glavina |
-| Martes, 03 Octubre 2024 | 9:00 hs |	:material-google-classroom: Presencial | [T8. Bioinformática Estructural: Dominios](/introduccion_bioinformatica/teoricas/8-Teorica-Ocho/) | :fontawesome-solid-brain: Teórica |	L. Chemes |
-| Jueves, 05 Octubre 2024 | 9:00 hs |	:material-google-classroom: Presencial | [P9a. Bioinformática Estructural: Dominios 3D y Modelado por homología](/introduccion_bioinformatica/practicos/TP09a_Modelado_Por_Homologia) | :fontawesome-solid-hammer: Práctica |	J. Glavina |
-| Martes, 10 Octubre 2024 | 9:00 hs |	:material-google-classroom: Presencial | [T9. Data clustering](/introduccion_bioinformatica/teoricas/9-Teorica-Nueve/) | :fontawesome-solid-brain: Teórica |	F. Agüero |
-| Jueves, 12 Octubre 2024 | 9:00 hs |	:material-google-classroom: Presencial | [P9b. Bioinformática Estructural: Alphafold](/introduccion_bioinformatica/practicos/TP09b_AlphaFold) | :fontawesome-solid-hammer: Práctica |	J. Glavina |
-| Martes, 17 Octubre 2024 | 9:00 hs |	:material-google-classroom: Presencial | [P10a. Data mining - Clustering](/introduccion_bioinformatica/practicos/TP10a_Clustering) | :fontawesome-solid-hammer: Práctica |	G. Romer |
-| Jueves, 19 Octubre 2024 | 9:00 hs |	:material-google-classroom: Presencial | [P10b. Data mining](/introduccion_bioinformatica/practicos/TP10b_Data_Mining) | :fontawesome-solid-hammer: Práctica |	G. Romer |
-| Martes, 24 Octubre 2024 | 9:00 hs |	:material-google-classroom: Presencial | [T10. Métodos de predicción de Machine Learning basados en datos (HMM y ANN)](/introduccion_bioinformatica/teoricas/10-Teorica-Diez/) | :fontawesome-solid-brain: Teórica |	M. Nielsen |
-| Jueves, 26 Octubre 2024 | 9:00 hs |	:material-google-classroom: Presencial | [P11. HMM y Redes neuronales](/introduccion_bioinformatica/practicos/TP11_HMM_ANN) | :fontawesome-solid-hammer: Práctica |	H. García A. |
-| Martes, 31 Octubre 2024 | 9:00 hs |	:material-google-classroom: Presencial | [T11. Secuenciación y ensamblado de genomas](/introduccion_bioinformatica/teoricas/11-Teorica-Once/) | :fontawesome-solid-brain: Teórica |	F. Agüero |
-| Jueves, 02 Noviembre 2024 | |	| LIBRE | |	|
-| Martes, 07 Noviembre 2024 | 9:00 hs |	:material-google-classroom: Presencial | [P12. Short Read Mapping](/introduccion_bioinformatica/practicos/TP12_Short-Read-Mapping/) | :fontawesome-solid-hammer: Práctica |	G. Romer |
-| Jueves, 09 Noviembre 2024 | 9:00 hs |	:material-google-classroom: Presencial | [P13. Genómica comparativa](/introduccion_bioinformatica/practicos/TP13_Genomica_Comparativa/) | :fontawesome-solid-hammer: Práctica |	G. Romer |
-| Martes, 14 Noviembre 2024 | 9:00 hs |	:material-google-classroom: Presencial | [T12. Quimioinformática](/introduccion_bioinformatica/teoricas/12-Teorica-Doce/)  | :fontawesome-solid-brain: Teórica |	F. Agüero |
-| Jueves, 16 Noviembre 2024 | 9:00 hs |	:material-google-classroom: Presencial | [P14. Quimioinformática](/introduccion_bioinformatica/practicos/TP14_Quimioinformatica/) | :fontawesome-solid-hammer: Práctica |	M. Didier Garnham |
-| Martes, 21 Noviembre 2024 | 9:00 hs |	:material-google-classroom: Presencial | Repaso | :fontawesome-solid-brain: Teórica |	F. Agüero<br>L. Chemes<br> M. Nielsen |
-| Jueves, 23 Noviembre 2024 | 9:00 hs |	| LIBRE | |	|
-| Martes, 28 Noviembre 2024 | 9:00 hs |	:material-google-classroom: Presencial | Exposición grupos de post-grado | | F. Agüero<br>L. Chemes<br> M. Nielsen |
-| Jueves, 30 Noviembre 2024 | 9:00 hs |	Presencial<br>Planta baja IIB | Examen grado | |	F. Agüero<br>L. Chemes<br> M. Nielsen |
-| Martes, 05 Diciembre 2024 | 9:00 hs |	:material-google-classroom: Presencial | Revisión examen | | F. Agüero<br>L. Chemes<br> M. Nielsen |
-| Jueves, 07 Diciembre 2024 | 9:00 hs |	Presencial | Recuperatorio | | F. Agüero<br>L. Chemes<br> M. Nielsen |
-| Martes, 12 Diciembre 2024 | 9:00 hs |	| Libre | |	|
-| Jueves, 19 Diciembre 2024 | 9:00 hs |	:material-google-classroom: Presencial | Revisión examen | |	F. Agüero<br>L. Chemes<br> M. Nielsen |
--->
+| Martes, 03 Septiembre 2024 | 9:00 hs |	:material-google-classroom: Presencial | T5. Información contenida en alineamientos múltiples | :fontawesome-solid-brain: Teórica |	L. Chemes |
+| Jueves, 05 Septiembre 2024 | 9:00 hs |	:material-google-classroom: Presencial | P5. Perfiles de secuencia y PSI-BLAST | :fontawesome-solid-hammer: Práctica |	H. García |
+| Martes, 10 Septiembre 2024 | 9:00 hs |	:material-google-classroom: Presencial | T6. HMM | :fontawesome-solid-brain: Teórica |	L. Chemes |
+| Jueves, 12 Septiembre 2024 | 9:00 hs |	:material-google-classroom: Presencial | P6. HMM | :fontawesome-solid-hammer: Práctica |	H. García A |
+| Martes, 17 Septiembre 2024 | 9:00 hs |	:material-google-classroom: Presencial | T7. Quimioinformática | :fontawesome-solid-brain: Teórica |	F. Agüero |
+| Jueves, 19 Septiembre 2024 | 9:00 hs |	:material-google-classroom: Presencial | P7. Quimioinformática | :fontawesome-solid-hammer: Práctica |	M. Didier Garnham |
+| Martes, 24 Septiembre 2024 | 9:00 hs |	:material-google-classroom: Presencial | PP. Programando en Biología | :fontawesome-solid-hammer: Práctica |	M. Didier Garnham |
+| Jueves, 26 Septiembre 2024 | 9:00 hs |	:material-google-classroom: Presencial | PP. Programando en Biología | :fontawesome-solid-hammer: Práctica |	M. Didier Garnham |
+| Martes, 01 Octubre 2024 | 9:00 hs |	:material-google-classroom: Presencial | T8. Data clustering | :fontawesome-solid-brain: Teórica |	F. Agüero |
+| Jueves, 03 Octubre 2024 | 9:00 hs |	:material-google-classroom: Presencial | P8. Data Clustering y Data Mining | :fontawesome-solid-hammer: Práctica |	G. Romer |
+| Martes, 08 Octubre 2024 | 9:00 hs |	:material-google-classroom: Presencial | T9. Secuenciación y ensamblado de genomas | :fontawesome-solid-brain: Teórica |	F. Agüero |
+| Jueves, 10 Octubre 2024 | 9:00 hs |	:material-google-classroom: Presencial | P9. Mapeo de secuencias | :fontawesome-solid-hammer: Práctica |	G. Romer |
+| Martes, 15 Octubre 2024 | 9:00 hs |	:material-google-classroom: Presencial | T10. Bioinformática Estructural: Desorden | :fontawesome-solid-brain: Teórica |	L. Chemes |
+| Jueves, 17 Octubre 2024 | 9:00 hs |	:material-google-classroom: Presencial | P10. Predicción de Desorden | :fontawesome-solid-hammer: Práctica |	J. Glavina |
+| Martes, 22 Octubre 2024 | 9:00 hs |	:material-google-classroom: Presencial | T11. Bioinformática Estructural: Motivos lineales | :fontawesome-solid-brain: Teórica |	L. Chemes |
+| Jueves, 24 Octubre 2024 | 9:00 hs |	:material-google-classroom: Presencial | P11. Motivos Lineales en proteínas | :fontawesome-solid-hammer: Práctica | J. Glavina |
+| Martes, 29 Octubre 2024 | 9:00 hs |	:material-google-classroom: Presencial | T12. Bioinformática Estructural: Dominios | :fontawesome-solid-brain: Teórica |	L. Chemes |
+| Jueves, 31 Octubre 2024 | 9:00 hs |	:material-google-classroom: Presencial | P12. Dominios Proteicos | :fontawesome-solid-brain: Teórica |	J. Glavina |
+| Martes, 05 Noviembre 2024 | 9:00 hs |	| LIBRE | |	|
+| Jueves, 07 Noviembre 2024 | 9:00 hs |	| LIBRE | |	|
+| Martes, 12 Noviembre 2024 | 9:00 hs |	:material-google-classroom: Presencial | Repaso | |	F. Agüero |
+| Jueves, 14 Noviembre 2024 | 9:00 hs |	:material-google-classroom: Presencial | Examen | | F. Agüero<br>L. Chemes<br> |
+| Martes, 19 Noviembre 2024 | 9:00 hs |	| LIBRE | |	|
+| Jueves, 21 Noviembre 2024 | 9:00 hs |	:material-google-classroom: Presencial | Revision parciales | |	F. Agüero |
+| Martes, 26 Noviembre 2024 | 9:00 hs |	:material-google-classroom: Presencial | Recuperatorio | | F. Agüero<br>L. Chemes<br>|
+| Jueves, 28 Noviembre 2024 | 9:00 hs |	| LIBRE | |	|
+| Martes, 03 Diciembre 2024 | 9:00 hs |	:material-google-classroom: Presencial | Revisión examen | | F. Agüero<br>L. Chemes<br> |
 
 
 <!--
