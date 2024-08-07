@@ -14,11 +14,11 @@ Docentes, modo de cursada, cronograma, evaluaciones, etc.
 ## Conceptos elementales de computación y algoritmos
 
  * :fontawesome-regular-file-pdf: [Slides](IntroduccionComputacion2024.pdf) 
-<!-- 
+
 ### Clase Grabada del año pasado :octicons-video-16:
  ![type:video](https://www.youtube.com/embed/CAwG3cIv2LA)
 
-
+<!-- 
 ## Experimentos en bioinformática
 
  * :fontawesome-regular-file-pdf: [Slides](experimentosBioinformaticos2022.pdf) 
