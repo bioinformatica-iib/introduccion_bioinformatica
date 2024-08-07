@@ -232,4 +232,4 @@ Virtual Box es un virtualizador de entornos. Nos permite generar *máquinas virt
     Si les pide alguna contraseña, la misma es **unsam**.
 
 !!! danger "No cambiar ubicación"
-    Una vez creada la Virtual Machine **NO** muevan el archivo .vmdk de lugar. Si lo hicieron, fíjense en la [sección de problemas](../problemasVM/) que está la solución.
+    Una vez creada la Virtual Machine **NO** muevan el archivo .vmdk de lugar. Si lo hicieron, fíjense en la [sección de problemas](../problemasVM/index.md) que está la solución.
