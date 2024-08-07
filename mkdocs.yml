@@ -128,7 +128,7 @@ extra_css:
 nav:
     - Inicio: 'index.md'
     - Acerca de: 'acerca.md'
-    - Como Llegar: 'comollegar.md'
+    - Cómo Llegar: 'comollegar.md'
     - Contenidos: 'contenidos.md'
     #- Cronograma: 'cronograma.md'
     - Docentes: 'docentes.md'

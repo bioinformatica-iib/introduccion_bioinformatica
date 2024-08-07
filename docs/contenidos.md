@@ -1,4 +1,4 @@
-## Contenidos teóricos
+## Contenidos Teóricos
 
 * Experimentos Bioinformáticos
 * Conceptos básicos de computación, algoritmos

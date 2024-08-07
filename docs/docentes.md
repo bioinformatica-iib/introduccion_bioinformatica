@@ -17,10 +17,10 @@ tags:
 * Lic. Guadalupe Romer
 
 ### Ayudantes de 1ra Ad-honorem
-* Heli A. García
-* Ramiro Quinteros
+* Lic. Heli A. García
+* Lic. Ramiro Quinteros
 
-### Ayudante Ad-Scriptos
+### Ayudante Adscripto
 * Sebastián Jinich
 
 
