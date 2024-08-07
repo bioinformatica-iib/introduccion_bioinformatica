@@ -14,7 +14,7 @@ Docentes, modo de cursada, cronograma, evaluaciones, etc.
 ## Conceptos elementales de computación y algoritmos
 
  * :fontawesome-regular-file-pdf: [Slides](IntroduccionComputacion2024.pdf) 
- * :material-video-check: [Clase Grabada del año pasado](https://www.youtube.com/embed/CAwG3cIv2LA)
+ * :material-video-check: [Clase Grabada en 2022](https://www.youtube.com/embed/CAwG3cIv2LA)
 
 ## Bases de datos
  
