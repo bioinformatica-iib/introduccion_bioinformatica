@@ -4,11 +4,9 @@ tags:
   - Instructores
 ---
 
-### Profesor Titular
+### Profesores Titulares
 
 * Dr. Fernán Agüero
-
-### Profesora invitada
 * Dra. Lucía B. Chemes
 
 ### Jefa de Trabajos Prácticos
