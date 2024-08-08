@@ -19,7 +19,16 @@ Este es el botón para decargar materiales, en (#) hay que agregar el link corre
 -->
 
 ### Software a usar
-* EMBOSS (ya instalado en la VM).
+* EMBOSS
+
+
+??? warning "Si están usando su propia computadora (y no una máquina virtual brindada por la materia) lean esto:"
+
+    Si estás usando tu propia computadora tenés que tener permisos de administrador (saberte la clave) para instalar EMBOSS usando:
+
+    ```bash
+    sudo apt-get install emboss emboss-data emboss-doc 
+    ```
 
 <!--
 ### Recursos Online
@@ -320,15 +329,14 @@ tfm jaspscan
 
 El texto que aparece funciona similar al comando `less` que vimos en el TP 1, donde ++space++ pasa a la próxima página y apretando ++q++ deja de leerlo.
 
-Como mencionamos antes es posible hacer bioinformática sin usar EMBOSS, ya sea porque queremos controlar hasta el último detalle que hace nuestro programa, porque queremos agregar alguna opción que EMBOSS no tiene, o simplemente porque era una tarea simple y no queríamos aprender a usar un programa de EMBOSS para hacerla. Son todas razones válidas. Lo que queremos que se lleven hoy es que EMBOSS existe y que puede hacer algunas tareas que les van a resultar útiles en el día a día de hacer bioinformática.
+Como mencionamos antes es posible hacer bioinformática sin usar EMBOSS, ya sea porque:
 
-??? warning "Si no estan usando la Maquina Virtual de Introducción a la Bioinformática lean esto:"
+* queremos controlar hasta el último detalle que hace nuestro programa,
+* queremos agregar alguna opción que EMBOSS no tiene, 
+* o simplemente era una tarea simple y no queríamos aprender a usar un programa de EMBOSS para hacerla.
 
-    EMBOSS y su documentación está ya instalado en la máquina virtual que les pasamos. Si no estas usando la máquina virtual tenes que instalarlo usando:
+Son todas razones válidas. Lo que queremos que se lleven hoy es que EMBOSS existe y que puede hacer algunas tareas que les van a resultar útiles en el día a día de hacer bioinformática.
 
-    ```bash
-    sudo apt-get install emboss emboss-data emboss-doc 
-    ```
 
 ## **Aplicaciones en Biotecnología**
 
@@ -370,6 +378,7 @@ Nuestro objetivo en esta guía va a ser diseñar una secuencia de ADN sintético
 * Marque a *VpVan* de alguna forma para facilitar su posterior purificación
 
 A continuación vamos a dar una versión **super** resumida de los conceptos anteriores. Si ya saben como funciona todo lo mencionado pueden ir a la próxima sección (**Bases del experimento**).
+
 
 ??? info "Repaso biológico - Plásmidos"
 
@@ -623,7 +632,11 @@ head -20 assembly_summary.txt > assembly_summary_temporal.tsv
 
 Lo único que les debería llamar la atención del comando anterior es que el nuevo archivo tiene la extensión **tsv**. Esto lo mencionamos por arriba en el TP 1, pero los archivos **TSV** o "Tab-Separated Values" son archivos de texto que contienen una tabla donde sus columnas están separadas entre ellas por un ++tab++, lo cual es exactamente el caso de la tabla actual.
 
-Hagan doble click sobre el archivo **assembly_summary_temporal.tsv**. La extensión **tsv** en nuestra máquina virtual está asociada al programa **Gnumeric** (similar a Excell o a Google Sheets). Gnumeric va a detectar automáticamente que las columnas están separadas por ++tab++.
+Hagan doble click sobre el archivo **assembly_summary_temporal.tsv**.
+
+<!--
+La extensión **tsv** en nuestra máquina virtual estaba asociada al programa **Gnumeric** (similar a Excell o a Google Sheets). Gnumeric va a detectar automáticamente que las columnas están separadas por ++tab++.
+-->
 
 * Identifiquen la columna correspondiente a la especie (son solo las primeras 20 filas, no van a encontrar a *E. coli*), la cepa y el link a la ubicación del genoma.
 
@@ -740,32 +753,33 @@ Como tenemos varios archivos **.fna.gz** vamos a tener que correr el comando `cu
 
 10) Reemplacen los **REEMPLAZAR** en el próximo código por lo que sea adecuado para conseguir nuestro objetivo:
 
-    ```bash
+```bash
+REEMPLAZAR
+
+for REEMPLAZAR in REEMPLAZAR
+do 
     REEMPLAZAR
+done
+```
 
-    for REEMPLAZAR in REEMPLAZAR
-    do 
-        REEMPLAZAR
-    done
+Sabiendo que un **REEMPLAZAR** es:
 
-    ```
-    Sabiendo que un **REEMPLAZAR** es:
+```bash
+# Creamos una lista que contiene a todos los archivos que empiezan con "GCF" y terminan con ".gz"
+lista_de_archivos_genomas=`ls GCF*.gz`
+``` 
 
-    ```bash
-    # Creamos una lista que contiene a todos los archivos que empiezan con "GCF" y terminan con ".gz"
-    lista_de_archivos_genomas=`ls GCF*.gz`
-    ``` 
-    y otro es:
+y otro es:
 
-    ```bash
-    # Descomprimimos el archivo ".gz" y corremos el comando *cusp* para cada $archivo_genoma de la lista
-    zcat $archivo_genoma | cusp -auto -sequence "stdin" -outfile "${archivo_genoma}.cusp"
-    ``` 
+```bash
+# Descomprimimos el archivo ".gz" y corremos el comando *cusp* para cada $archivo_genoma de la lista
+zcat $archivo_genoma | cusp -auto -sequence "stdin" -outfile "${archivo_genoma}.cusp"
+``` 
 
-    * `zcat` es un comando que descomprime archivos **.gz** y devuelve su contenido por consola (similar a `cat`).
-    * `-auto` hace que `cusp` use los parámetros por defecto y no nos consulte cuales usar.
-    * `-sequence "stdin"` le esta diciendo a `cusp` que el genoma se lo estamos dando por la consola (mediante el pipe o `|`).
-    * `-outfile "${archivo_genoma}.cusp"` define el nombre del archivo de salida de `cusp`, que en este caso es el nombre del genoma seguido de **.cusp**. Si bien las llaves no son necesarias en este caso, ayudan a entender donde termina la variable y empieza el *string*. Idealmente habria que sacarle la extensión anterior al archivo (ya que ahora va a quedar **.fna.gz.cusp**), pero ya tenemos bastante que hacer.
+* `zcat` es un comando que descomprime archivos **.gz** y devuelve su contenido por consola (similar a `cat`).
+* `-auto` hace que `cusp` use los parámetros por defecto y no nos consulte cuales usar.
+* `-sequence "stdin"` le esta diciendo a `cusp` que el genoma se lo estamos dando por la consola (mediante el pipe o `|`).
+* `-outfile "${archivo_genoma}.cusp"` define el nombre del archivo de salida de `cusp`, que en este caso es el nombre del genoma seguido de **.cusp**. Si bien las llaves no son necesarias en este caso, ayudan a entender donde termina la variable y empieza el *string*. Idealmente habria que sacarle la extensión anterior al archivo (ya que ahora va a quedar **.fna.gz.cusp**), pero ya tenemos bastante que hacer.
 
     !!! tip
 
@@ -784,7 +798,7 @@ Recordando nuestro objetivo, nosotros queríamos una tabla de codones de *E. col
 
 Abran uno de los archivos **.cusp** que acabamos de crear y vean que información tiene:
 
-??? tip "Si en la tabla dentro del archivo **.cusp** las columnas no están alineadas lean esto:"
+??? tip "Si están usando **Leafpad** y si en la tabla dentro del archivo **.cusp** las columnas no están alineadas lean esto:"
 
     Por defecto **Leafpad** usa una fuente llamada **"Ubuntu"**, que si bien sirve para escribir cuentos, nos va a dar problemas al momento de ver ciertos archivos que vamos a usar en esta materia.
 
@@ -890,11 +904,13 @@ Este comando les va a tirar un error, pero no porque esté mal escrito. El probl
 
 ```bash
 sudo rebaseextract -infile withrefm.207 -protofile proto.207
-```-->
+```
+-->
 
 !!! info
 
     Solo para que sepan, los archivos **proto.207** y **withrefm.207** se pueden descargar de [aca](ftp://ftp.neb.com/pub/rebase/) o [aca](ftp://ftp.ebi.ac.uk/pub/databases/rebase) usando `wget` (con los links anteriores van a bajar un índice general y luego tienen que pasarle a `wget` el link de los archivos que quieran). Dependiendo de cuando vayan a esa página puede ser que encuentren versiones incluso mas recientes.
+
 
 15) Ahora que ya tenemos la base de datos configurada podemos usar `remap`, pero antes veamos un poco mas información sobre nuestras enzimas de restricción. Usando `grep` busquen dentro del archivo **proto.207** a nuestras enzimas de restricción de interés (**BamHI**, **ApoI** y **HindIII**).
 
@@ -930,15 +946,15 @@ Corran este comando 3 veces pasándole los archivos correctos y creen los siguie
 
 16) Agregá la secuencia faltante después del TAG.
 
-17) Una vez creados, abran los archivos con **Leafpad**. 
+17) Una vez creados, abran los archivos con **Leafpad** o con el **Text Editor**. 
 
-1. ¿Entienden lo que simboliza el archivo? (es necesario que esten usando la fuente **Ubuntu Mono** en **Leafpad** para verlo bien)
+1. ¿Entienden lo que simboliza el archivo? (si no visualizan de manera cómoda el archivo **llame al docente**)
 1. Busquen nuestras enzimas de restricción de interés.
     * ¿Las encuentran? ¿En que categoría está cada una?
     * ¿Se pueden usar entonces cualquiera de nuestras enzimas de restricción para insertar nuestra secuencia en un plásmido?
 1. ¿Hay algún tag de los tres que estábamos considerando que no se pueda usar debido a las enzimas de restricción que elegimos?
 1. Elijan el tag que quieren usar, copien su construcción **Ecoli-DNA-VpVAN-???-tag.fasta** a un nuevo archivo y luego cambienlé el nombre a **secuencia_final.fasta**.
-1. Abran **secuencia_final.fasta** en **Leafpad** y agreguen a mano el sitio de restricción de **BamHI** al principio y el de **HindIII** al final.
+1. Abran **secuencia_final.fasta** en **Leafpad** o **Editor de Texto** y agreguen a mano el sitio de restricción de **BamHI** al principio y el de **HindIII** al final.
 
 **¡Felicitaciones, tenemos nuestra secuencia lista para mandar a secuenciar!**
 

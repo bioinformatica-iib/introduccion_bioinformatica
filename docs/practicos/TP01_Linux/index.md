@@ -361,7 +361,7 @@ ls -l > Documentos/output_de_ls
 
 Verán que en un principio parece que no paso nada. Entren ahora a **Documentos** y van a ver que hay un nuevo archivo con el nombre **output_de_ls**.
 
-Vamos a abir el archivo usando **Leafpad**, el editor de texto de la interfaz ǵráfica de Ubuntu. Asegurándose que estan **Documentos**, en la consola escriban:
+Vamos a abir el archivo usando **Leafpad** o el **Text Editor**, el editor de texto de la interfaz ǵráfica de Ubuntu. Asegurándose que estan **Documentos**, en la consola escriban:
 
 ```bash
 leafpad output_de_ls
@@ -385,7 +385,7 @@ Al momento sabemos como guardar en un archivo de texto cualquier salida de un co
 
 !!! Danger
 
-    Recuerden cerrar el **Leafpad** o la concola quedará ocupada.
+    Recuerden cerrar el **Leafpad** o la consola quedará ocupada.
 
 El comando `echo` hace lo que su nombre indica y devuelve por la terminal el texto que le pases. Prueben escribir `echo TEXTO`, donde **TEXTO** es cualquier oración, por ejemplo:
 
@@ -412,7 +412,7 @@ echo Esta es la primera linea del documento > mi_documento
 echo Esta es la segunda linea del documento >> mi_documento
 ```
 
-Y vean con **Leafpad** si funcionó como queríamos.
+Y vean con **Leafpad** o el **Text Editor** si funcionó como queríamos.
 
 !!! danger
     
@@ -512,7 +512,7 @@ Para este ejercicio vamos a seguir usando el archivo **martin_fierro**.
 
 Los *scripts* de Bash son básicamente una lista de muchos de los comandos que nosotros corrimos en la terminal, pero escritos dentro de un archivo. Al ejecutar ese archivo todos los comandos dentro de él serán corridos uno a uno de arriba a abajo.
 
-Para simplificar un poco la tarea y enfocarnos en lo que importa en esta sección, vamos a utilizar la interfaz gráfica de Ubuntu. Vayan a **Documentos** y creen un archivo llamado **primer_programa.sh** (Boton derecho :material-arrow-right: Crear nuevo... :material-arrow-right: Archivo vacío). Luego abran el archivo en **Leafpad** (doble click) y escriban lo siguiente:
+Para simplificar un poco la tarea y enfocarnos en lo que importa en esta sección, vamos a utilizar la interfaz gráfica de Ubuntu. Vayan a **Documentos** y creen un archivo llamado **primer_programa.sh** (Boton derecho :material-arrow-right: Crear nuevo... :material-arrow-right: Archivo vacío). Luego abran el archivo en **Leafpad** o el **Text Editor** (doble click) y escriban lo siguiente:
 
 ```bash
 echo "----------------"
