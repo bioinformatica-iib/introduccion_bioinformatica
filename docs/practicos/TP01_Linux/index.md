@@ -5,12 +5,16 @@
 <br>
 
 [:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1j-Ys8NpOWFRxqGz453-n8nU5zigy0TCw/view?usp=sharing){ .md-button .md-button--primary }
-<!--
-Este es el botón para decargar materiales, en (#) hay que agregar el link correspondiente
 
 ### Slides mostrados en la clase
 
-* :fontawesome-regular-file-pdf: [Introducción a la programación](https://drive.google.com/file/d/1lfvCd-iWPAyZ5tj96njbOMGPerXAUlJ0/view?usp=drive_link)
+* :fontawesome-regular-file-pdf: [Introducción a la programación - Parte 1](https://drive.google.com/file/d/1yxCzhCvINk0z3_vTcy9n_LJ1wOJhPNwF/view?usp=sharing)
+* :fontawesome-regular-file-pdf: [Introducción a la programación - Parte 2](https://drive.google.com/file/d/1bOczXT5haYff8ziMIsm3sLrgFPcqVTD-/view?usp=sharing)
+
+
+<!--
+* :fontawesome-regular-file-pdf: [Introducción a la programación - Resolución Ej 3](https://drive.google.com/file/d/1h-s6XJ_G_dLk-iBA7NT6LIEGe9IOrx_1/view?usp=sharing)
+
 * :fontawesome-regular-file-pdf: [Cierre TP](https://drive.google.com/file/d/1jwUdtQYj9h4uGiz98tJFeol3e942zsu4/view?usp=drive_link)
 --->
 
@@ -36,7 +40,13 @@ Este es el botón para decargar materiales, en (#) hay que agregar el link corre
 * [Comando AWK](https://www.tutorialspoint.com/awk/index.htm)
 * [Consola de Linux online](https://bellard.org/jslinux/vm.html?url=alpine-x86.cfg&mem=192) (y [otra](https://copy.sh/v86/?profile=linux26))
 * [Compilador de Bash online](https://replit.com/languages/bash) (y [otro](https://www.onlinegdb.com/online_bash_shell))
-* [Instalación de Linux en windows](AGREGAR LINK)
+
+??? warning "Instalación de Linux en Windows:"
+    1. Ingresar a “Microsoft Store”
+    2. Buscar “Ubuntu”
+    3. Ingresar a “Ubuntu 22.04”
+    4. Descargar
+
 
 ### Objetivos
 
@@ -806,6 +816,8 @@ Ahora que sabemos nuestro objetivo vayan a **Documentos** y creen una nueva carp
         Donde hay que reemplazar **NUMERO** por el número correspondiente (de 6 a 10).
 
     ¡Y listo, deberían tener su programa andando!
+
+# **Contenido Adicional**
 
 ## **Bash: Tablas**
 
