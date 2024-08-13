@@ -313,7 +313,7 @@ dotmatcher -graph X11 HS-ch1-fragment.fasta HS-ch1-fragment.fasta
 si quieren guardar la imagen:
 
 ```Bash
-dotmatcher -graph png HS-ch1-fragment.fasta HS-ch1-fragment.fasta
+dotmatcher -graph pdf HS-ch1-fragment.fasta HS-ch1-fragment.fasta
 ```
 
 !!! attention "Atención"
