@@ -12,19 +12,22 @@
 
 !!! abstract "Atención: Este TP tiene informe."
 
+!!! warning "Atención: Este TP tiene parcialito."
+
+<!---
 ### Slides mostrados en la clase
 
 * :fontawesome-regular-file-pdf: [Slides](https://drive.google.com/file/d/1-VsjPb35cYRSE-HpdMwp7jLBQyQvwvCE/view?usp=sharing)
 
 ### Videos de la clase grabada
 * :octicons-video-16: [Cierre TP](https://youtu.be/nXBOrHCMRZQ)
-
+-->
 
 ## **Objetivos**
 
 * Entender el funcionamiento básico del algoritmo de alineamiento de pares de secuencias de Needleman-Wunsch.
 * Aprender a interpretar un Dot-Plot, pudiendo identificar las regiones relevantes que contienen patrones.
-* Comprender los conceptos de similitud y homología de secuencias, y establecer una clara diferencia entre los mismos. 
+* Comprender los conceptos de identidad, similitud y homología de secuencias, y establecer una clara diferencia entre los mismos. 
 * Realizar un alineamiento múltiple de secuencias e interpretar qué información importante se puede extraer del mismo. 
 
 ## **Introducción**
@@ -271,6 +274,7 @@ Observá nuevamente la matriz del alineamiento que obtuviste en **1.2**. Cliqué
 ¿Entendés qué significa esto? ¿Podés relacionarlo con los dos caminos óptimos posibles que existen para este alineamiento?
 <br>
 
+<!--
 **1.3.3** Finalmente te propongo que realices el siguiente alineamiento: 
 
 * Sequence a: **AGATGG** y Sequence b: **ATTGGG**. 
@@ -279,7 +283,7 @@ Observá nuevamente la matriz del alineamiento que obtuviste en **1.2**. Cliqué
 
 Registrá con atención el resultado. Ahora cambiemos el esquema de *scoring*, dejando el mismo valor para match, pero intercambiando los puntajes de gap y mismatch. 
 ¿Cómo cambió el output? ¿Qué observás ahora en las secuencias halladas como solución óptima en comparación a lo que arrojaba el algoritmo con los parámetros anteriores?
-
+-->
 
 ## Dot-Plots
 
@@ -305,6 +309,13 @@ Generá un dotplot utilizando la secuencia *HS-ch11-fragment.fasta* contra sí m
 ```Bash
 dotmatcher -graph X11 HS-ch1-fragment.fasta HS-ch1-fragment.fasta
 ```
+
+si quieren guardar la imagen:
+
+```Bash
+dotmatcher -graph png HS-ch1-fragment.fasta HS-ch1-fragment.fasta
+```
+
 !!! attention "Atención"
 
     Recuerden abrir el archivo *HS-ch11-fragment.fasta* y chequear que la secuencia es de ADN. Es una buena práctica conocer qué hay en los archivos que vamos a utilizar. 
@@ -341,11 +352,13 @@ Si aumentás estos parámetros podés ir eliminando fragmentos que corresponden 
 
 ## Similitud y Homología
 
-Los términos similitud y homología se suelen utilizar como sinónimos por muchos investigadores, sin embargo no lo son. 
+Los términos identidad, similitud y homología se suelen utilizar como sinónimos por muchos investigadores, sin embargo no lo son.
 
-* La **similitud** es una característica cuantitativa de un par de secuencias, donde se establece en qué grado estas se parecen (por ejemplo aplicando los algoritmos antes vistos, utilizando un sistema de puntaje). 
+* La **identidad** es una es una característica cuantitativa de un par de secuencias, donde se cuenta cuántos elementos (residuos, nucleótidos, aminoácidos etc) son idénticos entre ambas secuencias después de alinearlas. 
 
-* La **homología**, por otro lado, es una característica cualitativa, dos secuencias SON o NO SON homólogas. Homología implica específicamente que el par de secuencias estudiadas provienen de un mismo ancestro común. Esta afirmación es completamente hipotética, ya que, salvo en contados casos, no se puede corroborar. Uno puede inferir que este es el caso dado la similitud observada en las secuencias actuales, sin tener acceso a las secuencias ancestrales.
+* La **similitud** es una característica cuantitativa de un par de secuencias, donde se establece en qué grado estas se parecen (por ejemplo aplicando los algoritmos antes vistos, utilizando un sistema de puntaje) después de alinearlas. 
+
+* La **homología**, por otro lado, es una característica cualitativa, dos secuencias SON o NO SON homólogas. Homología implica específicamente que el par de secuencias estudiadas *provienen de un mismo ancestro común*. Esta afirmación es completamente hipotética, ya que, salvo en contados casos, no se puede corroborar. Uno puede inferir que este es el caso dado la similitud observada en las secuencias actuales, sin tener acceso a las secuencias ancestrales.
 
 !!! attention "Atención"
 
@@ -452,11 +465,12 @@ Mathys L, Balzarini J. Several N-Glycans on the HIV Envelope Glycoprotein gp120 
 
       Notá que las posiciones en el alineamiento cuentan gaps por lo que no se corresponden exactamente con el esquema. Utilizá las posiciones de las cisteínas conservadas para identificar diferentes regiones.
 
+<!---
 ## Ejercicio a informar
 
 !!! info 
 
-    <span style="font-weight:bold;">Fecha límite de entrega:</span> Domingo, 3 de Septiembre 2023, 23:59hs.
+    <span style="font-weight:bold;">Fecha límite de entrega:</span> Viernes, 23 de Agosto 2024, 23:59hs.
 
 [:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/13hzApnpVqZqkNiayMfDDL6gpVypqj18a/view?usp=sharing){ .md-button .md-button--primary }
 
@@ -489,5 +503,4 @@ Para solucionarlo decide utilizar las herramientas que aprendió en el trabajo p
 
      Para resolver el punto 2 pueden hacer un script de bash usando entre otras cosas un ciclo `for`. Si lo logran (o si lo intentan), los invito a incluirlo en el trabajo práctico (inclúyanlo aún si no les salió bien).
 
-<br>
-<br>
+-->
