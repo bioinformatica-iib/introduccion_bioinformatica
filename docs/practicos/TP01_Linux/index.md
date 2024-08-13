@@ -817,7 +817,7 @@ Ahora que sabemos nuestro objetivo vayan a **Documentos** y creen una nueva carp
 
     ¡Y listo, deberían tener su programa andando!
 
-# **Contenido Adicional**
+## **Contenido Adicional**
 
 ## **Bash: Tablas**
 
