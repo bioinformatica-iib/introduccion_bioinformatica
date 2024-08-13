@@ -4,16 +4,15 @@
 
 <br>
 
-[:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1bL5zX--SZOezaojH2yjfa6FV85ghlR0O/view?usp=sharing){ .md-button .md-button--primary }
+[:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1yvegYWE7bHe7S8lP2EqePzyP13iyUkX6/view?usp=sharing){ .md-button .md-button--primary }
 <!--
 Este es el botón para decargar materiales, en (#) hay que agregar el link correspondiente.
 -->
 
-<!--
 ### Slides mostrados en la clase
-
+Próximamente
+<!--
 * :fontawesome-regular-file-pdf: [Slides TP](https://drive.google.com/file/d/1MsFtQ10qk7yI3MxR_vZ9-yszcTndbxZw/view?usp=sharing)
-
 ### Videos de la clase grabada
 * :octicons-video-16: [Cierre TP](https://youtu.be/07GGMh5aRDQ)
 -->
