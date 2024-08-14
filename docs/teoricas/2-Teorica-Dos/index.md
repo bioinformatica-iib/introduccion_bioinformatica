@@ -4,7 +4,7 @@ tags:
   - teoricas
 ---
 
-## Alineamientos de secuencias y Sistemas de punaje
+## Alineamientos de secuencias y Sistemas de puntaje
 
 Clase teórica de alineamientos de secuencias (de a pares), Algoritmos, Matrices.
 
@@ -16,6 +16,7 @@ Clase teórica de alineamientos de secuencias (de a pares), Algoritmos, Matrices
 Clase teórica de búsquedas de secuencias por similitud: fuerza bruta (sin heurísticas), y heurísticas para reducir espacios de búsqueda: FASTA, BLAST. 
 
 * :fontawesome-regular-file-pdf: [Slides](busquedasDeSecuenciasEnBasesDeDatos2023.pdf) 
+* :material-video-check: [Clase grabada en 2023](https://www.youtube.com/embed/qNvW595WnJs)
 
 ## Material de lectura y consulta
 
