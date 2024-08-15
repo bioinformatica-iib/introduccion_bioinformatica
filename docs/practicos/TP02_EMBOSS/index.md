@@ -10,11 +10,9 @@ Este es el botón para decargar materiales, en (#) hay que agregar el link corre
 -->
 
 ### Slides mostrados en la clase
-Próximamente
+* :fontawesome-regular-file-pdf: [Slides TP - Parte 1](https://drive.google.com/file/d/1uqWJSLEHtTz_iY837yVya_GUfOKRbZbp/view?usp=sharing)
 <!--
-* :fontawesome-regular-file-pdf: [Slides TP](https://drive.google.com/file/d/1MsFtQ10qk7yI3MxR_vZ9-yszcTndbxZw/view?usp=sharing)
-### Videos de la clase grabada
-* :octicons-video-16: [Cierre TP](https://youtu.be/07GGMh5aRDQ)
+* :fontawesome-regular-file-pdf: [Slides TP - Parte 2](https://drive.google.com/file/d/1u8z20PHtLCJMzDmvx_rhowLyuDh_9cIx/view?usp=sharing)
 -->
 
 ### Software a usar
@@ -606,7 +604,7 @@ Si bien los comandos que ellos sugieren son un poco complejos, vamos a utilizarl
 4) El primer paso indicado en el FAQ es descargar el archivo **assembly_summary.txt** y ponerlo en la carpeta de este ejercicio. Esto lo pueden hacer desde la página de **RefSeq** a mano o abriendo la consola en la carpeta de este ejercicio y corriendo:
 
 ```bash
-wget ftp://ftp.ncbi.nlm.nih.gov/genomes/refseq/bacteria/assembly_summary.txt
+wget ftp.ncbi.nlm.nih.gov/genomes/refseq/bacteria/assembly_summary.txt
 ```
 
 !!! question
@@ -661,78 +659,79 @@ La extensión **tsv** en nuestra máquina virtual estaba asociada al programa **
 
 ### RefSeq - Paso 2 - Crear un archivo con links a las carpetas de los genomas { markdown data-toc-label='RefSeq - Paso 2' }
 
-7) Ahora que tenemos y entendemos la tabla con nuestros datos de *E. coli* la podemos abrir en **Gnumeric** haciendo doble click. Van a ver que no hay solo un genoma de *E. coli* BL21, sino varios, por lo cual nuestro objetivo de crear una tabla de codones acaba de volverse un poco más complicado. Lo que vamos a hacer entonces es bajar todos los genomas de *E. coli* BL21 que vemos en la tabla, así que continuamos al segundo paso en el FAQ de **RefSeq**:
+7) Ahora que tenemos y entendemos la tabla con nuestros datos de *E. coli* la podemos abrir en **Gnumeric** haciendo doble click. Van a ver que no hay solo un genoma de *E. coli* BL21, sino varios, por lo cual nuestro objetivo de crear una tabla de codones acaba de volverse un poco más complicado. Lo que vamos a hacer entonces es bajar todos los genomas de *E. coli* BL21 que vemos en la tabla.
 
-```bash
-awk -F "\t" '{if ($12=="Complete Genome" && $11=="latest") {print $20}}' assembly_summary_coli.tsv > ftpdirpaths
-```
-
-Al comando `awk` lo vimos brevemente al final del TP 1 y sirve para trabajar con tablas en Bash (entre otras cosas). Las diferentes partes de este comando son:
-
-* `-F "\t"` indica que el separador de columnas es `\t`, o sea, ++tab++
-* `$12=="Complete Genome"` es una condición que filtra las filas, quedándose solo con aquellas donde la columna 12 (**assembly_level**) es "Complete Genome"
-* `$11=="latest"` es una condición que filtra las filas, quedándose solo con aquellas donde la columna 11 (**version_status**) es "latest"
-* `&&` se denomina *and* y une ambas condiciones, pidiendo que ambas se cumplan para que la condición total se cumpla
-* `{print $20}` indica que se va a devolver la columna 20 (**ftp_path**, contiene el *path* del genoma, o sea, la carpeta)
-
-Este comando va a crear el archivo **ftpdirpaths**, que contiene links a las carpetas que contienen los genomas.
-
-* Investiguen cuantos links quedaron en **ftpdirpaths**. ¿Entienden por qué? Sino consulten.
-
-### RefSeq - Paso 3 - Crear un archivo con links a los genomas { markdown data-toc-label='RefSeq - Paso 3' }
-
-Los links que tenemos de momento tienen el formato:
-
-!!! info ""
-
-    ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/833/145/GCF_000833145.1_ASM83314v1
-
-Sin embargo, estos son links a las carpetas que contienen los genomas. Siguiendo las instrucciones del FAQ de **RefSeq** podemos crear el link de los genomas, que para el ejemplo anterior sería:
-
-!!! info ""
-
-    ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/833/145/GCF_000833145.1_ASM83314v1/GCF_000833145.1_ASM83314v1_cds_from_genomic.fna.gz
-
-Donde el nombre del archivo es el nombre de la última carpeta + **"\_cds_from_genomic.fna.gz"**
-
-Los archivos terminados en **.fna.gz** son secuencias en formato FASTA (*f*) de nucleótidos (*na*) comprimidas (*gz*).
-
-Hay varias formas de crear estos nuevos links. Nosotros lo vamos a hacer de la siguiente manera:
-
-```bash
-awk -F "/" '{print $0 "/" $10 "_cds_from_genomic.fna.gz"}' ftpdirpaths > ftpfilepaths
-```
-
-Donde:
-
-* `-F "/"` indica que el separador de columnas es `/`. Lo que está haciendo este código es leer nuestros *paths* como si fueran tablas de varias columnas, haciendo que cada carpeta quede en su propia columna.
-* `$0` parecería indicar la columna 0, pero las columnas en `awk` van de 1 en adelante (`$1`, `$2`, etc). El índice `$0` es un índice especial que devuelve toda la fila (que en este caso es todo el *path* a la carpeta del genoma).
-* `$10` es la columna 10, la cual contiene el nombre del genoma (es el nombre de la última carpeta en el *path*).
-* `print` va a concatenar `$0` (el *path* a la carpeta del genoma), `"/"` (una barra para separar los directorios), `$10` (la primera parte del nombre del archivo a descargar) y `"_cds_from_genomic.fna.gz"` (la segunda parte del nombre del archivo a descargar). `awk` va a hacer esto por cada fila del archivo **ftpdirpaths**.
-
-8) Una vez que entienden lo que hace este comando abran la terminal y corranló.
-
-??? info "Por si se quedaron con curiosidad de el comando que proponía el FAQ de **RefSeq**"
-
-    El comando `awk` que sugeria el FAQ de **RefSeq** es un poco más complejo, pero llegaba al mismo resultado. Noten que en este comando el archivo tiene la extensión **.gbff.gz** que hace referencia al formato de **GenBank**, que no es el con el que vamos a trabajar. Hay que cambiarlo por **"cds_from_genomic.fna.gz"**
-		
+??? warning "Sólo para los más curiosos! Si te interesa saber como usamos awk para hacer este paso lean esto:"
     ```bash
-    awk 'BEGIN{FS=OFS="/";filesuffix="genomic.gbff.gz"}{ftpdir=$0;asm=$10;file=asm"_"filesuffix;print ftpdir,file}' ftpdirpaths > ftpfilepaths
+    awk -F "\t" '{if ($12=="Complete Genome" && $11=="latest") {print $20}}' assembly_summary_coli.tsv > ftpdirpaths
     ```
 
-    No es necesario que lo entiendan 100%, pero vamos a aclarar algunas cosas:
+    Al comando `awk` lo vimos brevemente al final del TP 1 y sirve para trabajar con tablas en Bash (entre otras cosas). Las diferentes partes de este comando son:
 
-    * `BEGIN` significa que las cosas entre las primeras llaves se van a ejecutar solo una vez, y no una vez por fila (como el resto).
-    * `FS` es una variable interna de `awk` que indica como se separan las columnas en la tabla a leer (es equivalente a usar `-F`). La variable `OFS` indica lo mismo, pero para la salida de `awk`. Con `FS=OFS="/"` estamos indicando que ambos serán la barra `/`. Lo que está haciendo este código es leer nuestros *paths* como si fueran tablas de varias columnas, haciendo que cada carpeta quede en su propia columna.
-    * En `filesuffix="cds_from_genomic.fna.gz"` está definiendo una variable en la que va a almacenar la cadena de texto que queremos agregar al final de cada link.
-    * En `ftpdir=$0` está definiendo una variable en la que parece almacenar la columna 0. Ahora bien, las columnas en `awk` van de 1 en adelante (`$1`, `$2`, etc), pero el índice `$0` es un índice especial que devuelve toda la fila (que en este caso es todo el *path* a la carpeta del genoma).
-    * En `asm=$10` está definiendo una variable en la que va a almacenar la columna 10, la cual contiene el nombre del genoma (es el nombre de la última carpeta en el *path*).
-    * En `file=asm"_"filesuffix` está definiendo una nueva variable como la concatenación de `asm`, un guión bajo y `filesuffix`. Este va a ser el nombre del archivo a descargar (pero todavía le falta el *path*).
-    * `print ftpdir,file` va a imprimir el valor de `ftpdir` (el *path* a la carpeta del genoma) seguido por el valor de *file* (el nombre del archivo a descargar) por cada fila del archivo **ftpdirpaths**. La barra entre ambos (`/`) es agregada automaticamente debido a que declaramos `OFS="/"` al principio.
+    * `-F "\t"` indica que el separador de columnas es `\t`, o sea, ++tab++
+    * `$12=="Complete Genome"` es una condición que filtra las filas, quedándose solo con aquellas donde la columna 12 (**assembly_level**) es "Complete Genome"
+    * `$11=="latest"` es una condición que filtra las filas, quedándose solo con aquellas donde la columna 11 (**version_status**) es "latest"
+    * `&&` se denomina *and* y une ambas condiciones, pidiendo que ambas se cumplan para que la condición total se cumpla
+    * `{print $20}` indica que se va a devolver la columna 20 (**ftp_path**, contiene el *path* del genoma, o sea, la carpeta)
 
-### RefSeq - Paso 4 - Descargar genomas de *E. coli* { markdown data-toc-label='RefSeq - Paso 4' }
+    Este comando va a crear el archivo **ftpdirpaths**, que contiene links a las carpetas que contienen los genomas.
 
-9) Ya falta poco para tener nuestros genomas, solo hay que descargar todos los links que tenemos adentro del archivo **ftpfilepaths**.
+    * Investiguen cuantos links quedaron en **ftpdirpaths**. ¿Entienden por qué? Sino consulten.
+
+    ### RefSeq - Crear un archivo con links a los genomas { markdown data-toc-label='RefSeq - Paso 3' }
+
+    Los links que tenemos de momento tienen el formato:
+
+    !!! info ""
+
+        ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/833/145/GCF_000833145.1_ASM83314v1
+
+    Sin embargo, estos son links a las carpetas que contienen los genomas. Siguiendo las instrucciones del FAQ de **RefSeq** podemos crear el link de los genomas, que para el ejemplo anterior sería:
+
+    !!! info ""
+
+        ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/833/145/GCF_000833145.1_ASM83314v1/GCF_000833145.1_ASM83314v1_cds_from_genomic.fna.gz
+
+    Donde el nombre del archivo es el nombre de la última carpeta + **"\_cds_from_genomic.fna.gz"**
+
+    Los archivos terminados en **.fna.gz** son secuencias en formato FASTA (*f*) de nucleótidos (*na*) comprimidas (*gz*).
+
+    Hay varias formas de crear estos nuevos links. Nosotros lo vamos a hacer de la siguiente manera:
+
+    ```bash
+    awk -F "/" '{print $0 "/" $10 "_cds_from_genomic.fna.gz"}' ftpdirpaths > ftpfilepaths
+    ```
+
+    Donde:
+
+    * `-F "/"` indica que el separador de columnas es `/`. Lo que está haciendo este código es leer nuestros *paths* como si fueran tablas de varias columnas, haciendo que cada carpeta quede en su propia columna.
+    * `$0` parecería indicar la columna 0, pero las columnas en `awk` van de 1 en adelante (`$1`, `$2`, etc). El índice `$0` es un índice especial que devuelve toda la fila (que en este caso es todo el *path* a la carpeta del genoma).
+    * `$10` es la columna 10, la cual contiene el nombre del genoma (es el nombre de la última carpeta en el *path*).
+    * `print` va a concatenar `$0` (el *path* a la carpeta del genoma), `"/"` (una barra para separar los directorios), `$10` (la primera parte del nombre del archivo a descargar) y `"_cds_from_genomic.fna.gz"` (la segunda parte del nombre del archivo a descargar). `awk` va a hacer esto por cada fila del archivo **ftpdirpaths**.
+
+    Una vez que entienden lo que hace este comando abran la terminal y corranló.
+
+    ??? info "Por si se quedaron con curiosidad de el comando que proponía el FAQ de **RefSeq**"
+
+        El comando `awk` que sugeria el FAQ de **RefSeq** es un poco más complejo, pero llegaba al mismo resultado. Noten que en este comando el archivo tiene la extensión **.gbff.gz** que hace referencia al formato de **GenBank**, que no es el con el que vamos a trabajar. Hay que cambiarlo por **"cds_from_genomic.fna.gz"**
+            
+        ```bash
+        awk 'BEGIN{FS=OFS="/";filesuffix="genomic.gbff.gz"}{ftpdir=$0;asm=$10;file=asm"_"filesuffix;print ftpdir,file}' ftpdirpaths > ftpfilepaths
+        ```
+
+        No es necesario que lo entiendan 100%, pero vamos a aclarar algunas cosas:
+
+        * `BEGIN` significa que las cosas entre las primeras llaves se van a ejecutar solo una vez, y no una vez por fila (como el resto).
+        * `FS` es una variable interna de `awk` que indica como se separan las columnas en la tabla a leer (es equivalente a usar `-F`). La variable `OFS` indica lo mismo, pero para la salida de `awk`. Con `FS=OFS="/"` estamos indicando que ambos serán la barra `/`. Lo que está haciendo este código es leer nuestros *paths* como si fueran tablas de varias columnas, haciendo que cada carpeta quede en su propia columna.
+        * En `filesuffix="cds_from_genomic.fna.gz"` está definiendo una variable en la que va a almacenar la cadena de texto que queremos agregar al final de cada link.
+        * En `ftpdir=$0` está definiendo una variable en la que parece almacenar la columna 0. Ahora bien, las columnas en `awk` van de 1 en adelante (`$1`, `$2`, etc), pero el índice `$0` es un índice especial que devuelve toda la fila (que en este caso es todo el *path* a la carpeta del genoma).
+        * En `asm=$10` está definiendo una variable en la que va a almacenar la columna 10, la cual contiene el nombre del genoma (es el nombre de la última carpeta en el *path*).
+        * En `file=asm"_"filesuffix` está definiendo una nueva variable como la concatenación de `asm`, un guión bajo y `filesuffix`. Este va a ser el nombre del archivo a descargar (pero todavía le falta el *path*).
+        * `print ftpdir,file` va a imprimir el valor de `ftpdir` (el *path* a la carpeta del genoma) seguido por el valor de *file* (el nombre del archivo a descargar) por cada fila del archivo **ftpdirpaths**. La barra entre ambos (`/`) es agregada automaticamente debido a que declaramos `OFS="/"` al principio.
+
+### RefSeq - Paso 3 - Descargar genomas de *E. coli* { markdown data-toc-label='RefSeq - Paso 4' }
+
+8) Ya falta poco para tener nuestros genomas, solo hay que descargar todos los links que tenemos adentro del archivo **ftpfilepaths**.
 
 Esto se puede hacer usando el comando `wget`. Ahora bien, por defecto a `wget` hay que pasarle un link de descarga como hicimos arriba, pero por suerte existe una opción que permite pasarle un archivo de entrada y que descargue todos los links que se encuentran en él.
 
