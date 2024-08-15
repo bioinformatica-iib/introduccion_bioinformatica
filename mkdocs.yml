@@ -130,7 +130,7 @@ nav:
     - Acerca de: 'acerca.md'
     - Cómo Llegar: 'comollegar.md'
     - Contenidos: 'contenidos.md'
-    #- Cronograma: 'cronograma.md'
+    - Cronograma: 'cronograma.md'
     - Docentes: 'docentes.md'
     - Teóricas:
         - teoricas/inicio.md

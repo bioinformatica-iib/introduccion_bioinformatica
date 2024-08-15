@@ -14,7 +14,7 @@ tags:
 | ----------- | -------- | :-------------------------------------: | :----------- | :---------------------------------- | :------ |
 | Martes, 06 Agosto 2024 | 9:00 hs |	:material-google-classroom: Presencial | [T1. Presentación de la materia, Conceptos Computación](https://bioinformatica-iib.github.io/introduccion_bioinformatica/teoricas/1-Teorica-Uno/) | :fontawesome-solid-brain: Teórica |	F. Agüero |
 | Jueves, 08 Agosto 2024 | 9:00 hs |	:material-google-classroom: Presencial | [P1. Introducción a UNIX](https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP01_Linux/) | :fontawesome-solid-hammer: Práctica |	M. Didier Garnham |
-| Martes, 13 Agosto 2024 | 9:00 hs |	:material-google-classroom: Presencial | T2. Bases de datos y ontologías | :fontawesome-solid-brain: Teórica |	F. Agüero |
+| Martes, 13 Agosto 2024 | 9:00 hs |	:material-google-classroom: Presencial | [T2. Bases de datos y ontologías](https://bioinformatica-iib.github.io/introduccion_bioinformatica/teoricas/2-Teorica-Dos/) | :fontawesome-solid-brain: Teórica |	F. Agüero |
 | Jueves, 15 Agosto 2024 | 9:00 hs |	:material-google-classroom: Presencial | [P2. EMBOSS Suite](https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP02_EMBOSS/) | :fontawesome-solid-hammer: Práctica |	M. Didier Garnham |
 | Martes, 20 Agosto 2024 | 9:00 hs |	:material-google-classroom: Presencial | T3. Alineamientos de a pares y Búsqueda de secuencias por Similitud | :fontawesome-solid-brain: Teórica |	F. Agüero |
 | Jueves, 22 Agosto 2024 | 9:00 hs |	:material-google-classroom: Presencial | P3. Alineamientos de secuencias de a pares | :fontawesome-solid-hammer: Práctica |	G. Romer |
