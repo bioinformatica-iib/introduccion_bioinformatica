@@ -343,7 +343,7 @@ En los últimos años se ha simplificado considerablemente la ejecución del pro
 
 Una de las industrias biotecnológicas más antigua es la industria alimenticia. Centenares de microorganismos distintos y decenas de enzimas son utilizados en esta industria para distintos procesos. Algunos de estos procesos son muy complejos, como la fermentación de un vino, mientras que otros son simples y puntuales, como la degradación de lactosa en productos lácteos para personas intolerantes a este azúcar. Los procesos enzimáticos simples pueden resolverse fácilmente mediante la producción de la enzima de interés en forma heteróloga.
 
-Con el fin de dar rienda suelta a nuestro emprendedor interior, montaremos las bases de una empresa biotecnológica: vamos a producir enzimas. La primera enzima que queremos producir es la **VpVan**, la cual es la encargada de convertir el ácido ferúlico en **vanillina**. La **vainillina** es un compuesto de alto interés económico debido a su uso como saborizante (a que no adivinan que sabor tiene).
+Con el fin de dar rienda suelta a nuestro emprendedor interior, montaremos las bases de una empresa biotecnológica: vamos a producir enzimas. La primera enzima que queremos producir es la **VpVan**, la cual es la encargada de convertir el ácido ferúlico en **vanillina**. El ácido ferúlico se puede recuperar en grandes cantidades de residuos agroindustriales, como el salvado de trigo y arroz. La **vainillina** es un compuesto de alto interés económico debido a su uso como saborizante (a que no adivinan que sabor tiene).
 
 <figure markdown>
 ![Vainillina](img/vainilina_new_version.png){ width="800" }
