@@ -698,14 +698,14 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#refseq-paso-3-crear-un-archivo-con-links-a-los-genomas" class="md-nav__link">
+  <a href="#refseq-crear-un-archivo-con-links-a-los-genomas" class="md-nav__link">
     RefSeq - Paso 3
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#refseq-paso-4-descargar-genomas-de-e-coli" class="md-nav__link">
+  <a href="#refseq-paso-3-descargar-genomas-de-e-coli" class="md-nav__link">
     RefSeq - Paso 4
   </a>
   
@@ -809,11 +809,11 @@ Este es el botón para decargar materiales, en (#) hay que agregar el link corre
 -->
 
 <h3 id="slides-mostrados-en-la-clase">Slides mostrados en la clase</h3>
-<p>Próximamente</p>
+<ul>
+<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 384 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M320 464c8.8 0 16-7.2 16-16v-32h48v32c0 35.3-28.7 64-64 64H64c-35.35 0-64-28.7-64-64v-32h48v32c0 8.8 7.16 16 16 16h256zm-64-304c-17.7 0-32-14.3-32-32V48H64c-8.84 0-16 7.16-16 16v128H0V64C0 28.65 28.65 0 64 0h165.5c17 0 33.2 6.743 45.2 18.75l90.6 90.55c12 12 18.7 28.2 18.7 45.2V192h-48v-32h-80zM88 224c30.9 0 56 25.1 56 56s-25.1 56-56 56h-8v32c0 8.8-7.16 16-16 16s-16-7.2-16-16V240c0-8.8 7.16-16 16-16h24zm24 56c0-13.3-10.7-24-24-24h-8v48h8c13.3 0 24-10.7 24-24zm48-40c0-8.8 7.2-16 16-16h24c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48h-24c-8.8 0-16-7.2-16-16V240zm32 112h8c8.8 0 16-7.2 16-16v-64c0-8.8-7.2-16-16-16h-8v96zm144-128c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v32h32c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v48c0 8.8-7.2 16-16 16s-16-7.2-16-16V240c0-8.8 7.2-16 16-16h48z"></path></svg></span> <a href="https://drive.google.com/file/d/1uqWJSLEHtTz_iY837yVya_GUfOKRbZbp/view?usp=sharing">Slides TP - Parte 1</a></li>
+</ul>
 <!--
-* :fontawesome-regular-file-pdf: [Slides TP](https://drive.google.com/file/d/1MsFtQ10qk7yI3MxR_vZ9-yszcTndbxZw/view?usp=sharing)
-### Videos de la clase grabada
-* :octicons-video-16: [Cierre TP](https://youtu.be/07GGMh5aRDQ)
+* :fontawesome-regular-file-pdf: [Slides TP - Parte 2](https://drive.google.com/file/d/1u8z20PHtLCJMzDmvx_rhowLyuDh_9cIx/view?usp=sharing)
 -->
 
 <h3 id="software-a-usar">Software a usar</h3>
@@ -2114,7 +2114,7 @@ Este es el botón para decargar materiales, en (#) hay que agregar el link corre
 </div>
 <h3 id="refseq-paso-1-bajar-y-filtrar-la-tabla-con-los-genomas" markdown="markdown">RefSeq - Paso 1 - Bajar y filtrar la tabla con los genomas</h3>
 <p>4) El primer paso indicado en el FAQ es descargar el archivo <strong>assembly_summary.txt</strong> y ponerlo en la carpeta de este ejercicio. Esto lo pueden hacer desde la página de <strong>RefSeq</strong> a mano o abriendo la consola en la carpeta de este ejercicio y corriendo:</p>
-<div class="highlight"><pre><span></span><code>wget<span class="w"> </span>ftp://ftp.ncbi.nlm.nih.gov/genomes/refseq/bacteria/assembly_summary.txt
+<div class="highlight"><pre><span></span><code>wget<span class="w"> </span>ftp.ncbi.nlm.nih.gov/genomes/refseq/bacteria/assembly_summary.txt
 </code></pre></div>
 <div class="admonition question">
 <p class="admonition-title">Question</p>
@@ -2159,7 +2159,9 @@ grep<span class="w"> </span><span class="s2">"Escherichia coli"</span><span clas
 </div>
 </div>
 <h3 id="refseq-paso-2-crear-un-archivo-con-links-a-las-carpetas-de-los-genomas" markdown="markdown">RefSeq - Paso 2 - Crear un archivo con links a las carpetas de los genomas</h3>
-<p>7) Ahora que tenemos y entendemos la tabla con nuestros datos de <em>E. coli</em> la podemos abrir en <strong>Gnumeric</strong> haciendo doble click. Van a ver que no hay solo un genoma de <em>E. coli</em> BL21, sino varios, por lo cual nuestro objetivo de crear una tabla de codones acaba de volverse un poco más complicado. Lo que vamos a hacer entonces es bajar todos los genomas de <em>E. coli</em> BL21 que vemos en la tabla, así que continuamos al segundo paso en el FAQ de <strong>RefSeq</strong>:</p>
+<p>7) Ahora que tenemos y entendemos la tabla con nuestros datos de <em>E. coli</em> la podemos abrir en <strong>Gnumeric</strong> haciendo doble click. Van a ver que no hay solo un genoma de <em>E. coli</em> BL21, sino varios, por lo cual nuestro objetivo de crear una tabla de codones acaba de volverse un poco más complicado. Lo que vamos a hacer entonces es bajar todos los genomas de <em>E. coli</em> BL21 que vemos en la tabla.</p>
+<details class="warning">
+<summary>Sólo para los más curiosos! Si te interesa saber como usamos awk para hacer este paso lean esto:</summary>
 <div class="highlight"><pre><span></span><code>awk<span class="w"> </span>-F<span class="w"> </span><span class="s2">"\t"</span><span class="w"> </span><span class="s1">'{if ($12=="Complete Genome" &amp;&amp; $11=="latest") {print $20}}'</span><span class="w"> </span>assembly_summary_coli.tsv<span class="w"> </span>&gt;<span class="w"> </span>ftpdirpaths
 </code></pre></div>
 <p>Al comando <code>awk</code> lo vimos brevemente al final del TP 1 y sirve para trabajar con tablas en Bash (entre otras cosas). Las diferentes partes de este comando son:</p>
@@ -2174,7 +2176,7 @@ grep<span class="w"> </span><span class="s2">"Escherichia coli"</span><span clas
 <ul>
 <li>Investiguen cuantos links quedaron en <strong>ftpdirpaths</strong>. ¿Entienden por qué? Sino consulten.</li>
 </ul>
-<h3 id="refseq-paso-3-crear-un-archivo-con-links-a-los-genomas" markdown="markdown">RefSeq - Paso 3 - Crear un archivo con links a los genomas</h3>
+<h3 id="refseq-crear-un-archivo-con-links-a-los-genomas" markdown="markdown">RefSeq - Crear un archivo con links a los genomas</h3>
 <p>Los links que tenemos de momento tienen el formato:</p>
 <div class="admonition info">
 <p>ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/833/145/GCF_000833145.1_ASM83314v1</p>
@@ -2195,7 +2197,7 @@ grep<span class="w"> </span><span class="s2">"Escherichia coli"</span><span clas
 <li><code>$10</code> es la columna 10, la cual contiene el nombre del genoma (es el nombre de la última carpeta en el <em>path</em>).</li>
 <li><code>print</code> va a concatenar <code>$0</code> (el <em>path</em> a la carpeta del genoma), <code>"/"</code> (una barra para separar los directorios), <code>$10</code> (la primera parte del nombre del archivo a descargar) y <code>"_cds_from_genomic.fna.gz"</code> (la segunda parte del nombre del archivo a descargar). <code>awk</code> va a hacer esto por cada fila del archivo <strong>ftpdirpaths</strong>.</li>
 </ul>
-<p>8) Una vez que entienden lo que hace este comando abran la terminal y corranló.</p>
+<p>Una vez que entienden lo que hace este comando abran la terminal y corranló.</p>
 <details class="info">
 <summary>Por si se quedaron con curiosidad de el comando que proponía el FAQ de <strong>RefSeq</strong></summary>
 <p>El comando <code>awk</code> que sugeria el FAQ de <strong>RefSeq</strong> es un poco más complejo, pero llegaba al mismo resultado. Noten que en este comando el archivo tiene la extensión <strong>.gbff.gz</strong> que hace referencia al formato de <strong>GenBank</strong>, que no es el con el que vamos a trabajar. Hay que cambiarlo por <strong>"cds_from_genomic.fna.gz"</strong></p>
@@ -2212,8 +2214,9 @@ grep<span class="w"> </span><span class="s2">"Escherichia coli"</span><span clas
 <li><code>print ftpdir,file</code> va a imprimir el valor de <code>ftpdir</code> (el <em>path</em> a la carpeta del genoma) seguido por el valor de <em>file</em> (el nombre del archivo a descargar) por cada fila del archivo <strong>ftpdirpaths</strong>. La barra entre ambos (<code>/</code>) es agregada automaticamente debido a que declaramos <code>OFS="/"</code> al principio.</li>
 </ul>
 </details>
-<h3 id="refseq-paso-4-descargar-genomas-de-e-coli" markdown="markdown">RefSeq - Paso 4 - Descargar genomas de <em>E. coli</em></h3>
-<p>9) Ya falta poco para tener nuestros genomas, solo hay que descargar todos los links que tenemos adentro del archivo <strong>ftpfilepaths</strong>.</p>
+</details>
+<h3 id="refseq-paso-3-descargar-genomas-de-e-coli" markdown="markdown">RefSeq - Paso 3 - Descargar genomas de <em>E. coli</em></h3>
+<p>8) Ya falta poco para tener nuestros genomas, solo hay que descargar todos los links que tenemos adentro del archivo <strong>ftpfilepaths</strong>.</p>
 <p>Esto se puede hacer usando el comando <code>wget</code>. Ahora bien, por defecto a <code>wget</code> hay que pasarle un link de descarga como hicimos arriba, pero por suerte existe una opción que permite pasarle un archivo de entrada y que descargue todos los links que se encuentran en él.</p>
 <ul>
 <li>
