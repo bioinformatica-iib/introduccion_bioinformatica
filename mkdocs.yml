@@ -71,6 +71,7 @@ plugins:
 
 # markdown extensions
 markdown_extensions:
+  - abbr
   - meta
   - admonition
   - footnotes
@@ -81,6 +82,9 @@ markdown_extensions:
       title: Contenidos
   - pymdownx.details
   - pymdownx.superfences
+  - pymdownx.smartsymbols
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
   - pymdownx.caret
   - pymdownx.tilde
   - pymdownx.mark
@@ -89,12 +93,14 @@ markdown_extensions:
   - pymdownx.tabbed:
       alternate_style: true 
   - pymdownx.emoji:
-      emoji_generator: !!python/name:materialx.emoji.to_svg
-      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.arithmatex:
       generic: true
+  - pymdownx.betterem:
+      smart_enable: all
 
 # extra
 # --- editar los URLs, agregar los links especificos a cada cuenta, canal, etc. 
@@ -114,11 +120,17 @@ markdown_extensions:
 
 # extra++
 extra_javascript:
-  - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js # Esto permite que las tablas se puedan ordenar según la columna. Lo que no vi es como hacerlo selectivo para cada tabla.
+  # Este es el paquete tablesort que permite que las tablas
+  # se puedan ordenar según la columna:
+  - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js 
+  # y este es el codigo javascript para usar tablesort:
   - javascripts/tablesort.js
-  - javascripts/mathjax.js # Esto es para formulas matematicas
-  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  # Estos son los paquetes JavaScript para usar MathJax - formulas matemáticas
+  # ver: https://docs.mathjax.org/en/latest/web/start.html
+  - https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  # y este es Javascript minimo para procesar MathJax con arithmatex
+  - javascripts/mathjax.js 
 
 extra_css:
   - stylesheets/extra.css
