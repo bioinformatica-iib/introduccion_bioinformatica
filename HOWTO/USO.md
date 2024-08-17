@@ -48,19 +48,30 @@ git pull
 # describir cambios 
 cat > cambios.txt << FIN
 Actualizacion de paquetes y plugins
-  * actualizo mkdocs a 9.5.31
-  * remuevo plugins obsoletos
-  * remuevo carga javascript (polyfill) desde sitios inseguros
- FIN
+   * actualizo mkdocs a 9.5.31
+   * remuevo plugins obsoletos
+   * remuevo carga javascript (polyfill) desde sitios inseguros
+   * reordeno documentacion sobre como INSTALAR y USAR el sitio
+   * reordeno README
+FIN
 
 # commit local changes to local repo
 git commit --file cambios
 
 # veamos qué paso con git log
 git log -n1
+commit 442054b49e46d5de78a38db5da51b90c95a73ae8 (HEAD -> main)
+Author: Fernan Aguero <fernan.aguero@gmail.com>
+Date:   Sat Aug 17 16:33:53 2024 -0300
 
+    Actualizacion de paquetes y plugins
+      * actualizo mkdocs a 9.5.31
+      * remuevo plugins obsoletos
+      * remuevo carga javascript (polyfill) desde sitios inseguros
+      * reordeno documentacion sobre como INSTALAR y USAR el sitio
+      * reordeno README
 
-# push local commits upstream to remote repo
+# OK, entonces hacemos push de los commits locales upstream hacia el repo remoto
 git push 
 
 ```
