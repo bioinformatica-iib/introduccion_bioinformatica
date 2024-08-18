@@ -47,7 +47,8 @@ Este es el botón para decargar materiales, en (#) hay que agregar el link corre
 
 A continuación se encuentra una lista de 256 programas que contiene EMBOSS y un resumen corto de lo que hace cada uno:
 
-??? info "Programas de EMBOSS"
+<div data-search-exclude>
+??? info "Programas de EMBOSS" 
 
     | Program name { data-sort-method='none' } | Description { data-sort-method='none' } |
     | :--- | :--- |
@@ -307,6 +308,7 @@ A continuación se encuentra una lista de 256 programas que contiene EMBOSS y un
     | wossparam | Find programs by EDAM parameter |
     | wosstopic | Find programs by EDAM topic |
     | yank | Add a sequence reference (a full USA) to a list file |
+</div>
 
 Como obviamente es imposible acordarse de todos estos programas, EMBOSS tiene un comando llamado `wossname` que permite listar comandos que tengan cierta palabra en su descripción (en inglés). 
 
