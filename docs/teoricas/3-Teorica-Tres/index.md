@@ -1,5 +1,6 @@
 ---
 title: Teorica Tres
+icon: fontawesome/solid/brain
 tags: 
   - teoricas
 ---
@@ -11,6 +12,7 @@ Continuación de la clase teórica de algoritmos heurísticos de búsqueda de se
  * :fontawesome-regular-file-pdf: [Slides](../2-Teorica-Dos/busquedasDeSecuenciasEnBasesDeDatos2023.pdf) 
  * :material-video-check: [Clase grabada en 2023](https://www.youtube.com/embed/AOnReITkzvo)
  
+
 
 ## Material de lectura y consulta
 

@@ -1,5 +1,6 @@
 ---
 title: Teorica Uno
+icon: fontawesome/solid/brain
 tags: 
   - teoricas
 ---

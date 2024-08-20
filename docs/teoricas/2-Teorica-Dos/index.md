@@ -1,5 +1,6 @@
 ---
 title: Teorica Dos
+icon: fontawesome/solid/brain
 tags: 
   - teoricas
 ---
