@@ -6,7 +6,7 @@
 <br>
 <br>
 
-[:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1x5ikvvVm83gycuSUFX0xiLNdR9Q31a0f/view?usp=sharing){ .md-button .md-button--primary }
+[:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1rAKqVS8FcuQhX41daDmInG6lzMWE9voy/view?usp=sharing){ .md-button .md-button--primary }
 
 <br>
 
@@ -14,11 +14,11 @@
 
 !!! warning "Atención: Este TP tiene parcialito."
 
+###Slides mostrados en la clase
+
+* :fontawesome-regular-file-pdf: [Slides](https://drive.google.com/file/d/1rKD0D_5b7XSWgSkkgSwPl3FG1Fwr4yIx/view?usp=sharing)
+
 <!---
-### Slides mostrados en la clase
-
-* :fontawesome-regular-file-pdf: [Slides](https://drive.google.com/file/d/1-VsjPb35cYRSE-HpdMwp7jLBQyQvwvCE/view?usp=sharing)
-
 ### Videos de la clase grabada
 * :octicons-video-16: [Cierre TP](https://youtu.be/nXBOrHCMRZQ)
 -->
@@ -350,7 +350,7 @@ Si aumentás estos parámetros podés ir eliminando fragmentos que corresponden 
 
 **2.2** Cambiá los parámetros *windowsize* y *threshold* hasta obtener un plot que te parezca adecuado. **¿Qué podés interpretar del mismo?** Identificá patrones.
 
-## Similitud y Homología
+## Identidad, Similitud y Homología
 
 Los términos identidad, similitud y homología se suelen utilizar como sinónimos por muchos investigadores, sin embargo no lo son.
 
@@ -364,7 +364,7 @@ Los términos identidad, similitud y homología se suelen utilizar como sinónim
 
     Decir que un par de secuencias tiene N% de homología es TOTALMENTE incorrecto.
 
-A partir de esta relación entre similitud y homología se puede aplicar para inferir relaciones entre diferentes especies, buscar posibles funciones de una secuencia desconocida, etc.
+A partir de esta relación entre similitud y homología se pueden inferir relaciones entre diferentes especies, buscar posibles funciones de una secuencia desconocida, etc.
 
 ### Ejercicio 3
 
@@ -465,42 +465,54 @@ Mathys L, Balzarini J. Several N-Glycans on the HIV Envelope Glycoprotein gp120 
 
       Notá que las posiciones en el alineamiento cuentan gaps por lo que no se corresponden exactamente con el esquema. Utilizá las posiciones de las cisteínas conservadas para identificar diferentes regiones.
 
-<!---
+
 ## Ejercicio a informar
 
 !!! info 
 
-    <span style="font-weight:bold;">Fecha límite de entrega:</span> Viernes, 23 de Agosto 2024, 23:59hs.
+    <span style="font-weight:bold;">Fecha límite de entrega:</span> Viernes, 30 de Agosto 2024, 23:59hs.
 
-[:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/13hzApnpVqZqkNiayMfDDL6gpVypqj18a/view?usp=sharing){ .md-button .md-button--primary }
+[:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1rJ2FILtOHFxEupG2GI3fUiyQ5DJbJTcZ/view?usp=sharing){ .md-button .md-button--primary }
 
 ### Enunciado
 
-Usted trabaja en un laboratorio que estudia distintos aspectos del coronavirus. Desde el comienzo de la pandemia trabaja en colaboración con la agencia de vigilancia epidemiológica nacional de agentes infecciosos (AVENAI). Como parte de la colaboración, todos los días se obtienen clones y secuencias de nuevos aislamientos. AVENAI comparte con su jefe un nuevo aislamiento. Su jefe lo pone a cargo de analizar dicho aislamiento para extraer toda la información bioinformática posible de su colección de datos.
+Usted trabaja en un laboratorio que estudia distintos aspectos del virus del papiloma humano (HPV). Como parte de su colaboración con Servicio Virus Oncogénicos del Instituto Nacional de Enfermedades Infecciosas ANLIS “Dr. Carlos G. Malbrán”, todos los días se obtienen nuevas secuencias de aislamientos de HPV. Recientemente, el servicio compartió con su jefe un nuevo aislamiento del virus, y su jefe le ha encomendado a usted la tarea de analizar dicho aislamiento para extraer toda la información bioinformática posible de su colección de datos.
 
-#### Breve descripción de la Familia Coronaviridae
+#### Breve descripción del virus del papiloma humano
 
-Los coronavirus son virus envueltos ARN simple cadena positivos (es decir que su genoma puede ser traducido directamente a proteínas virales por los ribosomas del hospedador). En la envoltura viral se encuentra la proteína E y la proteína Spike. En el interior, se encuentra el genoma ARN asociado con la proteína N formando la nucleocápside.
-La subfamilia Coronavirinae está formada por cuatro géneros: *Alphacoronavirus*, *Betacoronavirus*, *Gammacoronavirus* y *Deltacoronavirus*. Cada género agrupa distintas especies. Cada especie agrupa distintos tipos virales y cada tipo viral posee distintas variantes (algunos eligen llamarlas cepas o aislamientos, pero acá las llamamos variantes). En particular, SARS-CoV2 también conocido como COVID-19, se encuentra dentro del género *Betacoronavirus*.
+El virus del papiloma humano (VPH o HPV, del inglés human papillomavirus) es el virus responsable de una de las infecciones de transmisión sexual más frecuentes en todo el mundo. Se estima que 4 de cada 5 personas van a contraer uno o varios de los tipos de VPH en algún momento de sus vidas.  Existen alrededor de 100 tipos de HPV, de los cuales 40 afectan la zona genital y anal. Los distintos tipos de HPV se clasifican en dos grandes grupos, denominados de alto y bajo riesgo oncogénico. Los HPV de bajo riesgo suelen estar asociados con lesiones benignas o de bajo grado, mientras que las infecciones con HPV de alto riesgo oncogénico pueden evolucionar a cáncer, siendo el cáncer de cuello de útero el más frecuente. Los tipos de HPV de alto riesgo más comunes son el 16 y 18. La determinación del tipo de HPV se realiza con distintas técnicas de biología molecular que permiten identificar diferencias genómicas.
+Los HPV son grupos diversos de virus ADN pertenecientes a la familia de los Papillomaviridae. Las diferencias entre estos virus a nivel de secuencia de ADN permiten clasificarlos (o genotipificarlos), lo cual resulta muy importante debido a la diferencia de patologías que pueden causar los distintos tipos de HPV.
 
-#### Ahora si ...
+#### Trabajo a realizar
 
-Usted cuenta con un conjunto de secuencias que utiliza normalmente en su laboratorio que guarda en el archivo `All_Sequences.fasta`, el record en `All_Sequences.gb` y datos de interés propio en `conjunto_de_secuencias.xlsx`.
+Usted cuenta con un conjunto de secuencias que utiliza normalmente en su laboratorio, organizadas de la siguiente manera:
 
-Pero… Cuando usted recibe los datos (`sequence_incognito.fasta`) se da cuenta que se olvidaron de nombrar correctamente un archivo! AVENAI trabaja con tantas secuencias que de vez en cuando se producen errores comunes como este.
+| Nombre del archivo      | Descripción                                                                                   |
+|----------------------------|-----------------------------------------------------------------------------------------------|
+| **all_sequences.fasta**   | Archivo multifasta con 11 secuencias de distintos tipos de HPV                                |
+| **all_sequences.gb**       | Archivo GenBank. Almacena las mismas 11 secuencias que el archivo fasta, con información adicional (como anotaciones de proteínas) |
+| **conjunto_de_secuencias**| Archivo de hoja de cálculo con información sobre la secuencia y el organismo al que pertenece |
 
-Para solucionarlo decide utilizar las herramientas que aprendió en el trabajo práctico N3 de bioinformática cuando era estudiante y decide:
 
-1. Comparar la secuencia del nuevo aislamiento con la que crea más conveniente de su conjunto de secuencias. ¿Pertenece el nuevo aislamiento a un coronavirus? Para responder a esta pregunta le sugerimos que realice un dotplot que le permita visualizar el alineamiento entre su secuencia incógnita y la(s) secuencias de su interés. Identifique y reporte qué patrones observa en el dotplot.
+Pero… Cuando usted recibe los datos (`secuencia_incognita.fasta`) se da cuenta se da cuenta que el archivo no ha sido nombrado correctamente. Este tipo de errores son comunes debido a la gran cantidad de secuencias que maneja el Servicio Virus Oncogénico, ya que este servicio actúa como Laboratorio Nacional de Referencia del Ministerio de Salud (MSAL) para el virus papiloma humano (HPV) y el virus de Epstein-Barr (EBV). 
 
-2. Ahora quisiera saber a qué coronavirus se parece más, para esto decide determinar el % de identidad que posee su secuencia con el conjunto de secuencias con las que usted trabaja comúnmente.
+Para solucionar el problema, decide aplicar las herramientas que aprendió en el trabajo práctico N3 de bioinformática cuando era estudiante y procede a:
 
-!!! tip "Tip"
 
-    Si necesitan dividir el archivo `All_Sequences.fasta` en archivos individuales pueden buscar **wossname split**. 
+1. Verificar que la secuencia que le mandaron corresponde al virus de HPV y no a otro. Para esto, hay que comparar la secuencia del nuevo aislamiento con alguna secuencia de su conjunto de secuencias. ¿Pertenece el nuevo aislamiento a un HPV?
+    
+    !!! tip "Tip"
+        Recuerden usar parámetros adecuados de ventana y umbral
+
+2. Debido a la importancia a nivel diagnóstico, ahora quiere saber qué tipo de HPV es. Para esto decide determinar el % de similitud que posee su secuencia con cada una de las secuencias  con las que usted trabaja comúnmente. ¿Puede decir que tipo de virus es en base a la información que posee?
+    
+    !!! tip "Tip"
+
+        Si necesitan dividir el archivo `All_Sequences.fasta` en archivos individuales pueden buscar **wossname split**. 
+
+3. Ahora comparen el tipo de HPV del aislamiento con otros del mismo riesgo y de distinto nivel de riesgo. ¿Encuentran alguna región que pueda ser útil para genotipificación? ¿Qué eventos observan en los dotplots cuando comparan HPV de igual y de distinto riesgo?
 
 !!! example "Extra! (y por ende opcional)"
 
-     Para resolver el punto 2 pueden hacer un script de bash usando entre otras cosas un ciclo `for`. Si lo logran (o si lo intentan), los invito a incluirlo en el trabajo práctico (inclúyanlo aún si no les salió bien).
+    Para resolver los puntos 2 y 3 se puede hacer un script de bash tanto para el alineamiento, para ver los % de similitud y para crear dotplots. El parámetro que tienen que agregar a dotmatcher para que el archivo generado sea un pdf de nombre “grafico.pdf” es -graph pdf -goutfile grafico. Si lo logran (o si lo intentan), los invito a incluirlo en el trabajo práctico (aún cuando no les salió).
 
--->
