@@ -1,5 +1,6 @@
 ---
 title: Teorica Cuatro
+icon: fontawesome/solid/brain
 tags: 
   - teoricas
 ---
@@ -8,13 +9,18 @@ tags:
  Clase teórica de búsquedas de secuencias por similitud: fuerza bruta, FASTA, BLAST. 
  Alineamientos múltiples.
 
- * :fontawesome-regular-file-pdf: [Slides](alineamientosMultiples2023.pdf) 
+ * :fontawesome-regular-file-pdf: [Slides Búsquedas]()
+ * :fontawesome-regular-file-pdf: [Slides Alineamientos](alineamientosMultiples2024.pdf) 
 
+Clase dictada virtual por paro docente  :material-video-check: [Sesion Zoom grabada](https://youtu.be/0l986Ut9gAw)
+
+<!-- >
 ### Primera parte  
 ![type:video](https://www.youtube.com/embed/qNvW595WnJs)
 
 ### Segunda parte (luego del intervalo)
 ![type:video](https://www.youtube.com/embed/AOnReITkzvo)
+<\!-->
 
 ## Material de lectura y consulta
 
@@ -26,3 +32,4 @@ tags:
   * :paperclip: Having a BLAST with bioinformatics (and avoiding BLASTphemy). Pertsemlidis, A., Fondon, J.W. (2001) [Genome Biol 2, reviews2002.1](https://genomebiology.biomedcentral.com/articles/10.1186/gb-2001-2-10-reviews2002)
   * :fontawesome-solid-file-pdf: Selecting the Right Similarity-Scoring Matrix. Pearson, W. R. (2013) [Curr. Prot. Bioinformatics Chapter 3: Unit 3.5](https://fasta.bioch.virginia.edu/wrpearson/papers/wrp_cpbio_0305.pdf)
   * :fontawesome-solid-file-pdf: An Introduction to Similarity ("Homology") Searching. Pearson, W. R. (2013) [Curr. Prot. Bioinformatics Chapter 3: Unit 3.1](https://fasta.bioch.virginia.edu/wrpearson/papers/wrp_cpbio_0301.pdf)
+  * :material-wikipedia: [Multiple Sequence Alignment](https://en.wikipedia.org/wiki/Multiple_sequence_alignment)
