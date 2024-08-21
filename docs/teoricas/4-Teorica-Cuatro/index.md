@@ -9,7 +9,7 @@ tags:
  Clase teórica de búsquedas de secuencias por similitud: fuerza bruta, FASTA, BLAST. 
  Alineamientos múltiples.
 
- * :fontawesome-regular-file-pdf: [Slides Búsquedas]()
+ * :fontawesome-regular-file-pdf: [Slides Búsquedas](busquedasDeSecuenciasEnBasesDeDatos2023.pdf)
  * :fontawesome-regular-file-pdf: [Slides Alineamientos](alineamientosMultiples2024.pdf) 
 
 Clase dictada virtual por paro docente  :material-video-check: [Sesion Zoom grabada](https://youtu.be/0l986Ut9gAw)
@@ -33,3 +33,5 @@ Clase dictada virtual por paro docente  :material-video-check: [Sesion Zoom grab
   * :fontawesome-solid-file-pdf: Selecting the Right Similarity-Scoring Matrix. Pearson, W. R. (2013) [Curr. Prot. Bioinformatics Chapter 3: Unit 3.5](https://fasta.bioch.virginia.edu/wrpearson/papers/wrp_cpbio_0305.pdf)
   * :fontawesome-solid-file-pdf: An Introduction to Similarity ("Homology") Searching. Pearson, W. R. (2013) [Curr. Prot. Bioinformatics Chapter 3: Unit 3.1](https://fasta.bioch.virginia.edu/wrpearson/papers/wrp_cpbio_0301.pdf)
   * :material-wikipedia: [Multiple Sequence Alignment](https://en.wikipedia.org/wiki/Multiple_sequence_alignment)
+  * :paperclip: A Novel algorithm for identifying low-complexity regions in a protein sequence. Xuehui Li, Tamer Kahveci (2006) [Bioinformatics 22: 2980--2987](https://doi.org/10.1093/bioinformatics/btl495)
+  * :material-wikipedia: [Software to detect low complexity regions](https://en.wikipedia.org/wiki/List_of_software_to_detect_low_complexity_regions_in_proteins)
