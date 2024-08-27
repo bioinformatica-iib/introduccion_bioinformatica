@@ -12,7 +12,7 @@ tags:
  * :fontawesome-regular-file-pdf: [Slides Búsquedas](busquedasDeSecuenciasEnBasesDeDatos2023.pdf)
  * :fontawesome-regular-file-pdf: [Slides Alineamientos](alineamientosMultiples2024.pdf) 
 
-Clase dictada virtual por paro docente  :material-video-check: [Sesion Zoom grabada](https://youtu.be/0l986Ut9gAw)
+
 
 <!-- >
 ### Primera parte  

@@ -11,8 +11,7 @@ Continuación de la clase teórica de algoritmos heurísticos de búsqueda de se
 
  * :fontawesome-regular-file-pdf: [Slides](../2-Teorica-Dos/busquedasDeSecuenciasEnBasesDeDatos2023.pdf) 
  * :material-video-check: [Clase grabada en 2023](https://www.youtube.com/embed/AOnReITkzvo)
- 
-
+ * :material-video-check: Clase dictada virtual por paro docente   [Sesion Zoom grabada](https://youtu.be/0l986Ut9gAw)
 
 ## Material de lectura y consulta
 

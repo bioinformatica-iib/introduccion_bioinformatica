@@ -16,9 +16,9 @@ tags:
 | Jueves, 08 Agosto 2024 | 9:00 hs |	:material-google-classroom: Presencial | [P1. Introducción a UNIX](https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP01_Linux/) | :fontawesome-solid-hammer: Práctica |	M. Didier Garnham |
 | Martes, 13 Agosto 2024 | 9:00 hs |	:material-google-classroom: Presencial | [T2. Alineamientos, Matrices, Busquedas (1)](teoricas/2-Teorica-Dos/index.md) | :fontawesome-solid-brain: Teórica |	F. Agüero |
 | Jueves, 15 Agosto 2024 | 9:00 hs |	:material-google-classroom: Presencial | [P2. EMBOSS Suite](https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP02_EMBOSS/) | :fontawesome-solid-hammer: Práctica |	M. Didier Garnham |
-| Martes, 20 Agosto 2024 | 9:00 hs |	:material-google-classroom: Presencial | [T3. Búsqueda de secuencias por Similitud (2)](teoricas/3-Teorica-Tres/index.md) | :fontawesome-solid-brain: Teórica |	F. Agüero |
+| Martes, 20 Agosto 2024 | 9:00 hs |	:simple-zoom: &nbsp; Virtual | [T3. Búsqueda de secuencias por Similitud (2)](teoricas/3-Teorica-Tres/index.md) | :fontawesome-solid-brain: Teórica |	F. Agüero |
 | Jueves, 22 Agosto 2024 | 9:00 hs |	:material-google-classroom: Presencial | [P3. Alineamientos de secuencias de a pares](https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP03_Alineamientos/)| :fontawesome-solid-hammer: Práctica |	G. Romer |
-| Martes, 27 Agosto 2024 | 9:00 hs |	:simple-zoom: &nbsp; Virtual | [T4. Alineamientos múltiples](teoricas/4-Teorica-Cuatro/index.md) | :fontawesome-solid-brain: Teórica |	F. Agüero |
+| Martes, 27 Agosto 2024 | 9:00 hs |	:material-google-classroom: Presencial | [T4. Alineamientos múltiples](teoricas/4-Teorica-Cuatro/index.md) | :fontawesome-solid-brain: Teórica |	F. Agüero |
 | Jueves, 29 Agosto 2024 | 9:00 hs |	:material-google-classroom: Presencial | P4. Búsqueda de secuencias por similitud y Alineamientos Múltiples | :fontawesome-solid-hammer: Práctica |	G. Romer |
 | Martes, 03 Septiembre 2024 | 9:00 hs |	:material-google-classroom: Presencial | T5. Información contenida en alineamientos múltiples | :fontawesome-solid-brain: Teórica |	L. Chemes |
 | Jueves, 05 Septiembre 2024 | 9:00 hs |	:material-google-classroom: Presencial | P5. Perfiles de secuencia y PSI-BLAST | :fontawesome-solid-hammer: Práctica |	H. García |
