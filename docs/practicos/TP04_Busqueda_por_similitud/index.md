@@ -6,13 +6,13 @@
 <br>
 <br>
 
-[:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1uTR_Cl2Hlfk7F3UH2YPt260IroCKpb1z/view?usp=sharing){ .md-button .md-button--primary }
+[:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1rPAZB0QfTRa9tKBoDpDFqKc5azThFNeY/view?usp=sharing){ .md-button .md-button--primary }
 
 <br>
 
 ### Slides mostrados en la clase
 
-* :fontawesome-regular-file-pdf: [Slides](https://drive.google.com/file/d/1MvR473-8E7vUnG5_MUEtWqn_oLaunZBp/view?usp=sharing)
+* :fontawesome-regular-file-pdf: [Slides](https://drive.google.com/file/d/1rRYr-zU-NbZUdOl-ailDsbbwjdMdSESX/view?usp=sharing)
 
 ## **Objetivos**
 
@@ -29,6 +29,7 @@
     ```bash
     bash install.sh
     ``` 
+
 ## **Introducción a Bases de Datos de Proteínas**
 
 La mayor base de datos de Uniprot es UniProtKB (UniProt KnowledgeBase) que está dividida en dos secciones: TrEMBL y Swiss-Prot.
@@ -62,7 +63,7 @@ En este TP trabajaremos con **Swiss-Prot**.
 
 ??? tip "Tip"
 
-	 Para ver una lista de los argumentos que acepta ``blastall`` prueben correr el comando sin argumentos. Si esto no les funciona pueden ver todos los argumentos haciendo click [aquí](https://www.ncbi.nlm.nih.gov/Class/BLAST/blastallopts.txt).
+	 Para ver una lista de los argumentos que acepta ``blastall`` prueben correr el comando sin argumentos. Si esto no les funciona pueden ver todos los argumentos haciendo click [aquí](https://www.genome.jp/tools-bin/show_man?blast2). Para una lista detallada de los comandos que acepta cada programa, pueden consultar [la página del NCBI](https://www.ncbi.nlm.nih.gov/books/NBK279684/).
 
 ??? info "Recordatorio: Estadística de los Alineamientos"
 
@@ -89,7 +90,7 @@ blastall -p blastp -i xlrhodop.pep -d ~/Swissprot_db/Swissprot.fasta
 ``` 
 !!! attention "Atención"
 
-	 Este comando no se ejecutará correctamente si uno mueve de lugar el archivo de la base de datos **Swiss-Prot** luego de ejecutar ``install.sh``. Si este es el caso, especifique el camino o *path* completo.
+	 Este comando no se ejecutará correctamente si uno mueve de lugar el archivo de la base de datos **Swiss-Prot** luego de ejecutar ``install.sh``. Chequeen donde está la base de datos, y si el comando no se ejecuta, especifiquen el camino o *path* completo.
 
 En este ejemplo, el resultado de la búsqueda es volcado en la consola (**stdout**). Para que el resultado aparezca en un archivo, podemos redireccionar **stdout** (usando ``>``, ver TP01-Linux) o usar la opcion ``-o`` (output).
 
