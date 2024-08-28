@@ -13,6 +13,10 @@
         <link rel="canonical" href="https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP04_Busqueda_por_similitud/">
       
       
+        <link rel="prev" href="../TP03_Alineamientos/">
+      
+      
+        <link rel="next" href="../../instructivos/inicio/">
       
       
       <link rel="icon" href="../../img/logo-unsam-negro.png">
@@ -20,7 +24,7 @@
     
     
       
-        <title>Index - Introducción a la Bioinformática</title>
+        <title>TP 4 - Búsqueda por similitud - Introducción a la Bioinformática</title>
       
     
     
@@ -116,7 +120,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Index
+              TP 4 - Búsqueda por similitud
             
           </span>
         </div>
@@ -336,10 +340,12 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../inicio/" class="md-tabs__link">
           
   
@@ -685,23 +691,28 @@
       
   
   
+    
   
   
+  
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
         
           
-          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -712,7 +723,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
             Prácticos
@@ -798,6 +809,225 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    TP 4 - Búsqueda por similitud
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    TP 4 - Búsqueda por similitud
+  </span>
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#slides-mostrados-en-la-clase" class="md-nav__link">
+    <span class="md-ellipsis">
+      Slides mostrados en la clase
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objetivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objetivos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduccion-a-bases-de-datos-de-proteinas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introducción a Bases de Datos de Proteínas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduccion-a-blast" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introducción a BLAST
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introducción a BLAST">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejercicio 1
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduccion-a-fasta" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introducción a FASTA
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introducción a FASTA">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejercicio 2
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#filtrado-de-secuencias-de-baja-complejidad" class="md-nav__link">
+    <span class="md-ellipsis">
+      Filtrado de secuencias de baja complejidad
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Filtrado de secuencias de baja complejidad">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejercicio 3
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bases-de-datos-propias" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bases de datos propias
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bases de datos propias">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adicional-ejercicio-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adicional: Ejercicio 4
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#blast-con-multiples-secuencias" class="md-nav__link">
+    <span class="md-ellipsis">
+      BLAST con múltiples secuencias
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="BLAST con múltiples secuencias">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adicional-ejercicio-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adicional: Ejercicio 5
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bibliografia" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bibliografía
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -917,11 +1147,11 @@
 <p><br>
 <br>
 <br></p>
-<p><a class="md-button md-button--primary" href="https://drive.google.com/file/d/1uTR_Cl2Hlfk7F3UH2YPt260IroCKpb1z/view?usp=sharing"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32v242.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64v-32c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"></path></svg></span> Materiales</a></p>
+<p><a class="md-button md-button--primary" href="https://drive.google.com/file/d/1rPAZB0QfTRa9tKBoDpDFqKc5azThFNeY/view?usp=sharing"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32v242.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64v-32c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"></path></svg></span> Materiales</a></p>
 <p><br></p>
 <h3 id="slides-mostrados-en-la-clase">Slides mostrados en la clase</h3>
 <ul>
-<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M64 464h48v48H64c-35.3 0-64-28.7-64-64V64C0 28.7 28.7 0 64 0h165.5c17 0 33.3 6.7 45.3 18.7l90.5 90.5c12 12 18.7 28.3 18.7 45.3V304h-48V160h-80c-17.7 0-32-14.3-32-32V48H64c-8.8 0-16 7.2-16 16v384c0 8.8 7.2 16 16 16zm112-112h32c30.9 0 56 25.1 56 56s-25.1 56-56 56h-16v32c0 8.8-7.2 16-16 16s-16-7.2-16-16V368c0-8.8 7.2-16 16-16zm32 80c13.3 0 24-10.7 24-24s-10.7-24-24-24h-16v48h16zm96-80h32c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48h-32c-8.8 0-16-7.2-16-16V368c0-8.8 7.2-16 16-16zm32 128c8.8 0 16-7.2 16-16v-64c0-8.8-7.2-16-16-16h-16v96h16zm80-112c0-8.8 7.2-16 16-16h48c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v32h32c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v48c0 8.8-7.2 16-16 16s-16-7.2-16-16V368z"></path></svg></span> <a href="https://drive.google.com/file/d/1MvR473-8E7vUnG5_MUEtWqn_oLaunZBp/view?usp=sharing">Slides</a></li>
+<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M64 464h48v48H64c-35.3 0-64-28.7-64-64V64C0 28.7 28.7 0 64 0h165.5c17 0 33.3 6.7 45.3 18.7l90.5 90.5c12 12 18.7 28.3 18.7 45.3V304h-48V160h-80c-17.7 0-32-14.3-32-32V48H64c-8.8 0-16 7.2-16 16v384c0 8.8 7.2 16 16 16zm112-112h32c30.9 0 56 25.1 56 56s-25.1 56-56 56h-16v32c0 8.8-7.2 16-16 16s-16-7.2-16-16V368c0-8.8 7.2-16 16-16zm32 80c13.3 0 24-10.7 24-24s-10.7-24-24-24h-16v48h16zm96-80h32c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48h-32c-8.8 0-16-7.2-16-16V368c0-8.8 7.2-16 16-16zm32 128c8.8 0 16-7.2 16-16v-64c0-8.8-7.2-16-16-16h-16v96h16zm80-112c0-8.8 7.2-16 16-16h48c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v32h32c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v48c0 8.8-7.2 16-16 16s-16-7.2-16-16V368z"></path></svg></span> <a href="https://drive.google.com/file/d/1rRYr-zU-NbZUdOl-ailDsbbwjdMdSESX/view?usp=sharing">Slides</a></li>
 </ul>
 <h2 id="objetivos"><strong>Objetivos</strong></h2>
 <ul>
@@ -968,7 +1198,7 @@
 </ul>
 <details class="tip">
 <summary>Tip</summary>
-<p>Para ver una lista de los argumentos que acepta <code>blastall</code> prueben correr el comando sin argumentos. Si esto no les funciona pueden ver todos los argumentos haciendo click <a href="https://www.ncbi.nlm.nih.gov/Class/BLAST/blastallopts.txt">aquí</a>.</p>
+<p>Para ver una lista de los argumentos que acepta <code>blastall</code> prueben correr el comando sin argumentos. Si esto no les funciona pueden ver todos los argumentos haciendo click <a href="https://www.genome.jp/tools-bin/show_man?blast2">aquí</a>. Para una lista detallada de los comandos que acepta cada programa, pueden consultar <a href="https://www.ncbi.nlm.nih.gov/books/NBK279684/">la página del NCBI</a>.</p>
 </details>
 <details class="info">
 <summary>Recordatorio: Estadística de los Alineamientos</summary>
@@ -985,7 +1215,7 @@
 </code></pre></div>
 <div class="admonition attention">
 <p class="admonition-title">Atención</p>
-<p>Este comando no se ejecutará correctamente si uno mueve de lugar el archivo de la base de datos <strong>Swiss-Prot</strong> luego de ejecutar <code>install.sh</code>. Si este es el caso, especifique el camino o <em>path</em> completo.</p>
+<p>Este comando no se ejecutará correctamente si uno mueve de lugar el archivo de la base de datos <strong>Swiss-Prot</strong> luego de ejecutar <code>install.sh</code>. Chequeen donde está la base de datos, y si el comando no se ejecuta, especifiquen el camino o <em>path</em> completo.</p>
 </div>
 <p>En este ejemplo, el resultado de la búsqueda es volcado en la consola (<strong>stdout</strong>). Para que el resultado aparezca en un archivo, podemos redireccionar <strong>stdout</strong> (usando <code>&gt;</code>, ver TP01-Linux) o usar la opcion <code>-o</code> (output).</p>
 <div class="highlight"><pre><span></span><code>blastall<span class="w"> </span>-p<span class="w"> </span>blastp<span class="w"> </span>-i<span class="w"> </span>xlrhodop.pep<span class="w"> </span>-d<span class="w"> </span>~/Swissprot_db/Swissprot.fasta<span class="w"> </span>-o<span class="w"> </span>xlrhodop.blastp
