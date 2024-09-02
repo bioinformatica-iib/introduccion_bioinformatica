@@ -12,11 +12,21 @@ tags:
  * :fontawesome-regular-file-pdf: [Slides Búsquedas](busquedasDeSecuenciasEnBasesDeDatos2023.pdf)
  * :fontawesome-regular-file-pdf: [Slides Alineamientos](alineamientosMultiples2024.pdf) 
 
+## Videos de clases grabadas de otros años
 
+Videos de Clases dictadas en 2022/2023:
+
+* :material-video-check: [Primera parte: alineamientos multiples, 2022](https://www.youtube.com/watch?v=EgOkJf-JWKA)
+* :material-video-check: [Segunda parte: PSSMs, Sequence Logos, weight matrices, 2023](https://www.youtube.com/watch?v=pmTpAYENm7I)
 
 <!-- >
 ### Primera parte  
 ![type:video](https://www.youtube.com/embed/qNvW595WnJs)
+
+2022 - 
+https://www.youtube.com/watch?v=EgOkJf-JWKA
+2023 - Morten PSSMs 
+https://www.youtube.com/watch?v=pmTpAYENm7I
 
 ### Segunda parte (luego del intervalo)
 ![type:video](https://www.youtube.com/embed/AOnReITkzvo)
