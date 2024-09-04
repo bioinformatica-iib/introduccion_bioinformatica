@@ -1,6 +1,6 @@
 ![Image](img/banner.jpg){ width="250", align="left" }
 
-# **TP 11**. Artificial Neural Networks (ANNs) y Hidden Markov Models (HMMs) { markdown data-toc-label = 'TP 11' }
+# **TP 6**. Hidden Markov Models (HMMs) { markdown data-toc-label = 'TP 11' }
 
 <br>
 <br>
@@ -12,7 +12,7 @@
 
 !!! abstract "Atención: Este TP NO tiene informe."
 
-
+<!--
 ### Slides mostrados en la clase
 
 * :fontawesome-regular-file-pdf: [Explicación ANNs](https://docs.google.com/presentation/d/1XALgjFolvOZMH-ksATU3YI7YQgU75q8R/edit?usp=sharing&ouid=115287066011570616875&rtpof=true&sd=true)
@@ -20,8 +20,7 @@
 
 ### Videos de la clase grabada
 * :octicons-video-16: [Puesta en común ANNs y Ejercicio guiado HMMer](https://youtu.be/Z03cj479g_A)
-
-
+-->
 
 ## Objetivos
 
@@ -30,7 +29,7 @@
 * Construir un perfil basado en HMMs y utilizar el mismo para realizar búsquedas en bases de datos de secuencias.
 * Crear una base de datos de perfiles de secuencias y utilizar la misma para identificar dominios conservados en secuencias *query*.
 
-
+<!--
 ## Parte I. Artificial neural networks
 
 En esta sección vamos a utilizar redes neuronales para hacer predicciones como habíamos hecho anteriormente con las PSSM. La idea es similar a la del TP6 donde entrenamos un modelo con péptidos que se unen a MHC. Variaremos los parámetros de modelo para mejorarlo, sensando en cada corrida los indicadores de desempeño del mismo (**Aroc** y **Pearson correlation coefficient**). 
@@ -140,8 +139,8 @@ Como vimos en el TP de PSSM, una vez que uno entrena un método, puede guardar l
 
     Para ello vamos a guardar el modelo entrenado en la **Cuarta prueba** haciendo **click derecho** en *Parameters for prediction method* del reporte de resultados y seleccionando "Guardar enlace como..." (el archivo se guarda como **para.dat**). 
     Este modelo será utilizado en el ejercicio a entregar de este TP.
-
-## Parte II. HMMer
+--> 
+## HMMer
 
 !!! attention "Atención"
 
@@ -437,9 +436,9 @@ Para lograr su objetivo utilizará la herramienta **EasyPred**. Como va a realiz
 
     * [Cálculo de coeficientes de correlación en R](https://cran.r-project.org/web/packages/correlation/vignettes/types.html)
     * [Scatterplot en ggplot2](http://www.cookbook-r.com/Graphs/Scatterplots_(ggplot2)/)
--->
-<br>
 
+<br>
+-->
 
 
 

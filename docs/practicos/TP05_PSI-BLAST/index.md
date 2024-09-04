@@ -1,6 +1,6 @@
 ![Image](img/banner.jpg){ width="250", align="left" }
 
-# **TP 6**. Perfiles de secuencias y PSI-BLAST { markdown data-toc-label = 'TP 6' }
+# **TP 5**. Perfiles de secuencias y PSI-BLAST { markdown data-toc-label = 'TP 6' }
 
 <br>
 <br>
@@ -10,18 +10,16 @@
 
 [:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1yfCSpn7mLNCOrmQSzKKEd9eY0LsCVoB2/view?usp=sharing){ .md-button .md-button--primary }
 
+<!--
 ### Videos de la clase grabada
 * :octicons-video-16: [Cierre TP](https://youtu.be/ZYU3zi94qUk)
 <br>
-
-!!! abstract "Atención: Este TP tiene informe."
-
-
-<!--
 ### Videos de la clase grabada
 * :octicons-video-16: [Introducción al TP](https://www.youtube.com/watch?v=LMhaZZ7XgtY)
 * :octicons-video-16: [Cierre TP](https://www.youtube.com/watch?v=uF1vyWWRT_0)
 -->
+
+!!! abstract "Atención: Este TP tiene informe."
 
 ## **Construcción de Logos y Matrices peso-específicas**
 
@@ -414,6 +412,7 @@ Por esta razón, teniendo en cuenta lo realizado con el servidor Blast2logo, vam
 
 **11.** ¿Cuáles creen que son los 4 residuos que podríamos mutar de la lista para generar un impacto en la estructura de nuestra proteína *query*?
 
+<!--
 ## **Ejercicio a informar**
 
 !!! info 
@@ -467,3 +466,4 @@ Para analizar en forma conjunta los mejores ligandos que obtuvo según los punta
  **6.** ¿Observa algo raro en el logo obtenido? ¿Cómo haría para modificarlo?
 
 <br>
+-->
