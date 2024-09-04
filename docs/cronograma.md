@@ -19,7 +19,7 @@ tags:
 | Martes, 20 Agosto 2024 | 9:00 hs |	:simple-zoom: &nbsp; Virtual | [T3. Búsqueda de secuencias por Similitud (2)](teoricas/3-Teorica-Tres/index.md) | :fontawesome-solid-brain: Teórica |	F. Agüero |
 | Jueves, 22 Agosto 2024 | 9:00 hs |	:material-google-classroom: Presencial | [P3. Alineamientos de secuencias de a pares](practicos/TP03_Alineamientos/index.md)| :fontawesome-solid-hammer: Práctica |	G. Romer |
 | Martes, 27 Agosto 2024 | 9:00 hs |	:material-google-classroom: Presencial | [T4. Alineamientos múltiples](teoricas/4-Teorica-Cuatro/index.md) | :fontawesome-solid-brain: Teórica |	F. Agüero |
-| Jueves, 29 Agosto 2024 | 9:00 hs |	:material-google-classroom: Presencial | [P4. Búsqueda de secuencias por similitud y Alineamientos Múltiples](/practicos/TP04_Busqueda_por_similitud/index.md) | :fontawesome-solid-hammer: Práctica |	G. Romer |
+| Jueves, 29 Agosto 2024 | 9:00 hs |	:material-google-classroom: Presencial | [P4. Búsqueda de secuencias por similitud y Alineamientos Múltiples](practicos/TP04_Busqueda_por_similitud/index.md) | :fontawesome-solid-hammer: Práctica |	G. Romer |
 | Martes, 03 Septiembre 2024 | 9:00 hs | 	Libre |  | :fontawesome-solid-brain: Teórica |	 |
 | Jueves, 05 Septiembre 2024 | 9:00 hs |	:material-google-classroom: Presencial | [P5. Perfiles de secuencia y PSI-BLAST](practicos/TP05_PSI-BLAST/index.md) | :fontawesome-solid-hammer: Práctica |	H. García |
 | Martes, 10 Septiembre 2024 | 9:00 hs |	:material-google-classroom: Presencial | T6. HMM | :fontawesome-solid-brain: Teórica |	L. Chemes |
