@@ -10,9 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP06_PSI-BLAST/">
+        <link rel="canonical" href="https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP05_PSI-BLAST/">
       
       
+        <link rel="prev" href="../TP04_Busqueda_por_similitud/">
+      
+      
+        <link rel="next" href="../../instructivos/inicio/">
       
       
       <link rel="icon" href="../../img/logo-unsam-negro.png">
@@ -20,7 +24,7 @@
     
     
       
-        <title>Index - Introducción a la Bioinformática</title>
+        <title>TP 5 - PSI-BLAST - Introducción a la Bioinformática</title>
       
     
     
@@ -83,7 +87,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#tp-6-perfiles-de-secuencias-y-psi-blast" class="md-skip">
+        <a href="#tp-5-perfiles-de-secuencias-y-psi-blast" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -116,7 +120,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Index
+              TP 5 - PSI-BLAST
             
           </span>
         </div>
@@ -336,10 +340,12 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../inicio/" class="md-tabs__link">
           
   
@@ -685,23 +691,28 @@
       
   
   
+    
   
   
+  
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
         
           
-          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -712,7 +723,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
             Prácticos
@@ -819,6 +830,267 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    TP 5 - PSI-BLAST
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    TP 5 - PSI-BLAST
+  </span>
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#construccion-de-logos-y-matrices-peso-especificas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Construcción de Logos y Matrices peso-específicas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Construcción de Logos y Matrices peso-específicas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objetivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objetivos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#introduccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introducción
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#identificacion-de-motivos-de-union-a-mhc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Identificación de motivos de unión a MHC
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logos-de-secuencias" class="md-nav__link">
+    <span class="md-ellipsis">
+      Logos de secuencias
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#construccion-de-matrices-peso-especificas-pssm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Construcción de matrices peso-específicas (PSSM)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prediccion-de-union-a-mhc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Predicción de unión a MHC
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Predicción de unión a MHC">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#primera-prueba" class="md-nav__link">
+    <span class="md-ellipsis">
+      Primera prueba
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#segunda-prueba" class="md-nav__link">
+    <span class="md-ellipsis">
+      Segunda prueba
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tercera-prueba" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tercera prueba
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cuarta-prueba" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cuarta prueba
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quinta-y-ultima-prueba" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quinta (y última) prueba
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#psi-blast" class="md-nav__link">
+    <span class="md-ellipsis">
+      PSI-BLAST
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PSI-BLAST">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objetivos_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objetivos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#introduccion_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introducción
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cuando-blast-falla" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cuando BLAST falla
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usando-psi-blast" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usando PSI-BLAST
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#construyendo-la-pssm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Construyendo la PSSM
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#guardando-y-reutilizando-la-pssm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Guardando y reutilizando la PSSM
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#identificando-residuos-conservados" class="md-nav__link">
+    <span class="md-ellipsis">
+      Identificando residuos conservados
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -934,27 +1206,25 @@
 
 
 <div><p><a class="glightbox" href="img/banner.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img _="," align="left" alt="Image" src="img/banner.jpg" width="250"></a></p>
-<h1 id="tp-6-perfiles-de-secuencias-y-psi-blast" markdown="markdown"><strong>TP 6</strong>. Perfiles de secuencias y PSI-BLAST</h1>
+<h1 id="tp-5-perfiles-de-secuencias-y-psi-blast" markdown="markdown"><strong>TP 5</strong>. Perfiles de secuencias y PSI-BLAST</h1>
 <p><br>
 <br>
 <br>
 <br>
 <br></p>
 <p><a class="md-button md-button--primary" href="https://drive.google.com/file/d/1yfCSpn7mLNCOrmQSzKKEd9eY0LsCVoB2/view?usp=sharing"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32v242.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64v-32c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"></path></svg></span> Materiales</a></p>
-<h3 id="videos-de-la-clase-grabada">Videos de la clase grabada</h3>
-<ul>
-<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 16 16"><path d="M0 3.75C0 2.784.784 2 1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0 1 14.25 14H1.75A1.75 1.75 0 0 1 0 12.25Zm1.75-.25a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25v-8.5a.25.25 0 0 0-.25-.25Z"></path><path d="M6 10.559V5.442a.25.25 0 0 1 .379-.215l4.264 2.559a.25.25 0 0 1 0 .428l-4.264 2.559A.25.25 0 0 1 6 10.559Z"></path></svg></span> <a href="https://youtu.be/ZYU3zi94qUk">Cierre TP</a>
-<br></li>
-</ul>
-<div class="admonition abstract">
-<p class="admonition-title">Atención: Este TP tiene informe.</p>
-</div>
 <!--
+### Videos de la clase grabada
+* :octicons-video-16: [Cierre TP](https://youtu.be/ZYU3zi94qUk)
+<br>
 ### Videos de la clase grabada
 * :octicons-video-16: [Introducción al TP](https://www.youtube.com/watch?v=LMhaZZ7XgtY)
 * :octicons-video-16: [Cierre TP](https://www.youtube.com/watch?v=uF1vyWWRT_0)
 -->
 
+<div class="admonition abstract">
+<p class="admonition-title">Atención: Este TP tiene informe.</p>
+</div>
 <h2 id="construccion-de-logos-y-matrices-peso-especificas"><strong>Construcción de Logos y Matrices peso-específicas</strong></h2>
 <h3 id="objetivos">Objetivos</h3>
 <ul>
@@ -1238,41 +1508,61 @@ Para obtener la PSSM descarguenla arriba donde dice "<em>Donwload All</em>"</p>
 <li>(h): Y436</li>
 </ul>
 <p><strong>11.</strong> ¿Cuáles creen que son los 4 residuos que podríamos mutar de la lista para generar un impacto en la estructura de nuestra proteína <em>query</em>?</p>
-<h2 id="ejercicio-a-informar"><strong>Ejercicio a informar</strong></h2>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p><span style="font-weight:bold;">Fecha límite de entrega:</span> Viernes, 29 de Septiembre 2023, 23:59hs.</p>
-</div>
-<h3 id="enunciado">Enunciado</h3>
-<p>Una vez que usted hizo el análisis (informado en el TP3), se comunicó con el laboratorio AVENAI y le indican que una vez secuenciado el aislamiento, tienen como política hacer todas sus secuencias de dominio público, esto significa que su secuencia de estudio ya figura en las bases de datos (Usted suspira, de haberlo sabido antes...).</p>
-<p>Para poder identificarla, y sabiendo que es un <em>Betacoronavirus</em>, usted decide utilizar la herramienta provista por NCBI y hacer un BLASTn de su secuencia incógnita contra la base de datos <strong>genomic/Viruses/Betacoronavirus</strong>.</p>
-<p><strong>1.</strong> ¿Cuál es el resultado de realizar el BLASTn? ¿Obtiene algún hit con 100% de cobertura y E-value=0.0? Si obtiene más de un hit, recupere el primero.</p>
-<p><strong>2.</strong> ¿A qué aislamiento corresponde su secuencia? </p>
-<p>Para recolectar más información de su secuencia, decide acceder al GenBank yendo a la pestaña <strong>Alignments</strong> de la salida del BLASTn y cliqueando en el accession number correspondiente.</p>
-<p>Su jefe está muy interesado en estudiar qué proteínas de esta variante de coronavirus contienen ligandos del alelo <strong>HLA-A*02:01</strong>. Para eso a usted se le ocurre realizar predicciones utilizando la matriz peso-específica del alelo correspondiente que ya había generado en un curso de Bioinformática (TP6) tiempo atrás y que sabe que funciona muy bien. </p>
-<p>Puede encontrar una descripción de coronavirus y sus proteínas en <a href="https://viralzone.expasy.org/764?outline=all_by_species">ViralZone de Expasy</a>.</p>
-<p>Usted decide trabajar con las proteínas <strong>S</strong> (spike o proteína de glicoproteína de superficie), <strong>E</strong> (proteína de la envoltura), <strong>M</strong> (proteína de membrana) y <strong>N</strong> (fosfoproteína de la nucleocápside) de esta variante de coronavirus (ex secuencia incógnito) ya que cree, además, que son las que podrían llegar a contener los péptidos más inmunogénicos. Para obtener las secuencias de las proteínas en estudio decide recurrir al registro del GenBank que afortunadamente guardó después de hacer el BLASTn.</p>
-<p>Decide además utilizar la herramienta <strong>EasyPred</strong> que ya usó tiempo atrás para generar su matriz peso-específica, pero esta vez la usará para realizar una predicción. Por lo tanto, deja el recuadro de entrenamiento vacío e ingresa el archivo con la secuencia de la proteína a evaluar en el recuadro de evaluación. Por último, sube el archivo con la matriz en la sección <strong>Load saved prediction method</strong>. </p>
+<!--
+## **Ejercicio a informar**
+
+!!! info 
+
+    <span style="font-weight:bold;">Fecha límite de entrega:</span> Viernes, 29 de Septiembre 2023, 23:59hs.
+
+### Enunciado
+
+Una vez que usted hizo el análisis (informado en el TP3), se comunicó con el laboratorio AVENAI y le indican que una vez secuenciado el aislamiento, tienen como política hacer todas sus secuencias de dominio público, esto significa que su secuencia de estudio ya figura en las bases de datos (Usted suspira, de haberlo sabido antes...).
+
+Para poder identificarla, y sabiendo que es un *Betacoronavirus*, usted decide utilizar la herramienta provista por NCBI y hacer un BLASTn de su secuencia incógnita contra la base de datos **genomic/Viruses/Betacoronavirus**.
+
+ **1.** ¿Cuál es el resultado de realizar el BLASTn? ¿Obtiene algún hit con 100% de cobertura y E-value=0.0? Si obtiene más de un hit, recupere el primero.
+
+ **2.** ¿A qué aislamiento corresponde su secuencia? 
+
+Para recolectar más información de su secuencia, decide acceder al GenBank yendo a la pestaña **Alignments** de la salida del BLASTn y cliqueando en el accession number correspondiente.
+
+Su jefe está muy interesado en estudiar qué proteínas de esta variante de coronavirus contienen ligandos del alelo **HLA-A*02:01**. Para eso a usted se le ocurre realizar predicciones utilizando la matriz peso-específica del alelo correspondiente que ya había generado en un curso de Bioinformática (TP6) tiempo atrás y que sabe que funciona muy bien. 
+
+Puede encontrar una descripción de coronavirus y sus proteínas en [ViralZone de Expasy](https://viralzone.expasy.org/764?outline=all_by_species).
+
+Usted decide trabajar con las proteínas **S** (spike o proteína de glicoproteína de superficie), **E** (proteína de la envoltura), **M** (proteína de membrana) y **N** (fosfoproteína de la nucleocápside) de esta variante de coronavirus (ex secuencia incógnito) ya que cree, además, que son las que podrían llegar a contener los péptidos más inmunogénicos. Para obtener las secuencias de las proteínas en estudio decide recurrir al registro del GenBank que afortunadamente guardó después de hacer el BLASTn.
+
+Decide además utilizar la herramienta **EasyPred** que ya usó tiempo atrás para generar su matriz peso-específica, pero esta vez la usará para realizar una predicción. Por lo tanto, deja el recuadro de entrenamiento vacío e ingresa el archivo con la secuencia de la proteína a evaluar en el recuadro de evaluación. Por último, sube el archivo con la matriz en la sección **Load saved prediction method**. 
+
 <p style="text-align:center">
 <a class="glightbox" href="./img/easypred_2.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="./img/easypred_2.png" alt="easypredInf" width="50%"></a>
 </p>
 
-<p>Selecciona <strong>Sort output on predicted values</strong> y aprieta el botón Submit query.</p>
-<div class="admonition attention">
-<p class="admonition-title">Atención</p>
-<p><strong>Importante:</strong> En la salida no hay logos ni métricas porque ya no se está entrenando ni testeando el modelo. En este punto se está utilizando un modelo ya entrenado (su matriz) para hacer predicciones en datos que nunca vió. La lista de péptidos son todas aquellas secuencias de 9 aminoácidos que se pueden obtener de la secuencia proteica que se le administra al servidor, junto con el valor de predicción.</p>
-</div>
-<p><strong>3.</strong> Describa lo que observa en el output de EasyPred. ¿Qué operación realiza el servidor para obtener las predicciones para cada péptido?</p>
-<p><strong>4.</strong> ¿Qué péptidos de cada una de las proteínas analizadas elegiría para testear en el laboratorio?</p>
-<p>Para analizar en forma conjunta los mejores ligandos que obtuvo según los puntajes predichos por su PSSM decide realizar un logo con todos los péptidos de las proteínas <strong>M</strong>, <strong>E</strong>, <strong>S</strong> y <strong>N</strong> que contengan un valor de predicción mayor a 1. </p>
-<div class="admonition tip">
-<p class="admonition-title">Extra (y por ende opcional)</p>
-<p>Puede realizar un <code>for loop</code> junto con un <code>awk</code> para seleccionar los péptidos relevantes de cada una de las proteínas (recuerde que en un TP se realizó un <code>awk</code> para seleccionar columnas). </p>
-<p>Para realizar el logo, utiliza Seq2Logo y genera un logo con todos estos péptidos ajustando los parámetros según su criterio.</p>
-</div>
-<p><strong>5.</strong> En base a los conocimientos adquiridos en su curso de Bioinformática, ¿le parece razonable el motivo hallado para el alelo HLA-A*02:01? ¿Puede ver claramente las posiciones ancla? ¿Qué aminoácidos son los preferidos para estas posiciones?</p>
-<p><strong>6.</strong> ¿Observa algo raro en el logo obtenido? ¿Cómo haría para modificarlo?</p>
-<p><br></p></div>
+Selecciona **Sort output on predicted values** y aprieta el botón Submit query.
+
+!!! attention "Atención"
+
+    **Importante:** En la salida no hay logos ni métricas porque ya no se está entrenando ni testeando el modelo. En este punto se está utilizando un modelo ya entrenado (su matriz) para hacer predicciones en datos que nunca vió. La lista de péptidos son todas aquellas secuencias de 9 aminoácidos que se pueden obtener de la secuencia proteica que se le administra al servidor, junto con el valor de predicción.
+
+ **3.** Describa lo que observa en el output de EasyPred. ¿Qué operación realiza el servidor para obtener las predicciones para cada péptido?
+
+ **4.** ¿Qué péptidos de cada una de las proteínas analizadas elegiría para testear en el laboratorio?
+
+Para analizar en forma conjunta los mejores ligandos que obtuvo según los puntajes predichos por su PSSM decide realizar un logo con todos los péptidos de las proteínas **M**, **E**, **S** y **N** que contengan un valor de predicción mayor a 1. 
+
+!!! tip "Extra (y por ende opcional)"
+
+    Puede realizar un `for loop` junto con un `awk` para seleccionar los péptidos relevantes de cada una de las proteínas (recuerde que en un TP se realizó un `awk` para seleccionar columnas). 
+
+    Para realizar el logo, utiliza Seq2Logo y genera un logo con todos estos péptidos ajustando los parámetros según su criterio.
+
+ **5.** En base a los conocimientos adquiridos en su curso de Bioinformática, ¿le parece razonable el motivo hallado para el alelo HLA-A*02:01? ¿Puede ver claramente las posiciones ancla? ¿Qué aminoácidos son los preferidos para estas posiciones?
+
+ **6.** ¿Observa algo raro en el logo obtenido? ¿Cómo haría para modificarlo?
+
+<br>
+--></div>
 
 
 

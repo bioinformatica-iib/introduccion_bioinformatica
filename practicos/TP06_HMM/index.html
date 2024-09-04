@@ -10,7 +10,7 @@
       
       
       
-        <link rel="canonical" href="https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP11_HMM_ANN/">
+        <link rel="canonical" href="https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP06_HMM/">
       
       
       
@@ -83,7 +83,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#tp-11-artificial-neural-networks-anns-y-hidden-markov-models-hmms" class="md-skip">
+        <a href="#tp-6-hidden-markov-models-hmms" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -824,6 +824,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TP05_PSI-BLAST/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TP 5 - PSI-BLAST
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -934,7 +955,7 @@
 
 
 <div><p><a class="glightbox" href="img/banner.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img _="," align="left" alt="Image" src="img/banner.jpg" width="250"></a></p>
-<h1 id="tp-11-artificial-neural-networks-anns-y-hidden-markov-models-hmms" markdown="markdown"><strong>TP 11</strong>. Artificial Neural Networks (ANNs) y Hidden Markov Models (HMMs)</h1>
+<h1 id="tp-6-hidden-markov-models-hmms" markdown="markdown"><strong>TP 6</strong>. Hidden Markov Models (HMMs)</h1>
 <p><br>
 <br>
 <br></p>
@@ -943,15 +964,16 @@
 <div class="admonition abstract">
 <p class="admonition-title">Atención: Este TP NO tiene informe.</p>
 </div>
-<h3 id="slides-mostrados-en-la-clase">Slides mostrados en la clase</h3>
-<ul>
-<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M64 464h48v48H64c-35.3 0-64-28.7-64-64V64C0 28.7 28.7 0 64 0h165.5c17 0 33.3 6.7 45.3 18.7l90.5 90.5c12 12 18.7 28.3 18.7 45.3V304h-48V160h-80c-17.7 0-32-14.3-32-32V48H64c-8.8 0-16 7.2-16 16v384c0 8.8 7.2 16 16 16zm112-112h32c30.9 0 56 25.1 56 56s-25.1 56-56 56h-16v32c0 8.8-7.2 16-16 16s-16-7.2-16-16V368c0-8.8 7.2-16 16-16zm32 80c13.3 0 24-10.7 24-24s-10.7-24-24-24h-16v48h16zm96-80h32c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48h-32c-8.8 0-16-7.2-16-16V368c0-8.8 7.2-16 16-16zm32 128c8.8 0 16-7.2 16-16v-64c0-8.8-7.2-16-16-16h-16v96h16zm80-112c0-8.8 7.2-16 16-16h48c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v32h32c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v48c0 8.8-7.2 16-16 16s-16-7.2-16-16V368z"></path></svg></span> <a href="https://docs.google.com/presentation/d/1XALgjFolvOZMH-ksATU3YI7YQgU75q8R/edit?usp=sharing&amp;ouid=115287066011570616875&amp;rtpof=true&amp;sd=true">Explicación ANNs</a></li>
-<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M64 464h48v48H64c-35.3 0-64-28.7-64-64V64C0 28.7 28.7 0 64 0h165.5c17 0 33.3 6.7 45.3 18.7l90.5 90.5c12 12 18.7 28.3 18.7 45.3V304h-48V160h-80c-17.7 0-32-14.3-32-32V48H64c-8.8 0-16 7.2-16 16v384c0 8.8 7.2 16 16 16zm112-112h32c30.9 0 56 25.1 56 56s-25.1 56-56 56h-16v32c0 8.8-7.2 16-16 16s-16-7.2-16-16V368c0-8.8 7.2-16 16-16zm32 80c13.3 0 24-10.7 24-24s-10.7-24-24-24h-16v48h16zm96-80h32c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48h-32c-8.8 0-16-7.2-16-16V368c0-8.8 7.2-16 16-16zm32 128c8.8 0 16-7.2 16-16v-64c0-8.8-7.2-16-16-16h-16v96h16zm80-112c0-8.8 7.2-16 16-16h48c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v32h32c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v48c0 8.8-7.2 16-16 16s-16-7.2-16-16V368z"></path></svg></span> <a href="https://docs.google.com/presentation/d/1s62O4NBwBTA1oQ8wTm85rNmqorYB9XWh/edit?usp=sharing&amp;ouid=115287066011570616875&amp;rtpof=true&amp;sd=true">Explicación HMMs</a></li>
-</ul>
-<h3 id="videos-de-la-clase-grabada">Videos de la clase grabada</h3>
-<ul>
-<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 16 16"><path d="M0 3.75C0 2.784.784 2 1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0 1 14.25 14H1.75A1.75 1.75 0 0 1 0 12.25Zm1.75-.25a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25v-8.5a.25.25 0 0 0-.25-.25Z"></path><path d="M6 10.559V5.442a.25.25 0 0 1 .379-.215l4.264 2.559a.25.25 0 0 1 0 .428l-4.264 2.559A.25.25 0 0 1 6 10.559Z"></path></svg></span> <a href="https://youtu.be/Z03cj479g_A">Puesta en común ANNs y Ejercicio guiado HMMer</a></li>
-</ul>
+<!--
+### Slides mostrados en la clase
+
+* :fontawesome-regular-file-pdf: [Explicación ANNs](https://docs.google.com/presentation/d/1XALgjFolvOZMH-ksATU3YI7YQgU75q8R/edit?usp=sharing&ouid=115287066011570616875&rtpof=true&sd=true)
+* :fontawesome-regular-file-pdf: [Explicación HMMs](https://docs.google.com/presentation/d/1s62O4NBwBTA1oQ8wTm85rNmqorYB9XWh/edit?usp=sharing&ouid=115287066011570616875&rtpof=true&sd=true)
+
+### Videos de la clase grabada
+* :octicons-video-16: [Puesta en común ANNs y Ejercicio guiado HMMer](https://youtu.be/Z03cj479g_A)
+-->
+
 <h2 id="objetivos">Objetivos</h2>
 <ul>
 <li>Comprender cómo se entrena y evalúa un modelo basado en redes neuronales.</li>
@@ -959,100 +981,118 @@
 <li>Construir un perfil basado en HMMs y utilizar el mismo para realizar búsquedas en bases de datos de secuencias.</li>
 <li>Crear una base de datos de perfiles de secuencias y utilizar la misma para identificar dominios conservados en secuencias <em>query</em>.</li>
 </ul>
-<h2 id="parte-i-artificial-neural-networks">Parte I. Artificial neural networks</h2>
-<p>En esta sección vamos a utilizar redes neuronales para hacer predicciones como habíamos hecho anteriormente con las PSSM. La idea es similar a la del TP6 donde entrenamos un modelo con péptidos que se unen a MHC. Variaremos los parámetros de modelo para mejorarlo, sensando en cada corrida los indicadores de desempeño del mismo (<strong>Aroc</strong> y <strong>Pearson correlation coefficient</strong>). </p>
-<div class="admonition attention">
-<p class="admonition-title">Atención</p>
-<p>Si no recuerdan qué significan las métricas <strong>Aroc</strong> y <strong>Pearson correlation coefficient (PCC)</strong> diríjanse al TP6 para refrescar estos conceptos.</p>
-</div>
-<p>Para esto vamos a volver a utilizar <a href="https://services.healthtech.dtu.dk/service.php?EasyPred-1.0">EasyPred</a> y los archivos de <strong>Entrenamiento.set</strong> y <strong>Evaluacion.set</strong> en la carpeta del TP (que descargaron al inicio).</p>
-<ul>
-<li><strong>Entrenamiento.set</strong> contiene 1200 péptidos de longitud 9, con un valor asociado de afinidad de unión a HLA-A*02:01 transformado entre 0 y 1. Recuerde que mientras más cercano a 1 el péptido tiene mayor afinidad de unión y que a partir de 0.426 se considera que el péptido es un ligando. </li>
-<li><strong>Evaluacion.set</strong> contiene 66 péptidos, también con sus valores correspondientes de afinidad de unión. </li>
-</ul>
-<p>Para el entrenamiento del modelo se particionará el archivo <strong>Entrenamiento.set</strong>, de tal manera que una parte se usará para entrenar y la restante se empleará para ir monitoreando el proceso de entrenamiento y así evitar el sobreajuste de los pesos de nuestra red.</p>
-<p>Luego el archivo <strong>Evaluacion.set</strong> contiene datos independientes, que se utilizarán para evaluar la capacidad de generalización de nuestro modelo. </p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Es recomendable abrir los archivos y ver qué es lo que contienen. Esto SIEMPRE es una buena práctica.</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Nota</p>
-<p>A lo largo del TP vamos a mantener el valor de <em>Cutoff for counting an example as a positive example</em> en 0.5.</p>
-</div>
-<div class="admonition attention">
-<p class="admonition-title">Atención</p>
-<p>Vayan corriendo las diferentes pruebas en diferentes pestañas o guarden el reporte de salida para poder compararlo cuando sea necesario.  </p>
-</div>
-<h3 id="primera-prueba-comprendiendo-los-resultados-que-indican-el-desempeno-de-la-red">Primera prueba: <em>Comprendiendo los resultados que indican el desempeño de la red</em></h3>
-<p>Para nuestro primer modelo vamos a ir a <a href="https://services.healthtech.dtu.dk/service.php?EasyPred-1.0">EasyPred</a> y cargamos los archivos en los cuadros correspondientes:</p>
-<p><a class="glightbox" href="./img/train_test_upload.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="./img/train_test_upload.png" alt="easypred" style="max-width:70%"></a></p>
-<p>Luego bajamos hasta la opción <em>Select method</em> dónde vamos a cambiar de <em>Matrix method</em> a <em>Neural Network</em>.  </p>
-<p>Allí vamos a poder ver que nos habilita a ingresar otros parametros que están relacionados a la arquitectura y el entrenamiento de la red.</p>
-<p>Los parámetros que queremos utilizar en este paso son:</p>
-<ul>
-<li><em>Number of hidden units</em>: 2  </li>
-<li><em>Number iterations (epochs) to run neural network</em>: 300  </li>
-<li><em>Fraction of data to train on (the rest is used to avoid overtraining)</em>: 0.8  </li>
-<li><em>Learning rate</em>: 0.05  </li>
-<li><em>Use top sequences for training</em>  </li>
-</ul>
-<p>Es decir dejamos los valores por defecto y le damos <em>Submit</em>.</p>
-<p>Una vez entrenado el modelo, recuerde que puede chequear el desempeño del mismo iteración a iteración haciendo click en <strong>Output from the neural network program (HOW)</strong> </p>
-<p><a class="glightbox" href="./img/log_nn.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="./img/log_nn.png" alt="log_nn" style="max-width:70%"></a></p>
-<ol>
-<li>¿Cuál es el máximo valor de PCC alcanzado sobre el set de prueba? (<em>Maximal test set pearson correlation coefficient sum</em>) </li>
-<li>¿En qué iteración se alcanza ese máximo? ¿Qué información le está dando esto sobre el proceso de entrenamiento del modelo?  </li>
-<li>¿Cuáles son los valores de desempeño del modelo sobre el set de evaluación? (PCC y Aroc)</li>
-<li>¿El PCC obtenido en el punto 3. es mayor o menor al obtenido en el punto 1.? ¿Qué implica este resultado?  </li>
-</ol>
-<h3 id="segunda-prueba-cambiando-el-set-de-entrenamiento">Segunda prueba: <em>Cambiando el set de entrenamiento</em></h3>
-<p>Mantenga los mismos parámetros que en el paso anterior pero esta vez seleccione <em>Use bottom sequences for training</em>. </p>
-<ol>
-<li>¿Cuál es el máximo valor de PCC alcanzado sobre el set de prueba y en qué iteración ocurre esta vez?</li>
-<li>¿Qué valores de desempeño alcanza el modelo aplicado al set de evaluación?</li>
-<li>¿A qué se debe que no coincidan con lo obtenido en la primera prueba?</li>
-</ol>
-<h3 id="tercera-prueba-cambiando-la-arquitectura-de-la-ann">Tercera prueba: <em>Cambiando la arquitectura de la ANN</em></h3>
-<p>Repita los parámetros de la <strong>primera prueba</strong> excepto por el número de neuronas en la capa intermedia o <em>hidden layer</em>:</p>
-<ul>
-<li><em>Number of hidden units</em>: 1</li>
-</ul>
-<p>Observe el impacto en los parámetros de desempeño del modelo. Guarde los resultados. </p>
-<p>Repita el ensayo esta vez con:</p>
-<ul>
-<li><em>Number of hidden units</em>: 5</li>
-</ul>
-<p>Responda a las siguientes preguntas para ambos casos estudiados:</p>
-<ol>
-<li>¿Cómo varía la <em>performance</em> en el set de prueba?  </li>
-<li>¿Qué impacto tienen estos cambios en la <em>performance</em> del set de evaluación?  </li>
-<li>¿Puede elegir un número óptimo de neuronas para la capa oculta?  </li>
-<li>¿Por qué cree que el número de neuronas en la capa oculta tiene tan poco impacto en esta prueba? Piense en el número de datos de entrada y el número de pesos de la red. </li>
-</ol>
-<h3 id="cuarta-prueba-empleando-un-esquema-de-validacion-cruzada">Cuarta prueba: <em>Empleando un esquema de validación cruzada</em></h3>
-<p>Como deberían haber notado en las dos primeras pruebas, la partición de los datos que se utilizan en el entrenamiento/prueba influyen significativamente en el desempeño del modelo. </p>
-<p>Como <em>a priori</em> uno no puede establecer cuál es la mejor forma de partir los datos en entrenamiento y <em>test</em> se recurre a una estrategia denominada <em>cross-validation</em>. La técnica de validación cruzada consiste en hacer <em>N</em> particiones (por lo general 5) y rotarlas, utilizando N-1 para entrenar y la N-ésima (es decir la que queda afuera) como set de prueba. Esto resulta en N modelos diferentes, cada uno entrenado y probado en datos diferentes. Para realizar predicciones en nuevos sets, como el de evaluación, se realizan predicciones con los N métodos y se promedian sus predicciones.</p>
-<p>Para realizar esta prueba vuelvan a los parámetros de la <strong>Primera prueba</strong> pero modifiquen lo siguiente:</p>
-<ul>
-<li><em>Number of partitions for cross-validated training</em>: 5</li>
-</ul>
-<div class="admonition attention">
-<p class="admonition-title">Este paso puede llevar varios minutos. Paciencia.</p>
-</div>
-<ol>
-<li>¿Encuentran diferencias entre los desempeños de los 5 modelos? ¿Es esperable? ¿Por qué?</li>
-<li>Comparen los resultados obtenidos para el set de evaluación con respecto a la primera prueba.</li>
-<li>En este caso se usa el ensamble de los 5 modelos para realizar las predicciones sobre el set de evaluación. ¿Cómo piensa que se obtienen los valores predichos?</li>
-</ol>
-<h3 id="utilizando-el-modelo-entrenado">Utilizando el modelo entrenado</h3>
-<p>Como vimos en el TP de PSSM, una vez que uno entrena un método, puede guardar los valores ajustados (ya sea de la matriz en el caso de la PSSM o los pesos de la red en el caso de ANN) y utilizarlos para hacer predicciones en un set nuevo de datos.</p>
-<div class="admonition attention">
-<p class="admonition-title">Guardar el modelo entrenado</p>
-<p>Para ello vamos a guardar el modelo entrenado en la <strong>Cuarta prueba</strong> haciendo <strong>click derecho</strong> en <em>Parameters for prediction method</em> del reporte de resultados y seleccionando "Guardar enlace como..." (el archivo se guarda como <strong>para.dat</strong>). 
-Este modelo será utilizado en el ejercicio a entregar de este TP.</p>
-</div>
-<h2 id="parte-ii-hmmer">Parte II. HMMer</h2>
+<!--
+## Parte I. Artificial neural networks
+
+En esta sección vamos a utilizar redes neuronales para hacer predicciones como habíamos hecho anteriormente con las PSSM. La idea es similar a la del TP6 donde entrenamos un modelo con péptidos que se unen a MHC. Variaremos los parámetros de modelo para mejorarlo, sensando en cada corrida los indicadores de desempeño del mismo (**Aroc** y **Pearson correlation coefficient**). 
+
+!!! attention "Atención"
+
+    Si no recuerdan qué significan las métricas **Aroc** y **Pearson correlation coefficient (PCC)** diríjanse al TP6 para refrescar estos conceptos.
+
+Para esto vamos a volver a utilizar [EasyPred](https://services.healthtech.dtu.dk/service.php?EasyPred-1.0) y los archivos de **Entrenamiento.set** y **Evaluacion.set** en la carpeta del TP (que descargaron al inicio).
+
+- **Entrenamiento.set** contiene 1200 péptidos de longitud 9, con un valor asociado de afinidad de unión a HLA-A\*02:01 transformado entre 0 y 1. Recuerde que mientras más cercano a 1 el péptido tiene mayor afinidad de unión y que a partir de 0.426 se considera que el péptido es un ligando. 
+- **Evaluacion.set** contiene 66 péptidos, también con sus valores correspondientes de afinidad de unión. 
+
+Para el entrenamiento del modelo se particionará el archivo **Entrenamiento.set**, de tal manera que una parte se usará para entrenar y la restante se empleará para ir monitoreando el proceso de entrenamiento y así evitar el sobreajuste de los pesos de nuestra red.
+
+Luego el archivo **Evaluacion.set** contiene datos independientes, que se utilizarán para evaluar la capacidad de generalización de nuestro modelo. 
+
+!!! tip "Tip"
+
+    Es recomendable abrir los archivos y ver qué es lo que contienen. Esto SIEMPRE es una buena práctica.
+
+!!! note "Nota"
+
+    A lo largo del TP vamos a mantener el valor de *Cutoff for counting an example as a positive example* en 0.5.
+
+!!! attention "Atención"
+
+    Vayan corriendo las diferentes pruebas en diferentes pestañas o guarden el reporte de salida para poder compararlo cuando sea necesario.  
+
+### Primera prueba: *Comprendiendo los resultados que indican el desempeño de la red*
+
+Para nuestro primer modelo vamos a ir a [EasyPred](https://services.healthtech.dtu.dk/service.php?EasyPred-1.0) y cargamos los archivos en los cuadros correspondientes:
+
+<a class="glightbox" href="./img/train_test_upload.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="./img/train_test_upload.png" alt="easypred" style="max-width:70%"></a>
+
+Luego bajamos hasta la opción *Select method* dónde vamos a cambiar de *Matrix method* a *Neural Network*.  
+
+Allí vamos a poder ver que nos habilita a ingresar otros parametros que están relacionados a la arquitectura y el entrenamiento de la red.
+
+Los parámetros que queremos utilizar en este paso son:
+
+* *Number of hidden units*: 2  
+* *Number iterations (epochs) to run neural network*: 300  
+* *Fraction of data to train on (the rest is used to avoid overtraining)*: 0.8  
+* *Learning rate*: 0.05  
+* *Use top sequences for training*  
+
+Es decir dejamos los valores por defecto y le damos *Submit*.
+
+Una vez entrenado el modelo, recuerde que puede chequear el desempeño del mismo iteración a iteración haciendo click en **Output from the neural network program (HOW)** 
+
+<a class="glightbox" href="./img/log_nn.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="./img/log_nn.png" alt="log_nn" style="max-width:70%"></a>
+
+1. ¿Cuál es el máximo valor de PCC alcanzado sobre el set de prueba? (*Maximal test set pearson correlation coefficient sum*) 
+1. ¿En qué iteración se alcanza ese máximo? ¿Qué información le está dando esto sobre el proceso de entrenamiento del modelo?  
+1. ¿Cuáles son los valores de desempeño del modelo sobre el set de evaluación? (PCC y Aroc)
+1. ¿El PCC obtenido en el punto 3. es mayor o menor al obtenido en el punto 1.? ¿Qué implica este resultado?  
+
+### Segunda prueba: *Cambiando el set de entrenamiento*
+
+Mantenga los mismos parámetros que en el paso anterior pero esta vez seleccione *Use bottom sequences for training*. 
+
+1. ¿Cuál es el máximo valor de PCC alcanzado sobre el set de prueba y en qué iteración ocurre esta vez?
+1. ¿Qué valores de desempeño alcanza el modelo aplicado al set de evaluación?
+1. ¿A qué se debe que no coincidan con lo obtenido en la primera prueba?
+
+### Tercera prueba: *Cambiando la arquitectura de la ANN*
+
+Repita los parámetros de la **primera prueba** excepto por el número de neuronas en la capa intermedia o *hidden layer*:
+
+* *Number of hidden units*: 1
+
+Observe el impacto en los parámetros de desempeño del modelo. Guarde los resultados. 
+
+Repita el ensayo esta vez con:
+
+* *Number of hidden units*: 5
+
+Responda a las siguientes preguntas para ambos casos estudiados:
+
+1. ¿Cómo varía la *performance* en el set de prueba?  
+1. ¿Qué impacto tienen estos cambios en la *performance* del set de evaluación?  
+1. ¿Puede elegir un número óptimo de neuronas para la capa oculta?  
+1. ¿Por qué cree que el número de neuronas en la capa oculta tiene tan poco impacto en esta prueba? Piense en el número de datos de entrada y el número de pesos de la red. 
+
+### Cuarta prueba: *Empleando un esquema de validación cruzada*
+
+Como deberían haber notado en las dos primeras pruebas, la partición de los datos que se utilizan en el entrenamiento/prueba influyen significativamente en el desempeño del modelo. 
+
+Como *a priori* uno no puede establecer cuál es la mejor forma de partir los datos en entrenamiento y *test* se recurre a una estrategia denominada *cross-validation*. La técnica de validación cruzada consiste en hacer *N* particiones (por lo general 5) y rotarlas, utilizando N-1 para entrenar y la N-ésima (es decir la que queda afuera) como set de prueba. Esto resulta en N modelos diferentes, cada uno entrenado y probado en datos diferentes. Para realizar predicciones en nuevos sets, como el de evaluación, se realizan predicciones con los N métodos y se promedian sus predicciones.
+
+Para realizar esta prueba vuelvan a los parámetros de la **Primera prueba** pero modifiquen lo siguiente:
+
+* *Number of partitions for cross-validated training*: 5
+
+!!! attention "Este paso puede llevar varios minutos. Paciencia."
+
+1. ¿Encuentran diferencias entre los desempeños de los 5 modelos? ¿Es esperable? ¿Por qué?
+1. Comparen los resultados obtenidos para el set de evaluación con respecto a la primera prueba.
+1. En este caso se usa el ensamble de los 5 modelos para realizar las predicciones sobre el set de evaluación. ¿Cómo piensa que se obtienen los valores predichos?
+
+### Utilizando el modelo entrenado
+
+Como vimos en el TP de PSSM, una vez que uno entrena un método, puede guardar los valores ajustados (ya sea de la matriz en el caso de la PSSM o los pesos de la red en el caso de ANN) y utilizarlos para hacer predicciones en un set nuevo de datos.
+
+!!! attention "Guardar el modelo entrenado"
+
+    Para ello vamos a guardar el modelo entrenado en la **Cuarta prueba** haciendo **click derecho** en *Parameters for prediction method* del reporte de resultados y seleccionando "Guardar enlace como..." (el archivo se guarda como **para.dat**). 
+    Este modelo será utilizado en el ejercicio a entregar de este TP.
+-->
+<h2 id="hmmer">HMMer</h2>
 <div class="admonition attention">
 <p class="admonition-title">Atención</p>
 <p>Antes de comenzar ejecuten en la terminal de su VM <code>sudo apt install hmmer2</code>, para instalar el programa <code>hmmer2</code>.</p>
@@ -1291,8 +1331,9 @@ Para lograr su objetivo utilizará la herramienta **EasyPred**. Como va a realiz
 
     * [Cálculo de coeficientes de correlación en R](https://cran.r-project.org/web/packages/correlation/vignettes/types.html)
     * [Scatterplot en ggplot2](http://www.cookbook-r.com/Graphs/Scatterplots_(ggplot2)/)
--->
-<p><br></p></div>
+
+<br>
+--></div>
 
 
 
