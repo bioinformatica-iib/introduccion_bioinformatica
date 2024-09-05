@@ -42,9 +42,9 @@
 * Familiarizarse con la representación de estructuras químicas (SMILES, SDF/Mol, InchI)
 * Aprender a caracterizar fisicoquímicamente compuestos químicos
 
-## Bases de datos
+## Parte 1: Bases de datos
 
-### PubChem
+### Base de datos 1: PubChem
 La primera que vamos a ver es PubChem, que es una base de datos químicos abierta del National Institutes of Health (NIH).
 
 <br>
@@ -82,7 +82,7 @@ Para cualquier trabajo quimioinformático, la notación que usemos para las mol�
 
 En el caso de que quieran profundizar sobre los diferentes tipos de notación, en la publicación de dicha imagen pueden encontrar más información al respecto. Pueden acceder ingresando a este link: [https://doi.org/10.1186/s13321-020-00466-z](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-020-00466-z)
 
-### ChEMBL
+###  Base de datos 2: ChEMBL
 La segunda base de datos que vamos a ver es ChEMBL, es una base de datos curada manualmente de moléculas bioactivas del Laboratorio Europeo de Biología Molecular (EMBL).
 
 <br>
@@ -143,6 +143,7 @@ Ahora vamos a ingresar y a recorrerla. Pueden acceder ingresando a este link: [S
 
 ¿Que encontramos haciendo este tipo de búsqueda?
 
+## Parte 2: Análisis de datos quimioinformáticos
 ## **Introducción a Google Colab**
 
 ### ¿Qué es Google Colab?
@@ -190,7 +191,7 @@ from rdkit.Chem.Draw import rdMolDraw2D
 
 A lo largo de este práctico vamos a estar explorando las bases de datos quimioinformáticos y trabajando con los comandos básicos de RDKit para trabajar con moléculas.
 
-## Análisis de datos quimioinformáticos
+## Usando RDKit
 RDKit es un software quimioinformático de código abierto.
 
 ![texto](https://www.rdkit.org/docs/_static/logo.png)
@@ -243,7 +244,7 @@ Vamos a generar la variable <b>molecula</b> para guardar la molécula de Benznid
 molecula = Chem.MolFromSmiles(smiles)
 ```
 
-#### Actividad:
+#### Actividad N°1 usando SMILES
 
 💭 ¿Qué pasa si ahora imprimimos la variable?
 ```Python
@@ -259,7 +260,7 @@ Para hacerlo, sólo tienen que ejecutar el nombre de la variable
 molecula
 ```
 
-#### Actividad:
+#### Actividad N°2 usando SMILES
 
 💭 ¿Lo que observas en la celda anterior corresponde con lo que viste en PubChem y en ChEMBL?
 
@@ -271,7 +272,7 @@ Vamos a repetir el paso anterior pero usando la nomenclatura en InChI:
 # Generar la variable "InChI"
 inchi = "InChI=1S/C12H12N4O3/c17-11(14-8-10-4-2-1-3-5-10)9-15-7-6-13-12(15)16(18)19/h1-7H,8-9H2,(H,14,17)"
 ```
-#### Actividad:
+#### Actividad N°1 usando InChI
 💭 ¿Qué pasa si ahora imprimimos la variable?
 
 Ahora vamos a generar la molécula usando RDKit
@@ -340,7 +341,7 @@ h_bond_acceptors = Descriptors.NumHAcceptors(molecula)
 rotatable_bonds = Descriptors.NumRotatableBonds(molecula)
 ```
 
-#### Actividad:
+#### Actividad N°1 usando las propiedades fisicoquímicas
 
 💭 Coincide con peso molecular calculado en el punto anterior con el obtenido por RDKit?
 ```Python
