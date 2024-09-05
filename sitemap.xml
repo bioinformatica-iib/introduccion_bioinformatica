@@ -121,6 +121,21 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP08a_Clustering/</loc>
+         <lastmod>2024-09-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP08b_Data_Mining/</loc>
+         <lastmod>2024-09-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP09_Short-Read-Mapping/</loc>
+         <lastmod>2024-09-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP10_Desorden/</loc>
          <lastmod>2024-09-05</lastmod>
          <changefreq>daily</changefreq>
@@ -137,21 +152,6 @@
     </url>
     <url>
          <loc>https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP12b_AlphaFold/</loc>
-         <lastmod>2024-09-05</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP8a_Clustering/</loc>
-         <lastmod>2024-09-05</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP8b_Data_Mining/</loc>
-         <lastmod>2024-09-05</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP9_Short-Read-Mapping/</loc>
          <lastmod>2024-09-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
