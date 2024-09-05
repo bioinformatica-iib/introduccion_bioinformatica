@@ -21,7 +21,7 @@
 * RStudio (ya instalado en la VM)
 
 ### Recursos Online
-* Introducción a **R**, **TP 5** de esta materia: [Parte 1](../TP05a_R/index.md) y [Parte 2](../TP05b_R/index.md)
+* Introducción a **R**, **TPP** de esta materia: [Parte 1](../TPPa_Programando_en_Biologia/index.md) y [Parte 2](../TPPb_Programando_en_Biologia/index.md)
 * [Clustering jerárquico en **R**](https://www.datanovia.com/en/lessons/agglomerative-hierarchical-clustering/)
 * [Detalles del cálculo de Silhouette (y mucho más)](https://www.cienciadedatos.net/documentos/37_clustering_y_heatmaps#Average_silhouette_method)
 
@@ -33,7 +33,7 @@
 
 ## **Introducción al Tema**
 
-Hoy vamos a retomar el trabajo con **R**. Recomendamos repasar o tener a mano el **TP 5** de esta materia por si necesitan recordar como hacer ciertos comandos ([Parte 1](../TP05a_R/index.md) y [Parte 2](../TP05b_R/index.md)).
+Hoy vamos a retomar el trabajo con **R**. Recomendamos repasar o tener a mano el **TP 5** de esta materia por si necesitan recordar como hacer ciertos comandos ([Parte 1](../TPPa_Programando_en_Biologia/index.md) y [Parte 2](../TPPb_Programando_en_Biologia/index.md)).
 
 Como mencionamos en el **TP 5**, es cada vez más normal que experimentos biológicos nos permitan analizar miles a millones de interacciones biológicas a la vez, lo que resulta en tablas con millones de datos. Esto hace necesario entonces saber utilizar herramientas que nos permitan extraer, o *minar*, información de estos enormes conjuntos de datos. A este proceso lo vamos a denominar *Data Mining*.
 
