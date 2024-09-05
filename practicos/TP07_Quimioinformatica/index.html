@@ -1160,15 +1160,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#recorrer-los-atomos-de-una-molecula" class="md-nav__link">
-    <span class="md-ellipsis">
-      Recorrer los átomos de una molécula
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#propiedades-fisicoquimicas" class="md-nav__link">
     <span class="md-ellipsis">
       Propiedades fisicoquímicas
@@ -1582,51 +1573,6 @@ Este tipo de objeto nos va a permitir realizar trabajar directamente con la mol�
 <span class="n">inchikey</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolToInchiKey</span><span class="p">(</span><span class="n">molecula</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">inchikey</span><span class="p">)</span>
 </code></pre></div>
-<h2 id="recorrer-los-atomos-de-una-molecula">Recorrer los átomos de una molécula</h2>
-<p>Ahora vamos a trabajar con esta molécula:
-<code>CC(C)CC1=CC=C(C=C1)C(C)C(=O)O</code></p>
-<p>Realizá los siguientes pasos:</p>
-<ol>
-<li>
-<p>Identificar como se llama este compuesto</p>
-</li>
-<li>
-<p>Generá la molécula usando RDKit</p>
-</li>
-</ol>
-<div class="highlight"><pre><span></span><code><span class="c1">#Escribí el código acá</span>
-</code></pre></div>
-<p>Ahora vamos a recorrer los átomos de la molécula. Podemos recorrer individualmente los átomos que forman la molécula usando la función <code>GetAtomWithIdx()</code></p>
-<p>A la función tenemos que indicarle cual átomo queremos ver. RDKit le otorga un número a cada átomo, podemos verlo usando el siguiente comando:</p>
-<div class="highlight"><pre><span></span><code><span class="c1">#Imprimir el número de átomo para cada átomo de la molécula</span>
-<span class="k">for</span> <span class="n">atom</span> <span class="ow">in</span> <span class="n">molecula</span><span class="o">.</span><span class="n">GetAtoms</span><span class="p">():</span>
-    <span class="n">atom</span><span class="o">.</span><span class="n">SetAtomMapNum</span><span class="p">(</span><span class="n">atom</span><span class="o">.</span><span class="n">GetIdx</span><span class="p">())</span>
-
-<span class="c1"># Imprimir la molécula</span>
-<span class="n">molecula</span>
-</code></pre></div>
-<p><b> Usando los números o indices que representan a cada átomo, podemos obtener diferentes parámetros. </b></p>
-<p>Con la función <code>.GetSymbol()</code> podemos obtener el simbolo atómico.</p>
-<p>Vamos a probarlo con el átomo del indice 7</p>
-<p></p><div class="highlight"><pre><span></span><code><span class="c1"># Obtener el símbolo atómico del átomo número 7</span>
-<span class="n">molecula</span><span class="o">.</span><span class="n">GetAtomWithIdx</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span><span class="o">.</span><span class="n">GetSymbol</span><span class="p">()</span>
-</code></pre></div>
-💭 ¿Cuál es el simbolo del átomo correspondiente al indice 13?
-<div class="highlight"><pre><span></span><code><span class="c1">#Escribí el código acá</span>
-</code></pre></div>
-<p>Con la función <code>.GetAtomicNum()</code> podemos obtener el número atómico.</p>
-<p>Vamos a probarlo con el átomo del indice 7</p>
-<p>👇</p>
-<p></p><div class="highlight"><pre><span></span><code><span class="c1"># Obtener el número atómico del átomo número 7</span>
-<span class="n">molecula</span><span class="o">.</span><span class="n">GetAtomWithIdx</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span><span class="o">.</span><span class="n">GetAtomicNum</span><span class="p">()</span>
-</code></pre></div>
-💭 ¿Cuál es el número atómico correspondiente al indice 14?
-<div class="highlight"><pre><span></span><code><span class="c1">#Escribí el código acá</span>
-</code></pre></div>
-<p>💭 Recorre los átomos de la molécula y calcula su peso molecular
-</p><div class="highlight"><pre><span></span><code><span class="c1">#Escribí el código acá</span>
-</code></pre></div>
-<p>💭 Buscá la molécula en las bases de dados e indica de que molécula se trata</p>
 <h2 id="propiedades-fisicoquimicas">Propiedades fisicoquímicas</h2>
 <p>Ahora vamos a algunas propiedades fisicoquímicas. </p>
 <p>Para hacerlo, vamos a usar la función <code>Descriptors</code> y <code>Chem</code> de RDKit.</p>
@@ -1670,51 +1616,17 @@ Este tipo de objeto nos va a permitir realizar trabajar directamente con la mol�
 <p>💭 Coincide con peso molecular calculado en el punto anterior con el obtenido por RDKit?
 </p><div class="highlight"><pre><span></span><code><span class="c1">#Escribí el código acá</span>
 </code></pre></div>
-Notaron que la molécula con la que estamos trabajando no contiene hidrógenos? Si no lo notaron, corran el siguiente comando para visualizarla 👇
-<div class="highlight"><pre><span></span><code><span class="c1"># Imprimir la molécula</span>
-<span class="n">molecula</span>
-</code></pre></div>
-<p>Cuando RDKit genera una molécula pero no le agrega hidrógenos automáticamente a la visualización.</p>
-<p>Se pueden agregar usando la función .AddHs(). Vamos a generar una nueva variable llamada molecula_h para llamar a la molécula con hidrógenos.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Agregar hidrógenos a una molécula</span>
-<span class="n">molecula_h</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">AddHs</span><span class="p">(</span><span class="n">molecula</span><span class="p">)</span>
-<span class="n">molecula_h</span>
-</code></pre></div>
-<p>Vamos a verificar que los hidrógenos fueron adicionados contando la cantidad total de átomos de cada molécula</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Imprimir el número de átomos de la molécula sin hidrógenos</span>
-<span class="n">molecula</span><span class="o">.</span><span class="n">GetNumAtoms</span><span class="p">()</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># Imprimir el número de átomos de la molécula con hidrógenos</span>
-<span class="n">molecula_h</span><span class="o">.</span><span class="n">GetNumAtoms</span><span class="p">()</span>
-</code></pre></div>
-<p>💭 En base al número de átomos obtenidos, ¿Consideras que se agregaron la cantidad correcta de hidrógenos?</p>
-<p>Vamos a comparar la molécula con y sin hidrógenos</p>
-<p>👇 Podemos dibujar ambas moléculas usando el siguiente comando 👇</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Dibujar la molécula con y sin hidrógenos</span>
-<span class="n">Draw</span><span class="o">.</span><span class="n">MolsToGridImage</span><span class="p">([</span><span class="n">molecula</span><span class="p">,</span><span class="n">molecula_h</span><span class="p">],</span><span class="n">legends</span><span class="o">=</span><span class="p">[</span><span class="s1">'molecula sin hidrogenos'</span><span class="p">,</span><span class="s1">'molecula con hidrogenos'</span><span class="p">])</span>
-</code></pre></div>
+<h2 id="ejercicio-integrador">Ejercicio integrador</h2>
+<p>Para utilizar resolver este ejercicio seguir los siguientes pasos:
+1. Descargar los datos de este <a href="https://drive.google.com/drive/folders/1b8erRlmMlAOnz9Ni5e9PweGcD3h2o7x4?usp=sharing">link</a>
+2. Cargar esas tablas en tu Google Drive
+3. Ingresar a la siguiente Notebook en este link (próximamente)
+4. Generar una copia de la Notebook en tu drive
+5. Empezá a trabajar!</p>
+<h2 id="material-de-lectura-y-consulta">Material de lectura y consulta</h2>
+<p>Si les interesa profundizar en el uso de Python les dejamos una notebook con algunos comandos para prácticar en este <a href="https://colab.research.google.com/drive/1JlSzqQ5SgvB4UWaH2tmD4hZ61-2TxMPm?usp=sharing">link</a></p>
 <p>Pueden ver todos las funciones de este módulo entrando a este <a href="https://www.rdkit.org/docs/source/rdkit.Chem.rdchem.html">link</a></p>
 <p>En el caso de que quieras profundizar en alguna (o buscar nuevas) ahi encontrarás toda la información</p>
-<h2 id="ejercicio-integrador">Ejercicio integrador</h2>
-<p>Vamos a trabajar con la molécula con PubChem CID 5202</p>
-<ol>
-<li>
-<p>Buscá la molécula en PubChem</p>
-</li>
-<li>
-<p>Buscar el InChI de la molécula</p>
-</li>
-<li>
-<p>Generar la molécula usando RDKit</p>
-</li>
-<li>
-<p>Dibujar la estructura de la molécula</p>
-</li>
-<li>
-<p>Calcular sus propiedades fisicoquímicas</p>
-</li>
-</ol>
-<h2 id="material-de-lectura-y-consulta">Material de lectura y consulta</h2>
 <ul>
 <li><img alt="📎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f4ce.svg" title=":paperclip:"> O'Boyle NM, Banck M, James CA, Morley C, Vandermeersch T, Hutchison GR. Open Babel: An open chemical toolbox. J Cheminform. 2011 Oct 7;3:33. <a href="https://doi.org/10.1186/1758-2946-3-33">DOI:10.1186/1758-2946-3-33</a>. <a href="https://pmid.us/21982300">PMID:21982300</a>.</li>
 <li>
