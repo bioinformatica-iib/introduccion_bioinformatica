@@ -1087,6 +1087,30 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ejercicio-a-informar" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejercicio a informar
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicio a informar">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enunciado" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enunciado
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1592,78 +1616,58 @@ Para obtener la PSSM descarguenla arriba donde dice "<em>Donwload All</em>"</p>
 <li>(h): Y436</li>
 </ul>
 <p><strong>11.</strong> ¿Cuáles creen que son los 4 residuos que podríamos mutar de la lista para generar un impacto en la estructura de nuestra proteína <em>query</em>?</p>
-<!--
-## **Ejercicio a informar**
-
-!!! info 
-
-    <span style="font-weight:bold;">Fecha límite de entrega:</span> Viernes, 12 de Septiembre 2023, 23:59hs.
-
-[:fontawesome-solid-download: Materiales para el Informe](https://drive.google.com/drive/folders/1vHp_eIRVpmuSaQwaoMvBYZCStVAfUB6g?usp=sharing){ .md-button .md-button--primary }
-
-### Enunciado
-Su jefe leyó el siguiente paper acerca de la respuesta inmune de células T CD8+ en pacientes
+<h2 id="ejercicio-a-informar"><strong>Ejercicio a informar</strong></h2>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p><span style="font-weight:bold;">Fecha límite de entrega:</span> Viernes, 12 de Septiembre 2023, 23:59hs.</p>
+</div>
+<p><a class="md-button md-button--primary" href="https://drive.google.com/drive/folders/1vHp_eIRVpmuSaQwaoMvBYZCStVAfUB6g?usp=sharing"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32v242.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64v-32c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"></path></svg></span> Materiales para el Informe</a></p>
+<h3 id="enunciado">Enunciado</h3>
+<p>Su jefe leyó el siguiente paper acerca de la respuesta inmune de células T CD8+ en pacientes
 infectados con COVID-19 y está muy interesado en realizar un estudio preliminar in silico, por
-lo cual lo convoca a usted que es un experto en Inmuno-bioinformática.
-
-Ferretti, Andrew P et al. “Unbiased Screens Show CD8 + T Cells of COVID-19 Patients
+lo cual lo convoca a usted que es un experto en Inmuno-bioinformática.</p>
+<p>Ferretti, Andrew P et al. “Unbiased Screens Show CD8 + T Cells of COVID-19 Patients
 Recognize Shared Epitopes in SARS-CoV-2 that Largely Reside outside the Spike Protein.”
-Immunity vol. 53,5 (2020): 1095-1107.e3. doi:10.1016/j.immuni.2020.10.006
-
-En años anteriores, colegas de su mismo grupo de investigación ya habían realizado estudios
+Immunity vol. 53,5 (2020): 1095-1107.e3. doi:10.1016/j.immuni.2020.10.006</p>
+<p>En años anteriores, colegas de su mismo grupo de investigación ya habían realizado estudios
 bioinformáticos acerca de qué ligandos del alelo HLA-A*02:01 se encuentran en las proteínas
-del SARS-CoV-2.
-
-En ese momento, su jefe había decidido trabajar con las proteínas S (spike o proteína de
+del SARS-CoV-2.</p>
+<p>En ese momento, su jefe había decidido trabajar con las proteínas S (spike o proteína de
 glicoproteína de superficie), E (proteína de la envoltura), M (proteína de membrana) y N
 (fosfoproteína de la nucleocápside) del SARS-CoV-2 ya que creía que eran las que contenían una
 mayor cantidad de péptidos inmunogénicos. (Puede encontrar una descripción de coronavirus y
-sus proteínas en [ViralZone de Expasy](https://viralzone.expasy.org/764?outline=all_by_species).)
-
-A la luz de los nuevos hallazgos, le propone a usted que trabaje con la proteína ORF1ab ([NCBI:
-YP_009724389.1](https://drive.google.com/file/d/1zItqxMxgwmu8ANVSQhApalG0Ad2ZMZlw/view?usp=sharing)) de la cual se originan ~50% de todos péptidos inmunogénicos identificados en
-el estudio de [Ferretti et al., 2020](https://drive.google.com/file/d/1V2AqvOKg4TPksCCIxrOqC9RJdvvQxsey/view?usp=drive_link).
-
-Para comenzar, se le ocurre realizar predicciones utilizando la matriz peso-específica del alelo
+sus proteínas en <a href="https://viralzone.expasy.org/764?outline=all_by_species">ViralZone de Expasy</a>.)</p>
+<p>A la luz de los nuevos hallazgos, le propone a usted que trabaje con la proteína ORF1ab (<a href="https://drive.google.com/file/d/1zItqxMxgwmu8ANVSQhApalG0Ad2ZMZlw/view?usp=sharing">NCBI:
+YP_009724389.1</a>) de la cual se originan ~50% de todos péptidos inmunogénicos identificados en
+el estudio de <a href="https://drive.google.com/file/d/1V2AqvOKg4TPksCCIxrOqC9RJdvvQxsey/view?usp=drive_link">Ferretti et al., 2020</a>.</p>
+<p>Para comenzar, se le ocurre realizar predicciones utilizando la matriz peso-específica del alelo
 HLA-A*02:01 que ya había generado en un curso de Bioinformática tiempo atrás y que sabe que
-funciona muy bien.
-
-Decide además utilizar la herramienta EasyPred que ya usó previamente para generar su matriz
+funciona muy bien.</p>
+<p>Decide además utilizar la herramienta EasyPred que ya usó previamente para generar su matriz
 peso-específica, pero esta vez la usará para realizar una predicción. Por lo tanto, deja el recuadro de entrenamiento vacío e ingresa el archivo con la secuencia de la proteína a evaluar en el recuadro de evaluación. Por último, sube el archivo con la matriz en la sección Load saved
-prediction method.
-
-![Parametros](img/Parameters.jpg)
-
-Selecciona Sort output on predicted values y aprieta el botón Submit query.
-
-!!! Atención
-
-    **Importante:** En la salida no hay logos ni métricas porque ya no se está entrenando ni testeando el modelo. En este punto se está utilizando un modelo ya entrenado (su matriz) para hacer predicciones en datos que nunca vio. La lista de péptidos son todas aquellas secuencias de 9 aminoácidos que se pueden obtener de la secuencia proteica que se le administra al servidor, junto con el valor de predicción.
-
-**1.** Describa lo que observa en el output de EasyPred. ¿Qué operación realiza el servidor
-para obtener las predicciones para cada péptido?
-
-**2.** Realice un histograma que ilustre la distribución de los valores de predicción obtenidos
-para todos los péptidos. ¿Qué característica posee esta distribución?
-
-**3.** Elija las secuencias con valores de predicción mayores 8 y luego seleccione otro conjunto
+prediction method.</p>
+<p><a class="glightbox" href="img/Parameters.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Parametros" src="img/Parameters.jpg"></a></p>
+<p>Selecciona Sort output on predicted values y aprieta el botón Submit query.</p>
+<div class="admonition atención">
+<p class="admonition-title">Atención</p>
+<p><strong>Importante:</strong> En la salida no hay logos ni métricas porque ya no se está entrenando ni testeando el modelo. En este punto se está utilizando un modelo ya entrenado (su matriz) para hacer predicciones en datos que nunca vio. La lista de péptidos son todas aquellas secuencias de 9 aminoácidos que se pueden obtener de la secuencia proteica que se le administra al servidor, junto con el valor de predicción.</p>
+</div>
+<p><strong>1.</strong> Describa lo que observa en el output de EasyPred. ¿Qué operación realiza el servidor
+para obtener las predicciones para cada péptido?</p>
+<p><strong>2.</strong> Realice un histograma que ilustre la distribución de los valores de predicción obtenidos
+para todos los péptidos. ¿Qué característica posee esta distribución?</p>
+<p><strong>3.</strong> Elija las secuencias con valores de predicción mayores 8 y luego seleccione otro conjunto
 de secuencias con valores de predicción entre 2 y 3. Realice logos para ambos conjuntos
-de secuencias. Para realizar los logos, utilice Seq2Logo y genere logos con los péptidos seleccionados ajustando los parámetros según su criterio.
-
-Extra (y por ende opcional)
-
-**4.** En base a los conocimientos adquiridos en su curso de Bioinformática, ¿en qué difieren
-ambos logos? ¿Esto es esperable? ¿Cuál de los logos se parece más al motivo hallado para el alelo HLA-A*02:01? ¿Puede ver claramente las posiciones ancla? ¿Qué aminoácidos son los preferidos para estas posiciones?
-
-**5.** En la Tabla 1 del paper de Ferretti et al., 2020, se listan 29 péptidos que han resultado
+de secuencias. Para realizar los logos, utilice Seq2Logo y genere logos con los péptidos seleccionados ajustando los parámetros según su criterio.</p>
+<p>Extra (y por ende opcional)</p>
+<p><strong>4.</strong> En base a los conocimientos adquiridos en su curso de Bioinformática, ¿en qué difieren
+ambos logos? ¿Esto es esperable? ¿Cuál de los logos se parece más al motivo hallado para el alelo HLA-A*02:01? ¿Puede ver claramente las posiciones ancla? ¿Qué aminoácidos son los preferidos para estas posiciones?</p>
+<p><strong>5.</strong> En la Tabla 1 del paper de Ferretti et al., 2020, se listan 29 péptidos que han resultado
 inmunogénicos al ser testeados con células T CD8+ de memoria de pacientes de COVID-19 con
 el mismo MHC (o HLA). Para la proteína no-estructural ORF1ab y el alelo HLA-A*02:01, se
 identificaron 3 péptidos inmunogénicos compartidos entre pacientes. ¿Qué valores de predicción
 obtuvo para los mismos con su PSSM? ¿Hay alguno de estos péptidos que no predijo? ¿Por qué?
-Comente al respecto.
-
--->
-
+Comente al respecto.</p>
 <!-- Ejercicio a informar 2023 -->
 
 <!-- 
