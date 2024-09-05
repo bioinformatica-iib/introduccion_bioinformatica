@@ -1,6 +1,6 @@
 ![Image](img/banner.jpg){ width="250", align="left" }
 
-# **TP 5b**. R - Programando en biología - Parte 2 { markdown data-toc-label = 'TP 8a' }
+# **TPP**. R - Programando en biología - Parte 2 { markdown data-toc-label = 'TPP' }
 
 <br>
 <br>
@@ -26,8 +26,8 @@ Este es el botón para descargar materiales, en (#) hay que agregar el link corr
 -->
 
 ### Software a usar
-* R (ya instalado en la VM).
-* RStudio (ya instalado en la VM)
+* R
+* RStudio
 
 ### Recursos Online
 * [Curso online de R de Coursera](https://www.coursera.org/learn/r-programming) (se puede hacer gratis) (en ese caso no da certificado)

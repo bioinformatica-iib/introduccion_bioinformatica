@@ -1,5 +1,5 @@
 ![Image](images/featured.jpg){ width="250", align="left" }
-# **TP 12**. Short Read Mapping { markdown data-toc-label = 'TP 13' }
+# **TP 9**. Short Read Mapping { markdown data-toc-label = 'TP 13' }
 
 <br>
 <br>

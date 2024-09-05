@@ -1,6 +1,6 @@
 ![Image](img/clustering2.png){ width="250", align="left" }
 
-# **TP 10a**. Data Mining - Clustering { markdown data-toc-label = 'TP 10a' }
+# **TP 8a**. Data Mining - Clustering { markdown data-toc-label = 'TP 10a' }
 
 <br>
 <br>

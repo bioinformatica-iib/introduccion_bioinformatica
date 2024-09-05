@@ -1,6 +1,6 @@
 ![Image](img/featured.png){ width="250", align="left" }
 
-# **TP 08**. Motivos lineales { markdown data-toc-label = 'TP 08' }
+# **TP 11**. Motivos lineales { markdown data-toc-label = 'TP 08' }
 
 <br>
 <br>
