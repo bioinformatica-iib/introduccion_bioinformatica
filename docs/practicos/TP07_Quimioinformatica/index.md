@@ -293,72 +293,6 @@ Y podemos transformar la nomenclatura de la molécula a InchiKey usando el sigui
 inchikey = Chem.MolToInchiKey(molecula)
 print(inchikey)
 ```
-## Recorrer los átomos de una molécula
-Ahora vamos a trabajar con esta molécula:
-`CC(C)CC1=CC=C(C=C1)C(C)C(=O)O`
-
-Realizá los siguientes pasos:
-
-
-1.  Identificar como se llama este compuesto
-
-2.  Generá la molécula usando RDKit
-
-```Python
-#Escribí el código acá
-```
-
-Ahora vamos a recorrer los átomos de la molécula. Podemos recorrer individualmente los átomos que forman la molécula usando la función `GetAtomWithIdx()`
-
-A la función tenemos que indicarle cual átomo queremos ver. RDKit le otorga un número a cada átomo, podemos verlo usando el siguiente comando:
-
-```Python
-#Imprimir el número de átomo para cada átomo de la molécula
-for atom in molecula.GetAtoms():
-    atom.SetAtomMapNum(atom.GetIdx())
-
-# Imprimir la molécula
-molecula
-```
-
-<b> Usando los números o indices que representan a cada átomo, podemos obtener diferentes parámetros. </b>
-
-Con la función `.GetSymbol()` podemos obtener el simbolo atómico.
-
-Vamos a probarlo con el átomo del indice 7
-
-```Python
-# Obtener el símbolo atómico del átomo número 7
-molecula.GetAtomWithIdx(7).GetSymbol()
-```
-💭 ¿Cuál es el simbolo del átomo correspondiente al indice 13?
-
-```Python
-#Escribí el código acá
-```
-
-Con la función `.GetAtomicNum()` podemos obtener el número atómico.
-
-Vamos a probarlo con el átomo del indice 7
-
-👇
-
-```Python
-# Obtener el número atómico del átomo número 7
-molecula.GetAtomWithIdx(7).GetAtomicNum()
-```
-💭 ¿Cuál es el número atómico correspondiente al indice 14?
-
-```Python
-#Escribí el código acá
-```
-
-💭 Recorre los átomos de la molécula y calcula su peso molecular
-```Python
-#Escribí el código acá
-```
-
-💭 Buscá la molécula en las bases de dados e indica de que molécula se trata
 
 ## Propiedades fisicoquímicas
 
@@ -406,65 +340,24 @@ rotatable_bonds = Descriptors.NumRotatableBonds(molecula)
 ```Python
 #Escribí el código acá
 ```
-Notaron que la molécula con la que estamos trabajando no contiene hidrógenos? Si no lo notaron, corran el siguiente comando para visualizarla 👇
 
-```Python
-# Imprimir la molécula
-molecula
-```
+## Ejercicio integrador
 
-Cuando RDKit genera una molécula pero no le agrega hidrógenos automáticamente a la visualización.
+Para utilizar resolver este ejercicio seguir los siguientes pasos:
+1. Descargar los datos de este [link](https://drive.google.com/drive/folders/1b8erRlmMlAOnz9Ni5e9PweGcD3h2o7x4?usp=sharing)
+2. Cargar esas tablas en tu Google Drive
+3. Ingresar a la siguiente Notebook en este link (próximamente)
+4. Generar una copia de la Notebook en tu drive
+5. Empezá a trabajar!
 
-Se pueden agregar usando la función .AddHs(). Vamos a generar una nueva variable llamada molecula_h para llamar a la molécula con hidrógenos.
 
-```Python
-# Agregar hidrógenos a una molécula
-molecula_h = Chem.AddHs(molecula)
-molecula_h
-```
+## Material de lectura y consulta
 
-Vamos a verificar que los hidrógenos fueron adicionados contando la cantidad total de átomos de cada molécula
-
-```Python
-# Imprimir el número de átomos de la molécula sin hidrógenos
-molecula.GetNumAtoms()
-```
-
-```Python
-# Imprimir el número de átomos de la molécula con hidrógenos
-molecula_h.GetNumAtoms()
-```
-
-💭 En base al número de átomos obtenidos, ¿Consideras que se agregaron la cantidad correcta de hidrógenos?
-
-Vamos a comparar la molécula con y sin hidrógenos
-
-👇 Podemos dibujar ambas moléculas usando el siguiente comando 👇
-
-```Python
-# Dibujar la molécula con y sin hidrógenos
-Draw.MolsToGridImage([molecula,molecula_h],legends=['molecula sin hidrogenos','molecula con hidrogenos'])
-```
+Si les interesa profundizar en el uso de Python les dejamos una notebook con algunos comandos para prácticar en este [link](https://colab.research.google.com/drive/1JlSzqQ5SgvB4UWaH2tmD4hZ61-2TxMPm?usp=sharing)
 
 Pueden ver todos las funciones de este módulo entrando a este [link](https://www.rdkit.org/docs/source/rdkit.Chem.rdchem.html)
 
 En el caso de que quieras profundizar en alguna (o buscar nuevas) ahi encontrarás toda la información
-
-## Ejercicio integrador
-
-Vamos a trabajar con la molécula con PubChem CID 5202
-
-1. Buscá la molécula en PubChem
-
-2. Buscar el InChI de la molécula
-
-3. Generar la molécula usando RDKit
-
-4. Dibujar la estructura de la molécula
-
-5. Calcular sus propiedades fisicoquímicas
-
-## Material de lectura y consulta
 
    * :paperclip: O'Boyle NM, Banck M, James CA, Morley C, Vandermeersch T, Hutchison GR. Open Babel: An open chemical toolbox. J Cheminform. 2011 Oct 7;3:33. [DOI:10.1186/1758-2946-3-33](https://doi.org/10.1186/1758-2946-3-33). [PMID:21982300](https://pmid.us/21982300).
   * :octicons-link-16: [A beginner's guide for understanding Extended-Connectivity Fingerprints(ECFPs). Manish Kumar (2021).](https://chemicbook.com/2021/03/25/a-beginners-guide-for-understanding-extended-connectivity-fingerprints.html) 
