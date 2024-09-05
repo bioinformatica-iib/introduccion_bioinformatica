@@ -1,6 +1,6 @@
 ![Image](img/banner.jpg){ width="250", align="left" }
 
-# **TP 14**. Quimioinformática { markdown data-toc-label = 'TP 14' }
+# **TP 7**. Quimioinformática { markdown data-toc-label = 'TP 14' }
 
 <br>
 <br>
