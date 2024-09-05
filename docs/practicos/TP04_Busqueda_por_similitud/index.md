@@ -12,7 +12,7 @@
 
 ### Slides mostrados en la clase
 
-* :fontawesome-regular-file-pdf: [Slides](https://drive.google.com/file/d/1rRYr-zU-NbZUdOl-ailDsbbwjdMdSESX/view?usp=sharing)
+* :fontawesome-regular-file-pdf: [Slides](https://docs.google.com/presentation/d/1aLdSql8KIhMJuJAoA8iRC6hJABwODWse7F31q3h2lB4/edit?usp=sharing)
 
 ## **Objetivos**
 
