@@ -6,7 +6,7 @@
 <br>
 <br>
 
-[:fontawesome-solid-download: Materiales](https://docs.google.com/presentation/d/1btQ1A5v5FH4ZFB4nk0jLC7G4aDqidsvwSjbPKtQK0go/edit?usp=sharing){ .md-button .md-button--primary }
+[:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1rAKqVS8FcuQhX41daDmInG6lzMWE9voy/view?usp=sharing){ .md-button .md-button--primary }
 
 <br>
 
@@ -16,7 +16,7 @@
 
 ###Slides mostrados en la clase
 
-* :fontawesome-regular-file-pdf: [Slides](https://drive.google.com/file/d/1rKD0D_5b7XSWgSkkgSwPl3FG1Fwr4yIx/view?usp=sharing)
+* :fontawesome-regular-file-pdf: [Slides](https://docs.google.com/presentation/d/1btQ1A5v5FH4ZFB4nk0jLC7G4aDqidsvwSjbPKtQK0go/edit#slide=id.g22023089296_1_0)
 
 <!---
 ### Videos de la clase grabada
