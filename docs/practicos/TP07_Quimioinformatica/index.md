@@ -344,10 +344,15 @@ rotatable_bonds = Descriptors.NumRotatableBonds(molecula)
 ## Ejercicio integrador
 
 Para utilizar resolver este ejercicio seguir los siguientes pasos:
+
 1. Descargar los datos de este [link](https://drive.google.com/drive/folders/1b8erRlmMlAOnz9Ni5e9PweGcD3h2o7x4?usp=sharing)
+
 2. Cargar esas tablas en tu Google Drive
+
 3. Ingresar a la siguiente Notebook en este link (próximamente)
+
 4. Generar una copia de la Notebook en tu drive
+
 5. Empezá a trabajar!
 
 
