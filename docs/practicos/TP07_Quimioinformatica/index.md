@@ -191,12 +191,12 @@ RDKit es un software quimioinformático de código abierto.
 
 Fue desarrollado por Greg Landrum con numerosas contribuciones adicionales de la comunidad de código abierto RDKit. Tiene una interfaz de programación de aplicaciones para Python, Java, C++ y C#
 
-- Homepage: http://www.rdkit.org Documentation, links
-- Github (https://github.com/rdkit) Downloads, bug tracker, git repository
-- Sourceforge (http://sourceforge.net/projects/rdkit) Mailing lists
-- Blog (https://greglandrum.github.io/rdkit-blog/) Tips, tricks, random stuff
-- Tutorials (https://github.com/rdkit/rdkit-tutorials) Jupyter-based tutorials for using the RDKit
-- KNIME integration (https://github.com/rdkit/knime-rdkit) RDKit nodes for KNIME
+- Homepage: [http://www.rdkit.org](http://www.rdkit.org) Documentation, links
+- Github ([https://github.com/rdkit)](https://github.com/rdkit)) Downloads, bug tracker, git repository
+- Sourceforge ([http://sourceforge.net/projects/rdkit](http://sourceforge.net/projects/rdkit)) Mailing lists
+- Blog ([https://greglandrum.github.io/rdkit-blog/](https://greglandrum.github.io/rdkit-blog/)) Tips, tricks, random stuff
+- Tutorials ([https://github.com/rdkit/rdkit-tutorials](https://github.com/rdkit/rdkit-tutorials)) Jupyter-based tutorials for using the RDKit
+- KNIME integration ([https://github.com/rdkit/knime-rdkit](https://github.com/rdkit/knime-rdkit)) RDKit nodes for KNIME
 
 ### Generar una molécula a partir de SMILES
 Para comenzar a trabajar necesitamos ingresar a la computadora el compuesto con el que vamos a trabajar, para eso vamos a generar una variable con la notación del compuesto. En este caso, vamos a usar la notación en smiles.
@@ -345,15 +345,11 @@ rotatable_bonds = Descriptors.NumRotatableBonds(molecula)
 
 Para utilizar resolver este ejercicio seguir los siguientes pasos:
 
-1. Descargar los datos de este [link](https://drive.google.com/drive/folders/1b8erRlmMlAOnz9Ni5e9PweGcD3h2o7x4?usp=sharing)
-
-2. Cargar esas tablas en tu Google Drive
-
-3. Ingresar a la siguiente Notebook en este link (próximamente)
-
-4. Generar una copia de la Notebook en tu drive
-
-5. Empezá a trabajar!
+1.   Descargar los datos de este [link](https://drive.google.com/drive/folders/1b8erRlmMlAOnz9Ni5e9PweGcD3h2o7x4?usp=sharing)
+2.   Cargar esas tablas en tu Google Drive
+3.   Ingresar a la siguiente Notebook en este link (próximamente)
+4.   Generar una copia de la Notebook en tu drive
+5.   Empezá a trabajar!
 
 
 ## Material de lectura y consulta
