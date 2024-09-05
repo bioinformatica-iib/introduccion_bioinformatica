@@ -111,67 +111,67 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP05a_R/</loc>
-         <lastmod>2024-09-05</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP05b_R/</loc>
-         <lastmod>2024-09-05</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP06_HMM/</loc>
          <lastmod>2024-09-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP07_Desorden/</loc>
+         <loc>https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP07_Quimioinformatica/</loc>
          <lastmod>2024-09-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP08_Motivos/</loc>
+         <loc>https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP10_Desorden/</loc>
          <lastmod>2024-09-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP09a_Modelado_Por_Homologia/</loc>
+         <loc>https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP11_Motivos/</loc>
          <lastmod>2024-09-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP09b_AlphaFold/</loc>
+         <loc>https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP12a_Modelado_Por_Homologia/</loc>
          <lastmod>2024-09-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP10a_Clustering/</loc>
+         <loc>https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP12b_AlphaFold/</loc>
          <lastmod>2024-09-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP10b_Data_Mining/</loc>
+         <loc>https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP8a_Clustering/</loc>
          <lastmod>2024-09-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP12_Short-Read-Mapping/</loc>
+         <loc>https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP8b_Data_Mining/</loc>
          <lastmod>2024-09-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP13_Genomica_Comparativa/</loc>
+         <loc>https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP9_Short-Read-Mapping/</loc>
          <lastmod>2024-09-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP14_Quimioinformatica/</loc>
+         <loc>https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TPPa_Programando_en_Biologia/</loc>
+         <lastmod>2024-09-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TPPb_Programando_en_Biologia/</loc>
          <lastmod>2024-09-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TPXX_Filogenia/</loc>
+         <lastmod>2024-09-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TPXX_Genomica_Comparativa/</loc>
          <lastmod>2024-09-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
