@@ -12,6 +12,8 @@
  
 [:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1-RkLAL5jrNtOravsoH9rfQ31hg4p0UYP/view?usp=sharing){ .md-button .md-button--primary }
 
+!!! abstract "Atención: Este TP NO tiene informe."
+
 <!--
 Este es el botón para descargar materiales, en (#) hay que agregar el link correspondiente
 

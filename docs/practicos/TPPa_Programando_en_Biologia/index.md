@@ -21,6 +21,8 @@ Este es el botón para decargar materiales, en (#) hay que agregar el link corre
 * :octicons-video-16: [Cierre de tp](https://youtu.be/Xa7Yq9BHczU)
 -->
 
+!!! abstract "Atención: Este TP NO tiene informe."
+
 ### Software a usar
 * R
 * RStudio

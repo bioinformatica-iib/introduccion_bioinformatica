@@ -6,6 +6,8 @@
 <br>
 <br>
 
+!!! abstract "Atención: Este TP NO tiene informe."
+
 <!--
 ### Slides mostrados en la clase
 
