@@ -144,7 +144,7 @@ Como vimos en el TP de PSSM, una vez que uno entrena un método, puede guardar l
 
 !!! attention "Atención"
 
-    Antes de comenzar ejecuten en la terminal de su VM `sudo apt install hmmer2`, para instalar el programa `hmmer2`.
+    Si están trabajando en una máquina virtual o en su propia PC corran el siguiente comando `sudo apt install hmmer2`, para instalar el programa `hmmer2`.
 
 ### Introducción
 
