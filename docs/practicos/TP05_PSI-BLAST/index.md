@@ -417,7 +417,7 @@ Por esta razón, teniendo en cuenta lo realizado con el servidor Blast2logo, vam
 
 !!! info 
 
-    <span style="font-weight:bold;">Fecha límite de entrega:</span> Viernes, 12 de Septiembre 2023, 23:59hs.
+    <span style="font-weight:bold;">Fecha límite de entrega:</span> Viernes, 20 de Septiembre 2023, 23:59hs.
 
 [:fontawesome-solid-download: Materiales para el Informe](https://drive.google.com/drive/folders/1vHp_eIRVpmuSaQwaoMvBYZCStVAfUB6g?usp=sharing){ .md-button .md-button--primary }
 
