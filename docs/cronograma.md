@@ -20,14 +20,14 @@ tags:
 | Jueves, 22 Agosto 2024 | 9:00 hs |	:material-google-classroom: Presencial | [P3. Alineamientos de secuencias de a pares](practicos/TP03_Alineamientos/index.md)| :fontawesome-solid-hammer: Práctica |	G. Romer |
 | Martes, 27 Agosto 2024 | 9:00 hs |	:material-google-classroom: Presencial | [T4. Alineamientos múltiples](teoricas/4-Teorica-Cuatro/index.md) | :fontawesome-solid-brain: Teórica |	F. Agüero |
 | Jueves, 29 Agosto 2024 | 9:00 hs |	:material-google-classroom: Presencial | [P4. Búsqueda de secuencias por similitud y Alineamientos Múltiples](practicos/TP04_Busqueda_por_similitud/index.md) | :fontawesome-solid-hammer: Práctica |	G. Romer |
-| Martes, 03 Septiembre 2024 | 9:00 hs | 	Libre |  | :fontawesome-solid-brain: Teórica |	 |
+| Martes, 03 Septiembre 2024 | 9:00 hs | |	LIBRE |   |	 |
 | Jueves, 05 Septiembre 2024 | 9:00 hs |	:material-google-classroom: Presencial | [P5. Perfiles de secuencia y PSI-BLAST](practicos/TP05_PSI-BLAST/index.md) | :fontawesome-solid-hammer: Práctica |	H. García |
 | Martes, 10 Septiembre 2024 | 9:00 hs |	:material-google-classroom: Presencial | T6. HMM | :fontawesome-solid-brain: Teórica |	L. Chemes |
-| Jueves, 12 Septiembre 2024 | 9:00 hs |	:material-google-classroom: Presencial | P6. HMM | :fontawesome-solid-hammer: Práctica |	H. García |
+| Jueves, 12 Septiembre 2024 | 9:00 hs |	:material-google-classroom: Presencial | [P6. HMM](practicos/TP06_HMM/index.md) | :fontawesome-solid-hammer: Práctica |	H. García |
 | Martes, 17 Septiembre 2024 | 9:00 hs |	:material-google-classroom: Presencial | T7. Quimioinformática | :fontawesome-solid-brain: Teórica |	F. Agüero |
-| Jueves, 19 Septiembre 2024 | 9:00 hs |	:material-google-classroom: Presencial | P7. Quimioinformática | :fontawesome-solid-hammer: Práctica |	M. Didier Garnham |
-| Martes, 24 Septiembre 2024 | 9:00 hs |	:material-google-classroom: Presencial | PP. Programando en Biología | :fontawesome-solid-hammer: Práctica |	M. Didier Garnham |
-| Jueves, 26 Septiembre 2024 | 9:00 hs |	:material-google-classroom: Presencial | PP. Programando en Biología | :fontawesome-solid-hammer: Práctica |	M. Didier Garnham |
+| Jueves, 19 Septiembre 2024 | 9:00 hs |	:material-google-classroom: Presencial | [P7. Quimioinformática](practicos/TP07_Quimioinformatica/index.md) | :fontawesome-solid-hammer: Práctica |	M. Didier Garnham |
+| Martes, 24 Septiembre 2024 | 9:00 hs |	:material-google-classroom: Presencial | [PP. Programando en Biología](practicos/TPPa_Programando_en_Biologia/index.md) | :fontawesome-solid-hammer: Práctica |	M. Didier Garnham |
+| Jueves, 26 Septiembre 2024 | 9:00 hs |	:material-google-classroom: Presencial | [PP. Programando en Biología](practicos/TPPb_Programando_en_Biologia/index.md)  | :fontawesome-solid-hammer: Práctica |	M. Didier Garnham |
 | Martes, 01 Octubre 2024 | 9:00 hs |	:material-google-classroom: Presencial | T8. Data clustering | :fontawesome-solid-brain: Teórica |	F. Agüero |
 | Jueves, 03 Octubre 2024 | 9:00 hs |	:material-google-classroom: Presencial | P8. Data Clustering y Data Mining | :fontawesome-solid-hammer: Práctica |	G. Romer |
 | Martes, 08 Octubre 2024 | 9:00 hs |	:material-google-classroom: Presencial | T9. Secuenciación y ensamblado de genomas | :fontawesome-solid-brain: Teórica |	F. Agüero |

@@ -102,7 +102,7 @@ Por convención los colores que se utilizan son:
 * <span style="color:red;font-weight:bold;">Rojo</span>: Aminoácidos ácidos [DE]  
 * <span style="color:blue;font-weight:bold;">Azul</span>: Aminoácidos básicos [HKR]  
 * <span style="color:black;font-weight:bold;">Negro</span>: Aminoácidos hidrofóbicos [ACFILMPVW]  
-* <span style="color:green;font-weight:bold;">Verde</span>: Aminoácidos neutros [GNQSTY]  
+* <span style="color:green;font-weight:bold;">Verde</span>: Aminoácidos polares y glicina [GNQSTY]  
 
 !!! attention "Atención"
 
