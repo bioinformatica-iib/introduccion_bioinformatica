@@ -412,7 +412,7 @@ Por esta razón, teniendo en cuenta lo realizado con el servidor Blast2logo, vam
 
 **11.** ¿Cuáles creen que son los 4 residuos que podríamos mutar de la lista para generar un impacto en la estructura de nuestra proteína *query*?
 
-<!--
+
 ## **Ejercicio a informar**
 
 !!! info 
@@ -482,7 +482,6 @@ identificaron 3 péptidos inmunogénicos compartidos entre pacientes. ¿Qué val
 obtuvo para los mismos con su PSSM? ¿Hay alguno de estos péptidos que no predijo? ¿Por qué?
 Comente al respecto.
 
--->
 
 <!-- Ejercicio a informar 2023 -->
 
