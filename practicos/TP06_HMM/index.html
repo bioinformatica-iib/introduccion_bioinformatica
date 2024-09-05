@@ -13,6 +13,10 @@
         <link rel="canonical" href="https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP06_HMM/">
       
       
+        <link rel="prev" href="../TP05_PSI-BLAST/">
+      
+      
+        <link rel="next" href="../TP07_Quimioinformatica/">
       
       
       <link rel="icon" href="../../img/logo-unsam-negro.png">
@@ -20,7 +24,7 @@
     
     
       
-        <title>Index - Introducción a la Bioinformática</title>
+        <title>TP 6 - HMMs - Introducción a la Bioinformática</title>
       
     
     
@@ -116,7 +120,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Index
+              TP 6 - HMMs
             
           </span>
         </div>
@@ -336,10 +340,12 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../inicio/" class="md-tabs__link">
           
   
@@ -685,23 +691,28 @@
       
   
   
+    
   
   
+  
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
         
           
-          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -712,7 +723,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
             Prácticos
@@ -849,10 +860,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../T0P6_HMM/index.md" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    TP 6 - HMMs
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -861,6 +892,130 @@
   
 
       </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objetivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objetivos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hmmer" class="md-nav__link">
+    <span class="md-ellipsis">
+      HMMer
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="HMMer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introduccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introducción
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#construccion-de-un-perfil" class="md-nav__link">
+    <span class="md-ellipsis">
+      Construcción de un perfil
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calibracion-del-perfil" class="md-nav__link">
+    <span class="md-ellipsis">
+      Calibración del perfil
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#busqueda-en-bases-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Búsqueda en bases de datos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#busqueda-en-bases-de-datos-reales" class="md-nav__link">
+    <span class="md-ellipsis">
+      Búsqueda en bases de datos reales
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Búsqueda en bases de datos reales">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#modos-de-alineamiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modos de alineamiento
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bases-de-datos-de-hmm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bases de datos de HMM
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adicional-alineamientos-multiples-con-hmm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adicional: Alineamientos múltiples con HMM
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
