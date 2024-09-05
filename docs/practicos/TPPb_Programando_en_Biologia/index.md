@@ -14,7 +14,7 @@
 
 <!--
 Este es el botón para descargar materiales, en (#) hay que agregar el link correspondiente
--->
+
 ### Slides mostrados en clase
 * :fontawesome-regular-file-pdf: [Slides TP](https://drive.google.com/file/d/1_0sLD3ICSRE7ZC5IiyIDMEtt7RXsgHRz/view?usp=sharing)
 
@@ -23,6 +23,7 @@ Este es el botón para descargar materiales, en (#) hay que agregar el link corr
 
 ### Video de la clase grabada
 * :octicons-video-16: [Cierre de tp](https://youtu.be/yrtMNj23f9U)
+-->
 
 ### Software a usar
 * R (ya instalado en la VM).

@@ -6,6 +6,7 @@
 <br>
 <br>
 
+<!--
 ### Slides mostrados en la clase
 
 * :fontawesome-regular-file-pdf: [Slides TP](https://docs.google.com/presentation/d/19LPLMAeDRxDRKSPgPx7YxJFXVuzDa5k_6WfGl7oJN28/edit?usp=sharing)
@@ -13,7 +14,7 @@
 ### Videos de la clase grabada
 
 * :octicons-video-16: [Cierre TP](https://youtu.be/ihqPF9RgthQ)
-
+-->
 
 
 ### Software a usar
