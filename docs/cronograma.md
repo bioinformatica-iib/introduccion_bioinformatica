@@ -22,7 +22,7 @@ tags:
 | Jueves, 29 Agosto 2024 | 9:00 hs |	:material-google-classroom: Presencial | [P4. Búsqueda de secuencias por similitud y Alineamientos Múltiples](practicos/TP04_Busqueda_por_similitud/index.md) | :fontawesome-solid-hammer: Práctica |	G. Romer |
 | Martes, 03 Septiembre 2024 | 9:00 hs | |	LIBRE |   |	 |
 | Jueves, 05 Septiembre 2024 | 9:00 hs |	:material-google-classroom: Presencial | [P5. Perfiles de secuencia y PSI-BLAST](practicos/TP05_PSI-BLAST/index.md) | :fontawesome-solid-hammer: Práctica |	H. García |
-| Martes, 10 Septiembre 2024 | 9:00 hs |	:material-google-classroom: Presencial | T6. HMM | :fontawesome-solid-brain: Teórica |	L. Chemes |
+| Martes, 10 Septiembre 2024 | 9:00 hs |	:material-google-classroom: Presencial | [T6. HMM](teoricas/6-Teorica-Seis/index.md) | :fontawesome-solid-brain: Teórica |	L. Chemes |
 | Jueves, 12 Septiembre 2024 | 9:00 hs |	:material-google-classroom: Presencial | [P6. HMM](practicos/TP06_HMM/index.md) | :fontawesome-solid-hammer: Práctica |	H. García |
 | Martes, 17 Septiembre 2024 | 9:00 hs |	:material-google-classroom: Presencial | T7. Quimioinformática | :fontawesome-solid-brain: Teórica |	F. Agüero |
 | Jueves, 19 Septiembre 2024 | 9:00 hs |	:material-google-classroom: Presencial | [P7. Quimioinformática](practicos/TP07_Quimioinformatica/index.md) | :fontawesome-solid-hammer: Práctica |	M. Didier Garnham |
