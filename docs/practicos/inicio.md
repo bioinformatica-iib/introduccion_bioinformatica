@@ -64,5 +64,6 @@ Respecto del formato:
 
     El formato será considerado en la puntuación final del trabajo práctico
 
-* Consulten siempre que tengan dudas !!
+La presentacion con recomendaciones de para la elaboracion de informes está en este [link](https://drive.google.com/file/d/1ykGDpSjBzgdVvl2JRtzDZy_pNIQZutS9/view?usp=sharing)
 
+* Consulten siempre que tengan dudas !!
