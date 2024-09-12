@@ -1,6 +1,6 @@
 ![Image](img/banner.jpg){ width="250", align="left" }
 
-# **TP 5**. Perfiles de secuencias y PSI-BLAST { markdown data-toc-label = 'TP 6' }
+# **TP 5**. Perfiles de secuencias y PSI-BLAST { markdown data-toc-label = 'TP 5' }
 
 <br>
 <br>
@@ -470,6 +470,10 @@ para todos los péptidos. ¿Qué característica posee esta distribución?
 de secuencias con valores de predicción entre 2 y 3. Realice logos para ambos conjuntos
 de secuencias. Para realizar los logos, utilice Seq2Logo y genere logos con los péptidos seleccionados ajustando los parámetros según su criterio.
 
+!!! Atención
+
+    **Importante:** Seq2Logo toma como máximo 50 secuencias para construir el logo!
+
 Extra (y por ende opcional)
 
 **4.** En base a los conocimientos adquiridos en su curso de Bioinformática, ¿en qué difieren
@@ -482,6 +486,11 @@ identificaron 3 péptidos inmunogénicos compartidos entre pacientes. ¿Qué val
 obtuvo para los mismos con su PSSM? ¿Hay alguno de estos péptidos que no predijo? ¿Por qué?
 Comente al respecto.
 
+## Material extra para practicar
+
+* Handout 1: [The Psi-Blast alignment scoring matrix](https://drive.google.com/file/d/1Xc3EqsP72Gnh_xuo45Mp4UMmgwDYzLHd/view?usp=sharing)
+
+* Handout 2: [Estimation of pseudo counts](https://drive.google.com/file/d/1cSW6kJu11_XYR8GGqDMpUa9e6Famp9le/view?usp=drive_link)
 
 <!-- Ejercicio a informar 2023 -->
 
