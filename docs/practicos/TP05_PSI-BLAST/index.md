@@ -488,9 +488,9 @@ Comente al respecto.
 
 ## Material extra para practicar
 
-* Handout 1: [The Psi-Blast alignment scoring matrix](https://drive.google.com/file/d/1Xc3EqsP72Gnh_xuo45Mp4UMmgwDYzLHd/view?usp=sharing)
+* Handout 1: [The Psi-Blast alignment scoring matrix](https://drive.google.com/file/d/1cSW6kJu11_XYR8GGqDMpUa9e6Famp9le/view?usp=drive_link)
 
-* Handout 2: [Estimation of pseudo counts](https://drive.google.com/file/d/1cSW6kJu11_XYR8GGqDMpUa9e6Famp9le/view?usp=drive_link)
+* Handout 2: [Estimation of pseudo counts](https://drive.google.com/file/d/1Xc3EqsP72Gnh_xuo45Mp4UMmgwDYzLHd/view?usp=sharing)
 
 <!-- Ejercicio a informar 2023 -->
 
