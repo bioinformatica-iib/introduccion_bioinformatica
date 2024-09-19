@@ -1,6 +1,6 @@
 ![Image](img/banner.jpg){ width="250", align="left" }
 
-# **TP 7**. Quimioinformática { markdown data-toc-label = 'TP 14' }
+# **TP 7**. Quimioinformática { markdown data-toc-label = 'TP 7' }
 
 <br>
 <br>
@@ -39,7 +39,7 @@
 ## Objetivos
 
 * Conocer las bases de datos de compuestos químicos: PubChem, ChEMBL, SureChEMBL
-* Familiarizarse con la representación de estructuras químicas (SMILES, SDF/Mol, InchI)
+* Familiarizarse con la representación de estructuras químicas (SMILES, InchI)
 * Aprender a caracterizar fisicoquímicamente compuestos químicos
 
 ## Parte 1: Bases de datos
@@ -126,20 +126,23 @@ En 2013 la empresa Digital Science (dueña de SureChem) transfirió esta base de
 
 <br>
 
-Ahora vamos a ingresar y a recorrerla. Pueden acceder ingresando a este link: [SureChEMBL](https://www.surechembl.org/search/). En la página principal podemos ver que tenemos la opción de cargar una molécula en el recuadro blanco o de cargarla usando Marvin Js.
+Ahora vamos a ingresar y a recorrerla. Pueden acceder ingresando a este link: [SureChEMBL](https://www.surechembl.org). En la página principal podemos ver que tenemos la opción de cargar una molécula en el recuadro blanco o de cargarla usando Marvin Js.
 
 #### Actividad N°1 usando SureChEMBL
-1.   Dentro del recuadro de Marvin Js, pegar este smiles
+1.   Ingresar a la sección "Structure Search" que se encuentra debajo de la caja de búsqueda. 
+2.   Dentro del recuadro de Marvin Js, pegar este smiles
 `CC(C)(C)C1=CC(=C(C=C1NC(=O)C2=CNC3=CC=CC=C3C2=O)O)C(C)(C)C`
-2.   Seleccionar la búsqueda según Identical
-3.   Apretar el recuadro de "Search"
-4.   Apretar en el símbolo + y luego "View chemical page"
+3.   Seleccionar la búsqueda según Identical
+4.   Apretar el recuadro de "Search"
+5.   Seleccionar "See More" en la molécula "SCHEMBL351373"
+
+¿Cuántas patentes tiene este compuesto?
 
 #### Actividad N°2 usando SureChEMBL
-1.   Dentro del recuadro de Marvin Js, pegar este smiles
-`O=C1C=CNC2=CC=CC=C12`
-2.   Seleccionar la búsqueda según Substructure
-3.   Apretar el recuadro de "Search"
+1.   Ingresar a la sección "Structure Search" que se encuentra debajo de la caja de búsqueda. 
+2.   Dentro del recuadro de Marvin Js, pegar este smiles `O=C1C=CNC2=CC=CC=C12`
+3.   Seleccionar la búsqueda según Substructure
+4.   Apretar el recuadro de "Search"
 
 ¿Que encontramos haciendo este tipo de búsqueda?
 
@@ -178,7 +181,7 @@ Si compararáramos las librerías de Python con libros físicos, podríamos deci
 !pip install rdkit
 ```
 
-Ahora vamos a importar las librerias que vamos a usar
+Ahora vamos a importar las librerias que vamos a usar. 
 
 ```Python
 # Importar libreria de RDKit
@@ -248,17 +251,16 @@ molecula = Chem.MolFromSmiles(smiles)
 
 💭 ¿Qué pasa si ahora imprimimos la variable?
 ```Python
-#Escribí el código acá
+print(molecula)
 ```
 
-Ahora vamos a visualizarla!
-
-Para hacerlo, sólo tienen que ejecutar el nombre de la variable
-
+💭 ¿Qué pasa si imprimo sólo la molécula?
 ```Python
-# Visualizar la molécula
 molecula
 ```
+
+Imprimiendo sólo la variable que generamos con la información de la molécula podemos visualizarla!
+
 
 #### Actividad N°2 usando SMILES
 
@@ -352,11 +354,9 @@ rotatable_bonds = Descriptors.NumRotatableBonds(molecula)
 
 Para utilizar resolver este ejercicio seguir los siguientes pasos:
 
-1.   Descargar los datos de este [link](https://drive.google.com/drive/folders/1b8erRlmMlAOnz9Ni5e9PweGcD3h2o7x4?usp=sharing)
-2.   Cargar esas tablas en tu Google Drive
-3.   Ingresar a la siguiente Notebook en este link (próximamente)
-4.   Generar una copia de la Notebook en tu drive
-5.   Empezá a trabajar!
+1.   Ingresar a la siguiente Notebook en este [link](https://colab.research.google.com/drive/1-nfKcTWlCiQDqLUbGP1Avd5pbbu-LjBj?usp=drive_link)
+2.   Generar una copia de la Notebook en tu drive
+3.   Empezá a trabajar!
 
 
 ## Material de lectura y consulta

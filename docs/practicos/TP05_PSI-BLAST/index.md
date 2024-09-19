@@ -492,6 +492,8 @@ Comente al respecto.
 
 * Handout 2: [Estimation of pseudo counts](https://drive.google.com/file/d/1Xc3EqsP72Gnh_xuo45Mp4UMmgwDYzLHd/view?usp=sharing)
 
+* Resolución del ejercicio [Estimation of pseudo counts](https://drive.google.com/file/d/1xS-Mu46YknzkbIbOyqlJVtf4couZNeEu/view?usp=sharing )
+
 <!-- Ejercicio a informar 2023 -->
 
 <!-- 
