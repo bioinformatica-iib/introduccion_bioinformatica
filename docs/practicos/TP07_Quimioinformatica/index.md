@@ -147,6 +147,21 @@ Ahora vamos a ingresar y a recorrerla. Pueden acceder ingresando a este link: [S
 ¿Que encontramos haciendo este tipo de búsqueda?
 
 ## Parte 2: Análisis de datos quimioinformáticos
+
+## Usando RDKit
+RDKit es un software quimioinformático de código abierto.
+
+![texto](https://www.rdkit.org/docs/_static/logo.png)
+
+Fue desarrollado por Greg Landrum con numerosas contribuciones adicionales de la comunidad de código abierto RDKit. Tiene una interfaz de programación de aplicaciones para Python, Java, C++ y C#
+
+- Homepage: [http://www.rdkit.org](http://www.rdkit.org) Documentation, links
+- Github ([https://github.com/rdkit)](https://github.com/rdkit)) Downloads, bug tracker, git repository
+- Sourceforge ([http://sourceforge.net/projects/rdkit](http://sourceforge.net/projects/rdkit)) Mailing lists
+- Blog ([https://greglandrum.github.io/rdkit-blog/](https://greglandrum.github.io/rdkit-blog/)) Tips, tricks, random stuff
+- Tutorials ([https://github.com/rdkit/rdkit-tutorials](https://github.com/rdkit/rdkit-tutorials)) Jupyter-based tutorials for using the RDKit
+- KNIME integration ([https://github.com/rdkit/knime-rdkit](https://github.com/rdkit/knime-rdkit)) RDKit nodes for KNIME
+
 ## **Introducción a Google Colab**
 
 ### ¿Qué es Google Colab?
@@ -193,20 +208,6 @@ from rdkit.Chem.Draw import rdMolDraw2D
 ```
 
 A lo largo de este práctico vamos a estar explorando las bases de datos quimioinformáticos y trabajando con los comandos básicos de RDKit para trabajar con moléculas.
-
-## Usando RDKit
-RDKit es un software quimioinformático de código abierto.
-
-![texto](https://www.rdkit.org/docs/_static/logo.png)
-
-Fue desarrollado por Greg Landrum con numerosas contribuciones adicionales de la comunidad de código abierto RDKit. Tiene una interfaz de programación de aplicaciones para Python, Java, C++ y C#
-
-- Homepage: [http://www.rdkit.org](http://www.rdkit.org) Documentation, links
-- Github ([https://github.com/rdkit)](https://github.com/rdkit)) Downloads, bug tracker, git repository
-- Sourceforge ([http://sourceforge.net/projects/rdkit](http://sourceforge.net/projects/rdkit)) Mailing lists
-- Blog ([https://greglandrum.github.io/rdkit-blog/](https://greglandrum.github.io/rdkit-blog/)) Tips, tricks, random stuff
-- Tutorials ([https://github.com/rdkit/rdkit-tutorials](https://github.com/rdkit/rdkit-tutorials)) Jupyter-based tutorials for using the RDKit
-- KNIME integration ([https://github.com/rdkit/knime-rdkit](https://github.com/rdkit/knime-rdkit)) RDKit nodes for KNIME
 
 ### Generar una molécula a partir de SMILES
 Para comenzar a trabajar necesitamos ingresar a la computadora el compuesto con el que vamos a trabajar, para eso vamos a generar una variable con la notación del compuesto. En este caso, vamos a usar la notación en smiles.
