@@ -1451,7 +1451,7 @@
 <h2 id="objetivos">Objetivos</h2>
 <ul>
 <li>Conocer las bases de datos de compuestos químicos: PubChem, ChEMBL, SureChEMBL</li>
-<li>Familiarizarse con la representación de estructuras químicas (SMILES, SDF/Mol, InchI)</li>
+<li>Familiarizarse con la representación de estructuras químicas (SMILES, InchI)</li>
 <li>Aprender a caracterizar fisicoquímicamente compuestos químicos</li>
 </ul>
 <h2 id="parte-1-bases-de-datos">Parte 1: Bases de datos</h2>
@@ -1514,19 +1514,21 @@ Recopila información sobre estructuras químicas, identificadores, propiedades 
 <p><br></p>
 <p><a class="glightbox" href="img/SureChem.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img _="," align="center" alt="Image" src="img/SureChem.jpg" width="600"></a></p>
 <p><br></p>
-<p>Ahora vamos a ingresar y a recorrerla. Pueden acceder ingresando a este link: <a href="https://www.surechembl.org/search/">SureChEMBL</a>. En la página principal podemos ver que tenemos la opción de cargar una molécula en el recuadro blanco o de cargarla usando Marvin Js.</p>
+<p>Ahora vamos a ingresar y a recorrerla. Pueden acceder ingresando a este link: <a href="https://www.surechembl.org">SureChEMBL</a>. En la página principal podemos ver que tenemos la opción de cargar una molécula en el recuadro blanco o de cargarla usando Marvin Js.</p>
 <h4 id="actividad-n1-usando-surechembl">Actividad N°1 usando SureChEMBL</h4>
 <ol>
+<li>Ingresar a la sección "Structure Search" que se encuentra debajo de la caja de búsqueda. </li>
 <li>Dentro del recuadro de Marvin Js, pegar este smiles
 <code>CC(C)(C)C1=CC(=C(C=C1NC(=O)C2=CNC3=CC=CC=C3C2=O)O)C(C)(C)C</code></li>
 <li>Seleccionar la búsqueda según Identical</li>
 <li>Apretar el recuadro de "Search"</li>
-<li>Apretar en el símbolo + y luego "View chemical page"</li>
+<li>Seleccionar "See More" en la molécula "SCHEMBL351373"</li>
 </ol>
+<p>¿Cuántas patentes tiene este compuesto?</p>
 <h4 id="actividad-n2-usando-surechembl">Actividad N°2 usando SureChEMBL</h4>
 <ol>
-<li>Dentro del recuadro de Marvin Js, pegar este smiles
-<code>O=C1C=CNC2=CC=CC=C12</code></li>
+<li>Ingresar a la sección "Structure Search" que se encuentra debajo de la caja de búsqueda. </li>
+<li>Dentro del recuadro de Marvin Js, pegar este smiles <code>O=C1C=CNC2=CC=CC=C12</code></li>
 <li>Seleccionar la búsqueda según Substructure</li>
 <li>Apretar el recuadro de "Search"</li>
 </ol>
@@ -1558,7 +1560,7 @@ Recopila información sobre estructuras químicas, identificadores, propiedades 
 <div class="highlight"><pre><span></span><code><span class="c1"># Instalar las librerias</span>
 <span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="n">rdkit</span>
 </code></pre></div>
-<p>Ahora vamos a importar las librerias que vamos a usar</p>
+<p>Ahora vamos a importar las librerias que vamos a usar. </p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Importar libreria de RDKit</span>
 <span class="kn">from</span> <span class="nn">rdkit</span> <span class="kn">import</span> <span class="n">Chem</span>
 <span class="kn">from</span> <span class="nn">rdkit.Chem</span> <span class="kn">import</span> <span class="n">AllChem</span>
@@ -1602,13 +1604,12 @@ Vamos a usarla mucho, a medida que la usemos vamos a ver que se puede hacer con 
 </code></pre></div>
 <h4 id="actividad-n1-usando-smiles">Actividad N°1 usando SMILES</h4>
 <p>💭 ¿Qué pasa si ahora imprimimos la variable?
-</p><div class="highlight"><pre><span></span><code><span class="c1">#Escribí el código acá</span>
+</p><div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">molecula</span><span class="p">)</span>
 </code></pre></div>
-<p>Ahora vamos a visualizarla!</p>
-<p>Para hacerlo, sólo tienen que ejecutar el nombre de la variable</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Visualizar la molécula</span>
-<span class="n">molecula</span>
+<p>💭 ¿Qué pasa si imprimo sólo la molécula?
+</p><div class="highlight"><pre><span></span><code><span class="n">molecula</span>
 </code></pre></div>
+<p>Imprimiendo sólo la variable que generamos con la información de la molécula podemos visualizarla!</p>
 <h4 id="actividad-n2-usando-smiles">Actividad N°2 usando SMILES</h4>
 <p>💭 ¿Lo que observas en la celda anterior corresponde con lo que viste en PubChem y en ChEMBL?</p>
 <h3 id="generar-una-molecula-a-partir-de-inchi">Generar una molécula a partir de InChI</h3>
@@ -1679,9 +1680,7 @@ Este tipo de objeto nos va a permitir realizar trabajar directamente con la mol�
 <h2 id="ejercicio-integrador">Ejercicio integrador</h2>
 <p>Para utilizar resolver este ejercicio seguir los siguientes pasos:</p>
 <ol>
-<li>Descargar los datos de este <a href="https://drive.google.com/drive/folders/1b8erRlmMlAOnz9Ni5e9PweGcD3h2o7x4?usp=sharing">link</a></li>
-<li>Cargar esas tablas en tu Google Drive</li>
-<li>Ingresar a la siguiente Notebook en este link (próximamente)</li>
+<li>Ingresar a la siguiente Notebook en este <a href="https://colab.research.google.com/drive/1-nfKcTWlCiQDqLUbGP1Avd5pbbu-LjBj?usp=drive_link">link</a></li>
 <li>Generar una copia de la Notebook en tu drive</li>
 <li>Empezá a trabajar!</li>
 </ol>
