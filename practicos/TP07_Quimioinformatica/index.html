@@ -1108,6 +1108,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#usando-rdkit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usando RDKit
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#introduccion-a-google-colab" class="md-nav__link">
     <span class="md-ellipsis">
       Introducción a Google Colab
@@ -1134,21 +1143,6 @@
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#usando-rdkit" class="md-nav__link">
-    <span class="md-ellipsis">
-      Usando RDKit
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Usando RDKit">
-      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#generar-una-molecula-a-partir-de-smiles" class="md-nav__link">
@@ -1534,6 +1528,18 @@ Recopila información sobre estructuras químicas, identificadores, propiedades 
 </ol>
 <p>¿Que encontramos haciendo este tipo de búsqueda?</p>
 <h2 id="parte-2-analisis-de-datos-quimioinformaticos">Parte 2: Análisis de datos quimioinformáticos</h2>
+<h2 id="usando-rdkit">Usando RDKit</h2>
+<p>RDKit es un software quimioinformático de código abierto.</p>
+<p><a class="glightbox" href="https://www.rdkit.org/docs/_static/logo.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="texto" src="https://www.rdkit.org/docs/_static/logo.png"></a></p>
+<p>Fue desarrollado por Greg Landrum con numerosas contribuciones adicionales de la comunidad de código abierto RDKit. Tiene una interfaz de programación de aplicaciones para Python, Java, C++ y C#</p>
+<ul>
+<li>Homepage: <a href="http://www.rdkit.org">http://www.rdkit.org</a> Documentation, links</li>
+<li>Github (<a href="https://github.com/rdkit">https://github.com/rdkit)</a>) Downloads, bug tracker, git repository</li>
+<li>Sourceforge (<a href="http://sourceforge.net/projects/rdkit">http://sourceforge.net/projects/rdkit</a>) Mailing lists</li>
+<li>Blog (<a href="https://greglandrum.github.io/rdkit-blog/">https://greglandrum.github.io/rdkit-blog/</a>) Tips, tricks, random stuff</li>
+<li>Tutorials (<a href="https://github.com/rdkit/rdkit-tutorials">https://github.com/rdkit/rdkit-tutorials</a>) Jupyter-based tutorials for using the RDKit</li>
+<li>KNIME integration (<a href="https://github.com/rdkit/knime-rdkit">https://github.com/rdkit/knime-rdkit</a>) RDKit nodes for KNIME</li>
+</ul>
 <h2 id="introduccion-a-google-colab"><strong>Introducción a Google Colab</strong></h2>
 <h3 id="que-es-google-colab">¿Qué es Google Colab?</h3>
 <p>Colab, o Colaboratory, permite escribir y ejecutar Python en nuestro navegador. Nos da acceso a una máquina de manera remota.Las ventajas son:</p>
@@ -1569,18 +1575,6 @@ Recopila información sobre estructuras químicas, identificadores, propiedades 
 <span class="kn">from</span> <span class="nn">rdkit.Chem.Draw</span> <span class="kn">import</span> <span class="n">rdMolDraw2D</span>
 </code></pre></div>
 <p>A lo largo de este práctico vamos a estar explorando las bases de datos quimioinformáticos y trabajando con los comandos básicos de RDKit para trabajar con moléculas.</p>
-<h2 id="usando-rdkit">Usando RDKit</h2>
-<p>RDKit es un software quimioinformático de código abierto.</p>
-<p><a class="glightbox" href="https://www.rdkit.org/docs/_static/logo.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="texto" src="https://www.rdkit.org/docs/_static/logo.png"></a></p>
-<p>Fue desarrollado por Greg Landrum con numerosas contribuciones adicionales de la comunidad de código abierto RDKit. Tiene una interfaz de programación de aplicaciones para Python, Java, C++ y C#</p>
-<ul>
-<li>Homepage: <a href="http://www.rdkit.org">http://www.rdkit.org</a> Documentation, links</li>
-<li>Github (<a href="https://github.com/rdkit">https://github.com/rdkit)</a>) Downloads, bug tracker, git repository</li>
-<li>Sourceforge (<a href="http://sourceforge.net/projects/rdkit">http://sourceforge.net/projects/rdkit</a>) Mailing lists</li>
-<li>Blog (<a href="https://greglandrum.github.io/rdkit-blog/">https://greglandrum.github.io/rdkit-blog/</a>) Tips, tricks, random stuff</li>
-<li>Tutorials (<a href="https://github.com/rdkit/rdkit-tutorials">https://github.com/rdkit/rdkit-tutorials</a>) Jupyter-based tutorials for using the RDKit</li>
-<li>KNIME integration (<a href="https://github.com/rdkit/knime-rdkit">https://github.com/rdkit/knime-rdkit</a>) RDKit nodes for KNIME</li>
-</ul>
 <h3 id="generar-una-molecula-a-partir-de-smiles">Generar una molécula a partir de SMILES</h3>
 <p>Para comenzar a trabajar necesitamos ingresar a la computadora el compuesto con el que vamos a trabajar, para eso vamos a generar una variable con la notación del compuesto. En este caso, vamos a usar la notación en smiles.</p>
 <p>En programación se llama "variable" a la asignación de una palabra para identificar un objeto. En este caso, la palabra "smiles" la vamos a usar como variable para identificar la secuencia en smiles del Benznidazol.</p>
