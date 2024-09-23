@@ -10,9 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP08b_Data_Mining/">
+        <link rel="canonical" href="https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP08_Clustering_Data_Mining/">
       
       
+        <link rel="prev" href="../TPPb_Programando_en_Biologia/">
+      
+      
+        <link rel="next" href="../../instructivos/inicio/">
       
       
       <link rel="icon" href="../../img/logo-unsam-negro.png">
@@ -20,7 +24,7 @@
     
     
       
-        <title>Index - Introducción a la Bioinformática</title>
+        <title>TP 8 - Clustering Y Data Mining - Introducción a la Bioinformática</title>
       
     
     
@@ -83,7 +87,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#tp-8b-data-mining" class="md-skip">
+        <a href="#tp-8-clustering-y-data-mining" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -116,7 +120,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Index
+              TP 8 - Clustering Y Data Mining
             
           </span>
         </div>
@@ -336,10 +340,12 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../inicio/" class="md-tabs__link">
           
   
@@ -729,23 +735,28 @@
       
   
   
+    
   
   
+  
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
         
           
-          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -756,7 +767,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
             Prácticos
@@ -977,10 +988,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../TP08_Clustering_Data_Mining/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    TP 8 - Clustering Y Data Mining
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -989,6 +1020,364 @@
   
 
       </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#slides-mostrados-en-clase" class="md-nav__link">
+    <span class="md-ellipsis">
+      Slides mostrados en clase
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#software-a-usar" class="md-nav__link">
+    <span class="md-ellipsis">
+      Software a usar
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recursos-online" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recursos Online
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objetivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objetivos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduccion-al-tema" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introducción al tema
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-1-clustering-jerarquico-manual" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejercicio 1 - Clustering Manual
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-2-agrupando-flores-por-especies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejercicio 2 - Agrupando flores por especies
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicio 2 - Agrupando flores por especies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introduccion-al-data-set" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introducción al data set
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problema-a-resolver" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problema a resolver
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#guardar-el-plot-en-un-pdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      Guardar el plot en un PDF
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clustering-jerarquico" class="md-nav__link">
+    <span class="md-ellipsis">
+      Clustering jerárquico
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Clustering jerárquico">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mejorar-el-plot-del-clustering-jerarquico" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mejorar el plot
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#single-linkage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Single Linkage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asignando-clusters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Asignando clusters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hacer-clusters-y-plots" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hacer clusters y plots
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#k-means" class="md-nav__link">
+    <span class="md-ellipsis">
+      K-means
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#silhouette" class="md-nav__link">
+    <span class="md-ellipsis">
+      Silhouette
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicios-adicionales" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejercicios adicionales
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-adicional-1-mejores-plots-ggplot2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejercicio adicional 1 - Mejores plots: ggplot2
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicio adicional 1 - Mejores plots: ggplot2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cambiar-la-estetica-del-plot-segun-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estética variable
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nombres-y-estilo-de-los-ejes-y-el-plot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nombres de los ejes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fondo-del-plot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fondo del plot
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#otros-tipos-de-plots" class="md-nav__link">
+    <span class="md-ellipsis">
+      Otros tipos de plots
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-adicional-2-analizando-el-efecto-de-dos-inhibidores" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejercicio adicional 2 - Analizando el efecto de dos inhibidores
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicio adicional 2 - Analizando el efecto de dos inhibidores">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#leer-los-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Leer los datos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estandarizar-los-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estandarizar los datos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#combinar-las-replicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Combinar las réplicas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calcular-el-fold-change" class="md-nav__link">
+    <span class="md-ellipsis">
+      Calcular el Fold Change
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transformar-el-fold-change" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transformar el Fold Change
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotear-el-heatmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      Plotear el Heatmap
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calcular-genes-mas-afectados" class="md-nav__link">
+    <span class="md-ellipsis">
+      Genes más afectados
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buscar-nuestros-genes-en-bases-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bases de datos
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bibliografia" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bibliografía
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bibliografía">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#consola-de-r" class="md-nav__link">
+    <span class="md-ellipsis">
+      Consola de R
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1103,19 +1492,14 @@
                   
 
 
-<div><p><a class="glightbox" href="img/banner.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img _="," align="left" alt="Image" src="img/banner.jpg" width="250"></a></p>
-<h1 id="tp-8b-data-mining" markdown="markdown"><strong>TP 8b</strong>. Data Mining</h1>
+<div><p><a class="glightbox" href="img/clustering2.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img _="," align="left" alt="Image" src="img/clustering2.png" width="250"></a></p>
+<h1 id="tp-8-clustering-y-data-mining" markdown="markdown"><strong>TP 8</strong>. Clustering y Data Mining</h1>
 <p><br>
-<br>
 <br></p>
-<p><a class="md-button md-button--primary" href="https://drive.google.com/file/d/1AH55g4Fq7J8rHC5NCURW56d8KHzjeYfg/view?usp=sharing"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32v242.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64v-32c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"></path></svg></span> Materiales</a></p>
-<h3 id="slides-mostrados-en-la-clase">Slides mostrados en la clase</h3>
+<p><a class="md-button md-button--primary" href="https://drive.google.com/file/d/1zyjFtV2jWfCyJ4Pgw2ENtGBCJ1vRu6eO/view?usp=sharing"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32v242.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64v-32c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"></path></svg></span> Materiales</a></p>
+<h3 id="slides-mostrados-en-clase">Slides mostrados en clase</h3>
 <ul>
-<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M64 464h48v48H64c-35.3 0-64-28.7-64-64V64C0 28.7 28.7 0 64 0h165.5c17 0 33.3 6.7 45.3 18.7l90.5 90.5c12 12 18.7 28.3 18.7 45.3V304h-48V160h-80c-17.7 0-32-14.3-32-32V48H64c-8.8 0-16 7.2-16 16v384c0 8.8 7.2 16 16 16zm112-112h32c30.9 0 56 25.1 56 56s-25.1 56-56 56h-16v32c0 8.8-7.2 16-16 16s-16-7.2-16-16V368c0-8.8 7.2-16 16-16zm32 80c13.3 0 24-10.7 24-24s-10.7-24-24-24h-16v48h16zm96-80h32c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48h-32c-8.8 0-16-7.2-16-16V368c0-8.8 7.2-16 16-16zm32 128c8.8 0 16-7.2 16-16v-64c0-8.8-7.2-16-16-16h-16v96h16zm80-112c0-8.8 7.2-16 16-16h48c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v32h32c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v48c0 8.8-7.2 16-16 16s-16-7.2-16-16V368z"></path></svg></span> <a href="https://docs.google.com/presentation/d/1HtQb1Flv8BUBiSt9WaKAr09wrQimp7OOfHVsVwVN9uA/edit?usp=sharing">Slides TP</a></li>
-</ul>
-<h3 id="videos-de-la-clase-grabada">Videos de la clase grabada</h3>
-<ul>
-<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 16 16"><path d="M0 3.75C0 2.784.784 2 1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0 1 14.25 14H1.75A1.75 1.75 0 0 1 0 12.25Zm1.75-.25a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25v-8.5a.25.25 0 0 0-.25-.25Z"></path><path d="M6 10.559V5.442a.25.25 0 0 1 .379-.215l4.264 2.559a.25.25 0 0 1 0 .428l-4.264 2.559A.25.25 0 0 1 6 10.559Z"></path></svg></span> <a href="https://youtu.be/sVNfC4hKA6c">Cierre TP</a></li>
+<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M64 464h48v48H64c-35.3 0-64-28.7-64-64V64C0 28.7 28.7 0 64 0h165.5c17 0 33.3 6.7 45.3 18.7l90.5 90.5c12 12 18.7 28.3 18.7 45.3V304h-48V160h-80c-17.7 0-32-14.3-32-32V48H64c-8.8 0-16 7.2-16 16v384c0 8.8 7.2 16 16 16zm112-112h32c30.9 0 56 25.1 56 56s-25.1 56-56 56h-16v32c0 8.8-7.2 16-16 16s-16-7.2-16-16V368c0-8.8 7.2-16 16-16zm32 80c13.3 0 24-10.7 24-24s-10.7-24-24-24h-16v48h16zm96-80h32c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48h-32c-8.8 0-16-7.2-16-16V368c0-8.8 7.2-16 16-16zm32 128c8.8 0 16-7.2 16-16v-64c0-8.8-7.2-16-16-16h-16v96h16zm80-112c0-8.8 7.2-16 16-16h48c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v32h32c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v48c0 8.8-7.2 16-16 16s-16-7.2-16-16V368z"></path></svg></span> <a href="https://drive.google.com/file/d/1rsqPLINlb0HquB66hj4aSr6GcCd0xbvq/view?usp=sharing">Slides</a></li>
 </ul>
 <h3 id="software-a-usar">Software a usar</h3>
 <ul>
@@ -1124,6 +1508,9 @@
 </ul>
 <h3 id="recursos-online">Recursos Online</h3>
 <ul>
+<li>Introducción a <strong>R</strong>, <strong>TPP</strong> de esta materia: <a href="../TPPa_Programando_en_Biologia/">Parte 1</a> y <a href="../TPPb_Programando_en_Biologia/">Parte 2</a></li>
+<li><a href="https://www.datanovia.com/en/lessons/agglomerative-hierarchical-clustering/">Clustering jerárquico en <strong>R</strong></a></li>
+<li><a href="https://www.cienciadedatos.net/documentos/37_clustering_y_heatmaps#Average_silhouette_method">Detalles del cálculo de Silhouette (y mucho más)</a></li>
 <li><a href="https://www.coursera.org/learn/r-programming">Curso online de R de Coursera</a> (se puede hacer gratis) (en ese caso no da certificado)</li>
 <li>Data Tables: <a href="https://cran.r-project.org/web/packages/data.table/vignettes/datatable-intro.html">Introducción oficial</a> y <a href="https://bookdown.org/paradinas_iosu/CursoR/data-table.html">otra página con más info</a></li>
 <li>ggplot2: <a href="https://bookdown.org/paradinas_iosu/CursoR/ggplot2.html">Vistazo rápido</a>, <a href="http://sthda.com/english/wiki/ggplot2-essentials">detalles sobre los tipos de plots</a>, <a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf">cheatsheet</a> e <a href="https://jfly.uni-koeln.de/color/">información sobre colores y daltonismo</a></li>
@@ -1131,176 +1518,206 @@
 </ul>
 <h3 id="objetivos">Objetivos</h3>
 <ul>
-<li>Usar métodos de clustering junto con herramientas de programación para resolver problemas biológicos.</li>
-<li>Familiarizarse en el paquete <code>ggplot2</code> para hacer plots en <strong>R</strong>.</li>
-<li>Introducir paquetes de <strong>R</strong> que permiten plotear dendrogramas y <em>heatmaps</em>.</li>
+<li>Familiarizarse con el funcionamiento del <em>clustering jerárquico aglomerativo</em>.</li>
+<li>Familiarizarse con el método de clustering particional <em>K-means</em>.</li>
+<li>Explorar algunas medidas de calidad de los clusters, como la silueta o <em>silhouette</em>.</li>
+<li>Usar métodos de clustering con herramientas de programación para resolver problemas biológicos</li>
 </ul>
-<h2 id="introduccion-al-tema"><strong>Introducción al Tema</strong></h2>
-<p>Este TP retoma lo empezado en el <strong>TP 10a</strong>, donde aprendimos métodos de clustering como <em>clustering jerárquico</em> o <em>K-means</em> y los aplicamos a un ejemplo mínimo de una tabla con solo 4 filas.</p>
-<p>Vamos ahora a utilizar los mismos métodos para trabajar con data sets más grandes y tratar de ir entendiendo cuándo, cómo y por qué es conveniente agrupar nuestros datos.</p>
-<p>A su vez vamos a desarrollar algunos temas de <strong>R</strong> que son muy útiles, pero para los cuales no nos alcanzó el tiempo en los TPs anteriores: plotear usando <code>ggplot2</code> y utilizar funciones creadas por nosotros.</p>
-<p>Para hacer esto vamos a utilizar 2 data sets. En el <strong>Ejercicio 1</strong> vamos a trabajar con el ya conocido data set <strong>iris</strong> que tiene 150 filas y viene por defecto con <strong>R</strong>. En el <strong>Ejercicio 2</strong> vamos a trabajar con datos de un estudio de transcriptómica que nos devolvió 9 datos para cada uno de 11.106 genes estudiados. Este trabajo es un segundo paso de lo realizado en el <strong>TP 5b</strong> cuando buscábamos inhibidores para la <strong>Enzima Z</strong>.</p>
-<h2 id="mejores-plots-ggplot2"><strong>Mejores plots: ggplot2</strong></h2>
-<h3 id="bases-de-ggplot2">Bases de ggplot2</h3>
-<p>En el <strong>TP 5a</strong> mencionamos rápidamente al paquete <code>ggplot2</code>, el cual es uno de las formas más populares de hacer plots en <strong>R</strong>. Este paquete es bastante complicado y tiene un sinfín de funcionalidades, pero hoy vamos a darle un vistazo a su funcionalidad básica (el <a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf">cheatsheet</a> es una forma rápida de ver todas las posibilidades que tiene).</p>
-<p>Un ejemplo muy simple de hacer un plot con la función <code>ggplot</code> sería:</p>
-<div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
-
-<span class="c1">#Recuerden que *iris* es un *Data Frame* para hacer pruebas que esta siempre cargado en la memoria de R</span>
-<span class="n">p</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">ggplot</span><span class="p">(</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">iris</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Petal.Length</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Sepal.Length</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
-<span class="w">    </span><span class="nf">geom_point</span><span class="p">()</span>
-
-<span class="nf">print</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
-</code></pre></div>
-<ul>
-<li><strong>p</strong> es una variable en la que estoy guardando el plot. Cuando la imprimo (usando <code>print</code>) el plot va a aparecer en la pestaña <strong>Plots</strong> en <strong>RStudio</strong> (en el panel de abajo a la derecha).</li>
-<li><code>data = iris</code> le está indicando a la función <code>ggplot</code> de que tabla va a sacar la información a plotear. En <code>ggplot</code> se pueden usar <em>Data Frames</em> o <em>Data Tables</em> indistintamente.</li>
-<li><code>aes()</code> es una función que se encuentra dentro de la función principal de <code>ggplot</code>. Se va a encargar de relacionar las diferentes columnas de la tabla con las diferentes variables del plot.</li>
-<li><code>x = Petal.Length</code> está indicando que la variable X en el plot va a ser los datos de la columna <strong>Petal.Length</strong>.</li>
-<li><code>y = Sepal.Length</code> está indicando que la variable Y en el plot va a ser los datos de la columna <strong>Sepal.Length</strong>.</li>
-<li><code>geom_point()</code> está indicando el tipo de plot a realizar. Si leen el <a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf">cheatsheet</a> van a ver que en este caso estamos haciendo un scatter plot.</li>
-<li>Ambas funciones del plot están separadas por el símbolo <code>+</code>, lo que les puede resultar un poco extraño (porque lo es), pero así es como funciona <code>ggplot</code>.</li>
-</ul>
-<p><strong>1)</strong> Corran el código anterior y vean el plot resultante.</p>
-<h3 id="cambiar-la-estetica-del-plot-segun-variables" markdown="markdown">Cambiar la estética del plot según variables</h3>
-<p>La función <code>aes()</code> recibe su nombre de la palabra en inglés <em>aesthetics</em>, o estética. No es de extrañar entonces que dentro de dicha función es donde podemos poner otras variables que determinen los colores, formas o tamaños de cada punto del plot (entre otras características).</p>
-<p><strong>2)</strong> Corran el siguiente código y vean el plot resultante:</p>
-<div class="highlight"><pre><span></span><code><span class="n">p</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">ggplot</span><span class="p">(</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">iris</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Petal.Length</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Sepal.Length</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Species</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
-<span class="w">    </span><span class="nf">geom_point</span><span class="p">()</span>
-
-<span class="nf">print</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
-</code></pre></div>
-<p>En este código, <code>color = Species</code> le está diciendo a <code>ggplot</code> que modifique el color de los puntos dependiendo del valor de la columna <strong>Species</strong>. Si recuerdan a <strong>iris</strong>, esta columna era una columna categórica (o <em>factor</em>) con 3 valores que podemos ver en el plot. Como le pasamos a <code>color</code> una variable categórica, nos devolvió una escala de colores categórica.</p>
-<p><strong>3)</strong> Corran el código anterior, pero ahora reemplacen a <strong>Species</strong> por <strong>Petal.Width</strong>, ¿qué cambios observan?</p>
-<p><strong>4)</strong> Es posible también modificar varias de estas características a la vez. Corran el siguiente código y vean el plot resultante:</p>
-<div class="highlight"><pre><span></span><code><span class="n">p</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">ggplot</span><span class="p">(</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">iris</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Petal.Length</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Sepal.Length</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Species</span><span class="p">,</span><span class="w"> </span><span class="n">shape</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Species</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Petal.Width</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
-<span class="w">    </span><span class="nf">geom_point</span><span class="p">()</span>
-
-<span class="nf">print</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
-</code></pre></div>
-<p>En este caso agregamos 2 características nuevas, <code>shape</code> (la forma de los puntos) y <code>size</code> (el tamaño de los puntos) y le asignamos cada uno de ellos a una variable de la tabla. Noten que no hay problema con que una columna modifique más de una característica a la vez.</p>
-<p><strong>5)</strong> Tal vez ya lo notaron, pero por el momento no tenemos ningún control sobre que colores o formas le asigna <code>ggplot</code> a mis tres categorías. Vamos a mostrarles como hacerlo para este caso específico, pero sepan que las funciones a usar son ligeramente diferentes dependiendo si la variable pasada es discreta o continua. </p>
-<p>Corran el siguiente código y vean el plot resultante:</p>
-<div class="highlight"><pre><span></span><code><span class="c1">#Los colores se pueden escribir en ingles o en hexadecimal</span>
-<span class="c1">#"#FF0000" es el color rojo (se podría haber puesto "red")</span>
-<span class="n">p</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">ggplot</span><span class="p">(</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">iris</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Sepal.Length</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Petal.Length</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Species</span><span class="p">,</span><span class="w"> </span><span class="n">shape</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Species</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
-<span class="w">    </span><span class="nf">geom_point</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
-<span class="hll"><span class="w">    </span><span class="nf">scale_colour_manual</span><span class="p">(</span><span class="n">values</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">"#FF0000"</span><span class="p">,</span><span class="w"> </span><span class="s">"blue"</span><span class="p">,</span><span class="w"> </span><span class="s">"green"</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
-</span><span class="hll"><span class="w">    </span><span class="nf">scale_shape_manual</span><span class="p">(</span><span class="n">values</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">))</span>
-</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
-</code></pre></div>
-<ul>
-<li><code>scale_colour_manual()</code>: me permite modificar a mano una escala discreta de colores. El parámetro <code>values</code> modifica los colores en sí.</li>
-<li><code>scale_shape_manual()</code>: me permite modificar a mano una escala discreta de formas. El parámetro <code>values</code> modifica las formas, las cuales corresponden a un número entero (en el tip a continuación se muestran las más comunes).</li>
-</ul>
-<p>Un detalle importante a destacar es que el orden en que se asignó cada color a cada categoría depende del orden en el que aparecen los <em>Levels</em> de la columna <strong>Species</strong>, la cual es un <em>factor</em> (pueden imprimir <code>iris$Species</code> para ver a lo que nos referimos). </p>
-<details class="tip">
-<summary>Tip - Posibles valores para <code>shape</code></summary>
-<p><figure markdown>
-<a class="glightbox" href="img/points-symbols.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="ShapeSymbols" max-width="500" src="img/points-symbols.png"></a>
-</figure></p>
-<p>El color interior las formas 21 a 25 depende de la variable <code>fill</code> que no mencionamos todavía, pero se usa igual que el resto.</p>
+<h2 id="introduccion-al-tema"><strong>Introducción al tema</strong></h2>
+<p>Hoy vamos a retomar el trabajo con <strong>R</strong>. Recomendamos repasar o tener a mano los TPPs de esta materia por si necesitan recordar como hacer ciertos comandos (<a href="../TPPa_Programando_en_Biologia/">Parte 1</a> y <a href="../TPPb_Programando_en_Biologia/">Parte 2</a>).</p>
+<p>Como mencionamos en los <strong>TPPs</strong>, es cada vez más normal que experimentos biológicos nos permitan analizar miles a millones de interacciones biológicas a la vez, lo que resulta en tablas con millones de datos. Esto hace necesario entonces saber utilizar herramientas que nos permitan extraer, o <em>minar</em>, información de estos enormes conjuntos de datos. A este proceso lo vamos a denominar <em>Data Mining</em>.</p>
+<p>En este TP nos vamos a enfocar en métodos de clustering, los cuales nos permiten agrupar elementos analizados en base a datos observados sobre ellos. Esto tiene muchas utilidades, como puede ser entender mejor las diferencias entre grupos conocidos, encontrar diferentes grupos dentro del conjunto datos analizado, o remover datos redundantes, entre otros.</p>
+<p>Si bien este TP vamos a enfocarnos más que nada en aprender las técnicas, el objetivo final de este proceso es identificar agrupamientos naturales en los datos con alguna relevancia biológica.</p>
+<h2 id="ejercicio-1-clustering-jerarquico-manual" markdown="markdown"><strong>Ejercicio 1 - Clustering Jerárquico Manual</strong></h2>
+<p>Para empezar este TP vamos a realizar un pequeño <em>clustering jerárquico</em> a mano para repasar el concepto.</p>
+<p>Supongamos que tenemos cuatro genes (A, B, C y D) para los cuales medimos el nivel de expresión a las 0hs, 1hs y 2hs luego de algún tratamiento:</p>
+<figure>
+<table>
+<thead>
+<tr>
+<th data-sort-method="none" style="text-align: center;">gen</th>
+<th data-sort-method="none" style="text-align: center;">t_0h</th>
+<th data-sort-method="none" style="text-align: center;">t_1h</th>
+<th data-sort-method="none" style="text-align: center;">t_2h</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">genA</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">8</td>
+</tr>
+<tr>
+<td style="text-align: center;">genB</td>
+<td style="text-align: center;">-1</td>
+<td style="text-align: center;">-1</td>
+<td style="text-align: center;">-2</td>
+</tr>
+<tr>
+<td style="text-align: center;">genC</td>
+<td style="text-align: center;">-2</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td style="text-align: center;">genD</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">-1</td>
+<td style="text-align: center;">-6</td>
+</tr>
+</tbody>
+</table>
+</figure>
+<p>Queremos entonces agrupar a los diferentes genes por como varían sus niveles de expresión cuando se aplica dicho tratamiento. Para hacer esto vamos a:</p>
+<p><strong>1.</strong> Calcular la distancia euclidiana entre los diferentes genes</p>
+<p><strong>2.</strong> Construir una matriz de distancias</p>
+<p><strong>3.</strong> Agruparlos usando <em>clustering jerárquico</em> donde el criterio de agregación va a ser "vecino más lejano" o <em>complete linkage</em></p>
+<p><strong>4.</strong> Armar un esquema del dendograma o árbol de similitud que resulta de este clustering</p>
+<p><strong>5.</strong> Repetir todo lo anterior, pero estandarizando previamente los datos de niveles de expresión</p>
+<p>Si no entienden algunos de estos conceptos pueden leer un poco más sobre ellos a continuación (y más todavía en la teórica):</p>
+<details class="info">
+<summary>Distancia euclidiana</summary>
+<p>Es una de las varias formas de calcular una distancia entre dos vectores de datos, lo cual es necesario al momento de calcular una matriz de distancias. Por ejemplo, suponiendo que tenemos 2 vectores de forma <span class="arithmatex">\(V = (x, y, z)\)</span> la distancia euclidiana entre ellos se calcula como:</p>
+<div class="arithmatex">\[
+distanciaEuclidiana(V_1, V_2) = \sqrt{(x_1 - x_2)^2 + (y_1 - y_2)^2 + (z_1 - z_2)^2}
+\]</div>
+<p>Aplicando esto a nuestros datos, la distancia entre los genes A y B se calcula como:</p>
+<div class="arithmatex">\[
+distanciaEuclidiana(genA, genB) = \sqrt{(2 - (-1))^2 + (4 - (-1))^2 + (8 - (-2))^2} = 11,58
+\]</div>
 </details>
-<details class="tip">
-<summary>Tip - Colores y daltonismo</summary>
-<p>El daltonismo ocurre cuando hay un problema con los pigmentos en ciertas células nerviosas del ojo que perciben el color. Estas células se llaman conos y los hay de tres tipos, los cuales son responsables de ver principalmente al rojo, al verde y al azul respectivamente. </p>
-<p><figure markdown>
-<a class="glightbox" href="img/colorblind_rainbow.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="ColorblindRainbow" src="img/colorblind_rainbow.jpg"></a>  <br>
-</figure></p>
-<p>La frecuencia del daltonismo es bastante alta, con un 8% de los hombres caucásicos, 5% de los asiáticos y 4% de los africanos presentando problemas para distinguir el color rojo del verde. Como la mayoría de los casos de daltonismo provienen de una mutación de un gen recesivo ligado al cromosoma X, muy pocas mujeres son daltónicas.</p>
-<p>Debido al considerable número de personas con daltonismo, es buena ídea tener en cuenta esto al momento de elegir colores para cualquier figura que vaya a ser vistas por el público general. Se pueden encontrar decenas de herramientas online que nos ayudan a crear esto, así como paquetes de <strong>R</strong> o paletas de colores. Un ejemplo de una paleta de colores sería:</p>
-<p><figure markdown>
-<a class="glightbox" href="img/colorblind_pallete.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="ColorblindPallete" src="img/colorblind_pallete.jpg"></a>  <br>
-</figure></p>
-<p>Pueden leer más información sobre este tema <a href="https://jfly.uni-koeln.de/color/">aca</a>.</p>
+<details class="info">
+<summary>Matriz de distancias</summary>
+<p>Es una matriz donde tanto las filas como las columnas representan un mismo conjunto de elementos y en cada intersección se pone la distancia (en nuestro caso euclidiana) entre dos elementos específicos. Es la base de muchos métodos de clustering.</p>
+<p>Para nuestros datos la matriz de distancias entre los cuatro genes es:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"></th>
+<th data-sort-method="none" style="text-align: center;">genA</th>
+<th data-sort-method="none" style="text-align: center;">genB</th>
+<th data-sort-method="none" style="text-align: center;">genC</th>
+<th data-sort-method="none" style="text-align: center;">genD</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">genA</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">genB</td>
+<td style="text-align: center;">11,58</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">genC</td>
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">3,32</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">genD</td>
+<td style="text-align: center;">15</td>
+<td style="text-align: center;">4,12</td>
+<td style="text-align: center;">7,35</td>
+<td style="text-align: center;">0</td>
+</tr>
+</tbody>
+</table>
+<p>Como el orden de los elementos es igual para las filas que para las columnas, en la diagonal se compara cada elemento contra sí mismo por lo que la distancia es 0. Por otro lado, estamos llenando solo la mitad de la matriz ya que las matrices de distancia son matrices simétricas, es decir, que el triángulo superior derecho de la matriz va a ser un reflejo del triángulo inferior izquierdo.</p>
 </details>
-<details class="tip">
-<summary>Tip - Asignar colores específicos a cada característica sin depender del orden de los <em>Levels</em></summary>
-<p>Si bien el código anterior funciona perfecto, depender del orden de los <em>Levels</em> de un <em>factor</em> al momento de matchear color con un valor dado puede ser peligroso. Una forma de estar seguros que le estamos asignando el color correcto a cada valor es usando vectores con nombres (o <em>named vectors</em>). Algo mencionamos de estos vectores en el pasado, pero básicamente son vectores donde cada posición tiene un nombre (además del índice). En este caso sería:</p>
-<div class="highlight"><pre><span></span><code><span class="n">categorias</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">"setosa"</span><span class="p">,</span><span class="w"> </span><span class="s">"versicolor"</span><span class="p">,</span><span class="w"> </span><span class="s">"virginica"</span><span class="p">)</span>
-<span class="n">colores</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">"#FF0000"</span><span class="p">,</span><span class="w"> </span><span class="s">"blue"</span><span class="p">,</span><span class="w"> </span><span class="s">"green"</span><span class="p">)</span>
-<span class="nf">names</span><span class="p">(</span><span class="n">colores</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">categorias</span>
-
-<span class="c1">#Puedo acceder a "blue" haciendo `colores[2]` o `colores["versicolor"]`</span>
-</code></pre></div>
-<p>De hacer <code>scale_colour_manual(values = colores)</code> en la función <code>ggplot</code> nos aseguraríamos que el primer elemento de <code>categorias</code> va a tener el primer color de <code>colores</code> y así.</p>
+<details class="info">
+<summary>Clustering jerárquico</summary>
+<p>El <em>clustering jerárquico</em> es una forma de agrupar elementos dependiendo de que tan similares son entre ellos. Usa un algoritmo bastante sencillo de entender que se basa en una matriz de distancias:</p>
+<ol>
+<li>
+<p>Sin considerar a la diagonal, encontrar el par de elementos (fila, columna) que son más similares entre sí (el menor número en la matriz de distancias). En nuestra matriz de distancias los elementos más parecidos son <strong>"genB"</strong> y <strong>"genC"</strong> ya que tienen la menor similitud (3,32)</p>
+</li>
+<li>
+<p>Dejar constancia de dicha similitud y reconstruir la matriz, reemplazando ambos elementos por uno nuevo (saco los elementos <strong>"genB"</strong> y <strong>"genC"</strong> y agrego el elemento <strong>"genB+C"</strong>)</p>
+</li>
+<li>
+<p>Al momento de calcular la nueva distancia entre este nuevo elemento (<strong>"genB+C"</strong>) y el resto de los elementos de la matriz, usar algún criterio de agregación (por ejemplo: <em>single linkage</em>, <em>average linkage</em> o <em>complete linkage</em>)</p>
+</li>
+<li>
+<p>Volver al paso 1 hasta que todos los elementos estén unidos entre sí</p>
+</li>
+</ol>
+<p>Una vez hecho esto puedo dibujar el <em>clustering jerárquico</em> teniendo en cuenta qué elementos se juntaron con qué elementos.</p>
 </details>
-<p><strong>6)</strong> Por último, ¿qué pasa si no queremos cambiar la estética del plot dependiendo del valor de una variable, sino que simplemente queremos cambiarla y que afecte a todos los puntos por igual? En estos casos hay que modificar dicha característica dentro de la función específica del plot.</p>
-<p>Corran el siguiente código y vean el plot resultante:</p>
-<div class="highlight"><pre><span></span><code><span class="n">p</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">ggplot</span><span class="p">(</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">iris</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Sepal.Length</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Petal.Length</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Species</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
-<span class="w">    </span><span class="nf">geom_point</span><span class="p">(</span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="n">shape</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">4</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
-<span class="w">    </span><span class="nf">scale_colour_manual</span><span class="p">(</span><span class="n">values</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">"#FF0000"</span><span class="p">,</span><span class="w"> </span><span class="s">"blue"</span><span class="p">,</span><span class="w"> </span><span class="s">"green"</span><span class="p">))</span>
-
-<span class="nf">print</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
-</code></pre></div>
-<h3 id="nombres-y-estilo-de-los-ejes-y-el-plot" markdown="markdown">Nombres y estilo de los ejes y el plot</h3>
-<p><strong>7)</strong> Ahora que ya modificamos bastante el estilo de los datos, vamos a modificar el resto del plot. Lo primero que vamos a hacer es cambiar el nombre del eje X, el eje Y y el título del plot.</p>
-<p>Corran el siguiente código y vean el plot resultante:</p>
-<div class="highlight"><pre><span></span><code><span class="n">p</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">ggplot</span><span class="p">(</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">iris</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Sepal.Length</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Petal.Length</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Species</span><span class="p">,</span><span class="w"> </span><span class="n">shape</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Species</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
-<span class="w">    </span><span class="nf">geom_point</span><span class="p">(</span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
-<span class="hll"><span class="w">    </span><span class="nf">xlab</span><span class="p">(</span><span class="s">"Sepal Length"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
-</span><span class="hll"><span class="w">    </span><span class="nf">ylab</span><span class="p">(</span><span class="s">"Petal Length"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
-</span><span class="hll"><span class="w">    </span><span class="nf">ggtitle</span><span class="p">(</span><span class="s">"Sepal Length vs Petal Length per Species"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
-</span><span class="w">    </span><span class="nf">scale_colour_manual</span><span class="p">(</span><span class="n">values</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">"#FF0000"</span><span class="p">,</span><span class="w"> </span><span class="s">"blue"</span><span class="p">,</span><span class="w"> </span><span class="s">"green"</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
-<span class="w">    </span><span class="nf">scale_shape_manual</span><span class="p">(</span><span class="n">values</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">))</span>
-
-<span class="nf">print</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
-</code></pre></div>
+<details class="info">
+<summary>Criterios de agregación</summary>
+<p>Los criterios de agregación indican que operación hay que hacer al momento de calcular la distancia entre un nuevo elemento creado en una matriz de distancias y los ya existentes. Cada uno tiene sus ventajas y desventajas.</p>
+<p>Siguiendo con nuestro ejemplo, si queremos calcular la distancia entre el nuevo elemento <strong>"genB+C"</strong> y el <strong>"genA"</strong>:</p>
 <ul>
-<li><code>xlab()</code>: indica el nombre del eje X</li>
-<li><code>ylab()</code>: indica el nombre del eje Y</li>
-<li><code>ggtitle()</code>: indica el título del plot</li>
+<li><strong>Single Linkage:</strong> la nueva distancia es la <strong><em>menor</em></strong> entre las distancias <span class="arithmatex">\(dist(genA, genB)\)</span> y <span class="arithmatex">\(dist(genA, genC)\)</span></li>
+<li><strong>Complete Linkage:</strong> la nueva distancia es la <strong><em>mayor</em></strong> entre las distancias <span class="arithmatex">\(dist(genA, genB)\)</span> y <span class="arithmatex">\(dist(genA, genC)\)</span></li>
+<li><strong>Average Linkage:</strong> la nueva distancia es el <strong><em>promedio</em></strong> de las distancias <span class="arithmatex">\(dist(genA, genB)\)</span> y <span class="arithmatex">\(dist(genA, genC)\)</span></li>
 </ul>
-<p><strong>8)</strong> Si bien obtuvimos lo deseado, puede ser que queramos cambiar el tamaño de los ejes o centrar el título. Esto lo hacemos con la función <code>theme()</code>:</p>
-<p>Corran el siguiente código y vean el plot resultante:</p>
-<div class="highlight"><pre><span></span><code><span class="n">p</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">ggplot</span><span class="p">(</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">iris</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Sepal.Length</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Petal.Length</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Species</span><span class="p">,</span><span class="w"> </span><span class="n">shape</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Species</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
-<span class="w">    </span><span class="nf">geom_point</span><span class="p">(</span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
-<span class="w">    </span><span class="nf">xlab</span><span class="p">(</span><span class="s">"Sepal Length"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
-<span class="w">    </span><span class="nf">ylab</span><span class="p">(</span><span class="s">"Petal Length"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
-<span class="w">    </span><span class="nf">ggtitle</span><span class="p">(</span><span class="s">"Sepal Length vs Petal Length per Species"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
-<span class="hll"><span class="w">    </span><span class="nf">theme</span><span class="p">(</span><span class="n">plot.title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element_text</span><span class="p">(</span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">16</span><span class="p">,</span><span class="w"> </span><span class="n">hjust</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.5</span><span class="p">),</span>
-</span><span class="hll"><span class="w">          </span><span class="n">axis.title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element_text</span><span class="p">(</span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">14</span><span class="p">),</span>
-</span><span class="hll"><span class="w">          </span><span class="n">axis.text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element_text</span><span class="p">(</span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">12</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
-</span><span class="w">    </span><span class="nf">scale_colour_manual</span><span class="p">(</span><span class="n">values</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">"#FF0000"</span><span class="p">,</span><span class="w"> </span><span class="s">"blue"</span><span class="p">,</span><span class="w"> </span><span class="s">"green"</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
-<span class="w">    </span><span class="nf">scale_shape_manual</span><span class="p">(</span><span class="n">values</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">))</span>
-
-<span class="nf">print</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
-</code></pre></div>
-<ul>
-<li><code>theme()</code>: es la función que contiene el estilo del texto de los ejes y del título de un plot.</li>
-<li><code>plot.title = element_text(size = 16, hjust = 0.5)</code>: estamos modificando el titulo del plot, donde <code>size</code> modifica el tamaño de letra y <code>hjust = 0.5</code> lo centra horizontalmente.</li>
-<li><code>axis.title = element_text(size = 14)</code>: estamos modificando los títulos de los ejes (es decir, los nombre de los ejes).</li>
-<li><code>axis.text = element_text(size = 12)</code>: estamos modificando el tamaño de los números de los ejes.</li>
-</ul>
-<p>Noten que dentro de <code>theme()</code> cada línea se separa con comas, y recién una vez que termina volvemos a usar el símbolo <code>+</code>.</p>
-<h3 id="fondo-del-plot">Fondo del plot</h3>
-<p><strong>9)</strong> Lo último que nos queda por modificar es el "fondo" del plot, es decir, el color de fondo, las líneas que corresponden a las divisiones de los ejes y el recuadro general del plot. Si bien esto se puede hacer a mano, <strong>ggplot</strong> viene con algunas opciones ya armadas.</p>
-<p>Corran el siguiente código y vean el plot resultante:</p>
-<div class="highlight"><pre><span></span><code><span class="n">p</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">ggplot</span><span class="p">(</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">iris</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Sepal.Length</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Petal.Length</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Species</span><span class="p">,</span><span class="w"> </span><span class="n">shape</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Species</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
-<span class="w">    </span><span class="nf">geom_point</span><span class="p">(</span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">    </span>
-<span class="w">    </span><span class="nf">xlab</span><span class="p">(</span><span class="s">"Sepal Length"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
-<span class="w">    </span><span class="nf">ylab</span><span class="p">(</span><span class="s">"Petal Length"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
-<span class="w">    </span><span class="nf">ggtitle</span><span class="p">(</span><span class="s">"Sepal Length vs Petal Length per Species"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
-<span class="hll"><span class="w">    </span><span class="nf">theme_bw</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
-</span><span class="w">    </span><span class="nf">theme</span><span class="p">(</span><span class="n">plot.title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element_text</span><span class="p">(</span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">16</span><span class="p">,</span><span class="w"> </span><span class="n">hjust</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.5</span><span class="p">),</span>
-<span class="w">          </span><span class="n">axis.title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element_text</span><span class="p">(</span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">14</span><span class="p">),</span>
-<span class="w">          </span><span class="n">axis.text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element_text</span><span class="p">(</span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">12</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
-<span class="w">    </span><span class="nf">scale_colour_manual</span><span class="p">(</span><span class="n">values</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">"#FF0000"</span><span class="p">,</span><span class="w"> </span><span class="s">"blue"</span><span class="p">,</span><span class="w"> </span><span class="s">"green"</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
-<span class="w">    </span><span class="nf">scale_shape_manual</span><span class="p">(</span><span class="n">values</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">))</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
-</code></pre></div>
-<ul>
-<li><code>theme_bw()</code> es una función que setea varias opciones de <code>theme()</code> a un estilo específico (en este caso un estilo simple en blanco y negro). La tenemos que usar antes de <code>theme()</code> para asegurarnos que cualquier cambio que hagamos a mano en <code>theme()</code> sobrescriba los de <code>theme_bw()</code>.</li>
-</ul>
-<!--
-**10)** Reemplacen a `theme_bw()` por `theme_` y vean la lista de temas que aparecen en el autocompletar de RStudio (si no aparece pueden apretar ++ctrl++ + ++space++). Prueben correr el código anterior con 2 temas que no sean `theme_bw()` y vean como se ve el plot en cada caso.
--->
-
-<h3 id="otros-tipos-de-plots">Otros tipos de plots</h3>
-<p>Si bien la mayoría de lo que les mencionamos hasta ahora es aplicable al uso general de <strong>ggplot</strong>, hasta el momento nos enfocamos en un solo tipo de plot, el scatter plot, hecho mediante <code>geom_point()</code>.</p>
-<p>Debido a que esto es suficiente para lo que necesitamos hacer hoy (y que este TP es de <em>Data Mining</em>) no vamos a hablar hoy de otros tipos de plots, pero si les interesa pueden verlo con mucho detalle en <a href="http://sthda.com/english/wiki/ggplot2-essentials">esta página</a> o ver un vistazo rápido en la <a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf">cheatsheet</a>.</p>
-<h2 id="ejercicio-1-agrupando-flores-por-especies" markdown="markdown"><strong>Ejercicio 1 - Agrupando flores por especies</strong></h2>
+</details>
+<p>Para simplificar las cuentas durante la clase, les dejamos acá la tabla con los datos estandarizados. Para estandarizar, restamos a cada dato el promedio de los tres tiempos para ese gen y dividimos el resultado por la desviación estándar de los tres tiempos para ese gen, es decir:</p>
+<div class="arithmatex">\[
+datoEstandarizado(genA, t_0) = \frac{dato(genA, t_0) - promedio(genA)}{desviacionEstandar(genA)}
+\]</div>
+<figure>
+<table>
+<thead>
+<tr>
+<th data-sort-method="none" style="text-align: center;">gen</th>
+<th data-sort-method="none" style="text-align: center;">t_0h</th>
+<th data-sort-method="none" style="text-align: center;">t_1h</th>
+<th data-sort-method="none" style="text-align: center;">t_2h</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">genA</td>
+<td style="text-align: center;">-0.87</td>
+<td style="text-align: center;">-0.22</td>
+<td style="text-align: center;">1.09</td>
+</tr>
+<tr>
+<td style="text-align: center;">genB</td>
+<td style="text-align: center;">0.58</td>
+<td style="text-align: center;">0.58</td>
+<td style="text-align: center;">-1.15</td>
+</tr>
+<tr>
+<td style="text-align: center;">genC</td>
+<td style="text-align: center;">-1.09</td>
+<td style="text-align: center;">0.22</td>
+<td style="text-align: center;">0.87</td>
+</tr>
+<tr>
+<td style="text-align: center;">genD</td>
+<td style="text-align: center;">0.73</td>
+<td style="text-align: center;">0.41</td>
+<td style="text-align: center;">-1.14</td>
+</tr>
+</tbody>
+</table>
+</figure>
+<p><strong>6.</strong> Comparando los clusterings obtenidos con los datos estandarizados y sin estandarizar.</p>
+<ol>
+<li>
+<p>¿Qué diferencias observan?</p>
+</li>
+<li>
+<p>¿Cuál de los dos clusterings les parece mejor para este escenario donde queríamos evaluar cómo afecta un tratamiento los niveles de expresión de diferentes genes?</p>
+</li>
+<li>
+<p>¿Les parece qué es siempre correcto estandarizar los datos de esta forma o se les ocurre escenarios donde no es así?</p>
+</li>
+</ol>
+<h2 id="ejercicio-2-agrupando-flores-por-especies" markdown="markdown"><strong>Ejercicio 2 - Agrupando flores por especies</strong></h2>
 <h3 id="introduccion-al-data-set">Introducción al data set</h3>
 <p>En este ejercicio vamos a trabajar una vez más con el data set <strong>iris</strong>, el cual es un set de datos que viene por defecto con <strong>R</strong> y está siempre cargado en memoria.</p>
 <p>Este data set contiene las medidas de ancho (<em>width</em>) y largo (<em>length</em>) de los sépalos y los pétalos para 3 especies de flores diferentes: setosa, versicolor, y virginica (todas del Genus <em>Iris</em>). Tiene mediciones de 150 flores, 50 por especie.</p>
@@ -1466,10 +1883,16 @@
 </div>
 </div>
 </div>
-<p><strong>5)</strong> Usando lo aprendido en el TP anterior y la matriz de datos recién creada:</p>
+<p><strong>5)</strong> Usando la matriz de datos recién creada:</p>
 <p><strong>5.1)</strong> Usen la función <code>dist()</code> para crear una matriz de distancias euclidianas que muestre también la diagonal.</p>
-<p><strong>5.2)</strong> usen la función <code>hclust()</code> para crear un clustering jerárquico basado en su matriz de distancias usando el criterio de agregación <em>complete linkage</em>. </p>
-<p><strong>5.3)</strong> Usen la función <code>plot()</code> para plotear el clustering jerárquico.</p>
+<div class="highlight"><pre><span></span><code><span class="n">matriz_distancias</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">dist</span><span class="p">(</span><span class="n">matriz_datos</span><span class="p">,</span><span class="w"> </span><span class="n">method</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"euclidean"</span><span class="p">,</span><span class="w"> </span><span class="n">diag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">T</span><span class="p">)</span>
+</code></pre></div>
+<p>Donde method = "euclidean" le está diciendo a la función dist que tiene que calcular las distancias euclidianas entre filas y diag = T hace que deje la diagonal de ceros en el output.</p>
+<p><strong>5.2)</strong> Creen un clustering jerárquico basado en la matriz de distancias usando el criterio de agregación <em>complete linkage</em>. El <em>clustering jerárquico</em> se hace con la función <code>hclust</code>, la cual se usa:</p>
+<div class="highlight"><pre><span></span><code><span class="n">clustering_jerarquico</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">hclust</span><span class="p">(</span><span class="n">matriz_distancias</span><span class="p">,</span><span class="w"> </span><span class="n">method</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"complete"</span><span class="p">)</span>
+</code></pre></div>
+<p>Donde <code>method = "complete"</code> está indicándole a la función que criterio de agregación usar al momento de combinar elementos. Pueden usar <code>help(hclust)</code> para ver otros posibles criterios.</p>
+<p><strong>5.3)</strong> Usen la función <code>plot</code> para plotear <code>clustering_jerarquico</code>. Usen el parámetro <code>main</code> para cambiarle el título al plot indicando que es un <em>clustering jerárquico</em>, que usa <em>complete linkage</em>.</p>
 <p><strong>5.4)</strong> Mirando el plot recién creado, ¿les es fácil distinguir a simple vista los tres grupos de especies en el clustering jerárquico? (recuerden que pueden usar el botón <strong>Zoom</strong> para agrandar el plot).</p>
 <h4 id="mejorar-el-plot-del-clustering-jerarquico" markdown="markdown">Mejorar el plot del clustering jerárquico</h4>
 <p><strong>6)</strong> Una cosa que vendría bien al momento de leer el plot recién creado sería colorear cada flor dependiendo de su especie. Si bien esto no es posible en este caso usando solo la función <code>plot()</code>, hay paquetes de <strong>R</strong> que nos van a permitir hacer esto:</p>
@@ -1535,6 +1958,13 @@
 <p><strong>7.1)</strong> Vuelvan a correr la función <code>hclust()</code> como en <strong>5.2)</strong>, pero ahora usen <code>method = "single"</code> y guarden el clustering resultante en una nueva variable. Luego usen el código de <strong>6.1)</strong> editando lo que sea necesario para crear un archivo que contenga al dendrograma hecho a partir del clustering jerárquico que usa <em>single linkage</em> como criterio de agregación. Nombren a este archivo <strong>12_Clustering_jerarquico_single_linkage.pdf</strong>.</p>
 <p><strong>7.2)</strong> ¿Qué diferencias ven entre este dendrograma y el creado en <strong>6.2)</strong>? ¿Pueden relacionar estas diferencias con lo que saben de <em>single linkage</em> y <em>complete linkage</em>?</p>
 <p><strong>7.3)</strong> Ignorando los colores, ¿cuál les parece el mejor criterio de agregación para este caso donde queremos recuperar tres clusters?</p>
+<h4 id="asignando-clusters">Asignando clusters</h4>
+<p>Cuando uno mira el árbol creado en el punto <strong>6)</strong> es común detectar que ciertas flores son más similares entre sí que otras, y suponer que entonces pertenecen a un mismo grupo. Esto se puede calcular computacionalmente "cortando" el árbol usando un cierto umbral de similitud y agrupando en un mismo <em>cluster</em> a aquellos elementos que queden por debajo de ese umbral.</p>
+<p>Esto se puede hacer de dos formas, o determinando el umbral de similitud o determinando la cantidad de <em>clusters</em> a crear.</p>
+<div class="highlight"><pre><span></span><code><span class="n">clusters_porAltura</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">cutree</span><span class="p">(</span><span class="n">clustering_jerarquico</span><span class="p">,</span><span class="w"> </span><span class="n">h</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">@@</span><span class="n">EDITAR</span><span class="o">@@</span><span class="p">)</span>
+<span class="n">clusters_porCantidad</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">cutree</span><span class="p">(</span><span class="n">clustering_jerarquico</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">@@</span><span class="n">EDITAR</span><span class="o">@@</span><span class="p">)</span>
+</code></pre></div>
+<p>Donde <code>h</code> es el parámetro que recibe la altura de similitud a la cual cortar (eje y en el plot anterior) y <code>k</code> es el parámetro que recibe la cantidad de <em>clusters</em> a crear. Hay que usar uno o el otro.</p>
 <h4 id="hacer-clusters-y-plots">Hacer clusters y plots</h4>
 <p>Por último vamos a querer recrear el plot generado en los puntos <strong>1)</strong> y <strong>2)</strong>, pero ahora mostrando información tanto de las especies originales (con el color) como de la agrupación resultante del clustering jerárquico (con la forma). Vamos a utilizar los datos del clustering jerárquico que usa el criterio de agregación <em>complete linkage</em>.</p>
 <p><strong>8)</strong> Lo primero es entonces agregar la información del clustering jerárquico a nuestro <strong>dt_iris</strong>; para ello:</p>
@@ -1560,17 +1990,19 @@
 <p>Tengan en cuenta que al momento de clusterizar estamos usando los datos de las cuatro columnas de la tabla. Sin embargo, en este último plot estamos viendo solo la relación entre dos. Por esta razón, este plot no es realmente representativo del clustering que estamos haciendo.</p>
 <p>Dicho todo esto, este plot es útil ya que es mucho más fácil de leer que otros plots más complejos, pero debe tomarse como un análisis exploratorio.</p>
 </div>
-<h3 id="kmeans">Kmeans</h3>
-<p><strong>10)</strong> Lo último que vamos a hacer con este data set es volver a crear los clusters pero usando ahora la función <code>kmeans()</code>.</p>
-<p><strong>10.1)</strong> Usando lo aprendido en el TP anterior:</p>
-<ul>
-<li>Usen la función <code>kmeans()</code> para crear un nuevo clustering. Usen la cantidad de <code>centers</code> que consideren necesarios.</li>
-<li>Extraigan los clusters del clustering recién creado y asígnenlos a una nueva columna en <strong>dt_iris</strong> llamada <strong>K3_cluster</strong> (como en este caso <code>kmeans()</code> devuelve los datos en el mismo orden que están en la tabla se puede hacer directamente con <code>&lt;-</code>, no hace falta usar <code>merge()</code>).</li>
-<li>Transformen dicha columna en un <em>factor</em>.</li>
-<li>Usando la función creada en el punto <strong>9)</strong>, vean como se distribuyen los puntos al comparar <strong>Sepal.Length</strong> contra <strong>Petal.Length</strong> usando la columna <strong>Species</strong> para determinar el color y la columna <strong>K3_cluster</strong> para determinar la forma de los diferentes puntos. Guarden este plot en un archivo llamado <strong>22_Sepal_vs_Petal_Length_per_Species_K3.pdf</strong>.</li>
-</ul>
-<p><strong>10.2)</strong> Abran el archivo recién creado. Basándose solo en lo que pueden observar en este plot, ¿pueden decir algo de si este agrupamiento es mejor, peor o similar al obtenido con el clustering jerárquico? (recuerden que "no" también es una respuesta válida)</p>
-<p><strong>10.3)</strong> Supongamos ahora que estamos en un escenario real, por lo que no tenemos información de a que especie corresponde cada punto. En base a lo visto en el TP anterior, ¿se les ocurre alguna forma de evaluar objetivamente cuál de ambos es el mejor clustering?</p>
+<h3 id="k-means">K-means</h3>
+<p>Otro método muy popular para agrupar elementos es el <em>K-means</em>. A diferencia del <em>clustering jerárquico</em>, éste no crea un árbol de similitud, sino que utiliza un método iterativo para asignar directamente cada elemento a diferentes grupos. Otra característica del <em>K-means</em> es que hay que pasarle el número de clusters a crear.</p>
+<p>La función <code>kmeans</code> viene con <strong>R</strong> y se usa:</p>
+<p></p><div class="highlight"><pre><span></span><code><span class="c1">#Esta funcion controla el aspecto azaroso de kmeans para que nos de igual a todos</span>
+<span class="nf">set.seed</span><span class="p">(</span><span class="m">1</span><span class="p">)</span>
+
+<span class="c1">#Corro la funcion kmeans para la matriz de datos pidiendole 3 clusters</span>
+<span class="n">clustering_kmeans_k3</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">kmeans</span><span class="p">(</span><span class="n">matriz_datos</span><span class="p">,</span><span class="w"> </span><span class="n">centers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3</span><span class="p">)</span>
+
+<span class="c1">#Extraigo los clusters calculados</span>
+<span class="n">clusters_kmeans_k3</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">clustering_kmeans_k3</span><span class="o">$</span><span class="n">cluster</span>
+</code></pre></div>
+Donde <code>centers = 3</code> le está diciendo a la función que cree 3 clusters (lo que estoy indicando en el nombre de la variable con <strong>_k3</strong> para que el nombre de la variable sea descriptivo).
 <div class="admonition tip">
 <p class="admonition-title">Tip - Predeterminar el azar</p>
 <p>La función <code>kmeans()</code> genera la primera posición de sus centros al azar. Esto hace que si la corren varias veces o en diferentes computadoras va a dar diferentes resultados cada vez. Esto se puede controlar con una función de <strong>R</strong> que asigna a mano el valor de la <em>seed</em>, que es el número base que usa <strong>R</strong> al momento de generar azar. Si les interesa hacer esto tienen que ejecutar la siguiente línea antes de usar la función <code>kmeans()</code>:</p>
@@ -1578,8 +2010,212 @@
 </code></pre></div>
 <p>P.D.: El azar en las computadoras no existe realmente. Muchos programas usan lista pre-generadas de "números creados al azar" y otras usan cosas como "el quinto decimal de la temperatura del procesador en este momento", lo que se aproxima suficientemente al azar para funcionar bien.</p>
 </div>
-<h2 id="ejercicio-2-analizando-el-efecto-de-dos-inhibidores" markdown="markdown"><strong>Ejercicio 2 - Analizando el efecto de dos inhibidores</strong></h2>
-<p>En el <strong>TP 5b</strong> hicimos un ejercicio donde usábamos el equipo <strong>FilterMax F5</strong> para analizar 22 inhibidores de una llamada <strong>Enzima Z</strong>, la cual resulta que era la cruzipaína, es decir, la cisteín proteasa principal de <em>Trypanosoma cruzi</em>, el parásito causante de la enfermedad de Chagas.</p>
+<p><strong>10)</strong> Comparen los clusters obtenidos utilizando <code>kmeans()</code> contra los clusters a los obtenidos previamente usando <em>clustering jerárquico</em>. Para eso:</p>
+<ul>
+<li>Usen la función <code>kmeans()</code> para crear un nuevo clustering. Usen la cantidad de <code>centers</code> que consideren necesarios.</li>
+<li>Extraigan los clusters del clustering recién creado y asígnenlos a una nueva columna en <strong>dt_iris</strong> llamada <strong>K3_cluster</strong> (como en este caso <code>kmeans()</code> devuelve los datos en el mismo orden que están en la tabla se puede hacer directamente con <code>&lt;-</code>, no hace falta usar <code>merge()</code>).</li>
+<li>Transformen dicha columna en un <em>factor</em>.</li>
+<li>Usando la función creada en el punto <strong>9)</strong>, vean como se distribuyen los puntos al comparar <strong>Sepal.Length</strong> contra <strong>Petal.Length</strong> usando la columna <strong>Species</strong> para determinar el color y la columna <strong>K3_cluster</strong> para determinar la forma de los diferentes puntos. Guarden este plot en un archivo llamado <strong>22_Sepal_vs_Petal_Length_per_Species_K3.pdf</strong>.</li>
+</ul>
+<p><strong>10.2)</strong> Abran el archivo recién creado. Basándose solo en lo que pueden observar en este plot, ¿pueden decir algo de si este agrupamiento es mejor, peor o similar al obtenido con el clustering jerárquico? (recuerden que "no" también es una respuesta válida)</p>
+<h3 id="silhouette">Silhouette</h3>
+<p>Para cada elemento presente en un agrupamiento se puede calcular un <em>Silhouette coeficient</em>, el cual es un número entre -1 y 1 que indica que tan similar es dicho elemento a otros elementos de su mismo <em>cluster</em> y que tan diferente es dicho elemento a los elementos de otros <em>clusters</em>. Cuanto más cerca de 1, mejor asignado esta dicho elemento en su <em>cluster</em>.</p>
+<p>Es posible entonces calcular el promedio de los <em>Silhouette coefficients</em> de todos los elementos presentes en un agrupamiento, donde promedios más cercanos a 1 van a indicar que el agrupamiento general es mejor.</p>
+<p>Este método tiene bastantes usos, pero uno de los más comunes es definir cuál es el número ideal de clusters a crear con <em>K-means</em>. </p>
+<!--
+La función `silhouette` no viene por defecto con **R**. Corran el siguiente código para instalar el paquete `cluster`:
+
+<div class="highlight"><pre><span></span><code><span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;cluster&quot;</span><span class="p">)</span>
+</code></pre></div>
+-->
+
+<p>En <strong>R</strong> Esta función se usa:</p>
+<p></p><div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">cluster</span><span class="p">)</span><span class="w"> </span><span class="c1">#paquete que contiene la funcion silhouette()</span>
+
+<span class="c1">#Calculo los silhouette coefficients para los datos agrupados en 3 clusters usando kmeans </span>
+<span class="c1">#Tengo que pasarle tambien la matriz de distancias correspondiente para que pueda calcular similitud entre elementos</span>
+<span class="n">silhouette_kmeans_k3</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">silhouette</span><span class="p">(</span><span class="n">clusters_kmeans_k3</span><span class="p">,</span><span class="w"> </span><span class="n">dist</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">matriz_distancias</span><span class="p">)</span>
+
+<span class="c1">#La funcion *silhouette* saca los nombres de las filas.</span>
+<span class="c1">#Para recuperar los nombres de las filas (o *rownames*) hago lo siguiente</span>
+<span class="nf">rownames</span><span class="p">(</span><span class="n">silhouette_kmeans_k3</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">rownames</span><span class="p">(</span><span class="n">matriz_datos</span><span class="p">)</span>
+
+<span class="c1">#Podemos plotear los silhouette coefficients con plot</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">silhouette_kmeans_k3</span><span class="p">,</span><span class="w"> </span><span class="n">main</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Kmeans - centers = 2"</span><span class="p">)</span>
+
+<span class="c1">#Y podemos extraer el promedio de los *Silhouette coefficients*</span>
+<span class="n">promedio_silhouette_kmeans_k3</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">summary</span><span class="p">(</span><span class="n">silhouette_kmeans_k3</span><span class="p">)[[</span><span class="m">1</span><span class="p">]][[</span><span class="s">"Mean"</span><span class="p">]]</span>
+</code></pre></div>
+<strong>11)</strong> Corran el código anterior y vean su salida.
+<p><strong>11.1)</strong> Supongamos ahora que estamos en un escenario real, por lo que no tenemos información de a que especie corresponde cada punto. Evalúen objetivamente cual es el mejor clustering de los realizados</p>
+<h2 id="ejercicios-adicionales">Ejercicios adicionales</h2>
+<div class="admonition info">
+<p class="admonition-title">Sobre los ejercicios adicionales</p>
+<p>Recomendamos hacer los ejercicios extra de este TP!</p>
+<p>El primero les enseña a realizar gráficos usando <code>ggplot2</code> y a personalizarlos, por lo que van a aprender un poco mas sobre como mostrar sus datos. </p>
+<p>El segundo, es la continuación del TPP 2, donde van a poder aplicar los conceptos de clustering en un estudio de transcriptómica. Es un ejercicio integrador, similar a lo que se haría trabajando en un laboratorio. En este punto pueden que les surjan dudas conceptuales sobre que están haciendo en cada paso, no duden en usar discord!</p>
+</div>
+<h2 id="ejercicio-adicional-1-mejores-plots-ggplot2"><strong>Ejercicio adicional 1 - Mejores plots: ggplot2</strong></h2>
+<p>En el <strong>TPP 1</strong> mencionamos rápidamente al paquete <code>ggplot2</code>, el cual es uno de las formas más populares de hacer plots en <strong>R</strong>. Este paquete es bastante complicado y tiene un sinfín de funcionalidades, pero hoy vamos a darle un vistazo a su funcionalidad básica (el <a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf">cheatsheet</a> es una forma rápida de ver todas las posibilidades que tiene).</p>
+<p>Un ejemplo muy simple de hacer un plot con la función <code>ggplot</code> sería:</p>
+<div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
+
+<span class="c1">#Recuerden que *iris* es un *Data Frame* para hacer pruebas que esta siempre cargado en la memoria de R</span>
+<span class="n">p</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">ggplot</span><span class="p">(</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">iris</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Petal.Length</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Sepal.Length</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="nf">geom_point</span><span class="p">()</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li><strong>p</strong> es una variable en la que estoy guardando el plot. Cuando la imprimo (usando <code>print</code>) el plot va a aparecer en la pestaña <strong>Plots</strong> en <strong>RStudio</strong> (en el panel de abajo a la derecha).</li>
+<li><code>data = iris</code> le está indicando a la función <code>ggplot</code> de que tabla va a sacar la información a plotear. En <code>ggplot</code> se pueden usar <em>Data Frames</em> o <em>Data Tables</em> indistintamente.</li>
+<li><code>aes()</code> es una función que se encuentra dentro de la función principal de <code>ggplot</code>. Se va a encargar de relacionar las diferentes columnas de la tabla con las diferentes variables del plot.</li>
+<li><code>x = Petal.Length</code> está indicando que la variable X en el plot va a ser los datos de la columna <strong>Petal.Length</strong>.</li>
+<li><code>y = Sepal.Length</code> está indicando que la variable Y en el plot va a ser los datos de la columna <strong>Sepal.Length</strong>.</li>
+<li><code>geom_point()</code> está indicando el tipo de plot a realizar. Si leen el <a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf">cheatsheet</a> van a ver que en este caso estamos haciendo un scatter plot.</li>
+<li>Ambas funciones del plot están separadas por el símbolo <code>+</code>, lo que les puede resultar un poco extraño (porque lo es), pero así es como funciona <code>ggplot</code>.</li>
+</ul>
+<p><strong>1)</strong> Corran el código anterior y vean el plot resultante.</p>
+<h3 id="cambiar-la-estetica-del-plot-segun-variables" markdown="markdown">Cambiar la estética del plot según variables</h3>
+<p>La función <code>aes()</code> recibe su nombre de la palabra en inglés <em>aesthetics</em>, o estética. No es de extrañar entonces que dentro de dicha función es donde podemos poner otras variables que determinen los colores, formas o tamaños de cada punto del plot (entre otras características).</p>
+<p><strong>2)</strong> Corran el siguiente código y vean el plot resultante:</p>
+<div class="highlight"><pre><span></span><code><span class="n">p</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">ggplot</span><span class="p">(</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">iris</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Petal.Length</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Sepal.Length</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Species</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="nf">geom_point</span><span class="p">()</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+</code></pre></div>
+<p>En este código, <code>color = Species</code> le está diciendo a <code>ggplot</code> que modifique el color de los puntos dependiendo del valor de la columna <strong>Species</strong>. Si recuerdan a <strong>iris</strong>, esta columna era una columna categórica (o <em>factor</em>) con 3 valores que podemos ver en el plot. Como le pasamos a <code>color</code> una variable categórica, nos devolvió una escala de colores categórica.</p>
+<p><strong>3)</strong> Corran el código anterior, pero ahora reemplacen a <strong>Species</strong> por <strong>Petal.Width</strong>, ¿qué cambios observan?</p>
+<p><strong>4)</strong> Es posible también modificar varias de estas características a la vez. Corran el siguiente código y vean el plot resultante:</p>
+<div class="highlight"><pre><span></span><code><span class="n">p</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">ggplot</span><span class="p">(</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">iris</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Petal.Length</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Sepal.Length</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Species</span><span class="p">,</span><span class="w"> </span><span class="n">shape</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Species</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Petal.Width</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="nf">geom_point</span><span class="p">()</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+</code></pre></div>
+<p>En este caso agregamos 2 características nuevas, <code>shape</code> (la forma de los puntos) y <code>size</code> (el tamaño de los puntos) y le asignamos cada uno de ellos a una variable de la tabla. Noten que no hay problema con que una columna modifique más de una característica a la vez.</p>
+<p><strong>5)</strong> Tal vez ya lo notaron, pero por el momento no tenemos ningún control sobre que colores o formas le asigna <code>ggplot</code> a mis tres categorías. Vamos a mostrarles como hacerlo para este caso específico, pero sepan que las funciones a usar son ligeramente diferentes dependiendo si la variable pasada es discreta o continua. </p>
+<p>Corran el siguiente código y vean el plot resultante:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">#Los colores se pueden escribir en ingles o en hexadecimal</span>
+<span class="c1">#"#FF0000" es el color rojo (se podría haber puesto "red")</span>
+<span class="n">p</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">ggplot</span><span class="p">(</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">iris</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Sepal.Length</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Petal.Length</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Species</span><span class="p">,</span><span class="w"> </span><span class="n">shape</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Species</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="nf">geom_point</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="hll"><span class="w">    </span><span class="nf">scale_colour_manual</span><span class="p">(</span><span class="n">values</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">"#FF0000"</span><span class="p">,</span><span class="w"> </span><span class="s">"blue"</span><span class="p">,</span><span class="w"> </span><span class="s">"green"</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+</span><span class="hll"><span class="w">    </span><span class="nf">scale_shape_manual</span><span class="p">(</span><span class="n">values</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">))</span>
+</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li><code>scale_colour_manual()</code>: me permite modificar a mano una escala discreta de colores. El parámetro <code>values</code> modifica los colores en sí.</li>
+<li><code>scale_shape_manual()</code>: me permite modificar a mano una escala discreta de formas. El parámetro <code>values</code> modifica las formas, las cuales corresponden a un número entero (en el tip a continuación se muestran las más comunes).</li>
+</ul>
+<p>Un detalle importante a destacar es que el orden en que se asignó cada color a cada categoría depende del orden en el que aparecen los <em>Levels</em> de la columna <strong>Species</strong>, la cual es un <em>factor</em> (pueden imprimir <code>iris$Species</code> para ver a lo que nos referimos). </p>
+<details class="tip">
+<summary>Tip - Posibles valores para <code>shape</code></summary>
+<p><figure markdown>
+<a class="glightbox" href="img/points-symbols.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="ShapeSymbols" max-width="500" src="img/points-symbols.png"></a>
+</figure></p>
+<p>El color interior las formas 21 a 25 depende de la variable <code>fill</code> que no mencionamos todavía, pero se usa igual que el resto.</p>
+</details>
+<details class="tip">
+<summary>Tip - Colores y daltonismo</summary>
+<p>El daltonismo ocurre cuando hay un problema con los pigmentos en ciertas células nerviosas del ojo que perciben el color. Estas células se llaman conos y los hay de tres tipos, los cuales son responsables de ver principalmente al rojo, al verde y al azul respectivamente. </p>
+<p><figure markdown>
+<a class="glightbox" href="img/colorblind_rainbow.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="ColorblindRainbow" src="img/colorblind_rainbow.jpg"></a>  <br>
+</figure></p>
+<p>La frecuencia del daltonismo es bastante alta, con un 8% de los hombres caucásicos, 5% de los asiáticos y 4% de los africanos presentando problemas para distinguir el color rojo del verde. Como la mayoría de los casos de daltonismo provienen de una mutación de un gen recesivo ligado al cromosoma X, muy pocas mujeres son daltónicas.</p>
+<p>Debido al considerable número de personas con daltonismo, es buena ídea tener en cuenta esto al momento de elegir colores para cualquier figura que vaya a ser vistas por el público general. Se pueden encontrar decenas de herramientas online que nos ayudan a crear esto, así como paquetes de <strong>R</strong> o paletas de colores. Un ejemplo de una paleta de colores sería:</p>
+<p><figure markdown>
+<a class="glightbox" href="img/colorblind_pallete.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="ColorblindPallete" src="img/colorblind_pallete.jpg"></a>  <br>
+</figure></p>
+<p>Pueden leer más información sobre este tema <a href="https://jfly.uni-koeln.de/color/">aca</a>.</p>
+</details>
+<details class="tip">
+<summary>Tip - Asignar colores específicos a cada característica sin depender del orden de los <em>Levels</em></summary>
+<p>Si bien el código anterior funciona perfecto, depender del orden de los <em>Levels</em> de un <em>factor</em> al momento de matchear color con un valor dado puede ser peligroso. Una forma de estar seguros que le estamos asignando el color correcto a cada valor es usando vectores con nombres (o <em>named vectors</em>). Algo mencionamos de estos vectores en el pasado, pero básicamente son vectores donde cada posición tiene un nombre (además del índice). En este caso sería:</p>
+<div class="highlight"><pre><span></span><code><span class="n">categorias</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">"setosa"</span><span class="p">,</span><span class="w"> </span><span class="s">"versicolor"</span><span class="p">,</span><span class="w"> </span><span class="s">"virginica"</span><span class="p">)</span>
+<span class="n">colores</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">"#FF0000"</span><span class="p">,</span><span class="w"> </span><span class="s">"blue"</span><span class="p">,</span><span class="w"> </span><span class="s">"green"</span><span class="p">)</span>
+<span class="nf">names</span><span class="p">(</span><span class="n">colores</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">categorias</span>
+
+<span class="c1">#Puedo acceder a "blue" haciendo `colores[2]` o `colores["versicolor"]`</span>
+</code></pre></div>
+<p>De hacer <code>scale_colour_manual(values = colores)</code> en la función <code>ggplot</code> nos aseguraríamos que el primer elemento de <code>categorias</code> va a tener el primer color de <code>colores</code> y así.</p>
+</details>
+<p><strong>6)</strong> Por último, ¿qué pasa si no queremos cambiar la estética del plot dependiendo del valor de una variable, sino que simplemente queremos cambiarla y que afecte a todos los puntos por igual? En estos casos hay que modificar dicha característica dentro de la función específica del plot.</p>
+<p>Corran el siguiente código y vean el plot resultante:</p>
+<div class="highlight"><pre><span></span><code><span class="n">p</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">ggplot</span><span class="p">(</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">iris</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Sepal.Length</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Petal.Length</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Species</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="nf">geom_point</span><span class="p">(</span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="n">shape</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">4</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="nf">scale_colour_manual</span><span class="p">(</span><span class="n">values</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">"#FF0000"</span><span class="p">,</span><span class="w"> </span><span class="s">"blue"</span><span class="p">,</span><span class="w"> </span><span class="s">"green"</span><span class="p">))</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="nombres-y-estilo-de-los-ejes-y-el-plot" markdown="markdown">Nombres y estilo de los ejes y el plot</h3>
+<p><strong>7)</strong> Ahora que ya modificamos bastante el estilo de los datos, vamos a modificar el resto del plot. Lo primero que vamos a hacer es cambiar el nombre del eje X, el eje Y y el título del plot.</p>
+<p>Corran el siguiente código y vean el plot resultante:</p>
+<div class="highlight"><pre><span></span><code><span class="n">p</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">ggplot</span><span class="p">(</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">iris</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Sepal.Length</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Petal.Length</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Species</span><span class="p">,</span><span class="w"> </span><span class="n">shape</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Species</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="nf">geom_point</span><span class="p">(</span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="hll"><span class="w">    </span><span class="nf">xlab</span><span class="p">(</span><span class="s">"Sepal Length"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+</span><span class="hll"><span class="w">    </span><span class="nf">ylab</span><span class="p">(</span><span class="s">"Petal Length"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+</span><span class="hll"><span class="w">    </span><span class="nf">ggtitle</span><span class="p">(</span><span class="s">"Sepal Length vs Petal Length per Species"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+</span><span class="w">    </span><span class="nf">scale_colour_manual</span><span class="p">(</span><span class="n">values</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">"#FF0000"</span><span class="p">,</span><span class="w"> </span><span class="s">"blue"</span><span class="p">,</span><span class="w"> </span><span class="s">"green"</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="nf">scale_shape_manual</span><span class="p">(</span><span class="n">values</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">))</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li><code>xlab()</code>: indica el nombre del eje X</li>
+<li><code>ylab()</code>: indica el nombre del eje Y</li>
+<li><code>ggtitle()</code>: indica el título del plot</li>
+</ul>
+<p><strong>8)</strong> Si bien obtuvimos lo deseado, puede ser que queramos cambiar el tamaño de los ejes o centrar el título. Esto lo hacemos con la función <code>theme()</code>:</p>
+<p>Corran el siguiente código y vean el plot resultante:</p>
+<div class="highlight"><pre><span></span><code><span class="n">p</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">ggplot</span><span class="p">(</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">iris</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Sepal.Length</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Petal.Length</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Species</span><span class="p">,</span><span class="w"> </span><span class="n">shape</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Species</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="nf">geom_point</span><span class="p">(</span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="nf">xlab</span><span class="p">(</span><span class="s">"Sepal Length"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="nf">ylab</span><span class="p">(</span><span class="s">"Petal Length"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="nf">ggtitle</span><span class="p">(</span><span class="s">"Sepal Length vs Petal Length per Species"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="hll"><span class="w">    </span><span class="nf">theme</span><span class="p">(</span><span class="n">plot.title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element_text</span><span class="p">(</span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">16</span><span class="p">,</span><span class="w"> </span><span class="n">hjust</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.5</span><span class="p">),</span>
+</span><span class="hll"><span class="w">          </span><span class="n">axis.title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element_text</span><span class="p">(</span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">14</span><span class="p">),</span>
+</span><span class="hll"><span class="w">          </span><span class="n">axis.text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element_text</span><span class="p">(</span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">12</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+</span><span class="w">    </span><span class="nf">scale_colour_manual</span><span class="p">(</span><span class="n">values</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">"#FF0000"</span><span class="p">,</span><span class="w"> </span><span class="s">"blue"</span><span class="p">,</span><span class="w"> </span><span class="s">"green"</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="nf">scale_shape_manual</span><span class="p">(</span><span class="n">values</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">))</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li><code>theme()</code>: es la función que contiene el estilo del texto de los ejes y del título de un plot.</li>
+<li><code>plot.title = element_text(size = 16, hjust = 0.5)</code>: estamos modificando el titulo del plot, donde <code>size</code> modifica el tamaño de letra y <code>hjust = 0.5</code> lo centra horizontalmente.</li>
+<li><code>axis.title = element_text(size = 14)</code>: estamos modificando los títulos de los ejes (es decir, los nombre de los ejes).</li>
+<li><code>axis.text = element_text(size = 12)</code>: estamos modificando el tamaño de los números de los ejes.</li>
+</ul>
+<p>Noten que dentro de <code>theme()</code> cada línea se separa con comas, y recién una vez que termina volvemos a usar el símbolo <code>+</code>.</p>
+<h3 id="fondo-del-plot">Fondo del plot</h3>
+<p><strong>9)</strong> Lo último que nos queda por modificar es el "fondo" del plot, es decir, el color de fondo, las líneas que corresponden a las divisiones de los ejes y el recuadro general del plot. Si bien esto se puede hacer a mano, <strong>ggplot</strong> viene con algunas opciones ya armadas.</p>
+<p>Corran el siguiente código y vean el plot resultante:</p>
+<div class="highlight"><pre><span></span><code><span class="n">p</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">ggplot</span><span class="p">(</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">iris</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Sepal.Length</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Petal.Length</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Species</span><span class="p">,</span><span class="w"> </span><span class="n">shape</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Species</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="nf">geom_point</span><span class="p">(</span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">    </span>
+<span class="w">    </span><span class="nf">xlab</span><span class="p">(</span><span class="s">"Sepal Length"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="nf">ylab</span><span class="p">(</span><span class="s">"Petal Length"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="nf">ggtitle</span><span class="p">(</span><span class="s">"Sepal Length vs Petal Length per Species"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="hll"><span class="w">    </span><span class="nf">theme_bw</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+</span><span class="w">    </span><span class="nf">theme</span><span class="p">(</span><span class="n">plot.title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element_text</span><span class="p">(</span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">16</span><span class="p">,</span><span class="w"> </span><span class="n">hjust</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.5</span><span class="p">),</span>
+<span class="w">          </span><span class="n">axis.title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element_text</span><span class="p">(</span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">14</span><span class="p">),</span>
+<span class="w">          </span><span class="n">axis.text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element_text</span><span class="p">(</span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">12</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="nf">scale_colour_manual</span><span class="p">(</span><span class="n">values</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">"#FF0000"</span><span class="p">,</span><span class="w"> </span><span class="s">"blue"</span><span class="p">,</span><span class="w"> </span><span class="s">"green"</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="nf">scale_shape_manual</span><span class="p">(</span><span class="n">values</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">))</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li><code>theme_bw()</code> es una función que setea varias opciones de <code>theme()</code> a un estilo específico (en este caso un estilo simple en blanco y negro). La tenemos que usar antes de <code>theme()</code> para asegurarnos que cualquier cambio que hagamos a mano en <code>theme()</code> sobrescriba los de <code>theme_bw()</code>.</li>
+</ul>
+<!--
+**10)** Reemplacen a `theme_bw()` por `theme_` y vean la lista de temas que aparecen en el autocompletar de RStudio (si no aparece pueden apretar ++ctrl++ + ++space++). Prueben correr el código anterior con 2 temas que no sean `theme_bw()` y vean como se ve el plot en cada caso.
+-->
+
+<h3 id="otros-tipos-de-plots">Otros tipos de plots</h3>
+<p>Si bien la mayoría de lo que les mencionamos hasta ahora es aplicable al uso general de <strong>ggplot</strong>, hasta el momento nos enfocamos en un solo tipo de plot, el scatter plot, hecho mediante <code>geom_point()</code>.</p>
+<p>Debido a que esto es suficiente para lo que necesitamos hacer hoy,no vamos a hablar hoy de otros tipos de plots, pero si les interesa pueden verlo con mucho detalle en <a href="http://sthda.com/english/wiki/ggplot2-essentials">esta página</a> o ver un vistazo rápido en la <a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf">cheatsheet</a>.</p>
+<h2 id="ejercicio-adicional-2-analizando-el-efecto-de-dos-inhibidores" markdown="markdown"><strong>Ejercicio adicional 2 - Analizando el efecto de dos inhibidores</strong></h2>
+<p>En el <strong>TPP 2</strong> hicimos un ejercicio donde usábamos el equipo <strong>FilterMax F5</strong> para analizar 22 inhibidores de una llamada <strong>Enzima Z</strong>, la cual resulta que era la cruzipaína, es decir, la cisteín proteasa principal de <em>Trypanosoma cruzi</em>, el parásito causante de la enfermedad de Chagas.</p>
 <p>En esta segunda fase del experimento se eligieron 2 inhibidores y se realizó un análisis más detallado, estudiando como varía la expresión de miles de genes en presencia o ausencia de dichos inhibidores. Para esto se hizo un estudio de transcriptómica (RNA-seq) donde se extrajo el ARN y se lo analizó con <strong>Illumina</strong>. Luego, cada <em>read</em> encontrado se mapeó contra el genoma de referencia y se llegó a una tabla de conteo para cada uno de las transcriptos del genoma.</p>
 <p>Para cada caso (<em>control</em>, <em>droga 1</em> y <em>droga 2</em>) se realizaron 3 réplicas técnicas para obtener resultados más robustos.</p>
 <p>Nuestro objetivo va a ser entonces obtener una lista de los genes que son más afectados por cada droga.</p>
@@ -1761,6 +2397,10 @@
 </div>
 <p><strong>6.2)</strong> Usen <code>write.table()</code> para generar un nuevo archivo llamado <strong>affected_genes_drug1</strong> y guarden en él los IDs recién calculados para la droga 1. Tengan en cuenta que queremos solo los IDs, por lo que tienen que cambiar los parámetros de la función para que no haya nombres de las filas, nombres de las columnas ni comillas. Hagan lo mismo para la droga 2.</p>
 <h3 id="buscar-nuestros-genes-en-bases-de-datos" markdown="markdown">Buscar nuestros genes en bases de datos</h3>
+<div class="admonition info">
+<p class="admonition-title">Importante</p>
+<p>La base de datos <strong>TriTrypDB</strong> se encuentra discontinuada en este momento (septiembre 2024). Dejamos el ejercicio planteado para cuando la página vuelva a estar activa, y para que vean como era el paso de data mining. Cuando haya una alternativa, vamos a reemplazar este punto con la nueva información.</p>
+</div>
 <p><strong>7)</strong> Lo último que vamos a hacer con esta información es investigar en bases de datos para tratar de entender un poco más que procesos biológicos están siendo afectados por nuestras drogas. Como estamos trabajando con <em>Trypanosoma cruzi</em> vamos a ir a una página que se especializa en tripanosomátidos llamada <strong>TriTrypDB</strong>.</p>
 <p><strong>7.1)</strong> Entren a <a href="https://tritrypdb.org/tritrypdb/app/search/transcript/GeneByLocusTag">este link</a> y copien la lista de IDs que acabamos de crear para la droga 1. Hagan click en <strong>Get Answer</strong>.</p>
 <p><strong>7.2)</strong> Una vez que se hayan cargados los datos vayan a <strong>Analyze Results</strong> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg></span> <strong>Gene Onthology Enrichment</strong>, asegúrense que este checkeado <strong>Biological Process</strong> y aprieten <strong>Submit</strong> (disclaimer: esta parte a veces no anda y hay que probar otro día).</p>
