@@ -8,14 +8,16 @@
 <br>
 <br>
 <br>
- 
+
+
+### Slides mostrados en clase
+* :fontawesome-regular-file-pdf: [Slides TP](https://drive.google.com/file/d/1tESJ6BIeBC75y7eQ4I_dVZVlTpMTgngv/view?usp=sharing)
+
 <!--
 [:fontawesome-solid-download: Materiales](#){ .md-button .md-button--primary }
 Este es el botón para decargar materiales, en (#) hay que agregar el link correspondiente
 
 
-### Slides mostrados en clase
-* :fontawesome-regular-file-pdf: [Slides TP](https://drive.google.com/file/d/1wQaOpunfWnYC0a7dNTznI-ETLJdhpEU3/view?usp=sharing)
 
 ### Video de la clase grabada
 * :octicons-video-16: [Cierre de tp](https://youtu.be/Xa7Yq9BHczU)
@@ -710,7 +712,7 @@ El *for* es muy útil, pero tiene el problema de que uno necesita saber cuantas 
     }
     ```
 
-Tal vez no se dan cuenta, pero este programa va a hacer lo mismo que el `for (i in 1:10)` que usamos arriba: La variable `contador` va a empezar en 1 y al final de cada ciclo va a aumentarse en 1 gracias al comando `contador <- contador + 1`. Cuando `contador` llegue a 1001, la condición `contador <= 10` va a ser **FALSE**{ .red_text } y el *while* va a terminar (es decir, el número 1001 nunca se imprime en la terminal).
+Tal vez no se dan cuenta, pero este programa va a hacer lo mismo que el `for (i in 1:10)` que usamos arriba: La variable `contador` va a empezar en 1 y al final de cada ciclo va a aumentarse en 1 gracias al comando `contador <- contador + 1`. Cuando `contador` llegue a 11, la condición `contador <= 10` va a ser **FALSE**{ .red_text } y el *while* va a terminar (es decir, el número 11 nunca se imprime en la terminal).
 
 Ahora bien, para el caso anterior no tiene mucho sentido usar un ciclo *while* ya que se podría haber hecho perfectamente con un *for*. Supongamos entonces que queremos escribir las potencias de 2 que son menores a 1.000, en ese caso podemos hacer:
 
@@ -732,7 +734,7 @@ Ahora bien, para el caso anterior no tiene mucho sentido usar un ciclo *while* y
     # Declaro una variable *numero* con el valor 1 (que es 2^0)
     numero <- 1
 
-    # El loop este va a seguir mientras *numero* sea menor a 1 millon
+    # El loop este va a seguir mientras *numero* sea menor a mil
     while(numero < 1000) {
         # Imprimo *numero* en la terminal
         print(numero)

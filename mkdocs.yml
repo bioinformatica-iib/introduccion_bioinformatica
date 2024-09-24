@@ -186,6 +186,7 @@ nav:
     - Instructivos:
         - 'instructivos/inicio.md'
         - Replit: 'instructivos/replit/index.md' 
+        - R y Rstudio: 'instructivos/R/index.md' 
     #     - Máquina Virtual: 'instructivos/maquina_virtual/index.md'
     #     - Problemas instalando la Máquina Virtual: 'instructivos/problemasVM/index.md'
     #     - Tips and Tricks para usar la Máquina Virtual más cómodos: 'instructivos/tipsVM/index.md'
