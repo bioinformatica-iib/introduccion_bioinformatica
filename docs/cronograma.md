@@ -27,7 +27,7 @@ tags:
 | Martes, 17 Septiembre 2024 | 9:00 hs |	:material-google-classroom: Presencial | [T7. Quimioinformática](teoricas/7-Teorica-Siete/index.md) | :fontawesome-solid-brain: Teórica |	F. Agüero |
 | Jueves, 19 Septiembre 2024 | 9:00 hs |	:material-google-classroom: Presencial | [P7. Quimioinformática](practicos/TP07_Quimioinformatica/index.md) | :fontawesome-solid-hammer: Práctica |	M. Didier Garnham |
 | Martes, 24 Septiembre 2024 | 9:00 hs |	:material-google-classroom: Presencial | [PP. Programando en Biología](practicos/TPPa_Programando_en_Biologia/index.md) | :fontawesome-solid-hammer: Práctica |	M. Didier Garnham |
-| Jueves, 26 Septiembre 2024 | 9:00 hs |	:material-google-classroom: Presencial | [PP. Programando en Biología](practicos/TPPb_Programando_en_Biologia/index.md)  | :fontawesome-solid-hammer: Práctica |	M. Didier Garnham |
+| Jueves, 26 Septiembre 2024 | 9:00 hs |	No hay clase por Paro | [PP. Programando en Biología](practicos/TPPb_Programando_en_Biologia/index.md)  | :fontawesome-solid-hammer: Práctica |	M. Didier Garnham |
 | Martes, 01 Octubre 2024 | 9:00 hs |	:material-google-classroom: Presencial | T8. Data clustering | :fontawesome-solid-brain: Teórica |	F. Agüero |
 | Jueves, 03 Octubre 2024 | 9:00 hs |	:material-google-classroom: Presencial |[ P8. Data Clustering y Data Mining](practicos/TP08_Clustering_Data_Mining/index.md) | :fontawesome-solid-hammer: Práctica |	G. Romer |
 | Martes, 08 Octubre 2024 | 9:00 hs |	:material-google-classroom: Presencial | T9. Secuenciación y ensamblado de genomas | :fontawesome-solid-brain: Teórica |	F. Agüero |
