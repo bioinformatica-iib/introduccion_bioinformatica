@@ -1,5 +1,6 @@
 ---
 title: Teorica Siete
+icon: fontawesome/solid/brain
 tags: 
   - teoricas
 ---

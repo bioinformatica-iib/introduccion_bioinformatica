@@ -1,3 +1,9 @@
+---
+title: Practico Doce
+icon: fontawesome/solid/hammer
+tags: 
+  - practicos
+---
 ![Image](img/featured.png){ width="250", align="left" }
 # **TP 12a**. Modelado por Homología { markdown data-toc-label = 'TP 09a' }
 

@@ -1,3 +1,10 @@
+---
+title: Practico Siete
+icon: fontawesome/solid/hammer
+tags: 
+  - practicos
+---
+
 ![Image](img/banner.jpg){ width="250", align="left" }
 
 # **TP 7**. Quimioinformática { markdown data-toc-label = 'TP 7' }

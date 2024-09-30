@@ -1,3 +1,10 @@
+---
+title: Practico Trece
+icon: fontawesome/solid/hammer
+tags: 
+  - practicos
+---
+
 ![Image](img/banner.jpg){ width="250", align="left" }
 
 # **TPP**. R - Programando en biología - Parte 2 { markdown data-toc-label = 'TPP' }

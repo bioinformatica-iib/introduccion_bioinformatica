@@ -1,3 +1,9 @@
+---
+title: Practico Ocho
+icon: fontawesome/solid/hammer
+tags: 
+  - practicos
+---
 ![Image](img/clustering2.png){ width="250", align="left" }
 
 # **TP 8**. Clustering y Data Mining { markdown data-toc-label = 'TP 08' }

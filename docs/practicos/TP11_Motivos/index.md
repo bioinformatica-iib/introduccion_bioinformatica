@@ -1,3 +1,9 @@
+---
+title: Practico Once
+icon: fontawesome/solid/hammer
+tags: 
+  - practicos
+---
 ![Image](img/featured.png){ width="250", align="left" }
 
 # **TP 11**. Motivos lineales { markdown data-toc-label = 'TP 08' }

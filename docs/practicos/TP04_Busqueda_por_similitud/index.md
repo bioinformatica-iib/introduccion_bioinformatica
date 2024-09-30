@@ -1,3 +1,10 @@
+---
+title: Practico Cuatro
+icon: fontawesome/solid/hammer
+tags: 
+  - practicos
+---
+
 ![Image](img/banner.jpg){ width="250", align="left" }
 
 # **TP 4**. Búsqueda de secuencias por similitud { markdown data-toc-label = 'TP 4' }

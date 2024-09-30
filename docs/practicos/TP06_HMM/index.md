@@ -1,3 +1,10 @@
+---
+title: Practico Seis
+icon: fontawesome/solid/hammer
+tags: 
+  - practicos
+---
+
 ![Image](img/banner.jpg){ width="250", align="left" }
 
 # **TP 6**. Hidden Markov Models (HMMs) { markdown data-toc-label = 'TP 11' }

@@ -1,3 +1,9 @@
+---
+title: Practico Diez
+icon: fontawesome/solid/hammer
+tags: 
+  - practicos
+---
 ![Image](img/featured.png){ width="250", align="left" }
 
 # **TP 10**. Predicción de Desorden { markdown data-toc-label = 'TP 7' }

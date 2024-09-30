@@ -1,3 +1,10 @@
+---
+title: Practico Catorce
+icon: fontawesome/solid/hammer
+tags: 
+  - practicos
+---
+
 ![Image](img/featured.png){ width="250", align="left" }
 
 

@@ -1,3 +1,10 @@
+---
+title: Practico Cinco
+icon: fontawesome/solid/hammer
+tags: 
+  - practicos
+---
+
 ![Image](img/banner.jpg){ width="250", align="left" }
 
 # **TP 5**. Perfiles de secuencias y PSI-BLAST { markdown data-toc-label = 'TP 5' }

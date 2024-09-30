@@ -1,3 +1,10 @@
+---
+title: Practico Nueve
+icon: fontawesome/solid/hammer
+tags: 
+  - practicos
+---
+
 ![Image](images/featured.jpg){ width="250", align="left" }
 # **TP 9**. Short Read Mapping { markdown data-toc-label = 'TP 13' }
 
