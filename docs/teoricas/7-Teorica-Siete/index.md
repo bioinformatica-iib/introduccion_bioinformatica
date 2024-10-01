@@ -9,8 +9,7 @@ tags:
  Clase teórica de introducción al uso y análisis de moléculas químicas pequeñas en la computadora. Representacion digital y electrónica de moléculas, formatos, algoritmos de búsqueda de similitud quimica. 
 
  * :fontawesome-regular-file-pdf: [Slides](quimioinformatica-2024.pdf) 
- 
- <!-- [type:video](https://www.youtube.com/embed/2TzNSNn8rpQ) -->
+ * :material-video-check: [Video de clase pasada](https://youtu.be/2TzNSNn8rpQ) (el contenido puede no coincidir totalmente con la clase de este año!!)
  
 
 ## Material de lectura y consulta

@@ -8,7 +8,7 @@ tags:
 ## Análisis de Datos
  Clase teórica de análisis de datos y agrupamiento de datos (clustering). Algoritmos, métricas, reducción de dimensionalidad.
 
- * :fontawesome-regular-file-pdf: [Slides](dataClustering2023.pdf) 
+ * :fontawesome-regular-file-pdf: [Slides](dataClustering2024.pdf) 
  * :material-video-check: [Video grabado en 2023](https://youtu.be/vC0myXfaTf8)
  
 
