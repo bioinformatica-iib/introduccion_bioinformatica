@@ -173,7 +173,7 @@ nav:
         - TPP - R - Introduccion: 'practicos/TPPa_Programando_en_Biologia/index.md'
         - TPP - R - Aplicación: 'practicos/TPPb_Programando_en_Biologia/index.md'
         - TP 8 - Clustering Y Data Mining: 'practicos/TP08_Clustering_Data_Mining/index.md'
-        #- TP 9 - Short Read Mapping: 'practicos/T0P9_Short-Read-Mapping/index.md'
+        - TP 9 - Short Read Mapping: 'practicos/TP09_Short-Read-Mapping/index.md'
         #- TP 10 - Predicción de Desorden: 'practicos/TP10_Desorden/index.md'
         #- TP 11 - Motivos Lineales: 'practicos/TP11_Motivos/index.md'
         #- TP 12a - Modelado por Homología: 'practicos/TP12a_Modelado_Por_Homologia/index.md'

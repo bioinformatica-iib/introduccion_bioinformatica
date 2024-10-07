@@ -4,24 +4,19 @@ icon: fontawesome/solid/hammer
 tags: 
   - practicos
 ---
+![Image](images/featured.jpeg){ width="250", align="left" }
 
-![Image](images/featured.jpg){ width="250", align="left" }
-# **TP 9**. Short Read Mapping { markdown data-toc-label = 'TP 13' }
+# **TP 9**. Short Read Mapping { markdown data-toc-label = 'TP 09' }
 
 <br>
 <br>
 <br>
-<br>
 
-[:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1PyRdK9EocaQoT5tpVR53iXeR7tV3NSCG/view?usp=sharing){ .md-button .md-button--primary }
+[:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/11jEhNiGYuAI_s9PMDmBtnDJNcaCpJTp_/view?usp=sharing){ .md-button .md-button--primary }
 
 ### Slides mostrados en la clase
 
-* :fontawesome-regular-file-pdf: [Slides TP](https://drive.google.com/file/d/1kIoMHE83zdSImJMPKC-8bOnziIWsWKVY/view?usp=sharing)
-
-### Videos de la clase grabada
-* :octicons-video-16: [Cierre TP](https://youtu.be/odbnwyOwYGY)
-
+* :fontawesome-regular-file-pdf: [Slides TP](https://docs.google.com/presentation/d/1gNyQKZi-3TxX2Olvc9TqVgw7I1XaQFs9YBryIevEXSc/edit?usp=sharing)
 
 ## Objetivos
 
@@ -113,12 +108,6 @@ Dado que la secuenciación de segunda generación tiene una mayor tasa de error 
 ### FastQC
 Este programa analiza los datos crudos para realizar gráficas y tablas que muestren la calidad global de los datos. Permite identificar algunos problemas relacionados a distintos aspectos de los datos. 
 
-Para instalar FastQC, ejecutar el siguiente comando en una consola de linux:
-
-```Bash
-sudo apt install fastqc
-```
-
 El reporte de FastQC tiene este formato (puede variar entre versiones):
 
 ![fastQC](images/fastqc.png)
@@ -154,17 +143,9 @@ firefox NV_1_fastqc.html NV_2_fastqc.html
 
 El formato SAM (Sequence Alignment Map) es un formato estandarizado para guardar de secuencias de nucleótidos alineadas (Para mas información ver [SAM format](https://samtools.github.io/hts-specs/SAMv1.pdf)). 
 
-Otro formato similar es el BAM, el cual es el equivalente binario y comprimido de SAM, desarrollado para aumentar la velocidad y utilizarse en procesamientos intensivos de datos. 
+Otro formato similar es el BAM, el cual es el equivalente binario y comprimido de SAM, desarrollado para aumentar la velocidad y utilizarse en procesamientos intensivos de datos.
 
-Para instalar los programas que usaremos a continuación ejecute el script de instalación ubicado en la carpeta de trabajo con el siguiente comando:
-
-```Bash
-bash update.sh
-```
-
-Mientras se instalan los programas (que tarda un rato largo), les contamos que el archivo SAM se genera con un software que funciona en computadoras con una arquitectura de 64bits (actualmente la mas común). Dado que nuestra máquina virtual tiene una arquitectura de 32bits, les vamos a dar ya creado este archivo y contarles como lo conseguimos:
-
-!!! info "Como crear el archivo SAM (NO FUNCIONA EN LA VM!)"
+!!! info "Como crear el archivo SAM"
 
 	!!! Warning "NO EJECUTAR EL CÓDIGO A CONTINUACIÓN! Es de muestra"
 
@@ -196,7 +177,7 @@ Mientras se instalan los programas (que tarda un rato largo), les contamos que e
 
 !!! info "A partir de aqui SI continúe ejecutando los comandos"
 
-Probablemente todavía se siguen instalando los programas, así que abra una nueva ventana de la consola y revise de qué se trata el `.sam` visualizando las primeras líneas del archivo:
+Revisen de qué se trata el `.sam` visualizando las primeras líneas del archivo por consola:
 
 ```Bash
 head mapping.sam
@@ -209,15 +190,7 @@ Las partes del archivo SAM son las siguientes:
 
 ### Compresión de archivos SAM
 
-<!--
-El programa que usaremos para convertir y analizar los archivos SAM y BAM es SAMtools, el cual instalaremos con el siguiente comando:
-
-```Bash
-sudo apt install samtools
-```
--->
-
-Una vez terminada la instalación, convierta el alineamiento de formato SAM a formato BAM:
+Primero vamos a convertir el alineamiento de formato SAM a formato BAM:
 
 ```Bash 
 samtools view -b -S mapping.sam > mapping.bam 
@@ -250,132 +223,118 @@ samtools index NV.bam
 
 ## Ejercicio 4: Visualización de secuencias mapeadas
 
-Artemis permite visualizar datos de secuenciación de tecnologías de nueva generación como Illumina, 454 o Solid.
+JBrowser2 permite visualizar datos de secuenciación de tecnologías de nueva generación como Illumina, 454 o Solid. JBrowser2 se puede descargar e instalar desde la [página oficial](https://jbrowse.org/jb2/download/). Si están trabajando desde las computadoras del laboratorio, ya deberían tener instalado el programa.
 
-<!-- (Puede visitar el sitio [NGS Tools](https://www.sanger.ac.uk/science/tools/categories/Sequence%2520data%2520processing/all&sa=D&ust=1548712235814000) para más información y ejemplos). -->
+### Vista básica de JBrowse2
 
-Para abrir Artemis ejecutar en la terminal: 
+- Abra JBrowse2 y cargue la secuencia de referencia "L2_cat.fasta". Para esto, hacer click en ``'OPEN SEQUENCE FILE(S)'`` y seleccione el archivo correspondiente. En ``assembly name`` elija un nombre que sea representativo del archivo cargado, y en ``Type`` FastaAdapter. 
+- Luego de seleccionar ``submit`` elija ``Linear genome view`` y luego presione ``LAUNCH VIEW``
+- La siguiente ventana muestra que hay dos entradas en nuestro archivo multifasta, una que corresponde al ADN cromosomal y otra que corresponde al ADN plasmídico. Para visualizar las dos en simultaneo, seleccione ``SHOW ALL REGIONS IN ASSEMBLY``
 
-```bash
-cd ~/Tools/artemis/
-./art
-```
+En este punto, su programa debería verse de esta forma:
 
-### Vista básica de Artemis
+![jbrowse-view](images/JBROWSE_1.jpg)
 
-- Abra la secuencia de referencia "L2_cat.fasta". Para esto hacer click en ``'File'`` > ``'Open'`` y abra el archivo correspondiente. 
+**Componentes de la interfaz:**
 
-De arriba a abajo podemos ver:
+- Barra de herramientas (Menúes desplegables): Puede acceder a diferentes opciones, como abrir archivos, agregar tracks, descargar *plugins*, etc.
+- Tracks cargados (Entradas activas): Seleccionando ``OPEN TRACK SELECTOR`` puede ver los tracks disponibles y elegir cual visualizar. En nuestro caso, verá "Reference sequence (l2_cat)" o el nombre de referencia elegido.
+- Panel de visualización principal: Muestra la secuencia de referencia, con las hebras positiva y negativa representadas por líneas. Puede observar los marcos de lectura, los codones stop (mostrados como líneas verticales o puntos), y las características como genes o dominios que se representan mediante cajas coloreadas (dependiendo de los tracks que estén cargados y seleccionados).
+- Desplazarse y hacer zoom: El deslizador horizontal permite moverse a lo largo de la secuencia (observe que se ven las dos entradas, cromosoma y plásmido). Haciendo zoom sobre la secuencia se pueden observar las bases de las dos hebras y los residuos en los seis marcos de lectura.
 
-* Menúes desplegables.
-* Entradas activas. En nuestro caso estará `L2_cat.fasta`.
-* Panel principal de visualización. Las 2 lineas grises centrales representan la hebra de DNA positiva (arriba) y la negativa (abajo). Arriba y abajo de ellas se encuentran los 3 marcos de lectura en cada sentido, respectivamente. Los codones *stop* son señalados con barras negras verticales. Los genes y otros "features" (e.g. dominios Pfam o Prosite) se muestran como cajas coloreadas. Para desplazarse mover el deslizador horizontal (inferior), y para hacer zoom, mover el deslizador vertical (lateral).
-* Panel de zoom. Tiene una disposición similar al panel principal pero es un acercamiento. Haga doble click sobre un gen en el panel principal y en este observará un acercamiento del comienzo del gen.
-* Panel de anotaciones. Lista las anotaciones o "features" presentes en las secuencias en el orden en que ocurren en el DNA, con el gen seleccionado resaltado.
+Ahora vamos a cargar las anotaciones del genoma de L2_cat. Estas anotaciones estan en formato gff, y en dos archivos distintos, uno para el ADN cromosomal y otra para el ADN plasmídico.
 
-!!! idea "Tip"
+- Abra los archivos de anotación denominados "L2_genomic.gff" y "L2_plasmid.gff". Para esto, desde el panel ``Available tracks`` hacer click en el símbolo "+" > ``Add track`` y seleccione el archivo correspondiente. Luego de apretar ``Next``, en ``Adapter type`` seleccione ``GFF3``, deje el resto de las opciones como están y presione ``ADD``
 
-	Para minimizar o expandir los paneles, clickear en los **...** que figuran en el margen superior izquierdo de cada panel. 
-
-- Abra el archivo de anotación denominado "L2_cat.embl". Para esto hacer click en ``'File'`` > ``'Read an Entry'`` y abra el archivo correspondiente. 
-
-- Para visualizar el mapeo de lecturas que acabamos de hacer vamos a cargar en Artemis nuestras lecturas mapeadas en formato BAM, de la siguiente manera: Haga clic en ``'File'`` > ``'Read BAM / CRAM / VCF'`` > ``'Select'`` y abra el archivo ``NV.bam``
+- Para visualizar el mapeo de lecturas que acabamos de hacer vamos a cargar en JBrowse2 nuestras lecturas mapeadas en formato BAM, de la siguiente manera: desde el panel ``Available tracks`` hacer click en el símbolo "+" > ``Add track`` y abra el archivo ``NV.bam``. Luego de apretar ``Next``, en ``Adapter type`` seleccione ``BAM adapter``, deje el resto de las opciones como están y presione ``ADD``
 
 
 !!! info "Recuerden que estas lecturas son de la cepa sueca **NV** mapeadas contra el genoma de referencia de la cepa **L2**." 
 
 
-Ahora debería ver la ventana BAM en la pantalla de Artemis. Es posible moverse hacer zoom en las secuencias moviendo la barra lateral. Pero dado que cargamos mucha información en el visualizador, la apertura demora. 
+Ahora debería ver la ventana con las lecturas en la parte inferior de la pantalla principal. Su panel principal, donde está la secuencia y los tracks asociados, debería verse de esta forma: (la secuencia se ve según el nivel de zoom)
 
-![stackview](images/stack.png)
+![JBrowse2](images/JBROWSE_2.jpg)
 
-Si clickea una lectura, también se seleccionará la lectura apareada. También notará que si el cursor se detiene por suficiente tiempo sobre una lectura aparecerán los detalles de esa lectura en una pequeña caja.
-Si quieren saber más sobre una lectura, haga click derecho sobre ella y seleccionen en el menú: ``'Show details of: READ NAME'``. Aparecerá una ventana detallando la calidad del mapeo, coordenadas, si es una lectura duplicada o no. Si esta lectura se encontrase en una región interesante, poder acceder fácilmente a esta información puede ser muy valioso.
+Por defecto, la vista de las lecturas tiene dos secciones. La superior muestra la profundidad de cobertura de las lecturas en cada posición en el genoma, y también con lineas de colores cualquier las discrepancias entre el genoma leído y el genoma de referencia. Abajo se muestran las lecturas apiladas, que tambien muestran las discrepancias de base con lineas de colores.
 
-![details](images/details.png)
-
+Si quieren saber mas sobre una lectura, clickeen sobre la misma y verán a la derecha una ventana con los ``Feature details``. Ahí podrán ver detalles como posición, nombre y largo de la misma, secuencia, calidad de cada una de las bases, entre otras. Para ver como se conectan las lecturas entre sí, pueden probar la vista tipo arco, la encuentran en ``Display types`` > ``Arc display``, en el menú que se abre al seleccionar los tres puntos al lado del track correspondiente.
 
 ### Calidad de Mapeo
 
 !!! info ""
 
-      La calidad de mapeo depende en la precisión de la lectura y el número de "*mismatches*" respecto a la secuencia de referencia. Un valor de 0 indica que la lectura mapea igualmente bien con al menos otro lugar por lo que **su mapeo no es confiable**. El máximo valor posible de "Mapping quality" es 99.
+      La calidad de mapeo depende en la precisión de la lectura y el número de "*mismatches*" respecto a la secuencia de referencia. Un valor de 0 indica que la lectura mapea igualmente bien con al menos otro lugar por lo que **su mapeo no es confiable**. El máximo valor posible de "Mapping quality" es 60.
 
 * Basándose en sus conocimientos de biología y de bioinformática ¿qué aspectos considera que podrían influir en la calidad de mapeo?
 
-A continuación, vamos a filtrar las lecturas para visualizar solo aquellas que tienen una buena calidad de mapeo. Para realizar esto haga click derecho sobre el gráfico de lecturas apiladas, seleccionen ``'Filter'``. Aparecerá una ventana con muchas opciones para filtrar. En ``'By Mapping Quality (mapq) cut-off'`` prueben con **59** (removiendo asi lecturas con calidad de mapeo menor a dicho número).
+A continuación, vamos a filtrar las lecturas para visualizar solo aquellas que tienen una buena calidad de mapeo. Para realizar esto haga click en los tres puntos al lado de ``NV.bam`` en el panel de las lecturas, seleccionen ``Pileup settings`` y luego ``Filter by``. Aparecerá una ventana con muchas opciones para filtrar. En ``Filter by tag name and value`` pongan **MQ** como ``Tag name`` y **60** como ``Tag value`` (removiendo asi lecturas con calidad de mapeo menor a dicho número). En este punto, la mayoría de lecturas deberían conservarse. Si no ven esto en su aplicación, prueben poner **mq** (en minúscula) como ``Tag value``.
 
 !!! idea "Tip"
 
       Filtrar lecturas con regiones repetitivas y ver únicamente lecturas correctamente apareadas puede ser muy útil para hacer el análisis del mapeo.
 
+!!! info
+
+	JBrowser2 no permite (por el momento) definir un intervalo de valores. Si quieren tener lecturas que estén entre dos valores de calidad, podrían filtrar por consola el archivo NV.bam.
+
 ### Visualización de las lecturas mapeadas
 
-Artemis tiene varias modalidades de visualización de archivos BAM. Para explorarlas haga click derecho en el panel BAM y seleccionen el menú de opciones 'Views': 
+JBrowse2 tiene varias modalidades de visualización de archivos BAM. Para explorarlas haga click sobre los tres puntos en el panel BAM y seleccionen el menú de opciones ``Display types``: 
 
-* La visualización por defecto (la que están viendo) se denomina apilada o "stack view". Cada linea representa una lectura de secuencia. Las lecturas azules son lecturas únicas, mientras que las verdes (o negras) representan lecturas duplicadas que tienen el mismo comienzo y fin. Para ahorrar espacio si hay secuencias duplicadas, solo se muestra una. 
-* La vista 'coverage' muestra un gráfico que representa la profundidad de secuenciación por posición. En secuenciación de segunda generación la **cobertura** o cantidad de reads secuenciadas por fragmento es muy importante. Dado que esta tecnología puede tener errores, a mayor cobertura, mayor confianza en la detección de variantes. 
-* La vista 'Strand stack', muestra las lecturas directas y reversas separadas por encima y por debajo de la escala respectivamente. Es útil para aplicaciones hebra específicas. 
-* La vista 'Inferred size' grafica las lecturas apareadas a lo largo del eje Y de acuerdo al tamaño de inserto inferido del fragmento de DNA utilizado para hacer la libreria. Noten que las librerias de Illumina son usualmente hechas de DNA fraccionado con un tamaño promedio de 250bp. Este no es el tamaño real de los fragmentos de la libreria, sin embargo uno esperaría que correlacionen y sean relativamente constantes si la referencia esta altamente conservada con la secuencia mapeada. Esta vista es de gran utilidad para ver inserciones y deleciones.
-* La vista 'Paired stack' une lecturas apareadas. Esto puede ser útil para visualizar rearreglos y para confirmar que regiones cercanas en el genoma de referencia también lo estan en el genoma del cual emanan las lecturas alineadas. 
+* La visualización por defecto (la que están viendo) es 'Alignments display (combination)'. Como ya se mencionó antes, combina la cobertura y las lecturas sobre la secuencia. La cobertura es la cantidad de lecturas secuenciadas para esa posición. Dado que esta tecnología puede tener errores, a mayor cobertura, mayor confianza en la detección de variantes. 
+* La vista 'Pileup display' es una simplificación de la visualización anterior, donde sólo se muestran las lecturas. 
+* La vista 'SNPCoverage display', muestra la frecuencia de aparición de cada nucleótido, y en caso de no coincidir con la referencia, lo colorea. Cuando una columna aparece completamente coloreada, en esa posición existe un SNP (no es un error de secuenciación ya que todas las lecturas presentaron la misma variación) 
+* La vista 'Arc display' muestra la relación entre lecturas apareadas (paired-end reads) que están mapeadas en diferentes posiciones del genoma de referencia. Las lecturas paired-end que están mapeadas a diferentes posiciones del genoma se conectan mediante un arco. Esto es muy útil para visualizar de forma clara las lecturas que no están alineadas juntas o de forma esperada, lo que podría indicar variaciones estructurales, problemas de ensamblado, etc.
+* La vista 'Read cloud display' es similar a 'Arc display', pero utiliza etiquetas provenientes de algunos tipos de secuenciación. Es especialmente útil para detectar variaciones estructurales y comprender cómo las lecturas de un mismo fragmento de ADN se alinean en el genoma 
 
 
 !!! Question "¿Por qué podrían generarse lecturas duplicadas? ¿Todas las lecturas duplicadas serán útiles?"
 
-Sacaremos provecho de la vistas en nuestro ejemplo biológico. Para ello haga click derecho en el panel BAM y seleccionen la vista 'Stack'. Luego haga click derecho en el panel BAM y seleccionen en Graph la opción 'coverage' (agregando a la vista el gráfico de cobertura). 
-Desde el panel de "features" haga doble click en el ``'fasta_record AM886278.1'`` (el "DNA feature" en marrón al principio de la lista) y compare la cobertura del plásmido con la región genómica de **NV**
+Sacaremos provecho de la vistas en nuestro ejemplo biológico. Para ello primero creen una copia seleccionando ``Copy track`` en el panel bam. Luego, seleccionen la vista 'Read cloud display' en uno de los paneles bam y 'Pileup display' en el otro. 
 
-Su pantalla de Artemis debería verse así:
+Vamos a enfocarnos en el ADN plasmídico, por lo que posicionense en la secuencia 'AM886278.1' o seleccionen dicha secuencia desde el panel que se encuentra en el primer track (al lado del zoom). Comparen la cobertura del plásmido con la región genómica de **NV**
 
-![inferredsize](images/coverage.png)
+Su pantalla de JBrowse2 debería verse así:
+
+![inferredsize](images/JBROWSE_3.jpg)
 
 * ¿Qué aspectos considera que pueden influir en la cobertura en general y en este caso en particular?
 
 * A simple vista, ¿notan alguna región diferente?
 
-A continuación diríjanse a  ``'Goto'`` → ``'Navigator'`` → ``'Goto Base'`` e inserten la posición 1044000. 
+A continuación, copien y peguen lo siguiente en el selector de secuencias: ``AM886278.1:5,000..6,000``. Eso va a mostrar en la pantalla las **posiciones 5000 a 6000** de la secuencia **AM886278.1** (el ADN plasmídico)
 
-Haga click derecho en el panel BAM y seleccionen la vista 'Inferred size'.
+Su pantalla de JBrowser2 debería verse así (en violeta el recuadro del selector de secuencias):
 
-Haga click derecho en el panel BAM y quiten el Graph 'Coverage'. Usen la escala logarítmica (esto lo realiza chequeando la caja 'Use log Scale' en en el mismo menú que abren para cambiar las vistas de las lecturas mapeadas).
+![cover](images/JBROWSE_4.jpg)
 
-Su pantalla de Artemis debería verse así:
-
-![cover](images/cover.png)
-
-Observarán que el tamaño inferido de las lecturas pareadas a los lados de esta zona es mucho mayor al tamaño normal observado por fuera de esta región. No observándose ninguna línea gris uniendo lecturas pareadas dentro del rango normal de tamaño cruzando esta región. Esto es indicativo de una **deleción** en la cepa secuenciada comparada con la referencia.
+Observarán que no hay lecturas que hayan sido alineadas sobre esa región del genoma, y que además las lecturas adyacentes a dicha región están conectadas entre sí (esto también lo podrían visualizar con 'Arc display'). Esto es indicativo de una **deleción** en la cepa secuenciada comparada con la referencia.
 
 ### Visualización de múltiples archivos BAM
 
 También pueden visualizar múltiples archivos BAM al mismo tiempo. Recuerden que los archivos BAM son un grupo procesado de lecturas alineadas de una bacteria (en este caso) contra una secuencia de referencia. Asi que en principio podriamos observar múltiples aislamientos bacterianos diferentes mapeados contra la misma referencia. La cepa de *C. trachomatis* que va a leer es la **L2b**. Es filogenéticamente más cercana a la cepa de referencia que la que hemos analizado hasta el momento, por eso el nombre similar.
 
-No harán nuevamente el mapeo para esta cepa, ya hemos procesado los datos crudos en fastq por ustedes. El archivo que necesitan se denomina "L2b.bam". Para abrirlo haga clic derecho sobre la vista de las lecturas apiladas y luego en el menú:
+No harán nuevamente el mapeo para esta cepa, ya hemos procesado los datos crudos en fastq por ustedes. El archivo que necesitan se denomina "L2b.bam". Para abrirlo, vayan al ``Track selector``, presionen el símbolo + y carguen el archivo correspondiente. Recuerden que el tipo es ``Bam adapter``, y dejen el resto de las opciones como vienen predeterminadas.
 
-``'Add Bam...'`` → ``'Select'``
-
-y seleccionen el archivo correspondiente.
-
-Lo primero que hace Artemis es unir todas las lecturas nuevas a las anteriores en la misma ventana. Esto es útil si se realizaron múltiples corridas de secuenciación a partir de la misma cepa. Pero en este caso queremos separarlas en dos ventanas para verlas independientemente. Para esto lo que haremos es primero clonar la ventana de lecturas apiladas actual haciendo clic derecho sobre la misma y seleccionando ``'Clone window'``. Ahora tendrán dos ventanas idénticas con todas las lecturas apiladas. Si ahora hacen clic derecho sobre la ventana superior y selecciona ``'Bam files'`` pueden prender o apagar los archivos BAM. Lo que significa que pueden desplegar cada archivo BAM por separado en las dos ventanas prendiendo alternativamente uno y apagando el otro.
-
-Veamos la región del plásmido situada al final del genoma y observen la región no mapeada que analizamos previamente (alrededor de la base 1044800). Miren la vista de 'Inferred size' también para comparar (puede que se enlentezcan los desplazamientos, tenga paciencia).
+Veamos  la región no mapeada que analizamos previamente (entre las bases 5000 a 6000). Comparen los distintos tipos de visualización entre ambas secuenciaciones.
 
 * Vuelva a leer en la Introducción la razón por la cuál la cepa **NV** causó un alerta sanitario en Europa en el año 2006. Considerando lo que acabamos de ver, ¿por qué razón cree que la cepa **NV** no es detectada en el ensayo diagnóstico estándar pero sí lo es la cepa **L2b**?
 
-![cover](images/L2b.png)
+![cover](images/JBROWSE_5.jpg)
 
-<!--¿Qué pasa con la región deleteada en NV para la cepa L2b? ¿Qué pueden decir acerca de las tecnologías de secuenciación usadas para una u otra cepa? -->
 
 ## Ejercicio 5: Detección de variantes (SNP e InDel)
 
-Para comenzar, regresen a la visualización de lecturas apiladas.
+Para comenzar, regresen a la visualización de lecturas apiladas (Pileup display)).
 
-Para visualizar SNPs hagan click derecho en la ventana donde están las lecturas apiladas. Luego en el menú que se despliega, hagan click en ``'Show'`` y chequeen la caja que dice ``'SNP marks'``. Se mostrarán los SNPs con respecto a la referencia como líneas rojas en las lecturas individuales. Observarán que algunos SNPs están presentes en todas las lecturas, formando líneas verticales rojas, mientras que otros SNPs se encuentran distribuidos más esporádicamente. Los primeros tienen mayor probabilidad de ser verdaderos SNPs mientras que los últimos probablemente sean errores de secuenciación. 
+Observen las distintas líneas de colores que aparecen en algunas lecturas. Esas líneas representan los SNPs con respecto a la referencia y el color corresponde a la base presente en la lectura (C = celeste, G = naranja, T = rojo, A = verde y N = gris). Observarán que algunos SNPs están presentes en todas las lecturas, formando líneas verticales de color, mientras que otros SNPs se encuentran distribuidos más esporádicamente. Los primeros tienen mayor probabilidad de ser verdaderos SNPs mientras que los últimos probablemente sean errores de secuenciación. 
 
-![snips](images/snps.png)
+![snips](images/JBROWSE_6.jpg)
 
-Si acerca la visualización de las lecturas apiladas al máximo podrán observar (1) las secuencias individuales de cada lectura y (2) las bases que difieren de la referencia estarán en rojo.
+Si acerca la visualización de las lecturas apiladas al máximo podrán observar (1) las secuencias individuales de cada lectura y (2) las bases que difieren de la referencia estarán en el color correspondiente.
 
-![snips](images/snpzoom.png)
+![snips](images/JBROWSE_7.jpg)
 
 !!! info
 
@@ -388,13 +347,13 @@ Hasta el momento hemos visto la variación como un simple y homogéneo grupo de 
 
 El formato VCF fue desarrollado para representar datos de variación de 1000 proyectos genoma humanos y ya es bastante aceptado por la comunidad como el formato estándar para *SNP calling*. 
 
-Nosotros vamos a generar el archivo en formato VCF a partir de nuestro archivo ``'NV.bam'`` y visualizarlo en Artemis.
+Nosotros vamos a generar el archivo en formato VCF a partir de nuestro archivo ``'NV.bam'`` y visualizarlo en JBrowse2.
 
 Para crear un archivo VCF necesita ir a la terminal y escribir los siguientes comandos:
 
 ```bash
-bcftools mpileup -Ou -f L2_cat.fasta NV.bam | bcftools call -v -c --ploidy 1 -Ob > NV.bcf
-bcftools view -H NV.bcf -Oz > NV.vcf.gz
+bcftools mpileup -Ou -f L2_cat.fasta NV.bam | bcftools call -v -c --ploidy 1 -O v > NV.bcf
+bgzip NV.vcf
 tabix NV.vcf.gz
 ```
 
@@ -404,64 +363,19 @@ Visualicen el resultado del *variant calling* usando head:
 zcat NV.vcf.gz | head
 ```
 
-![vcf](images/vcf.png)
+Ahora leeremos en JBrowser2 el archivo VCF que recien crearon. Para esto vayan al ``Track selector``, presionen el símbolo + y carguen el archivo ``"NV.vcf.gz"``. Presionen ``Next`` y verifiquen que en ``Adapter type`` diga **VCF tabix adapter**.
 
-Ahora leeremos en Artemis el archivo VCF que recien crearon. Para esto diríjanse al menú principal, seleccionen ``'File'`` ,``'Read BAM / CRAM / VCF'`` , ``'Select...'`` y abran el archivo ``"NV.vcf.gz"``. Como siempre ajusten el tamaño de las ventanas BAM y BCF para poder visualizarlas bien. En un principio, en la ventana VCF solo se muestran los SNPs del cromosoma. Para mostrar los SNPs del plásmido abran el ícono que se encuentra arriba y a la izquierda en el panel de BCF y seleccionen ``'Combine References'``. Ahora ambos serán visibles.
+Para ver una región con algo de variación genética interesante vayan al gen CTL0578. Este gen pertenece al ADN cromosomal, y está en las posiciones 684021 a 685991
 
-Para ver una región con algo de variación genética interesante vayan al gen CTL0578 haciendo  ``'Goto'`` > ``'Navigator'`` > ``'Goto Feature with Gene Name'`` e insertan allí "CTL0578"
+![variants](images/JBROWSE_8.png)
 
-(otra vez, usen el deslizador, el menú 'GoTo' o el 'Navigator')
-
-![variants](images/variants.png)
-
-Aquí abajo se lista el esquema de colores y formas utilizado para las variantes en el panel de BCF. Noten que a su vez se incluyen los indels. Muevanse a lo largo de la secuencia y busquen algunas de las variantes:
-
-### Esquema de colores por defecto
-
-| Variante | Identificador |
-| :---: | :---: |
-| A | Verde |
-| G | Azul |
-| T | Negro |
-| C | Rojo |
-| Alelos múltiples | Naranja, con un círculo en la punta |
-<!--
-| Inserciones | Magenta |
-| Deleciones | Gris |
-| Sin variación | Gris claro |
-| SNP sinónimo | Rojo |
-| SNP no sinónimo | Azul |
--->
-	
 * ¿Qué tipos de variantes pueden identificar en el gen CTL0578?
 
-### Puntuación de calidad
-
-Las variantes pueden colorearse por tipo (por defecto) o por score. Las variantes en nuestro ejemplo están todas en la escala del rojo, siendo aquellas con mayor puntaje, de color más intenso. Pruébenlo con:
-
-`Click derecho` → `Colour by` → `Score`.
-
-![red](images/red.png)
-
-Artemis también permite filtrar los archivos BCF. Haciendo clic derecho sobre el panel y seleccionando ``'Filter...'`` podrán ver las opciones de filtrado. Pueden seleccionar o deseleccionar diferentes tipos de variantes de SNPs para modificar la vista. Los sitios *'Non-Variants'* (no variantes) son importantes porque diferencian aquellos sitios que no cambian pero tienen lecturas que mapean sobre esas posiciones, de regiones que *aparentan* no tener variaciones porque no hay lecturas que mapean a ellas. 
-
-![filters](images/filters.png)
-
-Como la vista de archivos BAM, también pueden remover o incluir SNPs basado en, por ejemplo, el puntaje del mapeo, la profundidad de cobertura, la calidad de secuencia. Todo esto lo pueden hacer desde la sección ``PROPERTY`` del menú de filtrado de SNPs. Valores de corte útiles son de un "DP" de "10" y de un "Qual" de al menos "30".
 
 ## Ejercicio adicional: comparando cepas
 
 En el directorio de trabajo tiene el archivo BAM de la cepa L2b. Con los comandos vistos, calcule las variantes de esta cepa respecto al genoma de referencia de L2. 
 
-
-??? hint "Comando para realizarlo"
-
-      ```bash
-      bcftools mpileup -Ou -f L2_cat.fasta L2b.bam | bcftools call -v -c --ploidy 1 -Ob > L2b.bcf
-      bcftools view -H L2b.bcf -Oz > L2b.vcf.gz
-      tabix L2b.vcf.gz
-      ```
-
-Una vez generado el VCF, agreguelo a la vista haciendo click derecho sobre la ventana BCF y seleccionen ``'Add VCF'``. Una vez que hayan abierto el archivo y para facilitar la identificación de cada archivo BCF activo, hagan clic derecho en la ventana BCF y chequeen la caja ``'Show labels'`` . Verán las etiquetas a la izquierda de la ventana. Pueden alejar el zoom y moverse a distintas regiones para comparar.
+Una vez generado el VCF, agreguelo a la vista de la misma manera que para la cepa NV. Compare ambas cepas en el visualizador.
 
 * ¿Qué cepa tiene mayor cantidad de variantes? ¿Por qué?
