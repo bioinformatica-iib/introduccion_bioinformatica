@@ -14,10 +14,7 @@ tags:
 
 ### Slides mostrados en la clase
 
-* :fontawesome-regular-file-pdf: [Slides](https://drive.google.com/file/d/18wOB2xp4Lod8PEO6pEGkSouRJafmm5-Y/view?usp=sharing)
-## Videos de la clase grabada
-
-* :octicons-video-16: [Puesta en común del TP](https://youtu.be/YEJWqRwUBRY)
+* :fontawesome-regular-file-pdf: [Slides](https://drive.google.com/file/d/1L2LbUjMPgr5c7-hwO52QJPJ-dGeyQQZg/view?usp=sharing)
 
 <!--
 !!! abstract "Atención: Este TP tiene informe."
@@ -109,9 +106,10 @@ Ingresa en la web de **IUPred2A** [https://iupred2a.elte.hu](https://iupred2a.el
 
    * ¿Le parece que el visualizador online sería una herramienta útil para hacerlo?
    
-¡Claro que no! Por suerte, el algoritmo IUPred puede también correrse de manera local y además es rápido.
+¡Claro que no! Por suerte, el algoritmo IUPred puede también correrse de manera local y además es rápido. Para hacer esto, primero descarguen IUPred desde [este link](https://drive.google.com/file/d/1Razt-LkN98GjMTeoNYkP0QPHmZDC86tp/view?usp=sharing). 
 
-Abre una terminal y ve al directorio dónde está IUPred
+
+Abre una terminal, descomprime el archivo ``iupred2a.tar.gz`` y ve al directorio dónde está IUPred
 
 ```bash
 cd ~/Tools/IUPred/

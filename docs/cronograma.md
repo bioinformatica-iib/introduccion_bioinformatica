@@ -33,7 +33,7 @@ tags:
 | Martes, 08 Octubre 2024 | 9:00 hs |	:material-google-classroom: Presencial | T9. Secuenciación y ensamblado de genomas | :fontawesome-solid-brain: Teórica |	F. Agüero |
 | Jueves, 10 Octubre 2024 | 9:00 hs |	:material-google-classroom: Presencial | [P9. Mapeo de secuencias](practicos/TP09_Short-Read-Mapping/index.md) | :fontawesome-solid-hammer: Práctica |	G. Romer |
 | Martes, 15 Octubre 2024 | 9:00 hs |	:material-google-classroom: Presencial | T10. Bioinformática Estructural: Desorden | :fontawesome-solid-brain: Teórica |	L. Chemes |
-| Jueves, 17 Octubre 2024 | 9:00 hs |	:material-google-classroom: Presencial | P10. Predicción de Desorden | :fontawesome-solid-hammer: Práctica |	J. Glavina |
+| Jueves, 17 Octubre 2024 | 9:00 hs |	:material-google-classroom: Presencial | [P10. Predicción de Desorden](practicos/TP10_Desorden/index.md) | :fontawesome-solid-hammer: Práctica |	J. Glavina |
 | Martes, 22 Octubre 2024 | 9:00 hs |	:material-google-classroom: Presencial | T11. Bioinformática Estructural: Motivos lineales | :fontawesome-solid-brain: Teórica |	L. Chemes |
 | Jueves, 24 Octubre 2024 | 9:00 hs |	:material-google-classroom: Presencial | P11. Motivos Lineales en proteínas | :fontawesome-solid-hammer: Práctica | J. Glavina |
 | Martes, 29 Octubre 2024 | 9:00 hs |	:material-google-classroom: Presencial | T12. Bioinformática Estructural: Dominios | :fontawesome-solid-brain: Teórica |	L. Chemes |
