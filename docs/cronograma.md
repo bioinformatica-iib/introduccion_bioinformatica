@@ -30,7 +30,7 @@ tags:
 | Jueves, 26 Septiembre 2024 | 9:00 hs |	No hay clase por Paro | [PP. Programando en Biología](practicos/TPPb_Programando_en_Biologia/index.md)  | :fontawesome-solid-hammer: Práctica |	M. Didier Garnham |
 | Martes, 01 Octubre 2024 | 9:00 hs |	:material-google-classroom: Presencial | [T8. Data clustering](teoricas/8-Teorica-Ocho/index.md) | :fontawesome-solid-brain: Teórica |	F. Agüero |
 | Jueves, 03 Octubre 2024 | 9:00 hs |	:material-google-classroom: Presencial |[ P8. Data Clustering y Data Mining](practicos/TP08_Clustering_Data_Mining/index.md) | :fontawesome-solid-hammer: Práctica |	G. Romer |
-| Martes, 08 Octubre 2024 | 9:00 hs |	:material-google-classroom: Presencial | T9. Secuenciación y ensamblado de genomas | :fontawesome-solid-brain: Teórica |	F. Agüero |
+| Martes, 08 Octubre 2024 | 9:00 hs |	:material-google-classroom: Presencial | [T9. Secuenciación y ensamblado de genomas](teoricas/9-Teorica-Nueve/index.md) | :fontawesome-solid-brain: Teórica |	F. Agüero |
 | Jueves, 10 Octubre 2024 | 9:00 hs |	:material-google-classroom: Presencial | [P9. Mapeo de secuencias](practicos/TP09_Short-Read-Mapping/index.md) | :fontawesome-solid-hammer: Práctica |	G. Romer |
 | Martes, 15 Octubre 2024 | 9:00 hs |	:material-google-classroom: Presencial | [T10. Bioinformática Estructural: Desorden](teoricas/10-Teorica-Diez/index.md) | :fontawesome-solid-brain: Teórica |	L. Chemes |
 | Jueves, 17 Octubre 2024 | 9:00 hs |	:material-google-classroom: Presencial | [P10. Predicción de Desorden](practicos/TP10_Desorden/index.md) | :fontawesome-solid-hammer: Práctica |	J. Glavina |
