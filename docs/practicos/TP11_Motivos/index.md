@@ -14,20 +14,13 @@ tags:
 
 ### Slides mostrados en la clase
 
-* :fontawesome-regular-file-pdf: [Slides](https://drive.google.com/file/d/1FrkOPVGtcpjWmMT5gRQvvJ9v9CasImNy/view?usp=sharing)
-
-## Videos de la clase grabada
-
-* :octicons-video-16: [Puesta en común del TP](https://youtu.be/Yf4B51xwX8Q)
+* :fontawesome-regular-file-pdf: [Slides](https://drive.google.com/file/d/1FoaQDbGbxQGCx0NdjbKExPo45uGf6Ykm/view?usp=sharing)
 
 
 !!! abstract "Atención: Este TP tiene informe."
 
 [:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1wh5zn1GZ4s_Rp8V5lekZZbIKzM7BOKc8/view?usp=sharing){ .md-button .md-button--primary }
 
-<!--
-[:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1wh5zn1GZ4s_Rp8V5lekZZbIKzM7BOKc8/view?usp=sharing){ .md-button .md-button--primary }
--->
 
 ## Recursos Online
 
@@ -138,7 +131,7 @@ Para cada motivo encontrado, se indica con símbolos (descriptos en la parte sup
 **2.** Pegue y copie la siguiente secuencia en ELM y utilice los parámetros que se indican a continuación.
 
 ```
->seq
+>P53_HUMAN
 MEEPQSDPSVEPPLSQETFSDLWKLLPENNVLSPLPSQAMDDLMLSPDDI  
 EQWFTEDPGPDEAPRMPEAAPPVAPAPAAPTPAAPAPAPSWPLSSSVPSQ  
 KTYQGSYGFRLGFLHSGTAKSVTCTYSPALNKMFCQLAKTCPVQLWVDST  
@@ -163,13 +156,13 @@ Asegúrese que los valores de los distintos parámetros son los siguientes:
 * ¿Qué se puede decir sobre la estructura de la proteína? ¿Se observa algún dominio? ¿Se observan regiones desordenadas?  
 * ¿Los predictores estructurales y filtros (SMART, GlobPlot, IUPRED, Secondary Structure) coinciden sobre qué regiones son estructuradas/desordenadas?
 
-**3.** Por si no se dió cuenta, la proteína utilizada en el ejercicio anterior es p53 de humanos. 
+**3.** Filtrado por compartimento celular
 
 * ELM nos permite fitrar por compartimento celular ¿Porqué consideran que esto sería útil?
 
 Utilizando el uniprot ID de p53 (P53_HUMAN) busque en la web de Uniprot ([https://www.uniprot.org/](https://www.uniprot.org/)) las posibles localizaciones subcelulares de esta proteína y utilícelas como filtro en ELM. Para esto:
 
-Abra en una nueva pestaña la página de ELM. Vaya de nuevo a la pestaña de predicción. Limpie el formulario con el botón *Reset Form*. Ingrese el Uniprot ID de la proteína (P53_human) y asigne en **Cell compartment** los compartimentos correspondientes utilizando ++ctrl++ para seleccionar más de uno.
+Realice de nuevo la predicción, ahora asignando en **Cell compartment** los compartimentos correspondientes utilizando ++ctrl++ para seleccionar más de uno.
 
 * Realice la predicción y conteste: ¿Cuántas instancias de motivos se encuentran ahora? ¿Cuántas instancias de motivos son retenidas luego del filtro? ¿A qué se debe esta diferencia con el punto anterior?
 
@@ -224,11 +217,12 @@ La región amino terminal de p53 posee un motivo de unión a la E3 ligasa MDM2, 
 * ¿Todos los motivos MDM2 tienen la misma longitud de secuencia?
 * ¿Qué nivel de identidad de secuencia observa en esta región? ¿A qué puede deberse?
 
+<!--
 ## Ejercicio a informar
 
 !!! info ""
 
-      **Fecha límite de entrega:** Viernes, 13 de Octubre 2023, 23:59hs.
+      **Fecha límite de entrega:** Viernes, 1 de Noviembre 2024, 23:59hs.
 
 ### Enunciado
 
@@ -280,7 +274,7 @@ pequeños en el N-terminal (Dominio N) y C terminal (Dominio C).
       `R.L` pasaría a ser `R-*.-*L` 
 
 [:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1uAo-m-gFXRnq-Ms8-yeAVy3bhC4pJLvL/view?usp=sharing){ .md-button .md-button--primary }
-
+-->
 
 ## Ejercicios Adicionales
 
