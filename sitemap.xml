@@ -206,6 +206,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://bioinformatica-iib.github.io/introduccion_bioinformatica/teoricas/11-Teorica-Once/</loc>
+         <lastmod>2024-10-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://bioinformatica-iib.github.io/introduccion_bioinformatica/teoricas/12-Teorica-Doce/</loc>
          <lastmod>2024-10-22</lastmod>
          <changefreq>daily</changefreq>
