@@ -1,5 +1,5 @@
 ---
-title: Teorica Nueve
+title: Teorica Diez
 icon: fontawesome/solid/brain
 tags: 
   - teoricas
