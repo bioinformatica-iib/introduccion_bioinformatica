@@ -176,7 +176,7 @@ nav:
         - TP 9 - Short Read Mapping: 'practicos/TP09_Short-Read-Mapping/index.md'
         - TP 10 - Predicción de Desorden: 'practicos/TP10_Desorden/index.md'
         - TP 11 - Motivos Lineales: 'practicos/TP11_Motivos/index.md'
-        #- TP 12a - Modelado por Homología: 'practicos/TP12a_Modelado_Por_Homologia/index.md'
+        - TP 12 - Modelado por Homología y AlphaFold2: 'practicos/TP12a_Modelado_Por_Homologia/index.md'
         #- TP 12b - Modelado usando AlphaFold: 'practicos/TP12b_AlphaFold/index.md'
         #- TP X - Filogenias: 'practicos/TPXX_Filogenia/index.md'
         #- TP X - Genomica Comparativa: 'practicos/TPXX_Genomica_Comparativa/index.md'
