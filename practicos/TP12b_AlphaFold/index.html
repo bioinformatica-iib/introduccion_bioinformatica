@@ -1175,6 +1175,29 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TP12a_Modelado_Por_Homologia/" class="md-nav__link">
+        
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M413.5 237.5c-28.2 4.8-58.2-3.6-80-25.4L295.4 174c-15-15-23.4-35.2-23.4-56.4v-12.1L192.3 62c-5.3-2.9-8.6-8.6-8.3-14.7s3.9-11.5 9.5-14l47.2-21C259.1 4.2 279 0 299.2 0h18.1c36.7 0 72 14 98.7 39.1l44.6 42c24.2 22.8 33.2 55.7 26.6 86L503 183l8-8c9.4-9.4 24.6-9.4 33.9 0l24 24c9.4 9.4 9.4 24.6 0 33.9l-88 88c-9.4 9.4-24.6 9.4-33.9 0l-24-24c-9.4-9.4-9.4-24.6 0-33.9l8-8-17.5-17.5zM27.4 377.1l233.5-194.5c3.5 4.9 7.5 9.6 11.8 14l38.1 38.1c6 6 12.4 11.2 19.2 15.7L134.9 484.6C120.4 502 98.9 512 76.3 512 34.1 512 0 477.8 0 435.7c0-22.6 10.1-44.1 27.4-58.6z"/></svg>
+  
+  <span class="md-ellipsis">
+    TP 12 - Modelado por Homología y AlphaFold2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1349,7 +1372,7 @@
 <h2 id="alphafold2-af2">AlphaFold2 (AF2)</h2>
 <p>En los últimos años, hubo un crecimiento continuo en el número de estructuras de proteínas determinadas experimentalmente depositadas en el PDB (actualmente ~170.000). Esto, junto con la explosión de la secuenciación (millones de secuencias) y el desarrollo de técnicas de deep learning benefició el desarrollo de algoritmos de predicción de estructura tridimensional de proteínas. Hasta el 2021, los algoritmos de predicción de estructura tridimensional de proteínas se basan en dos aspectos complementarios: las interacciones físicas (o contactos) o la historia evolutiva de la proteína. Sin embargo, y a pesar de los avances, la mayoría de los algoritmos de predicción no son muy precisos si se carece de un homólogo cercano con una estructura tridimensional resuelta experimentalmente.
 A partir de la secuencia primaria de una proteína (Fig 1), AlphaFold2 utiliza una red neuronal para la predicción estructural de alta precisión (en la mayoría de los casos), la cual aumenta con el uso de estructuras homólogas. AlphaFold2 puede incluso predecir con alta precisión las cadenas laterales si el backbone es preciso.</p>
-<p><a class="glightbox" href="img/alphafold_fig1.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="alphafold_fig1" src="img/alphafold_fig1.png"></a></p>
+<p><a class="glightbox" href="./img/alphafold_fig1.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="alphafold_fig1" src="./img/alphafold_fig1.png"></a></p>
 <p><strong>Fig 1.</strong> Algoritmo de predicción de estructuras AlphaFold2.</p>
 <p><br>
 <br></p>
@@ -1365,8 +1388,8 @@ A partir de la secuencia primaria de una proteína (Fig 1), AlphaFold2 utiliza u
 <p>La segunda métrica se denomina <strong>PAE</strong> (por Predicted Aligned error) y compara el error en la predicción de pares de residuos, esto es el error sobre el residuo y cuando las estructuras real y predicha son alineadas sobre el residuo x. Esta medida permite la identificación global de unidades de plegamiento (dominios) y permite predecir si dos dominios guardan relaciones espaciales definidas, o si tienen variabilidad (por ejemplo, si están conectadas por un linker flexible.</p>
 </li>
 </ul>
-<p><a class="glightbox" href="img/pae-3.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="alphafold_fig2a" src="img/pae-3.png" width="400"></a></p>
-<p><a class="glightbox" href="img/pae-8.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="alphafold_fig2b" src="img/pae-8.png" width="400"></a></p>
+<p><a class="glightbox" href="./img/pae-3.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="alphafold_fig2a" src="./img/pae-3.png" width="400"></a></p>
+<p><a class="glightbox" href="./img/pae-8.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="alphafold_fig2b" src="./img/pae-8.png" width="400"></a></p>
 <p><strong>Fig 2.</strong> <em>Arriba.</em> Se pueden observar dos dominios globulares, pero se desconoce la disposición espacial relativa entre ellos. <em>Abajo.</em> Se puede observar que además de identificar los dominios globulares, se predien correctamente pares de residuos interdominios.</p>
 <p><br>
 <br></p>
