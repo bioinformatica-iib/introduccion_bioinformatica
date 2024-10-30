@@ -36,9 +36,9 @@ tags:
 | Jueves, 17 Octubre 2024 | 9:00 hs |	:material-google-classroom: Presencial | [P10. Predicción de Desorden](practicos/TP10_Desorden/index.md) | :fontawesome-solid-hammer: Práctica |	J. Glavina |
 | Martes, 22 Octubre 2024 | 9:00 hs |	:material-google-classroom: Presencial | [T11. Bioinformática Estructural: Motivos lineales](teoricas/11-Teorica-Once/index.md) | :fontawesome-solid-brain: Teórica |	L. Chemes |
 | Jueves, 24 Octubre 2024 | 9:00 hs |	:material-google-classroom: Presencial | [P11. Motivos Lineales en proteínas](practicos/TP11_Motivos/index.md) | :fontawesome-solid-hammer: Práctica | J. Glavina |
-| Martes, 29 Octubre 2024 | 9:00 hs |	:material-google-classroom: Presencial | T12. Bioinformática Estructural: Dominios | :fontawesome-solid-brain: Teórica |	L. Chemes |
-| Jueves, 31 Octubre 2024 | 9:00 hs |	:material-google-classroom: Presencial | P12. Dominios Proteicos | :fontawesome-solid-brain: Teórica |	J. Glavina |
-| Martes, 05 Noviembre 2024 | 9:00 hs |	| LIBRE | |	|
+| Martes, 29 Octubre 2024 | 9:00 hs |	:simple-zoom: &nbsp; Virtual | Consultas Informe | :fontawesome-solid-hammer: Práctica |	J. Glavina |
+| Jueves, 31 Octubre 2024 | 9:00 hs |	:simple-zoom: &nbsp; Virtual | T12. Bioinformática Estructural: Dominios | :fontawesome-solid-brain: Teórica |	L. Chemes |
+| Martes, 05 Noviembre 2024 | 9:00 hs |	:material-google-classroom: Presencial | P12. Dominios Proteicos |:fontawesome-solid-hammer: Práctica |	J. Glavina |
 | Jueves, 07 Noviembre 2024 | 9:00 hs |	| LIBRE | |	|
 | Martes, 12 Noviembre 2024 | 9:00 hs |	:material-google-classroom: Presencial | Repaso | |	F. Agüero |
 | Jueves, 14 Noviembre 2024 | 9:00 hs |	:material-google-classroom: Presencial | Examen | | F. Agüero<br>L. Chemes<br> |
