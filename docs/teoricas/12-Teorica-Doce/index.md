@@ -4,14 +4,8 @@ tags:
   - teoricas
 ---
 
-## Quimioinformática
- Clase teórica de introducción al uso y análisis de moléculas químicas pequeñas en la computadora. Representacion digital y electrónica de moléculas, formatos, algoritmos de búsqueda de similitud quimica. 
+## Bioinformática Estructural: Motivos lineales
 
- * :fontawesome-regular-file-pdf: [Slides](quimioinformatica-2023.pdf) 
- 
- ![type:video](https://www.youtube.com/embed/2TzNSNn8rpQ)
- 
+* :fontawesome-regular-file-pdf: [Slides](https://drive.google.com/file/d/1aHmORqTLDbZ-3Q1lQG60MbxCnzcVEo0B/view?usp=sharing) 
 
-## Material de lectura y consulta
-
-  * :octicons-book-16: [The RDKit Book (2023)](https://www.rdkit.org/docs/RDKit_Book.html)
+* :octicons-video-16: [Video](https://drive.google.com/file/d/1uA7FWgWerudHPQTvnYgPElRSpNGayy5S/view?usp=sharing)
