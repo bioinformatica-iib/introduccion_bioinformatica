@@ -1,5 +1,6 @@
 ---
 title: Teorica Doce
+icon: fontawesome/solid/brain
 tags: 
   - teoricas
 ---
