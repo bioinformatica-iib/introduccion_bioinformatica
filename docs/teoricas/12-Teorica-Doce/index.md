@@ -4,7 +4,7 @@ tags:
   - teoricas
 ---
 
-## Bioinformática Estructural: Motivos lineales
+## Bioinformática Estructural: Dominios
 
 * :fontawesome-regular-file-pdf: [Slides](https://drive.google.com/file/d/1aHmORqTLDbZ-3Q1lQG60MbxCnzcVEo0B/view?usp=sharing) 
 
