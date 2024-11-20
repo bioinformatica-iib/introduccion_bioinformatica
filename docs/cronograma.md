@@ -43,10 +43,10 @@ tags:
 | Martes, 12 Noviembre 2024 | 9:00 hs |	:material-google-classroom: Presencial | Repaso | |	F. Agüero |
 | Jueves, 14 Noviembre 2024 | 9:00 hs |	:material-google-classroom: Presencial | Examen | | F. Agüero<br>L. Chemes<br> |
 | Martes, 19 Noviembre 2024 | 9:00 hs |	| LIBRE | |	|
-| Jueves, 21 Noviembre 2024 | 9:00 hs |	:material-google-classroom: Presencial | Revision parciales | |	F. Agüero |
-| Martes, 26 Noviembre 2024 | 9:00 hs |	:material-google-classroom: Presencial | Recuperatorio | | F. Agüero<br>L. Chemes<br>|
-| Jueves, 28 Noviembre 2024 | 9:00 hs |	| LIBRE | |	|
-| Martes, 03 Diciembre 2024 | 9:00 hs |	:material-google-classroom: Presencial | Revisión examen | | F. Agüero<br>L. Chemes<br> |
+| Jueves, 21 Noviembre 2024 | 9:00 hs |	:material-google-classroom: Presencial | Revision parciales Fernán | |	F. Agüero |
+| Martes, 26 Noviembre 2024 | 9:00 hs |	:material-google-classroom: Presencial | Revisión parciales Lucía | | L. Chemes |
+| Jueves, 28 Noviembre 2024 | 9:00 hs |	| Recuperatorio | |	|
+| Jueves, 05 Diciembre 2024 | 9:00 hs |	:material-google-classroom: Presencial | Revisión recuperatorios | | F. Agüero<br>L. Chemes<br> |
 
 
 <!--
