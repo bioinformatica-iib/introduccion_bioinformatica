@@ -14,20 +14,13 @@ tags:
 
 ### Slides mostrados en la clase
 
-* :fontawesome-regular-file-pdf: [Slides](https://drive.google.com/file/d/1FrkOPVGtcpjWmMT5gRQvvJ9v9CasImNy/view?usp=sharing)
-
-## Videos de la clase grabada
-
-* :octicons-video-16: [Puesta en común del TP](https://youtu.be/Yf4B51xwX8Q)
+* :fontawesome-regular-file-pdf: [Slides](https://drive.google.com/file/d/1FoaQDbGbxQGCx0NdjbKExPo45uGf6Ykm/view?usp=sharing)
 
 
 !!! abstract "Atención: Este TP tiene informe."
 
 [:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1wh5zn1GZ4s_Rp8V5lekZZbIKzM7BOKc8/view?usp=sharing){ .md-button .md-button--primary }
 
-<!--
-[:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1wh5zn1GZ4s_Rp8V5lekZZbIKzM7BOKc8/view?usp=sharing){ .md-button .md-button--primary }
--->
 
 ## Recursos Online
 
@@ -138,7 +131,7 @@ Para cada motivo encontrado, se indica con símbolos (descriptos en la parte sup
 **2.** Pegue y copie la siguiente secuencia en ELM y utilice los parámetros que se indican a continuación.
 
 ```
->seq
+>P53_HUMAN
 MEEPQSDPSVEPPLSQETFSDLWKLLPENNVLSPLPSQAMDDLMLSPDDI  
 EQWFTEDPGPDEAPRMPEAAPPVAPAPAAPTPAAPAPAPSWPLSSSVPSQ  
 KTYQGSYGFRLGFLHSGTAKSVTCTYSPALNKMFCQLAKTCPVQLWVDST  
@@ -163,13 +156,13 @@ Asegúrese que los valores de los distintos parámetros son los siguientes:
 * ¿Qué se puede decir sobre la estructura de la proteína? ¿Se observa algún dominio? ¿Se observan regiones desordenadas?  
 * ¿Los predictores estructurales y filtros (SMART, GlobPlot, IUPRED, Secondary Structure) coinciden sobre qué regiones son estructuradas/desordenadas?
 
-**3.** Por si no se dió cuenta, la proteína utilizada en el ejercicio anterior es p53 de humanos. 
+**3.** Filtrado por compartimento celular
 
 * ELM nos permite fitrar por compartimento celular ¿Porqué consideran que esto sería útil?
 
 Utilizando el uniprot ID de p53 (P53_HUMAN) busque en la web de Uniprot ([https://www.uniprot.org/](https://www.uniprot.org/)) las posibles localizaciones subcelulares de esta proteína y utilícelas como filtro en ELM. Para esto:
 
-Abra en una nueva pestaña la página de ELM. Vaya de nuevo a la pestaña de predicción. Limpie el formulario con el botón *Reset Form*. Ingrese el Uniprot ID de la proteína (P53_human) y asigne en **Cell compartment** los compartimentos correspondientes utilizando ++ctrl++ para seleccionar más de uno.
+Realice de nuevo la predicción, ahora asignando en **Cell compartment** los compartimentos correspondientes utilizando ++ctrl++ para seleccionar más de uno.
 
 * Realice la predicción y conteste: ¿Cuántas instancias de motivos se encuentran ahora? ¿Cuántas instancias de motivos son retenidas luego del filtro? ¿A qué se debe esta diferencia con el punto anterior?
 
@@ -224,63 +217,46 @@ La región amino terminal de p53 posee un motivo de unión a la E3 ligasa MDM2, 
 * ¿Todos los motivos MDM2 tienen la misma longitud de secuencia?
 * ¿Qué nivel de identidad de secuencia observa en esta región? ¿A qué puede deberse?
 
+
 ## Ejercicio a informar
 
 !!! info ""
 
-      **Fecha límite de entrega:** Viernes, 13 de Octubre 2023, 23:59hs.
+      **Fecha límite de entrega:** Viernes, 1 de Noviembre 2024, 23:59hs.
 
-### Enunciado
+**Enunciado**
 
-**Parte I** - El aislamiento que le proporcionaron está avanzando rápidamente en latinoamérica!.
-Dada la importancia de la proteína N de la nucleocápside en la replicación viral, su jefe considera que es un blanco posible de drogas.
-La proteína N forma la nucleocápside viral de SARS-CoV2 y empaqueta el genoma viral de ARN formando una
-ribonucleocápside. La estructura de la proteína es altamente desordenada y posee dos dominios globulares
-pequeños en el N-terminal (Dominio N) y C terminal (Dominio C). 
+Más del 90 % de los casos de cáncer cervical a nivel global están asociados a la infección del papilomavirus humano con una alta prevalencia de los tipos virales de alto riesgo de la especie Alphapapillomavirus 9, HPV16 y HPV31, y Alphapapillomavirus 7, HPV18 y HPV45. Los tipos virales de bajo riesgo, como HPV11 y HPV6, se encuentran asociados con menor frecuencia a lesiones malignas. En los casos de cáncer atribuidos a HPV los tumores se desarrollan muchos años después de la infección inicial. Por lo tanto, la infección persistente es necesaria para el desarrollo de cáncer invasivo. El mantenimiento del fenotipo transformado depende de la expresión continua de algunos de los genes virales, principalmente las proteı́nas E6 y E7.
 
-1. Usando IUPred, long, identifique las regiones desordenadas y globulares.
-* ¿Puede identificar fácilmente los dominios globulares con el umbral de 0.5? ¿y con el umbral de 0.4? *Justifique los resultados en base al funcionamiento del algoritmo.*
+La Proteína E7 de papillomavirus contiene un dominio desordenado N-terminal (E7N) y un dominio globular C-terminal (E7C). El dominio E7C  media la homodimerización a través de un cisteínas que coordinan un átomo de Cinc.
 
-2. Si desearía cristalizar el dominio N ¿Qué regiones no incluiría?
+!!! info Nota
+     Para la introducción, se espera que digan brevemente la relevancia de estudiar motivos lineales en una la proteína viral E7.
 
-3. Analice la proporción de residuos predichos como ordenados y como desordenados utilizando el umbral de 0.4 ¿Se correlaciona esto con lo estudiado en la literatura? *Si encuentra diferencias, ¿podría hipotetizar a qué se deben?*
+**1.** Usando IUPred, long, identifique las regiones desordenadas y globulares.
 
-**Parte II** - Su jefe también está interesado en que Ud. entienda más sobre los mecanismos de entrada del virus a la célula, la cual está mediada por la enzima convertidora de angiotensina 2 (ACE2) (Uniprot ID: ACE2_HUMAN2, Q9BYF1). Luego de unirse la proteína Spike a ACE2, se desencadena la entrada del virus SARS-CoV-2 a las células pulmonares por un mecanismo llamado endocitosis mediada por receptor, en el cual participan muchos motivos lineales.
+Piense, analice y discuta:
 
-**1.** Según los métodos utilizados en el trabajo práctico de desorden identifique las regiones desordenadas del receptor, e investigue ¿En qué compartimento celular se encuentran esta/s región/es desordenada/s?
+* ¿Puede identificar fácilmente el dominio E7N del dominio E7C con el umbral de 0.5? ¿Cambiaría el umbral de 0.5? ¿A qué puede deberse los valores por debajo del umbral observados en el dominio E7N?.
 
-**2.** Algunos de los motivos conocidos involucrados en la vía de endocitosis mediada por receptor son: `TRG_ENDOCYTIC_2`, `LIG_LIR_Gen_1`, `LIG_PTB_APO2`.
+    *Se espera que justifique los resultados en base al funcionamiento del algoritmo y su conocimiento en motivos lineales.*
 
-* ¿En qué compartimentos celulares deberían encontrarse proteínas como ACE2?
-* Estos motivos ¿se encuentran en la secuencia humana del receptor?
-* ¿Cuántas instancias de cada uno de los motivos encuentra, en qué posiciones y cuáles de estas instancias considera que son buenos candidatos o posibles motivos funcionales?
+**2.** Analice la proporción de residuos predichos como ordenados y como desordenados utilizando el umbral de 0.4 ¿Se correlaciona esto con lo estudiado en la literatura? *Si es que se encuentran diferencias, ¿podría hipotetizar a qué se deben?*
+
+**3.** Knapp et al (Virology, 2009) proponen la existencia de una señal de exportación nuclear en las posiciones 76 a 89 de E7 de HPV16 dada por la expresion regular: 
+
+[ILVM]..[ILVMF]...[ILMF]...[ILVMF].[ILVMF]
+
+**4.** Barbosa et al (EMBO J, 1990) proponen la existencia de dos motivos de fosforilación CKII en las posiciones 31 y 32 de E7 de HPV16 cada uno. El motivo CKII está dado por la expresión regular [ST]..[DE] 
+
+* ¿Cuántas instancias de cada uno de los motivos encuentra en el alineamiento, en qué posiciones y cuáles de estas instancias considera que son buenos candidatos o posibles motivos funcionales?
+Piense en el contexto estructural y en el grado de conservación (un criterio para clasificar un buen motivo candidato es que esté conservado en >50% de un conjunto de secuencias homólogas).
 
 !!! warning "Atención"
 
-    Siempre que reporte una región o instancia de un motivo indique las posiciones de inicio y final de la misma. Para cada respuesta, indicar los algoritmos, base de datos y métodos utilizados, y el criterio usado en cada caso para clasificar/identificar.
+    Siempre que reporte/mencione una región de una proteína o instancia de un motivo indique las posiciones de inicio y final de la misma y si las posiciones refieren a posiciones del alineamiento o de la secuencia. Para cada respuesta, indicar los algoritmos, base de datos y métodos utilizados, y el criterio usado en cada caso para clasificar/identificar.
 
-
-**3.** Un criterio para clasificar un buen motivo candidato es que esté conservado en >50% de un conjunto de secuencias divergentes. Utilizando las expresiones regulares y el conjunto de secuencias de ACE2 (que se encuentran en el archivo `ACE2_secuencias.fasta`), indique cuáles de las instancias de los motivos seleccionados en (2) son buenos candidatos según su conservación.
-
-* Si bien es un alineamiento de proteínas homólogas ¿Encuentra variaciones en la secuencia de los motivos en las diferentes secuencias? ¿Cuáles? Una buena manera de reportar las variaciones de secuencia en un motivo es indicando qué abundancia (porcentaje) de cada aminoácido se observa en las posiciones fijas y variables del motivo.
-
-**Extra! (y por ende opcional)**
-
-1. La presentación de resultados con figuras que faciliten la compresión es una de las partes más importantes de un informe. Una forma muy linda de visualizar las posiciones de los motivos reportados es marcarlas en un gráfico de desorden cambiando el color de los puntos. ¿Se animan?
-
-2. El punto 3 se puede hacer utlizando R. Para esto primero va a necesitar instalar la librería `bioseq` (tarda) para poder leer el alineamiento con la función `read_fasta`. Luego, se puede utilizar la función `gregexpr` para buscar la expresión regular del motivo de interés y cuantificar su presencia en el alineamiento, prestando atención a la posición que se lo espera encontrar, claro!.
-
-!!! info "`gregexpr`"
-
-      Esta función devuelve una lista. Las posiciones de la lista se acceden como `lista[[i]]` donde `i` es un número.
-
-!!! warning "RegEx en alineamientos"
-
-      En un alineamiento de secuencias tenemos gaps que pueden interrumpir la secuencia. Deben modificar la RegEx de manera que esto no suceda. Ejemplo:
-      `R.L` pasaría a ser `R-*.-*L` 
-
-[:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1uAo-m-gFXRnq-Ms8-yeAVy3bhC4pJLvL/view?usp=sharing){ .md-button .md-button--primary }
-
+[:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1qDKmaOuzoFszb1hXUxj-QtctzO-4y9es/view?usp=sharing){ .md-button .md-button--primary }
 
 ## Ejercicios Adicionales
 
