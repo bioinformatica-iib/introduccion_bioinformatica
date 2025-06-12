@@ -1,4 +1,5 @@
 ---
+icon: octicons/person-16
 tags:
   - Docentes
   - Instructores

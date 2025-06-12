@@ -1,3 +1,10 @@
+---
+title: Practico Introducción a la Programación en R
+icon: octicons/code-16
+tags: 
+  - practicos
+---
+
 ![Image](img/banner.jpg){ width="250", align="left" }
 
 # **TPP**. R - Programando en biología - Parte 1 { markdown data-toc-label = 'TPP' }

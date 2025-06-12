@@ -1,4 +1,6 @@
 ---
+title: Acerca de la Materia
+icon: octicons/info-16
 tags:
   - requisitos
   - costos

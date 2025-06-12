@@ -19,6 +19,7 @@ theme:
   name: material
   font: 
     text: Cabin
+    display: Saira
     code: Roboto Mono
   language: es 
   features:
@@ -28,24 +29,24 @@ theme:
     - header.autohide
     - navigation.tracking
     - navigation.tabs
-#    - navigation.sections
+    - navigation.sections
 #    - navigation.tabs.sticky # --> hace que la navigation bar baje cuando se escrolea.
 #    - navigation.indexes # Si se saca, cada section del index se puede ampliar INCOMPATIBLE CON toc.integrate y creo que con navigation tracking
-    - toc.integrate # Integra la table of contents a la navigation
+#   - toc.integrate # Integra la table of contents a la navigation
     - navigation.top
     
   palette: 
     - scheme: default
-      primary: custom 
-      accent: deep orange
+      primary: blue 
+      accent: cyan
       toggle:
-        icon: material/toggle-switch 
+        icon: material/brightness-4
         name: Cambiar a modo oscuro
     - scheme: slate 
-      primary: custom
-      accent: deep orange
+      primary: blue
+      accent: cyan
       toggle: 
-        icon: material/toggle-switch-off-outline
+        icon: material/brightness-7
         name: Cambiar a modo claro
 
 # plugins
@@ -139,11 +140,13 @@ extra_css:
 # No hay dropdowns pero aparece en una navigation bar al costado que se puede o no integrar con la tabla de contenidos (comentando o descomentando toc.integrate en theme --> features -toc.integrate). 
 nav:
     - Inicio: 'index.md'
-    - Acerca de: 'acerca.md'
-    - Cómo Llegar: 'comollegar.md'
-    - Contenidos: 'contenidos.md'
-    - Cronograma: 'cronograma.md'
-    - Docentes: 'docentes.md'
+    - Información General: 
+        - info/acerca.md
+        - Cómo Llegar: info/comollegar.md
+        - Programa: info/contenidos.md
+        - Evaluación: info/evaluacion.md 
+        - Cronograma: info/cronograma.md
+        - Docentes: info/docentes.md
     - Teóricas:
         - teoricas/inicio.md
         - Teórica 1: teoricas/1-Teorica-Uno/index.md
@@ -170,9 +173,9 @@ nav:
         - TP 5 - PSI-BLAST: 'practicos/TP05_PSI-BLAST/index.md'
         - TP 6 - HMMs: 'practicos/TP06_HMM/index.md'
         - TP 7 - Quimioinformática: 'practicos/TP07_Quimioinformatica/index.md'
-        - TPP - R - Introduccion: 'practicos/TPPa_Programando_en_Biologia/index.md'
-        - TPP - R - Aplicación: 'practicos/TPPb_Programando_en_Biologia/index.md'
-        - TP 8 - Clustering Y Data Mining: 'practicos/TP08_Clustering_Data_Mining/index.md'
+        - TP - R - Introduccion: 'practicos/TPPa_Programando_en_Biologia/index.md'
+        - TP - R - Aplicación: 'practicos/TPPb_Programando_en_Biologia/index.md'
+        - TP 8 - Clustering + Data Mining: 'practicos/TP08_Clustering_Data_Mining/index.md'
         - TP 9 - Short Read Mapping: 'practicos/TP09_Short-Read-Mapping/index.md'
         - TP 10 - Predicción de Desorden: 'practicos/TP10_Desorden/index.md'
         - TP 11 - Motivos Lineales: 'practicos/TP11_Motivos/index.md'
@@ -193,4 +196,4 @@ nav:
 
 # copyright
 # --- editar y ajustar de acuerdo al curso
-copyright: Copyright &copy; 2024 Area Bioinformática UNSAM  
+copyright: Copyright &copy; 2025 Area Bioinformática UNSAM  

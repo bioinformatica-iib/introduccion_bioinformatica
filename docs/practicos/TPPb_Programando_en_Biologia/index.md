@@ -1,6 +1,6 @@
 ---
-title: Practico Trece
-icon: fontawesome/solid/hammer
+title: Practico Programación en R
+icon: octicons/code-16
 tags: 
   - practicos
 ---

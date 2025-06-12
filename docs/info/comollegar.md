@@ -1,4 +1,7 @@
-
+---
+title: Como llegar
+icon: material/map
+---
 
 * Visiten el siguiente enlace para saber como llegar: [Link](https://www.unsam.edu.ar/home/como_llegar.php)
 

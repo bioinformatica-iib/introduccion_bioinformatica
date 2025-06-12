@@ -1,6 +1,6 @@
 ---
 title: Practico Uno
-icon: fontawesome/solid/hammer
+icon: octicons/terminal-16
 tags: 
   - practicos
 ---

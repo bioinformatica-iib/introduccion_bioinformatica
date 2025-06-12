@@ -1,6 +1,7 @@
 ---
+icon: material/calendar
 hide: 
-  - navigation
+  #- navigation
   - toc
 tags:
   - cronograma

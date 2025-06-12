@@ -1,4 +1,9 @@
-## Contenidos Teóricos
+---
+title: Programa
+icon: material/content-copy
+---
+
+### Contenidos Teóricos
 
 * Experimentos Bioinformáticos
 * Conceptos básicos de computación, algoritmos
@@ -16,7 +21,7 @@
 * Secuenciación y ensamblado de genomas
 * Quimioinformática
 
-## Contenidos Prácticos
+### Contenidos Prácticos
 
 * Introducción a UNIX
 * EMBOSS Suite
@@ -36,6 +41,5 @@
 * Short Read Mapping
 * Quimioinformática
 
-<!--
-[:fontawesome-solid-2x-download: Programa completo de la materia](#){ .md-button } 
--->
+
+[ :octicons-download-16: Descargar Programa Oficial](#){ .md-button } 
