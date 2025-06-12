@@ -15,6 +15,17 @@ Este es el repositorio que genera la página web de la materia. Tiene el siguien
  * Información sobre modalidad de cursada
  * _et cetera_
 
-Para más información sobre cómo usar este repositorio, ver [INSTALAR](HOWTO/INSTALAR.md) si es la primera vez, y [USO](HOWTO/USO.md) para ver cómo editar páginas, subir cambios al repo, etc. 
+### Para Docentes
+
+Las ediciones menores / rápidas se pueden hacer editando directamente en github. 
+
+Para más información ver:
+ * [README](HOWTO/README.md) para ver como instalar y configurar el entorno (conda, python, mkdocs)
+    - esto les va a permitir previsualizar los cambios antes de subirlos
+ * [USO](HOWTO/USO.md) para ver cómo editar páginas, recomendaciones, subir cambios al repo, etc.
+    - sobre como escribir markdown + extensiones para agregar tablas, formatos, secciones, etc.
+
+
+[Hecho con Material for Mkdocs](https://squidfunk.github.io/mkdocs-material/)
    
 
