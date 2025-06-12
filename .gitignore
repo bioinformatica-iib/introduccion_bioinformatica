@@ -2,3 +2,12 @@
 site/
 # Github token
 token
+# Github codesapce venv
+venv/
+venv/bin/
+venv/compiler_compat
+venv/condabin
+# Github codespaces specific files
+oryx-build-commands.txt
+mambaforge.sh
+Miniforge3-Linux-x86_64.sh
