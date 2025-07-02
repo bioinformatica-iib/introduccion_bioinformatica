@@ -12,17 +12,13 @@ tags:
 <br>
 <br>
 
-[:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1rAKqVS8FcuQhX41daDmInG6lzMWE9voy/view?usp=sharing){ .md-button .md-button--primary }
+[:fontawesome-solid-download: Materiales](https://drive.google.com/drive/folders/127EZ-CHlq5hg5K1hEKjTxmZp4_eCqIbN?usp=drive_link){ .md-button .md-button--primary }            [:fontawesome-solid-computer: Google Colab](https://colab.research.google.com/drive/1-i_1TJFytoeeFhPGqrrZnmb_-ZMN03Zi?usp=sharing){ .md-button .md-button--primary }            [:fontawesome-solid-file-powerpoint: Slides](https://docs.google.com/presentation/d/1hHh-vYtGggyeMPEpObJb18lTYwiSvxXC7MDcTsuuCKQ/edit?usp=drive_link){ .md-button .md-button--primary }
 
 <br>
 
 !!! abstract "Atención: Este TP tiene informe."
 
 !!! warning "Atención: Este TP tiene parcialito."
-
-###Slides mostrados en la clase
-
-* :fontawesome-regular-file-pdf: [Slides](https://docs.google.com/presentation/d/1btQ1A5v5FH4ZFB4nk0jLC7G4aDqidsvwSjbPKtQK0go/edit#slide=id.g22023089296_1_0)
 
 <!---
 ### Videos de la clase grabada
@@ -299,11 +295,13 @@ Por ejemplo:
 
 ![DotPlot](./img/DotPlot1.jpeg)
 
-Nosotros podemos utilizar la herramienta de EMBOSS ```dotmatcher``` para generar nuestros propios plots. 
+Nosotros podemos utilizar la herramienta de EMBOSS ```dotmatcher``` para generar nuestros propios plots. Para esto, vamos a usar el **Google colab** que se encuentra al lado de los materiales del TP.
+
+```Bash 
 
 !!! info "Recordatorio"
 
-    Para ver qué parámetros toma de entrada la función, correr en la terminal ```dotmatcher -h```.
+    Para ver qué parámetros toma de entrada la función, se puede ver la ayuda corriendo ```dotmatcher -h``` en bash.
 
 
 ### Ejercicio 2
@@ -313,13 +311,7 @@ Nosotros podemos utilizar la herramienta de EMBOSS ```dotmatcher``` para generar
 Generá un dotplot utilizando la secuencia *HS-ch11-fragment.fasta* contra sí misma.
 
 ```Bash
-dotmatcher -graph X11 HS-ch1-fragment.fasta HS-ch1-fragment.fasta
-```
-
-si quieren guardar la imagen:
-
-```Bash
-dotmatcher -graph pdf HS-ch1-fragment.fasta HS-ch1-fragment.fasta
+!dotmatcher -graph pdf HS-ch1-fragment.fasta HS-ch1-fragment.fasta
 ```
 
 !!! attention "Atención"
@@ -338,7 +330,7 @@ Esto quiere decir que ```dotmatcher``` sólo va a poner un punto cuando un fragm
 Por ejemplo:
 
 ```Bash
-dotmatcher -graph X11 -windowsize 50 -threshold 20 HS-ch1-fragment.fasta HS-ch1-fragment.fasta
+!dotmatcher -graph pdf -windowsize 50 -threshold 20 HS-ch1-fragment.fasta HS-ch1-fragment.fasta
 ```
 
 Si aumentás estos parámetros podés ir eliminando fragmentos que corresponden a secciones compartidas más cortas, sin embargo existe una relación de compromiso, utilizar tamaño de ventana y umbral muy grandes nos llevan a perder información por lo que hay que seleccionarlos con cuidado. Aqui hay algunos patrones con los que te podés encontrar en este tipo de plots:
@@ -375,16 +367,15 @@ A partir de esta relación entre similitud y homología se pueden inferir relaci
 ### Ejercicio 3
 
 **3.1** Determinar qué especies están más relacionadas utilizando la ribonucleasa pancreática de caballo (*Equus caballus*), ballena enana (*Balaenoptera acutorostrata*) y canguro rojo (*Macropus rufus*).
-
-**3.1.1** Descargá las secuencias antes mencionadas de la carpeta del TP.  
-**3.1.2** Utilizá la herramienta de alineamiento global de EMBOSS ```needle``` (pueden leer el manual para ver que opciones admite) para comparar las tres secuencias.   
+ 
+**3.1.1** Utilizá la herramienta de alineamiento global de EMBOSS ```needle``` (pueden leer el manual para ver que opciones admite) para comparar las tres secuencias.   
 
 ```Bash
 needle -gapopen 10 -gapextend 1 -asequence *secuencia_1* -bsequence *secuencia_2* -outfile *salida*
 ```
-**3.1.3** Observá e interpretá las salidas obtenidas. ¿Qué secuencias son más similares? ¿Tiene sentido el resultado obtenido?
+**3.1.2** Observá e interpretá las salidas obtenidas. ¿Qué secuencias son más similares? ¿Tiene sentido el resultado obtenido?
 
-**3.1.4** Analizá árbol filogenético de la Fig. 1 del [paper](https://drive.google.com/file/d/1CHS7KCkgDQvzqQ2A_l4y4LKRaoo8Eraf/view?usp=sharing) de O'Leary *et al.*, 2013. 
+**3.1.3** Analizá árbol filogenético de la Fig. 1 del [paper](https://drive.google.com/file/d/1CHS7KCkgDQvzqQ2A_l4y4LKRaoo8Eraf/view?usp=sharing) de O'Leary *et al.*, 2013. 
 Sabiendo que los caballos y las ballenas pertenecen al clado *Euungulata* y los canguros al clado *Marsupialia*, ubicá estos clado en el árbol.
 ¿Esta información coincide con los resultados que obtuviste en **3.1.3**?
 
@@ -428,14 +419,6 @@ Un pipeline típico para realizar un MSA sería:
 
 ### Ejercicio 4 (Adicional)
 
-!!! attention "Atención"
-
-      Antes de comenzar a resolver los ejercicios, instalá ClustalW en tu VM, escribiendo el siguiente comando en la terminal:
-
-      ```
-      sudo apt install clustalw
-      ```
-
 La gp120 es una proteína que recubre al virus del HIV y facilita su unión e ingreso a la célula que infecta (linfocitos CD4+)
 Entre nuestros archivos contamos con un multifasta (gp120.fasta) que contiene 27 secuencias de gp120 de HIV-1, HIV-2 y SIV.
 Estas proteínas contienen 9 puentes disulfuro conservados. También es de interés el loop V3, una porción expuesta de la proteína, conocido target de anticuerpos el cual constituye una región hipervariable dada la presión selectiva a la que se ve sometido. 
@@ -455,13 +438,7 @@ Mathys L, Balzarini J. Several N-Glycans on the HIV Envelope Glycoprotein gp120 
    
     El comando a utilizar es ```emma```. Para ver la ayuda, tipeá ```emma -help``` en la terminal.
 
-**4.2** Utilizá el comando ```showalign``` de EMBOSS para obtener una mejor visualización del alineamiento.
-
-!!! tip "Otra alternativa"
-
-    Para visualizar el alineamiento correctamente le sugerimos usar el comando **cat** en la consola. 
-    <br>
-    Si desea ver el archivo con Leafpad recuerde ingresar a Opciones > Tipografía y seleccionar Ubuntu Mono.  
+**4.2** Utilizá el comando ```showalign``` de EMBOSS para obtener una mejor visualización del alineamiento.  
 
 **4.3** Observá el alineamiento, como primer control podemos corroborar que las 18 Cisteínas (**C**) estén bien alineadas.  
 
@@ -476,7 +453,7 @@ Mathys L, Balzarini J. Several N-Glycans on the HIV Envelope Glycoprotein gp120 
 
 !!! info 
 
-    <span style="font-weight:bold;">Fecha límite de entrega:</span> Viernes, 30 de Agosto 2024, 23:59hs.
+    <span style="font-weight:bold;">Fecha límite de entrega:</span> Jueves, 5 de septiembre 2025, 23:59hs.
 
 [:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1rJ2FILtOHFxEupG2GI3fUiyQ5DJbJTcZ/view?usp=sharing){ .md-button .md-button--primary }
 
