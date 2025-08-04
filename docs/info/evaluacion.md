@@ -30,7 +30,7 @@ La materia además se evalua mediante un único examen escrito, dividido en Mód
  * Módulo 2 - Búsquedas por similidud
  * Módulo 3 - Genómica 
  * Módulo 4 - Agrupamiento de Datos 
- * Módulo 5 - Motivos, Dominios, Profiles
+ * Módulo 5 - Motivos, Dominios, Perfiles
  * Módulo 6 - Bioinformática Estructural
 
 Cada Módulo se aprueba (nota mayor o igual a 5), o se reprueba por separado. 
@@ -45,8 +45,8 @@ Para poder promocionar la materia, se requiere haber aprobado los Trabajos Pract
 
 ### Condiciones para recursar
 
-En caso de que el promedio de nota global sea menor a 5, o cuando el número de módulos rendidos y aprobados 
+En caso de que el promedio de nota global sea menor a 5, o cuando el número de módulos rendidos y aprobados sea 
 
 ### Examen Final
 
-En caso de haber aprobado la materia ()
+En caso de haber aprobado la materia (implica haber aprobado los Trabajos Practicos -- nota de informes mayor o igual a 5, y presencialidad de al menos 80%), pero no haber alcanzado la posibilidad de promoción 
