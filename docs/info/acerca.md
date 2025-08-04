@@ -13,7 +13,7 @@ tags:
 ## Correlativas para alumnos de grado UNSAM
 
 * CB14 Estadistica Aplicada
-* CB07 Biología Molecular
+* CB07 Biología II
 
 ## Requisitos
 
@@ -30,7 +30,7 @@ tags:
 * **Empresas/Profesionales Independientes:** $85000
 -->
 
-## Horarios 2do Cuatrimestre 2024 (Presencial)
+## Horarios 2do Cuatrimestre 2025 (Presencial)
 
 * **Presencial:** Martes y Jueves 9 a 13hs.
 
