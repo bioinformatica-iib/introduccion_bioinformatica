@@ -16,12 +16,14 @@ tags:
 ### Ayudantes de 1ra
 * Lic. Mercedes Didier Garnham
 * Lic. Guadalupe Romer
-
-### Ayudantes de 1ra Ad-honorem
-* Lic. Heli A. García
 * Lic. Ramiro Quinteros
 
-### Ayudante Adscripto
-* Sebastián Jinich
+### Ayudantes de 1ra *Ad-honorem*
+* Lic. Heli A. García
+* Lic. Paula Nuñez
+
+### Ayudantes *Adscriptos*
+* Santiago Sneidermanis
+* Luz Sommariva
 
 
