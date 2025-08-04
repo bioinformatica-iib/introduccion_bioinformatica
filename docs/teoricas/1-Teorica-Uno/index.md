@@ -10,7 +10,7 @@ tags:
 
 Docentes, modo de cursada, cronograma, evaluaciones, etc.
 
- * :fontawesome-regular-file-pdf: [Slides](presentacionDeLaMateria-2024.pdf) 
+ * :fontawesome-regular-file-pdf: [Slides](presentacion-materia-2025.pdf) 
  
 ## Conceptos elementales de computación y algoritmos
 
