@@ -19,11 +19,12 @@ tags:
 * Lic. Ramiro Quinteros
 
 ### Ayudantes de 1ra *Ad-honorem*
-* Lic. Heli A. García
+* Lic. Heli García Alvarez
 * Lic. Paula Nuñez
 
 ### Ayudantes *Adscriptos*
-* Santiago Sneidermanis
 * Luz Sommariva
+* Santiago Sneidermanis
+
 
 
