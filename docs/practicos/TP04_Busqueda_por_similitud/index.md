@@ -13,29 +13,27 @@ tags:
 <br>
 <br>
 
-[:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1rPAZB0QfTRa9tKBoDpDFqKc5azThFNeY/view?usp=sharing){ .md-button .md-button--primary }
+[:fontawesome-solid-download: Materiales](https://drive.google.com/drive/folders/12XmxoCv9hSTMIzvPr1yvfegAni_moJl7?usp=sharing){ .md-button .md-button--primary }
+[:fontawesome-solid-computer: Google Colab](https://colab.research.google.com/drive/1sa7M4iYVhydk9xrzY4XZae4NhXXOshGa?usp=sharing){ .md-button .md-button--primary }
 
 <br>
 
 ### Slides mostrados en la clase
 
-* :fontawesome-regular-file-pdf: [Slides](https://docs.google.com/presentation/d/1aLdSql8KIhMJuJAoA8iRC6hJABwODWse7F31q3h2lB4/edit?usp=sharing)
+* :fontawesome-regular-file-pdf: [Slides](https://docs.google.com/presentation/d/1mhTwk_ykIh4vqGecBd0LIxCmnVAgr6lY3dy1i5PpW4o/edit?usp=sharing)
 
 ## **Objetivos**
 
- * Familiarizarse con el uso de programas de búsqueda de secuencias en bases de datos (BLAST y FASTA), y en particular con el uso de estos programas en la línea de comando.
+ * Familiarizarse con el uso de programas de búsqueda de secuencias en bases de datos (BLAST y FASTA), y en particular con el uso de estos programas en google colab.
  * Familiarizarse con la visualización de histogramas que arroja FASTA.
  * Familiarizarse con el uso de parámetros estadísticos en relación a la búsqueda en bases de datos.
 
 !!! attention "¡Antes de comenzar!"
 
-    Para realizar este TP tienen que estar frente a una terminal UNIX. Los programas que vamos a utilizar son: *blastall, blastcl3, formatdb y fastacmd (NCBI-Toolkit), fasta, tfasta, fastx, tfastx, fasty, tfasty, ssearch, prss* (**FASTA** program package). 
+    Este TP lo vamos a realizar con google colab. Los programas que vamos a utilizar son: *blastall, blastcl3, formatdb y fastacmd (NCBI-Toolkit), fasta, tfasta, fastx, tfastx, fasty, tfasty, ssearch, prss* (**FASTA** program package). 
 
-    Para instalarlos, descarguemos el archivo ``install.sh`` de la carpeta de trabajo provista y ejecutemos el comando.
+    Para instalarlos, ejecuten en su colab las celdas que se encuentran en la sección **Módulos, programas y directorios**.
 
-    ```bash
-    bash install.sh
-    ``` 
 
 ## **Introducción a Bases de Datos de Proteínas**
 
@@ -93,22 +91,27 @@ En este TP trabajaremos con **Swiss-Prot**.
 **1.1** Como primer ejemplo podemos usar la secuencia *xlrhodop.pep* para realizar una búsqueda contra **Swiss-Prot**. Como estamos trabajando con una secuencia y una base de datos de proteínas, usamos ``blastp`` para realizar la busqueda: 
 
 ```bash
-blastall -p blastp -i xlrhodop.pep -d ~/Swissprot_db/Swissprot.fasta
+!blastall -p blastp -i xlrhodop.pep -d ~/Swissprot_db/Swissprot.fasta
 ``` 
 !!! attention "Atención"
 
-	 Este comando no se ejecutará correctamente si uno mueve de lugar el archivo de la base de datos **Swiss-Prot** luego de ejecutar ``install.sh``. Chequeen donde está la base de datos, y si el comando no se ejecuta, especifiquen el camino o *path* completo.
+	Recuerden que para indicarle a colab que es un comando de bash, tienen que utilizar el prefijo ``!``.
+
+
+!!! attention "Atención"
+
+	 Este comando no se ejecutará correctamente si las secuencia xlrhodop y la base de datos **Swiss-Prot** no están en los directorios correctos. Chequeen donde está la base de datos, y si el comando no se ejecuta, especifiquen el camino o *path* completo.
 
 En este ejemplo, el resultado de la búsqueda es volcado en la consola (**stdout**). Para que el resultado aparezca en un archivo, podemos redireccionar **stdout** (usando ``>``, ver TP01-Linux) o usar la opcion ``-o`` (output).
 
 ```Bash
-blastall -p blastp -i xlrhodop.pep -d ~/Swissprot_db/Swissprot.fasta -o xlrhodop.blastp
+!blastall -p blastp -i xlrhodop.pep -d ~/Swissprot_db/Swissprot.fasta -o xlrhodop.blastp
 ``` 
 
-Pueden ver el resultado del ``blastp``, por ejemplo paginando el archivo:
+Pueden ver el resultado del ``blastp``, por ejemplo, revisando las _n_ líneas del principio (head) o del final (tail):
 
 ```Bash
-less xlrhodop.blastp
+!head -n 10 xlrhodop.blastp
 ```
 
 * **Inspeccionen el archivo y respondan:** ¿Qué indican las últimas líneas de este archivo?
@@ -202,7 +205,7 @@ Comparación de programas en el paquete FASTA
 Ahora corramos la misma búsqueda del ejemplo anterior usando FASTA: 
 
 ```bash
-fasta -H xlrhodop.pep ~/Swissprot_db/Swissprot.fasta > xlrhodop.fasta
+!fasta -H Data/xlrhodop.pep Data/Swissprot_db/Swissprot.fasta > xlrhodop.fasta
 ```
 Para interpretar correctamente el histograma que FASTA da como output tenemos que pensar que está **apaisado** (o rotado 90 grados en sentido horario) con respecto al típico histograma que muestra la distribución de scores para todas las secuencias halladas. Esto se ilustra en la siguiente figura.
 
@@ -302,7 +305,7 @@ En otros casos, la secuencia puede contener un vector (plásmido) o repeticiones
 **3.2** Ahora para repetir el mismo ejercicio con **FASTA**, tenemos que detectar y marcar las regiones de baja complejidad. Para esto se utiliza ``segmasker``: 
 
 ```bash
-segmasker -in grou_drome.fasta -outfmt fasta > grou_drome_lc.fasta
+!segmasker -in Data/grou_drome.fasta -outfmt fasta > grou_drome_lc.fasta
 ```
 
 **3.3** Comparen las secuencias *grou_drome.fasta* y *grou_drome_lc.fasta* e identifiquen las diferencias. ¿Qué hizo *segmasker* con la secuencia? 
@@ -310,8 +313,9 @@ segmasker -in grou_drome.fasta -outfmt fasta > grou_drome_lc.fasta
 Ahora, podemos buscar secuencias similares en **Swiss-Prot** usando *grou_drome.fasta* (con opciones standard) y *grou_drome_lc.fasta* (usando la opción ``-S``). 
 
 ```bash
-fasta -H grou_drome.fasta ~/Swissprot_db/Swissprot.fasta
-fasta -H -S grou_drome_lc.fasta ~/Swissprot_db/Swissprot.fasta
+!fasta -H Data/grou_drome.fasta Data/Swissprot_db/Swissprot.fasta | head -74
+print("\n")
+!fasta -H -S grou_drome_lc.fasta Data/Swissprot_db/Swissprot.fasta | head -74
 ```
 
 * Responda: ¿Qué diferencias encuentran en los histogramas de cada búsqueda? 
@@ -326,7 +330,9 @@ Tener acceso a **BLAST** o **FASTA** en la línea de comando les da la posibilid
 **4.1** Primero, vamos a generar un archivo *fasta* múltiple con algunas secuencias. Por ejemplo, para construir una base de datos con secuencias de opsinas podemos empezar con: 
 
 ```Bash
-seqret "~/Swissprot_db/Swissprot.fasta:ops*" fasta::ops
+!seqret Data/Swissprot_db/Swissprot.fasta:ops* fasta::ops
+
+!head ops
 ```
 Esto debería generar un archivo FASTA múltiple conteniendo secuencias de opsinas. 
 
@@ -335,20 +341,19 @@ Esto debería generar un archivo FASTA múltiple conteniendo secuencias de opsin
 Ahora para indexar el archivo ops (en formato *fasta*), usamos ``formatdb``, indicándole el archivo que contiene las secuencias (``-i``) y si el archivo contiene secuencias de ADN (``-p F``) o de proteínas (``-p T``). 
 
 ```Bash
-formatdb -i ops -p T
+!formatdb -i ops -p T
 ```
 
 **4.3** Una vez indexada la base de datos, podemos hacer una búsqueda, por ejemplo, con nuestra ya conocida *xlrhodop.pep*
 
 ```Bash
-blastall -p blastp -d ./ops -i xlrhodop.pep > xlrhodop.ops.blastp
+!blastall -p blastp -d ./ops -i Data/xlrhodop.pep > xlrhodop.ops.blastp
 ```
 
 Pueden ver las opciones que acepta el comando ``formatdb`` pidiendo ayuda: 
 
 ```Bash
-#formatdb --help ... (en versiones viejas de blast se podía usar este comando... pero ya no)
-makeblastdb -help
+!makeblastdb -help
 
 ```
 
@@ -360,7 +365,7 @@ Si tienen un archivo con múltiples secuencias en formato *fasta*, pueden usarlo
 
 **5.1** El archivo *opsv.fasta* contiene la secuencia de 4 fotorreceptores, usen este archivo para realizar una búsqueda, usando *blastp*, contra la base de datos **ops** que crearon en el ejercicio anterior. 
 
-**5.2** El output generado consiste en 4 reportes de **BLAST**, concatenados en un único archivo. ¿Cómo pueden navegar fácilmente dentro del documento usando `less`? 
+**5.2** El output generado consiste en 4 reportes de **BLAST**, concatenados en un único archivo. ¿Cómo pueden navegar fácilmente dentro del documento usando `sed`? 
 
 !!! tip "Tip"
 
@@ -368,25 +373,16 @@ Si tienen un archivo con múltiples secuencias en formato *fasta*, pueden usarlo
 
 **5.3** Ahora puedo leer el reporte y manejarme bien dentro de él. Si quiero partirlo en 4 reportes individuales ¿Cómo hago? 
 
-Para esto pueden usar el comando de Unix `split` que puede partir un archivo en otros más pequeños, ya sea por tamaño o cada vez que encuentre una palabra o *pattern* (patrón, expresión regular). Usando la opción `-p` pueden especificar un *pattern*.
-
-!!! info "Info"
-
- 	 La opción `-p` sólo está disponible en el comando `split` de sistemas operativos del tipo BSD (*FreeBSD*, *NetBSD*). Linux usa el comando `split` de GNU, donde esta opción no existe. 
-
-```Bash
-man split 
-```
 Tanto en Linux como en cualquier Unix, una manera de partir un archivo en varios usando un *pattern* es usando el comando `awk`: 
 
 Dado un archivo llamado *blast.out*, podemos partirlo en varios usando la siguiente invocación: 
 
 ```Bash
-awk -v i=0 '/pattern/{i++}{print > "blast."i}' blast.out 
+!awk -v i=0 '/pattern/{i++}{print > "blast."i}' blast.out 
 ```
 !!! attention "Atención"
 
-	 Recuerden reemplazar "*pattern*" por el patrón que quieren utilizar para dividir el archivo.
+	 Recuerden reemplazar "*pattern*" por el patrón que quieren utilizar para dividir el archivo y blast.out por el nombre del archivo que quieren partir.
 
 ¿Lo lograron?
 
