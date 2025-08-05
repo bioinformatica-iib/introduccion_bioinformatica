@@ -15,12 +15,9 @@ tags:
 
 [:fontawesome-solid-download: Materiales](https://drive.google.com/drive/folders/12XmxoCv9hSTMIzvPr1yvfegAni_moJl7?usp=sharing){ .md-button .md-button--primary }
 [:fontawesome-solid-computer: Google Colab](https://colab.research.google.com/drive/1sa7M4iYVhydk9xrzY4XZae4NhXXOshGa?usp=sharing){ .md-button .md-button--primary }
+[:fontawesome-solid-file-powerpoint: Slides](https://docs.google.com/presentation/d/1mhTwk_ykIh4vqGecBd0LIxCmnVAgr6lY3dy1i5PpW4o/edit?usp=sharing){ .md-button .md-button--primary }
 
 <br>
-
-### Slides mostrados en la clase
-
-* :fontawesome-regular-file-pdf: [Slides](https://docs.google.com/presentation/d/1mhTwk_ykIh4vqGecBd0LIxCmnVAgr6lY3dy1i5PpW4o/edit?usp=sharing)
 
 ## **Objetivos**
 
