@@ -234,6 +234,9 @@ que podemos corroborar que es idéntico al *path* **1** del ejemplo que se plant
 
 **1.1** En grupo, realizá el alineamiento de las secuencias **ATTGG** con **AGATGG**, usando el esquema de puntajes: M=1, m=-1, g=-2. 
 
+![ejDynamic](./img/matrixNW.png)
+
+<!---
 Para esto, abrí el siguiente [Google Jamboard](https://jamboard.google.com/d/1MGSgTaSSm7bAoHsfw1HCg7CHxuVOfKWVORQmL2vyymw/edit?usp=sharing), guardá una copia local del mismo en tu Google Drive y compartí el GJamboard a tus compañeros de equipo. 
 
 !!! attention "Atención"
@@ -241,6 +244,7 @@ Para esto, abrí el siguiente [Google Jamboard](https://jamboard.google.com/d/1M
       Para guardar una copia local del GJamboard en tu GDrive, cliqueá en el ícono con 3 puntitos, en el extremo superior derecho (Más acciones). Luego seleccioná la opción "Hacer una copia". Elegí la carpeta adonde deseas guardarlo dentro de tu unidad y cliqueá aceptar. 
 
 ¡Ahora estás listo para empezar! Recordá rellenar la matriz con todos los puntajes y flechas faltantes. Cuando termines, reconstruí el *path* del alineamiento.
+--->
 
 **1.2** Cuando termines el ejercicio anterior podés corrobar la solución que hallaste ingresando en [UniFreiburg-FreiburgRNATools](http://rna.informatik.uni-freiburg.de/Teaching/index.jsp?toolName=Needleman-Wunsch).
 
@@ -296,8 +300,6 @@ Por ejemplo:
 ![DotPlot](./img/DotPlot1.jpeg)
 
 Nosotros podemos utilizar la herramienta de EMBOSS ```dotmatcher``` para generar nuestros propios plots. Para esto, vamos a usar el **Google colab** que se encuentra al lado de los materiales del TP.
-
-```Bash 
 
 !!! info "Recordatorio"
 
@@ -373,11 +375,14 @@ A partir de esta relación entre similitud y homología se pueden inferir relaci
 ```Bash
 needle -gapopen 10 -gapextend 1 -asequence *secuencia_1* -bsequence *secuencia_2* -outfile *salida*
 ```
-**3.1.2** Observá e interpretá las salidas obtenidas. ¿Qué secuencias son más similares? ¿Tiene sentido el resultado obtenido?
+**3.1.2** Observá e interpretá las salidas obtenidas.
+
+* ¿Qué secuencias son más similares? ¿Tiene sentido el resultado obtenido?
 
 **3.1.3** Analizá árbol filogenético de la Fig. 1 del [paper](https://drive.google.com/file/d/1CHS7KCkgDQvzqQ2A_l4y4LKRaoo8Eraf/view?usp=sharing) de O'Leary *et al.*, 2013. 
 Sabiendo que los caballos y las ballenas pertenecen al clado *Euungulata* y los canguros al clado *Marsupialia*, ubicá estos clado en el árbol.
-¿Esta información coincide con los resultados que obtuviste en **3.1.3**?
+
+* ¿Esta información coincide con los resultados que obtuviste en **3.1.3**?
 
 
 ![Animales](./img/Animales.png)
@@ -429,7 +434,10 @@ Pueden ver la disposición de las distintas regiones de la gp120 en el siguiente
 <br>
 ![gp120](./img/gp120.png)
 
-Mathys L, Balzarini J. Several N-Glycans on the HIV Envelope Glycoprotein gp120 Preferentially Locate Near Disulphide Bridges and Are Required for Efficient Infectivity and Virus Transmission. PLoS One. 2015 Jun 29;10(6):e0130621. doi: 10.1371/journal.pone.0130621. PMID: 26121645; PMCID: PMC4488071. **Figure 1.** 
+ **Figure 1. Glicoproteína gp120 de HIV**
+ 
+<span style="font-size: 0.8em;"> Mathys L, Balzarini J. *Several N-Glycans on the HIV Envelope Glycoprotein gp120 Preferentially Locate Near Disulphide Bridges and Are Required for Efficient Infectivity and Virus Transmission.* PLoS One. 2015 Jun 29;10(6):e0130621. doi: [10.1371/journal.pone.0130621](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0130621). PMID: 26121645; PMCID: PMC4488071.</span>
+
 <br>
 
 **4.1** Utilizá las herramientas de EMBOSS para realizar un alineamiento múltiple con las secuencias de gp120 (recuerden que para buscar herramientas pueden usar ```wossname```)  
