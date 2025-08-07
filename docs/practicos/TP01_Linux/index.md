@@ -11,11 +11,9 @@ tags:
 <br>
 
 [:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1j-Ys8NpOWFRxqGz453-n8nU5zigy0TCw/view?usp=sharing){ .md-button .md-button--primary }
-
-### Slides mostrados en la clase
-
-* :fontawesome-regular-file-pdf: [Introducción a la programación - Parte 1](https://drive.google.com/file/d/1yxCzhCvINk0z3_vTcy9n_LJ1wOJhPNwF/view?usp=sharing)
-* :fontawesome-regular-file-pdf: [Introducción a la programación - Parte 2](https://drive.google.com/file/d/1bOczXT5haYff8ziMIsm3sLrgFPcqVTD-/view?usp=sharing)
+<!---
+ [:fontawesome-solid-file-powerpoint: Slides Parte 1](https://drive.google.com/file/d/1yxCzhCvINk0z3_vTcy9n_LJ1wOJhPNwF/view?usp=sharing){ .md-button .md-button--primary } [:fontawesome-solid-file-powerpoint: Slides Programación](https://drive.google.com/file/d/1bOczXT5haYff8ziMIsm3sLrgFPcqVTD-/view?usp=sharing){ .md-button .md-button--primary }
+-->
 
 
 <!--
@@ -47,14 +45,8 @@ tags:
 * [Consola de Linux online](https://bellard.org/jslinux/vm.html?url=alpine-x86.cfg&mem=192) (y [otra](https://copy.sh/v86/?profile=linux26))
 * [Compilador de Bash online](https://replit.com/languages/bash) (y [otro](https://www.onlinegdb.com/online_bash_shell))
 
-??? warning "Instalación de Linux en Windows:"
-    1. Ingresar a “Microsoft Store”
-    2. Buscar “Ubuntu”
-    3. Ingresar a “Ubuntu 22.04”
-    4. Descargar
 
-
-### Objetivos
+## Objetivos
 
 * Familiarizarse un poco con Ubuntu y su estructura de directorios
 * Familiarizarse con el uso básico de los comandos de Bash
@@ -66,7 +58,7 @@ En este trabajo práctico vamos a aprender a usar la **línea de comando** de Ub
 * Nos permitirá trabajar en entornos o programas sin interfaz gráfica (GUI)
 * Mediante el uso de programas o *scripts*, nos permitirá automatizar procesos, acelerando el trabajo y minimizando la cantidad de errores que podemos cometer con tareas repetitivas
 
-## **¿Unix? ¿Linux? ¿Ubuntu? ** { markdown data-toc-label='¿Unix? ¿Linux?' }  
+## ¿Unix? ¿Linux? ¿Ubuntu?
 
 Dependiendo que tan familiares estén con Linux, todos estos nombres pueden resultar un poco confusos. Vamos por partes:
 
@@ -123,7 +115,7 @@ Donde **ibioinfo** es el nombre del usuario actual e **ibioinfo-VirtualBox** el 
 
     * Para copiar texto en la terminal hay que usar ++ctrl+shift+c++. En en resto de Ubuntu es normal (++ctrl+c++).
     * Para pegar texto en la terminal hay que usar ++ctrl+shift+v++. En en resto de Ubuntu es normal (++ctrl+v++).
-    * De apretar ++ctrl+c++ en la terminal le estan diciendo que corte forzosamente el programa que está corriendo. Si bien hay que tener cuidado con no cortar un proceso importante a la mitad, este atajo del teclado es util si un programa se te quedó colgado o similar.
+    * Al apretar ++ctrl+c++ en la terminal le estan diciendo que corte forzosamente el programa que está corriendo. Si bien hay que tener cuidado con no cortar un proceso importante a la mitad, este atajo del teclado es útil si un programa se te quedó colgado o similar.
 
 ## **Bash: Ubicarse en la terminal**
 La terminal acepta una variedad de comandos en lenguaje **Bash**, que es el lenguaje de la terminal de GNU. El formato general de los comandos es:
@@ -132,7 +124,7 @@ La terminal acepta una variedad de comandos en lenguaje **Bash**, que es el leng
 comando -opciones parametro1 parametro2 etc
 ```
 
-Donde **comando** es el nombre del programa a correr, **opciones** son comunmente una o más letras luego de un guión que indican alguna modificación a las opciones por defecto del programa, y los diferentes **parámetros** son cosas que necesita el programa para correr, como puede ser un archivo que esta leyendo. Todo esto va a ir quedando más claro con los diferentes ejemplos.
+Donde **comando** es el nombre del programa a correr, **opciones** son comúnmente una o más letras luego de un guión que indican alguna modificación a las opciones por defecto del programa, y los diferentes **parámetros** son cosas que necesita el programa para correr, como puede ser un archivo que esta leyendo. Todo esto va a ir quedando más claro con los diferentes ejemplos.
 
 ### Usted está aquí
 
@@ -162,7 +154,7 @@ En este caso están viendo los contenidos de una carpeta diferente a donde estam
 ls -l /etc/perl/Net
 ```
 
-Donde la opcion `-l` agrega información sobre los permisos del archivo (quien puede leerlo o modificarlo). Con un poco de suerte esta es la primera y ultima vez en toda la materia que vamos a hablar de los permisos de Ubuntu (y de como a veces dan dolores de cabeza).
+Donde la opción `-l` agrega información sobre los permisos del archivo (quién puede leerlo o modificarlo). Con un poco de suerte esta es la primera y última vez en toda la materia que vamos a hablar de los permisos de Ubuntu (y de como a veces dan dolores de cabeza).
 
 !!! info
 
@@ -170,9 +162,9 @@ Donde la opcion `-l` agrega información sobre los permisos del archivo (quien p
 
 ### Moverse entre las carpetas
 
-Ahora que ya saben donde estan y que carpetas hay adentro es importante saber como moverse entre ellas. Esto se hace principalmente con el comando `cd`.
+Ahora que ya saben dónde están y qué carpetas hay adentro es importante saber como moverse entre ellas. Esto se hace principalmente con el comando `cd`.
 
-Asegurense que la terminal esta en su *home* y usen `ls` para ver nuevamente la lista de carpetas dentro. Primero vamos a la carpeta **Escritorio** y vemos que archivos hay adentro, para eso hacer:
+Asegúrense que la terminal está en su *home* y usen `ls` para ver nuevamente la lista de carpetas dentro. Primero vamos a la carpeta **Escritorio** y vemos que archivos hay adentro, para eso hacer:
 
 !!! tip
     ++tab++ funciona como autocompletar en la consola. Al escribir el próximo comando prueben escribir solo **cd Es** y apretar ++tab++
@@ -181,24 +173,28 @@ Asegurense que la terminal esta en su *home* y usen `ls` para ver nuevamente la 
 cd Escritorio
 ```
 
-Ahora veran que la parte de la izquierda de la terminal cambio a:
+Ahora verán que la parte de la izquierda de la terminal cambio a:
 
 
 ``` bash
 ibioinfo@ibioinfo-VirtualBox:~/Escritorio$
 ```
 
-Indicando que estan en **/home/ibioinfo/Escritorio**. Usen el comando adecuado para ver que archivos hay adentro de esta carpeta.
+Indicando que están en **/home/ibioinfo/Escritorio**. Usen el comando adecuado para ver qué archivos hay adentro de esta carpeta.
 
-Ahora quiero volver a su *home* y para eso escribo:
+Si quieren volver a su *home* y deben escribir:
 
 ``` bash
 cd ..
 ```
 
-Vean ahora en que carpeta están. En todo lo que es Ubuntu `..` significa "una carpeta para arriba".
+* ¿En qué carpeta están?
 
-¿Qué pasa entonces si estan en **/home/ibioinfo/Escritorio/TP01/Version3/Intento2/Edicion1** y quieren volver a su *home*? ¿Tienen que escribir `cd ..` 5 veces? Técnicamente funciona, pero por defecto el comando `cd` te lleva a tu *home* si no le das ningun parámetro.
+En todo lo que es Ubuntu `..` significa "una carpeta para arriba".
+
+¿Qué pasa entonces si estan en **/home/ibioinfo/Escritorio/TP01/Version3/Intento2/Edicion1** y quieren volver a su *home*? ¿Tienen que escribir `cd ..` 5 veces?
+
+Técnicamente funciona, pero por defecto el comando `cd` te lleva a tu *home* si no le das ningun parámetro.
 
 ``` bash
 cd
@@ -215,23 +211,33 @@ La respuesta a todo esto son los paths relativos y absolutos:
 
 #### Paths absolutos
 
-El path **/etc/perl/Net** es lo que se llama un **path absoluto**; no importa donde estén en la terminal en ese momento, **/etc/perl/Net** va a siempre apuntar al mismo lugar y el comando `ls /etc/perl/Net` va a siempre andar bien. Una forma fácil de identificar paths absolutos es que siempre empiezan en el *root* o **/**.
+El path **/etc/perl/Net** es lo que se llama un **path absoluto**; no importa donde estén en la terminal en ese momento, **/etc/perl/Net** va a siempre apuntar al mismo lugar y el comando `ls /etc/perl/Net` va a siempre andar bien.
+
+Una forma fácil de identificar paths absolutos es que siempre empiezan en el *root* o **/**.
 
 Recuerden que **\~** apunta a **/home/ibioinfo**, y por lo tanto el comando `cd ~/Escritorio` está usando un path absoluto, ya que sin importar de donde se use va a funcionar y va a ir a **/home/ibioinfo/Escritorio**.
 
 #### Paths relativos
 
-Ahora bien, cuando nosotros estabamos ubicados en *home* y corrimos `cd Escritorio` pudimos entrar a **/home/ibioinfo/Escritorio**, pero si volvieramos a correr `cd Escritorio` el comando no funcionaría, ya que no existe la carpeta **/home/ibioinfo/Escritorio/Escritorio**. Esto se debe a que en este caso **Escritorio** es un **path relativo** a la ubicación actual de la terminal. Otra forma de escribir paths relativos en Ubuntu es empezar con `.`, simbolo que indica "la carpeta actual". Volviendo al ejemplo anterior, es equivalente escribir `cd Escritorio` o `cd ./Escritorio`.
+Ahora bien, cuando nosotros estabamos ubicados en *home* y corrimos `cd Escritorio` pudimos entrar a **/home/ibioinfo/Escritorio**, pero si volviéramos a correr `cd Escritorio` el comando no funcionaría, ya que no existe la carpeta **/home/ibioinfo/Escritorio/Escritorio**.
+
+Esto se debe a que en este caso **Escritorio** es un **path relativo** a la ubicación actual de la terminal.
+
+Otra forma de escribir paths relativos en Ubuntu es empezar con `.`, simbolo que indica "la carpeta actual". Volviendo al ejemplo anterior, es equivalente escribir `cd Escritorio` o `cd ./Escritorio`.
 
 Otro caso de path relativo que ya vimos es `cd ..`, donde apunta a la "carpeta de arriba" de la posición actual de la terminal.
 
 <br>
 
-Ambos tipos de paths tienen sus ventajas y desventajas. Los paths absolutos tienen la ventaja de funcionar siempre, pero al usar toda la estructura toman más tiempo de escribir y son mas suceptibles a cambios de directorios (si muevo un archivo de lugar tengo que reescribir el comando). Por otro lado los paths relativos son mucho más rápidos de escribir y en muchos casos funcionan en diferentes ubicaciones (o computadoras), pero al depender de la ubicación de la terminal esto puede causar problemas si pienso que estoy en una carpeta pero estoy realmente en otra. En esta cursada vamos a usar ambos para diferentes casos.
+Ambos tipos de paths tienen sus ventajas y desventajas.
 
-## **Ejercicio 1. Ubicarse en la terminal** { markdown data-toc-label='Ejercicio 1' }  
+Los **paths absolutos** tienen la ventaja de funcionar siempre, pero al usar toda la estructura toman más tiempo de escribir y son más suceptibles a cambios de directorios (si muevo un archivo de lugar tengo que reescribir el comando).
 
-1. Identifique cual o cuales de los siguientes comandos te llevarían desde cualquier carpeta al *home* del usuario **ibioinfo**.
+Por otro lado, los **paths relativos** son mucho más rápidos de escribir y en muchos casos funcionan en diferentes ubicaciones (o computadoras), pero al depender de la ubicación de la terminal esto puede causar problemas si pienso que estoy en una carpeta pero estoy realmente en otra. En esta cursada vamos a usar ambos para diferentes casos.
+
+## **Ejercicio 1. Ubicarse en la terminal** { markdown data-toc-label='Ejercicio 1' }
+
+1. Identifique cuál o cuáles de los siguientes comandos te llevarían desde cualquier carpeta al *home* del usuario **ibioinfo**.
 
     1. `cd ~`
     1. `cd home/ibioinfo`
@@ -257,7 +263,7 @@ Ambos tipos de paths tienen sus ventajas y desventajas. Los paths absolutos tien
 
 ## **Bash: Crear y eliminar**
 
-Todo lo que es crear, copiar, mover y eliminar archivos y directorios se puede hacer usando la interfaz gráfica como lo harían en cualquier otro sistema operativo, sin embargo hay situaciones (por ejemplo dentro de un *script*) donde es necesario hacerlo mediante la consola. Si bien por ahora les vamos a pedir que usen los siguientes comandos para prácticarlos, en el día a día hagan lo que les sea más cómodo.
+Todo lo que es crear, copiar, mover y eliminar archivos y directorios se puede hacer usando la interfaz gráfica como lo harían en cualquier otro sistema operativo, sin embargo hay situaciones (por ejemplo dentro de un *script*) donde es necesario hacerlo mediante la consola. Si bien por ahora les vamos a pedir que usen los siguientes comandos para practicarlos, en el día a día hagan lo que les sea más cómodo.
 
 ### Crear y eliminar directorios
 
@@ -269,7 +275,7 @@ mkdir FOLDER
 
 !!! info
     
-    En el resto de la guia van a aparecer ciertas palabras en mayúscula en los códigos, como por ejemplo **FOLDER**. Estas palabras son *variables* o *placeholders* que tienen que ser reemplazadas por lo que corresponda.
+    En el resto de la guía van a aparecer ciertas palabras en mayúscula en los códigos, como por ejemplo **FOLDER**. Estas palabras son *variables* o *placeholders* que tienen que ser reemplazadas por lo que corresponda.
 
 Donde **FOLDER** es un path absoluto o relativo con el nombre de la carpeta. Prueben ir en su terminal a **/home/ibioinfo/Documentos** y usar el comando:
 ``` bash
@@ -284,39 +290,51 @@ Para eliminar directorios se puede usar:
 rmdir FOLDER
 ```
 
-Por defecto este comando solo puede eliminar directorios vacios (lo cual puede no ser muy util, pero a la vez es seguro). Usen el comando anterior y borren la carpeta que acaban de crear (reemplacen **FOLDER** por lo que corresponda). Prueben correr el comando una vez más a ver que pasa.
+Por defecto este comando sólo puede eliminar directorios vacíos (lo cual puede no ser muy útil, pero a la vez es seguro).
+
+Usen el comando anterior y borren la carpeta que acaban de crear (reemplacen **FOLDER** por lo que corresponda). Prueben correr el comando una vez más a ver que pasa.
 
 !!! danger "Tip muy importante"
 
     Este es un buen momento para hablar de que nombres ponerles a las cosas que uno crea un Ubuntu. Si bien cualquier nombre funciona en un principio, por un tema de compatibilidad entre los diferentes programas que pueden llegar a usar se recomienda:
 
     * **Muy recomendado:** No usar comillas dobles, simples o apóstrofes
-    * **Recomendado:** No usar espacios, paréntesis, Ñ, acentos, diéresis u otros diacríticos (el espacio comunmente se remplaza por un guión o guión bajo)
+    * **Recomendado:** No usar espacios, paréntesis, Ñ, acentos, diéresis u otros diacríticos (el espacio comúnmente se remplaza por un guión o guión bajo)
 
 ### Crear y eliminar archivos
 
-Hay varias formas de crear archivos en Ubuntu y la mas simple es `touch ARCHIVO`, que crea un archivo de texto vacio donde **ARCHIVO** es el nombre del archivo (que puede incluir un path antes). Para entender lo que quiero decir vayan a su *home* y corran:
+Hay varias formas de crear archivos en Ubuntu y la mas simple es `touch ARCHIVO`, que crea un archivo de texto vacio donde **ARCHIVO** es el nombre del archivo (que puede incluir un path antes).
+
+* Para entender lo que quiero decir vayan a su *home* y corran:
 
 ``` 
 touch Documentos/testfile
 ```
-Aca estoy usando un path relativo para crear el archivo. Se van a dar cuenta que el archivo no tiene extensión (por ejemplo **.txt**). En Ubuntu van a ver muchos archivos de texto sin extensión, pero se la pueden agregar sin problema si quieren. Entren a **Documentos** y vean si el archivo realmente existe.
+En este caso, están usando un path relativo para crear el archivo. 
 
-Lo que le vamos a enseñar a continuación es probablemente uno de los comandos más peligrosos de Bash si se usa incorrectamente. `rm` es el comando usado para eliminar archivos (o carpetas, o discos enteros) y es la base de cientos de historias en internet de como alguien se quedó sin trabajo. El comando se usa:
+Noten que el archivo que crearon no tiene extensión (por ejemplo **.txt**). En Ubuntu van a ver muchos archivos de texto sin extensión, pero se la pueden agregar sin problema si quieren. Entren a **Documentos** y vean si el archivo realmente existe.
+
+Lo que le vamos a enseñar a continuación es probablemente uno de los comandos más peligrosos de Bash si se usa incorrectamente.
+
+`rm` es el comando usado para eliminar archivos (o carpetas, o discos enteros) y es la base de cientos de historias en internet de como alguien se quedó sin trabajo. El comando se usa:
 
 ```bash
 rm ARCHIVO
 ```
 
-Donde **ARCHIVO** es el archivo a eliminar. `rm` no les va a pedir confirmación y el archivo va a ser borrado permanentemente (si borran archivos desde la interfaz gráfica sí hay confirmación y sí van a la papelera). Entonces, con cuidado, asegurense que estan en **Documentos** y borren el archivo **testfile**.
+Donde **ARCHIVO** es el archivo a eliminar. `rm` no les va a pedir confirmación y el archivo va a ser borrado permanentemente (si borran archivos desde la interfaz gráfica **sí** hay confirmación y **sí** van a la papelera). 
+
+* Con cuidado, asegúrense que están en **Documentos** y borren el archivo **testfile**.
 
 !!! danger
     
-    ¿Se entendió que hay que tener cuidado con `rm`? ¿Si? Buenisimo.
+    ¿Se entendió que hay que tener cuidado con `rm`? ¿Si? Buenísimo!
 
 ### Mover y copiar archivos y carpetas { markdown data-toc-label='Mover y copiar' }  
 
-Adentro de **Documentos** creen una carpeta llamada **testfolder2** y dos archivos de texto vacio, uno llamado **testfile_mv** y otro **testfile_cp**. Nuestro objetivo va a ser mover **testfile_mv** a la carpeta **testfolder2** y copiar **testfile_cp** a la misma carpeta.
+Adentro de **Documentos** creen una carpeta llamada **testfolder2** y dos archivos de texto vacío, uno llamado **testfile_mv** y otro **testfile_cp**.
+
+Nuestro objetivo va a ser mover **testfile_mv** a la carpeta **testfolder2** y copiar **testfile_cp** a la misma carpeta.
 
 Los archivos se mueven con `mv` y se copian con `cp` y ambos tienen un formato similar que es
 
@@ -324,11 +342,13 @@ Los archivos se mueven con `mv` y se copian con `cp` y ambos tienen un formato s
 mv ARCHIVO_ORIGEN FOLDER_DESTINO
 ```
 
-Donde en este caso **ARCHIVO_ORIGEN** es el archivo a mover y **FOLDER_DESTINO** el path a donde moverlo. Prueben entonces mover **testfile_mv** y copiar **testfile_cp** adentro de la carpeta **testfolder2**.
+Donde en este caso **ARCHIVO_ORIGEN** es el archivo a mover y **FOLDER_DESTINO** el path a donde moverlo.
+
+* Prueben mover **testfile_mv** y copiar **testfile_cp** adentro de la carpeta **testfolder2**.
 
 !!! tip
 
-    Usando la opción `-i` al comando, les va a pedir confirmación si el archivo de destino ya existe. Recuerden que pueden usar `man mv` o `man cp` para ver mas opciones.
+    Usando la opción `-i` al comando, les va a pedir confirmación si el archivo de destino ya existe. Recuerden que pueden usar `man mv` (`mv --help`) o `man cp` (`cp --help`) para ver más opciones.
 
 Estos dos comandos también pueden ser usados como:
 
@@ -336,18 +356,25 @@ Estos dos comandos también pueden ser usados como:
 mv ARCHIVO_ORIGEN ARCHIVO_DESTINO
 ```
 
-En este caso **ARCHIVO_DESTINO** no es una carpeta, sino un archivo adentro del **FOLDER_DESTINO**, lo que permite renombrar el **ARCHIVO_ORIGEN** al copiarlo / moverlo. Para que se entienda mejor este uso, ubiquensé en **Documentos** y corran:
+En este caso **ARCHIVO_DESTINO** no es una carpeta, sino un archivo adentro del **FOLDER_DESTINO**, lo que permite renombrar el **ARCHIVO_ORIGEN** al copiarlo / moverlo.
+
+* Para que se entienda mejor este uso, ubíquense en **Documentos** y corran:
 
 ```bash
 cp testfile_cp testfolder2/testfile_cp_nuevo
 ```
 
-Con lo cual acabo de copiar **testfile_cp** de nuevo a la carpeta **testfolder2**, pero ahora con otro nombre. Interesantemente, usar `mv` de esta manera es la forma de Ubuntu de renombrar archivos desde la terminal. Prueben entrar a **testfolder2** y corran:
+Con este comando copiaron **testfile_cp** de nuevo a la carpeta **testfolder2**, pero ahora con otro nombre. Interesantemente, usar `mv` de esta manera es la forma de Ubuntu de renombrar archivos desde la terminal.
+
+* Prueben entrar a **testfolder2** y corran:
 
 ```bash
 mv testfile_cp_nuevo testfile_cp_otroNombre
 ```
-Y vean que pasó. Una vez que todo haya funcionado bien, usen `rm` para eliminar todos los **testfile** uno a uno y luego usen `rmdir` para eliminar **testfolder2**.
+
+* ¿Qué pasó?
+
+* Si todo salió bien, usen `rm` para eliminar todos los **testfile** uno a uno y luego usen `rmdir` para eliminar **testfolder2**.
 
 Ambos comandos funcionan también para copiar, mover y renombrar carpetas, en cuyo caso el formato es:
 
@@ -357,82 +384,88 @@ mv FOLDER_ORIGEN FOLDER_DESTINO
 
 !!! danger
     
-    Hay que ser cuidadosos al usar `mv` y `cp` ya que si el archivo de destino ya existe lo van a sobreescribir sin preguntar antes. A ambos comandos se le puede agregar la opción `-i` para que pregunte antes de sobreescribir de ya existir el archivo de destino.
+    Hay que ser cuidadosos al usar `mv` y `cp` ya que si el archivo de destino ya existe lo van a **sobreescribir** sin preguntar antes.
+    
+    A ambos comandos se le puede agregar la opción `-i` para que pida confirmación **antes de sobreescribir** si ya existiera el archivo de destino.
 
 ## **Bash: Archivos de texto**
 
 ### Escribir archivos de texto
 
-En Ubuntu hay varias formas de escribir en archivos de texto, pero una de las más útiles para nosotros va a ser el `>` quien redirige la salida de información de la consola. Se usa:
+En Ubuntu hay varias formas de escribir en archivos de texto, pero una de las más útiles para nosotros va a ser el `>` que redirige la salida de información de la consola. Se usa:
 
 ```bash
 comando -opciones parametro1 parametro2 > ARCHIVO_DESTINO
 ```
 
-Donde lo de la izquierda de `>` es el comando como lo correrías normalmente y **ARCHIVO_DESTINO** es un archivo donde va a ser guardada la salida de ese comando (lo que normalmente verían en la consola). Para entender un poco más, vayan a su *home* y corran:
+Donde lo de la izquierda de `>` es el comando como lo correrías normalmente y **ARCHIVO_DESTINO** es un archivo donde va a ser guardada la salida de ese comando (lo que normalmente verían en la consola).
+
+* Para entender un poco más, vayan a su *home* y corran:
 
 ```bash
 ls -l > Documentos/output_de_ls
 ```
 
-Verán que en un principio parece que no paso nada. Entren ahora a **Documentos** y van a ver que hay un nuevo archivo con el nombre **output_de_ls**.
+Verán que en un principio parece que no paso nada.
 
-Vamos a abir el archivo usando **Leafpad** o el **Text Editor**, el editor de texto de la interfaz ǵráfica de Ubuntu. Asegurándose que estan **Documentos**, en la consola escriban:
+* Entren ahora a **Documentos** y van a ver que hay un nuevo archivo con el nombre **output_de_ls**.
+
+Vamos a abir el archivo usando el **Text Editor**, el editor de texto de la interfaz ǵráfica de Ubuntu.
+
+* Asegurándose que están en **Documentos**, y si están en la terminal local en la consola escriban:
 
 ```bash
-leafpad output_de_ls
+gedit output_de_ls
 ```
 
 Van a ver que se abre el editor de texto de igual forma que si ubieran hecho doble click en el ícono en el explorador de archivos de la GUI. Puede ser que aparezca un *warning* o advertencia en la consola, pero la podemos ignorar.
 
-!!! tip
+* Si están trabajando en **replit** abran el archivo haciendo click en el nombre del archivo en la barra lateral izquierda.
 
-    Por defecto **Leafpad** usa una fuente llamada **"Ubuntu"**, que si bien sirve para escribir cuentos, nos va a dar problemas al momento de ver ciertos archivos que vamos a usar en esta materia.
+Tanto en **gedit** como en el **replit**, agreguen una nueva línea abajo de todo (con cualquier texto) y guarden el archivo (en el caso de replit se guarda automáticamente).
 
-    En **Leafpad** vayan a **Opciones** :material-arrow-right: **Tipografía...**, seleccionen la fuente **"Ubuntu Mono"** y aprieten **Aceptar**.
+Ya sabemos como guardar en un archivo de texto cualquier salida de un comando de Ubuntu! pero... ¿cómo hacemos para poner lo que nosotros queremos en un archivo de texto? Simple, ¡con otro comando de Ubuntu!
 
-    Las fuentes que tienen **Mono** en su nombre estan indicando que son monoespaciadas, o sea, que todos sus caracteres tienen el mismo ancho. Esto es ideal para cuando se quieren ver tablas o alineamientos con **Leafpad**, cosa que vamos a hacer bastante en esta materia.
+El comando `echo` hace lo que su nombre indica y devuelve por la terminal el texto que le pases.
 
-    También resulta útil tener la numeración para comunicarse mejor. Para activarla tienen que ir a **Opciones** :material-arrow-right: **Numeración de Líneas**
-
-**Leafpad** funciona como un editor de texto bastante normal. Agreguen una nueva linea abajo de todo (con cualquier texto) y guarden el archivo.
-
-Al momento sabemos como guardar en un archivo de texto cualquier salida de un comando de Ubuntu, pero, ¿cómo hacemos para poner lo que nosotros queremos en un archivo de texto? Simple, ¡con otro comando de Ubuntu!
-
-!!! Danger
-
-    Recuerden cerrar el **Leafpad** o la consola quedará ocupada.
-
-El comando `echo` hace lo que su nombre indica y devuelve por la terminal el texto que le pases. Prueben escribir `echo TEXTO`, donde **TEXTO** es cualquier oración, por ejemplo:
+* Prueben escribir `echo TEXTO`, donde **TEXTO** es cualquier oración, por ejemplo:
 
 ```bash
 echo Probando, uno, dos, tres
 ```
 
-Tal vez ya se dieron cuenta, pero combinando `echo` con `>` podemos escribir nuestros propios archivos de texto desde la terminal. Asegurandose que estan adentro de **Documentos**, corran:
+Tal vez ya se dieron cuenta, pero combinando `echo` con `>` podemos escribir nuestros propios archivos de texto desde la terminal. 
+
+* Asegurándose que están adentro de **Documentos**, corran:
 
 ```bash
-echo Esta es la primera linea del documento > mi_documento
+echo Esta es la primera línea del documento > mi_documento
 ```
 
-Confirmen que se escribió el archivo y que tiene el texto adentro. ¿Qué piensan que pasa si ahora corró el siguiente comando? Pruebenló:
+* Confirmen que se escribió el archivo y que tiene el texto adentro.
+
+* ¿Qué piensan que pasa si ahora corro el siguiente comando? 
 
 ```bash
 echo Quiero agregar otra linea al documento > mi_documento
 ```
 
-Usen **Leafpad** para leer el documento. Van a ver que la primera linea que agregamos desapareció. Esto es porque cada uso de `>` sobreescribe el archivo. Si queremos agregar otra linea a un documento que ya tiene información tenemos que usar el comando `>>` quien agrega el texto al archivo en una nueva linea al final sin modificar el contenido anterior. Así que ahora que sabemos esto podemos correr estos dos comandos:
+* Abran el documento `mi_documento`.
+
+La primera línea que agregamos desapareció. Esto es porque cada uso de `>` sobreescribe el archivo. Si queremos agregar otra línea a un documento que ya tiene información tenemos que usar el comando `>>` que agrega el texto al archivo en una nueva línea al final sin modificar el contenido anterior. 
+
+* Así que ahora que sabemos esto podemos correr estos dos comandos:
 
 ```bash
 echo Esta es la primera linea del documento > mi_documento
 echo Esta es la segunda linea del documento >> mi_documento
 ```
 
-Y vean con **Leafpad** o el **Text Editor** si funcionó como queríamos.
+* Abran el archivo y vean si funcionó como queríamos.
 
 !!! danger
     
-    Hay que ser cuidadosos al usar `>` ya que si el archivo de destino ya existe lo va a sobreescribir sin preguntar antes.
+    Hay que ser cuidadosos al usar `>` ya que si el archivo de destino ya existe lo va a **sobreescribir** sin preguntar antes.
 
 ### Leer archivos de texto
 
@@ -440,23 +473,23 @@ Qué comando usar al leer archivos de texto en la consola depende mucho de que t
 
 * ¿Tiene solo pocas lineas de texto?
 
-    `cat` va a abrir el archivo y escribirlo todo en la terminal.
+    `cat` va a abrir el archivo e imprimirlo en la terminal.
 
-* ¿Tiene muchas lineas de texto y quiero ver las primeras páginas a ver de que se trata?
+* ¿Tiene muchas líneas de texto y quiero ver las primeras páginas a ver de que se trata?
 
     `less` va a abrir el archivo y mostrar solo el texto que entra en la terminal. Aprentando ++space++ pasa a la próxima página y apretando ++q++ deja de leerlo.
 
-* ¿Tiene muchas lineas de texto y quiero ver solo las primeras lineas?
+* ¿Tiene muchas líneas de texto y quiero ver solo las primeras líneas?
 
-    `head` te muestra las primeras 10 lineas del archivo. Se puede especificar la cantidad de lineas agregando una opción, por ejemplo, `head -3` muestra solo las primeras 3 líneas.
+    `head` te muestra las primeras 10 líneas del archivo. Se puede especificar la cantidad de líneas agregando una opción, por ejemplo, `head -3` muestra solo las primeras 3 líneas.
 
-* ¿Tiene muchas lineas de texto y quiero ver solo las últimas lineas?
+* ¿Tiene muchas líneas de texto y quiero ver solo las últimas líneas?
 
     `tail` te muestra las últimas 10 líneas del archivo. Este número se puede cambiar de la misma forma que para `head`.
 
-* ¿No saben que tan largo es un archivo dado?
+* ¿No saben qué tan largo es un archivo dado?
 
-    Pueden averiguarlo con el comando `wc`, que devuelve el numero de lineas, palabras y letras (en ese orden) en el archivo. De pasarle la opción `-l`, el comando devuelve solo el número de lineas.
+    Pueden averiguarlo con el comando `wc`, que devuelve el número de líneas, palabras y letras (en ese orden) en el archivo. De pasarle la opción `-l`, el comando devuelve solo el número de líneas.
 
 Todos estos funcionan de la forma:
 
@@ -464,23 +497,25 @@ Todos estos funcionan de la forma:
 comando ARCHIVO
 ```
 
-Usando el archivo **martin_fierro** que se encuentra en los materiales del TP (boton al principio de todo), prueben los 5 comandos anteriores.
+Usando el archivo **martin_fierro** que se encuentra en los materiales del TP (botón al principio de todo), prueben los 5 comandos anteriores.
 
 ### Buscar palabras en archivos de texto { markdown data-toc-label='Buscar palabras' }  
 
-Va a ser común cuando trabajemos con tablas que nos interese encontrar filas con cierto valor y una forma rápida de hacer eso es usar `grep`, comando al que le pasas una palabra o patrón y busca filas dentro de un archivo que contengan dicha palabra o patrón. En formato general el comando es:
+Va a ser común cuando trabajemos con tablas que nos interese encontrar filas con cierto valor y una forma rápida de hacer eso es usar `grep`, comando al que le pasas una palabra o patrón y busca filas dentro de un archivo que contengan dicha palabra o patrón. 
+
+En formato general el comando es:
 
 ```bash
 grep PALABRA ARCHIVO
 ```
 
-Usando el archivo **martin_fierro** con en que trabajamos en la sección anterior podemos correr:
+Usando el archivo **martin_fierro** con el que trabajamos en la sección anterior podemos correr:
 
 ```bash
 grep cantar martin_fierro
 ```
 
-Y vamos a ver todas las lineas del documento donde aparece la palabra "cantar". Hay mucho para hablar sobre `grep`, pero por ahora lo que nos va a importar es:
+Y vamos a ver todas las líneas del documento donde aparece la palabra "cantar". Hay mucho para hablar sobre `grep`, pero por ahora lo que nos va a importar es:
 
 * La opción `-v` devuelve las líneas que **no** contienen **PALABRA**
 * La opción `-c` devuelve el número de líneas que contienen **PALABRA**
@@ -488,19 +523,22 @@ Y vamos a ver todas las lineas del documento donde aparece la palabra "cantar". 
 
 !!! info
 
-    Mencioné antes que `grep` también funciona con patrones, quienes son conocidos como Expresiones Regulares, o **RegEx**. Como este es un tema complejo y ya tenemos bastante que procesar no vamos a profundizar mas sobre ellos en este momento, pero explicaremos cualquier patrón que usemos en la materia cuando aparezca.
+    `grep` también funciona con patrones, quienes son conocidos como Expresiones Regulares, o **RegEx**. Este tema es complejo y ya tenemos bastante que procesar, por lo tanto, no vamos a profundizar más sobre ellos en este momento. Pero... explicaremos cualquier patrón o expresión regular que usemos en la materia cuando aparezca.
 
 ### Combinar comandos
 
 En Bash es posible combinar comandos, lo que quiere decir pasarle la salida de un comando directamente como entrada a otro comando. Esto se hace dividiendo los diferentes comandos con **|** (o *pipe*).
 
-Para entender un poco mejor veamos un ejemplo. Digamos que quiero ver las cuales de las primeras 10 lineas del archivo **martin_fierro** contienen la palabra "cantar". Para esto tengo que hacer:
+Para entender un poco mejor veamos un ejemplo.
+
+Digamos que quiero ver cuáles de las primeras 10 líneas del archivo **martin_fierro** contienen la palabra *cantar*. Para esto tengo que hacer:
 
 ```bash
-head -10 martin_fierro | grep cantar
+head -20 martin_fierro | grep cantar
 ```
 
-Fijensé que en este caso parecería que a `grep` no le estoy pasando ningun **ARCHIVO**, pero lo que pasa es que va usar como entrada la salida de `head`. De esta forma se puede concatenar cualquier cantidad de comandos que seran ejecutados de izquierda a derecha.
+Fijense que en este caso parecería que a `grep` no le estoy pasando ningun **ARCHIVO**. `grep` usa como entrada la salida de `head`. De esta forma se puede concatenar cualquier número de comandos que serán ejecutados de izquierda a derecha.
+
 
 ## **Ejercicio 2. Archivos de texto** { markdown data-toc-label='Ejercicio 2' }  
 
@@ -526,9 +564,16 @@ Para este ejercicio vamos a seguir usando el archivo **martin_fierro**.
 
 ### Scripts
 
-Los *scripts* de Bash son básicamente una lista de muchos de los comandos que nosotros corrimos en la terminal, pero escritos dentro de un archivo. Al ejecutar ese archivo todos los comandos dentro de él serán corridos uno a uno de arriba a abajo.
+Los *scripts* de Bash son básicamente una lista de muchos de los comandos que nosotros corrimos en la terminal, pero escritos dentro de un archivo. Al ejecutar ese archivo todos los comandos escritos en él serán corridos uno a uno de arriba a abajo.
 
-Para simplificar un poco la tarea y enfocarnos en lo que importa en esta sección, vamos a utilizar la interfaz gráfica de Ubuntu. Vayan a **Documentos** y creen un archivo llamado **primer_programa.sh** (Boton derecho :material-arrow-right: Crear nuevo... :material-arrow-right: Archivo vacío). Luego abran el archivo en **Leafpad** o el **Text Editor** (doble click) y escriban lo siguiente:
+Para simplificar un poco la tarea y enfocarnos en lo que importa en esta sección, vamos a utilizar la interfaz gráfica de Ubuntu. 
+
+* Vayan a **Documentos** y creen un archivo llamado **primer_programa.sh**
+
+    - En la computadora local: Botón derecho :material-arrow-right: Crear nuevo... :material-arrow-right: Archivo vacío.
+    - En **replit**: Botón derecho en la barra lateral izquierda :material-arrow-right: New File :material-arrow-right: Escribir el nombre del archivo.
+
+ Luego, abran el archivo en el **Text Editor** (doble click) y escriban lo siguiente:
 
 ```bash
 echo "----------------"
@@ -536,7 +581,7 @@ echo "| Hello world! |"
 echo "----------------"
 ```
 
-Ahora salven el archivo, abran la terminal en esa carpeta (++f4++) y vamos a ejecutar el script con:
+* Guarden el archivo, muevanse en la terminal/consola a la carpeta donde está el script y lo ejecutan con:
 
 ```bash
 bash primer_programa.sh
@@ -544,7 +589,7 @@ bash primer_programa.sh
 
 ¡Felicidades, ya pueden decir que son programadores!
 
-Como pudieron observar, los scripts de Bash se corren con el comando `bash SCRIPT` y al hacerlo se ejecutaron los 3 comandos `echo` en el orden que estaban dentro del script. Este tipo de scripts son útiles si quiero dejar evidencia de los comandos que corrí en Bash, ya sea para volver a hacerlo otro día o para pasarselos a alguién más y que los corra en su propia computadora; sin embargo, para realmente programar necesitamos más herramientas.
+Como pudieron observar, los scripts de Bash se corren con el comando `bash SCRIPT` y al hacerlo se ejecutaron los 3 comandos `echo` en el orden que estaban dentro del script. Este tipo de scripts son útiles si quiero dejar evidencia de los comandos que corrí en Bash, ya sea para volver a hacerlo otro día o para pasarselos a alguien más y que los corra en su propia computadora; sin embargo, para realmente programar necesitamos más herramientas.
 
 ### Variables
 
@@ -572,11 +617,11 @@ Las variables son *palabras* que guardan dentro de ellas un número o un *string
     echo "Hola $nombre, ¿todo bien?"
     ```
 
-¿Qué piensan que va a pasar de correr este código en un script? Pruebenló.
+* ¿Qué piensan que va a pasar de correr este código en un script? Pruebenlo.
 
 !!! info
 
-    Desgraciadamente Bash es muy estricto al momento de programar y perdona bastante poco (como por ejemplo el tema de tener un espacio más o menos). Más adelante vamos a usar el lenguaje **R** que va a ser una de nuestras principales herramientas al momento de analizar y plotear datos y es mucho más amigable.
+    Desgraciadamente Bash es muy estricto al momento de programar y perdona bastante poco (como por ejemplo el tema de tener un espacio más o menos). Más adelante vamos a usar el lenguaje **R** que va a ser una de nuestras principales herramientas al momento de analizar y graficar datos y es mucho más amigable.
 
 En este momento pueden estar pensando que hubiera sido mucho más fácil poner solo `echo "Hola Unsamer, ¿todo bien?"` y ahorrarme el tema de la variable. Tienen razón. Por ahora.
 
@@ -616,9 +661,15 @@ bash saludo.sh "Unsamer"
 
 !!! info
 
-    Técnicamente si estoy pasando solo una palabra las comillas no son necesarias, pero si el *string* que estoy pasando tiene un espacio tengo que ponerlas si o si.
+    Técnicamente si estoy pasando solo una palabra las comillas no son necesarias, pero si el *string* que estoy pasando tiene un espacio tengo que ponerlas sí o sí.
 
-Hay bastante más para hablar de las *variables*. Existen muchos tipos más de variables, como *booleanos* (variable que es verdadera o falsa), *arreglos* (o vectores) y listas. Otros lenguajes de programación hasta tienen variables más complejas que pueden almacenar tablas enteras. Sin embargo, lo que acabamos de aprender es la base y va a ser suficiente por ahora. Más información sobre las variables en Bash se puede ver en [esta página](https://atareao.es/tutorial/scripts-en-bash/variables-en-bash/).
+Hay bastante más para hablar de las *variables*. Existen muchos tipos más de variables, como:
+
+* *booleanos* (variable que es verdadera o falsa),
+* *arreglos* (o vectores)
+* listas.
+
+Otros lenguajes de programación hasta tienen variables más complejas que pueden almacenar tablas enteras. Sin embargo, lo que acabamos de aprender es la base y va a ser suficiente por ahora. Más información sobre las variables en Bash se puede ver en [esta página](https://atareao.es/tutorial/scripts-en-bash/variables-en-bash/).
 
 ### Condicionales
 
@@ -629,7 +680,7 @@ Las variables son importantes, pero gran parte de la programación es controlar 
     ``` bash
     numero=$1
 
-    echo "$numero es un numero"
+    echo "$numero es un número"
 
     if (($numero > 10))
     then
@@ -643,7 +694,7 @@ Las variables son importantes, pero gran parte de la programación es controlar 
     # Igual que antes estoy agarrando un parámetro al correr el script
     numero=$1
 
-    echo "$numero es un numero"
+    echo "$numero es un número"
 
     # *if* es la estructura más usada para condicionales.
     # Adentro de los dobles paréntesis va la condición.
@@ -658,20 +709,20 @@ Las variables son importantes, pero gran parte de la programación es controlar 
     # *fi* indica donde termina el condicional
     ```
 
-Copien este código a un script y prueben pasarle números menores y mayores a 10 a ver que pasa.
+* Copien este código a un script y prueben pasarle números menores y mayores a 10 a ver que pasa.
 
 !!! info
 
-    Es importante remarcar que la condición del *if* (lo que en este caso se encuentra entre los corchetes) es básicamente una pregunta que puede tener solo una de dos respuestas posibles: **Sí** (llamada en programación **Verdadero** o **True**) ó **No** (llamada en programación **Falso** o **False**)
+    Es importante remarcar que la condición del *if* (lo que en este caso se encuentra entre los corchetes) es básicamente una pregunta que puede tener sólo una de dos respuestas posibles: **Sí** (llamada en programación **Verdadero** o **True**) ó **No** (llamada en programación **Falso** o **False**)
 
-Como dije antes a un condicional se le puede poner también que pase algo cuando no es verdad, por ejemplo:
+Recuerden que a un condicional se le puede poner también que pase algo cuando **no es verdad**, por ejemplo:
 
 === "Código"
 
     ``` bash
     numero=$1
 
-    echo "$numero es un numero"
+    echo "$numero es un número"
 
     if (($numero > 10))
     then
@@ -686,7 +737,7 @@ Como dije antes a un condicional se le puede poner también que pase algo cuando
     ``` bash
     numero=$1
 
-    echo "$numero es un numero"
+    echo "$numero es un número"
 
     if (($numero > 10))
     then
@@ -699,11 +750,16 @@ Como dije antes a un condicional se le puede poner también que pase algo cuando
     fi
     ```
 
-Hay bastante más para hablar de los *ifs*. Hay muchos más comparadores y son diferentes si estoy comparando números o *strings*. Hay formas de poner más de una condición por *if* y hay otras estructuras como son los *case* que cumplen una función similar. Sin embargo, lo que acabamos de aprender es la base y va a ser suficiente por ahora. Más información sobre los condicionales en Bash, incluyendo una lista más detallada de los comparadores, se puede ver en [esta página](https://atareao.es/tutorial/scripts-en-bash/condicionales-en-bash/) y en [esta página](https://tldp.org/LDP/abs/html/comparison-ops.html) (en Bash las condiciones pueden estar rodeadas por paréntesis o corchetes y en cada caso los comparadores se comportan diferente, ojo con esto).
+
+Hay muchos más *comparadores* para usar con los *condicionales if* y son diferentes si estoy comparando números o *strings*. Se puede poner más de una condición por *if* y hay otras estructuras, como los *case*, que cumplen una función similar. Sin embargo, la base que aprendieron hoy es suficiente por ahora.
+
+Más información sobre los condicionales en Bash, incluyendo una lista más detallada de los comparadores, se puede ver en [esta página](https://atareao.es/tutorial/scripts-en-bash/condicionales-en-bash/) y en [esta página](https://tldp.org/LDP/abs/html/comparison-ops.html) (en Bash las condiciones pueden estar rodeadas por paréntesis o corchetes y en cada caso los comparadores se comportan diferente, ojo con esto).
 
 ### Ciclos
 
-Digamos que por alguna extraña razón quieren imprimir los numeros del 1 al 10 en la consola, tendrían que hacer `echo 1`, `echo 2`, etc, hasta llegar a `echo 10`. ¿Qué pasa si ahora les pido del 1 al 100, o al 1000?. Por suerte existen los *ciclos*, que son estructuras que nos permiten repetir algo varias veces y al usar variables podemos hacer que cada vez sea ligeramente diferente a la anterior.
+Si quieren imprimir los números del 1 al 10 en la consola, tendrían que hacer `echo 1`, `echo 2`, etc, hasta llegar a `echo 10`. ¿Qué pasa si ahora les pido del 1 al 100, o al 1000?. Por suerte, existen los *ciclos*.
+
+Los *ciclos* son estructuras que nos permiten repetir algo varias veces y al usar variables podemos hacer que cada vez sea ligeramente diferente a la anterior.
 
 === "Código"
 
@@ -754,7 +810,9 @@ Hay otra versión del *for* que comunmente se denomina *for each*. En este caso 
     done
     ```
 
-Hay bastante más para hablar de los *ciclos*. Se pueden hacer ciclos que aumenten de 2 en 2 o hacer ciclos que disminuyan. Hay otros dos tipos de ciclos comunmente denóminados *while* y *until* (tambien llamado *do*) y hay formas de forzar salir del ciclo o pasar a la próxima iteración con *break* y *continue* (tambien llamado *next*). Sin embargo, lo que acabamos de aprender es la base y va a ser suficiente por ahora. Más información sobre los ciclos en Bash se puede ver en [esta página](https://atareao.es/tutorial/scripts-en-bash/bucles-en-bash/).
+Hay otros dos tipos de ciclos comúnmente denominados *while* y *until* (también llamado *do*) y hay formas de forzar salir del ciclo o pasar a la próxima iteración con *break* y *continue* (tambien llamado *next*).
+
+Nuevamente, la base aprendida será suficiente por ahora. Más información sobre los ciclos en Bash se puede ver en [esta página](https://atareao.es/tutorial/scripts-en-bash/bucles-en-bash/).
 
 ## **Ejercicio 3. Programación en Bash** { markdown data-toc-label='Ejercicio 3' }
 
@@ -775,7 +833,7 @@ El objetivo de este ejercicio es hacer un script que:
     ```
     Donde hay que reemplazar **NUMERO** por el número correspondiente (de 6 a 10). Noten que ambas oraciones están en lineas diferentes
 
-Ahora que sabemos nuestro objetivo vayan a **Documentos** y creen una nueva carpeta donde vamos a trabajar llamada **TP01_EJ3**. Dentro de ella creen un archivo vacio llamado **crear_archivos.sh** que va a ser nuestro script y edítenlo con **Leafpad**.
+Ahora que sabemos nuestro objetivo vayan a **Documentos** y creen una nueva carpeta donde vamos a trabajar llamada **TP01_EJ3**. Dentro de ella creen un archivo vacío llamado **crear_archivos.sh** que va a ser nuestro script y edítenlo.
 
 ??? Note "Guía para hacer el script"
 
@@ -823,13 +881,17 @@ Ahora que sabemos nuestro objetivo vayan a **Documentos** y creen una nueva carp
 
     ¡Y listo, deberían tener su programa andando!
 
-## **Contenido Adicional**
+## **Ejercicios Adicionales**
 
-## **Bash: Tablas**
+!!! info
 
-Lo ultimo que vamos a aprender hoy es un pequeño vistazo a como se pueden manipular tablas desde la consola de Ubuntu. Descarguen el archivo **mtcars** que se encuentra en los materiales del TP (boton al principio de todo) y ponganlo en **Documentos**. Esta tabla viene por defecto con el lenguaje de programación **R** y nos va a servir para aprender como manipular tablas en Bash. 
+    Algunas guías van a tener ejercicios adicionales, que son ejercicios que pueden hacer si quieren practicar más el tema, pero no son obligatorios. Estos ejercicios pueden llegar a ser un poco más complicados que los ejercicios de la guía.
 
-Abran el archivo con **Leafpad** (doble click). Podemos ver que es una tabla en formato texto, donde la primera línea es el encabezado o *header* de la tabla y en cada líńea las columnas están separadas entre ellas con un ++tab++ (a estos archivos se los conoce como **TSV** o "Tab-Separated Values"). Es bioinformática es muy común querer seleccionar columnas específicas en una tabla, o filtrar filas debido al valor de una de sus columnas; esto es lo que vamos a aprender a continuación.
+## **Ejercicio Adicional 1. Bash: Tablas** { markdown data-toc-label='Ejercicio Adicional 1' }
+
+Lo último que vamos a aprender hoy es un pequeño vistazo a como se pueden manipular tablas desde la consola de Ubuntu. Descarguen el archivo **mtcars** que se encuentra en los materiales del TP (boton al principio de todo) y ponganlo en **Documentos**. Esta tabla viene por defecto con el lenguaje de programación **R** y nos va a servir para aprender como manipular tablas en Bash. 
+
+Abran el archivo. Podemos ver que es una tabla en formato texto, donde la primera línea es el encabezado o *header* de la tabla y en cada líńea las columnas están separadas entre ellas con un ++tab++ (a estos archivos se los conoce como **TSV** o "Tab-Separated Values"). Es bioinformática es muy común querer seleccionar columnas específicas en una tabla, o filtrar filas debido al valor de una de sus columnas; esto es lo que vamos a aprender a continuación.
 
 ??? info "Columnas de mtcars"
 
@@ -850,7 +912,7 @@ Abran el archivo con **Leafpad** (doble click). Podemos ver que es una tabla en 
     | gear        | Number of forward gears |
     | carb        | Number of carburetors |
 
-### AWK
+### AWK { markdown data-toc-label='AWK' }
 
 El comando `awk`  (que recibe su nombre de las iniciales de los apellidos de las 3 personas que lo crearon) es uno de los comandos mas usados en Bash para manipular tablas por su gran flexibilidad, hasta el punto que es posible incorporar condicionales y ciclos dentro de él. La forma más simple del comando es:
 
@@ -864,7 +926,7 @@ Donde **ARCHIVO_TABLA** es el archivo que contiene a la tabla e **instrucciones*
 awk -F "\t" '{print}' mtcars
 ```
 
-Donde `-F` es la opción que le dice a `awk` cual es el caracter que separa las diferentes columnas (en este caso es `\t`, que es el símbolo de ++tab++) y `{print}` es la instrucción que simplemente dice que imprima en pantalla la tabla.
+Donde `-F` es la opción que le dice a `awk` que caracter separa las diferentes columnas (en este caso es `\t`, que es el símbolo de ++tab++) y `{print}` es la instrucción que simplemente dice que imprima en pantalla la tabla.
 
 Lo importante de `awk` es que nos permite trabajar con columnas individuales. Por ejemplo si ponemos:
 
@@ -878,31 +940,29 @@ Vemos que `awk` imprime solo la primera columna, que en este caso es el nombre d
 awk -F "\t" '{print $1 $3 $5}' mtcars
 ```
 
-¿Qué ven que pasa aca?
+* ¿Qué ven que pasa acá?
 
-Debido a como funciona `print`, las diferentes columnas se imprimeron una pegada a la otra sin dejar espacios. Si quisieramos imprimir las columnas separadas con ++tab++ como la tabla original tenemos que hacer:
+Debido a como funciona `print`, las diferentes columnas se imprimeron una pegada a la otra sin dejar espacios. Si quisiéramos imprimir las columnas separadas con ++tab++ como la tabla original tenemos que hacer:
 
 ``` bash
 awk -F "\t" '{print $1 "\t" $3 "\t" $5}' mtcars
 ```
 
-Ahora bien, una actividad normal cuando se tienen tablas con muchos datos es filtrar mis datos por alguna columna, o dicho de otra forma, usar condicionales. Un ejemplo de esto en `awk` seria:
+Una tarea común cuando se tienen tablas con muchos datos es filtrar los datos por alguna columna, o dicho de otra forma, usar condicionales. Un ejemplo de esto en `awk` sería:
 
 ``` bash
 awk -F "\t" '{if ($3 == 6) {print}}' mtcars
 ```
 
-¿Qué les parece que hace ese comando? Piensen que estan viendo una estructura de *if* que no vieron antes, pero aun así probablemente puedan inferir que va a hacer el comando pensando en como funcionaba el *if* de Bash que aprendimos arriba. Esto es super normal en la programación, donde la estructura exacta cambia, pero la lógica detrás se mantiene constante.
+* ¿Qué les parece que hace ese comando? Piensen que estan viendo una estructura de *if* que no vieron antes, pero aún así probablemente puedan inferir que va a hacer el comando pensando en como funcionaba el *if* de Bash que aprendimos arriba. Esto es super normal en la programación, donde la estructura exacta cambia, pero la lógica detrás se mantiene constante.
 
-Entonces, aca le estan diciendo a `awk` que imprima en la pantalla todas las filas que tengan un valor de 6 en la columna 3 (que si se fijan es *cyl*, o el número de cilindros).
+Entonces, acá le dicen a `awk` que imprima en la pantalla todas las filas que tengan un valor de 6 en la columna 3 (que si se fijan es *cyl*, o el número de cilindros).
 
-Como siempre hay mucho más para decir sobre `awk`, pero por hoy estamos bien. Sepan sin embargo que `awk` tiene su propio `grep` y su propio *for*, que se pueden declarar variables dentro de él y que tiene hasta una lista de comandos propios. Pueden ver mucha más información de `awk` en [esta página](https://www.tutorialspoint.com/awk/index.htm).
+`awk` tiene su propio `grep` y su propio *for*, que se pueden declarar variables dentro de él y que tiene hasta una lista de comandos propios. Pueden ver mucha más información de `awk` en [esta página](https://www.tutorialspoint.com/awk/index.htm).
 
-## **Ejercicio Adicional 1. Programación en Bash v2** { markdown data-toc-label='Ejercicio Adicional 1' }
+## **Ejercicio Adicional 2. Programación en Bash v2** { markdown data-toc-label='Ejercicio Adicional 2' }
 
-!!! info
 
-    Algunas guias van a tener ejercicios adicionales, que son ejercicios que pueden hacer si quieren practicar más el tema, pero no son obligatorios. Estos ejercicios pueden llegar a ser un poco más complicados que los ejercicios de la guía.
 
 El objetivo de este Ejercicio va a ser hacer un script que:
 
