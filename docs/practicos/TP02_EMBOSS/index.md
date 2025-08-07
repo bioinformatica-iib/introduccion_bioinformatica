@@ -698,8 +698,6 @@ La extensión **tsv** en nuestra máquina virtual estaba asociada al programa **
 
     * Investiguen cuantos links quedaron en **ftpdirpaths**. ¿Entienden por qué? Sino consulten.
 
-    ### RefSeq - Crear un archivo con links a los genomas
-
     Los links que tenemos de momento tienen el formato:
 
     !!! info ""
