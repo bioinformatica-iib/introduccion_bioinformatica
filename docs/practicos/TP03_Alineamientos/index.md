@@ -80,7 +80,7 @@ El algoritmo más popular utiliza un método matemático llamado ***dynamic prog
 La principal ventaja de este método es que **siempre encuentra el alineamiento óptimo** entre las secuencias dadas. 
 <br>
 <br>
-Sin embargo, una desventaja es pueden existir **varios** alineamientos que satisfagan esta condición. 
+Sin embargo, una desventaja es que pueden existir **varios** alineamientos que satisfagan esta condición. 
 <br>
 <br>
 Otra desventaja es de origen técnica: la exhaustividad con la que el algoritmo realiza la búsqueda hace que su velocidad dependa de la longitud de las secuencias implicadas, haciendo poco eficiente la búsqueda de similitud de una secuencia contra una base de datos. Para esto existen diferentes adaptaciones del algoritmo que se verán más adelante.
@@ -485,7 +485,7 @@ Usted cuenta con un conjunto de secuencias que utiliza normalmente en su laborat
 | **conjunto_de_secuencias**| Archivo de hoja de cálculo con información sobre la secuencia y el organismo al que pertenece |
 
 
-Pero… Cuando usted recibe los datos (`secuencia_incognita.fasta`) se da cuenta se da cuenta que el archivo no ha sido nombrado correctamente. Este tipo de errores son comunes debido a la gran cantidad de secuencias que maneja el Servicio Virus Oncogénico, ya que este servicio actúa como Laboratorio Nacional de Referencia del Ministerio de Salud (MSAL) para el virus papiloma humano (HPV) y el virus de Epstein-Barr (EBV). 
+Pero… Cuando usted recibe los datos (`secuencia_incognita.fasta`) se da cuenta que el archivo no ha sido nombrado correctamente. Este tipo de errores son comunes debido a la gran cantidad de secuencias que maneja el Servicio Virus Oncogénico, ya que este servicio actúa como Laboratorio Nacional de Referencia del Ministerio de Salud (MSAL) para el virus papiloma humano (HPV) y el virus de Epstein-Barr (EBV). 
 
 Para solucionar el problema, decide aplicar las herramientas que aprendió en el trabajo práctico N3 de bioinformática cuando era estudiante y procede a:
 
