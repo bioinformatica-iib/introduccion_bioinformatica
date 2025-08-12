@@ -9,7 +9,7 @@ tags:
  Clase teórica de búsquedas de secuencias por similitud: fuerza bruta, FASTA, BLAST. 
  Alineamientos múltiples.
 
- * :fontawesome-regular-file-pdf: [Slides Búsquedas](busquedasDeSecuenciasEnBasesDeDatos2023.pdf)
+ * :fontawesome-regular-file-pdf: [Slides Búsquedas](../2-Teorica-Dos/busquedasDeSecuenciasEnBasesDeDatos2025.pdf)
  * :fontawesome-regular-file-pdf: [Slides Alineamientos](alineamientosMultiples2024.pdf) 
 
 ## Videos de clases grabadas de otros años
