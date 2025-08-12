@@ -15,8 +15,8 @@ tags:
 | ----------- | -------- | :-------------------------------------: | :----------- | :---------------------------------- | :------ |
 | Mar, 5 Ago      | 9 hs |	:material-google-classroom: Presencial | [T1. Presentación, Conceptos Computación, Bases de Datos](../teoricas/1-Teorica-Uno/index.md) | :fontawesome-solid-brain: Teórica |	F. Agüero |
 | Jue, 7 Ago      | 9 hs |	:material-google-classroom: Presencial | [T2. Alineamientos, Matrices, Busquedas (1)](../teoricas/2-Teorica-Dos/index.md) | :fontawesome-solid-brain: Teórica |	F. Agüero |
-| Mar, 12 Ago      | 9 hs |	:material-google-classroom: Presencial | T3. Búsqueda de secuencias por Similitud (2) | :fontawesome-solid-brain: Teórica |	F. Agüero |
-| Jue, 14 Ago      | 9 hs |	:material-google-classroom: Presencial | T4. Alineamientos múltiples | :fontawesome-solid-brain: Teórica |	F. Agüero |
+| Mar, 12 Ago  | 9 hs |	:material-google-classroom: Presencial | [T3. Búsqueda de secuencias por Similitud (2)](../teoricas/3-Teorica-Tres/index.md) | :fontawesome-solid-brain: Teórica |	F. Agüero |
+| Jue, 14 Ago  | 9 hs |	:material-google-classroom: Presencial | [T4. Alineamientos múltiples](../teoricas/4-Teorica-Cuatro/index.md) | :fontawesome-solid-brain: Teórica |	F. Agüero |
 | Mar, 19 Ago      | 9 hs |	:material-google-classroom: Presencial | P1. Introducción a UNIX | :fontawesome-solid-hammer: Práctica |	M. Didier Garnham |
 | Jue, 21 Ago      | 9 hs |	:material-google-classroom: Presencial | P2. EMBOSS Suite | :fontawesome-solid-hammer: Práctica |	M. Didier Garnham |
 | Mar, 26 Ago      | 9 hs |	:material-google-classroom: Presencial | P3. Alineamientos de secuencias de a pares | :fontawesome-solid-hammer: Práctica |	G. Romer |
