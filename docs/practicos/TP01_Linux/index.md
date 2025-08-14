@@ -881,6 +881,10 @@ Ahora que sabemos nuestro objetivo vayan a **Documentos** y creen una nueva carp
 
     ¡Y listo, deberían tener su programa andando!
 
+<div style="border-bottom: 3px solid black;">
+
+</div>
+
 ## **Ejercicios Adicionales**
 
 !!! info
