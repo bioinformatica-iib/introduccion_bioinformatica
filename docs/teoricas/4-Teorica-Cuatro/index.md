@@ -34,6 +34,8 @@ https://www.youtube.com/watch?v=pmTpAYENm7I
 
 ## Material de lectura y consulta
 
+  * :material-wikipedia: [Unidades de información](https://en.wikipedia.org/wiki/Units_of_information)
+  * :paperclip: [Information theory primer](https://www2.psychology.uiowa.edu/faculty/mordkoff/InfoProc/pdfs/ITprimer.pdf)
   * :material-wikipedia: [Sequence homology](https://en.wikipedia.org/wiki/Sequence_homology).
   * :paperclip: Orthologs, paralogs, and evolutionary genomics. Koonin EV (2005). [Annu Rev Genet 39:309-38](https://doi.org/10.1146/annurev.genet.39.073003.114725).
   * :paperclip: Computational methods for Gene Orthology inference. Kristensen DM, Wolf YI, Mushegian AR, Koonin EV (2011) [Briefings in Bioinformatics 12: 379–391](https://doi.org/10.1093/bib/bbr030).
