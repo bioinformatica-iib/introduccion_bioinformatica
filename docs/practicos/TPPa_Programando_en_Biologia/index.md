@@ -16,9 +16,8 @@ tags:
 <br>
 <br>
 
+[:fontawesome-solid-file-powerpoint: Slides](https://drive.google.com/file/d/1tESJ6BIeBC75y7eQ4I_dVZVlTpMTgngv/view?usp=sharing){ .md-button .md-button--primary } 
 
-### Slides mostrados en clase
-* :fontawesome-regular-file-pdf: [Slides TP](https://drive.google.com/file/d/1tESJ6BIeBC75y7eQ4I_dVZVlTpMTgngv/view?usp=sharing)
 
 <!--
 [:fontawesome-solid-download: Materiales](#){ .md-button .md-button--primary }
@@ -65,7 +64,7 @@ En este trabajo práctico vamos a aprender R, uno de los lenguajes de programaci
 
 ## **RStudio - Empezamos con el TP**
 
-**RStudio** es el *entorno de desarrollo* o **IDE** (*Integrated Development Environment*) más conocido del lenguaje de programación **R** y nos va a ayudar a programar en dicho lenguaje. Los **IDE**s son programas que permiten programar, encontrar errores (*debuguear*) y correr el *script* todo desde un mismo lugar. Además, varios **IDE**s también ayudan en el proceso de programar, insertando estructuras vacias (*ifs*, *fors*) o autocompletando los comandos o parámetros mientras uno los escribe.
+**RStudio** es el *entorno de desarrollo* o **IDE** (*Integrated Development Environment*) más conocido del lenguaje de programación **R** y nos va a ayudar a programar en dicho lenguaje. Los **IDEs** son programas que permiten programar, encontrar errores (*debuguear*) y correr el *script* todo desde un mismo lugar. Además, varios **IDEs** también ayudan en el proceso de programar, insertando estructuras vacías (*ifs*, *fors*) o autocompletando los comandos o parámetros mientras uno los escribe.
 
 Antiguamente los **IDEs** funcionaban casi exclusivamente para un solo lenguaje de programación, pero los **IDEs** más recientes suelen funcionar para varios lenguajes (tras un poco de configuración).
 
@@ -75,9 +74,9 @@ Antiguamente los **IDEs** funcionaban casi exclusivamente para un solo lenguaje 
 
     Si les pregunta si quieren actualizar pongan **"Ignore Update"**.
 
-??? warning "Si no estan usando la Maquina Virtual de Introducción a la Bioinformática lean esto:"
+??? warning "Si no están usando la Máquina Virtual de Introducción a la Bioinformática lean esto:"
 
-    R y RStudio estan ya instalados en la máquina virtual que les pasamos. Si no estas usando la máquina virtual tenes que instalar ambos siguiendo la guía de la [página de RStudio](https://www.rstudio.com/products/rstudio/download-server/debian-ubuntu/).
+    R y RStudio estan ya instalados en la máquina virtual que les pasamos. Si no estas usando la máquina virtual tenés que instalar ambos siguiendo la guía de la [página de RStudio](https://www.rstudio.com/products/rstudio/download-server/debian-ubuntu/).
 
     También hay algunos paquetes de **R** ya instalados en la máquina virtual que van a necesitar instalar cuando aparezcan en las guías. Los paquetes se pueden instalar desde **R** corriendo por ejemplo:
 
@@ -87,7 +86,7 @@ Antiguamente los **IDEs** funcionaban casi exclusivamente para un solo lenguaje 
 
     Diferentes versiones de **R** pueden llegar a usar diferentes versiones de paquetes (y algunos paquetes pueden no ser triviales de instalar en algunas versiones).
 
-RStudio se divide en 4 paneles, pero probablemente solo vean 3 ya que todavía no hemos abierto ningún archivo.
+RStudio se divide en 4 paneles, pero probablemente sólo vean 3 ya que todavía no hemos abierto ningún archivo.
 
 **2)** Creen un nuevo *script* haciendo click en **File** :material-arrow-right: **New File** :material-arrow-right: **R Script**
 
@@ -108,9 +107,8 @@ Ahora sí, deberían ver lo siguiente:
 
 ??? important "Panel inferior izquierdo: Consola"
 
-    La consola (pestaña **Console**) es similar a la terminal de Lubuntu, pero para el lenguaje de programación **R**. En ella podemos escribir comandos en **R** directamente y serán corridos. Tambíen es donde vamos a ver la salida de nuestro *script* de correrlo dentro de RStudio.
+    La consola (pestaña **Console**) es similar a la terminal, pero para el lenguaje de programación **R**. En ella podemos escribir comandos en **R** directamente y serán corridos. Tambíen es donde vamos a ver la salida de nuestro *script* de correrlo dentro de RStudio.
 
-    Hablando de la terminal de Lubuntu, la pestaña **Terminal** es literalmente eso. No vamos a utilizar esta pestaña en esta materia.
 
 ??? important "Panel superior derecho: Variable"
 
@@ -168,8 +166,8 @@ print("Hola Mundo!")
 
 Hay varias formas de ejecutar código desde el editor de scripts, algunas de ellas son:
 
-* **Ejecutar una linea:** poner el cursor sobre la linea a correr :material-arrow-right: ++ctrl+enter++
-* **Ejecutar varias líneas:** seleccionar o *pintar* las lineas a correr :material-arrow-right: ++ctrl+enter++
+* **Ejecutar una línea:** poner el cursor sobre la línea a correr :material-arrow-right: ++ctrl+enter++
+* **Ejecutar varias líneas:** seleccionar o *pintar* las líneas a correr :material-arrow-right: ++ctrl+enter++
 * **Ejecutar todas las líneas hasta el cursor:** poner el cursor en la última línea que quiero correr :material-arrow-right: ++ctrl+alt+b++
 * **Ejecutar todas las líneas en el script:** ++ctrl+alt+r++
 
@@ -179,13 +177,13 @@ Hay varias formas de ejecutar código desde el editor de scripts, algunas de ell
 
 * Vayan a **File** :material-arrow-right: **Save** (o aprieten ++ctrl+s++)
 * Creen donde prefieran una carpeta para el TP
-* Pónganle un nombre al *script* y guárdenlo
+* Ponganle un nombre al *script* y guárdenlo
 
 Van a ver que **Rstudio** le agrega automáticamente la extensión **.R**, que es la extensión usada por los *scripts* de **R** y asocia automáticamente dichos *scripts* con **RStudio**.
 
-!!! tip "Tip - Ejecutando *scripts* de **R** desde la terminal de **Lubuntu**"
+!!! tip "Tip - Ejecutando *scripts* de **R** desde la terminal"
 
-    Ahora que creamos un archivo en disco, es posible tambien ejecutar nuestro script de **R** desde la terminal de Lubuntu. De querer hacerlo, tendrían que correr:
+    Ahora que creamos un archivo en disco, es posible también ejecutar nuestro script de **R** desde la terminal. De querer hacerlo, tendrían que correr:
 
     ```bash
     Rscript ARCHIVO_SCRIPT.R
@@ -222,13 +220,13 @@ En **R** las variables se asignan con el símbolo `<-` (o *"flecha a la izquierd
 
 ¿Se acuerdan de la pestaña **Environment** de la que hablamos antes? Si la ven ahora va a tener la variable **saludo** y su valor.
 
-**2)** Agreguen entonces la siguiente linea al editor de scripts y corran **solo** esta línea:
+**2)** Agreguen entonces la siguiente línea al editor de scripts y corran **solo** esta línea:
 
 ```R
 print(saludo)
 ```
-
-No se si se dan cuenta lo que acaba de pasar, pero estan imprimiendo en la consola el valor de una variable que declararon previamente. Esto es un gran beneficio de **RStudio**, que nos permite guardar valores de variables y usarlos en el futuro, sin tener que correr todo el *script* de arriba a abajo cada vez que queremos modificar algo. Sin embargo, un gran poder conlleva una gran responsabilidad, ya que este sistema también hace posible estar usando un valor "viejo" o "equivocado" en una variable.
+ 
+Están imprimiendo en la consola el valor de una variable que declararon previamente. Esto es un gran beneficio de **RStudio**, que nos permite guardar valores de variables y usarlos en el futuro, sin tener que correr todo el *script* de arriba a abajo cada vez que queremos modificar algo. Sin embargo, un gran poder conlleva una gran responsabilidad, ya que este sistema también hace posible estar usando un valor "viejo" o "equivocado" en una variable.
 
 La forma correcta de trabajar es ir dejando en nuestro *script* un registro de las órdenes correctas para llegar al output deseado. También es buena práctica comentar las instrucciones más importantes para que se pueda entender por quien tenga que reutilizar el código. Es algo así como el **cuaderno de laboratorio bioinformático**.
 
@@ -348,7 +346,7 @@ En este ejercicio vamos a practicar el uso de variables numéricas y *strings* e
 
 1. Creen un nuevo *script* que declare 2 variables, asigne un número a cada una, calcule la suma de ambos números y la imprima por la consola.
 1. Editen el *script* anterior agregando 2 otras operaciones matemáticas e impriman sus resultados.
-1. En el mismo *script*, creen una nueva variable y asignenle el valor 0. Fijense que pasa si quieren dividir alguno de los otros números por esta nueva variable.
+1. En el mismo *script*, creen una nueva variable y asígnenle el valor 0. Fíjense que pasa si quieren dividir alguno de los otros números por esta nueva variable.
 1. Creen un nuevo *script* que declare 2 variables, asigne un *string* a cada una, imprima la longitud de cada variable, concatene ambas variables (sin espacio entre ellas) e imprima la concatenación.
 
     Para este último punto van a necesitar la función `nchar()`. Pueden ver que hace desde la pestaña **Help**.
@@ -403,7 +401,7 @@ vector_numeros_rango2 <- 1:10
 vector_numeros_hueco <- c(1:3,7:10)
 ```
 
-Los vectores son una parte escencial de **R**; de hecho, la mayoría de las variables son vectores de lóngitud 1 (razón por la que aparece el `[1]` al imprimirlas con `print`). Como consecuencia, la mayoría de las funciones u operaciones de **R** aceptan reemplazar números o *strings* por vectores de ellos.
+Los vectores son una parte esencial de **R**; de hecho, la mayoría de las variables son vectores de lóngitud 1 (razón por la que aparece el `[1]` al imprimirlas con `print`). Como consecuencia, la mayoría de las funciones u operaciones de **R** aceptan reemplazar números o *strings* por vectores de ellos.
 
 **1)** Ejecuten el código anterior para crear los vectores y corran las siguientes líneas una a la vez. Vean que pasa en cada caso.
 
@@ -493,7 +491,7 @@ En la pestaña **Plots** hay varios botones que van a ser muy útiles al momento
 
 Para valores enteros de `x` entre 1 y 200, calculen el `y` correspondiente a una recta con pendiente 3 y ordenada al origen 5 y hagan el plot de dicha recta usando el comando `plot`.
 
-Una vez creado el plot, salvenló en un archivo con extensión **SVG**.
+Una vez creado el plot, guardenlo en un archivo con extensión **SVG**.
 
 !!! tip "Tip - Plotear una línea"
 
@@ -541,7 +539,7 @@ De igual forma que en **Bash**, en **R** también existen los condicionales *ifs
     # Este *}* indica donde termina el condicional
     ```
 
-Es bastante similar a lo que conocían, pero aca no esta *then* ni *fi* y los diferentes bloques lógicos se marcan con llaves (en **R** esto también va a pasar en *fors* y en muchas otras estructuras).
+Es bastante similar a lo que conocían, pero acá no esta *then* ni *fi* y los diferentes bloques lógicos se marcan con llaves (en **R** esto también va a pasar en *fors* y en muchas otras estructuras).
 
 Las condiciones del *if* existen más alla de los condicionales y de hecho la comparación `numero > 10` es una variable en sí misma. A estas variables las vamos a llamar **booleanos** y pueden tener 1 de 2 valores: o **TRUE** (verdadero) o **FALSE** (falso).
 
@@ -925,7 +923,7 @@ Los parámetros de `write.table` que estamos usando son:
 
 !!! info "Comillas en los archivos **.tsv**"
 
-    Si abren con **Leafpad** el archivo **iris.tsv** recién creado van a ver que los nombres de las columnas y todos los valores de la columna **Species** estan rodeados por comillas. Estas comillas no son parte de los nombres o valores de las columnas, sino que es la forma que usamos para indicar que lo que está dentro de ellas es un *string*. Estas comillas aparecen por haber usado el parámetro `quote = T` y son útiles para varios casos, por ejemplo de trabajar con *strings* con espacios.
+    Si abren con **Editor de Texto** el archivo **iris.tsv** recién creado van a ver que los nombres de las columnas y todos los valores de la columna **Species** estan rodeados por comillas. Estas comillas no son parte de los nombres o valores de las columnas, sino que es la forma que usamos para indicar que lo que está dentro de ellas es un *string*. Estas comillas aparecen por haber usado el parámetro `quote = T` y son útiles para varios casos, por ejemplo de trabajar con *strings* con espacios.
 
 !!! info "Data Tables y nombres de las filas"
 
@@ -1028,7 +1026,7 @@ Si bien la funciones `plot` e `hist` se pueden usar para hacer muchos tipos de p
 
 El paquete `ggplot2` es uno de los más usados, debido a su gran variedad de plots y a que le permite al usuario modificar practicamente cualquier detalle del plot (con más o menos dificultad).
 
-**1)** La función principal del paquete `ggplot2` se llama `ggplot` y comunmente es usada con *Data Frames* o *Data Tables*. Entonces, corran el siguiente código que usa la tabla **iris** para hacer un ejemplo de un plot simple con `ggplot`:
+**1)** La función principal del paquete `ggplot2` se llama `ggplot` y comúnmente es usada con *Data Frames* o *Data Tables*. Entonces, corran el siguiente código que usa la tabla **iris** para hacer un ejemplo de un plot simple con `ggplot`:
 
 ```R
 install.packages("ggplot2")
@@ -1051,7 +1049,7 @@ ggplot(data = iris, aes(x = Sepal.Length, y = Petal.Length)) +
     geom_line(linetype = "dashed", color = "blue", alpha = 0.25)
 ```
 
-Como dijimos antes hay muchas funciones de ploteo, cada una con muchos parámetos posibles. Lo más normal al usar `ggplot` es googlear el uso específico que uno quiere hacer en ese momento y ver como se hace.
+Como dijimos antes hay muchas funciones de ploteo, cada una con muchos parámetos posibles. Lo más normal al usar `ggplot` es googlear el uso específico que uno quiere hacer en ese momento y ver cómo se hace.
 
 **3)** El siguiente código es un ejemplo más "completo" de un plot hecho con `ggplot`. Corran el siguiente código y vean el plot. Fijense si pueden inferir en base a su nombre que hacen algunos de los parámetros que le pasamos a `ggplot` (pueden ver el [cheatsheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf)):
 
@@ -1254,6 +1252,9 @@ class(numero)
 typeof(numero)
 ```
 
+<div style="border-bottom: 3px solid black;">
+
+</div>
 ## **Ejercicio Adicional 1** { markdown data-toc-label='Ejercicio Adicional 1' }
 
 En este Ejercicio vamos a ver si los números aleatorios de **R** se portan como deberían. Para esto vamos a hacer un script que:
@@ -1283,7 +1284,7 @@ En este ejercicio vamos a crear, parecido a lo que vimos en el TP1, una función
 
 ## **Ejercicio Adicional 3** { markdown data-toc-label='Ejercicio Adicional 3' }
 
-En R hay muchisimos paquetes que nos pueden servir para distintos tipos de análisis. Para que se den una idea de la variedad de paquetes, vamos a mostrarles el paquete **CatterPlots**, que como su nombre lo indica, hace *gráficos con gatitos*. Primero prueben correr esto en RStudio:
+En R hay muchísimos paquetes que nos pueden servir para distintos tipos de análisis. Para que se den una idea de la variedad de paquetes, vamos a mostrarles el paquete **CatterPlots**, que como su nombre lo indica, hace *gráficos con gatitos*. Primero prueben correr esto en RStudio:
 
 ```R
 install.packages("remotes")
