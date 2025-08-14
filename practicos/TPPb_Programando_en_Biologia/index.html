@@ -1333,9 +1333,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#google" class="md-nav__link">
+  <a href="#google-o-chatgpt-u-otra-ia-unico-caso-en-el-que-esta-permitido" class="md-nav__link">
     <span class="md-ellipsis">
-      Google
+      Google o ChatGPT u otra IA (UNICO CASO EN EL QUE ESTÁ PERMITIDO)
     </span>
   </a>
   
@@ -1380,13 +1380,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#herramientas_1" class="md-nav__link">
+  <a href="#introduccion-y-herramientas" class="md-nav__link">
     <span class="md-ellipsis">
-      Herramientas
+      Introducción y Herramientas
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Herramientas">
+    <nav class="md-nav" aria-label="Introducción y Herramientas">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1431,9 +1431,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#ejercicio" class="md-nav__link">
+  <a href="#ahora-si-ejercicio-completar-el-script" class="md-nav__link">
     <span class="md-ellipsis">
-      Ejercicio
+      Ahora sí: Ejercicio. Completar el script!
     </span>
   </a>
   
@@ -1537,11 +1537,11 @@ Este es el botón para descargar materiales, en (#) hay que agregar el link corr
 <p>En el TP de hoy vamos a querer encontrar un compuesto que funcione de inhibidor para una enzima de interés, a la que vamos a denominar <strong>enzima Z</strong>. No solo nos va a interesar que compuestos funcionan como inhibidores para ella, sino que también queremos calcular el <strong>IC 50</strong> de cada uno de dichos compuestos (que en nuestro caso sería la concentración a la cual el inhibidor produce una reacción un 50% más lenta que sin inhibidor).</p>
 <p>Por suerte nuestra enzima de interés tiene como producto un compuesto fluorescente. Sabiendo esto podemos estimar la velocidad de la reacción calculando una regresión lineal de la abundancia de dicho producto a lo largo del tiempo (esto lo vamos a explicar un poco más detalladamente cuando lo hagamos). Si un compuesto funciona como inhibidor en algunas de las concentraciones evaluadas, la velocidad de la reacción debería caer.</p>
 <h3 id="filtermax">FilterMax</h3>
-<p>Una forma de analizar varios compuestos y concentraciones a la vez es usar el equipo <strong>FilterMax F5</strong>, el cual permite hacer mediciones puntuales de absorbancia y fluorescencia (entre otros) en placas de wells de 96, 384 y 1536. Incluso permite hacer mediciones a distintos tiempos (por ejemplo, se le puede programar para hacer mediciones cada ciertos intervalos temporales).</p>
+<p>Una forma de analizar varios compuestos y concentraciones a la vez es usar el equipo <strong>FilterMax F5</strong>. Este equipo permite hacer mediciones puntuales de absorbancia y fluorescencia (entre otros) en placas de wells de 96, 384 y 1536. Incluso permite hacer mediciones a distintos tiempos (por ejemplo, se le puede programar para hacer mediciones cada ciertos intervalos temporales).</p>
 <p>En nuestro ejemplo (datos reales, nombres ficticios), vamos a utilizar el <strong>FilterMax F5</strong> para evaluar varias placas de 384 wells y vamos a hacer 4 evaluaciones por placa, una cada 5 minutos. Cada columna de la placa corresponde compuesto distinto (22 compuestos, 1 por columna) y cada fila tiene concentraciones diferentes de cada compuesto (16 concentraciones, diluciones seriadas). Un esquema de este experimento se puede ver en <a href="https://docs.google.com/spreadsheets/d/1vRxMHGdWBAOXpJZ8g4Ox4y4kiCES01sg/edit?usp=sharing&amp;ouid=101472650200585443790&amp;rtpof=true&amp;sd=true">esta planilla</a>.</p>
 <h2 id="paso-1-familiarizarnos-con-el-archivo" markdown="markdown"><strong>Paso 1 - Familiarizarnos con el Archivo</strong></h2>
 <p>El primer paso cuando uno empieza a trabajar con un archivo nuevo es siempre mirarlo y deducir su formato. Los resultados reales de este experimento pueden verlos en el archivo <strong>00_datos_filtermax.txt</strong> que se encuentra en sus materiales de trabajo.</p>
-<p>Abran el archivo <strong>00_datos_filtermax.txt</strong> con Leafpad, vean su estructura y respondan las siguientes preguntas:</p>
+<p>Abran el archivo <strong>00_datos_filtermax.txt</strong> con Editor de Texto, vean su estructura y respondan las siguientes preguntas:</p>
 <p><strong>1)</strong> ¿Se parece un poco a algún <strong>.csv</strong> (columnas separadas por comas) o <strong>.tsv</strong> (columnas separadas por tabs) que hayan visto antes? ¿Que diferencias tiene? Teniendo en cuenta esas diferencias y considerando que vamos a querer leerlo como una tabla en <strong>R</strong> ¿Les parece que hay filas que están de más?</p>
 <p><strong>2)</strong> Mirando el archivo y la planilla del experimento:</p>
 <ul>
@@ -1555,7 +1555,7 @@ Este es el botón para descargar materiales, en (#) hay que agregar el link corr
 <p>¿Cuántos datos hay para cada dilución del compuesto "Umbrella2"? ¿Por qué?</p>
 </li>
 </ul>
-<p><strong>3)</strong> Ahora abra el archivo con Gnumeric (Click derecho sobre el archivo <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg></span> Abrir con <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg></span> Oficina <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg></span> Gnumeric). Al final de cada placa hay varias celdas sin datos. ¿Hay algo en la planilla del experimento que explique por qué pasa esto?</p>
+<p><strong>3)</strong> Ahora abra el archivo en una Hoja de Cálculo (Click derecho sobre el archivo <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg></span> Abrir con). Al final de cada placa hay varias celdas sin datos. ¿Hay algo en la planilla del experimento que explique por qué pasa esto?</p>
 <h2 id="paso-2-limpiar-y-parsear-el-archivo" markdown="markdown"><strong>Paso 2 - Limpiar y Parsear el Archivo</strong></h2>
 <p>En este paso queremos hacer 2 cosas:</p>
 <ul>
@@ -1625,7 +1625,7 @@ Este es el botón para descargar materiales, en (#) hay que agregar el link corr
 </figure>
 <p>Si bien este paso es importante, también es bastante específico a la salida del <strong>FilterMax F5</strong>. Por esta razón les vamos a dar el archivo ya parseado para que pasemos directamente al análisis de datos más general. Este es el archivo <strong>02_datos_filtermax_parseados.tsv</strong> que se encuentra en sus materiales de trabajo.</p>
 <p>Dicho esto, si completan el resto del TP a tiempo y quieren aprender cómo llegar del archivo original a éste archivo pueden hacer el <strong>Ejercicio Adicional 1</strong> abajo de todo.</p>
-<p><strong>1)</strong> Abran el archivo <strong>02_datos_filtermax_parseados.tsv</strong> con Leafpad y vean la columna <strong>signal</strong>. ¿Qué piensan que significan los <strong>NA</strong> en esa columna?</p>
+<p><strong>1)</strong> Abran el archivo <strong>02_datos_filtermax_parseados.tsv</strong> con el Editor de Texto y vean la columna <strong>signal</strong>. ¿Qué piensan que significan los <strong>NA</strong> en esa columna?</p>
 <h2 id="paso-3-agregar-la-informacion-que-necesito" markdown="markdown"><strong>Paso 3 - Agregar la información que necesito</strong></h2>
 <p>En este momento tenemos una tabla donde cada fila es una señal independiente, pero tenemos algunos problemas:</p>
 <ul>
@@ -1765,11 +1765,17 @@ Este es el botón para descargar materiales, en (#) hay que agregar el link corr
 <span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="s">"Habia"</span><span class="w"> </span><span class="s">"una"</span><span class="w">   </span><span class="s">"vez"</span>
 </code></pre></div>
 Como ven la función <code>strsplit</code> toma un <em>string</em> y lo divide en diferentes fragmentos según el parámetro <code>split</code>.
-<p>No se si lo recuerdan, pero en el TP anterior hablamos de las variables llamadas listas, que se pueden pensar como vectores que pueden contener variables de distinto tipo dentro de ellas (mientras que todos los elementos de un vector son de un mismo tipo).</p>
+<p>No sé si lo recuerdan, pero en el TP anterior hablamos de las variables llamadas listas, que se pueden pensar como vectores que pueden contener variables de distinto tipo dentro de ellas (mientras que todos los elementos de un vector son de un mismo tipo).</p>
 <p>Ese <code>[[1]]</code> en el output anterior nos está indicando que <code>strsplit</code> nos está devolviendo una variable de tipo <code>list</code> donde el primer elemento es el vector con la frase <em>spliteada</em>.</p>
 <p><strong>6)</strong> Si bien el parámetro <code>split</code> suele ser un caracter, en realidad puede ser un <em>string</em> cualquiera. Prueben el código anterior usando <code>split = "-una-"</code> y vean que pasa.</p>
 <p><strong>7)</strong> Vean que pasa cuando usan <code>split = ""</code>.</p>
-<p><strong>8)</strong> Pásenle ahora a <code>strsplit</code> el siguiente vector de strings: <code>frases &lt;- c("Aquí me pongo a cantar", "al compás de la vigüela")</code>. Sabiendo que queremos <em>splitear</em> las diferentes palabras, ¿cuál sería el valor de <code>split</code> en este caso? ¿Cuántos elementos tiene la lista que devuelve <code>strsplit</code>? ¿Por qué? ¿Cuál es la tercera palabra de la segunda frase? (imprímanla por pantalla usando <code>print</code>)</p>
+<p><strong>8)</strong> Pásenle ahora a <code>strsplit</code> el siguiente vector de strings: <code>frases &lt;- c("Aquí me pongo a cantar", "al compás de la vigüela")</code>.</p>
+<p>Sabiendo que queremos <em>splitear</em> las diferentes palabras,</p>
+<ul>
+<li>¿cuál sería el valor de <code>split</code> en este caso?</li>
+<li>¿Cuántos elementos tiene la lista que devuelve <code>strsplit</code>? ¿Por qué?</li>
+<li>¿Cuál es la tercera palabra de la segunda frase? (imprímanla por pantalla usando <code>print</code>)</li>
+</ul>
 <h4 id="eliminar-elementos-repetidos-en-vectores" markdown="markdown">Eliminar elementos repetidos en vectores</h4>
 <p>En los <em>Data Tables</em> es común tener columnas con categorías, por ejemplo la columna <strong>Species</strong> en la tabla <strong>iris</strong>. Es normal al momento de programar no saber previamente cuáles van a ser esas categorías (especies en este caso), por lo que muchas veces se extraen de la columna misma. Una forma de hacer esto es usar la función <code>unique()</code>, la cual toma un vector y saca los elementos repetidos, dejando uno de cada uno.</p>
 <p><strong>9)</strong> Corran el siguiente ejemplo y vean lo que devuelve.</p>
@@ -1811,7 +1817,7 @@ Como ven la función <code>strsplit</code> toma un <em>string</em> y lo divide e
 <p>Este tip es <strong><em>especialmente</em></strong> importante para los nombres de las variables. Ahí si que recomendamos nunca usar acentos o <strong>Ñ</strong> (o espacios).</p>
 </div>
 <div class="highlight"><pre><span></span><code><span class="c1">#Aca hay que poner el Path Absoluto que apunta a su carpeta de trabajo</span>
-<span class="c1">#Por ej: "/home/ibioinfo/Documentos/data_TP8b"</span>
+<span class="c1">#Por ej: "/home/ibioinfo/Documentos/data_TPPb"</span>
 <span class="nf">setwd</span><span class="p">(</span><span class="o">@@</span><span class="n">EDITAR</span><span class="o">@@</span><span class="p">)</span>
 
 <span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
@@ -1819,7 +1825,7 @@ Como ven la función <code>strsplit</code> toma un <em>string</em> y lo divide e
 <span class="c1">#Uso fread para cargar los datos parseados teniendo en cuenta que tienen NAs</span>
 <span class="n">dt_parsed_data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">fread</span><span class="p">(</span><span class="o">@@</span><span class="n">EDITAR</span><span class="o">@@</span><span class="p">)</span>
 
-<span class="c1">#Primero que nada se que las columnas de los wells 23 y 24 estan vacias, asi que saco las filas</span>
+<span class="c1">#Primero que nada se que las columnas de los wells 23 y 24 estan vacías, asi que saco las filas</span>
 <span class="c1">#donde *columna* sea 23 o 24 (o sea, me quedo con las filas donde *columna* es 1 a 22)</span>
 <span class="n">dt_parsed_data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">dt_parsed_data</span><span class="p">[</span><span class="o">@@</span><span class="n">EDITAR</span><span class="o">@@</span><span class="p">]</span>
 
@@ -1836,8 +1842,8 @@ Como ven la función <code>strsplit</code> toma un <em>string</em> y lo divide e
 <span class="n">dt_datos_concentraciones</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">fread</span><span class="p">(</span><span class="o">@@</span><span class="n">EDITAR</span><span class="o">@@</span><span class="p">)</span>
 <span class="n">dt_parsed_data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">merge</span><span class="p">(</span><span class="o">@@</span><span class="n">EDITAR</span><span class="o">@@</span><span class="p">)</span>
 
-<span class="c1">#Para cada combinacion de compuesto y concentracion quiero saber la velocidad de la reaccion, es decir, </span>
-<span class="c1">#la pendiente de la recta que sale de hacer una regresion lineal por los 4 tiempos ensayados</span>
+<span class="c1">#Para cada combinación de compuesto y concentración quiero saber la velocidad de la reacción, es decir, </span>
+<span class="c1">#la pendiente de la recta que sale de hacer una regresión lineal por los 4 tiempos ensayados</span>
 
 <span class="c1">#El primer problema que tengo es que la variable time es un *string*, por lo que no puedo usarla </span>
 <span class="c1">#como X en una ecuacion. Por esta razon vamos a convertir a time en cantidad de segundos</span>
@@ -1850,7 +1856,7 @@ Como ven la función <code>strsplit</code> toma un <em>string</em> y lo divide e
 <span class="c1">#Esta tabla va a tener dos columnas, la columna *time* indicando el tiempo en string que estamos analizando</span>
 <span class="c1">#y la columna *segundos_totales* que contiene ese tiempo transformado en numero y en segundos</span>
 
-<span class="c1">#Extraigo entonces los diferentes tiempos y creo una tabla vacia donde voy a guardar la cantidad de segundos </span>
+<span class="c1">#Extraigo entonces los diferentes tiempos y creo una tabla vacía donde voy a guardar la cantidad de segundos </span>
 <span class="c1">#para cada *time*</span>
 <span class="n">unique_times</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">unique</span><span class="p">(</span><span class="n">dt_parsed_data</span><span class="o">$</span><span class="n">time</span><span class="p">)</span>
 <span class="n">dt_times_in_seconds</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.table</span><span class="p">(</span><span class="n">time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">character</span><span class="p">(),</span>
@@ -1944,8 +1950,8 @@ Como ven la función <code>strsplit</code> toma un <em>string</em> y lo divide e
 </table>
 </figure>
 <div class="admonition warning">
-<p class="admonition-title">Warning - Gnumeric transforma visualmente los separadores decimales</p>
-<p>Si abren el archivo <strong>03_datos_filtermax_parseados_y_formateados.tsv</strong> con Gnumeric van a ver que parece que el separador decimal de los números sigue siendo la coma. Sin embargo, si abren el archivo usando Leafpad van a ver que en realidad el separador decimal es ahora el punto, por lo que para los próximos ejercicios podemos usar <code>fread</code> sin poner el parámetró <code>dec</code>. Gnumeric cambia los puntos visualmente a comas por estar en español.</p>
+<p class="admonition-title">Warning - los programas que abren hojas de cálculo pueden transformar visualmente los separadores decimales</p>
+<p>Si abren el archivo <strong>03_datos_filtermax_parseados_y_formateados.tsv</strong> en una hoja de cálculo podría ocurrir que el separador decimal de los números siga siendo la coma. Sin embargo, si abren el archivo usando el Editor de Texto van a ver que en realidad el separador decimal es ahora el punto, por lo que para los próximos ejercicios podemos usar <code>fread</code> sin poner el parámetro <code>dec</code>. <strong>El cambio de los puntos a comas depende de la configuración que tenga la hoja de cálculo y esto pasa mucho con Google Sheets</strong>.</p>
 </div>
 <h2 id="paso-4-calcular-velocidades-de-reaccion" markdown="markdown"><strong>Paso 4 - Calcular velocidades de reacción</strong></h2>
 <p>En física la <em>velocidad</em> es la variación de posición por unidad de tiempo. La <em>velocidad de reacción</em> es similar, donde queremos averiguar la variación de señal por unidad de tiempo (en nuestro caso es un segundo).</p>
@@ -2034,7 +2040,7 @@ Como ven la función <code>strsplit</code> toma un <em>string</em> y lo divide e
 <h3 id="paso-4-ejercicio">Paso 4 - Ejercicio</h3>
 <p><strong>2)</strong> Creen un nuevo script de <strong>R</strong>, copien el siguiente código y guardenlo en su carpeta de trabajo. Vayan avanzando por el <em>script</em> y cambien las secciones que dicen <code>@@EDITAR@@</code> por lo que corresponda (esto puede ser un valor, una variable, una operación matemática, una comparación o una función de <strong>R</strong>).</p>
 <div class="highlight"><pre><span></span><code><span class="c1">#Aca hay que poner el Path Absoluto que apunta a su carpeta de trabajo</span>
-<span class="c1">#Por ej: "/home/ibioinfo/Documentos/data_TP8b"</span>
+<span class="c1">#Por ej: "/home/ibioinfo/Documentos/data_TPPb"</span>
 <span class="nf">setwd</span><span class="p">(</span><span class="o">@@</span><span class="n">EDITAR</span><span class="o">@@</span><span class="p">)</span>
 
 <span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
@@ -2042,16 +2048,16 @@ Como ven la función <code>strsplit</code> toma un <em>string</em> y lo divide e
 <span class="c1">#Leo los datos ya parseados y formateados</span>
 <span class="n">dt_parsed_formatted_data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">fread</span><span class="p">(</span><span class="o">@@</span><span class="n">EDITAR</span><span class="o">@@</span><span class="p">)</span>
 
-<span class="c1">#Para cada combinacion de compuesto y concentracion quiero saber la velocidad de la reaccion, es decir, </span>
-<span class="c1">#la pendiente de la recta que sale de hacer una regresion lineal por los 4 tiempos ensayados</span>
+<span class="c1">#Para cada combinación de compuesto y concentración quiero saber la velocidad de la reacción, es decir, </span>
+<span class="c1">#la pendiente de la recta que sale de hacer una regresión lineal por los 4 tiempos ensayados</span>
 
-<span class="c1">#Creo la tabla vacia donde voy a guardar estos datos</span>
+<span class="c1">#Creo la tabla vacía donde voy a guardar estos datos</span>
 <span class="n">dt_velocidades_de_reaccion</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.table</span><span class="p">(</span><span class="n">compuesto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">character</span><span class="p">(),</span>
 <span class="w">                                         </span><span class="n">concentracion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">numeric</span><span class="p">(),</span>
 <span class="w">                                         </span><span class="n">velocidad</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">numeric</span><span class="p">())</span>
 
 <span class="c1">#Voy a tener que recorrer todas las combinaciones de compuestos y concentraciones</span>
-<span class="c1">#Consigo vectores con cada compuesto diferente y con cada concentracion diferente</span>
+<span class="c1">#Consigo vectores con cada compuesto diferente y con cada concentración diferente</span>
 <span class="n">unique_compuestos</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">unique</span><span class="p">(</span><span class="n">dt_parsed_formatted_data</span><span class="o">$</span><span class="n">compuesto</span><span class="p">)</span>
 <span class="n">unique_concentraciones</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="o">@@</span><span class="n">EDITAR</span><span class="o">@@</span>
 
@@ -2061,20 +2067,20 @@ Como ven la función <code>strsplit</code> toma un <em>string</em> y lo divide e
 <span class="w">    </span><span class="nf">for </span><span class="p">(</span><span class="n">concentracion_for</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">unique_concentraciones</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="c1"># concentracion_for &lt;- unique_concentraciones[1]</span>
 
-<span class="w">        </span><span class="c1">#Por cada combinacion de compuesto + concentracion quiero calcular la velocidad de reaccion</span>
+<span class="w">        </span><span class="c1">#Por cada combinacion de compuesto + concentración quiero calcular la velocidad de reacción</span>
 <span class="w">        </span><span class="c1">#Para eso lo primero que necesito hacer es filtrar los datos de *dt_parsed_formatted_data*, para quedarme solo</span>
-<span class="w">        </span><span class="c1">#con aquellas signals que correspondan al compuesto y concentracion de la iteracion actual del *for*</span>
+<span class="w">        </span><span class="c1">#con aquellas signals que correspondan al compuesto y concentración de la iteración actual del *for*</span>
 <span class="w">        </span><span class="n">sub_dt_parsed_formatted_data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">dt_parsed_formatted_data</span><span class="p">[(</span><span class="n">compuesto</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="o">@@</span><span class="n">EDITAR</span><span class="o">@@</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="p">(</span><span class="o">@@</span><span class="n">EDITAR</span><span class="o">@@</span><span class="p">)]</span>
 
-<span class="w">        </span><span class="c1">#Calculo la regresion lineal usando los datos de *sub_dt_parsed_formatted_data* y considerando a</span>
+<span class="w">        </span><span class="c1">#Calculo la regresión lineal usando los datos de *sub_dt_parsed_formatted_data* y considerando a</span>
 <span class="w">        </span><span class="c1">#*segundos_totales* como el X y a *signal* como el Y</span>
 <span class="w">        </span><span class="n">regresion_lineal</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sub_dt_parsed_formatted_data</span><span class="p">,</span><span class="w"> </span><span class="n">formula</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">signal</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">segundos_totales</span><span class="p">)</span><span class="w">        </span>
 
 <span class="w">        </span><span class="c1">#Extraigo la pendiente, que es el segundo elemento del elemento *coefficients*</span>
 <span class="w">        </span><span class="n">velocidad_de_reaccion</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">regresion_lineal</span><span class="o">$</span><span class="n">coefficients</span><span class="p">[</span><span class="m">2</span><span class="p">]</span>
 
-<span class="w">        </span><span class="c1">#Creo una nueva fila para agregar a mi tabla de velocidades de reaccion</span>
-<span class="w">        </span><span class="c1">#Esta fila corresponde al compuesto y a la concentracion de esta iteracion de los *fors*, asi como</span>
+<span class="w">        </span><span class="c1">#Creo una nueva fila para agregar a mi tabla de velocidades de reacción</span>
+<span class="w">        </span><span class="c1">#Esta fila corresponde al compuesto y a la concentración de esta iteración de los *fors*, asi como</span>
 <span class="w">        </span><span class="c1">#la velocidad que acabo de calcular</span>
 <span class="w">        </span><span class="n">new_row_dt_velocidades_de_reaccion</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.table</span><span class="p">(</span><span class="n">compuesto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">@@</span><span class="n">EDITAR</span><span class="o">@@</span><span class="p">,</span>
 <span class="w">                                                         </span><span class="n">concentracion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">@@</span><span class="n">EDITAR</span><span class="o">@@</span><span class="p">,</span>
@@ -2176,7 +2182,7 @@ actividad = \frac{velocidadReaccion}{velocidadReaccionBase}
 <span class="n">dt_iris</span><span class="o">$</span><span class="n">nueva_columna</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">1</span>
 
 <span class="c1">#De otra forma tengo que pasarle un vector con longitud igual al numero de filas</span>
-<span class="c1">#Este vector puede ser combinacion de otras de las columnas de la tabla</span>
+<span class="c1">#Este vector puede ser combinación de otras de las columnas de la tabla</span>
 <span class="n">dt_iris</span><span class="o">$</span><span class="n">otra_nueva_columna</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">dt_iris</span><span class="o">$</span><span class="n">Sepal.Length</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">dt_iris</span><span class="o">$</span><span class="n">Petal.Length</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m">1</span>
 
 <span class="c1">#Me arrepenti del valor que cree en la columna al principio</span>
@@ -2208,7 +2214,7 @@ actividad = \frac{velocidadReaccion}{velocidadReaccionBase}
 <h4 id="la-verdad-de-la-funcion-plot">La verdad de la función <code>plot</code></h4>
 <p>Nosotros acabamos de ver unos plots hechos con la función <code>plot()</code>, que es la forma de plotear por defecto en <strong>R</strong>. Sin embargo <code>plot</code> no solo plotea cosas pasándole un X y un Y, sino que también es una función que de pasarle ciertos tipos de variables (como puede ser una regresión logística) usa un plot interno de dichas variables. </p>
 <p>El paquete <code>nplr</code> trae sus propios plots que se van a hacer mediante <code>plot(regresion_logistica)</code>. Esto no es único de este paquete y existen otras librerías, por ejemplo de filogenia, que tienen este mismo funcionamiento, donde <code>plot</code> hace árboles filogenéticos.</p>
-<h4 id="google">Google</h4>
+<h4 id="google-o-chatgpt-u-otra-ia-unico-caso-en-el-que-esta-permitido">Google o ChatGPT u otra IA (UNICO CASO EN EL QUE ESTÁ PERMITIDO)</h4>
 <p>Es muy importante al momento de programar saber buscar funcionalidades que uno quiere usar en sus programas.</p>
 <p><strong>4)</strong> Busquen en internet:</p>
 <ul>
@@ -2247,28 +2253,28 @@ Es posible redondear números, lo que es especialmente útil para cuando tenemos
 <p>Al ejecutar el siguiente código les va a aparecer por consola varios <em>Warnings</em> de <code>nplr</code> sobre el fiteo del modelo y la predicción del IC 50. Los <em>Warnings</em> son advertencias, las cuales informan eventos que pueden o no causar problemas. Si bien es importante prestarle atención a estos <em>Warnings</em> cuando aparecen, en este caso ya están contemplados y pueden ignorarlos.</p>
 </div>
 <div class="highlight"><pre><span></span><code><span class="c1">#Aca hay que poner el Path Absoluto que apunta a su carpeta de trabajo</span>
-<span class="c1">#Por ej: "/home/ibioinfo/Documentos/data_TP8b"</span>
+<span class="c1">#Por ej: "/home/ibioinfo/Documentos/data_TPPb"</span>
 <span class="nf">setwd</span><span class="p">(</span><span class="o">@@</span><span class="n">EDITAR</span><span class="o">@@</span><span class="p">)</span>
 
 <span class="nf">library</span><span class="p">(</span><span class="n">data.table</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">nplr</span><span class="p">)</span>
 
-<span class="c1">#Leo los datos de las velocidades de reaccion</span>
+<span class="c1">#Leo los datos de las velocidades de reacción</span>
 <span class="n">dt_velocidades_de_reaccion</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="o">@@</span><span class="n">EDITAR</span><span class="o">@@</span>
 
-<span class="c1">#Quiero calcular la velocidad de reaccion base, es decir, la velocidad de reaccion sin compuestos</span>
-<span class="c1">#Esto es cuando la concentracion del compuesto es 0</span>
+<span class="c1">#Quiero calcular la velocidad de reacción base, es decir, la velocidad de reacción sin compuestos</span>
+<span class="c1">#Esto es cuando la concentración del compuesto es 0</span>
 <span class="c1">#Nosotros tenemos uno de esos casos para cada compuesto, o sea, tenemos 22 versiones del experimento sin compuesto</span>
-<span class="c1">#Vamos a calcular la velocidad de reaccion base como el promedio de esas 22 velocidades</span>
+<span class="c1">#Vamos a calcular la velocidad de reacción base como el promedio de esas 22 velocidades</span>
 <span class="n">velocidades_reaccion_sin_compuesto</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">dt_velocidades_de_reaccion</span><span class="p">[</span><span class="o">@@</span><span class="n">EDITAR</span><span class="o">@@</span><span class="p">]</span><span class="o">$</span><span class="n">velocidad</span>
 <span class="n">velocidad_reaccion_base</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">mean</span><span class="p">(</span><span class="n">velocidades_reaccion_sin_compuesto</span><span class="p">)</span>
 
-<span class="c1">#Ahora que ya las use, voy a sacar las filas que no tengan concentracion de compuesto </span>
+<span class="c1">#Ahora que ya las use, voy a sacar las filas que no tengan concentración de compuesto </span>
 <span class="c1">#ya que no tiene sentido analizarlas para el IC 50</span>
 <span class="n">dt_velocidades_de_reaccion</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">dt_velocidades_de_reaccion</span><span class="p">[</span><span class="n">concentracion</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">0</span><span class="p">]</span>
 
-<span class="c1">#Quiero calcular la actividad para cada combinacion de compuesto y concentracion</span>
-<span class="c1">#La actividad es la relacion entre la velocidad de reaccion y la velocidad de reaccion base (es decir, la division)</span>
+<span class="c1">#Quiero calcular la actividad para cada combinación de compuesto y concentración</span>
+<span class="c1">#La actividad es la relacion entre la velocidad de reacción y la velocidad de reacción base (es decir, la division)</span>
 <span class="n">dt_velocidades_de_reaccion</span><span class="o">$</span><span class="n">actividad</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="o">@@</span><span class="n">EDITAR</span><span class="o">@@</span>
 
 <span class="c1">#El *for* de mas adelante va a tener 2 salidas, un pdf con los plots y un tsv con los datos</span>
@@ -2277,7 +2283,7 @@ Es posible redondear números, lo que es especialmente útil para cuando tenemos
 <span class="c1">#Abro el pdf (toda imagen que se plotee hasta que se cierre el pdf va a ir a el)</span>
 <span class="nf">pdf</span><span class="p">(</span><span class="s">"05_IC50_plots.pdf"</span><span class="p">,</span><span class="w"> </span><span class="n">width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">7</span><span class="p">,</span><span class="w"> </span><span class="n">height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">7</span><span class="p">)</span>
 
-<span class="c1">#Creo la tabla vacia</span>
+<span class="c1">#Creo la tabla vacía</span>
 <span class="n">dt_IC50</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.table</span><span class="p">(</span><span class="n">compuesto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">character</span><span class="p">(),</span>
 <span class="w">                      </span><span class="n">actividad_minima</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">numeric</span><span class="p">(),</span>
 <span class="w">                      </span><span class="n">actividad_maxima</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">numeric</span><span class="p">(),</span>
@@ -2291,11 +2297,11 @@ Es posible redondear números, lo que es especialmente útil para cuando tenemos
 
 <span class="w">    </span><span class="c1">#Por cada compuesto quiero calcular el IC 50 y plotearlo</span>
 <span class="w">    </span><span class="c1">#Para eso lo primero que necesito hacer es filtrar los datos de *dt_velocidades_de_reaccion*, para quedarme solo</span>
-<span class="w">    </span><span class="c1">#con aquellas concentraciones y actividades que correspondan al compuesto de la iteracion actual del *for*</span>
+<span class="w">    </span><span class="c1">#con aquellas concentraciones y actividades que correspondan al compuesto de la iteración actual del *for*</span>
 <span class="w">    </span><span class="n">sub_dt_velocidades_de_reaccion</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="o">@@</span><span class="n">EDITAR</span><span class="o">@@</span>
 
-<span class="w">    </span><span class="c1">#Calculo la regresion sigmoidea usando los datos de *sub_dt_parsed_formatted_data* y considerando a</span>
-<span class="w">    </span><span class="c1">#*concentracion* como el X y a *actividad* como el Y</span>
+<span class="w">    </span><span class="c1">#Calculo la regresión sigmoidea usando los datos de *sub_dt_parsed_formatted_data* y considerando a</span>
+<span class="w">    </span><span class="c1">#*concentración* como el X y a *actividad* como el Y</span>
 <span class="w">    </span><span class="n">regresion_sigmoidea</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">nplr</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sub_dt_velocidades_de_reaccion</span><span class="o">$</span><span class="n">concentracion</span><span class="p">,</span><span class="w"> </span>
 <span class="w">                                </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sub_dt_velocidades_de_reaccion</span><span class="o">$</span><span class="n">actividad</span><span class="p">)</span>
 
@@ -2316,14 +2322,14 @@ Es posible redondear números, lo que es especialmente útil para cuando tenemos
 <span class="w">    </span><span class="n">actividad_maxima</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="o">@@</span><span class="n">EDITAR</span><span class="o">@@</span>
 
 <span class="w">    </span><span class="c1">#Creo una nueva fila para agregar a mi tabla de IC 50</span>
-<span class="w">    </span><span class="c1">#Esta fila corresponde al compuesto de esta iteracion de los *fors*, asi como</span>
+<span class="w">    </span><span class="c1">#Esta fila corresponde al compuesto de esta iteración de los *fors*, asi como</span>
 <span class="w">    </span><span class="c1">#el IC 50 que acabo de calcular</span>
 <span class="w">    </span><span class="n">new_row_dt_IC50</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.table</span><span class="p">(</span><span class="o">@@</span><span class="n">EDITAR</span><span class="o">@@</span><span class="p">)</span>
 
 <span class="w">    </span><span class="c1">#Agrego la nueva fila recien creada a mi tabla en donde guardo todas las velocidades</span>
 <span class="w">    </span><span class="n">dt_IC50</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="o">@@</span><span class="n">EDITAR</span><span class="o">@@</span>
 
-<span class="w">    </span><span class="c1">#Ploteo la regresion (les recomiendo poner el numero de compuesto y el IC 50 en el titulo)</span>
+<span class="w">    </span><span class="c1">#Ploteo la regresión (les recomiendo poner el numero de compuesto y el IC 50 en el titulo)</span>
 <span class="w">    </span><span class="c1">#Este grafico tambien tiene informacion de GOF (goodness of fit), que en este caso es el R2, y nos sirve para conocer que tan bien se ajusta el modelo a nuestros datos</span>
 <span class="w">    </span><span class="n">titulo_plot</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="o">@@</span><span class="n">EDITAR</span><span class="o">@@</span>
 <span class="w">    </span><span class="nf">plot</span><span class="p">(</span><span class="n">regresion_sigmoidea</span><span class="p">,</span>
@@ -2409,12 +2415,21 @@ Es posible redondear números, lo que es especialmente útil para cuando tenemos
 <h2 id="paso-6-conclusiones"><strong>Paso 6 - Conclusiones</strong></h2>
 <p>Ahora que tenemos todos los datos que necesitamos es momento de analizarlos. Viendo el <strong>.pdf</strong> y la tabla generados en el paso anterior respondan:</p>
 <p><strong>1)</strong> ¿Por qué hay casos donde el <strong>IC 50</strong> dió <strong>NA</strong>?</p>
-<p><strong>2)</strong> En base a los plots obtenidos, ¿Les parecen suficientes nuestros datos para estar seguros de los <strong>IC 50</strong> calculados? ¿Cuál es un compuesto donde están bastantes seguros de su <strong>IC 50</strong>? ¿Cuál es un compuesto donde desconfían del <strong>IC 50</strong> calculado?</p>
+<p><strong>2)</strong> En base a los plots obtenidos,</p>
+<ul>
+<li>¿Les parecen suficientes nuestros datos para estar seguros de los <strong>IC 50</strong> calculados?</li>
+<li>¿Cuál es un compuesto donde están bastantes seguros de su <strong>IC 50</strong>?</li>
+<li>¿Cuál es un compuesto donde desconfían del <strong>IC 50</strong> calculado?</li>
+</ul>
 <p><strong>3)</strong> ¿Qué experimentos harían para tener la curva completa en "Umbrella1"? ¿Y en "Umbrella8"?</p>
 <p><strong>4)</strong> En base a lo observado, nombren dos o tres compuestos que recomendarían para inhibir a la <strong>enzima Z</strong>. ¿Por qué los eligieron?</p>
+<div style="border-bottom: 3px solid black;">
+
+</div>
+
 <h2 id="ejercicio-adicional-1-paso-2-limpiar-y-parsear-el-archivo" markdown="markdown"><strong>Ejercicio Adicional 1 - Paso 2 - Limpiar y Parsear el Archivo</strong></h2>
 <p>Leer el <strong>Paso 2</strong> para entender el objetivo de este ejercicio.</p>
-<h3 id="herramientas_1">Herramientas</h3>
+<h3 id="introduccion-y-herramientas">Introducción y Herramientas</h3>
 <h4 id="leer-y-escribir-texto-plano">Leer y escribir texto plano</h4>
 <p>Por "texto plano" nos referimos a leer un archivo de texto que no tiene un formato definido (o sea no es un <strong>.csv</strong> o <strong>.tsv</strong>, por ejemplo). Esto puede ser algo como un libro, notas, o una tabla que por alguna razón no la queremos leer como tabla.</p>
 <p>La forma más directa de leer texto plano en <strong>R</strong> es la función <code>readLines()</code>, a la cual hay que pasarle el path del archivo a leer. Esta función va a devolver un vector en el cual cada elemento es una línea del archivo leído. Se usa:</p>
@@ -2487,7 +2502,7 @@ Donde `vector_booleanos1` es un vector de *booleanos* declarado a mano y `vector
 </code></pre></div>
 -->
 
-<h3 id="ejercicio">Ejercicio</h3>
+<h3 id="ahora-si-ejercicio-completar-el-script">Ahora sí: Ejercicio. Completar el script!</h3>
 <div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="o">@@</span><span class="n">EDITAR</span><span class="o">@@</span><span class="p">)</span>
 
 <span class="c1">#### Paso 2a - LIMPIAR DATOS ####</span>
@@ -2515,7 +2530,7 @@ Donde `vector_booleanos1` es un vector de *booleanos* declarado a mano y `vector
 <span class="c1">#Los numeros (columnas de la placa well) son los compuestos</span>
 <span class="c1">#Las letras (filas de la placa well) son las diferentes concentraciones</span>
 <span class="c1">#Queremos poner los mismos datos en una tabla donde nos sea mas facil filtrar un dato específico</span>
-<span class="c1">#Creo la tabla vacia donde voy a guardar estos datos</span>
+<span class="c1">#Creo la tabla vacía donde voy a guardar estos datos</span>
 <span class="n">dt_parsed_data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.table</span><span class="p">(</span><span class="n">time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">@@</span><span class="n">EDITAR</span><span class="o">@@</span><span class="p">,</span>
 <span class="w">                             </span><span class="n">temperature</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">numeric</span><span class="p">()</span>
 <span class="w">                             </span><span class="n">fila</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">@@</span><span class="n">EDITAR</span><span class="o">@@</span><span class="p">,</span>
