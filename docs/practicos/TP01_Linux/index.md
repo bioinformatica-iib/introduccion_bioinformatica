@@ -11,30 +11,19 @@ tags:
 <br>
 
 [:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1j-Ys8NpOWFRxqGz453-n8nU5zigy0TCw/view?usp=sharing){ .md-button .md-button--primary }
+
+[:fontawesome-solid-file-powerpoint: Slides Parte 1](hhttps://drive.google.com/file/d/1fRzQTHcYZH0VMC097lfyJiB7VqM5y5sF/view?usp=sharing){ .md-button .md-button--primary } 
+
 <!---
- [:fontawesome-solid-file-powerpoint: Slides Parte 1](https://drive.google.com/file/d/1yxCzhCvINk0z3_vTcy9n_LJ1wOJhPNwF/view?usp=sharing){ .md-button .md-button--primary } [:fontawesome-solid-file-powerpoint: Slides Programación](https://drive.google.com/file/d/1bOczXT5haYff8ziMIsm3sLrgFPcqVTD-/view?usp=sharing){ .md-button .md-button--primary }
--->
+ [:fontawesome-solid-file-powerpoint: Slides Parte 2](https://drive.google.com/file/d/1kAgYljsaTRXuabzc149CQCi5hyjiM41t/view?usp=sharing){ .md-button .md-button--primary }
 
+* :fontawesome-regular-file-pdf: [Introducción a la programación - Resolución Ej 3](https://drive.google.com/file/d/1HYZKJGnIIynY2sn59Pmj7gaezNB7g70L/view?usp=drive_link)
 
-<!--
-* :fontawesome-regular-file-pdf: [Introducción a la programación - Resolución Ej 3](https://drive.google.com/file/d/1h-s6XJ_G_dLk-iBA7NT6LIEGe9IOrx_1/view?usp=sharing)
-
-* :fontawesome-regular-file-pdf: [Cierre TP](https://drive.google.com/file/d/1jwUdtQYj9h4uGiz98tJFeol3e942zsu4/view?usp=drive_link)
 --->
 
-<!--
-### Videos de la clase grabada
+### Terminal online
+* [Replit](https://replit.com/@mercedesdidierg/TP01-Linux?v=1 )
 
-* :octicons-video-16: [Presentacion de la Materia](https://youtu.be/zOnacQHwI-E)
-* :octicons-video-16: [Introducción a la programación](https://youtu.be/d1P_6sJN1og)
-* :octicons-video-16: [Cierre TP](https://youtu.be/pYXT8aejbWE)
--->
-
-<!--
-### Software a usar
-* Programa 1 [www.donde.lo.bajo.com](https://www.example.com)
-* Programa 2 [www.donde.lo.bajo2.com](https://www.example.com)
---->
 
 ### Recursos Online
 <!--
