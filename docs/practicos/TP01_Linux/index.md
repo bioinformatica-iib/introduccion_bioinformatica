@@ -13,17 +13,12 @@ tags:
 [:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1j-Ys8NpOWFRxqGz453-n8nU5zigy0TCw/view?usp=sharing){ .md-button .md-button--primary }
 
 [:fontawesome-solid-file-powerpoint: Slides (Parte 1)](https://drive.google.com/file/d/1fRzQTHcYZH0VMC097lfyJiB7VqM5y5sF/view?usp=sharing){ .md-button .md-button--primary } 
+[:fontawesome-solid-file-powerpoint: Slides (Parte 2)](https://drive.google.com/file/d/1kAgYljsaTRXuabzc149CQCi5hyjiM41t/view?usp=sharing){ .md-button .md-button--primary }
+[:fontawesome-solid-file-powerpoint: Resolución Ejercicio 3](https://drive.google.com/file/d/1HYZKJGnIIynY2sn59Pmj7gaezNB7g70L/view?usp=sharing){ .md-button .md-button--primary }
 
-
-<!---
- [:fontawesome-solid-file-powerpoint: Slides Parte 2](https://drive.google.com/file/d/1kAgYljsaTRXuabzc149CQCi5hyjiM41t/view?usp=sharing){ .md-button .md-button--primary }
-
-* :fontawesome-regular-file-pdf: [Introducción a la programación - Resolución Ej 3](https://drive.google.com/file/d/1HYZKJGnIIynY2sn59Pmj7gaezNB7g70L/view?usp=drive_link)
-
---->
 
 ### Terminal online
-* [Replit](https://replit.com/@mercedesdidierg/TP01-Linux?v=1 )
+* [Replit](https://replit.com/@mercedesdidierg/TP01-Linux?v=1)
 
 
 ### Recursos Online

@@ -19,8 +19,8 @@ tags:
 | Jue, 14 Ago  | 9 hs |	:material-google-classroom: Presencial | [T4. Alineamientos múltiples](../teoricas/4-Teorica-Cuatro/index.md) | :fontawesome-solid-brain: Teórica |	F. Agüero |
 | Mar, 19 Ago  | 9 hs |	:material-google-classroom: Presencial | [P1. Introducción a UNIX](../practicos/TP01_Linux/index.md) | :fontawesome-solid-hammer: Práctica |	M. Didier Garnham |
 | Jue, 21 Ago  | 9 hs |	:material-google-classroom: Presencial | [P2. EMBOSS Suite](../practicos/TP02_EMBOSS/index.md) | :fontawesome-solid-hammer: Práctica |	M. Didier Garnham |
-| Mar, 26 Ago      | 9 hs |	:material-google-classroom: Presencial | P3. Alineamientos de secuencias de a pares | :fontawesome-solid-hammer: Práctica |	G. Romer |
-| Jue, 28 Ago      | 9 hs |	:material-google-classroom: Presencial | P4. Búsqueda de secuencias por similitud y Alineamientos Múltiples | :fontawesome-solid-hammer: Práctica |	G. Romer |
+| Mar, 26 Ago  | 9 hs |	:material-google-classroom: Presencial | [P3. Alineamientos de secuencias de a pares](../practicos/TP03_Alineamientos/index.md)| :fontawesome-solid-hammer: Práctica |	G. Romer |
+| Jue, 28 Ago  | 9 hs |	:material-google-classroom: Presencial | [P4. Búsqueda de secuencias por similitud y Alineamientos Múltiples](../practicos/TP4_Busqueda_por_similitud/index.md) | :fontawesome-solid-hammer: Práctica |	G. Romer |
 | Mar, 2 Sep  | 9 hs |	:material-google-classroom: Presencial | PP. Programando en Biología | :fontawesome-solid-hammer: Práctica |	R. Quinteros |
 | Jue, 4 Sep  | 9 hs |	:material-google-classroom: Presencial | PP. Programando en Biología | :fontawesome-solid-hammer: Práctica |	R. Quinteros |
 | Mar, 9 Sep  | 9 hs |	:material-google-classroom: Presencial | T5. Quimioinformática | :fontawesome-solid-brain: Teórica |	F. Agüero |

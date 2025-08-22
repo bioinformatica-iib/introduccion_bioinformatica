@@ -12,22 +12,15 @@ tags:
 
 [:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1yvegYWE7bHe7S8lP2EqePzyP13iyUkX6/view?usp=sharing){ .md-button .md-button--primary } 
 
-<!--
-[:fontawesome-solid-file-powerpoint: Slides](https://drive.google.com/file/d/1uqWJSLEHtTz_iY837yVya_GUfOKRbZbp/view?usp=sharing){ .md-button .md-button--primary }
+[:fontawesome-solid-file-powerpoint: Slides](https://drive.google.com/file/d/10TJsHS2tD6EKttrE94AjCSOkA2oD7Sw0/view?usp=sharing){ .md-button .md-button--primary }
 
-<!--
-Este es el botón para decargar materiales, en (#) hay que agregar el link correspondiente.
--->
-<!--
-* :fontawesome-regular-file-pdf: [Slides TP - Parte 2](https://drive.google.com/file/d/1u8z20PHtLCJMzDmvx_rhowLyuDh_9cIx/view?usp=sharing)
--->
 
 ### Software a usar
 * EMBOSS
 
-<!--
-### Recursos Online
--->
+### Terminal online
+* [Replit](https://replit.com/@mercedesdidierg/TP02-EMBOSS)
+
 
 ### Objetivos
 
