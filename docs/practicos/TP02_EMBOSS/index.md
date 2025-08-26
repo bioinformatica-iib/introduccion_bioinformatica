@@ -917,7 +917,7 @@ rebaseextract -infile withrefm.207 -protofile proto.207
 
     ```bash
     mkdir -p EMBOSS_data/REBASE
-    export export EMBOSS_data="$(pwd)/EMBOSS_data/REBASE"
+    export EMBOSS_DATA="$(pwd)/EMBOSS_data/REBASE"
     ```
     
     Luego, corran el comando del ejercicio.
