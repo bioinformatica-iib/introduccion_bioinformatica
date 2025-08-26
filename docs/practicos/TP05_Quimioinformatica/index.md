@@ -1,5 +1,5 @@
 ---
-title: Practico Siete
+title: Practico Cinco
 icon: fontawesome/solid/hammer
 tags: 
   - practicos
@@ -7,7 +7,7 @@ tags:
 
 ![Image](img/banner.jpg){ width="250", align="left" }
 
-# **TP 7**. Quimioinformática { markdown data-toc-label = 'TP 7' }
+# **TP 5**. Quimioinformática { markdown data-toc-label = 'TP 7' }
 
 <br>
 <br>
@@ -19,11 +19,11 @@ tags:
 
 !!! abstract "Atención: Este TP NO tiene informe."
 
-
+<!--
 ### Slides mostrados en la clase
 
 * :fontawesome-regular-file-pdf: [Slides TP](https://drive.google.com/file/d/1epc2_TThW1rG8V7Km3ebO25WxI3qeGeH/view?usp=sharing)
-
+-->
 <!--
 ### Videos de la clase grabada
 
@@ -105,7 +105,7 @@ Ahora vamos a ingresar y a recorrerla. Pueden acceder ingresando a este link: [C
 
 #### Actividad N° 1 usando ChEMBL
 1.   En el recuadro de búsqueda pegar esta molécula:
-"(2S)-2-amino-3-(1H-indol-3-yl)propanoic acid". (Es importante que le pongan las comillas!)
+tryptophan. (Es importante que le pongan las comillas!)
 2.   Apretar en la lupa para buscar
 3.   Ingresar al compuesto "CHEMBL54976".
 4.   A la derecha encontrarán una lista de toda la información disponible para este compuesto. Recorrer las diferentes secciones.
@@ -120,39 +120,6 @@ Ahora vamos a ingresar y a recorrerla. Pueden acceder ingresando a este link: [C
 6.   A la derecha encontrarán una lista de toda la información disponible para este compuesto. Recorrer las diferentes secciones.
 7.  ¿Que diferencias encuentran con la información en PubChem?
 
-### Base de Datos 3: SureChEMBL
-
-SureChEMBL es una base de datos química que proporciona acceso a información valiosa sobre patentes relacionadas con compuestos químicos. Es una herramienta poderosa y ampliamente utilizada en el campo de la química y la investigación farmacéutica.
-
-Lo que distingue a SureChEMBL es su enfoque en el análisis y la extracción de datos de patentes químicas de manera eficiente y estructurada. La base de datos recopila y organiza millones de patentes de todo el mundo, permitiendo a los investigadores explorar una gran cantidad de información en busca de nuevos compuestos, reacciones químicas y avances tecnológicos.
-
-En 2013 la empresa Digital Science (dueña de SureChem) transfirió esta base de datos al EMBL-EBI, poniendola en el dominio público. Es la primera vez que una colección de estructuras químicas de patentes mundiales de este tamaño se pone a disposición del público y de forma gratuita, lo que lo convierte en un avance significativo en el descubrimiento de fármacos. ([Ver noticia](https://www.ebi.ac.uk/about/news/technology-and-innovation/SureChEMBL/))
-
-<br>
-
-![Image](img/SureChem.jpg){ width="600", align="center" }
-
-<br>
-
-Ahora vamos a ingresar y a recorrerla. Pueden acceder ingresando a este link: [SureChEMBL](https://www.surechembl.org). En la página principal podemos ver que tenemos la opción de cargar una molécula en el recuadro blanco o de cargarla usando Marvin Js.
-
-#### Actividad N°1 usando SureChEMBL
-1.   Ingresar a la sección "Structure Search" que se encuentra debajo de la caja de búsqueda. 
-2.   Dentro del recuadro de Marvin Js, pegar este smiles
-`CC(C)(C)C1=CC(=C(C=C1NC(=O)C2=CNC3=CC=CC=C3C2=O)O)C(C)(C)C`
-3.   Seleccionar la búsqueda según Identical
-4.   Apretar el recuadro de "Search"
-5.   Seleccionar "See More" en la molécula "SCHEMBL351373"
-
-¿Cuántas patentes tiene este compuesto?
-
-#### Actividad N°2 usando SureChEMBL
-1.   Ingresar a la sección "Structure Search" que se encuentra debajo de la caja de búsqueda. 
-2.   Dentro del recuadro de Marvin Js, pegar este smiles `O=C1C=CNC2=CC=CC=C12`
-3.   Seleccionar la búsqueda según Substructure
-4.   Apretar el recuadro de "Search"
-
-¿Que encontramos haciendo este tipo de búsqueda?
 
 ## Parte 2: Análisis de datos quimioinformáticos
 
@@ -170,26 +137,15 @@ Fue desarrollado por Greg Landrum con numerosas contribuciones adicionales de la
 - Tutorials ([https://github.com/rdkit/rdkit-tutorials](https://github.com/rdkit/rdkit-tutorials)) Jupyter-based tutorials for using the RDKit
 - KNIME integration ([https://github.com/rdkit/knime-rdkit](https://github.com/rdkit/knime-rdkit)) RDKit nodes for KNIME
 
-## **Introducción a Google Colab**
 
-### ¿Qué es Google Colab?
-Colab, o Colaboratory, permite escribir y ejecutar Python en nuestro navegador. Nos da acceso a una máquina de manera remota.Las ventajas son:
 
-*  No es necesaria ninguna configuración
-
-*  Es fácil de compartir
-
-*  Podemos utilizar fácilmente procesadores GPU (Graphics Processing Unit) que se diferencia del procesador “común”, el CPU (Central Processing Unit) porque tiene más núcleos, más especializados y por lo tanto permite realizar cómputos más complejos de manera más rápida.
-
-Una característica no muy amigable es que no se pueden editar al mismo tiempo los documentos de Google Colab (que a partir de ahora llamaremos Notebooks)
+### Preparación del notebook
 
 Vayan a [https://colab.research.google.com/](https://colab.research.google.com/)
 
 Y se les abre una ventana. En la parte inferior elijan: New Notebook
 
 Y ahora sí! Manos a la obra!
-
-### Preparación del notebook
 
 En la celda que se encuentra a continuación vamos a importar e instalar todas las librerías que se van a usar.
 
@@ -230,7 +186,7 @@ smiles = 'C1=CC=C(C=C1)CNC(=O)CN2C=CN=C2[N+](=O)[O-]'
 
 Al generar la variable llamada smiles, guardamos la estructura en una palabra que podemos usar en el resto del código.
 
-Vamos a ver que pasa si imprimimos la variable usando el comando print():
+Vamos a ver que pasa si imprimimos la variable usando el comando `print()`:
 
 
 ```Python
@@ -363,9 +319,50 @@ rotatable_bonds = Descriptors.NumRotatableBonds(molecula)
 
 Para utilizar resolver este ejercicio seguir los siguientes pasos:
 
-1.   Ingresar a la siguiente Notebook en este [link](https://colab.research.google.com/drive/1-nfKcTWlCiQDqLUbGP1Avd5pbbu-LjBj?usp=drive_link)
+1.   Ingresar a la siguiente Notebook en este [link](https://drive.google.com/file/d/1FokUQHov4ElVqivNnztyyBMjCmvOFMc2/view?usp=drive_link)
 2.   Generar una copia de la Notebook en tu drive
 3.   Empezá a trabajar!
+
+<div style="border-bottom: 3px solid black;">
+
+</div>
+
+
+## Ejercicios Adicionales
+
+### Base de Datos 3: SureChEMBL
+
+SureChEMBL es una base de datos química que proporciona acceso a información valiosa sobre patentes relacionadas con compuestos químicos. Es una herramienta poderosa y ampliamente utilizada en el campo de la química y la investigación farmacéutica.
+
+Lo que distingue a SureChEMBL es su enfoque en el análisis y la extracción de datos de patentes químicas de manera eficiente y estructurada. La base de datos recopila y organiza millones de patentes de todo el mundo, permitiendo a los investigadores explorar una gran cantidad de información en busca de nuevos compuestos, reacciones químicas y avances tecnológicos.
+
+En 2013 la empresa Digital Science (dueña de SureChem) transfirió esta base de datos al EMBL-EBI, poniendola en el dominio público. Es la primera vez que una colección de estructuras químicas de patentes mundiales de este tamaño se pone a disposición del público y de forma gratuita, lo que lo convierte en un avance significativo en el descubrimiento de fármacos. ([Ver noticia](https://www.ebi.ac.uk/about/news/technology-and-innovation/SureChEMBL/))
+
+<br>
+
+![Image](img/SureChem.jpg){ width="600", align="center" }
+
+<br>
+
+Ahora vamos a ingresar y a recorrerla. Pueden acceder ingresando a este link: [SureChEMBL](https://www.surechembl.org). En la página principal podemos ver que tenemos la opción de cargar una molécula en el recuadro blanco o de cargarla usando Marvin Js.
+
+#### Actividad N°1 usando SureChEMBL
+1.   Ingresar a la sección "Structure Search" que se encuentra debajo de la caja de búsqueda. 
+2.   Dentro del recuadro de Marvin Js, pegar este smiles
+`CC(C)(C)C1=CC(=C(C=C1NC(=O)C2=CNC3=CC=CC=C3C2=O)O)C(C)(C)C`
+3.   Seleccionar la búsqueda según Identical
+4.   Apretar el recuadro de "Search"
+5.   Seleccionar "See More" en la molécula "SCHEMBL351373"
+
+¿Cuántas patentes tiene este compuesto?
+
+#### Actividad N°2 usando SureChEMBL
+1.   Ingresar a la sección "Structure Search" que se encuentra debajo de la caja de búsqueda. 
+2.   Dentro del recuadro de Marvin Js, pegar este smiles `O=C1C=CNC2=CC=CC=C12`
+3.   Seleccionar la búsqueda según Substructure
+4.   Apretar el recuadro de "Search"
+
+¿Que encontramos haciendo este tipo de búsqueda?
 
 
 ## Material de lectura y consulta
