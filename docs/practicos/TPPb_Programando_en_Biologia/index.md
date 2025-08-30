@@ -17,9 +17,9 @@ tags:
 <br>
 <br>
  
- <!--
-[:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1Da0QnUdFtibScCXHi-Ts2kQXa8xudSrJ/view?usp=sharing){ .md-button .md-button--primary }
--->
+
+[:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1Da0QnUdFtibScCXHi-Ts2kQXa8xudSrJ/view?usp=drive_link){ .md-button .md-button--primary }
+
 
 
 !!! abstract "Atención: Este TP NO tiene informe."
