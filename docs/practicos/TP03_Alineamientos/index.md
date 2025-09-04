@@ -464,7 +464,7 @@ Pueden ver la disposición de las distintas regiones de la gp120 en el siguiente
 
 !!! info 
 
-    <span style="font-weight:bold;">Fecha límite de entrega:</span> Jueves, 5 de septiembre 2025, 23:59hs.
+    <span style="font-weight:bold;">Fecha límite de entrega:</span> Viernes, 5 de septiembre 2025, 23:59hs.
 
 [:fontawesome-solid-download: Materiales](https://drive.google.com/drive/folders/14Qbd5QwI4INiWdyC1HsiKkoU7MIImkn2?usp=sharing){ .md-button .md-button--primary }
 

@@ -15,9 +15,9 @@ tags:
 <br>
 <br>
 <br>
-<!--
-[:fontawesome-solid-file-powerpoint: Slides](https://drive.google.com/file/d/1Da0QnUdFtibScCXHi-Ts2kQXa8xudSrJ/view?usp=drive_link){ .md-button .md-button--primary } 
--->
+
+[:fontawesome-solid-file-powerpoint: Slides](https://docs.google.com/presentation/d/1c_kun-ef1Z7mQeIo6O7N-wD9OcDDzFsZPYT689zbLAc/edit?usp=sharings){ .md-button .md-button--primary } 
+
 
 <!--
 [:fontawesome-solid-download: Materiales](#){ .md-button .md-button--primary }
