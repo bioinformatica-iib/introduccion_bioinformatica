@@ -18,6 +18,8 @@ tags:
 
 * [:fontawesome-solid-file-powerpoint: Slides](https://docs.google.com/presentation/d/1vnhl53yQaSNsyjumxBXrl-GBp-17898aSnUL4DKltAM/edit?usp=sharing) -->
 
+!!! warning "Atención: Este TP tiene parcialito."
+
 ### Software a usar
 * R (ya instalado en la VM).
 * RStudio (ya instalado en la VM)
