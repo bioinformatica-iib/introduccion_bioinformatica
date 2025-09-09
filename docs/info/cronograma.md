@@ -23,7 +23,7 @@ tags:
 | Jue, 28 Ago  | 9 hs |	:material-google-classroom: Presencial | [P4. Búsqueda de secuencias por similitud y Alineamientos Múltiples](../practicos/TP04_Busqueda_por_similitud/index.md) | :fontawesome-solid-hammer: Práctica |	G. Romer |
 | Mar, 2 Sep   | 9 hs |	:material-google-classroom: Presencial | [PP. Programando en Biología](../practicos/TPPa_Programando_en_Biologia/index.md) | :fontawesome-solid-hammer: Práctica |	R. Quinteros |
 | Jue, 4 Sep   | 9 hs |	:material-google-classroom: Presencial | [PP. Programando en Biología](../practicos/TPPb_Programando_en_Biologia/index.md)  | :fontawesome-solid-hammer: Práctica |	R. Quinteros |
-| Mar, 9 Sep  | 9 hs |	:material-google-classroom: Presencial | T5. Data clustering | :fontawesome-solid-brain: Teórica |	F. Agüero |
+| Mar, 9 Sep  | 9 hs |	:material-google-classroom: Presencial | [T5. Data clustering](../teoricas/5-Teorica-Cinco/index.md) | :fontawesome-solid-brain: Teórica |	F. Agüero |
 | Jue, 11 Sep  | 9 hs |	:material-google-classroom: Presencial | [P5. Data Clustering y Data Mining](../practicos/TP05_Clustering_Data_Mining/index.md) | :fontawesome-solid-hammer: Práctica |	G. Romer |
 | Mar, 16 Sep  | 9 hs |	:material-google-classroom: Presencial | T6. Quimioinformática | :fontawesome-solid-brain: Teórica |	F. Agüero |
 | Jue, 18 Sep  | 9 hs |	:material-google-classroom: Presencial | P6. Quimioinformática | :fontawesome-solid-hammer: Práctica |	M. Didier Garnham |
