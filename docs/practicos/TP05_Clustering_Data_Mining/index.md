@@ -12,11 +12,7 @@ tags:
 <br>
 <br>
 
-[:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1ezf6beXBVId14bUPcqUur8rHnend0g3-/view?usp=sharing){ .md-button .md-button--primary }
-
-<!-- ### Slides mostrados en clase
-
-* [:fontawesome-solid-file-powerpoint: Slides](https://docs.google.com/presentation/d/1vnhl53yQaSNsyjumxBXrl-GBp-17898aSnUL4DKltAM/edit?usp=sharing) -->
+[:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1ezf6beXBVId14bUPcqUur8rHnend0g3-/view?usp=sharing){ .md-button .md-button--primary }  [:fontawesome-solid-file-powerpoint: Slides](https://docs.google.com/presentation/d/1vnhl53yQaSNsyjumxBXrl-GBp-17898aSnUL4DKltAM/edit?usp=sharing){ .md-button .md-button--primary }
 
 !!! warning "Atención: Este TP tiene parcialito."
 
