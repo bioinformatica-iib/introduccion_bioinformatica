@@ -1,5 +1,5 @@
 ---
-title: Practico Cinco
+title: Practico Seis
 icon: fontawesome/solid/hammer
 tags: 
   - practicos
@@ -7,7 +7,7 @@ tags:
 
 ![Image](img/banner.jpg){ width="250", align="left" }
 
-# **TP 5**. Quimioinformática { markdown data-toc-label = 'TP 7' }
+# **TP 6**. Quimioinformática { markdown data-toc-label = 'TP 6' }
 
 <br>
 <br>
@@ -34,15 +34,6 @@ tags:
 ### Software a usar
 * [Google Colab](https://colab.research.google.com/)
 * [RDKit](https://www.rdkit.org/docs/GettingStartedInPython.html)
-
-<!--
-### Recursos Online
-* [Curso online de R de Coursera](https://www.coursera.org/learn/r-programming) (se puede hacer gratis) (en ese caso no da certificado)
-* Data Tables: [Introducción oficial](https://cran.r-project.org/web/packages/data.table/vignettes/datatable-intro.html) y [otra página con más info](https://bookdown.org/paradinas_iosu/CursoR/data-table.html)
-* ggplot2: [Vistazo rápido](https://bookdown.org/paradinas_iosu/CursoR/ggplot2.html), [detalles sobre los tipos de plots](http://sthda.com/english/wiki/ggplot2-essentials), [cheatsheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf) e [información sobre colores y daltonismo](https://jfly.uni-koeln.de/color/)
-* dendextend: [Detalle del paquete](https://cran.r-project.org/web/packages/dendextend/vignettes/dendextend.html)
--->
-
 
 ## Objetivos
 
