@@ -25,7 +25,7 @@ tags:
 | Jue, 4 Sep   | 9 hs |	:material-google-classroom: Presencial | [PP. Programando en Biología](../practicos/TPPb_Programando_en_Biologia/index.md)  | :fontawesome-solid-hammer: Práctica |	R. Quinteros |
 | Mar, 9 Sep  | 9 hs |	:material-google-classroom: Presencial | [T5. Data clustering](../teoricas/5-Teorica-Cinco/index.md) | :fontawesome-solid-brain: Teórica |	F. Agüero |
 | Jue, 11 Sep  | 9 hs |	:material-google-classroom: Presencial | [P5. Data Clustering y Data Mining](../practicos/TP05_Clustering_Data_Mining/index.md) | :fontawesome-solid-hammer: Práctica |	G. Romer |
-| Mar, 16 Sep  | 9 hs |	:material-google-classroom: Presencial | T6. Quimioinformática | :fontawesome-solid-brain: Teórica |	F. Agüero |
+| Mar, 16 Sep  | 9 hs |	:material-google-classroom: Presencial | [T6. Quimioinformática](../teoricas/6-Teorica-Seis/index.md) | :fontawesome-solid-brain: Teórica |	F. Agüero |
 | Jue, 18 Sep  | 9 hs |	:material-google-classroom: Presencial | P6. Quimioinformática | :fontawesome-solid-hammer: Práctica |	M. Didier Garnham |
 | Mar, 23 Sep  | 9 hs |	:material-google-classroom: Presencial | T7. Secuenciación y ensamblado de genomas | :fontawesome-solid-brain: Teórica |	F. Agüero |
 | Jue, 25 Sep  | 9 hs |	:material-google-classroom: Presencial | P7. Mapeo de secuencias | :fontawesome-solid-hammer: Práctica |	G. Romer |
