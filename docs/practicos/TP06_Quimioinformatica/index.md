@@ -41,78 +41,7 @@ tags:
 * Familiarizarse con la representación de estructuras químicas (SMILES, InchI)
 * Aprender a caracterizar fisicoquímicamente compuestos químicos
 
-## Parte 1: Bases de datos
-
-### Base de datos 1: PubChem
-La primera que vamos a ver es PubChem, que es una base de datos químicos abierta del National Institutes of Health (NIH).
-
-<br>
-
-![Image](img/PubChem_logo_splash.png){ width="250", align="center" }
-
-<br>
-
-En esa base de datos se pueden cargar datos generados por nosotros o podemos usar los datos cargados por otras personas.
-Recopila información sobre estructuras químicas, identificadores, propiedades químicas y físicas, actividades biológicas, patentes, salud, seguridad, datos de toxicidad y muchos otros.
-
-Ahora vamos a ingresar y a recorrerla. Pueden acceder ingresando a este link: [PubChem](https://pubchem.ncbi.nlm.nih.gov/). En la página principal podemos ver que tenemos la opción de cargar una molécula en el recuadro blanco, de dibujar una estructura, de subir una lista de datos, de recorrer los datos disponibles y de acceder a una tabla periódica. En el práctico de hoy vamos a trabajar ingresando una sóla molécula, pero ustedes pueden explorar el resto de las opciones más tarde.
-
-#### Actividad usando Pubchem
-1.   Dentro del recuadro blanco pegar esta molécula:
-`C1=CC=C(C=C1)CNC(=O)CN2C=CN=C2[N+](=O)[O-]` y usar la lupa para buscarlo dentro de la base de datos
-2.   Verán que aparece un sólo resultado, una molécula llamada "BENZNIDAZOLE". Vamos a hacer click en el nombre para ingresar a ver la información que tiene cargada.
-3.   A la derecha encontrarán la tabla de "CONTENTS" donde hay una lista de toda la información disponible para este compuesto. Recorran las diferentes secciones.
-4.  Bajen hasta la sección "Names and Identifiers" ¿Que ven ahí?
-
-En esta sección podemos ver que un compuesto químico puede escribirse de muchas maneras:
-- The International Chemical Identifier (InChI)
-- A 27-character hash code derived from an InChI (InChIKey)
-- The Simplified Molecular-Input Line-Entry System (SMILES)
-
-Cada una de estas notaciones tiene sus ventajas y desventajas.
-
-Para cualquier trabajo quimioinformático, la notación que usemos para las moléculas va a ser clave. A continuación encontrarán un breve ilustración de la sintaxis de cada notación:
-
-<br>
-
-![Image](img/13321_2020_466_Fig1_HTML.jpg){ width="600", align="Center" }
-
-<br>
-
-En el caso de que quieran profundizar sobre los diferentes tipos de notación, en la publicación de dicha imagen pueden encontrar más información al respecto. Pueden acceder ingresando a este link: [https://doi.org/10.1186/s13321-020-00466-z](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-020-00466-z)
-
-###  Base de datos 2: ChEMBL
-La segunda base de datos que vamos a ver es ChEMBL, es una base de datos curada manualmente de moléculas bioactivas del Laboratorio Europeo de Biología Molecular (EMBL).
-
-<br>
-
-![Image](img/ChEMBL.png){ width="250", align="center" }
-
-<br>
-
-Es una base de datos de moléculas pequeñas similares a fármacos bioactivos, contiene estructuras bidimensionales, propiedades calculadas (p. ej., logP, peso molecular, parámetros de Lipinski, etc.) y bioactividades resumidas (p. ej., constantes de unión, farmacología y datos ADMET).
-
-Ahora vamos a ingresar y a recorrerla. Pueden acceder ingresando a este link: [ChEMBL](https://www.ebi.ac.uk/chembl/). En la página principal podemos ver que tenemos la opción de cargar una molécula en el recuadro blanco o de recorrer los datos disponibles. Vamos a volver a ingresar la misma molécula que usamos antes.
-
-#### Actividad N° 1 usando ChEMBL
-1.   En el recuadro de búsqueda pegar esta molécula:
-tryptophan. (Es importante que le pongan las comillas!)
-2.   Apretar en la lupa para buscar
-3.   Ingresar al compuesto "CHEMBL54976".
-4.   A la derecha encontrarán una lista de toda la información disponible para este compuesto. Recorrer las diferentes secciones.
-
-#### Actividad N°2 usando ChEMBL
-1.   Debajo del recuadro blanco, ingresar a "Advanced Search".
-2.   En la pestaña de "Chemical Structure" pegar esta molécula:
-`C1=CC=C(C=C1)CNC(=O)CN2C=CN=C2[N+](=O)[O-]`
-3.   Subir la "Similarity" al 100%
-4.   Apretar el recuadro de "Similarity"
-5.   Ingresar al compuesto "CHEMBL110".
-6.   A la derecha encontrarán una lista de toda la información disponible para este compuesto. Recorrer las diferentes secciones.
-7.  ¿Que diferencias encuentran con la información en PubChem?
-
-
-## Parte 2: Análisis de datos quimioinformáticos
+## Parte 1: Análisis de datos quimioinformáticos
 
 ## Usando RDKit
 RDKit es un software quimioinformático de código abierto.
@@ -306,13 +235,66 @@ rotatable_bonds = Descriptors.NumRotatableBonds(molecula)
 #Escribí el código acá
 ```
 
+## Parte 2: Análisis y clusterización de datos químicos
+
+En esta sección exploramos un conjunto de moléculas con datos de **HIA (Human Intestinal Absorption)**, indicando si cada molécula tiene buena absorción intestinal (**+**) o mala (**-**). El objetivo es analizar cómo las propiedades estructurales y fisicoquímicas se relacionan con la absorción intestinal.  
+
+## Dos enfoques de análisis
+
+### Ejercicio 1. Clustering Jerárquico basado en fingerprints moleculares
+- Cada molécula se representa mediante un **fingerprint**, una codificación binaria de su estructura química.  
+- Calculamos **similitudes de Tanimoto** entre todas las moléculas y construimos un **dendrograma**, que muestra cómo se agrupan según su similitud.  
+- Esto permite identificar grupos de moléculas estructuralmente similares y analizar la distribución de HIA dentro de cada cluster.
+
+[:fontawesome-solid-computer: Ejercicio 1](https://colab.research.google.com/drive/1lPken3dYz0lqUnrelqEWtiFmFbP1-aNf?usp=sharing){ .md-button .md-button--primary }
+
+### Ejercicio 2. Clusterización basada en propiedades fisicoquímicas y PCA
+- Calculamos propiedades moleculares como **peso molecular, TPSA, logP, número de enlaces rotativos, H-bond donors y acceptors**.  
+- Aplicamos **PCA (Análisis de Componentes Principales)** para reducir la dimensionalidad y capturar las variaciones más relevantes.  
+- Luego utilizamos **K-means** para agrupar moléculas según estas propiedades, explorando relaciones entre características fisicoquímicas y absorción intestinal.
+
+[:fontawesome-solid-computer: Ejercicio 2](https://colab.research.google.com/drive/1DSujJ9MBUG-bGOtjnLlfE2fJluk-DJBl?usp=sharing){ .md-button .md-button--primary }
+
+## Preguntas guía para el análisis
+
+Al explorar los resultados, considerá:  
+1. Completar la tabla con el **número óptimo de clusters** y el **índice de silueta promedio** para cada enfoque. 
+
+| Enfoque                                    | Número óptimo de clusters | Silhouette promedio |
+|--------------------------------------------|---------------------------|---------------------|
+| Clustering jerárquico (fingerprints)       |                           |                     |
+| KMeans sobre PCA (propiedades moleculares) |                           |                     |
+
+2. Comparar la distribución de **HIA positivo (+)** y **negativo (-)** en cada cluster.  
+3. Analizar qué moléculas se agrupan de manera diferente según la **estructura** (fingerprints) o las **propiedades fisicoquímicas** (PCA + K-means).  
+4. Reflexionar sobre qué enfoque (jerárquico o K-means) parece capturar mejor la relación entre estructura/propiedades y absorción intestinal.
+
+
 ## Ejercicio integrador
 
-Para utilizar resolver este ejercicio seguir los siguientes pasos:
+En esta sección trabajaremos con un conjunto de moléculas que cuentan con datos reportados de HIA (Human Intestinal Absorption) y BBB (Blood-Brain Barrier). 
+El objetivo es definir umbrales que permitan clasificar si una molécula puede atravesar la membrana intestinal y la barrera hematoencefálica. 
+Posteriormente, aplicaremos estos umbrales para predecir HIA y BBB en nuevas moléculas y completar una tabla resumen con su clasificación.
 
-1.   Ingresar a la siguiente Notebook en este [link](https://drive.google.com/file/d/1FokUQHov4ElVqivNnztyyBMjCmvOFMc2/view?usp=drive_link)
-2.   Generar una copia de la Notebook en tu drive
-3.   Empezá a trabajar!
+1. Cargar los datos de moléculas para trabajar.
+2. Seleccionar los umbrales para clasificar HIA y BBB.
+3. Construir un modelo basado en esos umbrales.
+4. Evaluar nuevas moléculas usando el modelo y los umbrales establecidos.
+5. Completar la tabla resumen con HIA, BBB, clasificación y uso según PubChem.
+
+[:fontawesome-solid-computer: Ejercicio Integrador](https://drive.google.com/file/d/1FokUQHov4ElVqivNnztyyBMjCmvOFMc2/view?usp=drive_link){ .md-button .md-button--primary }
+
+Completá la siguiente tabla con la resolución del ejercicio integrador:
+
+|  Molécula | SMILES | HIA | BBB | Clasificación | Uso según PubChem |
+|-----------|--------|-----|-----|---------------|------------------|
+|Molécula 1 | `CC1([C@@H](N2[C@H](S1)[C@@H](C2=O)NC(=O)[C@@H](C3=CC=C(C=C3)O)N)C(=O)O)C` |     |     |               |                  |
+|Molécula 2 | `COC(=O)C(C1CCCCN1)C2=CC=CC=C2` |     |     |               |                  |
+|Molécula 3 | `CN[C@H]1CC[C@H](C2=CC=CC=C12)C3=CC(=C(C=C3)Cl)Cl` |     |     |               |                  |
+|Molécula 4 | `CC(CS(=O)(=O)C1=CC=C(C=C1)F)(C(=O)NC2=CC(=C(C=C2)C#N)C(F)(F)F)O` |     |     |               |                  |
+|Molécula 5 | `CC1=CC(=O)[N-]S(=O)(=O)O1.[K+]` |     |     |               |                  |
+|Molécula 6 | `C([C@@H]1[C@@H]([C@@H]([C@H]([C@H](O1)O[C@]2([C@H]([C@@H]([C@H](O2)CCl)O)O)CCl)O)O)Cl)O` |     |     |               |                  |
+
 
 <div style="border-bottom: 3px solid black;">
 
@@ -320,6 +302,77 @@ Para utilizar resolver este ejercicio seguir los siguientes pasos:
 
 
 ## Ejercicios Adicionales
+
+### Bases de datos quimioinformáticas
+
+### Base de datos 1: PubChem
+La primera que vamos a ver es PubChem, que es una base de datos químicos abierta del National Institutes of Health (NIH).
+
+<br>
+
+![Image](img/PubChem_logo_splash.png){ width="250", align="center" }
+
+<br>
+
+En esa base de datos se pueden cargar datos generados por nosotros o podemos usar los datos cargados por otras personas.
+Recopila información sobre estructuras químicas, identificadores, propiedades químicas y físicas, actividades biológicas, patentes, salud, seguridad, datos de toxicidad y muchos otros.
+
+Ahora vamos a ingresar y a recorrerla. Pueden acceder ingresando a este link: [PubChem](https://pubchem.ncbi.nlm.nih.gov/). En la página principal podemos ver que tenemos la opción de cargar una molécula en el recuadro blanco, de dibujar una estructura, de subir una lista de datos, de recorrer los datos disponibles y de acceder a una tabla periódica. En el práctico de hoy vamos a trabajar ingresando una sóla molécula, pero ustedes pueden explorar el resto de las opciones más tarde.
+
+#### Actividad usando Pubchem
+1.   Dentro del recuadro blanco pegar esta molécula:
+`C1=CC=C(C=C1)CNC(=O)CN2C=CN=C2[N+](=O)[O-]` y usar la lupa para buscarlo dentro de la base de datos
+2.   Verán que aparece un sólo resultado, una molécula llamada "BENZNIDAZOLE". Vamos a hacer click en el nombre para ingresar a ver la información que tiene cargada.
+3.   A la derecha encontrarán la tabla de "CONTENTS" donde hay una lista de toda la información disponible para este compuesto. Recorran las diferentes secciones.
+4.  Bajen hasta la sección "Names and Identifiers" ¿Que ven ahí?
+
+En esta sección podemos ver que un compuesto químico puede escribirse de muchas maneras:
+- The International Chemical Identifier (InChI)
+- A 27-character hash code derived from an InChI (InChIKey)
+- The Simplified Molecular-Input Line-Entry System (SMILES)
+
+Cada una de estas notaciones tiene sus ventajas y desventajas.
+
+Para cualquier trabajo quimioinformático, la notación que usemos para las moléculas va a ser clave. A continuación encontrarán un breve ilustración de la sintaxis de cada notación:
+
+<br>
+
+![Image](img/13321_2020_466_Fig1_HTML.jpg){ width="600", align="Center" }
+
+<br>
+
+En el caso de que quieran profundizar sobre los diferentes tipos de notación, en la publicación de dicha imagen pueden encontrar más información al respecto. Pueden acceder ingresando a este link: [https://doi.org/10.1186/s13321-020-00466-z](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-020-00466-z)
+
+###  Base de datos 2: ChEMBL
+La segunda base de datos que vamos a ver es ChEMBL, es una base de datos curada manualmente de moléculas bioactivas del Laboratorio Europeo de Biología Molecular (EMBL).
+
+<br>
+
+![Image](img/ChEMBL.png){ width="250", align="center" }
+
+<br>
+
+Es una base de datos de moléculas pequeñas similares a fármacos bioactivos, contiene estructuras bidimensionales, propiedades calculadas (p. ej., logP, peso molecular, parámetros de Lipinski, etc.) y bioactividades resumidas (p. ej., constantes de unión, farmacología y datos ADMET).
+
+Ahora vamos a ingresar y a recorrerla. Pueden acceder ingresando a este link: [ChEMBL](https://www.ebi.ac.uk/chembl/). En la página principal podemos ver que tenemos la opción de cargar una molécula en el recuadro blanco o de recorrer los datos disponibles. Vamos a volver a ingresar la misma molécula que usamos antes.
+
+#### Actividad N° 1 usando ChEMBL
+1.   En el recuadro de búsqueda pegar esta molécula:
+tryptophan. (Es importante que le pongan las comillas!)
+2.   Apretar en la lupa para buscar
+3.   Ingresar al compuesto "CHEMBL54976".
+4.   A la derecha encontrarán una lista de toda la información disponible para este compuesto. Recorrer las diferentes secciones.
+
+#### Actividad N°2 usando ChEMBL
+1.   Debajo del recuadro blanco, ingresar a "Advanced Search".
+2.   En la pestaña de "Chemical Structure" pegar esta molécula:
+`C1=CC=C(C=C1)CNC(=O)CN2C=CN=C2[N+](=O)[O-]`
+3.   Subir la "Similarity" al 100%
+4.   Apretar el recuadro de "Similarity"
+5.   Ingresar al compuesto "CHEMBL110".
+6.   A la derecha encontrarán una lista de toda la información disponible para este compuesto. Recorrer las diferentes secciones.
+7.  ¿Que diferencias encuentran con la información en PubChem?
+
 
 ### Base de Datos 3: SureChEMBL
 
