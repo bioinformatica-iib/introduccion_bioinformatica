@@ -1153,6 +1153,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#representacion-de-compuestos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Representación de compuestos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#generar-una-molecula-a-partir-de-smiles" class="md-nav__link">
     <span class="md-ellipsis">
       Generar una molécula a partir de SMILES
@@ -1166,15 +1175,6 @@
   <a href="#actividad-n1-usando-smiles" class="md-nav__link">
     <span class="md-ellipsis">
       Actividad N°1 usando SMILES
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#actividad-n2-usando-smiles" class="md-nav__link">
-    <span class="md-ellipsis">
-      Actividad N°2 usando SMILES
     </span>
   </a>
   
@@ -1631,6 +1631,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#representacion-de-compuestos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Representación de compuestos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#generar-una-molecula-a-partir-de-smiles" class="md-nav__link">
     <span class="md-ellipsis">
       Generar una molécula a partir de SMILES
@@ -1644,15 +1653,6 @@
   <a href="#actividad-n1-usando-smiles" class="md-nav__link">
     <span class="md-ellipsis">
       Actividad N°1 usando SMILES
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#actividad-n2-usando-smiles" class="md-nav__link">
-    <span class="md-ellipsis">
-      Actividad N°2 usando SMILES
     </span>
   </a>
   
@@ -1944,7 +1944,6 @@
 </ul>
 <h2 id="objetivos">Objetivos</h2>
 <ul>
-<li>Conocer las bases de datos de compuestos químicos: PubChem, ChEMBL, SureChEMBL</li>
 <li>Familiarizarse con la representación de estructuras químicas (SMILES, InchI)</li>
 <li>Aprender a caracterizar fisicoquímicamente compuestos químicos</li>
 </ul>
@@ -1981,6 +1980,17 @@
 <span class="kn">from</span> <span class="nn">rdkit.Chem.Draw</span> <span class="kn">import</span> <span class="n">rdMolDraw2D</span>
 </code></pre></div>
 <p>A lo largo de este práctico vamos a estar explorando las bases de datos quimioinformáticos y trabajando con los comandos básicos de RDKit para trabajar con moléculas.</p>
+<h3 id="representacion-de-compuestos">Representación de compuestos</h3>
+<p>Un compuesto químico puede escribirse de muchas maneras:
+- The International Chemical Identifier (InChI)
+- A 27-character hash code derived from an InChI (InChIKey)
+- The Simplified Molecular-Input Line-Entry System (SMILES)</p>
+<p>Cada una de estas notaciones tiene sus ventajas y desventajas.</p>
+<p>Para cualquier trabajo quimioinformático, la notación que usemos para las moléculas va a ser clave. A continuación encontrarán un breve ilustración de la sintaxis de cada notación:</p>
+<p><br></p>
+<p><a class="glightbox" href="img/13321_2020_466_Fig1_HTML.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img _="," align="Center" alt="Image" src="img/13321_2020_466_Fig1_HTML.jpg" width="600"></a></p>
+<p><br></p>
+<p>En el caso de que quieran profundizar sobre los diferentes tipos de notación, en la publicación de dicha imagen pueden encontrar más información al respecto. Pueden acceder ingresando a este link: <a href="https://jcheminf.biomedcentral.com/articles/10.1186/s13321-020-00466-z">https://doi.org/10.1186/s13321-020-00466-z</a></p>
 <h3 id="generar-una-molecula-a-partir-de-smiles">Generar una molécula a partir de SMILES</h3>
 <p>Para comenzar a trabajar necesitamos ingresar a la computadora el compuesto con el que vamos a trabajar, para eso vamos a generar una variable con la notación del compuesto. En este caso, vamos a usar la notación en smiles.</p>
 <p>En programación se llama "variable" a la asignación de una palabra para identificar un objeto. En este caso, la palabra "smiles" la vamos a usar como variable para identificar la secuencia en smiles del Benznidazol.</p>
@@ -2010,8 +2020,6 @@ Vamos a usarla mucho, a medida que la usemos vamos a ver que se puede hacer con 
 </p><div class="highlight"><pre><span></span><code><span class="n">molecula</span>
 </code></pre></div>
 <p>Imprimiendo sólo la variable que generamos con la información de la molécula podemos visualizarla!</p>
-<h4 id="actividad-n2-usando-smiles">Actividad N°2 usando SMILES</h4>
-<p>💭 ¿Lo que observas en la celda anterior corresponde con lo que viste en PubChem y en ChEMBL?</p>
 <h3 id="generar-una-molecula-a-partir-de-inchi">Generar una molécula a partir de InChI</h3>
 <p>Vamos a repetir el paso anterior pero usando la nomenclatura en InChI:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Generar la variable "InChI"</span>
@@ -2220,16 +2228,6 @@ Recopila información sobre estructuras químicas, identificadores, propiedades 
 <li>A la derecha encontrarán la tabla de "CONTENTS" donde hay una lista de toda la información disponible para este compuesto. Recorran las diferentes secciones.</li>
 <li>Bajen hasta la sección "Names and Identifiers" ¿Que ven ahí?</li>
 </ol>
-<p>En esta sección podemos ver que un compuesto químico puede escribirse de muchas maneras:
-- The International Chemical Identifier (InChI)
-- A 27-character hash code derived from an InChI (InChIKey)
-- The Simplified Molecular-Input Line-Entry System (SMILES)</p>
-<p>Cada una de estas notaciones tiene sus ventajas y desventajas.</p>
-<p>Para cualquier trabajo quimioinformático, la notación que usemos para las moléculas va a ser clave. A continuación encontrarán un breve ilustración de la sintaxis de cada notación:</p>
-<p><br></p>
-<p><a class="glightbox" href="img/13321_2020_466_Fig1_HTML.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img _="," align="Center" alt="Image" src="img/13321_2020_466_Fig1_HTML.jpg" width="600"></a></p>
-<p><br></p>
-<p>En el caso de que quieran profundizar sobre los diferentes tipos de notación, en la publicación de dicha imagen pueden encontrar más información al respecto. Pueden acceder ingresando a este link: <a href="https://jcheminf.biomedcentral.com/articles/10.1186/s13321-020-00466-z">https://doi.org/10.1186/s13321-020-00466-z</a></p>
 <h3 id="base-de-datos-2-chembl">Base de datos 2: ChEMBL</h3>
 <p>La segunda base de datos que vamos a ver es ChEMBL, es una base de datos curada manualmente de moléculas bioactivas del Laboratorio Europeo de Biología Molecular (EMBL).</p>
 <p><br></p>
