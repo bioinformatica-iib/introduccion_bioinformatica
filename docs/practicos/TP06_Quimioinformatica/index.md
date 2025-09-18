@@ -37,7 +37,6 @@ tags:
 
 ## Objetivos
 
-* Conocer las bases de datos de compuestos químicos: PubChem, ChEMBL, SureChEMBL
 * Familiarizarse con la representación de estructuras químicas (SMILES, InchI)
 * Aprender a caracterizar fisicoquímicamente compuestos químicos
 
@@ -93,6 +92,25 @@ from rdkit.Chem.Draw import rdMolDraw2D
 
 A lo largo de este práctico vamos a estar explorando las bases de datos quimioinformáticos y trabajando con los comandos básicos de RDKit para trabajar con moléculas.
 
+### Representación de compuestos
+
+Un compuesto químico puede escribirse de muchas maneras:
+- The International Chemical Identifier (InChI)
+- A 27-character hash code derived from an InChI (InChIKey)
+- The Simplified Molecular-Input Line-Entry System (SMILES)
+
+Cada una de estas notaciones tiene sus ventajas y desventajas.
+
+Para cualquier trabajo quimioinformático, la notación que usemos para las moléculas va a ser clave. A continuación encontrarán un breve ilustración de la sintaxis de cada notación:
+
+<br>
+
+![Image](img/13321_2020_466_Fig1_HTML.jpg){ width="600", align="Center" }
+
+<br>
+
+En el caso de que quieran profundizar sobre los diferentes tipos de notación, en la publicación de dicha imagen pueden encontrar más información al respecto. Pueden acceder ingresando a este link: [https://doi.org/10.1186/s13321-020-00466-z](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-020-00466-z)
+
 ### Generar una molécula a partir de SMILES
 Para comenzar a trabajar necesitamos ingresar a la computadora el compuesto con el que vamos a trabajar, para eso vamos a generar una variable con la notación del compuesto. En este caso, vamos a usar la notación en smiles.
 
@@ -145,11 +163,6 @@ molecula
 ```
 
 Imprimiendo sólo la variable que generamos con la información de la molécula podemos visualizarla!
-
-
-#### Actividad N°2 usando SMILES
-
-💭 ¿Lo que observas en la celda anterior corresponde con lo que viste en PubChem y en ChEMBL?
 
 ### Generar una molécula a partir de InChI
 
@@ -325,23 +338,6 @@ Ahora vamos a ingresar y a recorrerla. Pueden acceder ingresando a este link: [P
 2.   Verán que aparece un sólo resultado, una molécula llamada "BENZNIDAZOLE". Vamos a hacer click en el nombre para ingresar a ver la información que tiene cargada.
 3.   A la derecha encontrarán la tabla de "CONTENTS" donde hay una lista de toda la información disponible para este compuesto. Recorran las diferentes secciones.
 4.  Bajen hasta la sección "Names and Identifiers" ¿Que ven ahí?
-
-En esta sección podemos ver que un compuesto químico puede escribirse de muchas maneras:
-- The International Chemical Identifier (InChI)
-- A 27-character hash code derived from an InChI (InChIKey)
-- The Simplified Molecular-Input Line-Entry System (SMILES)
-
-Cada una de estas notaciones tiene sus ventajas y desventajas.
-
-Para cualquier trabajo quimioinformático, la notación que usemos para las moléculas va a ser clave. A continuación encontrarán un breve ilustración de la sintaxis de cada notación:
-
-<br>
-
-![Image](img/13321_2020_466_Fig1_HTML.jpg){ width="600", align="Center" }
-
-<br>
-
-En el caso de que quieran profundizar sobre los diferentes tipos de notación, en la publicación de dicha imagen pueden encontrar más información al respecto. Pueden acceder ingresando a este link: [https://doi.org/10.1186/s13321-020-00466-z](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-020-00466-z)
 
 ###  Base de datos 2: ChEMBL
 La segunda base de datos que vamos a ver es ChEMBL, es una base de datos curada manualmente de moléculas bioactivas del Laboratorio Europeo de Biología Molecular (EMBL).
