@@ -1,28 +1,30 @@
 ---
-title: Practico Nueve
+title: Practico Siete
 icon: fontawesome/solid/hammer
 tags: 
   - practicos
 ---
 ![Image](images/featured.jpeg){ width="250", align="left" }
 
-# **TP 9**. Short Read Mapping { markdown data-toc-label = 'TP 09' }
+# **TP 7**. Short Read Mapping { markdown data-toc-label = 'TP 09' }
 
 <br>
 <br>
 <br>
 
-[:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/11jEhNiGYuAI_s9PMDmBtnDJNcaCpJTp_/view?usp=sharing){ .md-button .md-button--primary }
-
-### Slides mostrados en la clase
-
-* :fontawesome-regular-file-pdf: [Slides TP](https://docs.google.com/presentation/d/1gNyQKZi-3TxX2Olvc9TqVgw7I1XaQFs9YBryIevEXSc/edit?usp=sharing)
+[:fontawesome-solid-download: Materiales](https://drive.google.com/drive/folders/1rHIb8dwkg5cDMfkGBVa7CqBde1MlfK5V?usp=sharing){ .md-button .md-button--primary } [:fontawesome-solid-file-powerpoint: Slides](https://docs.google.com/presentation/d/1gNyQKZi-3TxX2Olvc9TqVgw7I1XaQFs9YBryIevEXSc/edit?usp=sharing){ .md-button .md-button--primary } 
 
 ## Objetivos
 
 * Interpretar los formatos utilizados comúnmente en NGS
 * Mapear secuencias al genoma de referencia
 * Visualizar e interpretar alteraciones genéticas
+
+## Importante
+
+En este TP vamos a usar **Galaxy** para realizar el análisis de calidad y mapeo de las secuencias. Galaxy es una plataforma web que permite realizar análisis de datos biológicos sin necesidad de usar la línea de comandos. Para evitar saturar el servidor público de Galaxy, les pedimos que creen una cuenta gratuita en [usegalaxy.org](https://usegalaxy.org/) y carguen los archivos `NV_1.fastq.gz` , `NV_2.fastq.gz`, `mapping.sam` y `L2_cat.fasta` que se encuentran en la carpeta _Materiales_ antes de que empiece el TP.
+
+Para cargar los materiales, una vez que hayan iniciado sesión, hagan click en el botón **Upload Data**"** (arriba a la izquierda) y luego en **Choose local files**. Seleccionen los archivos y luego hagan click en **Start upload**. Una vez que los archivos estén cargados, podrán verlos en el panel de la izquierda.
 
 ## Introducción
 
@@ -49,8 +51,8 @@ En este trabajo práctico, procederemos a mapear las lecturas producidas con Ill
 Siempre que sea posible, es una buena práctica visualizar los archivos de trabajo. 
 Para comenzar leeremos los archivos crudos de secuenciación de *Chlamydia trachomatis*, los cuales tienen formato `FASTQ`.
 
-Abrir una terminal y dirigirse al directorio de descarga de los materiales del TP "Short-Read-Mapping". 
-Leer la primera línea de un archivos fastq con el siguiente comando:
+Abran una terminal y cambien el directorio al que contenga los materiales del TP "Short-Read-Mapping". 
+Lean la primera línea de un archivos fastq con el siguiente comando:
 
 ```Bash 
 zcat NV_1.fastq.gz | head -4 
@@ -95,11 +97,11 @@ El número que representa la calidad va de 33 (calidad más baja; `!` En ASCII) 
  ! "# $% & '() * +, -. / 0123456789:; <=>? @ ABCDEFGHIJKLMNOPQRSTUVWXYZ [\] ^ _` abcdefghijklmnopqrstuvwxyz {|} ~
 ```
 
-1. Identificar los componentes de la primer lectura: nombre, secuencia, calidad y ubicación física de la lectura en la celda de flujo (es decir, lane, tile, x, y).
+**1.** Identificar los componentes de la primer lectura: nombre, secuencia, calidad y ubicación física de la lectura en la celda de flujo (es decir, lane, tile, x, y).
 
-2. Usando el código [ASCII](https://elcodigoascii.com.ar/), determinar la calidad de las primeras 3 bases secuenciadas.
+**2.** Usando el código [ASCII](https://elcodigoascii.com.ar/), determinar la calidad de las primeras 3 bases secuenciadas.
 
-3. Leer la primera lectura del archivo `NV_2.fastq.gz`. ¿Qué similitudes y diferencias encuentra en **cada una** de las líneas de texto? ¿A qué se deben? 
+**3.** Leer la primera lectura del archivo `NV_2.fastq.gz`. ¿Qué similitudes y diferencias encuentra en **cada una** de las líneas de texto? ¿A qué se deben? 
 
 ## Ejercicio 2: Análisis de calidad de secuencias
 
@@ -124,20 +126,15 @@ Algunos aspectos a evaluar en un reporte de calidad son:
 
 ### Análisis de calidad de las secuencias de *C. trachomatis*
 
-Para realizar el análisis de calidad de la secuenciación con FastQC, ejecute el siguiente comandos:
+Para realizar el análisis de calidad de la secuenciación con FastQC, busquen en **Galaxy** el programa **FastQC** en el panel **All Tools** de la izquierda. Seleccionen el programa y luego en **FASTQ file** carguen el archivo `NV_1.fastq.gz`. Dejen las demás opciones como están y hagan click en **Run**. Luego repitan los mismos pasos para el archivo `NV_2.fastq.gz`.
 
-```Bash 
-fastqc NV_1.fastq.gz
-fastqc NV_2.fastq.gz
-```
-Puede observar con el comando `ls`, que FastQC ha generado nuevos archivos en el directorio donde se encuentra. 
-A continuación, visualice los resultados de cada archivo de secuenciación por separado abriendo el html generado con un navegador:
+![fastqc-galaxy](images/fastqc-galaxy.png)
 
-```Bash 
-firefox NV_1_fastqc.html NV_2_fastqc.html
-```
+Una vez que se haya terminado de ejecutar, van a poder ver en el panel de la derecha que los trabajos han cambiado de color. Cuando estén en verde, significa que se han ejecutado correctamente. 
 
-4. ¿Qué opina de la calidad de los datos? ¿Continuaría trabajando con ellos? Compare con este ejemplo y justifique su decisión: [Example of Conventional Base Calls](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/bad_sequence_fastqc.html)
+Cada análisis genera dos archivos: un archivo de datos _crudos_ `.raw` y un archivo `.html`. El archivo `.html` es el reporte que vamos a analizar. Hagan click en el ícono del ojo para abrir cada uno de los reportes.
+
+**4.** ¿Qué opinan de la calidad de los datos? ¿Continuarían trabajando con ellos? Comparen con este ejemplo y justifiquen su decisión: [Example of Conventional Base Calls](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/bad_sequence_fastqc.html)
 
 ## Ejercicio 3: Mapeo de secuencias al genoma de referencia de *C. trachomatis*
 
@@ -149,7 +146,7 @@ Otro formato similar es el BAM, el cual es el equivalente binario y comprimido d
 
 	!!! Warning "NO EJECUTAR EL CÓDIGO A CONTINUACIÓN! Es de muestra"
 
-	Por si no quedó claro con todas las aclaraciones, ustedes NO deben ejecutar los comandos de esta etapa. Podrán ver los resultados ya creados en su directorio de trabajo. Le brindamos los comandos en caso de querer reproducir el análisis en secuencias de su interés.
+	Por si no quedó claro con todas las aclaraciones, ustedes **NO** deben ejecutar los comandos de esta etapa. Podrán ver los resultados ya creados en su directorio de trabajo. Le brindamos los comandos en caso de querer reproducir el análisis en secuencias de su interés.
 
 	El software para mapear las lecturas es BWA. Para instalarlo habría que ejecutar:
 
@@ -175,9 +172,11 @@ Otro formato similar es el BAM, el cual es el equivalente binario y comprimido d
 	bwa mem L2_cat.fasta NV_1.fastq.gz NV_2.fastq.gz > mapping.sam
 	```
 
-!!! info "A partir de aqui SI continúe ejecutando los comandos"
+	Si quisieran hacerlo en **Galaxy**, el programa de mapeo se llama **BWA-MEM2**, y el que construye el índice es **BWA-MEM2 indexer**.
 
-Revisen de qué se trata el `.sam` visualizando las primeras líneas del archivo por consola:
+!!! info "A partir de aqui SI continúen ejecutando los comandos"
+
+Revisen de qué se trata el `.sam` abriéndolo en Galaxy o visualizando las primeras líneas del archivo por consola:
 
 ```Bash
 head mapping.sam
@@ -190,46 +189,43 @@ Las partes del archivo SAM son las siguientes:
 
 ### Compresión de archivos SAM
 
-Primero vamos a convertir el alineamiento de formato SAM a formato BAM:
+Primero vamos a convertir el alineamiento de formato SAM a formato BAM. Para esto usaremos el programa `Samtools view` de **Galaxy**. Seleccionen  el archivo `mapping.sam` como entrada y en **Output format**, dejen las demás opciones como están y hagan click en **Run**.
 
-```Bash 
-samtools view -b -S mapping.sam > mapping.bam 
-```
+* Comparen el tamaño de los archivos SAM y BAM y determine el factor de compresión. 
 
-!!! warning "Si el comando no es encontrado, cierre TODA terminal abierta y vuelva a probar. Si ahí no anda, avise"
-
-
-* Compare el tamaño de los archivos SAM y BAM y determine el factor de compresión. 
-
-??? question "¿Se le ocurre qué comando puede utilizar para ver el tamaño de los archivos?"
-
-      ```Bash 
-      ls -lh mapping*
-      ```
-
-Seguidamente ordene las lecturas mapeadas por cromosoma y/o coordenada con el siguiente comando:
-
-```Bash 
-samtools sort -o NV.bam mapping.bam 
-```
+Seguidamente ordenen las lecturas mapeadas por cromosoma y/o coordenada con el programa `Samtools sort` de **Galaxy**. Seleccionen el archivo `mapping.bam` como entrada, dejen las demás opciones como están y hagan click en **Run**.
 
 * ¿Por qué las secuencias no están ordenadas y debemos hacerlo en un paso más?
 
-Finalmente indexaremos el archivo en formato BAM:
+Samtools sort genera dos archivos, uno con extensión `.bam` y otro con extensión `.bai`. El archivo `.bai` es un índice que permite acceder rápidamente a las posiciones del archivo `.bam`. Si quisieran indexar el archivo `.bam` por consola, podrían hacerlo con el siguiente comando:
 
 ```bash 
 samtools index NV.bam
 ```
 
+Finalmente, descarguen los archivos `.bam` (el dataset) y `.bai` (el índice) a su computadora. Para eso tienen que clickear en el resultado de Samtools sort y luego en el símbolo guardar. Renombrenlos como `NV.bam` y `NV.bai`.
+
+![download](images/samtools1.png) ![download2](images/samtools2.png)
+
 ## Ejercicio 4: Visualización de secuencias mapeadas
 
-JBrowser2 permite visualizar datos de secuenciación de tecnologías de nueva generación como Illumina, 454 o Solid. JBrowser2 se puede descargar e instalar desde la [página oficial](https://jbrowse.org/jb2/download/). Si están trabajando desde las computadoras del laboratorio, ya deberían tener instalado el programa.
+JBrowser2 permite visualizar datos de secuenciación de tecnologías de nueva generación como Illumina, 454 o Solid. JBrowser2 se puede descargar e instalar desde la [página oficial](https://jbrowse.org/jb2/download/). 
+
+Dentro de la carpeta materiales tienen el archivo   ejecutable `jbrowse-desktop-v3.6.5-linux.AppImage` y dos archivos `.sh`. Abran una terminal, cambien el directorio a la carpeta donde se encuentra este archivo y ejecuten los siguientes scripts para dar permisos de ejecución y abrir la aplicación:
+
+```bash
+
+bash instalar_jbrowse.sh
+
+bash ejecutar_jbrowse.sh
+
+```
 
 ### Vista básica de JBrowse2
 
-- Abra JBrowse2 y cargue la secuencia de referencia "L2_cat.fasta". Para esto, hacer click en ``'OPEN SEQUENCE FILE(S)'`` y seleccione el archivo correspondiente. En ``assembly name`` elija un nombre que sea representativo del archivo cargado, y en ``Type`` FastaAdapter. 
-- Luego de seleccionar ``submit`` elija ``Linear genome view`` y luego presione ``LAUNCH VIEW``
-- La siguiente ventana muestra que hay dos entradas en nuestro archivo multifasta, una que corresponde al ADN cromosomal y otra que corresponde al ADN plasmídico. Para visualizar las dos en simultaneo, seleccione ``SHOW ALL REGIONS IN ASSEMBLY``
+- Abran JBrowse2 y cargue la secuencia de referencia "L2_cat.fasta". Para esto, hacer click en ``'OPEN SEQUENCE FILE(S)'`` y seleccione el archivo correspondiente. En ``assembly name`` elija un nombre que sea representativo del archivo cargado, y en ``Type`` FastaAdapter. 
+- Luego de seleccionar ``submit`` elijan ``Linear genome view`` y luego presionen ``LAUNCH VIEW``
+- La siguiente ventana muestra que hay dos entradas en nuestro archivo multifasta, una que corresponde al ADN cromosomal y otra que corresponde al ADN plasmídico. Para visualizar las dos en simultaneo, seleccionen ``SHOW ALL REGIONS IN ASSEMBLY``
 
 En este punto, su programa debería verse de esta forma:
 
@@ -244,9 +240,9 @@ En este punto, su programa debería verse de esta forma:
 
 Ahora vamos a cargar las anotaciones del genoma de L2_cat. Estas anotaciones estan en formato gff, y en dos archivos distintos, uno para el ADN cromosomal y otra para el ADN plasmídico.
 
-- Abra los archivos de anotación denominados "L2_genomic.gff" y "L2_plasmid.gff". Para esto, desde el panel ``Available tracks`` hacer click en el símbolo "+" > ``Add track`` y seleccione el archivo correspondiente. Luego de apretar ``Next``, en ``Adapter type`` seleccione ``GFF3``, deje el resto de las opciones como están y presione ``ADD``
+- Abra los archivos de anotación denominados "L2_genomic.gff" y "L2_plasmid.gff". Para esto, desde el panel ``Available tracks`` hacer click en el símbolo "+" > ``Add track``. En la opción ``Main file`` carguen el archivo `.bam`, y en ``Index file`` el archivo `.bai` que descargaron de **Galaxy**. Luego de apretar ``Next``, en ``Adapter type`` seleccionen ``GFF3``, deje el resto de las opciones como están y presione ``ADD``
 
-- Para visualizar el mapeo de lecturas que acabamos de hacer vamos a cargar en JBrowse2 nuestras lecturas mapeadas en formato BAM, de la siguiente manera: desde el panel ``Available tracks`` hacer click en el símbolo "+" > ``Add track`` y abra el archivo ``NV.bam``. Luego de apretar ``Next``, en ``Adapter type`` seleccione ``BAM adapter``, deje el resto de las opciones como están y presione ``ADD``
+- Para visualizar el mapeo de lecturas que acabamos de hacer vamos a cargar en JBrowse2 nuestras lecturas mapeadas en formato BAM, de la siguiente manera: desde el panel ``Available tracks`` hacer click en el símbolo "+" > ``Add track`` y abra el archivo ``NV.bam``. Luego de apretar ``Next``, en ``Adapter type`` seleccionen ``BAM adapter``, deje el resto de las opciones como están y presione ``ADD``
 
 
 !!! info "Recuerden que estas lecturas son de la cepa sueca **NV** mapeadas contra el genoma de referencia de la cepa **L2**." 
@@ -266,9 +262,12 @@ Si quieren saber mas sobre una lectura, clickeen sobre la misma y verán a la de
 
       La calidad de mapeo depende en la precisión de la lectura y el número de "*mismatches*" respecto a la secuencia de referencia. Un valor de 0 indica que la lectura mapea igualmente bien con al menos otro lugar por lo que **su mapeo no es confiable**. El máximo valor posible de "Mapping quality" es 60.
 
-* Basándose en sus conocimientos de biología y de bioinformática ¿qué aspectos considera que podrían influir en la calidad de mapeo?
+* Basándose en sus conocimientos de biología y de bioinformática ¿qué aspectos consideran que podrían influir en la calidad de mapeo?
 
-A continuación, vamos a filtrar las lecturas para visualizar solo aquellas que tienen una buena calidad de mapeo. Para realizar esto haga click en los tres puntos al lado de ``NV.bam`` en el panel de las lecturas, seleccionen ``Pileup settings`` y luego ``Filter by``. Aparecerá una ventana con muchas opciones para filtrar. En ``Filter by tag name and value`` pongan **MQ** como ``Tag name`` y **60** como ``Tag value`` (removiendo asi lecturas con calidad de mapeo menor a dicho número). En este punto, la mayoría de lecturas deberían conservarse. Si no ven esto en su aplicación, prueben poner **mq** (en minúscula) como ``Tag value``.
+<!--
+A continuación, vamos a filtrar las lecturas para visualizar solo aquellas que tienen una buena calidad de mapeo. Para realizar esto hagan click en los tres puntos al lado de ``NV.bam`` en el panel de las lecturas, seleccionen ``Pileup settings`` y luego ``Filter by``. Aparecerá una ventana con muchas opciones para filtrar. En ``Filter by tag name and value`` pongan **MQ** como ``Tag name`` y **60** como ``Tag value`` (removiendo asi lecturas con calidad de mapeo menor a dicho número). En este punto, la mayoría de lecturas deberían conservarse. Si no ven esto en su aplicación, prueben poner **mq** (en minúscula) como ``Tag value``.
+
+-->
 
 !!! idea "Tip"
 
@@ -299,7 +298,7 @@ Su pantalla de JBrowse2 debería verse así:
 
 ![inferredsize](images/JBROWSE_3.jpg)
 
-* ¿Qué aspectos considera que pueden influir en la cobertura en general y en este caso en particular?
+* ¿Qué aspectos consideran que pueden influir en la cobertura en general y en este caso en particular?
 
 * A simple vista, ¿notan alguna región diferente?
 
@@ -319,7 +318,7 @@ No harán nuevamente el mapeo para esta cepa, ya hemos procesado los datos crudo
 
 Veamos  la región no mapeada que analizamos previamente (entre las bases 5000 a 6000). Comparen los distintos tipos de visualización entre ambas secuenciaciones.
 
-* Vuelva a leer en la Introducción la razón por la cuál la cepa **NV** causó un alerta sanitario en Europa en el año 2006. Considerando lo que acabamos de ver, ¿por qué razón cree que la cepa **NV** no es detectada en el ensayo diagnóstico estándar pero sí lo es la cepa **L2b**?
+* Vuelvan a leer en la Introducción la razón por la cuál la cepa **NV** causó un alerta sanitario en Europa en el año 2006. Considerando lo que acabamos de ver, ¿por qué razón creen que la cepa **NV** no es detectada en el ensayo diagnóstico estándar pero sí lo es la cepa **L2b**?
 
 ![cover](images/JBROWSE_5.jpg)
 
@@ -332,7 +331,7 @@ Observen las distintas líneas de colores que aparecen en algunas lecturas. Esas
 
 ![snips](images/JBROWSE_6.jpg)
 
-Si acerca la visualización de las lecturas apiladas al máximo podrán observar (1) las secuencias individuales de cada lectura y (2) las bases que difieren de la referencia estarán en el color correspondiente.
+Si acercan la visualización de las lecturas apiladas al máximo podrán observar (1) las secuencias individuales de cada lectura y (2) las bases que difieren de la referencia estarán en el color correspondiente.
 
 ![snips](images/JBROWSE_7.jpg)
 
@@ -349,21 +348,19 @@ El formato VCF fue desarrollado para representar datos de variación de 1000 pro
 
 Nosotros vamos a generar el archivo en formato VCF a partir de nuestro archivo ``'NV.bam'`` y visualizarlo en JBrowse2.
 
-Para crear un archivo VCF necesita ir a la terminal y escribir los siguientes comandos:
+Primero, vamos a crear el archivo VCF. Para esto vamos a usar el programa `bcftools pileup` en **Galaxy**. Seleccionen el archivo `.bam` como entrada, en ``Reference genome`` seleccionen el archivo `L2_cat.fasta`, dejen las demás opciones como están y hagan click en **Run**.
 
-```bash
-bcftools mpileup -Ou -f L2_cat.fasta NV.bam | bcftools call -v -c --ploidy 1 -O v > NV.bcf
-bgzip NV.vcf
-tabix NV.vcf.gz
-```
+Luego, busquen el programa `bcftools call` en **Galaxy**. Seleccionen el archivo `.bcf` que se generó en el paso anterior como entrada. En ``Calling method`` (dentro de Consensus/variant calling options) seleccionen ``Consensus caller``, En ``Select predefined ploidy`` (dentro de File format Options) pongan **1** (porque estamos trabajando con una bacteria) y en ``Input/Output options`` marquen la casilla ``Output variant sites only`` de modo que quede seleccionado ``Yes``. Por último, seleccionen ``uncompressed VCF`` como ``output_type``, y hagan click en **Run**.
+
+Una vez que se haya terminado de ejecutar, corran el programa ``VCFsort`` usando como input el archivo ``.vcf``. Luego descarguen el archivo ordenado `.vcf` a su computadora. Renombrenlo como `NV.vcf`.
 
 Visualicen el resultado del *variant calling* usando head:
 
 ```bash
-zcat NV.vcf.gz | head
+zcat NV.vcf | head
 ```
 
-Ahora leeremos en JBrowser2 el archivo VCF que recien crearon. Para esto vayan al ``Track selector``, presionen el símbolo + y carguen el archivo ``"NV.vcf.gz"``. Presionen ``Next`` y verifiquen que en ``Adapter type`` diga **VCF tabix adapter**.
+Ahora leeremos en JBrowser2 el archivo VCF que recien crearon. Para esto vayan al ``Track selector``, presionen el símbolo + y carguen el archivo ``"NV.vcf"``. Presionen ``Next`` y verifiquen que en ``Adapter type`` diga **VCF adapter**.
 
 Para ver una región con algo de variación genética interesante vayan al gen CTL0578. Este gen pertenece al ADN cromosomal, y está en las posiciones 684021 a 685991
 
