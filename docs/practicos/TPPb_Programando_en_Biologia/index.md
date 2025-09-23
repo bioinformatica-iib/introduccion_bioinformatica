@@ -68,7 +68,7 @@ Por suerte nuestra enzima de interés tiene como producto un compuesto fluoresce
 
 ### FilterMax
 
-Una forma de analizar varios compuestos y concentraciones a la vez es usar el equipo **FilterMax F5**, el cual permite hacer mediciones puntuales de absorbancia y fluorescencia (entre otros) en placas de wells de 96, 384 y 1536. Incluso permite hacer mediciones a distintos tiempos (por ejemplo, se le puede programar para hacer mediciones cada ciertos intervalos temporales).
+Una forma de analizar varios compuestos y concentraciones a la vez es usar el equipo **FilterMax F5**. Este equipo permite hacer mediciones puntuales de absorbancia y fluorescencia (entre otros) en placas de wells de 96, 384 y 1536. Incluso permite hacer mediciones a distintos tiempos (por ejemplo, se le puede programar para hacer mediciones cada ciertos intervalos temporales).
 
 En nuestro ejemplo (datos reales, nombres ficticios), vamos a utilizar el **FilterMax F5** para evaluar varias placas de 384 wells y vamos a hacer 4 evaluaciones por placa, una cada 5 minutos. Cada columna de la placa corresponde compuesto distinto (22 compuestos, 1 por columna) y cada fila tiene concentraciones diferentes de cada compuesto (16 concentraciones, diluciones seriadas). Un esquema de este experimento se puede ver en [esta planilla](https://docs.google.com/spreadsheets/d/1vRxMHGdWBAOXpJZ8g4Ox4y4kiCES01sg/edit?usp=sharing&ouid=101472650200585443790&rtpof=true&sd=true).
 
@@ -76,7 +76,7 @@ En nuestro ejemplo (datos reales, nombres ficticios), vamos a utilizar el **Filt
 
 El primer paso cuando uno empieza a trabajar con un archivo nuevo es siempre mirarlo y deducir su formato. Los resultados reales de este experimento pueden verlos en el archivo **00_datos_filtermax.txt** que se encuentra en sus materiales de trabajo.
 
-Abran el archivo **00_datos_filtermax.txt** con Leafpad, vean su estructura y respondan las siguientes preguntas:
+Abran el archivo **00_datos_filtermax.txt** con Editor de Texto, vean su estructura y respondan las siguientes preguntas:
 
 **1)** ¿Se parece un poco a algún **.csv** (columnas separadas por comas) o **.tsv** (columnas separadas por tabs) que hayan visto antes? ¿Que diferencias tiene? Teniendo en cuenta esas diferencias y considerando que vamos a querer leerlo como una tabla en **R** ¿Les parece que hay filas que están de más?
 
@@ -88,7 +88,7 @@ Abran el archivo **00_datos_filtermax.txt** con Leafpad, vean su estructura y re
 
 * ¿Cuántos datos hay para cada dilución del compuesto "Umbrella2"? ¿Por qué?
 
-**3)** Ahora abra el archivo con Gnumeric (Click derecho sobre el archivo :material-arrow-right: Abrir con :material-arrow-right: Oficina :material-arrow-right: Gnumeric). Al final de cada placa hay varias celdas sin datos. ¿Hay algo en la planilla del experimento que explique por qué pasa esto?
+**3)** Ahora abra el archivo en una Hoja de Cálculo (Click derecho sobre el archivo :material-arrow-right: Abrir con). Al final de cada placa hay varias celdas sin datos. ¿Hay algo en la planilla del experimento que explique por qué pasa esto?
 
 ## **Paso 2 - Limpiar y Parsear el Archivo** { markdown data-toc-label='Paso 2 - Limpiar y Parsear' }
 
@@ -113,7 +113,7 @@ Si bien este paso es importante, también es bastante específico a la salida de
 
 Dicho esto, si completan el resto del TP a tiempo y quieren aprender cómo llegar del archivo original a éste archivo pueden hacer el **Ejercicio Adicional 1** abajo de todo.
 
-**1)** Abran el archivo **02_datos_filtermax_parseados.tsv** con Leafpad y vean la columna **signal**. ¿Qué piensan que significan los **NA** en esa columna?
+**1)** Abran el archivo **02_datos_filtermax_parseados.tsv** con el Editor de Texto y vean la columna **signal**. ¿Qué piensan que significan los **NA** en esa columna?
 
 ## **Paso 3 - Agregar la información que necesito** { markdown data-toc-label='Paso 3 - Agregar Información' }
 
@@ -297,7 +297,7 @@ print(frase_spliteada)
 ```
 Como ven la función `strsplit` toma un *string* y lo divide en diferentes fragmentos según el parámetro `split`.
 
-No se si lo recuerdan, pero en el TP anterior hablamos de las variables llamadas listas, que se pueden pensar como vectores que pueden contener variables de distinto tipo dentro de ellas (mientras que todos los elementos de un vector son de un mismo tipo).
+No sé si lo recuerdan, pero en el TP anterior hablamos de las variables llamadas listas, que se pueden pensar como vectores que pueden contener variables de distinto tipo dentro de ellas (mientras que todos los elementos de un vector son de un mismo tipo).
 
 Ese `[[1]]` en el output anterior nos está indicando que `strsplit` nos está devolviendo una variable de tipo `list` donde el primer elemento es el vector con la frase *spliteada*.
 
@@ -305,7 +305,13 @@ Ese `[[1]]` en el output anterior nos está indicando que `strsplit` nos está d
 
 **7)** Vean que pasa cuando usan `split = ""`.
 
-**8)** Pásenle ahora a `strsplit` el siguiente vector de strings: `frases <- c("Aquí me pongo a cantar", "al compás de la vigüela")`. Sabiendo que queremos *splitear* las diferentes palabras, ¿cuál sería el valor de `split` en este caso? ¿Cuántos elementos tiene la lista que devuelve `strsplit`? ¿Por qué? ¿Cuál es la tercera palabra de la segunda frase? (imprímanla por pantalla usando `print`)
+**8)** Pásenle ahora a `strsplit` el siguiente vector de strings: `frases <- c("Aquí me pongo a cantar", "al compás de la vigüela")`.
+
+Sabiendo que queremos *splitear* las diferentes palabras,
+
+* ¿cuál sería el valor de `split` en este caso?
+* ¿Cuántos elementos tiene la lista que devuelve `strsplit`? ¿Por qué?
+* ¿Cuál es la tercera palabra de la segunda frase? (imprímanla por pantalla usando `print`)
 
 #### Eliminar elementos repetidos en vectores { markdown data-toc-label='Elementos repetidos' }
 
@@ -372,7 +378,7 @@ dt <- fread("ARCHIVO_DT", header = T, sep = "\t", dec = ",")
 
 ```R
 #Aca hay que poner el Path Absoluto que apunta a su carpeta de trabajo
-#Por ej: "/home/ibioinfo/Documentos/data_TP8b"
+#Por ej: "/home/ibioinfo/Documentos/data_TPPb"
 setwd(@@EDITAR@@)
 
 library(data.table)
@@ -380,7 +386,7 @@ library(data.table)
 #Uso fread para cargar los datos parseados teniendo en cuenta que tienen NAs
 dt_parsed_data <- fread(@@EDITAR@@)
 
-#Primero que nada se que las columnas de los wells 23 y 24 estan vacias, asi que saco las filas
+#Primero que nada se que las columnas de los wells 23 y 24 estan vacías, asi que saco las filas
 #donde *columna* sea 23 o 24 (o sea, me quedo con las filas donde *columna* es 1 a 22)
 dt_parsed_data <- dt_parsed_data[@@EDITAR@@]
 
@@ -397,8 +403,8 @@ dt_parsed_data <- merge(dt_parsed_data,
 dt_datos_concentraciones <- fread(@@EDITAR@@)
 dt_parsed_data <- merge(@@EDITAR@@)
 
-#Para cada combinacion de compuesto y concentracion quiero saber la velocidad de la reaccion, es decir, 
-#la pendiente de la recta que sale de hacer una regresion lineal por los 4 tiempos ensayados
+#Para cada combinación de compuesto y concentración quiero saber la velocidad de la reacción, es decir, 
+#la pendiente de la recta que sale de hacer una regresión lineal por los 4 tiempos ensayados
 
 #El primer problema que tengo es que la variable time es un *string*, por lo que no puedo usarla 
 #como X en una ecuacion. Por esta razon vamos a convertir a time en cantidad de segundos
@@ -411,7 +417,7 @@ dt_parsed_data <- merge(@@EDITAR@@)
 #Esta tabla va a tener dos columnas, la columna *time* indicando el tiempo en string que estamos analizando
 #y la columna *segundos_totales* que contiene ese tiempo transformado en numero y en segundos
 
-#Extraigo entonces los diferentes tiempos y creo una tabla vacia donde voy a guardar la cantidad de segundos 
+#Extraigo entonces los diferentes tiempos y creo una tabla vacía donde voy a guardar la cantidad de segundos 
 #para cada *time*
 unique_times <- unique(dt_parsed_data$time)
 dt_times_in_seconds <- data.table(time = character(),
@@ -472,9 +478,9 @@ Si todo salió bien, el archivo **03_datos_filtermax_parseados_y_formateados.tsv
 | ... | ... | ... | ... |
 </figure>
 
-!!! warning "Warning - Gnumeric transforma visualmente los separadores decimales"
+!!! warning "Warning - los programas que abren hojas de cálculo pueden transformar visualmente los separadores decimales"
 
-	Si abren el archivo **03_datos_filtermax_parseados_y_formateados.tsv** con Gnumeric van a ver que parece que el separador decimal de los números sigue siendo la coma. Sin embargo, si abren el archivo usando Leafpad van a ver que en realidad el separador decimal es ahora el punto, por lo que para los próximos ejercicios podemos usar `fread` sin poner el parámetró `dec`. Gnumeric cambia los puntos visualmente a comas por estar en español.
+	Si abren el archivo **03_datos_filtermax_parseados_y_formateados.tsv** en una hoja de cálculo podría ocurrir que el separador decimal de los números siga siendo la coma. Sin embargo, si abren el archivo usando el Editor de Texto van a ver que en realidad el separador decimal es ahora el punto, por lo que para los próximos ejercicios podemos usar `fread` sin poner el parámetro `dec`. **El cambio de los puntos a comas depende de la configuración que tenga la hoja de cálculo y esto pasa mucho con Google Sheets**.
 
 ## **Paso 4 - Calcular velocidades de reacción** { markdown data-toc-label='Paso 4 - Calcular velocidad' }
 
@@ -589,7 +595,7 @@ pendiente <- regresion_lineal$coefficients[2]
 
 ```R
 #Aca hay que poner el Path Absoluto que apunta a su carpeta de trabajo
-#Por ej: "/home/ibioinfo/Documentos/data_TP8b"
+#Por ej: "/home/ibioinfo/Documentos/data_TPPb"
 setwd(@@EDITAR@@)
 
 library(data.table)
@@ -597,16 +603,16 @@ library(data.table)
 #Leo los datos ya parseados y formateados
 dt_parsed_formatted_data <- fread(@@EDITAR@@)
 
-#Para cada combinacion de compuesto y concentracion quiero saber la velocidad de la reaccion, es decir, 
-#la pendiente de la recta que sale de hacer una regresion lineal por los 4 tiempos ensayados
+#Para cada combinación de compuesto y concentración quiero saber la velocidad de la reacción, es decir, 
+#la pendiente de la recta que sale de hacer una regresión lineal por los 4 tiempos ensayados
 
-#Creo la tabla vacia donde voy a guardar estos datos
+#Creo la tabla vacía donde voy a guardar estos datos
 dt_velocidades_de_reaccion <- data.table(compuesto = character(),
                                          concentracion = numeric(),
                                          velocidad = numeric())
 
 #Voy a tener que recorrer todas las combinaciones de compuestos y concentraciones
-#Consigo vectores con cada compuesto diferente y con cada concentracion diferente
+#Consigo vectores con cada compuesto diferente y con cada concentración diferente
 unique_compuestos <- unique(dt_parsed_formatted_data$compuesto)
 unique_concentraciones <- @@EDITAR@@
 
@@ -616,20 +622,20 @@ for (compuesto_for in unique_compuestos) {
     for (concentracion_for in unique_concentraciones) {
         # concentracion_for <- unique_concentraciones[1]
 
-        #Por cada combinacion de compuesto + concentracion quiero calcular la velocidad de reaccion
+        #Por cada combinacion de compuesto + concentración quiero calcular la velocidad de reacción
         #Para eso lo primero que necesito hacer es filtrar los datos de *dt_parsed_formatted_data*, para quedarme solo
-        #con aquellas signals que correspondan al compuesto y concentracion de la iteracion actual del *for*
+        #con aquellas signals que correspondan al compuesto y concentración de la iteración actual del *for*
         sub_dt_parsed_formatted_data <- dt_parsed_formatted_data[(compuesto == @@EDITAR@@) & (@@EDITAR@@)]
         
-        #Calculo la regresion lineal usando los datos de *sub_dt_parsed_formatted_data* y considerando a
+        #Calculo la regresión lineal usando los datos de *sub_dt_parsed_formatted_data* y considerando a
         #*segundos_totales* como el X y a *signal* como el Y
         regresion_lineal <- lm(data = sub_dt_parsed_formatted_data, formula = signal ~ segundos_totales)        
 
         #Extraigo la pendiente, que es el segundo elemento del elemento *coefficients*
         velocidad_de_reaccion <- regresion_lineal$coefficients[2]
         
-        #Creo una nueva fila para agregar a mi tabla de velocidades de reaccion
-        #Esta fila corresponde al compuesto y a la concentracion de esta iteracion de los *fors*, asi como
+        #Creo una nueva fila para agregar a mi tabla de velocidades de reacción
+        #Esta fila corresponde al compuesto y a la concentración de esta iteración de los *fors*, asi como
         #la velocidad que acabo de calcular
         new_row_dt_velocidades_de_reaccion <- data.table(compuesto = @@EDITAR@@,
                                                          concentracion = @@EDITAR@@,
@@ -721,7 +727,7 @@ dt_iris <- as.data.table(iris)
 dt_iris$nueva_columna <- 1
 
 #De otra forma tengo que pasarle un vector con longitud igual al numero de filas
-#Este vector puede ser combinacion de otras de las columnas de la tabla
+#Este vector puede ser combinación de otras de las columnas de la tabla
 dt_iris$otra_nueva_columna <- dt_iris$Sepal.Length + dt_iris$Petal.Length - 1
 
 #Me arrepenti del valor que cree en la columna al principio
@@ -763,7 +769,7 @@ Nosotros acabamos de ver unos plots hechos con la función `plot()`, que es la f
 
 El paquete `nplr` trae sus propios plots que se van a hacer mediante `plot(regresion_logistica)`. Esto no es único de este paquete y existen otras librerías, por ejemplo de filogenia, que tienen este mismo funcionamiento, donde `plot` hace árboles filogenéticos.
 
-#### Google
+#### Google o ChatGPT u otra IA (UNICO CASO EN EL QUE ESTÁ PERMITIDO)
 
 Es muy importante al momento de programar saber buscar funcionalidades que uno quiere usar en sus programas.
 
@@ -809,28 +815,28 @@ print(numero_redondeado)
 
 ```R
 #Aca hay que poner el Path Absoluto que apunta a su carpeta de trabajo
-#Por ej: "/home/ibioinfo/Documentos/data_TP8b"
+#Por ej: "/home/ibioinfo/Documentos/data_TPPb"
 setwd(@@EDITAR@@)
 
 library(data.table)
 library(nplr)
 
-#Leo los datos de las velocidades de reaccion
+#Leo los datos de las velocidades de reacción
 dt_velocidades_de_reaccion <- @@EDITAR@@
 
-#Quiero calcular la velocidad de reaccion base, es decir, la velocidad de reaccion sin compuestos
-#Esto es cuando la concentracion del compuesto es 0
+#Quiero calcular la velocidad de reacción base, es decir, la velocidad de reacción sin compuestos
+#Esto es cuando la concentración del compuesto es 0
 #Nosotros tenemos uno de esos casos para cada compuesto, o sea, tenemos 22 versiones del experimento sin compuesto
-#Vamos a calcular la velocidad de reaccion base como el promedio de esas 22 velocidades
+#Vamos a calcular la velocidad de reacción base como el promedio de esas 22 velocidades
 velocidades_reaccion_sin_compuesto <- dt_velocidades_de_reaccion[@@EDITAR@@]$velocidad
 velocidad_reaccion_base <- mean(velocidades_reaccion_sin_compuesto)
 
-#Ahora que ya las use, voy a sacar las filas que no tengan concentracion de compuesto 
+#Ahora que ya las use, voy a sacar las filas que no tengan concentración de compuesto 
 #ya que no tiene sentido analizarlas para el IC 50
 dt_velocidades_de_reaccion <- dt_velocidades_de_reaccion[concentracion > 0]
 
-#Quiero calcular la actividad para cada combinacion de compuesto y concentracion
-#La actividad es la relacion entre la velocidad de reaccion y la velocidad de reaccion base (es decir, la division)
+#Quiero calcular la actividad para cada combinación de compuesto y concentración
+#La actividad es la relacion entre la velocidad de reacción y la velocidad de reacción base (es decir, la division)
 dt_velocidades_de_reaccion$actividad <- @@EDITAR@@
 
 #El *for* de mas adelante va a tener 2 salidas, un pdf con los plots y un tsv con los datos
@@ -839,7 +845,7 @@ dt_velocidades_de_reaccion$actividad <- @@EDITAR@@
 #Abro el pdf (toda imagen que se plotee hasta que se cierre el pdf va a ir a el)
 pdf("05_IC50_plots.pdf", width = 7, height = 7)
 
-#Creo la tabla vacia
+#Creo la tabla vacía
 dt_IC50 <- data.table(compuesto = character(),
                       actividad_minima = numeric(),
                       actividad_maxima = numeric(),
@@ -853,11 +859,11 @@ for (compuesto_for in unique_compuestos) {
     
     #Por cada compuesto quiero calcular el IC 50 y plotearlo
     #Para eso lo primero que necesito hacer es filtrar los datos de *dt_velocidades_de_reaccion*, para quedarme solo
-    #con aquellas concentraciones y actividades que correspondan al compuesto de la iteracion actual del *for*
+    #con aquellas concentraciones y actividades que correspondan al compuesto de la iteración actual del *for*
     sub_dt_velocidades_de_reaccion <- @@EDITAR@@
     
-    #Calculo la regresion sigmoidea usando los datos de *sub_dt_parsed_formatted_data* y considerando a
-    #*concentracion* como el X y a *actividad* como el Y
+    #Calculo la regresión sigmoidea usando los datos de *sub_dt_parsed_formatted_data* y considerando a
+    #*concentración* como el X y a *actividad* como el Y
     regresion_sigmoidea <- nplr(x = sub_dt_velocidades_de_reaccion$concentracion, 
                                 y = sub_dt_velocidades_de_reaccion$actividad)
     
@@ -878,14 +884,14 @@ for (compuesto_for in unique_compuestos) {
     actividad_maxima <- @@EDITAR@@
     
     #Creo una nueva fila para agregar a mi tabla de IC 50
-    #Esta fila corresponde al compuesto de esta iteracion de los *fors*, asi como
+    #Esta fila corresponde al compuesto de esta iteración de los *fors*, asi como
     #el IC 50 que acabo de calcular
     new_row_dt_IC50 <- data.table(@@EDITAR@@)
     
     #Agrego la nueva fila recien creada a mi tabla en donde guardo todas las velocidades
     dt_IC50 <- @@EDITAR@@
 
-    #Ploteo la regresion (les recomiendo poner el numero de compuesto y el IC 50 en el titulo)
+    #Ploteo la regresión (les recomiendo poner el numero de compuesto y el IC 50 en el titulo)
     #Este grafico tambien tiene informacion de GOF (goodness of fit), que en este caso es el R2, y nos sirve para conocer que tan bien se ajusta el modelo a nuestros datos
     titulo_plot <- @@EDITAR@@
     plot(regresion_sigmoidea,
@@ -951,17 +957,25 @@ Ahora que tenemos todos los datos que necesitamos es momento de analizarlos. Vie
 
 **1)** ¿Por qué hay casos donde el **IC 50** dió **NA**?
 
-**2)** En base a los plots obtenidos, ¿Les parecen suficientes nuestros datos para estar seguros de los **IC 50** calculados? ¿Cuál es un compuesto donde están bastantes seguros de su **IC 50**? ¿Cuál es un compuesto donde desconfían del **IC 50** calculado?
+**2)** En base a los plots obtenidos,
+
+* ¿Les parecen suficientes nuestros datos para estar seguros de los **IC 50** calculados?
+* ¿Cuál es un compuesto donde están bastantes seguros de su **IC 50**?
+* ¿Cuál es un compuesto donde desconfían del **IC 50** calculado?
 
 **3)** ¿Qué experimentos harían para tener la curva completa en "Umbrella1"? ¿Y en "Umbrella8"?
 
 **4)** En base a lo observado, nombren dos o tres compuestos que recomendarían para inhibir a la **enzima Z**. ¿Por qué los eligieron?
 
+<div style="border-bottom: 3px solid black;">
+
+</div>
+
 ## **Ejercicio Adicional 1 - Paso 2 - Limpiar y Parsear el Archivo** { markdown data-toc-label='Ejercicio Adicional 1 - Paso 2' }
 
 Leer el **Paso 2** para entender el objetivo de este ejercicio.
 
-### Herramientas
+### Introducción y Herramientas
 
 #### Leer y escribir texto plano
 
@@ -1060,7 +1074,7 @@ vector_nombres <- c("José", "Laura", "Pedro", "María", "Esteban", "Ricardo", "
 ```
 -->
 
-### Ejercicio
+### Ahora sí: Ejercicio. Completar el script!
 
 ```R
 library(@@EDITAR@@)
@@ -1090,7 +1104,7 @@ clean_data <- clean_data[, @@EDITAR@@]
 #Los numeros (columnas de la placa well) son los compuestos
 #Las letras (filas de la placa well) son las diferentes concentraciones
 #Queremos poner los mismos datos en una tabla donde nos sea mas facil filtrar un dato específico
-#Creo la tabla vacia donde voy a guardar estos datos
+#Creo la tabla vacía donde voy a guardar estos datos
 dt_parsed_data <- data.table(time = @@EDITAR@@,
                              temperature = numeric()
                              fila = @@EDITAR@@,

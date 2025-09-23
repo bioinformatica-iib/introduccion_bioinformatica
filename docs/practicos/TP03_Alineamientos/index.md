@@ -456,6 +456,9 @@ Pueden ver la disposición de las distintas regiones de la gp120 en el siguiente
 
       Notá que las posiciones en el alineamiento cuentan gaps por lo que no se corresponden exactamente con el esquema. Utilizá las posiciones de las cisteínas conservadas para identificar diferentes regiones.
 
+<div style="border-bottom: 3px solid black;">
+
+</div>
 
 ## Ejercicio a informar
 
