@@ -12,7 +12,7 @@ tags:
 <br>
 <br>
 
-[:fontawesome-solid-download: Materiales](https://drive.google.com/drive/folders/1rHIb8dwkg5cDMfkGBVa7CqBde1MlfK5V?usp=sharing){ .md-button .md-button--primary } [:fontawesome-solid-file-powerpoint: Slides](https://docs.google.com/presentation/d/1gNyQKZi-3TxX2Olvc9TqVgw7I1XaQFs9YBryIevEXSc/edit?usp=sharing){ .md-button .md-button--primary } 
+[:fontawesome-solid-download: Materiales](https://drive.google.com/drive/folders/1rHIb8dwkg5cDMfkGBVa7CqBde1MlfK5V?usp=sharing){ .md-button .md-button--primary } [:fontawesome-solid-file-powerpoint: Slides](https://docs.google.com/presentation/d/1YCPBpHr6XpacCGO2Ko3MoDxhwCaXGAgXUVZMPXoWd2g/edit?usp=sharing){ .md-button .md-button--primary } 
 
 ## Objetivos
 
