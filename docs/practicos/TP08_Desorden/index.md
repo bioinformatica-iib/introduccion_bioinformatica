@@ -6,7 +6,7 @@ tags:
 ---
 ![Image](img/featured.png){ width="250", align="left" }
 
-# **TP 10**. Predicción de Desorden { markdown data-toc-label = 'TP 7' }
+# **TP 08**. Predicción de Desorden { markdown data-toc-label = 'TP 7' }
 
 <br>
 <br>

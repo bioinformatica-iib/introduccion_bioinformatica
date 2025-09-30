@@ -29,8 +29,8 @@ tags:
 | Jue, 18 Sep  | 9 hs |	:material-google-classroom: Presencial | [P6. Quimioinformática](../practicos/TP06_Quimioinformatica/index.md) | :fontawesome-solid-hammer: Práctica |	M. Didier Garnham |
 | Mar, 23 Sep  | 9 hs |	:material-google-classroom: Presencial | [T7. Secuenciación y ensamblado de genomas](../teoricas/7-Teorica-Siete/index.md) | :fontawesome-solid-brain: Teórica |	F. Agüero |
 | Jue, 25 Sep  | 9 hs |	:material-google-classroom: Presencial | [P7. Mapeo de secuencias](../practicos/TP07_Short-Read-Mapping/index.md) | :fontawesome-solid-hammer: Práctica |	G. Romer |
-| Mar, 30 Sep  | 9 hs |	:material-google-classroom: Presencial | T8. Bioinformática Estructural: Desorden | :fontawesome-solid-brain: Teórica |	L. Chemes |
-| Jue, 2 Oct     | 9 hs |	:material-google-classroom: Presencial | P8. Predicción de Desorden | :fontawesome-solid-hammer: Práctica |	J. Glavina |
+| Mar, 30 Sep  | 9 hs |	:material-google-classroom: Presencial | [T8. Bioinformática Estructural: Desorden](../teoricas/8-Teorica-Ocho/index.md) | :fontawesome-solid-brain: Teórica |	L. Chemes |
+| Jue, 2 Oct   | 9 hs |	:material-google-classroom: Presencial | [P8. Predicción de Desorden](../practicos/TP08_Desorden/index.md) | :fontawesome-solid-hammer: Práctica |	J. Glavina |
 | Mar, 7 Oct     | 9 hs |	:material-google-classroom: Presencial | T9. ANN | :fontawesome-solid-brain: Teórica |	L. Chemes |
 | Jue, 9 Oct     | 9 hs |	:material-google-classroom: Presencial | P9. Perfiles de secuencia y PSI-BLAST | :fontawesome-solid-hammer: Práctica |	H. García |
 | Mar, 14 Oct     | 9 hs |	:material-google-classroom: Presencial | T10. Bioinformática Estructural: Motivos lineales | :fontawesome-solid-brain: Teórica |	L. Chemes |
