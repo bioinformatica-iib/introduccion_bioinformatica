@@ -559,7 +559,7 @@ promedio_silhouette_kmeans_k3 <- summary(silhouette_kmeans_k3)[[1]][["Mean"]]
 **11.1)** Supongamos ahora que estamos en un escenario real, por lo que no tenemos información de a que especie corresponde cada punto. Evalúen objetivamente cual es el mejor clustering de los realizados
 
 
-##Ejercicios adicionales
+## Ejercicios adicionales
 
 !!! Info "Sobre los ejercicios adicionales"
 

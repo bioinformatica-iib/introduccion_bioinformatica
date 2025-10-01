@@ -1,27 +1,22 @@
 ---
-title: Practico Diez
+title: Practico Ocho
 icon: fontawesome/solid/hammer
 tags: 
   - practicos
 ---
 ![Image](img/featured.png){ width="250", align="left" }
 
-# **TP 08**. Predicción de Desorden { markdown data-toc-label = 'TP 7' }
+# **TP 08**. Predicción de Desorden { markdown data-toc-label = 'TP 8' }
 
 <br>
 <br>
 <br>
 
-### Slides mostrados en la clase
-
-* :fontawesome-regular-file-pdf: [Slides](https://drive.google.com/file/d/1L2LbUjMPgr5c7-hwO52QJPJ-dGeyQQZg/view?usp=sharing)
-
-<!--
 !!! abstract "Atención: Este TP tiene informe."
--->
+!!! abstract "Atención: Este TP tiene parcialito."
 
 [:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1wh5zn1GZ4s_Rp8V5lekZZbIKzM7BOKc8/view?usp=sharing){ .md-button .md-button--primary }
-
+[:fontawesome-solid-file-powerpoint: Slides](https://drive.google.com/file/d/1L2LbUjMPgr5c7-hwO52QJPJ-dGeyQQZg/view?usp=sharing){ .md-button .md-button--primary } 
 
 ## **PARTE I: Predicción de Desorden**
 
@@ -87,8 +82,6 @@ Selecciona la proteína que se llama: [Cellular tumor antigen p53 (TP53) Homo sa
 
 ### **Ejercicio 2.** Predicción de desorden a partir de la secuencia { markdown data-toc-label='Ejercicio 2' }
 
-Ingresa en la web de **IUPred2A** [https://iupred2a.elte.hu](https://iupred2a.elte.hu) e ingresa la proteína p53 (puede ingresarse la secuencia de aminoácidos, el **Uniprot ID** - P53_HUMAN o el **accession number** - P04637). 
-
 !!! info "Score IUPred"
 
       El algoritmo IUPred brinda una puntuación. En general se considera que un residuo es:
@@ -98,21 +91,36 @@ Ingresa en la web de **IUPred2A** [https://iupred2a.elte.hu](https://iupred2a.el
 
       **Nota:** Esta es una convención. El umbral lo puede decir el usuario a su propia conveniencia.
 
-**2.1.** Anota las posiciones iniciales y finales de las regiones predichas como desordenadas.
 
-   * ¿Se correlacionan las regiones predichas como ordenadas o desordenadas con las diferencias observadas en el ejercicio anterior?
+Es posible utilizar la web de **IUPred2A** [https://iupred2a.elte.hu](https://iupred2a.elte.hu) para realizar la predicción sobre una proteína. 
 
-**2.2.** Imaginemos que queremos correr la predicción de desorden para cientos de proteínas, o que queremos contar el porcentaje de aminoácidos que se encuentran en regiones desordenadas:
+!!! info "IUPred Web"
+
+      La web de IUPred2A permite predecir desorden en proteínas a partir de su secuencia. Además, permite predecir regiones que pueden participar en interacciones proteína-proteína (ANCHOR2).
+
+      Permite predecir desorden en regiones largas (*long*) o cortas (*short*).
+
+      En este práctico utilizaremos la opción *long*.
+
+      La web también permite ingresar un Uniprot ID o un Accession Number para obtener la secuencia automáticamente.
+
+      Si queremos utilizar la web, una vez realizada la predicción se pueden descargar los valores de IUPred y ANCHOR2 en formato texto para luego analizarlos utilizando el botón **Download results**.
+
+      Más información sobre el uso de IUPred2A puede encontrarse en [https://iupred2a.elte.hu/help_new](https://iupred2a.elte.hu/help_new)
+
+
+**2.1** Imaginemos que queremos correr la predicción de desorden para cientos de proteínas, o que queremos contar el porcentaje de aminoácidos que se encuentran en regiones desordenadas:
 
    * ¿Le parece que el visualizador online sería una herramienta útil para hacerlo?
    
 ¡Claro que no! Por suerte, el algoritmo IUPred puede también correrse de manera local y además es rápido. Para hacer esto, primero descarguen IUPred desde [este link](https://drive.google.com/file/d/1Razt-LkN98GjMTeoNYkP0QPHmZDC86tp/view?usp=sharing). 
 
 
-Abre una terminal, descomprime el archivo ``iupred2a.tar.gz`` y ve al directorio dónde está IUPred
+**2.2** Abre una terminal, descomprime el archivo ``iupred2a.tar.gz`` y ve al directorio dónde está IUPred
 
 ```bash
-cd ~/Tools/IUPred/
+# DIRECTORIO es el directorio donde está descomprimido IUPred.
+cd ~/DIRECTORIO/IUPred/
 
 # Primero corremos IUPred sin ninguna opción para ver cómo es su uso:
 ./iupred2a.py
@@ -173,7 +181,7 @@ Asegurate que los datos se cargaron correctamente, esperamos una tabla con 4 col
 
 ¿Se te ocurre cómo hacerlo?
 
-Primero crearemos una columna en el data.table:
+Primero crearemos una columna vacía en el data.table:
 
 ``` R
 umbral <- 0.5
@@ -488,32 +496,32 @@ Observando detenidamente, responda:
 * Discuta qué ventajas considera que tiene trabajar con un alineamiento propio respecto de trabajar con el alineamiento de ProViz.
 
 
-<!--
+<div style="border-bottom: 3px solid black;">
+</div>
+
 ## Ejercicio a informar
 
 !!! info ""
 
-      **Fecha límite de entrega:** Viernes, 07 de Octubre 2022, 23:59hs.
-
+      **Fecha límite de entrega:** Viernes, 10 de Octubre 2025, 23:59hs.
 
 
 ### Enunciado
-El aislamiento que le proporcionaron está avanzando rápidamente en latinoamérica!.
-Dada la importancia de la proteína N de la nucleocápside en la replicación viral, su jefe considera que es un blanco posible de drogas.
-La proteína N forma la nucleocápside viral de SARS-CoV2 y empaqueta el genoma viral de ARN formando una
-ribonucleocápside. La estructura de la proteína es altamente desordenada y posee dos dominios globulares
-pequeños en el N-terminal (Dominio N) y C terminal (Dominio C). 
+Las ciclinas son proteínas que regulan el ciclo celular uniéndose y activando a las quinasas dependientes de ciclinas (CDKs). Las ciclinas se dividen en varios tipos, entre ellos las ciclinas A, B, D y E. Cada tipo de ciclina tiene un papel específico en la regulación del ciclo celular. Por ejemplo, las ciclinas D y E están involucradas en la transición de la fase G1 a la fase S del ciclo celular, mientras que las ciclinas A y B son cruciales para la progresión a través de las fases S y M, respectivamente. Dada la relevancia de las ciclinas en la regulación del ciclo celular, su disfunción puede contribuir al desarrollo de diversas enfermedades, incluyendo el cáncer. Por lo tanto, las ciclinas son un objetivo importante en la investigación biomédica y el desarrollo de terapias contra el cáncer.
+La ciclina CCND1 (P24385, ciclina D1) Es un regulador clave del ciclo celular en la transición de la fase G1 a la fase S. La ciclina D1 se une a las quinasas dependientes de ciclinas CDK4 y CDK6, formando complejos activos que fosforilan la proteína del retinoblastoma (Rb). Esta fosforilación inactiva a Rb, liberando factores de transcripción E2F que son esenciales para la progresión del ciclo celular y la entrada en la fase S, donde ocurre la replicación del ADN. La ciclina CCND2 (P30279, ciclina D2) y la ciclina CCND3 (P30281, ciclina D3) tienen funciones similares a las de la ciclina D1, pero se expresan en diferentes tipos de tejidos y en distintas etapas del desarrollo.
 
-1. Usando IUPred, identifique las regiones desordenadas y globulares. ¿Puede identificar fácilmente los dominios globulares con el umbral de 0.5? ¿y con el umbral de 0.4? Justifique los resultados en base al funcionamiento del algoritmo.
+La regulación precisa de estas ciclinas es crucial para el control adecuado del ciclo celular y la prevención de la proliferación celular descontrolada, que puede llevar al desarrollo de cáncer.
 
-2. Si desearía cristalizar el dominio N ¿Qué regiones no incluiría?
+En su laboratorio están interesados en estudiar la estructura y función de la ciclina D1. Para ello, han decidido analizar la secuencia de la ciclina D1 utilizando herramientas bioinformáticas para predecir regiones desordenadas y ordenadas en la proteína.
 
-3. Analice la proporción de residuos predichos como ordenados y como desordenados utilizando cada uno de los umbrales. ¿Se correlaciona esto con lo estudiado en la literatura?
+1. Usando IUPred, identifique las regiones desordenadas y globulares en las ciclinas.
+2. Busque información sobre la composición de dominios de las ciclinas. Cree un alineamiento múltiple de secuencia (MSA) de las tres ciclinas y compare las regiones identificadas.
+3. Busque las ciclinas en DisProt, ¿existen datos experimentales de desorden para estas proteínas? ¿Coinciden con las predicciones?
+4. Compare los datos obtenidos de IUPred, DisProt y del alineamiento para las tres ciclinas. En base a lo que observa, que conclusiones puede sacar sobre las regiones desordenadas y ordenadas en las ciclinas. Justifique.
 
-**Extra! (y por ende opcional)**
-1. Como se vió en la clase teórica, IUPred puede correrse utilizando como argumento `short` o `long`. Realice el gráfico del perfil de IUPred nuevamente utilizando `short`. ¿Qué diferencias observa en los gráficos usando Iupred `short` o `long`? En base a sus conocimientos de IUPred, explique **brevemente** y de manera **abarcativa** las diferencias observadas.
--->
 
+<div style="border-bottom: 3px solid black;">
+</div>
 
 ## Ejercicios Adicionales de Desorden
 <!--
@@ -593,9 +601,12 @@ Muchas proteínas desordenadas ejercen su función uniéndose a una proteína gl
 Existen muchísimos métodos para predecir regiones desordenadas. Puedes probar los siguientes métodos en casa y ver las diferencias:
 
 * PONDR: [http://www.pondr.com](http://www.pondr.com)
+
+<!-->
 * PredictProtein: [https://predictprotein.org/](https://predictprotein.org/)
 
     IDPs se predicen por Meta-Disorder a partir de una combinación de NORSnet, DISOPRED2, PROFbval y Ucon.
+-->
 
 * Globplot2 [http://globplot.embl.de/](http://globplot.embl.de/)
 * DISOPRED3 [http://bioinf.cs.ucl.ac.uk/psipred/](http://bioinf.cs.ucl.ac.uk/psipred/)
