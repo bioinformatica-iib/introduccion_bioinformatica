@@ -1,5 +1,5 @@
 ---
-title: Practico Cinco
+title: Practico Nueve
 icon: fontawesome/solid/hammer
 tags: 
   - practicos
@@ -7,7 +7,7 @@ tags:
 
 ![Image](img/banner.jpg){ width="250", align="left" }
 
-# **TP 5**. Perfiles de secuencias y PSI-BLAST { markdown data-toc-label = 'TP 5' }
+# **TP 9**. Perfiles de secuencias y PSI-BLAST { markdown data-toc-label = 'TP 9' }
 
 <br>
 <br>
@@ -15,7 +15,7 @@ tags:
 <br>
 <br>
 
-[:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1yfCSpn7mLNCOrmQSzKKEd9eY0LsCVoB2/view?usp=sharing){ .md-button .md-button--primary }
+[:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1yfCSpn7mLNCOrmQSzKKEd9eY0LsCVoB2/view?usp=sharing){ .md-button .md-button--primary } [:fontawesome-solid-download: Slides](https://drive.google.com/open?id=1LrvZKKcxcOMjc-gu-mi5s2lBPqL2vkvK&usp=sharing){ .md-button .md-button--primary }
 
 <!--
 ### Videos de la clase grabada
@@ -28,7 +28,7 @@ tags:
 
 !!! abstract "Atención: Este TP tiene informe."
 
-## **Construcción de Logos y Matrices peso-específicas**
+## PARTE I - **Construcción de Logos y Matrices peso-específicas**
 
 ### Objetivos
 
@@ -51,7 +51,10 @@ La unión de péptidos a MHC es el paso más selectivo en el camino de procesami
 
 El motivo de unión de los MHC de la vía de clase I es, en la mayoría de los casos, de 9 aminoácidos de longitud. Estos están caracterizados por una marcada preferencia por ciertos aminoácidos en determinadas posiciones del motivo. Estas posiciones son llamadas "anclas" o, en inglés, ***anchor positions***. Para una gran cantidad de complejos de MHC de clase I estas anclas se encuentran en las posiciones P2 y P9. Sin embargo, este no es siempre el caso.
 
-Existe una gran cantidad de datos que describen las diferentes especificidades de las moléculas de MHC. Una base de datos muy conocida que almacena esta información es [SYFPEITHI](http://www.syfpeithi.de/). En ella se puede encontrar informacion de ligandos y motivos de MHC.  
+Existe una gran cantidad de datos que describen las diferentes especificidades de las moléculas de MHC.
+
+
+Una base de datos muy conocida que almacena esta información es [SYFPEITHI](http://www.syfpeithi.de/). En ella se puede encontrar informacion de ligandos y motivos de MHC. **Actualmente (2 de Octubre de 2025) SYFPEITHI se encuentra en mantenimiento, por lo que puede no estar disponible.**
 
 Con este tipo de información es posible desarrollar un modelo de predicción de unión de péptidos a MHC y usarlo para descubrir nuevos epítopes con los cuales diseñar vacunas. Esto puede ser aplicado a nivel de proteomas enteros para ahorrar tanto tiempo como recursos.  
 
@@ -62,6 +65,8 @@ A continuación vamos a:
  3. Aplicar el modelo para seleccionar péptidos con potencial inmunogénico de proteínas de SARS-CoV-2.  
 
 ### Identificación de motivos de unión a MHC
+
+## **Ejercicio 1. Uso de SYFPEITHI** (Realizar si y sólo si la base de datos está disponible).
 
 Diríjanse a la página web de [SYFPEITHI](http://www.syfpeithi.de/). Allí, una vez que hagan *click* en el logo, pueden buscar motivos con el botón **Find your motif, Ligand or Epitope**.
 
@@ -86,9 +91,9 @@ En el resultado de la búsqueda podemos ver las posiciones *anchor* principales 
 
 ### Logos de secuencias
 
-Los logos son una herramienta muy útil para visualizar motivos de unión. En un logo de secuencia se grafica en el eje y el **contenido de información** de cada posición del motivo, generalmente expresado en *bits*. A su vez, la frecuencia con la que aparece una letra (nucleótido u amininoácido) en una dada posición se grafica con un tamaño proporcional a dicha magnitud.
+Los logos son una herramienta muy útil para visualizar motivos de unión. En un logo de secuencia se grafica en el *eje y* el **contenido de información** de cada posición del motivo, generalmente expresado en *bits*. A su vez, la frecuencia con la que aparece una letra (nucleótido u amininoácido) en una dada posición se grafica con un tamaño proporcional a dicha magnitud.
 
-Un servidor que nos permite generar facilmente logos de secuencia es [Seq2Logo](https://services.healthtech.dtu.dk/service.php?Seq2Logo-2.0). Este método nos da la opción de ingresar un alineamiento múltiple (MSA), una lista de péptidos o una matriz peso-específica con la cual realizar el gráfico. 
+Un servidor que nos permite generar fácilmente logos de secuencia es [Seq2Logo](https://services.healthtech.dtu.dk/service.php?Seq2Logo-2.0). Este método nos da la opción de ingresar un alineamiento múltiple (MSA), una lista de péptidos o una matriz peso-específica con la cual realizar el gráfico. 
 
 La información puede pegarse directamente en el <span style="color:red;font-weight:bold;"> cuadro de texto </span> que provee la web, o subiendo directamente un archivo local utilizando la opción <span style="color:blue;font-weight:bold;"> Switch to file upload </span> que se encuentra debajo del cuadro.
 
@@ -115,6 +120,8 @@ Por convención los colores que se utilizan son:
 
 	 Recuerden guardar los logos de secuencia generados.
 
+## Ejercicio 2. Realización de Logos
+
 **3.** En Materiales pueden encontrar los archivos **HLA-A0201** y **HLA-B27**, los cuales contienen ligandos de cada uno de estos alelos de MHC. 
 Úsenlos para generar logos que muestren sus motivos de preferencia. **Utilicen como opción de clustering Heuristics.** 
 
@@ -124,7 +131,7 @@ Usamos para el resto de las opciones los valores *default*. Identifiquen las pos
 
 **b.** ¿Qué magnitud es la que está diferenciando a las posiciones *anchor* del resto? ¿En qué unidad aparece representada en el logo? ¿Coincide con lo supuesto en el punto **1.c**?
 
-### Construcción de matrices peso-específicas (PSSM)
+## Ejercicio 3. Construcción de matrices peso-específicas (PSSM)
 
 Para este punto vamos a utilizar el servidor de [EasyPred](https://services.healthtech.dtu.dk/service.php?EasyPred-1.0). Esta herramienta nos permite construir tanto matrices peso-específicas, o *PSSM (Position-Specific Scoring Matrix)*, como aplicarlas a un set de datos para calcular su *score*. 
 
@@ -176,7 +183,7 @@ Observando el logo generado:
 
 **8.** Realice el mismo ejercicio pero ahora elija un *weight on prior* β=0. ¿Cambian sus respuestas para los puntos **5.**, **6.** y **7.**?
 
-### Predicción de unión a MHC
+## Ejercicio 4. Predicción de unión a MHC
 
 Habiéndonos familiarizado con la interfaz de [EasyPred](https://services.healthtech.dtu.dk/service.php?EasyPred-1.0) vamos a utilizarla para entrenar un modelo con más datos y ponerlo a prueba. Para eso utilizaremos dos sets de entrenamiento que poseen péptidos fueron testeados con el alelo HLA-A02:01. Cada uno tiene un valor asociado que denota si son positivos (1) o negativos (0.1). A lo largo del proceso iremos variando diferentes parámetros para observar qué efectos esto tiene sobre el poder predictivo del modelo, al ser testeado en un set de evaluación con valores de afinidad (*binding affinity*) de unión a MHC reales (reescalados entre 0 y 1). 
 
@@ -185,7 +192,13 @@ Los datos que utilizaremos están en los archivos:
 * **Entrenamiento_chico.set** que contiene 110 péptidos de los cuales sólo 10 son positivos.  
 * **Entrenamiento_grande.set** contiene 232 péptidos de los cuales todos son positivos.  
 
-Para evaluar el desempeño de nuestro modelo utilizaremos el archivo **Evaluacion.set**, el cual contiene 1266 peptidos con valores de afinidad convertidos al rango 0-1 mediante la formula 1-log(x)/log(50000). Utilizando esta transformación, 
+Para evaluar el desempeño de nuestro modelo utilizaremos el archivo **Evaluacion.set**, el cual contiene 1266 peptidos con valores de afinidad convertidos al rango 0-1 mediante la formula 
+
+$$
+1-\frac{log(x)}{log(50000)}
+$$
+
+Utilizando esta transformación, 
 
 * valores mayores a **0.638** (equivalente a 50nM) representan una unión fuerte, 
 * entre **0.638** y **0.426** (equivalente a 500nM) una unión débil 
@@ -194,7 +207,7 @@ Para evaluar el desempeño de nuestro modelo utilizaremos el archivo **Evaluacio
 !!! attention "Atención"
       Una buena práctica antes de comezar a hacer cualquier cosa con nuestros datos es observarlos y entender el formato en el que están almacenados.
 
-Por ejemplo, si hacemos un ```cat``` del archivo **Entrenamiento_chico.set** (si están con la VM o bien pueden abrir el archivo con el "Block de notas" haciendo click derecho sobre el archivo y *Abrir con...* elegir el block de notas entre las opciones), nos encontramos con lo siguiente:
+Por ejemplo, si hacemos un ```cat``` del archivo **Entrenamiento_chico.set** (o bien pueden abrir el archivo con el editor de texto haciendo click derecho sobre el archivo y *Abrir con...*), nos encontramos con lo siguiente:
 
 <p style="text-align:center">
 <img src="./img/formato_entrenamiento_chico.png" alt="Entre_chico" style="max-width:50%">
@@ -205,9 +218,11 @@ Este es un archivo con dos columnas, la primera contiene a los péptidos y la se
 Para analizar el desempeño de nuestros modelos vamos a tener en cuenta dos métricas:
 
  * **Aroc (Area under the Receiver Operator Curve):** este valor varía entre 0 y 1, siendo 1 el puntaje perfecto y 0.5 el valor aleatorio. Por regla general, valores mayores a 0.85 son altamente deseables.  
- * **Coeficiente de correlación  de Pearson (PCC):** también oscila entre 0 y 1, siendo 1 una correlación perfecta entre las dos variables de estudio, y -1 una anticorrelación perfecta. En este caso el valor que implica aleatoriedad total o no correlación entre las dos variables es 0.  
+ * **Coeficiente de correlación  de Pearson (PCC):** oscila entre -1 y 1, siendo 1 una correlación perfecta entre las dos variables de estudio, y -1 una anticorrelación perfecta. En este caso el valor que implica aleatoriedad total o no correlación entre las dos variables es 0.  
 
-Estas métricas nos van a ayudar a seleccionar el mejor de nuestros modelos, siendo éste el que alcance los mejores valores de **Aroc** y **Coeficiente de Pearson**.
+Estas métricas nos van a ayudar a seleccionar el mejor de nuestros modelos.
+
+El mejor model es el que alcance los mejores valores de **Aroc** y **Coeficiente de Pearson**.
 
 !!! note "Note"
 	 A continuación vamos a entrenar varios modelos y comparar sus resultados. Haga cada prueba en una ventana nueva o guarde las salidas de alguna manera que crea conveniente.
@@ -254,7 +269,9 @@ Volvamos a la página principal de [EasyPred](https://services.healthtech.dtu.dk
 
 **13.** ¿Cuántos de los 110 péptidos se utilizaron en este caso para la construcción de la matriz?  
 
-**14.** Mirando el logo, ¿Se parece al motivo de unión de HLA-A\*02:01 que habían visto antes? ¿Por qué cree que ocurre esto?
+**14.** Mirando el logo,
+
+* ¿Se parece al motivo de unión de HLA-A\*02:01 que habían visto antes? ¿Por qué cree que ocurre esto?
 
 ??? tip "Pista"
 
@@ -278,7 +295,10 @@ Volvamos una vez más, manteniendo **Clustering at 62% identity** pero utilicemo
 
 **17.** Una vez más revisen las métricas de desempeño.
 
-**18.** Mirando el logo, ¿Cuál es la gran diferencia con aquellos que venían viendo? ¿Cuál es la razón de este cambio? ¿Empieza ahora a parecerse a los motivos que habían visto antes?  
+**18.** Mirando el logo,
+
+* ¿Cuál es la gran diferencia con aquellos que venían viendo? ¿Cuál es la razón de este cambio?
+* ¿Empieza ahora a parecerse a los motivos que habían visto antes?  
 
 #### Quinta (y última) prueba
 
@@ -295,9 +315,9 @@ A continuación recarguen la página de [EasyPred](https://services.healthtech.d
 
 !!! attention "Atención"
 
-	 Antes de cerrar la ventana haga *click* en **Parameters for prediction method** luego del logo. Allí podrá descargar la matriz calculada a partir de los datos de entrenamiento (Se descarga con el nombre para.dat, es un archivo de texto plano). Esta puede ser utilizada luego para llevar a cabo predicciones.
+	 Antes de cerrar la ventana haga *click* en **Parameters for prediction method** luego del logo. Allí podrá descargar la matriz calculada a partir de los datos de entrenamiento (Se descarga con el nombre para.dat, es un archivo de texto plano). Esta puede ser utilizada luego para llevar a cabo predicciones. QUE VAN A TENER QUE USAR EN EL INFORME.
 
-## **PSI-BLAST**
+## PARTE II - **PSI-BLAST**
 
 ### Objetivos
 
@@ -313,7 +333,7 @@ En su forma básica de funcionamiento lo que hace es realizar un simple BLAST co
 
 En resumen, a partir de la segunda iteración los puntajes de la matriz variarán acorde a la conservación de los aminoácidos o nucleótidos en cada posición permitiendo refinar nuestra búsqueda y así recuperando secuencias distantes que comparten motivos o dominios con nuestra secuencia *query* original.
 
-### Cuando BLAST falla
+## Ejercicio 1. Cuando BLAST falla
 
 Digamos que se tiene una secuencia *query* (abajo) y se quiere predecir su estructura y función. Como vimos anteriormente uno recurre generalmente a BLAST para este tipo de tareas. Si logramos identificar una proteína suficientemente similar podríamos hipotetizar que comparten dichas caracteristicas.
 
@@ -341,7 +361,7 @@ Vayan a la pagina de [BLAST](https://blast.ncbi.nlm.nih.gov/Blast.cgi) y utilice
 
 **1.** ¿Cuántos *hits* con E-value < 0.05 encuentran? Vuelvan atrás y, en **Program selection: Algorithm**, seleccionen PSI-BLAST. ¿Cambió el resultado en comparación a lo que habían obtenido anteriormente?
 
-### Usando PSI-BLAST
+## Ejercicio 2. Usando PSI-BLAST
 
 !!! attention "Atención" 
 
@@ -377,6 +397,8 @@ Allí pueden especificar cuantas secuencias queremos utilizar para refinar nuest
 
 ### Guardando y reutilizando la PSSM
 
+Si no funcionó psi-blast, pueden descarg la matriz desde este [link](https://drive.google.com/open?id=1LWHZb7bhFWRresdoF87dhdWYHXKqRoaS&usp=drive_copy)
+
 Ahora podemos utilizar la PSSM que está ajustada con los resultados obtenidos de PSI-BLAST para realizar búsquedas más significativas en otras bases de datos.
 Para obtener la PSSM descarguenla arriba donde dice "*Donwload All*"
 
@@ -388,6 +410,7 @@ Volvamos una vez más a la página para realizar la búsqueda. Sin ingresar ning
 
 **9.** ¿Qué función pueden identificar en los primeros hits?
 
+<!--
 ### Identificando residuos conservados
 
 Ahora (si tuvimos suerte) habremos podido identificar una relación estructural entre nuestra secuencia *query* y las secuencias de la base de datos de estructuras proteicas PDB. Digamos que, en este punto, nos gustaría validar esa relación.
@@ -418,8 +441,10 @@ Por esta razón, teniendo en cuenta lo realizado con el servidor Blast2logo, vam
  * (h): Y436
 
 **11.** ¿Cuáles creen que son los 4 residuos que podríamos mutar de la lista para generar un impacto en la estructura de nuestra proteína *query*?
+-->
 
-
+<div style="border-bottom: 3px solid black;">
+</div>
 ## **Ejercicio a informar**
 
 !!! info 
@@ -492,6 +517,9 @@ el mismo MHC (o HLA). Para la proteína no-estructural ORF1ab y el alelo HLA-A*0
 identificaron 3 péptidos inmunogénicos compartidos entre pacientes. ¿Qué valores de predicción
 obtuvo para los mismos con su PSSM? ¿Hay alguno de estos péptidos que no predijo? ¿Por qué?
 Comente al respecto.
+
+<div style="border-bottom: 3px solid black;">
+</div>
 
 ## Material extra para practicar
 
