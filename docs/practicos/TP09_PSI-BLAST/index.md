@@ -24,9 +24,9 @@ tags:
 ### Videos de la clase grabada
 * :octicons-video-16: [Introducción al TP](https://www.youtube.com/watch?v=LMhaZZ7XgtY)
 * :octicons-video-16: [Cierre TP](https://www.youtube.com/watch?v=uF1vyWWRT_0)
+!!! abstract "Atención: Este TP tiene informe."
 -->
 
-!!! abstract "Atención: Este TP tiene informe."
 
 ## PARTE I - **Construcción de Logos y Matrices peso-específicas**
 
@@ -315,7 +315,7 @@ A continuación recarguen la página de [EasyPred](https://services.healthtech.d
 
 !!! attention "Atención"
 
-	 Antes de cerrar la ventana haga *click* en **Parameters for prediction method** luego del logo. Allí podrá descargar la matriz calculada a partir de los datos de entrenamiento (Se descarga con el nombre para.dat, es un archivo de texto plano). Esta puede ser utilizada luego para llevar a cabo predicciones. QUE VAN A TENER QUE USAR EN EL INFORME.
+	 Antes de cerrar la ventana haga *click* en **Parameters for prediction method** luego del logo. Allí podrá descargar la matriz calculada a partir de los datos de entrenamiento (Se descarga con el nombre para.dat, es un archivo de texto plano). Esta puede ser utilizada luego para llevar a cabo predicciones.
 
 ## PARTE II - **PSI-BLAST**
 
@@ -443,6 +443,7 @@ Por esta razón, teniendo en cuenta lo realizado con el servidor Blast2logo, vam
 **11.** ¿Cuáles creen que son los 4 residuos que podríamos mutar de la lista para generar un impacto en la estructura de nuestra proteína *query*?
 -->
 
+<!--
 <div style="border-bottom: 3px solid black;">
 </div>
 ## **Ejercicio a informar**
@@ -520,6 +521,7 @@ Comente al respecto.
 
 <div style="border-bottom: 3px solid black;">
 </div>
+-->
 
 ## Material extra para practicar
 
