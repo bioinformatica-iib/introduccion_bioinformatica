@@ -1,5 +1,5 @@
 ---
-title: Practico Once
+title: Practico Diez
 icon: fontawesome/solid/hammer
 tags: 
   - practicos
@@ -14,13 +14,13 @@ tags:
 
 ### Slides mostrados en la clase
 
-* :fontawesome-regular-file-pdf: [Slides](https://drive.google.com/file/d/1FoaQDbGbxQGCx0NdjbKExPo45uGf6Ykm/view?usp=sharing)
 
 
 !!! abstract "Atención: Este TP tiene informe."
+!!! abstract "Atención: Este TP tiene parcialito."
 
 [:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1wh5zn1GZ4s_Rp8V5lekZZbIKzM7BOKc8/view?usp=sharing){ .md-button .md-button--primary }
-
+[:fontawesome-solid-download: Slides](https://drive.google.com/file/d/1FoaQDbGbxQGCx0NdjbKExPo45uGf6Ykm/view?usp=sharing){ .md-button .md-button--primary }
 
 ## Recursos Online
 
