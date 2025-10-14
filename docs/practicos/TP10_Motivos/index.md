@@ -217,15 +217,58 @@ La región amino terminal de p53 posee un motivo de unión a la E3 ligasa MDM2, 
 * ¿Todos los motivos MDM2 tienen la misma longitud de secuencia?
 * ¿Qué nivel de identidad de secuencia observa en esta región? ¿A qué puede deberse?
 
+<div style="border-bottom: 3px solid black;">
+</div>
 
 ## Ejercicio a informar
 
 !!! info ""
 
-      **Fecha límite de entrega:** Viernes, 1 de Noviembre 2024, 23:59hs.
+      **Fecha límite de entrega:** Viernes, 24 de Octubre 2025, 23:59hs.
 
 **Enunciado**
 
+Las quinasas dependientes de ciclinas (CDKs) juegan un rol central en la regulación del ciclo celular eucariota. La unión secuencial y periódica de diferentes ciclinas a las CDKs asegura una progresión controlada a través del ciclo celular.
+
+1. Investigue las Ciclinas D1, 2 y 3 en ELM.
+
+    * ¿Cuántas instancias tienen anotadas?
+    * ¿Cuál es la relevancia biológica de estas anotaciones? ¿Cuáles involucran a Rb? ¿Cuáles están involucradas en el ciclo celular?
+    * Las instancias anotadas ¿se encuentran en un contexto estructural favorable según la predicción de IUPred que usa ELM?
+
+La proteína retinoblastoma (Rb) es un regulador del ciclo celular que controla la transición de la fase G1 a la fase S mediante la interacción con factores de transcripción de la familia E2F. Al inicio del ciclo celular Rb se encuentra en su forma hipofosforilada y se une a E2F inhibiendo su función. La fosforilación de Rb por las CDKs induce un cambio conformacional que libera a E2F, permitiendo la transcripción de genes necesarios para la progresión del ciclo celular.  
+
+2. Ensayos experimentales identificaron una secuencia corta en Rb que media la interacción con las ciclinas D en la región que abarca del 896 al C-terminal de la proteína. La evidencia indica que:
+
+**i.** La región que media la interacción con Rb forma una hélice.
+**ii.** La interacción está mediada por tres residuos hidrofóbicos (F, L, M) que se encuentran en una misma cara de la hélice.
+
+Dado el siquiente alineamiento de proteínas homólogas de la misma región, cree una expresión regular que permita identificar el motivo en otras secuencias.
+
+```
+P06400|RB_HUMAN         KHLPGESKFQQKLAEMTSTRTRMQKQKMNDSMDTSNKEEK
+Q98966_NOTVI            KH------LAQKLAEMTSTRSRMQKQKQDEEMDTTLKEEK
+UPI00016E998A_FUGRU     KS-GGDSTLIQKLTEMTSTRSRMQEQKMKEDAES-RRE--
+Q9PSL2_9PIPI            KHIQGESKFQQKLAEMTSTRTRMQKQKLEESLESSQQEEK
+Q9YGE5_ONCMY            KP-GEESRLIQKLAEIGSTRTRMQEQKMKDDAES-EKDKP
+UPI000060E718_CHICK     KHLPQESKFQQKLAEMTSTRTRMQKQKLNDGNDTSANEEK
+UPI00016E998C_FUGRU     KS-GGDSTLIQKLTEMTSTRSRMQEQKMKEDAES-RRE--
+UPI00017B2142_TETNG     KS-GGDSALIQKLAEMTSTRSRVQEQKMKEDAES-RREKP
+A0JMQ4_DANRE            KS-SGESALIQKLAEMSSTRSRMQEQKLKEESDK-DHPEP
+Q98SK2_ORYLA            KS-GGESALIQKLAEMSSTRSRMQEQKMKEDAES-RKKT-
+Q90600_CHICK            KHLPQESKFQQKLAEMTSTRTRMQKQKLNDGNDTSANEEK
+Q5J3Q9_FUNHE            KP-GGDSTLIQKLTEMSSTWNRIHEQKMKEDPDT-REEPQ
+A3DUJ4_XIPMA            KP-GGDSTLIQKLTEMSSTWSRMHEQKMKEEPET-RDEPQ
+Q1X7L8_LIMLI            KS-GGDSTLIQKLAEMSSARSRMQEQKMK-----------
+```
+
+* Investigue las propiedades estructurales de la proteína Rb humana (P06400). ¿El motivo se encuentra en una región favorable?
+
+3. Proponga un mecanismo de interacción entre las ciclinas y Rb.
+
+
+
+<!--
 Más del 90 % de los casos de cáncer cervical a nivel global están asociados a la infección del papilomavirus humano con una alta prevalencia de los tipos virales de alto riesgo de la especie Alphapapillomavirus 9, HPV16 y HPV31, y Alphapapillomavirus 7, HPV18 y HPV45. Los tipos virales de bajo riesgo, como HPV11 y HPV6, se encuentran asociados con menor frecuencia a lesiones malignas. En los casos de cáncer atribuidos a HPV los tumores se desarrollan muchos años después de la infección inicial. Por lo tanto, la infección persistente es necesaria para el desarrollo de cáncer invasivo. El mantenimiento del fenotipo transformado depende de la expresión continua de algunos de los genes virales, principalmente las proteı́nas E6 y E7.
 
 La Proteína E7 de papillomavirus contiene un dominio desordenado N-terminal (E7N) y un dominio globular C-terminal (E7C). El dominio E7C  media la homodimerización a través de un cisteínas que coordinan un átomo de Cinc.
@@ -257,6 +300,12 @@ Piense en el contexto estructural y en el grado de conservación (un criterio pa
     Siempre que reporte/mencione una región de una proteína o instancia de un motivo indique las posiciones de inicio y final de la misma y si las posiciones refieren a posiciones del alineamiento o de la secuencia. Para cada respuesta, indicar los algoritmos, base de datos y métodos utilizados, y el criterio usado en cada caso para clasificar/identificar.
 
 [:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1qDKmaOuzoFszb1hXUxj-QtctzO-4y9es/view?usp=sharing){ .md-button .md-button--primary }
+
+-->
+
+<div style="border-bottom: 3px solid black;">
+</div>
+
 
 ## Ejercicios Adicionales
 

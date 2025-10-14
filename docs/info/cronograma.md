@@ -34,7 +34,7 @@ tags:
 | Mar, 7 Oct     | 9 hs |	:material-google-classroom: Presencial | [T9. ANN](../teoricas/9-Teorica-Nueve/index.md) |  :fontawesome-solid-brain: Teórica |	L. Chemes |
 | Jue, 9 Oct     | 9 hs |	:material-google-classroom: Presencial | [P9. Perfiles de secuencia y PSI-BLAST](../practicos/TP09_PSI-BLAST/index.md) | :fontawesome-solid-hammer: Práctica |	H. García |
 | Mar, 14 Oct     | 9 hs |	:material-google-classroom: Presencial | [T10. Bioinformática Estructural: Motivos lineales](../teoricas/10-Teorica-Diez/index.md) | :fontawesome-solid-brain: Teórica |	L. Chemes |
-| Jue, 16 Oct     | 9 hs |	:material-google-classroom: Presencial | P10. Motivos Lineales en proteínas | :fontawesome-solid-hammer: Práctica | J. Glavina |
+| Jue, 16 Oct     | 9 hs |	:material-google-classroom: Presencial | [P10. Motivos Lineales en proteínas](../practicos/TP10_Motivos/index.md) | :fontawesome-solid-hammer: Práctica | J. Glavina |
 | Mar, 21 Oct     | 9 hs |	:material-google-classroom: Presencial | T11. HMM | :fontawesome-solid-brain: Teórica |	L. Chemes |
 | Jue, 23 Oct     | 9 hs |	:material-google-classroom: Presencial | P11. HMM | :fontawesome-solid-hammer: Práctica |	H. García |
 | Mar, 28 Oct     | 9 hs |	:material-google-classroom: Presencial | T12. Bioinformática Estructural: Dominios | :fontawesome-solid-brain: Teórica |	L. Chemes |
