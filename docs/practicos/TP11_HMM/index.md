@@ -1,23 +1,23 @@
 ---
-title: Practico Seis
+title: Practico Once
 icon: fontawesome/solid/hammer
 tags: 
   - practicos
 ---
 
+<!--
 ![Image](img/banner.jpg){ width="250", align="left" }
+-->
 
-# **TP 6**. Hidden Markov Models (HMMs) { markdown data-toc-label = 'TP 11' }
-
-<br>
-<br>
-<br>
-
-[:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1rs-ZHYblgmhGAae6JsCNrG26mzTcU6Kb/view?usp=share_link){ .md-button .md-button--primary }
+# **TP 11**. Hidden Markov Models (HMMs) { markdown data-toc-label = 'TP 11' }
 
 <br>
+<br>
+<br>
 
-!!! abstract "Atención: Este TP NO tiene informe."
+[:fontawesome-solid-download: Materiales]https://drive.google.com/file/d/1eL9f2b1i7_i6IfcxBv4tlrkBtTpXHBEy/view?usp=share_link){ .md-button .md-button--primary }
+[:fontawesome-solid-download: Slides](https://docs.google.com/presentation/d/1s62O4NBwBTA1oQ8wTm85rNmqorYB9XWh/edit?slide=id.p1#slide=id.p1){ .md-button .md-button--primary }
+<br>
 
 <!--
 ### Slides mostrados en la clase
@@ -31,8 +31,11 @@ tags:
 
 ## Objetivos
 
+<!--
 * Comprender cómo se entrena y evalúa un modelo basado en redes neuronales.
 * Familiarizarse con el esquema de validación cruzada para el entrenamiento de dichos modelos.
+-->
+
 * Construir un perfil basado en HMMs y utilizar el mismo para realizar búsquedas en bases de datos de secuencias.
 * Crear una base de datos de perfiles de secuencias y utilizar la misma para identificar dominios conservados en secuencias *query*.
 
@@ -167,6 +170,7 @@ hmm2build globin.hmm globins50.msf
 
 `hmm2build` recibe como argumentos el archivo en el cual va a guardar el perfil (*globin.hmm*) y el archivo con el cual crearlo (*globins50.msf*). Si bien el contenido del archivo donde se guardó el perfil es legible, su contenido no debería tener sentido para ustedes (más allá del encabezado con información sobre las opciones que se utilizaron para crearlo) porque únicamente almacena los pesos de las transiciones de estado del HMM.
 
+
 ### Calibración del perfil
 
 Este paso no es imprescindible pero sí aconsejable. La calibración del perfil le otorga mayor sensibilidad en la búsqueda ya que modifica la estimación del E-value de los *hits* encontrados. Si recuerdan, la búsqueda contra bases de datos nos devuelve junto con cada alineamiento un score y un E-value, este último nos da una idea sobre la cantidad de *hits* que esperamos encontrar con ese score en una base de datos construida con secuencias aleatorias y se calcula según la longitud de la secuencia *query* y *subject*, el tamaño de la base de datos y la matriz de *scoring*.
@@ -176,6 +180,7 @@ En el caso de HMMer, la estimación del E-value es analítica y resulta muy cons
 ```Bash
 hmm2calibrate globin.hmm
 ```
+
 `hmm2calibrate` lee un archivo con un modelo HMM como **globin.hmm** y puntúa un número grande de secuencias sintetizadas al azar (por default 5000 secuencias) con este modelo. Luego ajusta una EVD (Extreme Value Distribution) al histograma de los puntajes obtenidos y guarda nuevamente el modelo HMM con estos nuevos parámetros.
 
 Como para realizar este cálculo se sintetizan secuencias al azar, estableceremos una semilla (o *seed*) para poder reproducir nuestros resultados. Entonces el comando se modifica de la siguiente forma, 
@@ -220,7 +225,7 @@ Una lista parecida a la que da BLAST con los *hits* más importantes ordenados p
 Scores for complete sequences (score includes all domains):
 Sequence Description                                    Score    E-value  N 
 -------- -----------                                    -----    ------- ---
-S13421   S13421 GLOBIN - BRINE SHRIMP                   120.3    6.2e-37   4
+S13421   S13421 GLOBIN - BRINE SHRIMP                   37.8    4.3e-12   4
 ```
 
 Noten que después del E-value hay un campo que no se encontraba en los otros algoritmos de búsqueda denominado "N". Este valor representa la cantidad de dominios de nuestro profile que fueron encontrados en el hit.
@@ -228,13 +233,13 @@ Noten que después del E-value hay un campo que no se encontraba en los otros al
 Luego encontramos información sobre los dominios de nuestro *profile* individualmente. 
 
 ```
-Parsed for domains:
+Parsed for domains
 Sequence Domain  seq-f seq-t    hmm-f hmm-t      score  E-value
 -------- ------- ----- -----    ----- -----      -----  -------
-S13421     3/4     771  1075 ..     1   333 []    34.0    3e-13
-S13421     1/4       1   288 [.     1   333 []    31.9  3.8e-13
-S13421     4/4    1085  1390 ..     1   333 []    29.4    5e-13
-S13421     2/4     303   607 ..     1   333 []    25.0  8.1e-13
+S13421     3/4     928  1079 ..     1   158 []    18.0  2.9e-09
+S13421     2/4     303   450 ..     1   158 []    11.0  8.5e-09
+S13421     4/4    1245  1390 ..     1   158 []     4.6  2.3e-08
+S13421     1/4     149   288 ..     1   158 []     4.2  2.5e-08
 ```
 
 Los campos son:
@@ -265,34 +270,23 @@ Los campos son:
 
 ```
 Alignments of top-scoring domains:
-S13421: domain 3 of 4, from 771 to 1075: score 34.0, E = 3e-13
-                   *->viqealvnssShLsaeeKalvkslWygKV..ggnaeeyGaeaLgRlF
-                                  L+a eK+ ++++W  + ++ g +++ +++++ RlF
-      S13421   771    T-----------LTALEKQSIQDIW-SNLrsTG-LQDLAVKIFTRLF 804  
+S13421: domain 3 of 4, from 928 to 1079: score 18.0, E = 2.9e-09
+                   *->viqelvssShLSaeeKalvkslWygKvegnaeeyGaeaLerlfvvYP
+                      +         LSa e a+vk++W   v+ ++ ++G  ++  lf ++P
+      S13421   928    G---------LSAREVAVVKQTW-NLVKPDLMGVGMRIFKSLFEAFP 964  
 
-                   vvYPwTqryFp.hFgdLssldAvkGspkvKAHGkKVltalgdavkhLDdt
-                    ++P+ +  F + Fg++     +  ++ +KAH  +Vl+a++ ++  LDd 
-      S13421   805 SAHPEYKLLFTgRFGNVDN---INENAPFKAHLHRVLSAFDIVISTLDDS 851  
+                   wTqryFphFgdLssldavkgspkvKaHGkKVltalgdavkhLdd..nlkg
+                     q+ Fp+F+d+ +ld + + p v +H + V t l++ ++ Ld + nl++
+      S13421   965 AYQAVFPKFSDV-PLDKLEDTPAVGKHSISVTTKLDELIQTLDEpaNLAL 1013 
 
-                   gnlkgalakLSelHAdKLrVDPeNFklLghclivVLAahfgkdFtPevqA
-                   + l   l++L+  H + L+ ++ +F +++ +++ V +   +   t     
-      S13421   852 EHLIRQLKDLGLFH-TRLGMTRSHFDNFATAFLSVAQDIAPNQLTVLGRE 900  
+                   alakLSelHAdklrVDPeNFklLghvlvvvLaehfgkdFtpevqAAwdKf
+                      +L+e H   lrV    Fk +g+vlv  L   +g  F+  +  +w K+
+      S13421  1014 LARQLGEDH-IVLRVNKPMFKSFGKVLVRLLENDLGQRFSSFASRSWHKA 1062 
 
-                   AwdKflagvanaLahKYrelgFQggftviqealvnssShLsaeeKalvks
-                   ++ K +++   ++ ++   l      t+           Lsa e a vk+
-      S13421   901 SLNKGFKLMHGVIEEGLLQLERINPITG-----------LSAREVAVVKQ 939  
+                   lagvanALahk....Yr<-*
+                   +++++  + +  +++Y+   
+      S13421  1063 YDVIVEYIEEGlqqsYK    1079 
 
-                   lWygKVggnaeeyGaeaLgRlFvvYPwTqryFphFgdLssldAvkGspkv
-                   +W   V++++ ++G  ++  lF ++P  q+ Fp+F+d+ +ld + + p v
-      S13421   940 TW-NLVKPDLMGVGMRIFKSLFEAFPAYQAVFPKFSDV-PLDKLEDTPAV 987  
-
-                   KAHGkKVltalgdavkhLDdtgnlkgalakLSelHAdKLrVDPeNFklLg
-                    +H   V t l++ +  LD   nl+    +L+e H   LrV    Fk +g
-      S13421   988 GKHSISVTTKLDELIQTLDEPANLALLARQLGEDH-IVLRVNKPMFKSFG 1036 
-
-                   hclivVLAahfgkdFtPevqAAwdKflagvanaLahKYr<-*
-                   ++l+  L   +g  F+  +  +w K++++++  + ++     
-      S13421  1037 KVLVRLLENDLGQRFSSFASRSWHKAYDVIVEYIEEGLQ    1075 
 ```
 
 Llegando al final encontramos un histograma, similar al que nos mostraba FASTA. En este caso como nuestra "base de datos" tiene una sola secuencia no es informativo en absoluto.
@@ -301,15 +295,15 @@ Llegando al final encontramos un histograma, similar al que nos mostraba FASTA. 
 Histogram of all scores:
 score    obs    exp  (one = represents 1 sequences)
 -----    ---    ---
-  120      1      0|=      
+  37      1      0|=      
 ```
 
 Y por último algunos detalles estadísticos que corresponden al ajuste de la EVD, en los cuales no vamos a focalizar. 
 
 ```
 % Statistical details of theoretical EVD fit:
-              mu =  -226.7154
-          lambda =     0.1106
+              mu =  -108.8352
+          lambda =     0.1551
 chi-sq statistic =     0.0000
   P(chi-square)  =          0
 
@@ -325,13 +319,17 @@ Domain top hits:
 tophits_s report:
      Total hits:           4
      Satisfying E cutoff:  4
-     Total memory:         25K
+     Total memory:         23K
 
 ```
 
 ### Búsqueda en bases de datos reales
 
-HMMer puede leer los formatos de la mayoría de las bases de datos conocidas. A diferencia de BLAST no es necesario indexar la base de datos. Si recuerdan de la práctica de BLAST/FASTA, uno podía crear su propia base de datos donde realizar los alineamientos a partir de un archivo multifasta utilizando el comando **formatdb**, el cual crea todo el sistema de índices de *ktuplas* y demás archivos para facilitar la búsqueda. En este caso HMMer puede realizar la búsqueda directamente sobre el multifasta sin necesidad de más procesamiento. En nuestro servidor podemos realizar la búsqueda utilizando:
+HMMer puede leer los formatos de la mayoría de las bases de datos conocidas. A diferencia de BLAST no es necesario indexar la base de datos. Si recuerdan de la práctica de BLAST/FASTA, uno podía crear su propia base de datos donde realizar los alineamientos a partir de un archivo multifasta utilizando el comando **formatdb**, el cual crea todo el sistema de índices de *ktuplas* y demás archivos para facilitar la búsqueda. En este caso HMMer puede realizar la búsqueda directamente sobre el multifasta sin necesidad de más procesamiento.
+
+En primer lugar vamos a descargar la base de datos de secuencias de proteínas [**Swissprot**](https://drive.google.com/file/d/1AYZ2T4wzfCR95Oz86r6VubX4ciE7JY1W/view?usp=drive_link) .
+
+En nuestro servidor podemos realizar la búsqueda utilizando:
 
 ```Bash
 hmm2search globin.hmm ~/Swissprot_db/Swissprot.fasta > globin.swissprot.search
@@ -356,12 +354,22 @@ Por defecto `hmm2build` lleva a cabo alineamientos que son globales con respecto
 Así como nos es posible realizar búsquedas de *profiles* contra bases de datos de secuencias, podemos crear una base de datos de *profiles* y utilizar como *query* a una secuencia. Este es el caso de la base de datos **PFAM** (Sonnhammer *et al.*, 1997; Sonnhammer *et al.*, 1998) que nuclea *profiles* de una gran variedad de dominios y es una herramienta sumamente utilizada para analizar secuencias de proteínas de las cuales no tenemos información previa.
 
 Como ejemplo, tomemos el producto del gen *Sevenless* de *Drosophila melanogaster* que codifica un receptor de *tyrosine kinase* esencial para el desarrollo de las células R7 del ojo de la mosca. 
-La secuencia proteica de este receptor se encuentra en el archivo **7LES_DROME**. Realice una búsqueda de esta secuencia en [PFAM](http://pfam-legacy.xfam.org/). Para esto ingrese en **JUMP TO** el accession number de la secuencia: P13368.
-En la tabla de resultados vaya al final y haga click en *Show* donde dice: *Show or hide domain scores.*
 
-Inspeccione la tabla y conteste:
+La secuencia proteica de este receptor se encuentra en el archivo **7LES_DROME**.
 
-* ¿Qué dominios fueron identificados en esta proteína y en qué posiciones se encuentran? Recuerde estos resultados para contrastarlo con lo que hará más adelante. 
+Realice una búsqueda de esta secuencia en [Interpro](https://www.ebi.ac.uk/interpro/). Para esto ingrese en **Search by text** el accession number de la secuencia: P13368.
+
+En la tabla de resultados vaya a la sección de Domains y desplieguela.
+
+Inspeccione y conteste:
+
+* ¿Qué dominios Pfam fueron identificados en esta proteína y en qué posiciones se encuentran? Recuerde estos resultados para contrastarlo con lo que hará más adelante (La lista de dominios y su base de datos aparece a la derecha junto con el identificador).
+
+* Haga click en el identificador del dominio de Fibronectina 3 (FN3) para ver más información sobre el mismo.
+
+    * ¿Qué información relevante puede obtener de esta página?
+    * Vaya a Profile HMM ¿Qué observa?
+
 
 Las bases de datos de *profiles* no son más que múltiples HMMs concatenados, por lo que el comando para construirlas es también **hmm2build**, pero vamos a utilizar la opción **-A** (append) para agregar nuevos *profiles* a nuestro archivo de HMMs original.
 
