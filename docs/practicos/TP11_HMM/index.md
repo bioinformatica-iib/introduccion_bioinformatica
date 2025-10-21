@@ -12,10 +12,8 @@ tags:
 # **TP 11**. Hidden Markov Models (HMMs) { markdown data-toc-label = 'TP 11' }
 
 <br>
-<br>
-<br>
 
-[:fontawesome-solid-download: Materiales]https://drive.google.com/file/d/1eL9f2b1i7_i6IfcxBv4tlrkBtTpXHBEy/view?usp=share_link){ .md-button .md-button--primary }
+[:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1eL9f2b1i7_i6IfcxBv4tlrkBtTpXHBEy/view?usp=share_link){ .md-button .md-button--primary }
 [:fontawesome-solid-download: Slides](https://docs.google.com/presentation/d/1s62O4NBwBTA1oQ8wTm85rNmqorYB9XWh/edit?slide=id.p1#slide=id.p1){ .md-button .md-button--primary }
 <br>
 
