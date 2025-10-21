@@ -121,11 +121,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP06_HMM/</loc>
-         <lastmod>2025-10-21</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP06_Quimioinformatica/</loc>
          <lastmod>2025-10-21</lastmod>
          <changefreq>daily</changefreq>
@@ -147,6 +142,11 @@
     </url>
     <url>
          <loc>https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP10_Motivos/</loc>
+         <lastmod>2025-10-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP11_HMM/</loc>
          <lastmod>2025-10-21</lastmod>
          <changefreq>daily</changefreq>
     </url>

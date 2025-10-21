@@ -10,9 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP06_HMM/">
+        <link rel="canonical" href="https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP11_HMM/">
       
       
+        <link rel="prev" href="../TP10_Motivos/">
+      
+      
+        <link rel="next" href="../../instructivos/inicio/">
       
       
       <link rel="icon" href="../../img/logo-unsam-negro.png">
@@ -20,7 +24,7 @@
     
     
       
-        <title>Practico Seis - Introducción a la Bioinformática</title>
+        <title>Practico Once - Introducción a la Bioinformática</title>
       
     
     
@@ -83,7 +87,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#tp-6-hidden-markov-models-hmms" class="md-skip">
+        <a href="#tp-11-hidden-markov-models-hmms" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -116,7 +120,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Practico Seis
+              Practico Once
             
           </span>
         </div>
@@ -279,10 +283,12 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../inicio/" class="md-tabs__link">
           
   
@@ -921,26 +927,31 @@
       
   
   
+    
   
   
+  
     
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
             
   
   
@@ -953,7 +964,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Prácticos
@@ -1283,6 +1294,179 @@
 
               
             
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M413.5 237.5c-28.2 4.8-58.2-3.6-80-25.4L295.4 174c-15-15-23.4-35.2-23.4-56.4v-12.1L192.3 62c-5.3-2.9-8.6-8.6-8.3-14.7s3.9-11.5 9.5-14l47.2-21C259.1 4.2 279 0 299.2 0h18.1c36.7 0 72 14 98.7 39.1l44.6 42c24.2 22.8 33.2 55.7 26.6 86L503 183l8-8c9.4-9.4 24.6-9.4 33.9 0l24 24c9.4 9.4 9.4 24.6 0 33.9l-88 88c-9.4 9.4-24.6 9.4-33.9 0l-24-24c-9.4-9.4-9.4-24.6 0-33.9l8-8zM27.4 377.1l233.5-194.5c3.5 4.9 7.5 9.6 11.8 14l38.1 38.1c6 6 12.4 11.2 19.2 15.7L134.9 484.6C120.4 502 98.9 512 76.3 512 34.1 512 0 477.8 0 435.7c0-22.6 10.1-44.1 27.4-58.6"/></svg>
+  
+  <span class="md-ellipsis">
+    TP 11 - HMMs
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M413.5 237.5c-28.2 4.8-58.2-3.6-80-25.4L295.4 174c-15-15-23.4-35.2-23.4-56.4v-12.1L192.3 62c-5.3-2.9-8.6-8.6-8.3-14.7s3.9-11.5 9.5-14l47.2-21C259.1 4.2 279 0 299.2 0h18.1c36.7 0 72 14 98.7 39.1l44.6 42c24.2 22.8 33.2 55.7 26.6 86L503 183l8-8c9.4-9.4 24.6-9.4 33.9 0l24 24c9.4 9.4 9.4 24.6 0 33.9l-88 88c-9.4 9.4-24.6 9.4-33.9 0l-24-24c-9.4-9.4-9.4-24.6 0-33.9l8-8zM27.4 377.1l233.5-194.5c3.5 4.9 7.5 9.6 11.8 14l38.1 38.1c6 6 12.4 11.2 19.2 15.7L134.9 484.6C120.4 502 98.9 512 76.3 512 34.1 512 0 477.8 0 435.7c0-22.6 10.1-44.1 27.4-58.6"/></svg>
+  
+  <span class="md-ellipsis">
+    TP 11 - HMMs
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objetivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objetivos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hmmer" class="md-nav__link">
+    <span class="md-ellipsis">
+      HMMer
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="HMMer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introduccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introducción
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#construccion-de-un-perfil" class="md-nav__link">
+    <span class="md-ellipsis">
+      Construcción de un perfil
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calibracion-del-perfil" class="md-nav__link">
+    <span class="md-ellipsis">
+      Calibración del perfil
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#busqueda-en-bases-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Búsqueda en bases de datos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#busqueda-en-bases-de-datos-reales" class="md-nav__link">
+    <span class="md-ellipsis">
+      Búsqueda en bases de datos reales
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Búsqueda en bases de datos reales">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#modos-de-alineamiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modos de alineamiento
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bases-de-datos-de-hmm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bases de datos de HMM
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adicional-alineamientos-multiples-con-hmm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adicional: Alineamientos múltiples con HMM
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1555,16 +1739,13 @@
 
 
 
-<div><p><a class="glightbox" href="img/banner.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img _="," align="left" alt="Image" src="img/banner.jpg" width="250"></a></p>
-<h1 id="tp-6-hidden-markov-models-hmms" markdown="markdown"><strong>TP 6</strong>. Hidden Markov Models (HMMs)</h1>
+<div><h1 id="tp-11-hidden-markov-models-hmms" markdown="markdown"><strong>TP 11</strong>. Hidden Markov Models (HMMs)</h1>
 <p><br>
 <br>
 <br></p>
-<p><a class="md-button md-button--primary" href="https://drive.google.com/file/d/1rs-ZHYblgmhGAae6JsCNrG26mzTcU6Kb/view?usp=share_link"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32v242.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64v-32c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48"></path></svg></span> Materiales</a></p>
-<p><br></p>
-<div class="admonition abstract">
-<p class="admonition-title">Atención: Este TP NO tiene informe.</p>
-</div>
+<p>[<span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32v242.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64v-32c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48"></path></svg></span> Materiales]https://drive.google.com/file/d/1eL9f2b1i7_i6IfcxBv4tlrkBtTpXHBEy/view?usp=share_link){ .md-button .md-button--primary }
+<a class="md-button md-button--primary" href="https://docs.google.com/presentation/d/1s62O4NBwBTA1oQ8wTm85rNmqorYB9XWh/edit?slide=id.p1#slide=id.p1"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32v242.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64v-32c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48"></path></svg></span> Slides</a>
+<br></p>
 <!--
 ### Slides mostrados en la clase
 
@@ -1576,9 +1757,12 @@
 -->
 
 <h2 id="objetivos">Objetivos</h2>
+<!--
+* Comprender cómo se entrena y evalúa un modelo basado en redes neuronales.
+* Familiarizarse con el esquema de validación cruzada para el entrenamiento de dichos modelos.
+-->
+
 <ul>
-<li>Comprender cómo se entrena y evalúa un modelo basado en redes neuronales.</li>
-<li>Familiarizarse con el esquema de validación cruzada para el entrenamiento de dichos modelos.</li>
 <li>Construir un perfil basado en HMMs y utilizar el mismo para realizar búsquedas en bases de datos de secuencias.</li>
 <li>Crear una base de datos de perfiles de secuencias y utilizar la misma para identificar dominios conservados en secuencias <em>query</em>.</li>
 </ul>
@@ -1708,9 +1892,9 @@ Como vimos en el TP de PSSM, una vez que uno entrena un método, puede guardar l
 <h3 id="calibracion-del-perfil">Calibración del perfil</h3>
 <p>Este paso no es imprescindible pero sí aconsejable. La calibración del perfil le otorga mayor sensibilidad en la búsqueda ya que modifica la estimación del E-value de los <em>hits</em> encontrados. Si recuerdan, la búsqueda contra bases de datos nos devuelve junto con cada alineamiento un score y un E-value, este último nos da una idea sobre la cantidad de <em>hits</em> que esperamos encontrar con ese score en una base de datos construida con secuencias aleatorias y se calcula según la longitud de la secuencia <em>query</em> y <em>subject</em>, el tamaño de la base de datos y la matriz de <em>scoring</em>.</p>
 <p>En el caso de HMMer, la estimación del E-value es analítica y resulta muy conservativa, por lo que se dejan de lado posibles <em>hits</em> (como homólogos lejanos). Utilizando <code>hmm2calibrate</code> podemos calibrar el cálculo de E-values de manera empírica incrementando de manera significativa la sensibilidad de la búsqueda.</p>
-<p></p><div class="highlight"><pre><span></span><code>hmm2calibrate<span class="w"> </span>globin.hmm
+<div class="highlight"><pre><span></span><code>hmm2calibrate<span class="w"> </span>globin.hmm
 </code></pre></div>
-<code>hmm2calibrate</code> lee un archivo con un modelo HMM como <strong>globin.hmm</strong> y puntúa un número grande de secuencias sintetizadas al azar (por default 5000 secuencias) con este modelo. Luego ajusta una EVD (Extreme Value Distribution) al histograma de los puntajes obtenidos y guarda nuevamente el modelo HMM con estos nuevos parámetros.
+<p><code>hmm2calibrate</code> lee un archivo con un modelo HMM como <strong>globin.hmm</strong> y puntúa un número grande de secuencias sintetizadas al azar (por default 5000 secuencias) con este modelo. Luego ajusta una EVD (Extreme Value Distribution) al histograma de los puntajes obtenidos y guarda nuevamente el modelo HMM con estos nuevos parámetros.</p>
 <p>Como para realizar este cálculo se sintetizan secuencias al azar, estableceremos una semilla (o <em>seed</em>) para poder reproducir nuestros resultados. Entonces el comando se modifica de la siguiente forma, </p>
 <div class="highlight"><pre><span></span><code>hmm2calibrate<span class="w"> </span>--seed<span class="w"> </span><span class="m">1</span><span class="w"> </span>globin.hmm<span class="w">  </span>
 </code></pre></div>
@@ -1741,17 +1925,17 @@ Description: [none]
 <div class="highlight"><pre><span></span><code>Scores for complete sequences (score includes all domains):
 Sequence Description                                    Score    E-value  N 
 -------- -----------                                    -----    ------- ---
-S13421   S13421 GLOBIN - BRINE SHRIMP                   120.3    6.2e-37   4
+S13421   S13421 GLOBIN - BRINE SHRIMP                   37.8    4.3e-12   4
 </code></pre></div>
 <p>Noten que después del E-value hay un campo que no se encontraba en los otros algoritmos de búsqueda denominado "N". Este valor representa la cantidad de dominios de nuestro profile que fueron encontrados en el hit.</p>
 <p>Luego encontramos información sobre los dominios de nuestro <em>profile</em> individualmente. </p>
-<div class="highlight"><pre><span></span><code>Parsed for domains:
+<div class="highlight"><pre><span></span><code>Parsed for domains
 Sequence Domain  seq-f seq-t    hmm-f hmm-t      score  E-value
 -------- ------- ----- -----    ----- -----      -----  -------
-S13421     3/4     771  1075 ..     1   333 []    34.0    3e-13
-S13421     1/4       1   288 [.     1   333 []    31.9  3.8e-13
-S13421     4/4    1085  1390 ..     1   333 []    29.4    5e-13
-S13421     2/4     303   607 ..     1   333 []    25.0  8.1e-13
+S13421     3/4     928  1079 ..     1   158 []    18.0  2.9e-09
+S13421     2/4     303   450 ..     1   158 []    11.0  8.5e-09
+S13421     4/4    1245  1390 ..     1   158 []     4.6  2.3e-08
+S13421     1/4     149   288 ..     1   158 []     4.2  2.5e-08
 </code></pre></div>
 <p>Los campos son:</p>
 <ul>
@@ -1791,45 +1975,33 @@ S13421     2/4     303   607 ..     1   333 []    25.0  8.1e-13
 <p>La sección siguiente contiene los alineamientos de los dominios que fueron hit en la lista anterior en un formato similar al de BLAST, teniendo como primera secuencia el consenso del <em>profile</em> (noten que hay aminoácidos en mayúsculas, estos se encuentran altamente conservados en el profile). </p>
 <p>Al igual que BLAST en medio de ambas secuencias se escriben los aminoácidos que coinciden o "matchean" y signos más (+) en donde hay mismatches con puntaje positivo en la matriz de sustitución.</p>
 <div class="highlight"><pre><span></span><code>Alignments of top-scoring domains:
-S13421: domain 3 of 4, from 771 to 1075: score 34.0, E = 3e-13
-                   *-&gt;viqealvnssShLsaeeKalvkslWygKV..ggnaeeyGaeaLgRlF
-                                  L+a eK+ ++++W  + ++ g +++ +++++ RlF
-      S13421   771    T-----------LTALEKQSIQDIW-SNLrsTG-LQDLAVKIFTRLF 804  
+S13421: domain 3 of 4, from 928 to 1079: score 18.0, E = 2.9e-09
+                   *-&gt;viqelvssShLSaeeKalvkslWygKvegnaeeyGaeaLerlfvvYP
+                      +         LSa e a+vk++W   v+ ++ ++G  ++  lf ++P
+      S13421   928    G---------LSAREVAVVKQTW-NLVKPDLMGVGMRIFKSLFEAFP 964  
 
-                   vvYPwTqryFp.hFgdLssldAvkGspkvKAHGkKVltalgdavkhLDdt
-                    ++P+ +  F + Fg++     +  ++ +KAH  +Vl+a++ ++  LDd 
-      S13421   805 SAHPEYKLLFTgRFGNVDN---INENAPFKAHLHRVLSAFDIVISTLDDS 851  
+                   wTqryFphFgdLssldavkgspkvKaHGkKVltalgdavkhLdd..nlkg
+                     q+ Fp+F+d+ +ld + + p v +H + V t l++ ++ Ld + nl++
+      S13421   965 AYQAVFPKFSDV-PLDKLEDTPAVGKHSISVTTKLDELIQTLDEpaNLAL 1013 
 
-                   gnlkgalakLSelHAdKLrVDPeNFklLghclivVLAahfgkdFtPevqA
-                   + l   l++L+  H + L+ ++ +F +++ +++ V +   +   t     
-      S13421   852 EHLIRQLKDLGLFH-TRLGMTRSHFDNFATAFLSVAQDIAPNQLTVLGRE 900  
+                   alakLSelHAdklrVDPeNFklLghvlvvvLaehfgkdFtpevqAAwdKf
+                      +L+e H   lrV    Fk +g+vlv  L   +g  F+  +  +w K+
+      S13421  1014 LARQLGEDH-IVLRVNKPMFKSFGKVLVRLLENDLGQRFSSFASRSWHKA 1062 
 
-                   AwdKflagvanaLahKYrelgFQggftviqealvnssShLsaeeKalvks
-                   ++ K +++   ++ ++   l      t+           Lsa e a vk+
-      S13421   901 SLNKGFKLMHGVIEEGLLQLERINPITG-----------LSAREVAVVKQ 939  
-
-                   lWygKVggnaeeyGaeaLgRlFvvYPwTqryFphFgdLssldAvkGspkv
-                   +W   V++++ ++G  ++  lF ++P  q+ Fp+F+d+ +ld + + p v
-      S13421   940 TW-NLVKPDLMGVGMRIFKSLFEAFPAYQAVFPKFSDV-PLDKLEDTPAV 987  
-
-                   KAHGkKVltalgdavkhLDdtgnlkgalakLSelHAdKLrVDPeNFklLg
-                    +H   V t l++ +  LD   nl+    +L+e H   LrV    Fk +g
-      S13421   988 GKHSISVTTKLDELIQTLDEPANLALLARQLGEDH-IVLRVNKPMFKSFG 1036 
-
-                   hclivVLAahfgkdFtPevqAAwdKflagvanaLahKYr&lt;-*
-                   ++l+  L   +g  F+  +  +w K++++++  + ++     
-      S13421  1037 KVLVRLLENDLGQRFSSFASRSWHKAYDVIVEYIEEGLQ    1075 
+                   lagvanALahk....Yr&lt;-*
+                   +++++  + +  +++Y+   
+      S13421  1063 YDVIVEYIEEGlqqsYK    1079 
 </code></pre></div>
 <p>Llegando al final encontramos un histograma, similar al que nos mostraba FASTA. En este caso como nuestra "base de datos" tiene una sola secuencia no es informativo en absoluto.</p>
 <div class="highlight"><pre><span></span><code>Histogram of all scores:
 score    obs    exp  (one = represents 1 sequences)
 -----    ---    ---
-  120      1      0|=      
+  37      1      0|=      
 </code></pre></div>
 <p>Y por último algunos detalles estadísticos que corresponden al ajuste de la EVD, en los cuales no vamos a focalizar. </p>
 <div class="highlight"><pre><span></span><code>% Statistical details of theoretical EVD fit:
-              mu =  -226.7154
-          lambda =     0.1106
+              mu =  -108.8352
+          lambda =     0.1551
 chi-sq statistic =     0.0000
   P(chi-square)  =          0
 
@@ -1845,10 +2017,12 @@ Domain top hits:
 tophits_s report:
      Total hits:           4
      Satisfying E cutoff:  4
-     Total memory:         25K
+     Total memory:         23K
 </code></pre></div>
 <h3 id="busqueda-en-bases-de-datos-reales">Búsqueda en bases de datos reales</h3>
-<p>HMMer puede leer los formatos de la mayoría de las bases de datos conocidas. A diferencia de BLAST no es necesario indexar la base de datos. Si recuerdan de la práctica de BLAST/FASTA, uno podía crear su propia base de datos donde realizar los alineamientos a partir de un archivo multifasta utilizando el comando <strong>formatdb</strong>, el cual crea todo el sistema de índices de <em>ktuplas</em> y demás archivos para facilitar la búsqueda. En este caso HMMer puede realizar la búsqueda directamente sobre el multifasta sin necesidad de más procesamiento. En nuestro servidor podemos realizar la búsqueda utilizando:</p>
+<p>HMMer puede leer los formatos de la mayoría de las bases de datos conocidas. A diferencia de BLAST no es necesario indexar la base de datos. Si recuerdan de la práctica de BLAST/FASTA, uno podía crear su propia base de datos donde realizar los alineamientos a partir de un archivo multifasta utilizando el comando <strong>formatdb</strong>, el cual crea todo el sistema de índices de <em>ktuplas</em> y demás archivos para facilitar la búsqueda. En este caso HMMer puede realizar la búsqueda directamente sobre el multifasta sin necesidad de más procesamiento.</p>
+<p>En primer lugar vamos a descargar la base de datos de secuencias de proteínas <a href="https://drive.google.com/file/d/1AYZ2T4wzfCR95Oz86r6VubX4ciE7JY1W/view?usp=drive_link"><strong>Swissprot</strong></a> .</p>
+<p>En nuestro servidor podemos realizar la búsqueda utilizando:</p>
 <div class="highlight"><pre><span></span><code>hmm2search<span class="w"> </span>globin.hmm<span class="w"> </span>~/Swissprot_db/Swissprot.fasta<span class="w"> </span>&gt;<span class="w"> </span>globin.swissprot.search
 less<span class="w"> </span>globin.swissprot.search
 </code></pre></div>
@@ -1865,12 +2039,22 @@ less<span class="w"> </span>globin.swissprot.search
 <p>Por defecto <code>hmm2build</code> lleva a cabo alineamientos que son globales con respecto al HMM y locales con respecto a la secuencia objetivo, permitiendo alinear varios dominios en esa misma secuencia. ¿Qué significa esto? Que cada dominio se intenta alinear <strong>completamente</strong> en alguna porción de la secuencia objetivo. Si queremos recuperar secuencias que contengan alineamientos parciales de dominios podemos agregar a <code>hmm2build</code> la opcion <code>-f</code> .</p>
 <h3 id="bases-de-datos-de-hmm">Bases de datos de HMM</h3>
 <p>Así como nos es posible realizar búsquedas de <em>profiles</em> contra bases de datos de secuencias, podemos crear una base de datos de <em>profiles</em> y utilizar como <em>query</em> a una secuencia. Este es el caso de la base de datos <strong>PFAM</strong> (Sonnhammer <em>et al.</em>, 1997; Sonnhammer <em>et al.</em>, 1998) que nuclea <em>profiles</em> de una gran variedad de dominios y es una herramienta sumamente utilizada para analizar secuencias de proteínas de las cuales no tenemos información previa.</p>
-<p>Como ejemplo, tomemos el producto del gen <em>Sevenless</em> de <em>Drosophila melanogaster</em> que codifica un receptor de <em>tyrosine kinase</em> esencial para el desarrollo de las células R7 del ojo de la mosca. 
-La secuencia proteica de este receptor se encuentra en el archivo <strong>7LES_DROME</strong>. Realice una búsqueda de esta secuencia en <a href="http://pfam-legacy.xfam.org/">PFAM</a>. Para esto ingrese en <strong>JUMP TO</strong> el accession number de la secuencia: P13368.
-En la tabla de resultados vaya al final y haga click en <em>Show</em> donde dice: <em>Show or hide domain scores.</em></p>
-<p>Inspeccione la tabla y conteste:</p>
+<p>Como ejemplo, tomemos el producto del gen <em>Sevenless</em> de <em>Drosophila melanogaster</em> que codifica un receptor de <em>tyrosine kinase</em> esencial para el desarrollo de las células R7 del ojo de la mosca. </p>
+<p>La secuencia proteica de este receptor se encuentra en el archivo <strong>7LES_DROME</strong>.</p>
+<p>Realice una búsqueda de esta secuencia en <a href="https://www.ebi.ac.uk/interpro/">Interpro</a>. Para esto ingrese en <strong>Search by text</strong> el accession number de la secuencia: P13368.</p>
+<p>En la tabla de resultados vaya a la sección de Domains y desplieguela.</p>
+<p>Inspeccione y conteste:</p>
 <ul>
-<li>¿Qué dominios fueron identificados en esta proteína y en qué posiciones se encuentran? Recuerde estos resultados para contrastarlo con lo que hará más adelante. </li>
+<li>
+<p>¿Qué dominios Pfam fueron identificados en esta proteína y en qué posiciones se encuentran? Recuerde estos resultados para contrastarlo con lo que hará más adelante (La lista de dominios y su base de datos aparece a la derecha junto con el identificador).</p>
+</li>
+<li>
+<p>Haga click en el identificador del dominio de Fibronectina 3 (FN3) para ver más información sobre el mismo.</p>
+<ul>
+<li>¿Qué información relevante puede obtener de esta página?</li>
+<li>Vaya a Profile HMM ¿Qué observa?</li>
+</ul>
+</li>
 </ul>
 <p>Las bases de datos de <em>profiles</em> no son más que múltiples HMMs concatenados, por lo que el comando para construirlas es también <strong>hmm2build</strong>, pero vamos a utilizar la opción <strong>-A</strong> (append) para agregar nuevos <em>profiles</em> a nuestro archivo de HMMs original.</p>
 <p>Por ejemplo, si queremos construir una base de datos <strong>"myhmms"</strong> que contiene perfiles de dominios <strong>rrm</strong> de reconocimiento de ARN, <strong>fn3</strong> de fibronectina tipo III y <strong>pkinase</strong> del dominio catalítico de las kinasas podemos realizarlo fácilmente con:</p>
