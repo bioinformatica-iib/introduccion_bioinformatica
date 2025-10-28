@@ -37,7 +37,7 @@ tags:
 | Jue, 16 Oct     | 9 hs |	:material-google-classroom: Presencial | [P10. Motivos Lineales en proteínas](../practicos/TP10_Motivos/index.md) | :fontawesome-solid-hammer: Práctica | J. Glavina |
 | Mar, 21 Oct     | 9 hs |	:material-google-classroom: Presencial | [T11. HMM](../teoricas/11-Teorica-Once/index.md)co | :fontawesome-solid-brain: Teórica |	L. Chemes |
 | Jue, 23 Oct     | 9 hs |	:material-google-classroom: Presencial | [P11. HMM](../practicos/TP11_HMM/index.md) | :fontawesome-solid-hammer: Práctica |	H. García |
-| Mar, 28 Oct     | 9 hs |	:material-google-classroom: Presencial | T12. Bioinformática Estructural: Dominios | :fontawesome-solid-brain: Teórica |	L. Chemes |
+| Mar, 28 Oct     | 9 hs |	:material-google-classroom: Presencial | [T12. Bioinformática Estructural: Dominios](../teoricas/12-Teorica-Doce/index.md) | :fontawesome-solid-brain: Teórica |	L. Chemes |
 | Jue, 30 Oct     | 9 hs |	:material-google-classroom: Presencial | P12. Dominios Proteicos |:fontawesome-solid-hammer: Práctica |	J. Glavina |
 | Mar, 4 Nov  | 9 hs |	| LIBRE | |	|
 | Jue, 6 Nov  | 9 hs |	| LIBRE | |	|
