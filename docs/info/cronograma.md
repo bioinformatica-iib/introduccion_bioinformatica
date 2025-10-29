@@ -38,7 +38,7 @@ tags:
 | Mar, 21 Oct     | 9 hs |	:material-google-classroom: Presencial | [T11. HMM](../teoricas/11-Teorica-Once/index.md) | :fontawesome-solid-brain: Teórica |	L. Chemes |
 | Jue, 23 Oct     | 9 hs |	:material-google-classroom: Presencial | [P11. HMM](../practicos/TP11_HMM/index.md) | :fontawesome-solid-hammer: Práctica |	H. García |
 | Mar, 28 Oct     | 9 hs |	:material-google-classroom: Presencial | [T12. Bioinformática Estructural: Dominios](../teoricas/12-Teorica-Doce/index.md) | :fontawesome-solid-brain: Teórica |	L. Chemes |
-| Jue, 30 Oct     | 9 hs |	:material-google-classroom: Presencial | P12. Dominios Proteicos |:fontawesome-solid-hammer: Práctica |	J. Glavina |
+| Jue, 30 Oct     | 9 hs |	:material-google-classroom: Presencial | [P12. Dominios Proteicos](../practicos/TP12_Modelado_Por_Homologia/index.md) |:fontawesome-solid-hammer: Práctica |	J. Glavina |
 | Mar, 4 Nov  | 9 hs |	| LIBRE | |	|
 | Jue, 6 Nov  | 9 hs |	| LIBRE | |	|
 | Mar, 11 Nov  | 9 hs |	:material-google-classroom: Presencial | Repaso | |	F. Agüero<br>L. Chemes<br> |
