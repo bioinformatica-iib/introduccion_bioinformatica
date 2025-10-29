@@ -179,7 +179,7 @@ nav:
         - TP 9 - PSI-BLAST: 'practicos/TP09_PSI-BLAST/index.md'
         - TP 10 - Motivos Lineales: 'practicos/TP10_Motivos/index.md'
         - TP 11 - HMMs: 'practicos/TP11_HMM/index.md'        
-        # - TP 12 - Modelado por Homología y AlphaFold2: 'practicos/TP12_Modelado_Por_Homologia/index.md'
+        - TP 12 - Modelado por Homología y AlphaFold3: 'practicos/TP12_Modelado_Por_Homologia/index.md'
         #- TP 12b - Modelado usando AlphaFold: 'practicos/TP12b_AlphaFold/index.md'
         #- TP X - Filogenias: 'practicos/TPXX_Filogenia/index.md'
         #- TP X - Genomica Comparativa: 'practicos/TPXX_Genomica_Comparativa/index.md'
