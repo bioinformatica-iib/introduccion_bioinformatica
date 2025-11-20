@@ -1,32 +1,30 @@
 ---
-title: Teorica Siete
+title: Teorica Nueve
 icon: fontawesome/solid/brain
 tags: 
   - teoricas
 ---
 
-## Quimioinformática
- Clase teórica de introducción al uso y análisis de moléculas químicas pequeñas en la computadora. Representacion digital y electrónica de moléculas, formatos, algoritmos de búsqueda de similitud quimica. 
+## Secuenciación y ensamblado de genomas 
+ Clase teórica sobre métodos de secuenciación, ensamblado de genomas, mapeo de lecturas contra referencia, etc. Valores de calidad de base, cálculo de coberturas, algoritmos.
 
- * :fontawesome-regular-file-pdf: [Slides](quimioinformatica-2024.pdf) 
- * :material-video-check: [Video de clase pasada](https://youtu.be/2TzNSNn8rpQ) (el contenido puede no coincidir totalmente con la clase de este año!!)
+ 
+ * :fontawesome-regular-file-pdf: [Slides](genomeSequencingAssemblyReadMapping2025.pdf) 
+ * :material-video-check: [Video grabado en 2023.](https://youtu.be/tIDj8FMeNSQ) 
  
 
 ## Material de lectura y consulta
 
-### Cheminformatics kits, frameworks 
+  * :fontawesome-regular-file-pdf: Compeau PEC, Pevzner PA, Tesler G. How to apply de Bruijn graphs to genome assembly. Nature Biotechnol 29: 987, 2011. [PDF de estudio.](compeau_11_debruijn.pdf)
+  * :fontawesome-regular-file-pdf: Nagarajan, N., & Pop, M. (2013). Sequence assembly demystified. Nature Reviews Genetics, 14(3), 157–167. doi:10.1038/nrg3367. [PDF de estudio.](nagarajan2013.pdf)
+  * :fontawesome-regular-file-pdf: Rice, E. S., & Green, R. E. (2018). New Approaches for Genome Assembly and Scaffolding. Annual Review of Animal Biosciences, 7(1). doi:10.1146/annurev-animal-020518-115344. [PDF de estudio.](rice2018.pdf)
+  * :paperclip: Ribeiro FJ, Przybylski D, Yin S, et al. Finished bacterial genomes from shotgun sequence data. Genome Res. 2012 Nov;22(11):2270-7. [doi:10.1101/gr.141515.112](https://doi.org/10.1101/gr.141515.112). PMID: 22829535; PMCID: PMC3483556.
+  * :material-wikipedia: [Phred Quality Score](https://en.wikipedia.org/wiki/Phred_quality_score)
+  * :material-wikipedia: [K-mers](https://en.wikipedia.org/wiki/K-mer)  
+  * :material-wikipedia: [N50, L50 and related statistics](https://en.wikipedia.org/wiki/N50,_L50,_and_related_statistics)
 
-  * :octicons-code-16: [RDKit: Open Source Cheminformatics Software](https://www.rdkit.org) (Python, Java, C++, JavaScript)
-  * :octicons-code-16: [The Chemistry Development Kit (CDK)](https:/cdk.github.io) (Java)
-  * :octicons-code-16: [Open Babel: the chemistry toolbox](https://openbabel.org/) (ejecutable: Windows, Linux, MacOSX)
-  * :octicons-code-16: [ChemFP -- very fast cheminformatics fingerprinting.](https://chemfp.com/) (Python)
+## Software 
 
-### Books, Papers
-  * :octicons-book-16: [The RDKit Book (2023)](https://www.rdkit.org/docs/RDKit_Book.html)
-  * :paperclip: Willighagen EL, _et al._ The Chemistry Development Kit (CDK), v2.0: atom typing, depiction, molecular formulas and substructure searching.[J Cheminform. 2017 Jun 6;9(1):33.](https://link.springer.com/article/10.1186/s13321-017-0220-4)  
-  * :paperclip: Noel M. O’Boyle, Michael Banck, Craig A. James, Chris Morley, Tim Vandermeersch, Geoffrey R. Hutchison. [Open Babel: An open chemical toolbox. J. Cheminf. 2011, 3, 33.](https://doi.org/10.1186/1758-2946-3-33)
-  * :paperclip: [The ChemFP Project (2019).](https://link.springer.com/article/10.1186/S13321-019-0398-8)
-  * :octicons-book-16: [Essentials of Computational Chemistry (2004), 2nd Ed, CJ Cramer. Wiley.](https://www.wiley.com/en-sg/Essentials+of+Computational+Chemistry:+Theories+and+Models,+2nd+Edition-p-9780470091821)
-  * :octicons-book-16: [Chemogenomics in Drug Discovery: A Medicinal Chemistry Perspective (2006).  Edited by Hugo Kubinyi & Gerhard Müller, Wiley-VCH.](https://www.wiley.com/en-us/Chemogenomics+in+Drug+Discovery%3A+A+Medicinal+Chemistry+Perspective-p-9783527604029)
-  * :octicons-book-16: [Artificial Intelligence in Drug Discovery (2020). Edited by Nathan Brown. Royal Society of Chemistry.](https://doi.org/10.1039/9781788016841)
-  * :octicons-book-16: [An Introduction to Chemoinformatics (2007). Andrew Leach and Valerie Gillet. Springer.](https://link.springer.com/book/10.1007/978-1-4020-6291-9)
+ * :material-download: [FASTQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)
+ * :material-download: [MultiQC](https://multiqc.info/)
+ * :material-download: [KAT: K-mer Analysis Toolkit](https://github.com/TGAC/KAT)

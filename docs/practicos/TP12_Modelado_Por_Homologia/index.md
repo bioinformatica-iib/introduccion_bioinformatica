@@ -5,24 +5,19 @@ tags:
   - practicos
 ---
 ![Image](img/featured.png){ width="250", align="left" }
-# **TP 12**. Modelado por Homología y AlphaFold2 { markdown data-toc-label = 'TP 12' }
+# **TP 12**. Modelado por Homología y AlphaFold3 { markdown data-toc-label = 'TP 12' }
 
 <br>
 <br>
 <br>
 <br>
-
-## Slides mostrados en la clase
-
-* :fontawesome-regular-file-pdf: [Slides](https://docs.google.com/presentation/d/1CW2CjNZyrl5cMM0W14ILZEhf-Q4GmVCs/edit?usp=sharing&ouid=101472650200585443790&rtpof=true&sd=true)
 
 <!--
 ## Videos de la clase grabada
 * :octicons-video-16: [Puesta en común del TP](https://youtu.be/l--R0Vs12Lo)
 -->
 
-<br>
-
+[:fontawesome-solid-download: Slides](https://docs.google.com/presentation/d/1CW2CjNZyrl5cMM0W14ILZEhf-Q4GmVCs/edit?usp=sharing&ouid=101472650200585443790&rtpof=true&sd=true){ .md-button .md-button--primary }
 [:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1JirqIvvMCxEkYdSEt5bYqPJLhrebnPAj/view?usp=sharing){ .md-button .md-button--primary }
 
 <!--
@@ -232,7 +227,7 @@ Utilizando la secuencia, el becario busca en las bases de datos y descubre que s
 
 Para entender las diferencias con la proteína de humanos, estuvo muy interesado en obtener la estructura tridimensional de la proteína de rana. Sin embargo, todos los intentos de cristalización fallaron rotundamente. Su subsidio se está terminando rápidamente pero afortunadamente, un becario muy interesado en bioinformática y el modelado por homología lo salva de su desesperación.  
 
-**1.** Utilizando la herramienta **HHPred** modele la proteína.
+**1.** Utilizando la herramienta [HHPred](https://toolkit.tuebingen.mpg.de/tools/hhpred) modele la proteína.
 
 **2.** Haga click en **Submit** en la parte inferior de la página y seleccione el hit que le parezca más conveniente:
 
@@ -368,7 +363,7 @@ En la ventana que se abre:
 * Asegúrese que en *Save multiple models in* esté seleccionado *a single file*
 * Elija la ubicación y nombre para el archivo.
 
-Abra el archivo con el **Leafpad** o **block de notas**.
+Abra el archivo con el **Editor de texto**
 
 * ¿Se encuentran ambas moléculas en el archivo? (Pista, ¿cuantas cadenas ve y como se llaman?)
 
@@ -796,7 +791,7 @@ AlphaFold2 incorpora métricas de confianza de la predicción.
 
 * La principal métrica de confianza es el test **pLDDT** (predicted local-distance difference test) el cual es un predictor confiable del test de diferencias en las distancias Cα (IDDT-Cα) y evalúa principalmente la correctitud del modelo a nivel local (estimando el error en distancias de un Cα con Cα vecinos en un rango de 15Å).
 
-* La segunda métrica se denomina **PAE** (por Predicted Aligned error) y compara el error en la predicción de pares de residuos, esto es el error sobre el residuo y cuando las estructuras real y predicha son alineadas sobre el residuo x. Esta medida permite la identificación global de unidades de plegamiento (dominios) y permite predecir si dos dominios guardan relaciones espaciales definidas, o si tienen variabilidad (por ejemplo, si están conectadas por un linker flexible.
+* La segunda métrica se denomina **PAE** (por Predicted Aligned error) y compara el error de alineamiento en un par de residuos luego de alinear en otro par. Esto es el error sobre el residuo cuando las estructuras real y predicha son alineadas sobre el residuo x. Esta medida permite la identificación global de unidades de plegamiento (dominios) y permite predecir si dos dominios guardan relaciones espaciales definidas, o si tienen variabilidad (por ejemplo, si están conectadas por un linker flexible.
 
 ![alphafold_fig2a](./img/pae-3.png){ width="400" }
 
@@ -806,6 +801,7 @@ AlphaFold2 incorpora métricas de confianza de la predicción.
 
 
 ### Costo computacional
+
 AlphaFold2 consume muchísimos recursos. Por lo tanto, muchas proteínas de organismos modelos están siendo modeladas y puestas a disposición de la comunidad científica en una base de datos: [https://alphafold.ebi.ac.uk/](https://alphafold.ebi.ac.uk/).
 
 Afortunadamente, la comunidad científica rápidamente desarrolló distintas “colabs” o “notebooks” que permiten correr AlphaFold2 en una máquina remota. Una “desventaja” es que se debe contar con una cuenta de mail de gmail, **cada cuenta de gmail puede usar un colab a la vez**.
@@ -814,13 +810,16 @@ Otra desventaja es que en la versión gratuita de colab, debido al espacio en di
 
 Otra desventaja, es que no se pueden modificar muchos parámetros del modelado al usar un colab, en comparación con correr la simulación desde un script en una computadora o server propio. Sin embargo, los parámetros usados en el ColabFold de AlphaFold2 son los que fueron más ampliamente validados durante el desarrollo del método.
 
-Existen distintos colabs que implementan AlphaFold2. En este curso utilizaremos uno en particular: [AlphaFold2 using MMseqs2](https://colab.research.google.com/github/sokrypton/ColabFold/blob/main/AlphaFold2.ipynb).
-
+Existen distintos colabs que implementan AlphaFold2. En este curso solíamos utilizar: [AlphaFold2 using MMseqs2](https://colab.research.google.com/github/sokrypton/ColabFold/blob/main/AlphaFold2.ipynb).
 
 Todas las versiones de las distintas NoteBooks están disponibles en el github: [https://github.com/sokrypton/ColabFold](https://github.com/sokrypton/ColabFold)
 
+## AlphaFold3 (AF3)
 
-## AlphaFold2 - Ejercicios
+En 2024, se desarrolló AlphaFold3. DeepMind puso a disponibilidad un servidor donde podemos correr aproximadamente 30 proteínas por día y cada corrida puede ser de hasta 5000 "tokens": [Servidor AlphaFold3](https://alphafoldserver.com/)
+
+
+## AlphaFold - Ejercicios
 
 Los papilomavirus (PVs) son virus desnudos icosaédricos y poseen un genoma ADN doble cadena circular entre 5-8 Kb. Sus hospedadores incluyen una amplia variedad de vertebrados desde peces, reptiles, aves y mamíferos. Los PV infectan el epitelio mucoso y queratinizado y producen lesiones denominadas condilomas o papilomas y verrugas respectivamente y en humanos algunos PVs están asociados al cáncer cervical uterino, de la formación de tumores en el tracto urogenital y en las vı́as aéreas superiores.
 
@@ -829,74 +828,59 @@ La proteína E7 del papilomavirus comparte similitudes funcionales con la prote�
 La interacción de la proteína E7 con Rb es responsable de la inducción de la síntesis de ADN y proliferación celular. La inmortalización y transformación de la célula infectada inducida por E7 es consecuencia de la interacción de E7 con Rb y numerosos blancos proteicos involucrados en crecimiento celular, transformación, transcripción, apoptosis y síntesis de ADN.
 
 ### Ejercicio 1. Modelado de un Monómero de E7
-1. Ingrese al ColabFold que implementa MMseq2 [Aquí](https://colab.research.google.com/github/sokrypton/ColabFold/blob/main/AlphaFold2.ipynb).
+1. Ingrese al servidor de AlphaFold3 [Aquí](https://alphafoldserver.com/). Va a necesitar una cuenta de Google.
 
-    !!! info
+2. **Preparando la corrida.**
 
-            Si quiere que los cambios que realice sean guardados deberá agregar la notebook a su drive. Pero esto no es necesario.
-  
+    * Seleccione en el campo *Entity Type*: **Protein**
 
-2. En la parte superior, haga click en *Runtime* → *Change Runtime* y asegúrese que:
+    * Seleccione en *copies*: 1
 
-    * **Runtime type:** sea *Python 3*
-
-    * **Hardware accelerator:** este seleccionado *T4 GPU*
-
-3. **Preparando la corrida.**
-
-    En el campo sequence query ingrese la secuencia (**sin** el encabezado indicado por el signo `>`) de la proteína E7 de HPV16.
+    * Pegue la secuencia de la proteína E7 de HPV16 **sin** el encabezado en el campo *Input*
 
     ```
     >sp|P03129|VE7_HPV16 Protein E7 OS=Human papillomavirus type 16 OX=333760 GN=E7 PE=1 SV=1
     MHGDTPTLHEYMLDLQPETTDLYCYEQLNDSSEEEDEIDGPAGQAEPDRAHYNIVTFCCKCDSTLRLCVQSTHVDIRTLEDLLMGTLGIVCPICSQKP
     ```
 
+    * En el menú de los tres puntitos se puede seleccionar el uso de modificaciones post-traduccionales y el uso de templados. Por el momento, no será utilizado.
+
+    * Haga *click* en **save** y se abrirá una ventana
+
     * En el campo **jobname** ingrese: E7_MONOMERO.
 
-    * En el campo **num_relax** elija: 1
+    * Active el uso de *seeds* e ingrese una seed al azar.
 
-    !!! info
+    * Guarde el trabajo.
 
-        **num_relax** es el número de modelos a relajar con Amber. Esta notebook produce hasta 5 modelos máximo por proteína. 
-        
-         Amber permite mejorar la geometría de la unión peptídica y posición de rotámeros luego de la relajación de la estructura. Si bien no mejora la predicción, remueve violaciones estereoquímicas.
-        
-
-    * En template mode elija pdb100 ¿Qué le parece que es este campo?
-
-    * Vaya a  *Runtime* →  *Run all*, o presione `Ctrl`+`F9`
-
-    * Como por defecto este ColabFold crea 5 modelos hay que esperar (unos 20 minutos).
+    * Como por defecto AlphaFold3 crea 5 modelos hay que esperar (unos 20 minutos).
     
-    !!! danger "IMPORTANTE"
+3. En la tabla se genera el nuevo trabajo. Una vez que haya finalizado, haga Click para visualizar los resultados.
 
-        No cierre la ventana y tampoco cierre la laptop porque la corrida entonces se detiene (no pasa nada si entra en suspensión).
-    
+    * ¿Que observa?
+    * ¿Qué región tiene menor pLDDT?
+    * ¿Qué región tiene mayor pLDDT?
+    * ¿Qué correspondencia estructural existe con los valores de pLDDT?
+    * Interprete el gráfico de PAE.
 
+4. Descargue el resultado haciendo click en los tres puntitos de la derecha y luego "Download"
 
-    Al finalizar la corrida, los resultados serán descargados automáticamente como un archivo zip. Si esto no llegara a suceder, puede acceder al mismo haciendo click en el icono con forma de carpeta que se encuentra a la izquierda.
+5. Localice el archivo descargado y descomprímalo (el nombre del archivo comienza con fold y dice `E7_MONOMERO`). Encontrará varios archivos, en particular:
+    * Carpeta `msas`. Contiene los alineamientos utilizados para la predicción en formato `*.a3m`.
+    * Carpeta `templates`. Contiene los templados utilizados (si se seleccionaron).
+    * `*_full_data_*_.json`. 5 archivos numerados de 0 a 4. Contiene para cada uno de los modelos los valores de pLDDT, PAE, y la probabilidad de contacto entre otros.
+    * `*_job_request.json`. Los parámetros utilizados en la predicción.
+    * `*_model_*_.cif`. Son los 5 modelos generados numerados del 0 a 4. El modelo 0 es el mejor rankeado según el valor de pTM.
+    * `*_summary_confidences_*_.json`. Son un resumen de métricas de confianza para los 5 modelos generados.
 
-4. Localice el archivo descargado y descomprímalo (el nombre del archivo comienza con `E7_MONOMERO`). Encontrará varios archivos, en particular:
-    * `Cite.bibtex` Contiene todas las citas correspondientes a los papers relacionados.
-    * `Config.json` Contiene todos los parámetros utilizados en la corrida.
-    * `*.a3m` Alineamiento
-    * `*_coverage.png` Gráfico de la cobertura del alineamiento
-    * `*_PAE.png` Gráfico del PAE por pares de residuos para todos los modelos.
-    * `*_plddt.png` Gráfico del plddt por posición
-    * `*_predicted_aligned_error_v1.json` Tiene los valores de PAE para todos los pares de todos los modelos.
-    * `*_relaxed_*_model_*.pdb` Son los modelos generados y relajados.
-    * `*_unrelaxed_*_model_*.pdb` Son los 5 modelos generados sin relajar.
-    * `*_model_*.json` Son el PAE y pLDDT de cada modelo que se pueden utilizar para graficar.
-    * En la carpeta`*_env*` Tiene los templados utilizados por AlphaFold2 si es que se usaron.
+5. Abra Chimera y cargue el modelo 0.
 
-5. Abra Chimera y cargue el modelo relajado (*relaxed*) (si no recuerda *File* → *Open …*).
+6. Ingrese a la web de la [rscb](https://www.rcsb.org/) y descargue la estructura: 2b9d.
 
-6. Abra el pdb: 2b9d. (Puede descargalo realizando *File* → *Fetch by ID* o bien yendo a la web de la [rcsb]())
-    * ¿Estaba esta estructura entre los templados?
     * ¿Por qué método fue determinada?
     * ¿A qué proteína corresponde? ¿De qué organismo?
 
-7. Alinee las estructuras utilizando Matchmaker (si no recuerda, *Tools* → *Structure comparison* → *Matchmaker*)
+7. Alinee las estructuras utilizando Matchmaker (*Tools* → *Structure comparison* → *Matchmaker*)
 
     * ¿Cuál es el RMSD global?
 
@@ -929,60 +913,63 @@ La interacción de la proteína E7 con Rb es responsable de la inducción de la 
 10. Alinee los modelos ranqueados de 2 a 5 contra el modelo 1, 
     * Explore el *Reply log* ¿cuál es el RMSD global de cada par alineado?
 
-11. Utilice **Match Align** para ver el alineamiento. Recuerde utilizar el umbral adecuado!.
+11. Utilice **Match Align** para ver el alineamiento. **Recuerde utilizar el umbral adecuado!**
     * ¿Qué observa?
     * ¿Porque si las secuencias son todas iguales no aparece el n-terminal alineado?
 
 12. Los valores de pLDDT están almacenados en la columna del pdb que corresponde a los b-factors.
 Para colorear por b-factors, utilizaremos la *command line* que Chimera trae integrada. Para esto vaya a: *Favorites* → *Command line*. En la parte inferior de la pantalla se abrirá un renglón donde puede ingresar los comandos necesarios.
 
+
     Para colorear los modelos según el atributo b-factor donde está almacenado el plDDT ingrese en la *command line*:
 
+
     ```
-    rangecolor bfactor min orange red mid white max dodger blue
+    rangecolor bfactor min red mid yellow max blue
     ```
+
 
     * ¿Qué observa?
 
+
     En el *reply log* se reportan los valores mínimo, medio y máximo encontrados en la columna de b-factors.
+
 
     * ¿Cuáles son el mínimo y el máximo?
 
     Ahora en lugar de que Chimera elija los valores observados como mínimo y máximo de la escala, los vamos a configurar con el siguiente comando:
 
     ```
-    rangecolor bfactor 0 orange red 50 white 100 dodger blue
+    rangecolor bfactor 0 red 50 yellow 70 skyblue 90 dodger blue 100 blue
     ```
     
-    Ahora cambie el valor mínimo a min (se elige el valor mínimo presente en la columna de b-factors) y el valor intermedio que antes era 50, a 70:
+    Ahora cambie el valor mínimo a 50:
 
     ```
-    rangecolor bfactor min orange red 70 white 100 dodger blue
+    rangecolor bfactor 50 red 70 yellow 100 dodger blue
     ```
 
     * ¿Observa diferencias con lo anterior? ¿Cuáles?
     
-    Ahora corra:
-
-    ```
-    rangecolor bfactor 50 orange red 70 white 100 dodger blue
-    ```
-    
-    * ¿Observa diferencias con lo anterior? ¿Cuáles?
-
     * ¿Porqué considera que elegimos 50 como valor mínimo?
+
+    * ¿Porqué considera que elegimos 70 como valor medio?
 
     * ¿De qué posición a qué posición consideraría que el modelo es de confianza?
 
-13. Investigue el gráfico de pLDDT que se descargó con el modelo.
 
-    * ¿Qué observa?
+13. Vaya a *File* → *Save PDB...*
 
-    * ¿Puede identificar las regiones con un pLDDT mayor a 70?
+    * en File Name ingrese: ```$name```
 
-    * ¿Puede identificar las regiones con un pLDDT entre 50 a 70?
+    * En *Save Multiple Models* seleccione *Multiple Files*
 
-14. Abra R Studio. Ahora graficaremos los pLDDT por posición para cada uno de los modelos.
+    * Esto guardará cada modelo en un archivo pdb separado.
+
+    * Cierre Chimera.
+
+
+13. Abra R Studio. Ahora graficaremos los pLDDT por posición para cada uno de los modelos.
 
     ```r
     install.packages("bio3d")
@@ -995,7 +982,7 @@ Para colorear por b-factors, utilizaremos la *command line* que Chimera trae int
 
     directorio <- "/directorio/donde/estan/los/modelos/"
 
-    archivos <- list.files(path = directorio,pattern = "_unrelaxed_",)
+    archivos <- list.files(path = directorio,pattern = "*.pbd")
 
     miarchivo <- paste(directorio,archivos[1],sep="")
     mipdb <- read.pdb(miarchivo)
@@ -1028,62 +1015,50 @@ Para colorear por b-factors, utilizaremos la *command line* que Chimera trae int
     ggsave(filename = fileOUT,plot = p1,device = "png",width = 20,height = 10,units = "cm",dpi = 300)
     ```
 
-15. Encuentre el archivo corespondiente al gráfico del PAE.
-    * ¿Qué interpreta?
-
 16. En base a los resultados obtenidos, 
     * ¿Qué puede decir de la estructura de la proteína?
     * ¿Cuántos dominios posee? ¿ordenados o desordenados?
     * ¿Puede decir aproximadamente los límites?
 
-17. Guarde la sesión (*Save Session As...* ) y cierre chimera.
 
 ## Ejercicios adicionales
 
 ### Ejercicio Adicional 1. Modelado de un dímero de E7
 
-1. En la parte superior, haga click en **Runtime** → **Disconnect** and delete Runtime
+1. Preparando la corrida.
 
-2. Preparando la corrida.
+    Para indicar que se quiere correr un multímero se debe ingresar en *Copies* el número de copias de la misma cadena.
 
-    Para indicar que se quiere correr un multímero se debe ingresar las secuencias separadas por `:`.
-    En el campo sequence query ingrese las secuencias de la proteína E7 de HPV16. 
+    En este caso es un homodímero por lo tanto ingrese 2.
+
+    En el campo sequence query ingrese la secuencia de la proteína E7 de HPV16. 
 
     ```
-    MHGDTPTLHEYMLDLQPETTDLYCYEQLNDSSEEEDEIDGPAGQAEPDRAHYNIVTFCCKCDSTLRLCVQSTHVDIRTLEDLLMGTLGIVCPICSQKP:MHGDTPTLHEYMLDLQPETTDLYCYEQLNDSSEEEDEIDGPAGQAEPDRAHYNIVTFCCKCDSTLRLCVQSTHVDIRTLEDLLMGTLGIVCPICSQKP
+    MHGDTPTLHEYMLDLQPETTDLYCYEQLNDSSEEEDEIDGPAGQAEPDRAHYNIVTFCCKCDSTLRLCVQSTHVDIRTLEDLLMGTLGIVCPICSQKP
     ```
 
-    * En el campo **jobname** ingrese: E7_DIMERO.
+    * Guarde y en el campo **job name** ingrese: E7_DIMERO.
 
-    * En **num_relax** elija 1
-
-    * En **template mode** elija none
-
-    * Vaya a *Runtime* → *Run all*, o presione `Ctrl`+`F9`
+    * Active el uso de *seeds* e ingrese una seed al azar.
 
     * Vuelta a esperar ... unos 20 minutos.
 
-    !!! warning "Atención"
+    * Observe el gráfico del PAE e Interpretelo.
 
-        Antes de seguir adelante vaya al ejercicio 3 y ponga a correr el modelado siguiente!
+    * ¿Cuál de los 4 gráficos muestra los valores correspondientes para los pares de residuos de la cadena A, cual para la cadena B y cual para los pares de residuos de de las cadenas A y B?
 
-3. Abra Chimera. Y abra el pdb: 2F8B.
+3. Descargue el resultado haciendo click en los tres puntitos de la derecha y luego "Download"
 
-    Para eso ingrese en el *command line*:
+4. Desde la [rcsb](https://www.rcsb.org/) descargue la estructura del dímero de E7: pdb 2F8B.
 
-    ```
-    open 2f8b
-    ```
+    * ¿Por qué método fue determinada?
+    * ¿A qué proteína corresponde? ¿De qué organismo?
+
+5. Abra Chimera. Y abra el pdb: 2F8B.
 
     * ¿Qué observa? ¿A qué se debe?
 
-    * Investigue en el [rcsb](https://www.rcsb.org/) la técnica por la que se obtuvo esta estructura y a qué proteína pertenece.
-
-    * ¿Este pdb es utilizado como templado para el modelado? ¿por qué?
-
-4. Abra el model Panel: *Favorites* → *Model Panel*
-
-    Para que sea más fácil las observaciones vamos a trabajar con un único submodelo de cada cadena. Para esto, ingrese en la línea de comando:
+4. Para que sea más fácil las observaciones vamos a trabajar con un único submodelo de cada cadena. Para esto, ingrese en la línea de comando:
 
     ```
     close #0.2-15
@@ -1114,22 +1089,13 @@ Para colorear por b-factors, utilizaremos la *command line* que Chimera trae int
 
     * ¿Qué residuos se encuentran coordinando la unión a zinc?
 
-7. Ubique el archivo zip que se generó con ColabFold y descomprímalo en su computadora. 
+7. Ubique el archivo zip que se generó con AlphaFold y descomprímalo en su computadora.
 
-8. Identifique el archivo que corresponde al pLDDT.
-    * ¿Qué región está modelada con alta confianza y cual no?
-
-9. Identifique el archivo que corresponde al PAE.
-
-    * Interprete el gráfico.
-    * ¿Cuál de los 4 gráficos muestra los valores correspondientes para los pares de residuos de la cadena A, cual para la cadena B y cual para los pares de residuos de de las cadenas A y B?
-    * ¿Cuáles son los límites el dominio globular, aproximadamente?
-
-10. Elija el modelo mejor mejor ranqueado y alineelo utilizando Matchmaker contra la estructura de 2F8B.
+8. Elija el modelo mejor mejor ranqueado y alineelo utilizando Matchmaker contra la estructura de 2F8B.
 
     * ¿Cuál es el RMSD global?
 
-11. Abra en chimera los 5 modelos no relajados que se generaron. Luego, alinee utilizando matchmaker y seleccionaremos las cisteínas que coordinan la unión al zinc.
+9. Abra en chimera los 4 modelos restantes generados. Luego, alinee utilizando matchmaker y seleccionaremos las cisteínas que coordinan la unión al zinc.
 
     ```
     sel #1-5:58,61,91,94; display sel; color blue,a sel; color byhet sel; ~sel
@@ -1146,23 +1112,82 @@ Para colorear por b-factors, utilizaremos la *command line* que Chimera trae int
 
     * ¿Considera que la predicción del sitio de unión de zinc es buena aún cuando no se incluye el ión en el modelado?
 
-12. Coloree las cadenas de los modelos predichos según los valores de pLDDT.:
+10. Coloree las cadenas de los modelos predichos según los valores de pLDDT.:
 
     ```
-    rangecolor bfactor 50 orange red 50 white 100 dodger blue
+    rangecolor bfactor 50 orange red 70 yellow 100 blue
     ```
 
     * ¿Qué observa?
 
     En base a todas las características observadas: pLDDT, PAE, coordinación de zinc,
 
-    * ¿Pudo AF2 predecir el estado de oligomerización?
+    * ¿Pudo AF3 predecir el estado de oligomerización?
 
-    * ¿Pudo AF2 predecir la coordinación del zinc?
+    * ¿Pudo AF3 predecir la coordinación del zinc?
 
     * ¿Qué opina del modelo?
 
-13. Guarde la sesión y cierre chimera.
+
+11. Vaya a File → Save PDB...
+
+    * en File Name ingrese: ```$name```
+
+    * En *Save Multiple Models* seleccione *Multiple Files*
+
+    * Esto guardará cada modelo en un archivo pdb separado.
+
+12. Ahora abra R Studio. Ahora graficaremos los pLDDT por posición para cada uno de los modelos.
+
+```r
+library(bio3d)
+library(ggplot2)
+library(reshape2)
+
+setwd(*DIRECTORIO DE TRABAJO DESEADO*)
+
+archivos <- list.files(path = directorio,pattern = ".pdb")
+
+miarchivo <- paste(directorio,archivos[1],sep="")
+mipdb <- read.pdb(miarchivo)
+any(mipdb$calpha)
+datos <- data.frame(Residue = mipdb$atom[mipdb$calpha,"resno"],
+                    Rank_1 = mipdb$atom[mipdb$calpha,"b"],
+                    Chain = mipdb$atom$chain[mipdb$calpha]
+)
+
+for(i in 2:length(archivos)){
+  miarchivo2 <- paste(directorio,archivos[i],sep="")
+  mipdb2 <- read.pdb(miarchivo2)
+  nuevaColumna <- paste("Rank",i,sep="_")
+  datos[nuevaColumna] <- mipdb2$atom[mipdb2$calpha,"b"]
+}
+
+fileOUT <- paste(directorio,"E7_Dimero.png",sep="")
+
+datos2 <- melt(datos, id=c("Residue",'Chain'))
+datos2$variable <- as.factor(datos2$variable)
+datos2$Chain <- as.factor(datos2$Chain)
+
+p1 <- ggplot(datos2, mapping=aes(x=Residue,y=value,color=variable)) + 
+  geom_line() + theme_bw() +
+  facet_wrap(.~Chain) +
+  scale_x_continuous(name = "E7 Residue", breaks = seq(5,100,by=5),limits = c(0,100),expand=c(0,0)) +
+  scale_y_continuous(name = "Predicted lDDT", breaks = seq(5,100,by=5),limits = c(0,101),expand=c(0,0)) +
+  geom_hline(yintercept = 90,color="blue")+
+  geom_hline(yintercept = 70,color="orange2")+
+  geom_hline(yintercept = 50,color="red")
+p1
+
+ggsave(filename = fileOUT,plot = p1,device = "png",width = 20,height = 10,units = "cm",dpi = 300)
+```
+
+13. En base a los resultados obtenidos, ¿Qué región está modelada con alta confianza y cual no?
+
+9. En base al gráfico de PAE y pLDDT:
+    
+    * ¿Cuáles son los límites el dominio globular, aproximadamente?
+
 
 ### Ejercicio Adicional 2. Modelado de un motivo unido a un dominio globular en Alphafold2
 
@@ -1172,28 +1197,32 @@ Uno de los blancos celulares de Rb es la Histone desacetilasa 1 (HDAC) que posee
 
 Una estructura tridimensional permite entender desde el aspecto molecular las diferencias en las interacciones que podrían llevar a diferencias en afinidades. Sin embargo, hasta la fecha, no se posee una estructura del complejo Rb-HDAC1.
 
-1. Modele el complejo utilizando el colab: [AlphaFold2](https://colab.research.google.com/github/sokrypton/ColabFold/blob/main/AlphaFold2.ipynb).
+1. Modele el complejo utilizando AF3: [AlphaFold3](https://alphafoldserver.com/).
 
     Para tardar menos en el modelado vamos a realizar algunas modificaciones.
 
     En lugar de ingresar la secuencia completa de la proteína retinoblastoma, vamos a ingresar únicamente la correspondiente al dominio pocket de la proteína retinoblastoma, donde los loops se encuentran reemplazados por secuencias más cortas.
 
-    Al final, indicaremos con el `:` el inicio de la cadena correspondiente al motivo HDAC (`DKRIACEEEFSD`).
-
-    Obteniendo finalmente:
-
     ```
     NTIQQLMMILNSASDQPSENLISYFNNCTVNPKESILKRVKDIGYIFKEKFAKAVGQGCVEIGSQRYKLGVRLYYRVMESMLKSEEERLSIQNFSKLLNDNIFHMSLLACALEVVMATYSRSTSQNLDSGTDLSFPWILNVLNLKAFDFYKVIESFIKAEGNLTREMIKHLERCEHRIMESLAWLSDSPLFDLIKQSKLVPRGSKSTSLSLFYKKVYRLAYLRLNTLCERLLSEHPELEHIIWTLFQHTLQNEYELMRDRHLDQIMMCSMYGICKVKNIDLKFKIIVTAYKDLPHAVQETFKRVLIKEEEYDSIIVFYNSVFMQRLKTNILQYASTRPPTLSPIPHIPR:DKRIACEEEFSD
     ```
 
-    * En *num_relax* elija 1.
+    Luego, agregue la secuencia del motivo HDAC haciendo click en *Add entity* y pegando la siguiente secuencia en el campo *Input*:
 
-    * En *template_mode* elija: **none**.
+    ```
+     DKRIACEEEFSD
+    ```
 
-    Luego, corra todo con `ctrl+F9` o vaya a *Runtime → Runall*
+    * En *Entity Type* seleccione *Protein* y en *Copies* ingrese 1.
 
-2. Abra el modelo relajado obtenido por AlphaFold2 en chimera.
-3. Abra el pdb 1GUX
+    * Luego en *job name* ingrese: Rb_HDAC.
+
+12. Investigue el gráfico de PAE generado.
+
+    * ¿Qué nivel de confianza observa en la ubicación relativa del péptido HDAC respecto del dominio Rb?
+
+2. Abra el modelo obtenido por AlphaFold3 en Chimera.
+3. Descargue y Abra el pdb 1GUX
 4. Alinee ambos complejos utilizando matchmaker.
 
     Los siguientes pasos se hacen en la *command line* de Chimera:
@@ -1247,13 +1276,10 @@ Una estructura tridimensional permite entender desde el aspecto molecular las di
 11. Coloree por b-factors el modelo obtenido por AlphaFold (Recuerde que contienen el plDDT y asegúrese que su modelo es el indicado en el comando #1)
 
     ```
-    rangecolor bfactor 50 orange red 70 white 100 dodger blue #1
+    rangecolor bfactor 50 orange red 70 yellow 100 dodger blue #1
     ```
 
     * A ojo, ¿Cuál es la calidad del modelado del péptido que contiene el motivo (HDAC)?
 
-12. Investigue el gráfico de PAE que se descarga con los modelos.
-
-    * ¿Qué nivel de confianza observa en la ubicación relativa del péptido HDAC respecto del dominio Rb?
-    
+   
 13. En base a las observaciones realizadas: ¿AlphaFold se puede utilizar para analizar la interacción de motivos con dominios globulares?

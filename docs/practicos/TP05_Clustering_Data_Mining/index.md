@@ -1,21 +1,20 @@
 ---
-title: Practico Ocho
+title: Practico Cinco
 icon: fontawesome/solid/hammer
 tags: 
   - practicos
 ---
 ![Image](img/clustering2.png){ width="250", align="left" }
 
-# **TP 8**. Clustering y Data Mining { markdown data-toc-label = 'TP 08' }
+# **TP 5**. Clustering y Data Mining { markdown data-toc-label = 'TP 05' }
 
 <br>
 <br>
+<br>
 
-[:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1zyjFtV2jWfCyJ4Pgw2ENtGBCJ1vRu6eO/view?usp=sharing){ .md-button .md-button--primary }
+[:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1ezf6beXBVId14bUPcqUur8rHnend0g3-/view?usp=sharing){ .md-button .md-button--primary }  [:fontawesome-solid-file-powerpoint: Slides](https://docs.google.com/presentation/d/1vnhl53yQaSNsyjumxBXrl-GBp-17898aSnUL4DKltAM/edit?usp=sharing){ .md-button .md-button--primary }
 
-### Slides mostrados en clase
-
-* :fontawesome-regular-file-pdf: [Slides](https://drive.google.com/file/d/1rsqPLINlb0HquB66hj4aSr6GcCd0xbvq/view?usp=sharing)
+!!! warning "Atención: Este TP tiene parcialito."
 
 ### Software a usar
 * R (ya instalado en la VM).
@@ -25,9 +24,9 @@ tags:
 * Introducción a **R**, **TPP** de esta materia: [Parte 1](../TPPa_Programando_en_Biologia/index.md) y [Parte 2](../TPPb_Programando_en_Biologia/index.md)
 * [Clustering jerárquico en **R**](https://www.datanovia.com/en/lessons/agglomerative-hierarchical-clustering/)
 * [Detalles del cálculo de Silhouette (y mucho más)](https://www.cienciadedatos.net/documentos/37_clustering_y_heatmaps#Average_silhouette_method)
-* [Curso online de R de Coursera](https://www.coursera.org/learn/r-programming) (se puede hacer gratis) (en ese caso no da certificado)
+* [Curso online de R de Coursera](https://www.coursera.org/learn/r-programming) (se puede hacer gratis, en ese caso no da certificado)
 * Data Tables: [Introducción oficial](https://cran.r-project.org/web/packages/data.table/vignettes/datatable-intro.html) y [otra página con más info](https://bookdown.org/paradinas_iosu/CursoR/data-table.html)
-* ggplot2: [Vistazo rápido](https://bookdown.org/paradinas_iosu/CursoR/ggplot2.html), [detalles sobre los tipos de plots](http://sthda.com/english/wiki/ggplot2-essentials), [cheatsheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf) e [información sobre colores y daltonismo](https://jfly.uni-koeln.de/color/)
+* ggplot2: [Vistazo rápido](https://bookdown.org/paradinas_iosu/CursoR/ggplot2.html), [detalles sobre los tipos de plots](https://www.sthda.com/english/wiki/ggplot2-essentials), [cheatsheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf) e [información sobre colores y daltonismo](https://jfly.uni-koeln.de/color/)
 * dendextend: [Detalle del paquete](https://cran.r-project.org/web/packages/dendextend/vignettes/dendextend.html)
 
 ### Objetivos
@@ -52,7 +51,7 @@ Si bien este TP vamos a enfocarnos más que nada en aprender las técnicas, el o
 Para empezar este TP vamos a realizar un pequeño *clustering jerárquico* a mano para repasar el concepto.
 
 Supongamos que tenemos cuatro genes (A, B, C y D) para los cuales medimos el nivel de expresión a las 0hs, 1hs y 2hs luego de algún tratamiento:
-
+ 
 <figure markdown>
 | gen { data-sort-method='none' } | t_0h { data-sort-method='none' } | t_1h { data-sort-method='none' } | t_2h { data-sort-method='none' } |
 | :---: | :---: | :---: | :---: |
@@ -109,7 +108,7 @@ Si no entienden algunos de estos conceptos pueden leer un poco más sobre ellos 
 
     El *clustering jerárquico* es una forma de agrupar elementos dependiendo de que tan similares son entre ellos. Usa un algoritmo bastante sencillo de entender que se basa en una matriz de distancias:
 
-    1. Sin considerar a la diagonal, encontrar el par de elementos (fila, columna) que son más similares entre sí (el menor número en la matriz de distancias). En nuestra matriz de distancias los elementos más parecidos son **"genB"** y **"genC"** ya que tienen la menor similitud (3,32)
+    1. Sin considerar a la diagonal, encontrar el par de elementos (fila, columna) que son más similares entre sí (el menor número en la matriz de distancias). En nuestra matriz de distancias los elementos más parecidos son **"genB"** y **"genC"** ya que tienen la menor distancia (3,32)
 
     2. Dejar constancia de dicha similitud y reconstruir la matriz, reemplazando ambos elementos por uno nuevo (saco los elementos **"genB"** y **"genC"** y agrego el elemento **"genB+C"**)
 
@@ -144,11 +143,11 @@ $$
 | genD | 0.73 | 0.41 | -1.14 |
 </figure>
 
-**6.** Comparando los clusterings obtenidos con los datos estandarizados y sin estandarizar.
+**6.** Comparando los agrupamientos obtenidos con los datos estandarizados y sin estandarizar.
 
 1. ¿Qué diferencias observan?
 
-2. ¿Cuál de los dos clusterings les parece mejor para este escenario donde queríamos evaluar cómo afecta un tratamiento los niveles de expresión de diferentes genes?
+2. ¿Cuál de los dos agrupamientos les parece mejor para este escenario donde queríamos evaluar cómo afecta un tratamiento los niveles de expresión de diferentes genes?
 
 3. ¿Les parece qué es siempre correcto estandarizar los datos de esta forma o se les ocurre escenarios donde no es así?
 
@@ -174,11 +173,11 @@ Antes que nada vamos a familiarizarnos un poco con este data set.
 library(data.table)
 library(ggplot2)
 
-#Transformo a iris en un *Data Table* (que aca realmente no hace falta, pero para despues)
+#Transformo a iris en un *Data Table* (que aca realmente no hace falta, pero para después)
 dt_iris <- as.data.table(iris)
 
-#Hago un plot comparando el largo de los sepalos y los petalos
-#Estoy cambiando la forma y el color segun la especie
+#Hago un plot comparando el largo de los sépalos y los pétalos
+#Estoy cambiando la forma y el color según la especie
 p <- ggplot(data = dt_iris, aes(x = Sepal.Length, y = Petal.Length, color = Species)) +
     geom_point(size = 2) +
     theme_bw() +
@@ -322,19 +321,19 @@ Lo primero que vamos a hacer entonces es usar un clustering jerárquico para agr
     ```R
     #Agregamos una nueva columna denominada row_id que tiene un numero entre 1 y 150
     #dt_iris[, .N] es una función de *Data Tables* que me devuelve el numero de filas en la tabla
-    #El numero de filas tambien se puede conseguir haciendo nrow(dt_iris)
+    #El numero de filas también se puede conseguir haciendo nrow(dt_iris)
     dt_iris$row_id <- c(1:dt_iris[, .N])
 
     #Aca estamos cambiando el orden de las columnas a *dt_iris*.
     #No hace falta asignar esto a *dt_iris* ya que *setcolorder* modifica la variable misma 
     #Como solo le estamos pasando 1 columna, lo que estamos haciendo es mover esa columna al principio
-    #(al usar así *setcolorder* las otras se quedan donde estan)
+    #(al usar así *setcolorder* las otras se quedan donde están)
     setcolorder(dt_iris, c("row_id"))
 
     #Similar a lo que hicimos en el TP anterior, estamos transformando nuestros datos a una matriz
     #donde la primer columna (en este caso *row_id*) va a transformarse en los nombres de las filas
-    #Estamos sacando a la columna *Species* ya que queremos simular que no tenemos esta informacion
-    #(la columna *Species* va a estar todavia en *dt_iris*, pero no en *matriz_datos*)
+    #Estamos sacando a la columna *Species* ya que queremos simular que no tenemos esta información
+    #(la columna *Species* va a estar todavía en *dt_iris*, pero no en *matriz_datos*)
     matriz_datos <- as.matrix(dt_iris[, -c("Species")], rownames = 1)
     ```
 
@@ -372,7 +371,7 @@ Donde `method = "complete"` está indicándole a la función que criterio de agr
     library(dendextend)
 
     #Estoy asumiendo que guardaron la salida de *hclust()* en una variable llamada clustering_jerarquico
-    #De no ser asi, cambien el nombre de la variable a continuacion por lo que corresponda
+    #De no ser asi, cambien el nombre de la variable a continuación por lo que corresponda
     dend <- as.dendrogram(clustering_jerarquico)
 
     colores_especies <- c("#004D40","#D81B60","#FFC107")
@@ -395,12 +394,12 @@ Donde `method = "complete"` está indicándole a la función que criterio de agr
     library(dendextend)
 
     #Estoy asumiendo que guardaron la salida de *hclust()* en una variable llamada clustering_jerarquico
-    #De no ser asi, cambien el nombre de la variable a continuacion por lo que corresponda
+    #De no ser asi, cambien el nombre de la variable a continuación por lo que corresponda
     #Aca estoy transformando la variable *clustering_jerarquico* que es de tipo *hclust* a un *dendrogram*, 
     #que es una variable usada por el paquete *dendextend*
     dend <- as.dendrogram(clustering_jerarquico)
 
-    #La funcion *labels_colors()* me permite asignar a mano los colores para los 150 labels del dendrograma
+    #La función *labels_colors()* me permite asignar a mano los colores para los 150 labels del dendrograma
     #Ahora bien, yo se que originalmente en la tabla las primera 50 filas corresponden al color 1 y asi
     #Lo que estoy haciendo aca es armar una lista de 150 colores ordenada como esta en la tabla original y luego
     #reordenarlas para que coincidan con el orden de los IDs en el dendrograma
@@ -560,7 +559,7 @@ promedio_silhouette_kmeans_k3 <- summary(silhouette_kmeans_k3)[[1]][["Mean"]]
 **11.1)** Supongamos ahora que estamos en un escenario real, por lo que no tenemos información de a que especie corresponde cada punto. Evalúen objetivamente cual es el mejor clustering de los realizados
 
 
-##Ejercicios adicionales
+## Ejercicios adicionales
 
 !!! Info "Sobre los ejercicios adicionales"
 

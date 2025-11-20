@@ -5,26 +5,36 @@ tags:
   - teoricas
 ---
 
-## Secuenciación y ensamblado de genomas 
- Clase teórica sobre métodos de secuenciación, ensamblado de genomas, mapeo de lecturas contra referencia, etc. Valores de calidad de base, cálculo de coberturas, algoritmos.
+## Métodos de predicción de Machine Learning basados en datos (ANN)
 
- 
- * :fontawesome-regular-file-pdf: [Slides](genomeSequencingAssemblyReadMapping2024.pdf) 
- * :material-video-check: [Video grabado en 2023.](https://youtu.be/tIDj8FMeNSQ) 
- 
+ Clase teórica de neural networks.
 
-## Material de lectura y consulta
+* :fontawesome-regular-file-pdf: [Slides](https://drive.google.com/open?id=1BH-93oaGd8Ju0sa9Yb8OIzdxC0SeVe_x&usp=sharing)
 
-  * :fontawesome-regular-file-pdf: Compeau PEC, Pevzner PA, Tesler G. How to apply de Bruijn graphs to genome assembly. Nature Biotechnol 29: 987, 2011. [PDF de estudio.](compeau_11_debruijn.pdf)
-  * :fontawesome-regular-file-pdf: Nagarajan, N., & Pop, M. (2013). Sequence assembly demystified. Nature Reviews Genetics, 14(3), 157–167. doi:10.1038/nrg3367. [PDF de estudio.](nagarajan2013.pdf)
-  * :fontawesome-regular-file-pdf: Rice, E. S., & Green, R. E. (2018). New Approaches for Genome Assembly and Scaffolding. Annual Review of Animal Biosciences, 7(1). doi:10.1146/annurev-animal-020518-115344. [PDF de estudio.](rice2018.pdf)
-  * :paperclip: Ribeiro FJ, Przybylski D, Yin S, et al. Finished bacterial genomes from shotgun sequence data. Genome Res. 2012 Nov;22(11):2270-7. [doi:10.1101/gr.141515.112](https://doi.org/10.1101/gr.141515.112). PMID: 22829535; PMCID: PMC3483556.
-  * :material-wikipedia: [Phred Quality Score](https://en.wikipedia.org/wiki/Phred_quality_score)
-  * :material-wikipedia: [K-mers](https://en.wikipedia.org/wiki/K-mer)  
-  * :material-wikipedia: [N50, L50 and related statistics](https://en.wikipedia.org/wiki/N50,_L50,_and_related_statistics)
+*  :fontawesome-regular-file-pdf: [Handout_1](https://drive.google.com/open?id=1SRKk_Be-hZRq-ESOcW5jflB4tueJDtyX&usp=sharing)
 
-## Software 
+* :fontawesome-regular-file-pdf: [Handout_2](https://drive.google.com/open?id=1cf_a-v-GMmsx6Yqcfr507y_0dLMF0gtc&usp=sharing)
 
- * :material-download: [FASTQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)
- * :material-download: [MultiQC](https://multiqc.info/)
- * :material-download: [KAT: K-mer Analysis Toolkit](https://github.com/TGAC/KAT)
+
+
+
+
+<!--
+ Esta clase incluye ejercicios para resolver (handout).
+-->
+<!--
+### Hidden Markov Models (HMM)
+
+
+
+* :octicons-video-16: [HMM Video de la Clase](https://drive.google.com/file/d/1zOFqYZ1_xPEKnbSz7o2a6sdUSgY6Qh6J/view?usp=drive_link)
+
+* :fontawesome-regular-file-pdf: [Ejercicios](./files/handout_viterbi_HMM.pdf)
+![type:video](https://www.youtube.com/embed/hlmJDkSPWLU)
+
+
+### Material de lectura y consulta
+
+* :octicons-book-16: *Immunological Bioinformatics*. Ole Lund, Morten Nielsen, Claus Lundegaard, Can Kesmir, Søren Brunak. DOI: https://doi.org/10.7551/mitpress/3679.001.0001. The MIT Press (2005). [Chapters 3 and 4](./files/book_mniel_intro_ch3-4.pdf)
+
+-->
