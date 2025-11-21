@@ -47,8 +47,7 @@ tags:
 | Jue, 20 Nov  | 9 hs |	:material-google-classroom: Presencial | Revision parciales      | |	F. Agüero<br>L. Chemes<br> |
 | Mar, 25 Nov  | 9 hs |	| LIBRE | | |
 | Jue, 27 Nov  | 9 hs |	| Recuperatorio | |	|
-| Jue, 4 Dic  | 9 hs |	:material-google-classroom: Presencial | Revisión recuperatorios | | F. Agüero<br>L. Chemes<br> |
-| Jue, 4 Dic  | 9 hs |	:material-google-classroom: Presencial | Examen Final  | | F. Agüero<br>L. Chemes<br> |
+| Jue, 4 Dic  | 9 hs |	:material-google-classroom: Presencial | Revisión recuperatorios y 2da Instancia Recuperación | | F. Agüero<br>L. Chemes<br> |
 
 <!---
 | Mar, 5 Ago   | 9 hs |	:material-google-classroom: Presencial | [T1. Presentación, Conceptos Computación, Bases de Datos](../teoricas/1-Teorica-Uno/index.md) | :fontawesome-solid-brain: Teórica |	F. Agüero |
