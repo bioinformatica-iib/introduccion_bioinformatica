@@ -40,7 +40,7 @@ Para poder promocionar la materia, se requiere haber aprobado los Trabajos Pract
 
 ### Condiciones para aprobar 
 
-Para aprobar la materia, se requiere haber aprobado los Trabajos Practicos (nota de informes mayor o igual a 5), tener presencialidad de al menos 80%, y haber aprobado los módulos (del primer examen o recuperatorio) con nota mayor o igual a 5.Se puede aprobar con dos módulos desaprobados siempre y cuando el promedio de todos los módulos sea mayor o igual a 5.
+Para aprobar la materia, se requiere haber aprobado los Trabajos Practicos (nota de informes mayor o igual a 5), tener presencialidad de al menos 80%, y haber aprobado los módulos (del primer examen o recuperatorio) con nota mayor o igual a 5. Se puede aprobar con dos módulos desaprobados siempre y cuando el promedio de todos los módulos sea mayor o igual a 5.
 
 ### Condiciones para recursar
 
