@@ -1827,7 +1827,7 @@ Esto permite ejecutar comandos sobre los archivos correctos y organizar proyecto
 </ul>
 <h4 id="pregunta-1">✏️ Pregunta 1</h4>
 <p>Abrir una terminal y ejecutar el comando para obtener la ubicación actual</p>
-<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="nb">pwd</span>
+<div class="highlight"><pre><span></span><code><span class="nb">pwd</span>
 </code></pre></div>
 <h3 id="crear-y-eliminar-carpetas">Crear y eliminar carpetas</h3>
 <p>En el sistema de archivos de Linux, las carpetas (también llamadas directorios) son la forma principal de organizar archivos. Para trabajar de forma ordenada en bioinformática, es fundamental saber crear y eliminar carpetas desde la terminal.</p>
@@ -1866,7 +1866,7 @@ El código que deben ejecutar está indicado en la sección de <strong>Preguntas
 </div>
 <h4 id="pregunta-2">✏️ Pregunta 2</h4>
 <p>Ejecutar el comando para generar una carpeta de "TP01" </p>
-<div class="highlight"><pre><span></span><code><span class="w">    </span>mkdir<span class="w"> </span>TP01
+<div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>TP01
 </code></pre></div>
 <hr>
 <h3 id="cambiar-de-directorio">Cambiar de directorio</h3>
@@ -1948,7 +1948,7 @@ El código que deben ejecutar está indicado en la sección de <strong>Preguntas
 </details>
 <h4 id="pregunta-3">✏️ Pregunta 3</h4>
 <p>Ejecutar el comando para ingresar a la carpeta "TP01". </p>
-<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="nb">cd</span><span class="w"> </span>TP01
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>TP01
 </code></pre></div>
 <div class="admonition info">
 <p class="admonition-title">Estructura de trabajo recomendada</p>
@@ -2064,7 +2064,7 @@ El código que deben ejecutar está indicado en la sección de <strong>Preguntas
 <h3 id="paso-1-descargar-el-archivo">Paso 1: Descargar el archivo</h3>
 <p><code>wget</code> es un comando que permite descargar archivos desde internet o desde servidores internos directamente desde la terminal. Es muy útil porque funciona en segundo plano, puede reanudar descargas interrumpidas y no necesita un navegador web.</p>
 <p><strong>Sintaxis general</strong></p>
-<div class="highlight"><pre><span></span><code><span class="w">    </span>wget<span class="w"> </span><span class="o">[</span>opciones<span class="o">]</span><span class="w"> </span>URL
+<div class="highlight"><pre><span></span><code>wget<span class="w"> </span><span class="o">[</span>opciones<span class="o">]</span><span class="w"> </span>URL
 </code></pre></div>
 <ul>
 <li><code>URL</code> → dirección del archivo que queremos descargar.</li>
@@ -2125,11 +2125,11 @@ El código que deben ejecutar está indicado en la sección de <strong>Preguntas
 </details>
 <h4 id="pregunta-6">✏️ Pregunta 6</h4>
 <p>Dentro de la carpeta del TP01 ingresar a la carpeta <code>datos/</code>. Ejecutar el siguiente comando para obtener las secuencias:</p>
-<div class="highlight"><pre><span></span><code><span class="w">    </span>wget<span class="w"> </span><span class="s2">"https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP01_Linux/data/pacientes.fasta"</span>
+<div class="highlight"><pre><span></span><code>wget<span class="w"> </span><span class="s2">"https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP01_Linux/data/pacientes.fasta"</span>
 </code></pre></div>
 <h4 id="pregunta-7">✏️ Pregunta 7</h4>
 <p>Verificar que el archivo se haya descargado correctamente usando <code>ls</code></p>
-<div class="highlight"><pre><span></span><code><span class="w">    </span>ls
+<div class="highlight"><pre><span></span><code>ls
 </code></pre></div>
 <h3 id="paso-2-visualizar-el-archivo">Paso 2: Visualizar el archivo</h3>
 <p>Los comandos <code>head</code> y <code>tail</code> permiten <strong>ver partes de un archivo de texto</strong> sin abrirlo completo, lo cual es útil para inspeccionar archivos grandes.</p>
@@ -2243,7 +2243,7 @@ tail<span class="w"> </span>-n<span class="w"> </span><span class="m">15</span><
 </details>
 <h4 id="pregunta-8">✏️ Pregunta 8</h4>
 <p>Visualiza el archivo ejecutando el siguiente comando:</p>
-<div class="highlight"><pre><span></span><code><span class="w">    </span>head<span class="w"> </span>pacientes.fasta
+<div class="highlight"><pre><span></span><code>head<span class="w"> </span>pacientes.fasta
 </code></pre></div>
 <hr>
 <h3 id="paso-3-buscar-los-nombres-de-los-pacientes-con-grep">Paso 3: Buscar los nombres de los pacientes con <code>grep</code></h3>
@@ -2334,12 +2334,12 @@ tail<span class="w"> </span>-n<span class="w"> </span><span class="m">15</span><
 </details>
 <h4 id="pregunta-9">✏️ Pregunta 9</h4>
 <p>Buscá todas las líneas que empiezan con <code>&gt;</code> (el símbolo de cabecera en FASTA) en el archivo:</p>
-<div class="highlight"><pre><span></span><code><span class="w">    </span>grep<span class="w"> </span><span class="s2">"^&gt;"</span><span class="w"> </span>pacientes.fasta
+<div class="highlight"><pre><span></span><code>grep<span class="w"> </span><span class="s2">"^&gt;"</span><span class="w"> </span>pacientes.fasta
 </code></pre></div>
 <h3 id="paso-4-guardar-los-nombres-en-una-tabla">Paso 4: Guardar los nombres en una tabla</h3>
 <p>En la terminal, la mayoría de los comandos muestran su salida en la pantalla (stdout). El símbolo <code>&gt;</code> permite <strong>redirigir</strong> esa salida a un archivo, en lugar de mostrarla en la terminal. Es útil para guardar resultados, generar archivos de registro o crear listados que vamos a usar más adelante.</p>
 <p><strong>Sintaxis general</strong>
-</p><div class="highlight"><pre><span></span><code><span class="w">    </span>comando<span class="w"> </span>&gt;<span class="w"> </span>archivo_salida
+</p><div class="highlight"><pre><span></span><code>comando<span class="w"> </span>&gt;<span class="w"> </span>archivo_salida
 </code></pre></div>
 <ul>
 <li><code>comando</code> → cualquier comando que genere salida (ej: <code>grep</code>, <code>ls</code>, <code>head</code>).</li>
@@ -2407,7 +2407,7 @@ tail<span class="w"> </span>-n<span class="w"> </span><span class="m">15</span><
 </details>
 <h4 id="pregunta-10">✏️ Pregunta 10</h4>
 <p>Guardá la lista de nombres de los pacientes (las líneas que comienzan con <code>&gt;</code>) en un archivo dentro de la carpeta <code>resultados/</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="w">    </span>grep<span class="w"> </span><span class="s2">"^&gt;"</span><span class="w"> </span>pacientes.fasta<span class="w"> </span>&gt;<span class="w"> </span>../resultados/pacientes_nombres.csv
+<div class="highlight"><pre><span></span><code>grep<span class="w"> </span><span class="s2">"^&gt;"</span><span class="w"> </span>pacientes.fasta<span class="w"> </span>&gt;<span class="w"> </span>../resultados/pacientes_nombres.csv
 </code></pre></div>
 <h4 id="pregunta-11">✏️ Pregunta 11</h4>
 <p>Revisa que el archivo <code>pacientes_nombres.csv</code> se haya generado correctamente </p>
@@ -2422,23 +2422,23 @@ tail<span class="w"> </span>-n<span class="w"> </span><span class="m">15</span><
 <hr>
 <h3 id="paso-1-descargar-el-script">Paso 1: Descargar el script</h3>
 <p>El script ya está disponible en el repositorio del curso. Ingresá a la carpeta <code>scripts/</code> y ejecuta lo siguiente:</p>
-<div class="highlight"><pre><span></span><code><span class="w">    </span>wget<span class="w"> </span><span class="s2">"https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP01_Linux/data/script.sh"</span>
+<div class="highlight"><pre><span></span><code>wget<span class="w"> </span><span class="s2">"https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP01_Linux/data/script.sh"</span>
 </code></pre></div>
 <h3 id="paso-2-dar-permisos-de-ejecucion-al-script">Paso 2: Dar permisos de ejecución al script</h3>
 <p>Para poder ejecutar el script, necesita permisos de ejecución. Usá el comando <code>chmod</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="w">    </span>chmod<span class="w"> </span>+x<span class="w"> </span>script.sh
+<div class="highlight"><pre><span></span><code>chmod<span class="w"> </span>+x<span class="w"> </span>script.sh
 </code></pre></div>
 <p><strong>Verificación:</strong> Ejecutá <code>ls -l script.sh</code> y verificá que los permisos incluyan <code>-rwxr-xr-x</code> (la <code>x</code> indica que es ejecutable).</p>
 <hr>
 <h3 id="paso-3-ejecutar-el-script">Paso 3: Ejecutar el script</h3>
 <p>Ahora ejecutá el script desde la terminal:
-</p><div class="highlight"><pre><span></span><code><span class="w">    </span>bash<span class="w"> </span>script.sh
+</p><div class="highlight"><pre><span></span><code>bash<span class="w"> </span>script.sh
 </code></pre></div>
 <h4 id="pregunta-12">✏️ Pregunta 12</h4>
 <p>¿Qué hace cada línea del script?</p>
 <p><strong>Salida esperada:</strong> El script va a guardar un informe en <code>resultados/informe_final.tsv</code>.</p>
 <p><strong>Verificación:</strong> Abrí el archivo generado para confirmar que se creó correctamente:
-</p><div class="highlight"><pre><span></span><code><span class="w">    </span>head<span class="w"> </span>../resultados/informe_final.tsv
+</p><div class="highlight"><pre><span></span><code>head<span class="w"> </span>../resultados/informe_final.tsv
 </code></pre></div>
 <hr>
 <h3 id="paso-4-completar-la-tabla">Paso 4: Completar la tabla</h3>
