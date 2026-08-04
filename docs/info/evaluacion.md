@@ -10,7 +10,9 @@ La materia es **Promocional**.
 
 ### Regularidad
 
-Para poder aprobar la cursada (Trabajos Prácticos) se requiere una **presencialidad de al menos 80%** a las clases Prácticas.
+Para poder aprobar la cursada (Trabajos Prácticos) se requiere una
+**presencialidad de al menos 80%** a las clases Prácticas, y Aprobar los
+Informes de Trabajos Prácticos.
 
 ### Informes de Trabajos Prácticos
 
@@ -20,7 +22,7 @@ Algunos Trabajos Prácticos requieren la presentación de un informe. Los inform
 
 ### Examen Escrito
 
-La materia además se evalua mediante un único examen escrito y obligatorio, dividido en Módulos Temáticos. Más abajo se enumeran tópicos del programa de la materia ordenados en Módulos a modo ilustrativo solamente. 
+La materia además se evalua mediante un único examen escrito y obligatorio, dividido en Módulos Temáticos. Más abajo se enumeran tópicos del programa de la materia ordenados en Módulos **a modo ilustrativo** solamente. 
 
 En cada fecha de examen se evaluarán la mayoría de los módulos temáticos, pero por cuestiones de tiempo es posible que algunos módulos solo se evaluen en el recuperatorio. 
 
@@ -54,34 +56,34 @@ En caso de haber aprobado la materia (implica haber aprobado los Trabajos Practi
 
 La materia está divida en módulos temáticos. A continuación se enumeran a modo ilustrativo algunos. 
 
-- Módulo - Alineamientos, Búsquedas por similitud
+- **Módulo - Alineamientos, Búsquedas por similitud**
     - Alineamientos de a pares: algoritmos, heurísticos
     - Matrices y sistemas de scoring
     - Búsquedas por similitud en bases de datos: heurísticas
     - Alineamientos múltiples
      
-- Módulo - Secuenciación Genómica 
+- **Módulo - Secuenciación Genómica**
     - Concepto de calidad de bases y probabilidad de error
     - Ensambles y Mapeo de secuencias contra referencia
     - Métricas de calidad de ensambles 
 
-- Módulo - Agrupamiento de Datos, Filogenias 
+- **Módulo - Agrupamiento de Datos, Filogenias** 
     - Clustering jerarquico
     - Clustering particional
     - Concepto de distancia como métrica
 
-- Módulo - Motivos, Dominios, Perfiles
+- **Módulo - Motivos, Dominios, Perfiles**
     - Uso de información derivada de alineamientos múltiples
     - Perfiles (PSSMs, HMMs)
 
-- Módulo - Bioinformática Estructural
+- **Módulo - Bioinformática Estructural**
     - Modelado por homología 
 
-- Módulo - Quimioinformática 
+- **Módulo - Quimioinformática** 
     - Representación electrónica de moléculas químicas
     - Similitud química entre móleculas: algoritmos y métricas
 
-- Módulo - Aprendizaje Automático
+- **Módulo - Aprendizaje Automático**
     - Redes Neuronales Artificiales (ANNs)
     - Modelos Ocultos de Markov (HMMs)
     - Aprendizaje no supervisado (Clustering)
