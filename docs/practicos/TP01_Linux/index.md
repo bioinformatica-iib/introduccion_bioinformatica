@@ -259,7 +259,7 @@ pwd
 Abrir una terminal y ejecutar el comando para obtener la ubicación actual
 
 ```bash
-    pwd
+pwd
 ```
 
 ### Crear y eliminar carpetas
@@ -318,7 +318,7 @@ rmdir [opciones] carpeta
 Ejecutar el comando para generar una carpeta de "TP01" 
 
 ```bash
-    mkdir TP01
+mkdir TP01
 ```
  
 
@@ -368,7 +368,7 @@ cd nombre_de_carpeta
 Ejecutar el comando para ingresar a la carpeta "TP01". 
 
 ```bash
-    cd TP01
+cd TP01
 ``` 
 
 !!! info "Estructura de trabajo recomendada"
@@ -496,7 +496,7 @@ En este ejercicio vamos a trabajar con el archivo que contiene las secuencias de
 **Sintaxis general**
 
 ```bash
-    wget [opciones] URL
+wget [opciones] URL
 ```
 
 - `URL` → dirección del archivo que queremos descargar.
@@ -546,7 +546,7 @@ En este ejercicio vamos a trabajar con el archivo que contiene las secuencias de
 Dentro de la carpeta del TP01 ingresar a la carpeta `datos/`. Ejecutar el siguiente comando para obtener las secuencias:
 
 ```bash
-    wget "https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP01_Linux/data/pacientes.fasta"
+wget "https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP01_Linux/data/pacientes.fasta"
 ```
 
 #### ✏️ Pregunta 7
@@ -554,7 +554,7 @@ Dentro de la carpeta del TP01 ingresar a la carpeta `datos/`. Ejecutar el siguie
 Verificar que el archivo se haya descargado correctamente usando `ls`
 
 ```bash
-    ls
+ls
 ```
 
 ### Paso 2: Visualizar el archivo 
@@ -621,7 +621,7 @@ Los comandos `head` y `tail` permiten **ver partes de un archivo de texto** sin 
 Visualiza el archivo ejecutando el siguiente comando:
 
 ```bash
-    head pacientes.fasta
+head pacientes.fasta
 ```
  
 
@@ -702,7 +702,7 @@ Visualiza el archivo ejecutando el siguiente comando:
 Buscá todas las líneas que empiezan con `>` (el símbolo de cabecera en FASTA) en el archivo:
 
 ```bash
-    grep "^>" pacientes.fasta
+grep "^>" pacientes.fasta
 ```
 
 ### Paso 4: Guardar los nombres en una tabla
@@ -711,7 +711,7 @@ En la terminal, la mayoría de los comandos muestran su salida en la pantalla (s
 
 **Sintaxis general**
 ```bash
-    comando > archivo_salida
+comando > archivo_salida
 ```
 
 - `comando` → cualquier comando que genere salida (ej: `grep`, `ls`, `head`).
@@ -771,7 +771,7 @@ En la terminal, la mayoría de los comandos muestran su salida en la pantalla (s
 Guardá la lista de nombres de los pacientes (las líneas que comienzan con `>`) en un archivo dentro de la carpeta `resultados/`:
 
 ```bash
-    grep "^>" pacientes.fasta > ../resultados/pacientes_nombres.csv
+grep "^>" pacientes.fasta > ../resultados/pacientes_nombres.csv
 ```
  
 
@@ -796,7 +796,7 @@ Lo que vamos a hacer:
 El script ya está disponible en el repositorio del curso. Ingresá a la carpeta `scripts/` y ejecuta lo siguiente:
 
 ```bash
-    wget "https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP01_Linux/data/script.sh"
+wget "https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP01_Linux/data/script.sh"
 ```
 
 ### Paso 2: Dar permisos de ejecución al script
@@ -804,7 +804,7 @@ El script ya está disponible en el repositorio del curso. Ingresá a la carpeta
 Para poder ejecutar el script, necesita permisos de ejecución. Usá el comando `chmod`:
 
 ```bash
-    chmod +x script.sh
+chmod +x script.sh
 ```
 
 **Verificación:** Ejecutá `ls -l script.sh` y verificá que los permisos incluyan `-rwxr-xr-x` (la `x` indica que es ejecutable).
@@ -814,7 +814,7 @@ Para poder ejecutar el script, necesita permisos de ejecución. Usá el comando 
 
 Ahora ejecutá el script desde la terminal:
 ```bash
-    bash script.sh
+bash script.sh
 ```
 
 #### ✏️ Pregunta 12
@@ -827,7 +827,7 @@ Ahora ejecutá el script desde la terminal:
 
 **Verificación:** Abrí el archivo generado para confirmar que se creó correctamente:
 ```bash
-    head ../resultados/informe_final.tsv
+head ../resultados/informe_final.tsv
 ```
 ---
 ### Paso 4: Completar la tabla 

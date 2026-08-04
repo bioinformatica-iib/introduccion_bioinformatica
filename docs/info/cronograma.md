@@ -16,8 +16,8 @@ tags:
 | Mar, 4 Ago   | 9 hs |	:material-google-classroom: Presencial | T1. Presentación, Conceptos Computación, Bases de Datos | :fontawesome-solid-brain: Teórica |	F. Agüero |
 | Jue, 6 Ago   | 9 hs |	:material-google-classroom: Presencial | T2. Alineamientos, Matrices, Busquedas (1) | :fontawesome-solid-brain: Teórica |	F. Agüero |
 | Mar, 11 Ago  | 9 hs |	:material-google-classroom: Presencial | T3. Búsqueda de secuencias por Similitud (2) | :fontawesome-solid-brain: Teórica |	F. Agüero |
-| Jue, 13 Ago  | 9 hs |	:material-google-classroom: Presencial | P1. Introducción a UNIX | :fontawesome-solid-hammer: Práctica |	M. Didier Garnham |
-| Mar, 18 Ago  | 9 hs |	:material-google-classroom: Presencial | P2. EMBOSS Suite | :fontawesome-solid-hammer: Práctica |	M. Didier Garnham |
+| Jue, 13 Ago  | 9 hs |	:material-google-classroom: Presencial | P1. Introducción a UNIX (Parte 1) | :fontawesome-solid-hammer: Práctica |	M. Didier Garnham |
+| Mar, 18 Ago  | 9 hs |	:material-google-classroom: Presencial | P2. Introducción a UNIX (Parte 2) | :fontawesome-solid-hammer: Práctica |	M. Didier Garnham |
 | Jue, 20 Ago  | 9 hs |	:material-google-classroom: Presencial | P3. Alineamientos de secuencias de a pares | :fontawesome-solid-hammer: Práctica |	M. Didier Garnham |
 | Mar, 25 Ago  | 9 hs |	:material-google-classroom: Presencial | T4. Alineamientos múltiples | :fontawesome-solid-brain: Teórica |	F. Agüero |
 | Jue, 27 Ago  | 9 hs |	:material-google-classroom: Presencial | P4. Búsqueda de secuencias por similitud y Alineamientos Múltiples | :fontawesome-solid-hammer: Práctica |	M. Didier Garnham |
