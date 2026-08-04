@@ -40,12 +40,14 @@ En este trabajo práctico vamos a aprender a usar la **línea de comando** de Ub
 ## Definición y perfil del bioinformático
 
 El término "bioinformático" es amplio y no refiere a un único perfil. Un bioinformático posee, de manera combinada:
+
 - Conocimiento de un dominio biológico específico (genómica, proteómica, metabolómica).
 - Habilidades informáticas (programación, análisis estadístico).
 
 La formación habitual incluye un título en ciencias o computación, más un posgrado en bioinformática o experiencia equivalente.
 
 Las tareas que realizan incluyen:
+
 - Colaboración con investigadores.
 - Asesoramiento en recolección, gestión y visualización de datos.
 - Asesoramiento en diseño experimental.
@@ -75,12 +77,12 @@ El uso de cualquier método computacional (algoritmo, pipeline, herramienta) par
 
 Los experimentos en bioinformática se clasifican en cuatro tipos según la operación principal que se realiza sobre los datos. Cada tipo requiere controles específicos y una comprensión clara de sus limitaciones.
 
-| Tipo | Descripción (resumen) | Ejemplo | Controles (resumen) |
-| :--- | :--- | :--- | :--- |
-| **Búsqueda** | Extraer registros de una BD sin modificarlos. | Proteínas quinasa en vía X sobreexpresadas en patología. | Verificar mapeo a vías correctas y asociación a la entrada biológica. |
-| **Comparación** | Enfrentar conjuntos de datos para hallar similitudes o diferencias. | Comparar genes de resistencia en 25 genomas clínicos vs. 25 ambientales. | Usar secuencias aleatorias, evaluar puntuaciones no relacionadas y considerar la herramienta. |
-| **Modelado** | Generar representaciones predictivas de sistemas biológicos. | Modelo matemático de la vía de insulina con EDOs y datos de literatura. | Validar con datos no usados, variar parámetros y verificar fenómenos establecidos. |
-| **Integración** | Combinar múltiples fuentes de datos para responder preguntas complejas. | Integrar mutaciones, expresión y metilación en tumores de mama para subtipificar. | Incluir cepas con/sin resistencia conocida y usar datos de distintas BD. |
+| Tipo | Descripción |
+| :--- | :--- |
+| **Búsqueda** | Extraer registros de una BD sin modificarlos. |
+| **Comparación** | Enfrentar conjuntos de datos para hallar similitudes o diferencias. |
+| **Modelado** | Generar representaciones predictivas de sistemas biológicos. |
+| **Integración** | Combinar múltiples fuentes de datos para responder preguntas complejas.  |
 
 ## ¿Necesito programar?
 
@@ -239,8 +241,6 @@ A continuación hay una lista de los comandos más usados en Bash, vamos a ir vi
     | Bucles infinitos en scripts | — | Errores lógicos que impiden que el script termine. |
     | Caracteres especiales o codificación | — | Caracteres no visibles, tildes o emojis pueden romper comandos. |
     
-
----
 ### Navegación y cambio de directorio en Bash
 
 En la terminal de Linux/Ubuntu, es fundamental saber **dónde estamos ubicados** y cómo movernos entre carpetas.  
@@ -261,9 +261,7 @@ Abrir una terminal y ejecutar el comando para obtener la ubicación actual
 ```bash
     pwd
 ```
- 
 
----
 ### Crear y eliminar carpetas
 
 En el sistema de archivos de Linux, las carpetas (también llamadas directorios) son la forma principal de organizar archivos. Para trabajar de forma ordenada en bioinformática, es fundamental saber crear y eliminar carpetas desde la terminal.
@@ -491,7 +489,6 @@ Dentro de la carpeta TP01 ejecutar `ls -lh` para verificar que contenga la estru
 
 En este ejercicio vamos a trabajar con el archivo que contiene las secuencias de los pacientes. El hospital nos ha proporcionado un repositorio interno donde están almacenados los datos de secuenciación. Vamos a descargar el archivo desde ese repositorio, explorar su contenido para entender su estructura y extraer información clave.
 
----
 ### Paso 1: Descargar el archivo
 
 `wget` es un comando que permite descargar archivos desde internet o desde servidores internos directamente desde la terminal. Es muy útil porque funciona en segundo plano, puede reanudar descargas interrumpidas y no necesita un navegador web.
