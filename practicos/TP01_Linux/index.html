@@ -1442,16 +1442,20 @@
 <li>Mediante el uso de programas o <em>scripts</em>, nos permitirá automatizar procesos, acelerando el trabajo y minimizando la cantidad de errores que podemos cometer con tareas repetitivas</li>
 </ul>
 <h2 id="definicion-y-perfil-del-bioinformatico">Definición y perfil del bioinformático</h2>
-<p>El término "bioinformático" es amplio y no refiere a un único perfil. Un bioinformático posee, de manera combinada:
-- Conocimiento de un dominio biológico específico (genómica, proteómica, metabolómica).
-- Habilidades informáticas (programación, análisis estadístico).</p>
+<p>El término "bioinformático" es amplio y no refiere a un único perfil. Un bioinformático posee, de manera combinada:</p>
+<ul>
+<li>Conocimiento de un dominio biológico específico (genómica, proteómica, metabolómica).</li>
+<li>Habilidades informáticas (programación, análisis estadístico).</li>
+</ul>
 <p>La formación habitual incluye un título en ciencias o computación, más un posgrado en bioinformática o experiencia equivalente.</p>
-<p>Las tareas que realizan incluyen:
-- Colaboración con investigadores.
-- Asesoramiento en recolección, gestión y visualización de datos.
-- Asesoramiento en diseño experimental.
-- Procesamiento de datos y análisis estadístico.
-- Desarrollo de pipelines de análisis a medida.</p>
+<p>Las tareas que realizan incluyen:</p>
+<ul>
+<li>Colaboración con investigadores.</li>
+<li>Asesoramiento en recolección, gestión y visualización de datos.</li>
+<li>Asesoramiento en diseño experimental.</li>
+<li>Procesamiento de datos y análisis estadístico.</li>
+<li>Desarrollo de pipelines de análisis a medida.</li>
+</ul>
 <h2 id="la-bioinformatica-como-ciencia-experimental">La bioinformática como ciencia experimental</h2>
 <p>El uso de cualquier método computacional (algoritmo, pipeline, herramienta) para responder una pregunta biológica constituye un experimento. Como todo experimento, requiere:</p>
 <ul>
@@ -1494,35 +1498,25 @@
 <thead>
 <tr>
 <th style="text-align: left;">Tipo</th>
-<th style="text-align: left;">Descripción (resumen)</th>
-<th style="text-align: left;">Ejemplo</th>
-<th style="text-align: left;">Controles (resumen)</th>
+<th style="text-align: left;">Descripción</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align: left;"><strong>Búsqueda</strong></td>
 <td style="text-align: left;">Extraer registros de una BD sin modificarlos.</td>
-<td style="text-align: left;">Proteínas quinasa en vía X sobreexpresadas en patología.</td>
-<td style="text-align: left;">Verificar mapeo a vías correctas y asociación a la entrada biológica.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>Comparación</strong></td>
 <td style="text-align: left;">Enfrentar conjuntos de datos para hallar similitudes o diferencias.</td>
-<td style="text-align: left;">Comparar genes de resistencia en 25 genomas clínicos vs. 25 ambientales.</td>
-<td style="text-align: left;">Usar secuencias aleatorias, evaluar puntuaciones no relacionadas y considerar la herramienta.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>Modelado</strong></td>
 <td style="text-align: left;">Generar representaciones predictivas de sistemas biológicos.</td>
-<td style="text-align: left;">Modelo matemático de la vía de insulina con EDOs y datos de literatura.</td>
-<td style="text-align: left;">Validar con datos no usados, variar parámetros y verificar fenómenos establecidos.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>Integración</strong></td>
 <td style="text-align: left;">Combinar múltiples fuentes de datos para responder preguntas complejas.</td>
-<td style="text-align: left;">Integrar mutaciones, expresión y metilación en tumores de mama para subtipificar.</td>
-<td style="text-align: left;">Incluir cepas con/sin resistencia conocida y usar datos de distintas BD.</td>
 </tr>
 </tbody>
 </table>
@@ -1821,7 +1815,6 @@ Ubuntu es una de sus distribuciones más populares, conocida por su facilidad de
 </tbody>
 </table>
 </details>
-<hr>
 <h3 id="navegacion-y-cambio-de-directorio-en-bash">Navegación y cambio de directorio en Bash</h3>
 <p>En la terminal de Linux/Ubuntu, es fundamental saber <strong>dónde estamos ubicados</strong> y cómo movernos entre carpetas.<br>
 Esto permite ejecutar comandos sobre los archivos correctos y organizar proyectos de manera eficiente.</p>
@@ -1836,7 +1829,6 @@ Esto permite ejecutar comandos sobre los archivos correctos y organizar proyecto
 <p>Abrir una terminal y ejecutar el comando para obtener la ubicación actual</p>
 <div class="highlight"><pre><span></span><code><span class="w">    </span><span class="nb">pwd</span>
 </code></pre></div>
-<hr>
 <h3 id="crear-y-eliminar-carpetas">Crear y eliminar carpetas</h3>
 <p>En el sistema de archivos de Linux, las carpetas (también llamadas directorios) son la forma principal de organizar archivos. Para trabajar de forma ordenada en bioinformática, es fundamental saber crear y eliminar carpetas desde la terminal.</p>
 <p>Los comandos <code>mkdir</code> y <code>rmdir</code> son las herramientas básicas para gestionar directorios:</p>
@@ -2069,7 +2061,6 @@ El código que deben ejecutar está indicado en la sección de <strong>Preguntas
 </code></pre></div>
 <h2 id="ejercicio-3-descargar-y-explorar-los-datos">Ejercicio 3: Descargar y explorar los datos</h2>
 <p>En este ejercicio vamos a trabajar con el archivo que contiene las secuencias de los pacientes. El hospital nos ha proporcionado un repositorio interno donde están almacenados los datos de secuenciación. Vamos a descargar el archivo desde ese repositorio, explorar su contenido para entender su estructura y extraer información clave.</p>
-<hr>
 <h3 id="paso-1-descargar-el-archivo">Paso 1: Descargar el archivo</h3>
 <p><code>wget</code> es un comando que permite descargar archivos desde internet o desde servidores internos directamente desde la terminal. Es muy útil porque funciona en segundo plano, puede reanudar descargas interrumpidas y no necesita un navegador web.</p>
 <p><strong>Sintaxis general</strong></p>
