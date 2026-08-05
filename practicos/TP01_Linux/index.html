@@ -635,6 +635,31 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoricas/1-Teorica-Uno/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M184 0c30.9 0 56 25.1 56 56v400c0 30.9-25.1 56-56 56-28.9 0-52.7-21.9-55.7-50.1-5.2 1.4-10.7 2.1-16.3 2.1-35.3 0-64-28.7-64-64 0-7.4 1.3-14.6 3.6-21.2C21.4 367.4 0 338.2 0 304c0-31.9 18.7-59.5 45.8-72.3C37.1 220.8 32 207 32 192c0-30.7 21.6-56.3 50.4-62.6C80.8 123.9 80 118 80 112c0-29.9 20.6-55.1 48.3-62.1 3-28 26.8-49.9 55.7-49.9m144 0c28.9 0 52.6 21.9 55.7 49.9C411.5 56.9 432 82 432 112c0 6-.8 11.9-2.4 17.4 28.8 6.2 50.4 31.9 50.4 62.6 0 15-5.1 28.8-13.8 39.7 27.1 12.8 45.8 40.4 45.8 72.3 0 34.2-21.4 63.4-51.6 74.8 2.3 6.6 3.6 13.8 3.6 21.2 0 35.3-28.7 64-64 64-5.6 0-11.1-.7-16.3-2.1-3 28.2-26.8 50.1-55.7 50.1-30.9 0-56-25.1-56-56V56c0-30.9 25.1-56 56-56"/></svg>
+  
+  <span class="md-ellipsis">
+    Teórica 1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1048,6 +1073,48 @@
   <a href="#pregunta-1" class="md-nav__link">
     <span class="md-ellipsis">
       ✏️ Pregunta 1
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estructura-de-directorios-de-ubuntu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estructura de directorios de Ubuntu
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paths-relativos-y-absolutos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paths relativos y absolutos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Paths relativos y absolutos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#paths-absolutos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paths absolutos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paths-relativos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paths relativos
     </span>
   </a>
   
@@ -1829,6 +1896,42 @@ Esto permite ejecutar comandos sobre los archivos correctos y organizar proyecto
 <p>Abrir una terminal y ejecutar el comando para obtener la ubicación actual</p>
 <div class="highlight"><pre><span></span><code><span class="nb">pwd</span>
 </code></pre></div>
+<h3 id="estructura-de-directorios-de-ubuntu">Estructura de directorios de Ubuntu</h3>
+<p>La organización de archivos en Ubuntu y Lubuntu es bastante diferente a la de Windows. Si bien no vamos a detallar completamente toda la estructura y que es cada carpeta (porque el 95% no lo van a usar en esta materia), es importante tener una idea de lo básico:</p>
+<ul>
+<li><strong>/</strong> Carpeta raiz, o <em>root</em>. Contiene al resto de las carpetas<ul>
+<li><strong>/etc</strong>: Configuraciones del sistema para todos los usuarios (mucho cuidado al tocar)</li>
+<li><strong>/home</strong>: Ubicación de los directorios de los diferentes usuarios (o en este caso el único usuario)<ul>
+<li><strong>/home/user</strong>: Directorio del usuario <em>user</em>. Es el lugar donde van a trabajar la mayoría del tiempo (incluye tanto el Escritorio como Documentos) y donde se abre por defecto la terminal (más sobre esto en un ratito). Comúnmente referida como <em>home directory</em> o <em>home</em> del usuario <em>user</em></li>
+</ul>
+</li>
+<li><strong>/media</strong>: Si fuera una computadora normal (no VM) aca aparecerían los pendrives. En nuestro caso aca aparecen por defecto las carpetas compartidas con la PC host</li>
+<li><strong>/tmp</strong>: Ubicación de los archivos temporales de los programas</li>
+<li><strong>/var</strong>: Ubicación de los archivos variables de los programas, como logs, bases de datos, paginas webs, etc<ul>
+<li><strong>/var/log</strong>: Probablemente la subcarpeta más usada de <strong>/var</strong>. Contiene los logs de los programas (que a veces es la única forma de saber porque algo no anduvo)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Esto es simplemente un vistazo rápido. Si quieren la lista completa de subdirectorios de Ubuntu la pueden encontrar en <a href="https://help.ubuntu.com/community/LinuxFilesystemTreeOverview">esta página</a>, pero tengan en cuenta que tocar cualquier cosa fuera de <strong>/home</strong> conlleva la posibilidad de arruinar la computadora. En esta materia vamos a usar principalmente <strong>/home</strong> y <strong>/media</strong>.</p>
+<h3 id="paths-relativos-y-absolutos">Paths relativos y absolutos</h3>
+<p>En programación, un path (o ruta) es la cadena de caracteres que indica la ubicación de un archivo o directorio dentro del sistema de archivos.</p>
+<h4 id="paths-absolutos">Paths absolutos</h4>
+<p>Un <strong>path absoluto</strong> es aquel que especifica la ubicación completa y exacta de un archivo o directorio desde la raíz del sistema. Esto significa que no depende de dónde estés parado actualmente; siempre apunta al mismo lugar sin importar el directorio de trabajo. Por ejemplo, en Linux o macOS, un path absoluto comienza con una barra inclinada (/), como en <code>/home/usuario/documentos/informe.txt</code>. En Windows, comienza con la letra de la unidad, como en <code>C:\Users\Usuario\Documentos\informe.txt</code>. Los paths absolutos son útiles cuando necesitás referenciar un archivo desde cualquier parte del sistema sin ambigüedades.</p>
+<h4 id="paths-relativos">Paths relativos</h4>
+<p>Un <strong>path relativo</strong>, en cambio, indica la ubicación de un archivo o carpeta en relación al directorio actual de trabajo (el lugar donde estás parado en la terminal o desde donde se ejecuta el programa). No parte desde la raíz, sino desde la posición actual. Por ejemplo, si estás en <code>/home/usuario</code> y querés acceder a <code>documentos/informe.txt</code>, el path relativo sería <code>documentos/informe.txt</code> (si la carpeta está dentro del directorio actual) o <code>../documentos/informe.txt</code> si está un nivel arriba. Los paths relativos son más cortos y flexibles, ya que permiten mover proyectos completos de una carpeta a otra sin tener que reescribir todas las rutas.</p>
+<p>Ambos tipos de paths tienen sus ventajas y desventajas.</p>
+<p>Los <strong>paths absolutos</strong> tienen la ventaja de funcionar siempre, pero al usar toda la estructura toman más tiempo de escribir y son más suceptibles a cambios de directorios (si muevo un archivo de lugar tengo que reescribir el comando).</p>
+<p>Por otro lado, los <strong>paths relativos</strong> son mucho más rápidos de escribir y en muchos casos funcionan en diferentes ubicaciones (o computadoras), pero al depender de la ubicación de la terminal esto puede causar problemas si pienso que estoy en una carpeta pero estoy realmente en otra. En esta cursada vamos a usar ambos para diferentes casos.</p>
+<p>Además de estos dos tipos, es importante conocer algunos símbolos especiales que se usan en los paths:</p>
+<ul>
+<li>El punto (.) representa el directorio actual.</li>
+<li>Los dos puntos (..) representan el directorio padre (un nivel arriba).</li>
+<li>La barra inclinada (/) se usa en Linux, macOS y sistemas Unix como separador de carpetas.</li>
+<li>La barra invertida () se usa en Windows como separador (aunque muchas herramientas modernas aceptan también la barra inclinada).</li>
+</ul>
+<p>Entender la diferencia entre paths absolutos y relativos es clave para evitar errores como "archivo no encontrado", especialmente cuando trabajás en proyectos que se mueven entre distintos equipos o sistemas operativos.</p>
 <h3 id="crear-y-eliminar-carpetas">Crear y eliminar carpetas</h3>
 <p>En el sistema de archivos de Linux, las carpetas (también llamadas directorios) son la forma principal de organizar archivos. Para trabajar de forma ordenada en bioinformática, es fundamental saber crear y eliminar carpetas desde la terminal.</p>
 <p>Los comandos <code>mkdir</code> y <code>rmdir</code> son las herramientas básicas para gestionar directorios:</p>
@@ -2537,7 +2640,7 @@ tail<span class="w"> </span>-n<span class="w"> </span><span class="m">15</span><
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2025 Area Bioinformática UNSAM
+      Copyright &copy; 2026 Area Bioinformática UNSAM
     </div>
   
   
