@@ -262,6 +262,50 @@ Abrir una terminal y ejecutar el comando para obtener la ubicación actual
 pwd
 ```
 
+### Estructura de directorios de Ubuntu
+
+La organización de archivos en Ubuntu y Lubuntu es bastante diferente a la de Windows. Si bien no vamos a detallar completamente toda la estructura y que es cada carpeta (porque el 95% no lo van a usar en esta materia), es importante tener una idea de lo básico:
+
+* **/** Carpeta raiz, o *root*. Contiene al resto de las carpetas
+    * **/etc**: Configuraciones del sistema para todos los usuarios (mucho cuidado al tocar)
+    * **/home**: Ubicación de los directorios de los diferentes usuarios (o en este caso el único usuario)
+        * **/home/user**: Directorio del usuario *user*. Es el lugar donde van a trabajar la mayoría del tiempo (incluye tanto el Escritorio como Documentos) y donde se abre por defecto la terminal (más sobre esto en un ratito). Comúnmente referida como *home directory* o *home* del usuario *user*
+    * **/media**: Si fuera una computadora normal (no VM) aca aparecerían los pendrives. En nuestro caso aca aparecen por defecto las carpetas compartidas con la PC host
+    * **/tmp**: Ubicación de los archivos temporales de los programas
+    * **/var**: Ubicación de los archivos variables de los programas, como logs, bases de datos, paginas webs, etc
+        * **/var/log**: Probablemente la subcarpeta más usada de **/var**. Contiene los logs de los programas (que a veces es la única forma de saber porque algo no anduvo)
+
+Esto es simplemente un vistazo rápido. Si quieren la lista completa de subdirectorios de Ubuntu la pueden encontrar en [esta página](https://help.ubuntu.com/community/LinuxFilesystemTreeOverview), pero tengan en cuenta que tocar cualquier cosa fuera de **/home** conlleva la posibilidad de arruinar la computadora. En esta materia vamos a usar principalmente **/home** y **/media**.
+
+### Paths relativos y absolutos
+
+En programación, un path (o ruta) es la cadena de caracteres que indica la ubicación de un archivo o directorio dentro del sistema de archivos.
+
+#### Paths absolutos
+
+Un **path absoluto** es aquel que especifica la ubicación completa y exacta de un archivo o directorio desde la raíz del sistema. Esto significa que no depende de dónde estés parado actualmente; siempre apunta al mismo lugar sin importar el directorio de trabajo. Por ejemplo, en Linux o macOS, un path absoluto comienza con una barra inclinada (/), como en `/home/usuario/documentos/informe.txt`. En Windows, comienza con la letra de la unidad, como en `C:\Users\Usuario\Documentos\informe.txt`. Los paths absolutos son útiles cuando necesitás referenciar un archivo desde cualquier parte del sistema sin ambigüedades.
+
+
+#### Paths relativos
+
+
+Un **path relativo**, en cambio, indica la ubicación de un archivo o carpeta en relación al directorio actual de trabajo (el lugar donde estás parado en la terminal o desde donde se ejecuta el programa). No parte desde la raíz, sino desde la posición actual. Por ejemplo, si estás en `/home/usuario` y querés acceder a `documentos/informe.txt`, el path relativo sería `documentos/informe.txt` (si la carpeta está dentro del directorio actual) o `../documentos/informe.txt` si está un nivel arriba. Los paths relativos son más cortos y flexibles, ya que permiten mover proyectos completos de una carpeta a otra sin tener que reescribir todas las rutas.
+
+Ambos tipos de paths tienen sus ventajas y desventajas.
+
+Los **paths absolutos** tienen la ventaja de funcionar siempre, pero al usar toda la estructura toman más tiempo de escribir y son más suceptibles a cambios de directorios (si muevo un archivo de lugar tengo que reescribir el comando).
+
+Por otro lado, los **paths relativos** son mucho más rápidos de escribir y en muchos casos funcionan en diferentes ubicaciones (o computadoras), pero al depender de la ubicación de la terminal esto puede causar problemas si pienso que estoy en una carpeta pero estoy realmente en otra. En esta cursada vamos a usar ambos para diferentes casos.
+
+Además de estos dos tipos, es importante conocer algunos símbolos especiales que se usan en los paths:
+
+- El punto (.) representa el directorio actual.
+- Los dos puntos (..) representan el directorio padre (un nivel arriba).
+- La barra inclinada (/) se usa en Linux, macOS y sistemas Unix como separador de carpetas.
+- La barra invertida (\) se usa en Windows como separador (aunque muchas herramientas modernas aceptan también la barra inclinada).
+
+Entender la diferencia entre paths absolutos y relativos es clave para evitar errores como "archivo no encontrado", especialmente cuando trabajás en proyectos que se mueven entre distintos equipos o sistemas operativos.
+
 ### Crear y eliminar carpetas
 
 En el sistema de archivos de Linux, las carpetas (también llamadas directorios) son la forma principal de organizar archivos. Para trabajar de forma ordenada en bioinformática, es fundamental saber crear y eliminar carpetas desde la terminal.
