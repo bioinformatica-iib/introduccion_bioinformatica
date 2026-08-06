@@ -91,7 +91,12 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP01_Linux/</loc>
+         <loc>https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP01a_Linux/</loc>
+         <lastmod>2026-08-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP01b_Linux/</loc>
          <lastmod>2026-08-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
