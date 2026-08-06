@@ -5,19 +5,26 @@ tags:
   - teoricas
 ---
 
+## Introducción a la Computación 
+
+Clase teórica sobre Algoritmos, Complejidad y conceptos computacionales esenciales.
+
+ * :fontawesome-regular-file-pdf: [Slides](IntroduccionComputacion2026.pdf) 
+
 ## Alineamientos de secuencias y Sistemas de puntaje
 
 Clase teórica de alineamientos de secuencias (de a pares), Algoritmos, Matrices.
 
- * :fontawesome-regular-file-pdf: [Slides](alineamientosDeAPares2025.pdf) 
- * :material-video-check: [Clase grabada en 2023](https://www.youtube.com/embed/uExBWiOBvdY)
+ * :fontawesome-regular-file-pdf: [Slides](alineamientosDeAPares-2026,split.pdf) 
+ <!-- * :material-video-check: [Clase grabada en 2023](https://www.youtube.com/embed/uExBWiOBvdY) -->
  
-## Búsquedas de Secuencias por Similitud 
+<!-- ## Búsquedas de Secuencias por Similitud 
 
 Clase teórica de búsquedas de secuencias por similitud: fuerza bruta (sin heurísticas), y heurísticas para reducir espacios de búsqueda: FASTA, BLAST. 
 
 * :fontawesome-regular-file-pdf: [Slides](busquedasDeSecuenciasEnBasesDeDatos2025.pdf) 
 * :material-video-check: [Clase grabada en 2023](https://www.youtube.com/embed/qNvW595WnJs)
+-->
 
 ## Material de lectura y consulta
 
