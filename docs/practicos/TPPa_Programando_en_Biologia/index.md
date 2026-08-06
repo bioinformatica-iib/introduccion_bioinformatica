@@ -1081,7 +1081,7 @@ plt.show()
 Si todo funcionó correctamente debería aparecer un gráfico donde cada punto representa un par de valores `(x, y)`. Este tipo de gráfico se conoce como **scatter plot** o **gráfico de dispersión**.
 
 <figure markdown>
-![DotPlot](img/rplot_dotplot.png)
+![DotPlot](img/python_plot_scatter.png)
 </figure>
 
 En este ejemplo:
@@ -1113,7 +1113,7 @@ La función `np.random.normal()` genera números aleatorios que siguen una distr
 La función `plt.hist()` construye un **histograma**, mostrando la frecuencia con la que aparecen los distintos valores.
 
 <figure markdown>
-![HistPlot](img/rplot_histplot.png)
+![HistPlot](img/python_plot_hist.png)
 </figure>
 
 ### Personalizar un gráfico
