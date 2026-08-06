@@ -59,7 +59,7 @@ Python es actualmente uno de los lenguajes más utilizados en bioinformática, c
 
 Una de las principales ventajas de **Google Colab** es que ya incluye instaladas muchas de las bibliotecas más utilizadas para el análisis de datos, como *NumPy, Pandas, Matplotlib y Seaborn*, además de permitir el uso gratuito de recursos de cómputo como GPU y TPU cuando es necesario. Asimismo, los cuadernos (notebooks) pueden compartirse fácilmente mediante un enlace, facilitando el trabajo colaborativo y la reproducción de análisis por parte de otros usuarios.
 
-**1)** Abran Google Colab desde el navegador ( https://colab.research.google.com/) 
+**1)** Abran Google Colab desde el navegador ([Google Colab](https://colab.research.google.com/)) 
 
 **2)** Creen un nuevo *notebook* haciendo click en Nuevo notebook en la parte superior
 
@@ -74,15 +74,15 @@ Ahora sí, deberían ver lo siguiente:
 
 * **Elementos principales de Google Colab**
 
-??? important "Celdas de código" (zona central del notebook)
+??? important "Celdas de código (zona central del notebook)"
 
     Las celdas de código contienen instrucciones en **Python**. Para ejecutarlas pueden hacer clic en el botón **▶** ubicado a la izquierda de la celda o presionar ++shift+enter++, lo que además ejecuta la celda y selecciona la siguiente.
 
-??? important "Celdas de texto" (zona central del notebook)
+??? important "Celdas de texto (zona central del notebook)"
 
     Las celdas de texto permiten escribir explicaciones, títulos o consignas usando **Markdown**. En este trabajo práctico las utilizaremos para organizar el contenido y describir los ejercicios.
 
-??? important "Panel de variables" (zona inferior del notebook)
+??? important "Panel de variables (zona inferior del notebook)"
 
     En el panel **Variables** pueden ver las variables que fueron creadas durante la ejecución del notebook. Esto resulta útil para inspeccionar datos y comprobar que el código está funcionando como esperan. A veces, este panel puede no actualizarse correctamente o no mostrar todas las variables creadas. Si esto ocurre, prueben a actualizar la página (f5). Sino pueden ejecutar el siguiente comando para listar todas las variables definidas en la sesión:
 
@@ -90,11 +90,11 @@ Ahora sí, deberían ver lo siguiente:
     %whos
     ```
 
-??? important "Archivos" (barra lateral izquierda)
+??? important "Archivos (barra lateral izquierda)"
 
     En la pestaña **Archivos** pueden explorar los archivos disponibles en la sesión de Colab y subir nuevos archivos desde su computadora. Más adelante utilizaremos esta pestaña para cargar los datos que analizaremos.
 
-??? important "Terminal" (zona inferior del notebook)
+??? important "Terminal (zona inferior del notebook)"
 
     Google Colab también dispone de una **terminal** (Bash), desde la cual es posible ejecutar comandos del sistema operativo, de forma similar a la terminal que utilizamos en los trabajos prácticos anteriores. En este trabajo práctico utilizaremoslas **celdas de código** para ejecutar programas en **Python**.
 
@@ -198,6 +198,7 @@ Por ejemplo:
 numero = 42
 
 print(numero, "es un número")
+```
 
 ### Comentarios
 
@@ -293,7 +294,7 @@ frase.count("a")
 
 Se pueden hacer muchas más cosas con *strings*, como extraer partes del texto (*substrings*), buscar si una palabra aparece dentro de otro texto o dividir un *string* en varias partes. Iremos aprendiendo estas herramientas a medida que las necesitemos.
 
-## ✏️**Ejercicio 1 - Variables simples** { markdown data-toc-label='Ejercicio 1 - Variables' }
+## ✏️**Ejercicio 1 - Variables simples** { markdown data-toc-label='✏️ Ejercicio 1 - Variables' }
 
 En este ejercicio vamos a practicar el uso de variables numéricas y *strings* en **Python**.
 
@@ -647,7 +648,7 @@ Si bien también existen formas de resolver este último ejemplo utilizando un `
 
     Si esto ocurre, el programa continuará ejecutándose indefinidamente hasta que lo interrumpamos manualmente. En el ejemplo anterior esto sucedería si olvidáramos actualizar el valor de `numero` dentro del ciclo.
 
-## ✏️**Ejercicio 2 - Estructuras lógicas** { markdown data-toc-label='Ejercicio 3 - Estructuras lógicas' }
+## ✏️**Ejercicio 2 - Estructuras lógicas** { markdown data-toc-label='✏️ Ejercicio 2 - Estructuras lógicas' }
 
 El objetivo de este ejercicio es escribir un programa en **Python** que:
 
@@ -662,7 +663,7 @@ El objetivo de este ejercicio es escribir un programa en **Python** que:
 
     Para resolver este ejercicio van a necesitar combinar un ciclo `for` con una o más estructuras `if`, utilizando los operadores lógicos `and` y `or`.
 
-## ✏️**Ejercicio 3 - Estructuras lógicas** { markdown data-toc-label='Ejercicio 3 - Contenido GC' }
+## ✏️**Ejercicio 2 - Estructuras lógicas** { markdown data-toc-label='✏️ Ejercicio 2 - Contenido GC' }
 
 El contenido GC es la proporción de bases **G** y **C** presentes en una secuencia de ADN.
 
@@ -682,7 +683,6 @@ Luego escriban un programa que:
 !!! tip "Tip"
 
     Van a necesitar combinar un ciclo `for` con una estructura `if` utilizando el operador lógico `or`.
--->
 
 <!--
 Resolucion Ejercicio 3 contenido GC 
@@ -1043,7 +1043,7 @@ Los parámetros utilizados son:
 
 **2)** Creen una variable llamada **nuevo_df** y carguen la tabla creada en el punto anterior. Utilicen `print()` para confirmar que el archivo se leyó correctamente.
 
-## ✏️**Ejercicio 4 - Tablas** { markdown data-toc-label='Ejercicio 4 - Tablas' }
+## ✏️**Ejercicio 3 - Tablas** { markdown data-toc-label='✏️ Ejercicio 3 - Tablas' }
 
 1. Creen una lista con los nombres de 5 genes (por ejemplo: "TP53", "BRCA1", "ACTB", "GAPDH", "MYC") y otra lista con sus niveles de expresión (pueden ser números entre 1 y 100).
 2. Utilicen esas listas para crear un DataFrame con dos columnas llamadas gen y expresion.
@@ -1186,7 +1186,7 @@ plt.title("Sepal vs Petal Length")
 plt.show()
 ```
 
-## ✏️**Ejercicio 5 - Plots** { markdown data-toc-label='Ejercicio 5 - Plots' }
+## ✏️**Ejercicio 4 - Plots** { markdown data-toc-label='✏️ Ejercicio 4 - Plots' }
 
 Para valores enteros de `x` entre **1** y **200**, calculen el `y` correspondiente a una recta con pendiente **3** y ordenada al origen **5**.
 
@@ -1198,7 +1198,7 @@ Para valores enteros de `x` entre **1** y **200**, calculen el `y` correspondien
 
 </div>
 
-## ✏️**Ejercicio Adicional 1** { markdown data-toc-label='Ejercicio Adicional 1' }
+## **Ejercicio Adicional 1** { markdown data-toc-label='Ejercicio Adicional 1' }
 
 En este ejercicio vamos a comprobar si los números aleatorios de **Python** se comportan como esperamos. Para ello escriban un programa que:
 
@@ -1247,7 +1247,7 @@ print("Secas:", secas)
 ```
 -->
 
-## ✏️**Ejercicio Adicional 2** { markdown data-toc-label='Ejercicio Adicional 2' }
+## **Ejercicio Adicional 2** { markdown data-toc-label='Ejercicio Adicional 2' }
 
 En este ejercicio vamos a crear una función que describa un protocolo sencillo de **PCR**.
 
