@@ -6,7 +6,7 @@ tags:
 ---
 ![Image](img/banner.jpg){ width="250", align="left" }
 
-# **TP 1**. Introducción a Ubuntu, Bash y Programación { markdown data-toc-label = 'TP 1' }
+# **TP 1a**. Introducción a Ubuntu, Bash y Programación { markdown data-toc-label = 'TP 1a' }
 
 <br>
 
@@ -169,7 +169,34 @@ La **terminal** (también llamada línea de comandos, consola o shell) es una he
 
 En bioinformática, la mayoría de las herramientas (como los alineadores de secuencias, los ensambladores de genomas o los scripts de análisis) se usan desde la terminal. Por eso, aprender a moverse con soltura en este entorno te ahorrará muchísimo tiempo y te dará un control total sobre tus datos.
 
-Para abrir la terminal en tu sistema operativo, solo tenés que buscar **"Terminal"** en el menú de aplicaciones o usar el atajo Ctrl+Alt+T. Se abrirá una ventana de terminal lista para usar!
+## **Línea de comando**
+
+Como ya dijimos en la introducción la línea de comando tiene varios nombres, y en esta guia nos vamos a referir a ella como *terminal* o *consola*. Hay varias formas de abrir la terminal:
+
+* Desde cualquier lado: ++ctrl+alt+t++
+* Desde cualquier lado: **Inicio** *(menu de abajo a la izquierda)* :material-arrow-right: **Herramientas del sistema** :material-arrow-right: **Terminal**
+* Desde afuera de una carpeta: **Boton derecho en la carpeta** :material-arrow-right: **Abrir en el terminal**
+* Desde adentro de una carpeta: **Herramientas** :material-arrow-right: **Abrir la carpeta actual en un terminal** (o apretar ++f4++)
+
+La terminal funciona como un explorador de archivos que se mueve entre las carpetas. Los primeros dos métodos van a abrir la terminal en **/home/ibioinfo**, mientras que los últimos dos métodos van a abrir la terminal en la carpeta elegida. Si en algun momento les decimos que abran la terminal y no aclaramos otra cosa nos referimos a abrirla en **/home/ibioinfo**.
+
+Abran la terminal en **/home/ibioinfo** y deberian ver algo así:
+
+
+``` bash
+ibioinfo@ibioinfo-VirtualBox:~$
+```
+
+Donde **ibioinfo** es el nombre del usuario actual e **ibioinfo-VirtualBox** el nombre de la computadora (que justo en este caso son similares, pero no es necesario). El **\~** después de los dos puntos (conocido como "virgulilla", "tilde" o "cosito de la ñ") parece ser parte de la terminal, pero en realidad está indicando la carpeta en la que se encuentra en este momento. Como cada usuario trabaja mas que nada en su carpeta, Ubuntu le asigna el símbolo **\~** a esa carpeta para simplificar los directorios que aparecen en la terminal. En nuestro caso **\~** equivale a **/home/ibioinfo** y puede ser que nos refiramos a esa carpeta como su *home directory* o simplemente su *home*.
+
+!!! info
+
+    Aclaraciones por si son fanáticos de los atajos de teclado:
+
+    * Para copiar texto en la terminal hay que usar ++ctrl+shift+c++. En en resto de Ubuntu es normal (++ctrl+c++).
+    * Para pegar texto en la terminal hay que usar ++ctrl+shift+v++. En en resto de Ubuntu es normal (++ctrl+v++).
+    * Al apretar ++ctrl+c++ en la terminal le estan diciendo que corte forzosamente el programa que está corriendo. Si bien hay que tener cuidado con no cortar un proceso importante a la mitad, este atajo del teclado es útil si un programa se te quedó colgado o similar.
+
 
 ### ¿Qué es un comando?
 
@@ -824,74 +851,3 @@ grep "^>" pacientes.fasta > ../resultados/pacientes_nombres.csv
 Revisa que el archivo `pacientes_nombres.csv` se haya generado correctamente 
 
  
-
-## Ejercicio 4: Generar el informe final
-En este ejercicio vamos a trabajar con las secuencias de ADN de los pacientes para convertirlas en proteínas y así poder identificar las mutaciones en las posiciones 103 y 239. 
-
-Lo que vamos a hacer:
-
-1. Extraer el aminoácido en la posición 103 de cada paciente.
-2. Extraer el aminoácido en la posición 239 de cada paciente.
-3. Determinar qué pacientes tienen las mutaciones que confieren resistencia.
-
----
-### Paso 1: Descargar el script
-
-El script ya está disponible en el repositorio del curso. Ingresá a la carpeta `scripts/` y ejecuta lo siguiente:
-
-```bash
-wget "https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP01_Linux/data/script.sh"
-```
-
-### Paso 2: Dar permisos de ejecución al script
-
-Para poder ejecutar el script, necesita permisos de ejecución. Usá el comando `chmod`:
-
-```bash
-chmod +x script.sh
-```
-
-**Verificación:** Ejecutá `ls -l script.sh` y verificá que los permisos incluyan `-rwxr-xr-x` (la `x` indica que es ejecutable).
-
----
-### Paso 3: Ejecutar el script
-
-Ahora ejecutá el script desde la terminal:
-```bash
-bash script.sh
-```
-
-#### ✏️ Pregunta 12
-    
-¿Qué hace cada línea del script?
-
- 
-
-**Salida esperada:** El script va a guardar un informe en `resultados/informe_final.tsv`.
-
-**Verificación:** Abrí el archivo generado para confirmar que se creó correctamente:
-```bash
-head ../resultados/informe_final.tsv
-```
----
-### Paso 4: Completar la tabla 
-
-Usando los datos que obtuvo el script, completá la siguiente tabla:
-
-| Paciente | Longitud (aa) | Pos103 | Pos239 |
-| :--- | :--- | :--- | :--- |
-| **Referencia (canónica)** | **293** | **P** | **V** |
-| **Resistente** | **293** | **R** | **G** |
-| Paciente_001 | | | |
-| Paciente_002 | | | |
-| Paciente_003 | | | |
-| Paciente_004 | | | |
-| Paciente_005 | | | |
-
-#### ✏️ Pregunta 13
-    
-¿Qué paciente/s está/n infectados con una cepa resistente?
-
- 
-
-
