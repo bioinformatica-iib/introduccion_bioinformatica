@@ -156,6 +156,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TPPa_Programando_en_Biologia/old_TPPa_R/</loc>
+         <lastmod>2026-08-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TPPb_Programando_en_Biologia/</loc>
          <lastmod>2026-08-06</lastmod>
          <changefreq>daily</changefreq>
