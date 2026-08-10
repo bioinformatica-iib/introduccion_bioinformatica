@@ -1,13 +1,13 @@
 ---
-title: Practico Programación en R
+title: Practico Programación en Phyton
 icon: octicons/code-16
 tags: 
   - practicos
 ---
 
-![Image](img/banner.jpg){ width="250", align="left" }
+![Image](img/banner_python.png){ width="250", align="left" }
 
-# **TPP**. R - Programando en biología - Parte 2 { markdown data-toc-label = 'TPP' }
+# **TPP**. Python - Programando en biología - Parte 2 { markdown data-toc-label = 'TPP' }
 
 <br>
 <br>
@@ -17,11 +17,11 @@ tags:
 <br>
 <br>
  
-
+<!--
 [:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1Da0QnUdFtibScCXHi-Ts2kQXa8xudSrJ/view?usp=drive_link){ .md-button .md-button--primary }
 
 [:fontawesome-solid-file-powerpoint: Slides](https://docs.google.com/presentation/d/1h6C-Z0_iWO0Ln8zTZd4QsNqEN5_hih_hM1pbxsoaQBU/edit?usp=sharing){ .md-button .md-button--primary } 
-
+-->
 
 !!! abstract "Atención: Este TP NO tiene informe."
 
@@ -39,1127 +39,1828 @@ Este es el botón para descargar materiales, en (#) hay que agregar el link corr
 -->
 
 ### Software a usar
-* R
-* RStudio
+* Python (Google Colab)
 
 ### Recursos Online
-* [Curso online de R de Coursera](https://www.coursera.org/learn/r-programming) (se puede hacer gratis) (en ese caso no da certificado)
-* [Tips de comandos básicos de R](http://www.cookbook-r.com/)
-* Data Tables: [Introducción oficial](https://cran.r-project.org/web/packages/data.table/vignettes/datatable-intro.html) y [otra página con más info](https://bookdown.org/paradinas_iosu/CursoR/data-table.html)
-* ggplot2: [Vistazo rápido](https://bookdown.org/paradinas_iosu/CursoR/ggplot2.html) y [cheatsheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf)
+* [Google Colab - Guía de inicio](https://colab.research.google.com/notebooks/intro.ipynb#scrollTo=GJBs_flRovLc)
+* [Python Tutorial (Documentación oficial)](https://docs.python.org/3/tutorial/)
+* [Pandas - User Guide](https://pandas.pydata.org/docs/user_guide/index.html)
+* [Pandas Cheat Sheet](https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf)
+* [Curso Kaggle Learn - Python](https://www.kaggle.com/learn/python)
+* [Curso Kaggle Learn - Pandas](https://www.kaggle.com/learn/pandas)
+
 
 ### Objetivos
 
-* Familiarizarse en el lenguaje de programación **R**.
-* Ver como los mismos conceptos de programación se trasladan de un lenguaje a otro.
+* Familiarizarse en el lenguaje de programación **Python**.
+* Ver como los mismos conceptos de programación se transladan de un lenguaje a otro.
 * Utilizar herramientas de programación para resolver problemas biológicos.
 
-## **Introducción al Tema**
 
-Es muy normal que en trabajos de biología sea necesario trabajar con datos provenientes de servicios o equipos que no generan *outputs* de formato estándar (separados por tabs, comas, etc). Esto hace que cuando queramos cargar estos *outputs* en cualquier programa de análisis de datos vamos a tener que darles formato manualmente, algo que puede no ser muy complicado cuando se trata de unos pocos archivos o un solo ensayo, pero se vuelve un problema en grandes cantidades.
+## **Python: Funciones**
 
-En la materia ya vimos varios archivos de salida con patrones propios, por ejemplo los archivos FASTA, donde el marcador `>` es usado para indicar el comienzo del header una secuencia. Diferentes programas van a tener diferentes patrones de salida, pero suelen haber ciertos caracteres bastante usados como `#`, `!`, `*`, `|`, etc.
+Como ya mencionamos cuando hablamos de los ciclos, es común en programación querer realizar una tarea muchas veces con datos ligeramente diferentes. Para evitar repetir código existen las **funciones**, que además de formar parte de **Python** y de las distintas librerías, también pueden ser creadas por nosotros.
 
-En este trabajo práctico vamos a usar el lenguaje de programación **R** para leer datos generados por un lector de placas de wells. Vamos a parsear dichos datos para que estén en un formato con el que podamos trabajar, y vamos a procesarlos como necesitemos para calcular estadísticos y plots que contengan información sobre el experimento realizado.
+Supongamos que queremos calcular la temperatura de melting de un primer. Podemos definir una función de la siguiente forma:
 
-## **Experimento**
+```python
+def temperatura_melting(primer):
+    A = primer.count("A")
+    T = primer.count("T")
+    G = primer.count("G")
+    C = primer.count("C")
 
-### Objetivo
+    tm = 2 * (A + T) + 4 * (G + C)
 
-En el TP de hoy vamos a querer encontrar un compuesto que funcione de inhibidor para una enzima de interés, a la que vamos a denominar **enzima Z**. No solo nos va a interesar que compuestos funcionan como inhibidores para ella, sino que también queremos calcular el **IC 50** de cada uno de dichos compuestos (que en nuestro caso sería la concentración a la cual el inhibidor produce una reacción un 50% más lenta que sin inhibidor).
+    return tm
 
-Por suerte nuestra enzima de interés tiene como producto un compuesto fluorescente. Sabiendo esto podemos estimar la velocidad de la reacción calculando una regresión lineal de la abundancia de dicho producto a lo largo del tiempo (esto lo vamos a explicar un poco más detalladamente cuando lo hagamos). Si un compuesto funciona como inhibidor en algunas de las concentraciones evaluadas, la velocidad de la reacción debería caer.
 
-### FilterMax
+primer1 = "ATGCGTACGATCG"
+primer2 = "GCGTACGCGGATCGCTAGCTACGATG"
 
-Una forma de analizar varios compuestos y concentraciones a la vez es usar el equipo **FilterMax F5**. Este equipo permite hacer mediciones puntuales de absorbancia y fluorescencia (entre otros) en placas de wells de 96, 384 y 1536. Incluso permite hacer mediciones a distintos tiempos (por ejemplo, se le puede programar para hacer mediciones cada ciertos intervalos temporales).
+tm1 = temperatura_melting(primer1)
+tm2 = temperatura_melting(primer2)
 
-En nuestro ejemplo (datos reales, nombres ficticios), vamos a utilizar el **FilterMax F5** para evaluar varias placas de 384 wells y vamos a hacer 4 evaluaciones por placa, una cada 5 minutos. Cada columna de la placa corresponde compuesto distinto (22 compuestos, 1 por columna) y cada fila tiene concentraciones diferentes de cada compuesto (16 concentraciones, diluciones seriadas). Un esquema de este experimento se puede ver en [esta planilla](https://docs.google.com/spreadsheets/d/1vRxMHGdWBAOXpJZ8g4Ox4y4kiCES01sg/edit?usp=sharing&ouid=101472650200585443790&rtpof=true&sd=true).
+print(tm1)
+print(tm2)
+```
+En este ejemplo:
 
-## **Paso 1 - Familiarizarnos con el Archivo** { markdown data-toc-label='Paso 1 - Familiarizarnos' }
+* `def` indica que estamos definiendo una función.
+* `temperatura_melting` es el nombre de la función.
+* `primer` es el parámetro de entrada y contiene la secuencia del primer.
+* `return` indica cuál será el valor que devolverá la función.
 
-El primer paso cuando uno empieza a trabajar con un archivo nuevo es siempre mirarlo y deducir su formato. Los resultados reales de este experimento pueden verlos en el archivo **00_datos_filtermax.txt** que se encuentra en sus materiales de trabajo.
+Las funciones permiten reutilizar código y evitar escribir varias veces las mismas instrucciones. Imaginen que el cálculo ocupara 20 o 30 líneas de código: con una función solo habría que escribirlo una vez.
 
-Abran el archivo **00_datos_filtermax.txt** con Editor de Texto, vean su estructura y respondan las siguientes preguntas:
+También es posible definir funciones con más de un parámetro. Incluso algunos parámetros pueden tener un **valor por defecto**, que será utilizado si no indicamos otro valor.
 
-**1)** ¿Se parece un poco a algún **.csv** (columnas separadas por comas) o **.tsv** (columnas separadas por tabs) que hayan visto antes? ¿Que diferencias tiene? Teniendo en cuenta esas diferencias y considerando que vamos a querer leerlo como una tabla en **R** ¿Les parece que hay filas que están de más?
+```python
+def peso_proteina(secuencia, peso_promedio_aminoacido=110):
+    peso = len(secuencia) * peso_promedio_aminoacido
 
-**2)** Mirando el archivo y la planilla del experimento:
+    return peso
 
-* ¿Qué hay en la celda A1?
 
-* ¿Qué posiciones contienen las diferentes diluciones del compuesto "Umbrella2"?
+proteina1 = "MKTLLVAGCGTALAVASAPVAAEAKKAGVEAKKAAEAGVEAAGVEAKKAGVEVVV"
 
-* ¿Cuántos datos hay para cada dilución del compuesto "Umbrella2"? ¿Por qué?
+peso1 = peso_proteina(proteina1)
+peso2 = peso_proteina(proteina1, peso_promedio_aminoacido=115)
 
-**3)** Ahora abra el archivo en una Hoja de Cálculo (Click derecho sobre el archivo :material-arrow-right: Abrir con). Al final de cada placa hay varias celdas sin datos. ¿Hay algo en la planilla del experimento que explique por qué pasa esto?
+print(peso1)
+print(peso2)
+```
+Como pueden ver, si no especificamos el parámetro peso_promedio_aminoacido, Python utiliza automáticamente su valor por defecto (110 Da). Sin embargo, podemos modificarlo cuando llamamos a la función. Esto permite utilizar la misma función con diferentes valores sin necesidad de modificar el código que se encuentra dentro de ella.
 
-## **Paso 2 - Limpiar y Parsear el Archivo** { markdown data-toc-label='Paso 2 - Limpiar y Parsear' }
+## **Librerías**
 
-En este paso queremos hacer 2 cosas:
+Hasta ahora trabajamos únicamente con funciones y estructuras que forman parte de **Python**. Sin embargo, una de las mayores fortalezas del lenguaje es la enorme cantidad de **librerías** desarrolladas por la comunidad.
 
-* Primero, queremos sacar cualquier fila extra de **00_datos_filtermax.txt** que nos impida leer el archivo usando `fread`. Si bien en este caso esto se podría hacer a mano, como programadores queremos soluciones que escalen bien con el número de datos, asi que lo vamos a hacer en un *script*.
+Una **librería** es un conjunto de funciones y herramientas escritas por otras personas que podemos reutilizar en nuestros programas. En lugar de escribir todo desde cero, simplemente cargamos la librería y utilizamos sus funciones.
 
-* Segundo, queremos reorganizar los datos para poder trabajar con ellos más fácil, y para eso queremos una tabla con la siguiente estructura:
+Por ejemplo:
 
-<figure markdown>
-| time { data-sort-method='none' } | temperature { data-sort-method='none' } | fila { data-sort-method='none' } | columna { data-sort-method='none' } | signal { data-sort-method='none' } |
-| :---: | :---: | :---: | :---: | :---: | 
-| "00:00:00" | 30 | "A" | 1 | 417246 |
-| "00:04:59" | 30 | "A" | 1 | 595504 |
-| "00:10:00" | 30 | "A" | 1 | 789920 |
-| "00:15:00" | 30 | "A" | 1 | 985947 |
-| "00:00:00" | 30 | "A" | 2 | 389328 |
-| ... | ... | ... | ... | ... |
-</figure>
+* **pandas** permite trabajar con tablas de datos.
+* **numpy** agrega herramientas para realizar cálculos numéricos de forma eficiente.
+* **matplotlib** permite crear gráficos.
+* **scikit-learn** proporciona algoritmos y herramientas para *Machine Learning*.
+* **BioPython** incluye funciones específicas para bioinformática.
 
-Si bien este paso es importante, también es bastante específico a la salida del **FilterMax F5**. Por esta razón les vamos a dar el archivo ya parseado para que pasemos directamente al análisis de datos más general. Este es el archivo **02_datos_filtermax_parseados.tsv** que se encuentra en sus materiales de trabajo.
+### Instalar librerías
 
-Dicho esto, si completan el resto del TP a tiempo y quieren aprender cómo llegar del archivo original a éste archivo pueden hacer el **Ejercicio Adicional 1** abajo de todo.
+Las librerías pueden instalarse utilizando el gestor de paquetes **pip**. Por ejemplo, para instalar **pandas** desde una terminal se utiliza:
 
-**1)** Abran el archivo **02_datos_filtermax_parseados.tsv** con el Editor de Texto y vean la columna **signal**. ¿Qué piensan que significan los **NA** en esa columna?
-
-## **Paso 3 - Agregar la información que necesito** { markdown data-toc-label='Paso 3 - Agregar Información' }
-
-En este momento tenemos una tabla donde cada fila es una señal independiente, pero tenemos algunos problemas:
-
-* No tengo información de los compuestos en la tabla, solo de los números de las columnas
-
-* No tengo información de las diluciones en la tabla, solo de las letras de las filas
-
-* Más adelante vamos a querer calcular la *velocidad de reacción*, es decir, cómo varía la **signal** según el **time**. Sin embargo, acá **time** es un *string*, por lo que necesito transformarlo a número
-
-Estas son las cosas que queremos arreglar. Por suerte tenemos también otras dos tablas, una indicando que compuesto hay en cada columna (**00_datos_compuestos.tsv**) y otra indicando que dilución hay en cada fila (**00_datos_concentraciones.tsv**).
-
-Esto se podría hacer a mano, pero llevaría mucho tiempo y podría haber errores de tipeo. Por esta razón vamos a crear un programa que haga todo esto por nosotos. Sin embargo, antes de crear este programa necesitamos aprender algunas cosas nuevas:
-
-### Herramientas necesarias
-
-#### Filtrar filas en *Data Table*
-
-Algo de esto vimos en el TP anterior, pero es posible filtrar filas de un *Data Table* según el valor de las diferentes columnas en dicha fila.
-
-Vamos a volver a usar el data set **iris** que está siempre cargado en memoria; sin embargo, **iris** es un *Data Frame*, por lo que lo vamos a tener que convertir en *Data Table*.
-
-```R
-library(data.table) #tenemos que cargar el paquete data.table en memoria cada vez que cerramos RStudio
-
-dt_iris <- as.data.table(iris)
+```bash
+pip install pandas
 ```
 
-Ahora supongamos que queremos solo las filas donde la columna **Species** es **versicolor** ó **virginica**. Hay varias formas de hacer esto y todas les van a ser útiles para lo que tenemos que hacer hoy.
+Esta instalación solo es necesaria una vez por computadora.
 
-**1)** Corran por lo menos dos de las líneas de código siguientes y vean lo que devuelven:
+!!! tip "Google Colab"
 
-```R
-# Cualquiera de estas 5 líneas de código devuelve el mismo *Data Table*
-dt_iris[(Species == "versicolor") | (Species == "virginica")]
-dt_iris[Species %in% c("versicolor", "virginica")]
-dt_iris[Species != "setosa"]
-dt_iris[!(Species == "setosa")]
-dt_iris[!(Species %in% c("setosa"))]
+    Google Colab ya incluye instaladas muchas de las librerías más utilizadas para ciencia de datos y bioinformática, entre ellas **pandas**, **numpy**, **matplotlib** y **scikit-learn**. Por lo tanto, en este curso normalmente no será necesario instalarlas.
+
+### Importar librerías
+
+Aunque una librería ya esté instalada, es necesario **importarla** en cada notebook donde vayamos a utilizarla.
+
+La forma más común de hacerlo es mediante la instrucción `import`. Por ejemplo:
+
+```python
+import pandas
 ```
 
-#### Mergear *Data Tables*
+A partir de ese momento podremos utilizar todas las funciones y herramientas de esa librería escribiendo su nombre seguido de un punto (`.`). Por ejemplo:
 
-Por *mergear* nos referimos a juntar dos *Data Tables* horizontalmente, es decir, agregar de alguna forma las columnas de uno al otro. 
-
-**2)** Corran el siguiente ejemplo y vean lo que devuelve.
-
-```R
-genes <- c("ERT2", "TTR4", "REC1")
-esencialidad <- c(F, F, T)
-expresiones <- c(100 ,1000, 10000)
-
-dt_info_de_esencialidad <- data.table(gen = genes,
-                                      esencial = esencialidad)
-dt_info_de_expresion <- data.table(gen = genes,
-                                   expresion = expresiones)
-
-dt_toda_la_info <- merge(dt_info_de_esencialidad,
-                         dt_info_de_expresion,
-                         by = "gen")
-
-print(dt_toda_la_info)
+```python
+pandas.DataFrame(...)
 ```
 
-Como ven, la función `merge` toma 2 *Data Tables* y los une por la columna definida en el parámetro `by`. Una cosa interesante es que no es necesario que ambos *Data Frames* tengan el mismo tamaño.
+Como escribir el nombre completo de la librería muchas veces puede resultar incómodo, **Python** permite asignarle un **alias**, es decir, un nombre más corto que utilizaremos durante el resto del programa.
 
-**3)** Corran el siguiente ejemplo y vean lo que devuelve.
+Esto se hace con la palabra `as`:
 
-```R
-especies <- c("setosa", "virginica", "versicolor")
-empieza_con_S <- c(T, F, F)
-
-dt_info_S <- data.table(Species = especies,
-                        empieza_con_S = empieza_con_S)
-
-nueva_dt_iris <- merge(dt_iris,
-                       dt_info_S,
-                       by = "Species")
-
-print(nueva_dt_iris)
+```python
+import pandas as pd
 ```
 
-Para cada fila de **dt_iris** el `merge` agrego el valor de **empieza_con_S** según la columna **Species**. Van a ver que se desordenaron las filas y las columnas. Esto sucede ya que `merge` va a mover a la columna usada en el `by` al principio. Uno después tiene que reordenarlas como prefiera.
+En este ejemplo, `pd` es simplemente un alias de `pandas`. Por lo tanto, las siguientes instrucciones son equivalentes:
 
-#### Agregar filas a *Data Tables*
-
-Ahora que aprendimos a agregar columnas en masa también queremos hacer lo mismo con una o más filas.
-
-**4)** Corran el siguiente ejemplo y vean lo que devuelve.
-
-```R
-genes <- c("ERT2", "TTR4", "REC1")
-esencialidad <- c(F, F, T)
-expresiones <- c(100 ,1000, 10000)
-
-dt_toda_la_info <- data.table(gen = genes,
-                              esencial = esencialidad,
-                              expresion = expresiones)
-
-dt_nueva_fila <- data.table(gen = "AFK5",
-                            esencial = T,
-                            expresion = 50)
-
-dt_toda_la_info <- rbindlist(list(dt_toda_la_info,
-                                  dt_nueva_fila))
-
-print(dt_toda_la_info)
+```python
+pandas.DataFrame(...)
 ```
 
-El comando `rbindlist` concatena dos *Data Tables*, donde el segundo puede ser una sola fila o algo más grande. Es importante que ambos *Data Tables* tengan la misma estructura para que el comando no devuelva errores.
-
-#### Crear *Data Table* vacío
-
-Ahora que sabemos agregar filas a un *Data Table*, puede ser entonces útil tener un *Data Table* vacío al que le voy a agregando filas que voy calculando (por ejemplo en un ciclo).
-
-**5)** Corran el siguiente ejemplo y vean lo que devuelve.
-
-```R
-dt_toda_la_info_vacio <- data.table(gen = character(),
-                                    esencial = logical(),
-                                    expresion = numeric())
-
-print(dt_toda_la_info_vacio)
-
-dt_nueva_fila <- data.table(gen = "AFK5",
-                            esencial = T,
-                            expresion = 50)
-
-dt_toda_la_info <- rbindlist(list(dt_toda_la_info_vacio,
-                                  dt_nueva_fila))
-
-print(dt_toda_la_info)
+```python
+pd.DataFrame(...)
 ```
 
-Como ven, al crear un *Data Table* vacío tengo que asignar a cada columna el tipo de datos que va a contener. Aca estoy usando `character()` (*strings*), `logical()` (*booleano*) y `numeric()` (números reales). El único otro tipo que puede ser que usen en esta materia es el `integer()` que son números enteros, pero como dijimos en el TP anterior es común usar `numeric()` para estos también.
+El uso de alias es muy común en **Python** y facilita la escritura del código. Algunas convenciones ampliamente utilizadas son:
 
-#### Reordenar columnas en *Data Tables* { markdown data-toc-label='Reordenar columnas' }
-
-Como mencionamos antes, el `merge` nos va a desordenar las columnas de la tabla. Además, es posible querer quedarnos con solo algunas de las columnas de una tabla porque ya no tenemos más usos para otras. Una forma de hacer esto es:
-
-```R
-dt_iris <- as.data.table(iris)
-
-#Los tres siguientes bloques hacen lo mismo, quedándonos solo con las 
-#columnas Species, Sepal.Length y Sepal.Width
-
-dt_iris[, .(Species, Sepal.Length, Sepal.Width)]
-
-dt_iris[, c("Species", "Sepal.Length", "Sepal.Width")]
-
-columnas_a_quedarnos <- c("Species", "Sepal.Length", "Sepal.Width")
-dt_iris[, columnas_a_quedarnos, with = F]
+```python
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
 ```
 
-Esto es útil cuando queremos quedarnos con pocas columnas, pero ¿qué pasa cuando tenemos muchas y solo queremos sacar algunas? Ahí podemos hacer:
+## **NumPy: Arrays**
 
-```R
-dt_iris <- as.data.table(iris)
+Hasta ahora trabajamos con **listas**, que son una de las estructuras de datos más utilizadas en **Python**. Sin embargo, cuando queremos realizar cálculos numéricos sobre grandes cantidades de datos (como suele ocurrir en bioinformática), las listas no son la herramienta más eficiente.
 
-#Los dos siguientes bloques hacen lo mismo, sacando las columnas Species, Sepal.Length y Sepal.Width
+Para este tipo de tareas existe la librería **NumPy**, que proporciona un tipo de dato llamado **array**. Un array es similar a una lista, pero está optimizado para almacenar grandes cantidades de datos del mismo tipo y realizar operaciones matemáticas de forma muy eficiente.
 
-dt_iris[, -c("Species", "Sepal.Length", "Sepal.Width")]
+### Crear arrays
 
-columnas_a_borrar <- c("Species", "Sepal.Length", "Sepal.Width")
-dt_iris[, -columnas_a_borrar, with = F]
+Los arrays pueden crearse de distintas maneras. Una de las más comunes es utilizando la función `array()`.
+
+```python
+import numpy as np
+
+array = np.array([1, 2, 3, 4, 5])
+
+print(array)
 ```
 
-#### Splitear *strings*
+También podemos crear secuencias de números utilizando `arange()`:
 
-Hay varias funciones en **R** que nos permiten parsear texto y una de las más fáciles de entender es `strsplit`. Como su nombre lo indica esta función *splitea* (o corta) un *string* (o cadena de caracteres). Veamos un ejemplo:
+```python
+array = np.arange(1, 11)
 
-```R
-frase <- "Habia-una-vez"
-frase_spliteada <- strsplit(frase, split = "-")
-print(frase_spliteada)
-```
-```R
-[[1]]
-[1] "Habia" "una"   "vez"
-```
-Como ven la función `strsplit` toma un *string* y lo divide en diferentes fragmentos según el parámetro `split`.
-
-No sé si lo recuerdan, pero en el TP anterior hablamos de las variables llamadas listas, que se pueden pensar como vectores que pueden contener variables de distinto tipo dentro de ellas (mientras que todos los elementos de un vector son de un mismo tipo).
-
-Ese `[[1]]` en el output anterior nos está indicando que `strsplit` nos está devolviendo una variable de tipo `list` donde el primer elemento es el vector con la frase *spliteada*.
-
-**6)** Si bien el parámetro `split` suele ser un caracter, en realidad puede ser un *string* cualquiera. Prueben el código anterior usando `split = "-una-"` y vean que pasa.
-
-**7)** Vean que pasa cuando usan `split = ""`.
-
-**8)** Pásenle ahora a `strsplit` el siguiente vector de strings: `frases <- c("Aquí me pongo a cantar", "al compás de la vigüela")`.
-
-Sabiendo que queremos *splitear* las diferentes palabras,
-
-* ¿cuál sería el valor de `split` en este caso?
-* ¿Cuántos elementos tiene la lista que devuelve `strsplit`? ¿Por qué?
-* ¿Cuál es la tercera palabra de la segunda frase? (imprímanla por pantalla usando `print`)
-
-#### Eliminar elementos repetidos en vectores { markdown data-toc-label='Elementos repetidos' }
-
-En los *Data Tables* es común tener columnas con categorías, por ejemplo la columna **Species** en la tabla **iris**. Es normal al momento de programar no saber previamente cuáles van a ser esas categorías (especies en este caso), por lo que muchas veces se extraen de la columna misma. Una forma de hacer esto es usar la función `unique()`, la cual toma un vector y saca los elementos repetidos, dejando uno de cada uno.
-
-**9)** Corran el siguiente ejemplo y vean lo que devuelve.
-
-```R
-vector_especies <- iris$Species
-
-vector_especies_unicas <- unique(vector_especies)
-
-print(vector_especies)
-print(vector_especies_unicas)
+print(array)
 ```
 
-La columna `iris$Species` es técnicamente un *factor*, pero estos son simplemente vectores con propiedades extras. La función `unique()` va a funcionar igual de pasarle un vector de caracteres; de hecho, esta función también puede remover filas repetidas de un *Data Table*.
-
-#### Usar `fread` con datos faltantes { markdown data-toc-label='fread y NAs' }
-
-Es común que un set de datos tenga datos faltantes, lo que en nuestro caso vendría a ser wells sin señal. Diferentes tablas los van a indicar de diferentes maneras, pero es común verlos como *nada* (o sea veo los separadores de columnas, pero no hay información en el medio), **NaN** (*Not a Number*), **ND** (*No Data*) o como **NA** (*Not Available*). En esta caso vamos a usar **NA**.
-
-Es importante al momento de leer un archivo saber si mi archivo tiene o no estos datos faltantes, ya que de no tenerlo en cuenta puedo terminar leyendo a **NA** como el *string* "NA", lo cual puede insertar datos falsos y hasta forzar a **R** a leer una columna numérica como si fueran todos *strings*.
-
-Podemos indicarle a `fread` si hay celdas sin valores y como están escritas con el parámetro `na.strings`:
-
-```R
-dt <- fread("ARCHIVO_DT", header = T, sep = "\t", na.strings = "NA")
+```text
+[ 1  2  3  4  5  6  7  8  9 10]
 ```
 
-En este caso le estamos indicando que hay celdas sin valores y que están escritas en la tabla como "NA" (pueden estar con o sin comillas en el archivo). De querer indicarle a `fread` que los datos faltantes están como *nada* se usa `na.strings = ""`, aunque en este caso cualquier columna con un *string* vacío también va a ser considerada dato faltante.
+Los arrays pueden contener distintos tipos de datos, incluyendo strings. Por ejemplo, podemos utilizarlos para almacenar secuencias de ADN.
 
-!!! tip "Tip - Carga más rápida de los datos"
+```python
+import numpy as np
 
-    Si estamos seguros que no hay celdas sin valores en nuestros datos, le podemos pasar `na.strings = NULL` para indicarle que no busque celdas vacías, lo que acelera la carga de la tabla.
+secuencias = np.array(["ATGCGT", "GGCCTA", "TACGGA", "CCATGC"])
 
-#### Usar `fread` con decimales españoles { markdown data-toc-label='fread y decimales' }
+print(secuencias)
+```
+### Acceder a elementos de un array
+Al igual que en las listas de Python, podemos acceder a los elementos de un array utilizando índices. Recordemos que el primer elemento ocupa la posición 0.
 
-Otro problema común al momento de trabajar con datos es que por alguna ~~diabólica~~ razón el separador de decimales y el separador de miles no son iguales para algunos países que para otros, de hecho, son exactamente al revés.
+```python
+concentraciones = np.array([10, 20, 30, 40, 50])
 
-Es posible entonces que tengan una tabla que hizo alguien en Argentina donde uso comas como separador de decimales, pero que al cargarla en **R**, el cual fue creado en Estados Unidos, piense que dichas comas son separador de miles, lo que rompe completamente los números pasados.
-
-Por suerte algo de consideración tienen y existe un parámetro de `fread` que nos permite especificar cual es el separador de decimales (que por defecto es el punto):
-
-```R
-dt <- fread("ARCHIVO_DT", header = T, sep = "\t", dec = ",")
+print(concentraciones[0])
+print(concentraciones[2])
 ```
 
-### Paso 3 - Ejercicio
-
-**10)** Creen un nuevo script de **R**, copien el siguiente código y guardenlo en su carpeta de trabajo. Vayan avanzando por el *script* y cambien las secciones que dicen `@@EDITAR@@` por lo que corresponda (esto puede ser un valor, una variable, una operación matemática, una comparación o una función de **R**).
-
-!!! warning "Warning - Working Directory"
-
-    Cada vez que lean o escriban un archivo recuerden que el path que le pasen debe ser un path absoluto o un path relativo al *Working Directory*. Para cambiar el *Working Directory* pueden usar la función `setwd()` que aprendimos en el TP anterior.
-
-!!! tip "Tip - Ñ y acentos"
-
-    Van a ver que en los códigos tratamos de no usar la letra **Ñ** o acentos. Esto es así ya que cuando uno comparte código entre varias personas suele pasar que algunas de esos caracteres se "rompen" y se ven feo (por ejemplo un texto que era **diseño_compuestos** se veía como **diseÃ±o_compuestos** en otra PC).
-
-    Si bien es posible poner estándares de codificación de texto en grupos, la realidad es que solemos programar en inglés por lo que el problema se evita solo.
-
-    Este tip es ***especialmente*** importante para los nombres de las variables. Ahí si que recomendamos nunca usar acentos o **Ñ** (o espacios).
-
-```R
-#Aca hay que poner el Path Absoluto que apunta a su carpeta de trabajo
-#Por ej: "/home/ibioinfo/Documentos/data_TPPb"
-setwd(@@EDITAR@@)
-
-library(data.table)
-
-#Uso fread para cargar los datos parseados teniendo en cuenta que tienen NAs
-dt_parsed_data <- fread(@@EDITAR@@)
-
-#Primero que nada se que las columnas de los wells 23 y 24 estan vacías, asi que saco las filas
-#donde *columna* sea 23 o 24 (o sea, me quedo con las filas donde *columna* es 1 a 22)
-dt_parsed_data <- dt_parsed_data[@@EDITAR@@]
-
-#Ahora, la fila y la columna no me esta dando mucha informacion de lo que esta pasando, 
-#por lo que quiero agregar informacion de los compuestos y de concentraciones
-
-#Agrego informacion compuestos
-dt_datos_compuestos <- fread("00_datos_compuestos.tsv", header = T, sep = "\t", na.strings = NULL)
-dt_parsed_data <- merge(dt_parsed_data,
-                        dt_datos_compuestos,
-                        by = "columna")
-
-#Agrego informacion concentraciones (ojo que en *00_datos_concentraciones.tsv* el separador decimal es la coma)
-dt_datos_concentraciones <- fread(@@EDITAR@@)
-dt_parsed_data <- merge(@@EDITAR@@)
-
-#Para cada combinación de compuesto y concentración quiero saber la velocidad de la reacción, es decir, 
-#la pendiente de la recta que sale de hacer una regresión lineal por los 4 tiempos ensayados
-
-#El primer problema que tengo es que la variable time es un *string*, por lo que no puedo usarla 
-#como X en una ecuacion. Por esta razon vamos a convertir a time en cantidad de segundos
-
-#Si bien hay 1408 filas, en si solo hay 4 tiempos que se repiten:
-#"00:00:00", "00:04:59", "00:10:00" y "00:15:00"
-
-#Voy entonces a hacer una tabla llamada dt_times_in_seconds que va a empezar vacía y una vez corrido el 
-#siguiente *for* va a tener 4 filas, una por cada uno de los 4 tiempos
-#Esta tabla va a tener dos columnas, la columna *time* indicando el tiempo en string que estamos analizando
-#y la columna *segundos_totales* que contiene ese tiempo transformado en numero y en segundos
-
-#Extraigo entonces los diferentes tiempos y creo una tabla vacía donde voy a guardar la cantidad de segundos 
-#para cada *time*
-unique_times <- unique(dt_parsed_data$time)
-dt_times_in_seconds <- data.table(time = character(),
-                                  segundos_totales = numeric())
-for (time_for in unique_times) {
-    # Esta siguiente linea comentada la uso para debuggear, es decir, para cuando estoy creando el programa
-    # Si la ejecutan a mano (sin el #) pueden entonces ir paso a paso en el *for* viendo que funcione todo
-    # Recuerden que pueden usar CTRL + ENTER para ejecutar el codigo seleccionado o ver el valor de una variable
-
-    # time_for <- unique_times[2]
-    
-    #Divido las horas, minutos y segundos y las transformo a numeros
-    time_spliteado <- strsplit(time_for, ":")
-
-    #*strsplit* devuelve una lista, que es como un vector, pero mas complicado
-    #Voy a sobreescribir la variable quedandome solo con el primer elemento de la lista, que es un vector
-    time_spliteado <- time_spliteado[[1]] 
-    
-    #Guardo cada uno de los tres numeros en otra variable. Como ahora son *strings* uso as.numeric() para
-    #convertirlos en numeros
-    horas <- as.numeric(@@EDITAR@@)
-    minutos <- as.numeric(@@EDITAR@@)
-    segundos <- as.numeric(@@EDITAR@@)
-    
-    #Calculo los segundos totales, es decir, del paso anterior transformo las horas y los minutos en segundos 
-    #y sumo las tres variables
-    segundos_totales <- @@EDITAR@@
-    
-    #Guardo esta info en la tabla que acabo de crear
-    dt_new_row_times_in_seconds <- data.table(time = @@EDITAR@@,
-                                              segundos_totales = @@EDITAR@@)
-    
-    dt_times_in_seconds <- rbindlist(list(dt_times_in_seconds,
-                                          dt_new_row_times_in_seconds))
-}
-
-#Agrego la informacion de los segundos totales (guardada en dt_times_in_seconds) a mi tabla original
-dt_parsed_data <- merge(@@EDITAR@@)
-
-#Ahora van a ver que las columnas de la tabla parecen estar mezcladas, lo que se debe a los merge
-#Por otro lado hay columnas que ya no vamos a usar
-#Resolvemos las dos cosas a la vez rearmando las columnas de la tabla
-dt_parsed_data <- dt_parsed_data[, .(compuesto, concentracion, segundos_totales, signal)]
-
-#Escribo los datos en una nueva tabla
-write.table(dt_parsed_data, file = "03_datos_filtermax_parseados_y_formateados.tsv", col.names = T, row.names = F, sep = "\t", quote = T)
+```text
+10
+30
 ```
 
-Si todo salió bien, el archivo **03_datos_filtermax_parseados_y_formateados.tsv** debería ser una tabla del estilo:
+### Operaciones matemáticas
 
-<figure markdown>
-| compuesto { data-sort-method='none' } | concentracion { data-sort-method='none' } | segundos_totales { data-sort-method='none' } | signal { data-sort-method='none' } |
-| :---: | :---: | :---: | :---: |
-| "Umbrella1" | 200 | 0 | 417246 |
-| "Umbrella2" | 200 | 0 | 389328 |
-| "Umbrella3" | 200 | 0 | 225039 |
-| "Umbrella4" | 200 | 0 | 248039 |
-| ... | ... | ... | ... |
-</figure>
+Una de las principales ventajas de los arrays es que las operaciones matemáticas se realizan **elemento a elemento**. Este comportamiento es muy similar al de los vectores de **R**.
 
-!!! warning "Warning - los programas que abren hojas de cálculo pueden transformar visualmente los separadores decimales"
+```python
+concentraciones = np.array([10, 20, 30, 40])
 
-	Si abren el archivo **03_datos_filtermax_parseados_y_formateados.tsv** en una hoja de cálculo podría ocurrir que el separador decimal de los números siga siendo la coma. Sin embargo, si abren el archivo usando el Editor de Texto van a ver que en realidad el separador decimal es ahora el punto, por lo que para los próximos ejercicios podemos usar `fread` sin poner el parámetro `dec`. **El cambio de los puntos a comas depende de la configuración que tenga la hoja de cálculo y esto pasa mucho con Google Sheets**.
+print(concentraciones + 2)
 
-## **Paso 4 - Calcular velocidades de reacción** { markdown data-toc-label='Paso 4 - Calcular velocidad' }
+print(concentraciones * 3)
 
-En física la *velocidad* es la variación de posición por unidad de tiempo. La *velocidad de reacción* es similar, donde queremos averiguar la variación de señal por unidad de tiempo (en nuestro caso es un segundo).
+print(concentraciones ** 2)
+```
 
-Para cada dilución de cada compuesto, nosotros tenemos la señal a cuatro puntos en el tiempo (una vez cada 5 minutos, o 300 segundos). Vamos a asumir que la señal varía linealmente con el tiempo, por lo que la forma más directa de conseguir la *velocidad de reacción* es calcular la pendiente de la recta que pasa por los cuatro puntos que conseguimos experimentalmente.
+```text
+[12 22 32 42]
+[ 30  60  90 120]
+[ 100  400  900 1600]
+```
 
-Es de esperar que los cuatro puntos no se alineen perfectamente, pero hay formas en **R** de calcular y plotear la línea que más se ajusta a ellos (hacer una regresión lineal). A continuación mostramos el ejemplo de "Umbrella1" a concentración 0, es decir, la *velocidad de reacción base* cuando no hay ningún compuesto.
+✏️**1)** Para observar la diferencia entre las operaciones realizadas sobre arrays de NumPy y sobre listas de Python, ejecuten el siguiente código:
+```python
+import numpy as np
 
-<figure markdown>
-![VelocidadReaccion](img/velocidad_reaccion.png)
-</figure>
+concentraciones_array = np.array([10, 20, 30, 40])
 
-En este plot vemos que la pendiente de la recta es aproximadamente 1718, lo que quiere decir que cada segundo la señal aumenta en 1718. Nuestro objetivo en este paso del TP es calcular este número para todas las concentraciones de todos los compuestos.
+print(concentraciones_array * 2)
 
-??? info "Código usado para hacer el plot anterior (para los curiosos)"
 
-    ```R
-    library(data.table)
-    library(ggplot2)
+concentraciones_lista = [10, 20, 30, 40]
 
-    dt_parsed_formatted_data <- fread("03_datos_filtermax_parseados_y_formateados.tsv", header = T, sep = "\t", na.strings = NULL)
+print(concentraciones_lista * 2)
+```
+¿Cómo les dio cada resultado? ¿Qué diferencia observan entre las operaciones realizadas sobre el array y sobre la lista?
 
-    linear_regression_aux <- lm(data = dt_parsed_formatted_data[compuesto == "Umbrella1" & concentracion == 0], signal ~ segundos_totales)
+### Funciones sobre arrays
 
-    # La funcion *sprintf* se usa similar a *paste* ya que permite reemplazar los *%s* en el primer string por las variables que le paso
-    # a continuacion
-    formula_aux <- sprintf("Y = %s * X + %s",
-                           round(linear_regression_aux$coefficients[2], 2),
-                           round(linear_regression_aux$coefficients[1], 2))
+NumPy también incluye muchas funciones matemáticas que trabajan directamente sobre arrays.
 
-    ggplot(data = dt_parsed_formatted_data[compuesto == "Umbrella1" & concentracion == 0], aes(x = segundos_totales, y = signal)) +
-        geom_point(size = 2) +
-        geom_smooth(method='lm') +
-        theme_bw() +
-        xlab("Tiempo (s)") + 
-        ylab("Signal") + 
-        ggtitle("Velocidad base (sin compuesto)") +
-        theme(axis.title = element_text(size = 14, hjust = 0.5),
-              axis.text = element_text(size = 14, hjust = 0.5),
-              plot.title = element_text(size = 16, hjust = 0.5)) +
-        annotate("text", x = 10, y = 2000000, label = formula_aux, hjust = 0, size = 5)
+```python
+print(np.mean(concentraciones))
+
+print(np.max(concentraciones))
+
+print(np.min(concentraciones))
+```
+
+```text
+25.0
+40
+10
+```
+
+Muchas funciones de **NumPy** aceptan arrays como entrada y devuelven otro array como resultado, lo que permite escribir programas muy compactos y eficientes.
+
+!!! info "Listas vs Arrays"
+
+    Las listas son estructuras generales de **Python** que pueden contener elementos de distintos tipos. Los arrays de **NumPy**, en cambio, están pensados para trabajar con datos numéricos y suelen ser mucho más rápidos al realizar cálculos matemáticos
+
+
+
+## **Google Drive**
+
+Hasta ahora trabajamos con archivos almacenados dentro de la sesión de **Google Colab**. Sin embargo, esa sesión es **temporal**: si la cerramos o se reinicia el entorno de ejecución, todos los archivos almacenados localmente se pierden.
+
+Una forma de evitar esto es **montar Google Drive**, lo que permite acceder directamente a los archivos almacenados en nuestra cuenta de Google, de forma similar a si fueran una carpeta más de la computadora.
+
+Entre otras cosas, esto nos permite:
+
+* Mantener organizados los notebooks y los datos del trabajo práctico.
+* Evitar subir los mismos archivos cada vez que abrimos Colab.
+* Guardar automáticamente tablas, figuras y resultados para utilizarlos en el futuro.
+
+### Montar Google Drive
+
+Para conectar Google Drive con Colab ejecuten la siguiente celda:
+
+```python
+from google.colab import drive
+drive.mount("/content/drive")
+```
+
+Al ejecutarla aparecerá un enlace para autorizar el acceso a su cuenta de Google.
+
+1. Hagan clic sobre el enlace.
+2. Inicien sesión (si fuera necesario).
+3. Autoricen a Google Colab a acceder a su Drive.
+
+Si todo salió correctamente verán un mensaje similar a:
+
+```text
+Mounted at /content/drive
+```
+
+### Acceder a los archivos
+
+Una vez montado el Drive, todos sus archivos estarán disponibles dentro de la carpeta:
+
+```text
+/content/drive/MyDrive/
+```
+
+Por ejemplo, si tienen un archivo llamado **datos.tsv** dentro de la carpeta **Bioinformatica**, podrán leerlo usando:
+
+```python
+import pandas as pd
+
+df = pd.read_csv("/content/drive/MyDrive/Bioinformatica/datos.tsv", sep="\t")
+```
+
+Del mismo modo, cualquier archivo que escriban dentro de esa carpeta quedará guardado permanentemente en su cuenta de Google Drive.
+
+### Verificar que el Drive fue montado
+
+Pueden comprobar que todo funciona ejecutando:
+
+```python
+import os
+
+os.listdir("/content/drive/MyDrive")
+```
+Este comando mostrará el contenido de la carpeta principal de su Google Drive.
+
+También lo podrían hacer desde la terminal de Bash en Google Colab con: 
+
+```bash
+ls /content/drive/MyDrive
+```
+
+!!! tip "Organización"
+
+    Es recomendable crear una carpeta para la materia (por ejemplo, **Introducción_Bioinformática**) y guardar allí todos los notebooks, datos y resultados de los trabajos prácticos. Esto facilitará encontrar los archivos y reutilizarlos en futuras clases.
+
+!!! warning "Sesiones temporales"
+
+    El Drive debe montarse nuevamente cada vez que se inicia una nueva sesión de Google Colab. Sin embargo, **los archivos almacenados en Google Drive no se pierden**, por lo que no será necesario volver a subirlos.
+
+
+## **Python: Tablas**
+
+Hasta ahora vimos variables simples (como números y *strings*) y listas. Sin embargo, en bioinformática es muy común trabajar con **tablas**.
+
+En **Python**, la librería más utilizada para trabajar con tablas es **pandas**. Las tablas de pandas reciben el nombre de **DataFrames**.
+
+### Crear un DataFrame
+
+```python
+import pandas as pd
+
+genes = ["ERT2", "TTR4", "REC1"]
+esencial = [False, False, True]
+expresion = [100, 1000, 10000]
+
+df = pd.DataFrame({
+    "gen": genes,
+    "esencial": esencial,
+    "expresion": expresion
+})
+```
+
+Aca estamos creando un DataFrame llamado df que contiene 3 columnas, **gen**, **esencial** y **expresion**, cada una conteniendo una lista de valores. Es importante notar que todas las listas deben tener la misma longitud, ya que el primer elemento de cada una corresponde a la primera fila de la tabla, el segundo elemento a la segunda fila y así sucesivamente.
+
+!!! tip "Tip"
+
+    Observen que el contenido del `DataFrame()` está distribuido en varias líneas. En Python esto es completamente válido siempre que el código permanezca dentro de los paréntesis. Es una práctica muy recomendable cuando una función tiene muchos argumentos, ya que facilita la lectura del código.
+
+Podemos visualizar el contenido del DataFrame escribiendo simplemente:
+
+```python
+print(df)
+```
+
+```python
+   gen esencial expresion
+0 ERT2    False       100
+1 TTR4    False      1000
+2 REC1     True     10000
+```
+
+### Acceder a columnas
+
+Podemos acceder a una columna indicando su nombre entre corchetes:
+
+```python
+print(df["gen"])
+```
+
+```text
+0    ERT2
+1    TTR4
+2    REC1
+Name: gen, dtype: object
+```
+df["gen"] ya no es un DataFrame sino una Serie (Series), que representa una única columna de la tabla.
+
+### Acceder a filas
+
+Para acceder a una fila utilizaremos `iloc` (*integer location*). `iloc` permite acceder a las filas y columnas utilizando su **posición numérica**.
+
+```python
+print(df.iloc[0])
+```
+
+```text
+gen            ERT2
+esencial      False
+expresion      100
+Name: 0, dtype: object
+```
+
+Por ejemplo, `df.iloc[0]` devuelve la primera fila. Y `df.iloc[2]` devuelve la tercera fila del DataFrame.
+
+!!! info "iloc y loc"
+
+    En este TP utilizaremos `iloc`, que accede a las filas mediante su posición (0, 1, 2, ...).
+
+    También existe `loc`, que permite acceder a las filas utilizando sus etiquetas, índices o booleanos.
+
+### Acceder a elemento o celda
+También podemos acceder a un elemento específico de la tabla, es decir, a una celda, indicando tanto la fila como la columna.
+
+Una forma de hacerlo es utilizando iloc. Cuando utilizamos iloc, primero indicamos la fila y luego la columna:
+
+```python
+print(df.iloc[0, 2])
+```
+```text
+100
+```
+En este caso, 0 indica la primera fila y 2 la tercera columna.
+
+!!! info "con loc"
+    También podemos acceder a una celda utilizando el nombre de la columna:
+    ```python
+    print(df.loc[0, "expresion"])
+    ```
+    ```text
+    100
+    ```
+    De esta manera, loc permite indicar la etiqueta de la fila y el nombre de la columna.
+
+### Filtrar con booleanos
+
+Una de las operaciones más importantes al trabajar con tablas es filtrar las filas que cumplen una determinada condición.
+
+Por ejemplo, podemos seleccionar solamente los genes cuya expresión sea mayor a 500:
+
+```python
+print(df[df["expresion"] > 500])
+```
+```text
+    gen  esencial  expresion
+1  TTR4     False       1000
+2  REC1      True      10000
+```
+También podemos combinar condiciones. Por ejemplo, para seleccionar genes cuya expresión sea mayor a 500 y que sean esenciales:
+```python
+print(df[(df["expresion"] > 500) & (df["esencial"] == True)])
+```
+```text
+    gen  esencial  expresion
+2  REC1      True      10000
+```
+En este caso, & representa AND: ambas condiciones deben cumplirse.
+
+!!! warning "Importante: combinar condiciones en pandas"
+
+    Cuando filtramos un `DataFrame` utilizando condiciones sobre columnas,
+    no utilizamos `and` y `or`. En su lugar, utilizamos:
+
+    - `&` → **AND**
+    - `|` → **OR**
+    - `~` → **NOT**
+
+    Además, cada condición debe estar entre paréntesis.
+
+    Por ejemplo:
+
+    ```python
+    df[(df["expresion"] > 500) & (df["esencial"] == True)]
     ```
 
-### Herramientas necesarias
+    Para un **OR**:
 
-En este ejercicio también vamos a necesitar varias herramientas, pero la buena noticia es que la mayoría ya las vieron en el TP anterior o en el paso anterior.
-
-#### Fors anidados
-
-Es bastante común cuando se trabaja con tablas querer recorrer todas las combinaciones de dos variables categóricas. Una forma de hacer esto es usar *fors anidados*, es decir, un *for* adentro de otro *for*. En este caso el *for* interno se va a ejecutar completo una vez por cada elemento del *for* externo. Dentro del *for* interno es donde vamos a poner el código que queramos hacer con cada combinación de nuestras variables.
-
-**1)** Corran el siguiente ejemplo y vean lo que devuelve. ¿Cuántas veces se ejecutó el `print`? ¿En qué orden se recorrieron los diferentes prefijos y sufijos?
-
-```R
-vector_prefijos <- c("veinti", "cuarenti", "ciento")
-vector_sufijos <- c("cuatro", "dos", "ocho")
-
-for (prefijo_for in vector_prefijos) {
-    for (sufijo_for in vector_sufijos) {
-        numero_for <- paste(prefijo_for, sufijo_for, sep = "-")
-        
-        print(numero_for)
-    }
-}
-```
-
-#### Regresión lineal
-
-El ajuste de mis datos a una fórmula matemática es un tema súper complejo; sin embargo, en este TP necesitamos la versión más simple de esto, que son las regresiones lineales. Existe una función que viene con **R** llamada `lm` que nos va a permitir calcular una regresión lineal a partir de dos vectores numéricos.
-
-```R
-regresion_lineal <- lm(data = iris, formula = Sepal.Length ~ Petal.Length)
-
-print(regresion_lineal)
-```
-
-```R
-Call:
-lm(formula = Sepal.Length ~ Petal.Length, data = iris)
-
-Coefficients:
- (Intercept)  Petal.Length  
-      4.3066        0.4089
-```
-
-* El parámetro `data` nos permite poner un *Data Frame* o *Data Table* para luego poder mencionar las columnas directamente (de otra forma habría que hacer `iris$Sepal.Length`)
-* El parámetro `formula` es donde le decimos a `lm` a que fórmula debe ajustar los datos. Para regresión lineal es `Y ~ X`
-* De imprimir `regresion_lineal` por pantalla vemos los coeficientes de la fórmula
-    * `(Intercept)` es la ordenada al origen y la otra columna (en este caso llamada `Petal.Length`) es la pendiente
-
-Podemos extraer cada uno de estos dos números haciendo:
-
-```R
-ordenada_al_origen <- regresion_lineal$coefficients[1]
-pendiente <- regresion_lineal$coefficients[2]
-```
-
-!!! question "¿Se ajustan mis datos a una recta?"
-
-    Si bien no lo vamos a usar en este TP, es normal al momento de hacer una regresión querer saber que tan bien se ajustan mis datos a la fórmula que usé. Existen varios estadísticos para analizar esto, pero uno muy usado para regresiones lineales es el **R cuadrado**, que no tiene nada que ver con el lenguaje de programación y es un estadístico que va entre 0 y 1 y cuanto más cerca de 1 es mejor es el ajuste lineal (simplificando infinitamente el tema).
-
-    En el ejemplo anterior podemos conseguir el **R cuadrado** haciendo:
-
-    ```R
-    r_cuadrado <- summary(regresion_lineal)$r.squared
+    ```python
+    df[(df["expresion"] > 500) | (df["esencial"] == True)]
     ```
 
-### Paso 4 - Ejercicio
+### Resumen de la tabla
 
-**2)** Creen un nuevo script de **R**, copien el siguiente código y guardenlo en su carpeta de trabajo. Vayan avanzando por el *script* y cambien las secciones que dicen `@@EDITAR@@` por lo que corresponda (esto puede ser un valor, una variable, una operación matemática, una comparación o una función de **R**).
+Otra función muy útil es `info()`, que devuelve información general sobre la tabla:
 
-```R
-#Aca hay que poner el Path Absoluto que apunta a su carpeta de trabajo
-#Por ej: "/home/ibioinfo/Documentos/data_TPPb"
-setwd(@@EDITAR@@)
-
-library(data.table)
-
-#Leo los datos ya parseados y formateados
-dt_parsed_formatted_data <- fread(@@EDITAR@@)
-
-#Para cada combinación de compuesto y concentración quiero saber la velocidad de la reacción, es decir, 
-#la pendiente de la recta que sale de hacer una regresión lineal por los 4 tiempos ensayados
-
-#Creo la tabla vacía donde voy a guardar estos datos
-dt_velocidades_de_reaccion <- data.table(compuesto = character(),
-                                         concentracion = numeric(),
-                                         velocidad = numeric())
-
-#Voy a tener que recorrer todas las combinaciones de compuestos y concentraciones
-#Consigo vectores con cada compuesto diferente y con cada concentración diferente
-unique_compuestos <- unique(dt_parsed_formatted_data$compuesto)
-unique_concentraciones <- @@EDITAR@@
-
-for (compuesto_for in unique_compuestos) {
-    # compuesto_for <- unique_compuestos[1]
-    
-    for (concentracion_for in unique_concentraciones) {
-        # concentracion_for <- unique_concentraciones[1]
-
-        #Por cada combinacion de compuesto + concentración quiero calcular la velocidad de reacción
-        #Para eso lo primero que necesito hacer es filtrar los datos de *dt_parsed_formatted_data*, para quedarme solo
-        #con aquellas signals que correspondan al compuesto y concentración de la iteración actual del *for*
-        sub_dt_parsed_formatted_data <- dt_parsed_formatted_data[(compuesto == @@EDITAR@@) & (@@EDITAR@@)]
-        
-        #Calculo la regresión lineal usando los datos de *sub_dt_parsed_formatted_data* y considerando a
-        #*segundos_totales* como el X y a *signal* como el Y
-        regresion_lineal <- lm(data = sub_dt_parsed_formatted_data, formula = signal ~ segundos_totales)        
-
-        #Extraigo la pendiente, que es el segundo elemento del elemento *coefficients*
-        velocidad_de_reaccion <- regresion_lineal$coefficients[2]
-        
-        #Creo una nueva fila para agregar a mi tabla de velocidades de reacción
-        #Esta fila corresponde al compuesto y a la concentración de esta iteración de los *fors*, asi como
-        #la velocidad que acabo de calcular
-        new_row_dt_velocidades_de_reaccion <- data.table(compuesto = @@EDITAR@@,
-                                                         concentracion = @@EDITAR@@,
-                                                         velocidad = @@EDITAR@@)
-        
-        #Agrego la nueva fila recien creada a mi tabla en donde guardo todas las velocidades
-        dt_velocidades_de_reaccion <- @@EDITAR@@
-    }   
-}
-
-#Escribo los datos en una nueva tabla
-write.table(dt_velocidades_de_reaccion, file = "04_velocidades_de_reaccion.tsv", col.names = T, row.names = F, sep = "\t", quote = T)
+```python
+df.info()
 ```
 
-Si todo salió bien, el archivo **04_velocidades_de_reaccion.tsv** debería ser una tabla del estilo:
+Entre otras cosas, muestra:
 
-<figure markdown>
-| compuesto { data-sort-method='none' } | concentracion { data-sort-method='none' } | velocidad { data-sort-method='none' } |
-| :---: | :--- | :--- |
-| "Umbrella1" | 200 | 633.30896128865 |
-| "Umbrella1" | 133.3333333 | 672.561474192526 |
-| "Umbrella1" | 88.88888889 | 710.350673411048 |
-| "Umbrella1" | 59.25925926 | 630.08948130777 |
-| "Umbrella1" | 39.50617284 | 720.288720371885 |
-| ... | ... | ... |
-</figure>
+* La cantidad de filas y columnas.
+* El nombre de cada columna.
+* El tipo de dato de cada columna.
 
-(sí, los decimales son horribles, en un ratito los arreglamos)
+También podemos utilizar `describe()`, que calcula distintos estadísticos para las columnas numéricas:
 
-## **Paso 5 - Calcular y plotear IC 50** { markdown data-toc-label='Paso 5 - Calcular IC 50' }
-
-Primero que nada tenemos que definir un par de conceptos:
-
-Vamos a llamar ***velocidad de reacción base*** a la *velocidad de reacción* de la enzima cuando no tiene ningún inhibidor, o lo que es lo mismo, cuando la concentración del inhibidor es 0. En nuestro caso tenemos 22 wells donde la concentración del inhibidor es 0, por lo que vamos a calcular a la *velocidad de reacción base* como el promedio de las velocidades en esos 22 wells.
-
-Vamos a llamar ***actividad*** a la relación entre la *velocidad de reacción* observada al usar una concentración dada de un compuesto, y la *velocidad de reacción base*. Es decir:
-
-$$
-actividad = \frac{velocidadReaccion}{velocidadReaccionBase}
-$$
-
-* Si no hay inhibidor o si la concentración del inhibidor es muy baja para que haga efecto :material-arrow-right: **Actividad ~ 1**
-* Si no hay enzima o si estoy usando un inhibidor perfecto :material-arrow-right: **Actividad ~ 0**
-
-Ahora sí, queremos calcular una curva de dosis-respuesta para ver como es afectada nuestra **enzima Z** por diferentes concentraciones de cada uno de los 22 compuestos. En general es esperable que:
-
-* A muy bajas concentraciones del compuesto no hay efecto sobre la enzima, por lo que estoy viendo la una *actividad* cercana a 1. Esto quiere decir que esperamos ver varias concentraciones bajas de un compuesto que muestren la misma *actividad*.
-* A muy altas concentraciones del compuesto ya está saturado el efecto que él pueda hacer sobre la enzima (por ejemplo todos los sitios de unión ya están ocupados), por lo que estoy viendo el máximo efecto que puede hacer dicho compuesto a la *actividad* de la enzima. Esto quiere decir que esperamos ver varias concentraciones altas que muestren la misma *actividad*.
-* Las concentraciones intermedias son aquellas en donde una variación en la concentración del compuesto produce un cambio en la *actividad* de la enzima.
-
-Estás tres propiedades hacen que la curva dosis-respuesta tenga una forma sigmoidea, es decir:
-
-<figure markdown>
-![CurvaDosisRespuesta](img/dose-response-curve-ic50.svg)
-</figure>
-
-Donde en nuestro caso la respuesta va a ser la *actividad* y la dosis va a ser la concentración de nuestro compuesto. Dependiendo de las concentraciones elegidas, es normal ver que el eje X de este plot esté en escala logarítmica.
-
-En el plot está marcado el **IC 50**, el cual es la concentración del compuesto a la cual la *actividad* de la enzima cae al 50% (es decir, cuando la *velocidad de reacción* es la mitad que la *velocidad de reacción base*). El **IC 50** da información de donde está el rango de concentraciones de dicho compuesto que hacen variar la *actividad* enzimática, entre otras cosas.
-
-### Herramientas
-
-#### Instalar paquetes de **R**
-
-Para calcular el **IC 50** vamos a ajustar nuestros datos a una curva sigmoidea, para lo cual vamos a instalar un paquete de **R** llamado `nplr` que hace estos cálculos por nosotros.
-
-**1)** Para instalar un paquete corran en **R** la línea:
-
-```R
-install.packages("nplr")
+```python
+df.describe()
 ```
 
-Y recuerden que cuando lo quieran usar tienen que cargarlo usando `library(nplr)` o `library("nplr")`. Como es bastante avanzado no vamos a hablar de `nplr` por ahora y les vamos a dar esa parte del código ya hecha.
+Esta función devuelve información como el mínimo, máximo, promedio, desvío estándar y distintos percentiles.
 
-#### Crear y modificar columnas
+### Escribir tablas
 
-Una cosa más que tenemos que aprender con los *Data Tables* es como agregar una columna nueva, o como modificar una columna ya existente. Esto se hace simplemente asignándole el nuevo valor a la columna como si fuera una variable o vector, solo que es importante que el nuevo valor sea o un solo elemento o un vector con longitud igual al número de filas de la tabla.
+Para guardar un DataFrame utilizaremos la función `to_csv()`. Por ejemplo:
 
-**2)** Corran el siguiente ejemplo y vean lo que devuelve.
-
-```R
-library(data.table)
-
-dt_iris <- as.data.table(iris)
-
-#Creo nuevas columnas
-
-#Si le paso un valor solo toda esa columna va a tener ese valor
-dt_iris$nueva_columna <- 1
-
-#De otra forma tengo que pasarle un vector con longitud igual al numero de filas
-#Este vector puede ser combinación de otras de las columnas de la tabla
-dt_iris$otra_nueva_columna <- dt_iris$Sepal.Length + dt_iris$Petal.Length - 1
-
-#Me arrepenti del valor que cree en la columna al principio
-dt_iris$nueva_columna <- 5
-
-print(dt_iris)
+```python
+df.to_csv("genes.tsv", sep="\t", index=False)
 ```
 
-#### Crear plots en PDFs
+Los parámetros utilizados son:
 
-Nosotros sabemos crear plots en RStudio, pero hay veces donde uno tiene que hacer decenas (o miles) de plots y quiere guardarlos todos en un solo proceso. **R** tiene varias funciones que nos permiten guardar los plots como **.jpg**, **.png**, **.svg**, etc. Acá nos vamos a enfocar en la función que nos permite guardarlos como **.pdf**.
+* `df` es el DataFrame que queremos guardar.
+* `"genes.tsv"` es el nombre del archivo de salida. Generalmente tendrá extensión **.tsv** si las columnas están separadas por tabulaciones o **.csv** si están separadas por comas.
+* `sep="\t"` indica que las columnas estarán separadas por tabulaciones.
+* `index=False` evita guardar la numeración de las filas como una columna adicional.
 
-**3)** Corran el siguiente ejemplo y vean lo que devuelve (va a crear un archivo en su *Working Directory*).
+**1)** Guarden el DataFrame creado anteriormente con el nombre **genes.tsv**.
 
-```R
-pdf("test.pdf", width = 7, height = 7)
+Confirmen que el archivo fue creado correctamente desde la pestaña **Archivos** de Google Colab.
 
-plot(x = iris$Sepal.Length,
-     y = iris$Petal.Length)
+### Leer tablas
 
-plot(x = iris$Sepal.Width,
-     y = iris$Petal.Width)
+Para leer una tabla utilizaremos la función `read_csv()`. Por ejemplo:
 
-plot(x = iris$Species,
-     y = iris$Petal.Length)
-
-dev.off()
+```python
+nuevo_df = pd.read_csv("genes.tsv", sep="\t")
 ```
 
-Los parámetros `width` y `height` indican el tamaño en pulgadas de cada página en el pdf. Noten que a partir que abren el pdf los plots ya no van a aparecer en la pestaña Plots de RStudio hasta que cierren el pdf (se podría pensar que redirige la salida del plot al archivo pdf).
+Los parámetros utilizados son:
 
-!!! tip "Tip - Resetear los gráficos"
+* `"genes.tsv"` es el nombre del archivo a leer. Si se trata de un *path* absoluto se leerá desde esa ubicación; si es un *path* relativo, será relativo al directorio actual.
+* `sep="\t"` indica cuál es el separador utilizado entre las columnas del archivo.
 
-    A veces pasa que un pdf queda abierto más de lo que debería y no se cierra bien, o que no se crea como debería. En estos casos pueden usar la función `graphics.off()` antes y después del código anterior (especialmente antes) para limpiar cualquier cosa abierta. Solo tengan en cuenta que esto va a vaciarles los plots que tengan guardados en el panel Plots de RStudio.
+**2)** Creen una variable llamada **nuevo_df** y carguen la tabla creada en el punto anterior. Utilicen `print()` para confirmar que el archivo se leyó correctamente.
 
-#### La verdad de la función `plot`
+### Datos faltantes: `NA`
 
-Nosotros acabamos de ver unos plots hechos con la función `plot()`, que es la forma de plotear por defecto en **R**. Sin embargo `plot` no solo plotea cosas pasándole un X y un Y, sino que también es una función que de pasarle ciertos tipos de variables (como puede ser una regresión logística) usa un plot interno de dichas variables. 
+En datos biológicos es frecuente encontrar **datos faltantes**. Por ejemplo, puede ocurrir que para una determinada muestra no se haya podido medir la expresión de un gen.
 
-El paquete `nplr` trae sus propios plots que se van a hacer mediante `plot(regresion_logistica)`. Esto no es único de este paquete y existen otras librerías, por ejemplo de filogenia, que tienen este mismo funcionamiento, donde `plot` hace árboles filogenéticos.
+En un `DataFrame` de `pandas`, los datos faltantes suelen representarse como `NaN` (*Not a Number*):
 
-#### Google o ChatGPT u otra IA (UNICO CASO EN EL QUE ESTÁ PERMITIDO)
+```python
+import pandas as pd
 
-Es muy importante al momento de programar saber buscar funcionalidades que uno quiere usar en sus programas.
+df = pd.DataFrame({
+    "gen": ["TP53", "BRCA1", "MYC", "EGFR"],
+    "expresion": [100, 250, None, 500]
+})
 
-**4)** Busquen en internet:
-
-* Cómo se calcula el máximo de los elementos de un vector de números en **R**
-* Cómo se calcula el mínimo de los elementos de un vector de números en **R**
-* Cómo se calcula el promedio de los elementos de un vector de números en **R**
-* Cómo se redondea los decimales de un número en **R**
-
-<!--
-#### Calcular promedio
-
-Es posible calcular el promedio de los números en un vector usando la función `mean`.
-
-```R
-promedio_sepal_length <- mean(iris$Sepal.Length)
-
-print(promedio_sepal_length)
+print(df)
 ```
 
-#### Redondear decimales
+```text
+     gen  expresion
+0   TP53      100.0
+1  BRCA1      250.0
+2    MYC        NaN
+3   EGFR      500.0
+```
+En este caso, el valor de expresión de MYC es desconocido o está ausente.
 
-Es posible redondear números, lo que es especialmente útil para cuando tenemos números con muchos decimales que realmente no aportan información.
+Cuando leemos una tabla desde un archivo, pandas reconoce automáticamente algunos valores como datos faltantes, como NA, NaN o celdas vacías.
 
-```R
-numero_base <- 123.456789123456789
+Sin embargo, en algunos archivos los datos faltantes pueden estar representados utilizando una cadena específica. Por ejemplo, supongamos que nuestro archivo contiene:
 
-#Aca 2 es la cantidad de decimales
-numero_redondeado <- round(numero_base, 2)
+```text
+gen expresion
+TP53    100
+BRCA1   250
+MYC ND
+EGFR    500
+```
+En este caso, ND (Not Determined) indica que el valor no fue determinado.
 
-print(numero_redondeado)
+Podemos indicarle a pandas que interprete "ND" como un dato faltante utilizando el parámetro na_values:
+```python
+import pandas as pd
+
+df = pd.read_csv("genes.tsv", sep="\t", na_values="ND")
+```
+De esta manera, pandas convertirá automáticamente los valores "ND" en NaN.
+
+
+## ✏️**Ejercicio 1 - Tablas** { markdown data-toc-label='✏️ Ejercicio 1 - Tablas' }
+
+1. Creen una lista con los nombres de 5 genes (por ejemplo: "TP53", "BRCA1", "ACTB", "GAPDH", "MYC") y otra lista con sus niveles de expresión (pueden ser números entre 1 y 100).
+2. Utilicen esas listas para crear un DataFrame con dos columnas llamadas gen y expresion.
+    1. La columna **gen** deberá contener los nombres de los genes (*strings*).
+    2. La columna **expresion** deberá contener los niveles de expresión (*numeros*).
+3. Impriman por pantalla todos los valores de la columna **gen**.
+4. Impriman por pantalla la tercera fila de la tabla.
+5. Impriman por pantalla el valor de expresion correspondiente a la cuarta fila.
+6. Impriman por pantalla todas las filas donde **expresion** sea menor o igual a 30.
+
+<!-- 
+Resolucion
+
+```python
+import pandas as pd
+
+# 1. Crear las listas
+genes = ["TP53", "BRCA1", "ACTB", "GAPDH", "MYC"]
+expresion = [25, 80, 15, 45, 70]
+
+# 2. Crear el DataFrame
+df = pd.DataFrame({
+    "gen": genes,
+    "expresion": expresion
+})
+
+print(df)
+
+# 3. Imprimir todos los valores de la columna "gen"
+print(df["gen"])
+
+# 4. Imprimir la tercera fila
+print(df.iloc[2])
+
+# 5. Imprimir el valor de expresion correspondiente a la cuarta fila
+print(df.iloc[3]["expresion"])
+
+# 6. Imprimir las filas donde expresion sea menor o igual a 30
+print(df[df["expresion"] <= 30])
 ```
 -->
 
-### Paso 5 - Ejercicio
 
-**5)** Creen un nuevo script de **R**, copien el siguiente código y guárdenlo en su carpeta de trabajo. Vayan avanzando por el *script* y cambien las secciones que dicen `@@EDITAR@@` por lo que corresponda (esto puede ser un valor, una variable, una operación matemática, una comparación o una función de **R**).
+## **Visualización de datos con matplotlib**
 
-!!! warning "Warnings en el código"
+Una de las librerías más utilizadas para crear gráficos o plots en **Python** es **matplotlib**. En particular, utilizaremos el módulo `pyplot`, que suele importarse con el alias `plt`:
 
-    Al ejecutar el siguiente código les va a aparecer por consola varios *Warnings* de `nplr` sobre el fiteo del modelo y la predicción del IC 50. Los *Warnings* son advertencias, las cuales informan eventos que pueden o no causar problemas. Si bien es importante prestarle atención a estos *Warnings* cuando aparecen, en este caso ya están contemplados y pueden ignorarlos.
-
-```R
-#Aca hay que poner el Path Absoluto que apunta a su carpeta de trabajo
-#Por ej: "/home/ibioinfo/Documentos/data_TPPb"
-setwd(@@EDITAR@@)
-
-library(data.table)
-library(nplr)
-
-#Leo los datos de las velocidades de reacción
-dt_velocidades_de_reaccion <- @@EDITAR@@
-
-#Quiero calcular la velocidad de reacción base, es decir, la velocidad de reacción sin compuestos
-#Esto es cuando la concentración del compuesto es 0
-#Nosotros tenemos uno de esos casos para cada compuesto, o sea, tenemos 22 versiones del experimento sin compuesto
-#Vamos a calcular la velocidad de reacción base como el promedio de esas 22 velocidades
-velocidades_reaccion_sin_compuesto <- dt_velocidades_de_reaccion[@@EDITAR@@]$velocidad
-velocidad_reaccion_base <- mean(velocidades_reaccion_sin_compuesto)
-
-#Ahora que ya las use, voy a sacar las filas que no tengan concentración de compuesto 
-#ya que no tiene sentido analizarlas para el IC 50
-dt_velocidades_de_reaccion <- dt_velocidades_de_reaccion[concentracion > 0]
-
-#Quiero calcular la actividad para cada combinación de compuesto y concentración
-#La actividad es la relacion entre la velocidad de reacción y la velocidad de reacción base (es decir, la division)
-dt_velocidades_de_reaccion$actividad <- @@EDITAR@@
-
-#El *for* de mas adelante va a tener 2 salidas, un pdf con los plots y un tsv con los datos
-#Tengo que inicializar ambos
-
-#Abro el pdf (toda imagen que se plotee hasta que se cierre el pdf va a ir a el)
-pdf("05_IC50_plots.pdf", width = 7, height = 7)
-
-#Creo la tabla vacía
-dt_IC50 <- data.table(compuesto = character(),
-                      actividad_minima = numeric(),
-                      actividad_maxima = numeric(),
-                      IC50 = numeric())
-
-#Recorro todos los compuestos 1 a la vez y calculo el IC 50 para cada uno
-unique_compuestos <- @@EDITAR@@
-
-for (compuesto_for in unique_compuestos) {
-    # compuesto_for <- unique_compuestos[1]
-    
-    #Por cada compuesto quiero calcular el IC 50 y plotearlo
-    #Para eso lo primero que necesito hacer es filtrar los datos de *dt_velocidades_de_reaccion*, para quedarme solo
-    #con aquellas concentraciones y actividades que correspondan al compuesto de la iteración actual del *for*
-    sub_dt_velocidades_de_reaccion <- @@EDITAR@@
-    
-    #Calculo la regresión sigmoidea usando los datos de *sub_dt_parsed_formatted_data* y considerando a
-    #*concentración* como el X y a *actividad* como el Y
-    regresion_sigmoidea <- nplr(x = sub_dt_velocidades_de_reaccion$concentracion, 
-                                y = sub_dt_velocidades_de_reaccion$actividad)
-    
-    #Esto es una funcion de nplr que calcula el X correspondiente a Y = 0.5, es decir, el IC 50
-    estimacion_IC50 <- getEstimates(regresion_sigmoidea, targets = 0.5)
-    
-    #Hay casos donde no puede calcularlo, pero en vez de devolver NA calcula el X para el Y mas cercano a 0.5
-    #Yo no quiero eso, quiero solo los X cuando Y es 0.5, y sino devolver NA
-    if (estimacion_IC50$y == 0.5) {
-        IC50 <- estimacion_IC50$x
-    } else {
-        #Aca estoy asignando a mano el valor NA (sin comillas), o sea, el valor "vacio"
-        IC50 <- NA
-    }
-    
-    #Calculo la actividad minima y maxima para guardarla en el output
-    actividad_minima <- min(sub_dt_velocidades_de_reaccion$actividad)
-    actividad_maxima <- @@EDITAR@@
-    
-    #Creo una nueva fila para agregar a mi tabla de IC 50
-    #Esta fila corresponde al compuesto de esta iteración de los *fors*, asi como
-    #el IC 50 que acabo de calcular
-    new_row_dt_IC50 <- data.table(@@EDITAR@@)
-    
-    #Agrego la nueva fila recien creada a mi tabla en donde guardo todas las velocidades
-    dt_IC50 <- @@EDITAR@@
-
-    #Ploteo la regresión (les recomiendo poner el numero de compuesto y el IC 50 en el titulo)
-    #Este grafico tambien tiene informacion de GOF (goodness of fit), que en este caso es el R2, y nos sirve para conocer que tan bien se ajusta el modelo a nuestros datos
-    titulo_plot <- @@EDITAR@@
-    plot(regresion_sigmoidea,
-         main = titulo_plot,
-         xlab = "Log10 Concentracion (micromolar)",
-         ylab = "Actividad",
-         ylim = c(0, 1.5),
-         xaxt = "n")
-    #Reescribo el eje X para que se entienda que es logaritmico
-    axis(side = 1, at = c(0, 0.5, 1, 1.5, 2), labels = c(expression(10^0), expression(10^0.5), expression(10^1), expression(10^1.5), expression(10^2)))
-}
-
-#Cierro el pdf
-dev.off()
-
-#Redondeo los decimales extras de los numeros
-dt_IC50$IC50 <- round(dt_IC50$IC50, 4)
-dt_IC50$actividad_minima <- @@EDITAR@@
-dt_IC50$actividad_maxima <- @@EDITAR@@
-
-#Escribo los datos en una nueva tabla
-write.table(dt_IC50, file = "05_IC50_data.tsv", col.names = T, row.names = F, sep = "\t", quote = T)
+```python
+import matplotlib.pyplot as plt
 ```
 
-Si todo salió bien, el archivo **05_IC50_data.tsv** debería ser una tabla del estilo:
+### Scatter plot
+
+**1)** Escriban y ejecuten el siguiente código:
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.arange(1, 101)
+y = x ** 2
+
+plt.scatter(x, y)
+plt.show()
+```
+
+Si todo funcionó correctamente debería aparecer un gráfico donde cada punto representa un par de valores `(x, y)`. Este tipo de gráfico se conoce como **scatter plot** o **gráfico de dispersión**.
 
 <figure markdown>
-| compuesto { data-sort-method='none' } | actividad_minima { data-sort-method='none' } | actividad_maxima { data-sort-method='none' } | IC50 { data-sort-method='none' } |
-| :---: | :---: | :---: | :---: |
-| "Umbrella1" | 0.1708 | 0.8627 | 5.2665 |
-| "Umbrella2" | 0.3451 | 0.7292 | 2.3456 |
-| "Umbrella3" | 0.125 | 0.1688 | NA |
-| "Umbrella4" | 0.1595 | 0.7243 | 2.8252 |
-| ... | ... | ... | ... |
+![DotPlot](img/python_plot_scatter.png)
 </figure>
 
-??? info "Detrás de escenas del armado de este TP"
+En este ejemplo:
 
-    Al momento de hacer este TP tuvimos que analizar nosotros los mismos datos que ahora están utilizando ustedes y no teníamos mucha experiencia con `nplr`.
+* `plt.scatter()` crea el gráfico.
+* `x` contiene los valores del eje horizontal.
+* `y` contiene los valores del eje vertical.
+* `plt.show()` muestra el gráfico en pantalla.
 
-    En las primeras versiones de este TP no estaba la condición `if (estimacion_IC50$y == 0.5)`, pero mirando los datos de la tabla vs los datos del plot nos dimos cuenta que algo no cerraba. Por ejemplo, el **IC 50** en el "Umbrella22" daba 0.6851, pero miren el plot, no tenía sentido eso.
+### Histograma
 
-    Fuimos al *for* y reemplazamos la primera línea comentada por `# compuesto_for <- unique_compuestos[22]`, seleccionamos solo la última parte (sin el `#`) y la corrimos con ++ctrl+enter++, lo que en este caso hizo que `compuesto_for` sea "Umbrella22". Ahí fuimos paso a paso por el *for* viendo que devolvía cada función.
+**2)** Ejecuten ahora el siguiente código:
 
-    Al ejecutar `estimacion_IC50 <- getEstimates(regresion_sigmoidea, targets = 0.5)` el programa nos tiró el siguiente Warning:
+```python
+import numpy as np
 
-    ```R
-    Warning: One (or more) of the values were greater or equal to the estimated top asymptote.
-    These values have been replaced by the maximal possible value the model can estimate.
-    ```
+vector_numeros = np.random.normal(
+    loc=15,
+    scale=2.5,
+    size=1000
+)
 
-    Miramos entonces adentro de la variable `estimacion_IC50` y vimos que `estimacion_IC50$y` era 0.004, lo que significaba que en esta iteración no estábamos calculando el **IC 50**, sino el **IC 0.4**, que no es lo que queríamos.
+plt.hist(vector_numeros)
+plt.show()
+```
 
-    A partir de esto pusimos el `if` y le asignamos **NA** a **IC 50** cuando el `y` no era 0.5.
+La función `np.random.normal()` genera números aleatorios que siguen una distribución normal. En este ejemplo crea 1000 valores con media 15 y desvío estándar 2.5.
 
-    Lo comentamos más que nada para mostrar que el análisis de datos es bastante prueba y error y que es importante pensar si lo que están viendo tiene sentido.
+La función `plt.hist()` construye un **histograma**, mostrando la frecuencia con la que aparecen los distintos valores.
 
-    Bienvenidos a la Bioinformática :fontawesome-regular-face-smile:
+<figure markdown>
+![HistPlot](img/python_plot_hist.png)
+</figure>
 
-## **Paso 6 - Conclusiones**
+### Personalizar un gráfico
 
-Ahora que tenemos todos los datos que necesitamos es momento de analizarlos. Viendo el **.pdf** y la tabla generados en el paso anterior respondan:
+Podemos modificar distintos aspectos del gráfico utilizando otras funciones de `matplotlib`.
 
-**1)** ¿Por qué hay casos donde el **IC 50** dió **NA**?
+Por ejemplo:
 
-**2)** En base a los plots obtenidos,
+```python
+plt.scatter(x, y)
 
-* ¿Les parecen suficientes nuestros datos para estar seguros de los **IC 50** calculados?
-* ¿Cuál es un compuesto donde están bastantes seguros de su **IC 50**?
-* ¿Cuál es un compuesto donde desconfían del **IC 50** calculado?
+plt.title("x²")
+plt.xlabel("x")
+plt.ylabel("y")
 
-**3)** ¿Qué experimentos harían para tener la curva completa en "Umbrella1"? ¿Y en "Umbrella8"?
+plt.show()
+```
 
-**4)** En base a lo observado, nombren dos o tres compuestos que recomendarían para inhibir a la **enzima Z**. ¿Por qué los eligieron?
+También podemos cambiar el color de los puntos:
+
+```python
+plt.scatter(x, y, color="red")
+
+plt.show()
+```
+
+### Guardar un gráfico
+
+Una vez creado el gráfico, podemos guardarlo directamente desde el código utilizando:
+
+```python
+plt.savefig("grafico.png")
+```
+
+También es posible cambiar el formato del archivo:
+
+```python
+plt.savefig("grafico.svg")
+
+plt.savefig("grafico.pdf")
+```
+
+!!! tip "Tip"
+
+    Es recomendable llamar a `plt.savefig()` **antes** de `plt.show()`, ya que algunas versiones de **matplotlib** limpian la figura luego de mostrarla.
+
+### Graficar datos de una tabla
+
+Muchas veces los datos que queremos visualizar se encuentran en un **DataFrame**.
+
+Por ejemplo:
+
+```python
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.read_csv(
+    "https://raw.githubusercontent.com/mwaskom/seaborn-data/master/iris.csv"
+)
+
+plt.scatter(
+    df["sepal_length"],
+    df["petal_length"]
+)
+
+plt.xlabel("Sepal Length")
+plt.ylabel("Petal Length")
+plt.title("Sepal vs Petal Length")
+
+plt.show()
+```
+
+## ✏️**Ejercicio 2 - Plots** { markdown data-toc-label='✏️ Ejercicio 2 - Plots' }
+
+Para valores enteros de `x` entre **1** y **200**, calculen el `y` correspondiente a una recta con pendiente **3** y ordenada al origen **5**.
+
+1. Grafiquen los puntos utilizando `plt.scatter()`.
+2. Agreguen un título y etiquetas a ambos ejes.
+3. Guarden el gráfico en formato **SVG**.
 
 <div style="border-bottom: 3px solid black;">
 
 </div>
 
-## **Ejercicio Adicional 1 - Paso 2 - Limpiar y Parsear el Archivo** { markdown data-toc-label='Ejercicio Adicional 1 - Paso 2' }
 
-Leer el **Paso 2** para entender el objetivo de este ejercicio.
+## ✏️**Ejercicio 3 - Integrador** { markdown data-toc-label='✏️ Ejercicio  3 - Integrador' }
 
-### Introducción y Herramientas
+En esta actividad vamos a integrar estos conocimientos en un problema de análisis de datos biológicos.
 
-#### Leer y escribir texto plano
+Imaginemos que somos un grupo de bioinformáticos que trabaja para un hospital. El equipo médico nos proporciona un conjunto de datos obtenido a partir de muestras de pacientes con lesiones mamarias y nos solicita realizar un análisis exploratorio de los datos.
 
-Por "texto plano" nos referimos a leer un archivo de texto que no tiene un formato definido (o sea no es un **.csv** o **.tsv**, por ejemplo). Esto puede ser algo como un libro, notas, o una tabla que por alguna razón no la queremos leer como tabla.
+Nuestro objetivo será analizar las características de las muestras, identificar posibles diferencias entre muestras benignas y malignas, explorar relaciones entre diferentes variables y generar visualizaciones que permitan comunicar los resultados.
 
-La forma más directa de leer texto plano en **R** es la función `readLines()`, a la cual hay que pasarle el path del archivo a leer. Esta función va a devolver un vector en el cual cada elemento es una línea del archivo leído. Se usa:
+Finalmente, prepararemos un informe individual para cada muestra, que podrá ser utilizado por el equipo médico como resumen de los datos analizados.
 
-```R
-nuevo_vector <- readLines(con = "ARCHIVO") 
+Se trata de un conjunto de datos construido a partir de imágenes celulares digitalizadas. Para cada muestra se calcularon diferentes características relacionadas con la morfología de los núcleos celulares presentes en las imágenes. Entre ellas se encuentran el radio, textura, perímetro, área, suavidad, compactación, concavidad, puntos cóncavos, simetría y dimensión fractal. Para cada característica se dispone de tres tipos de mediciones: el valor medio (mean), el error estándar (SE) y el valor denominado worst, que resume los valores más altos observados. En total, el conjunto contiene 30 variables numéricas, además de un identificador y la variable diagnosis.
+
+La variable diagnosis indica si la muestra fue clasificada como:
+
+B: benigna
+M: maligna
+
+El conjunto contiene 569 muestras, de las cuales 357 corresponden a muestras benignas y 212 a muestras malignas.
+
+Por ejemplo, algunas de las variables que encontraremos son:
+
+| Variable | Descripción |
+|---|---|
+| `radius_mean` | Radio medio de los núcleos celulares |
+| `texture_mean` | Textura media |
+| `perimeter_mean` | Perímetro medio |
+| `area_mean` | Área media |
+| `smoothness_mean` | Suavidad media |
+| `compactness_mean` | Compactación media |
+| `concavity_mean` | Concavidad media |
+| `symmetry_mean` | Simetría media |
+| `diagnosis` | Diagnóstico: benigno (`B`) o maligno (`M`) |
+
+
+### Cargar los datos
+
+Descarguen el archivo proporcionado para esta actividad y cárguenlo utilizando pandas.
+
+```python
+import pandas as pd
+import matplotlib.pyplot as plt
+import kagglehub
+
+path = kagglehub.dataset_download(
+    "yasserh/breast-cancer-dataset"
+)
+
+print("Path to dataset files:", path)
+
+df = pd.read_csv(
+    path + "/breast-cancer.csv"
+)
+
+print(df)
 ```
 
-Por otro lado también existe la función inversa, que nos permite escribir un vector en un archivo de texto, donde cada elemento del vector va a ser una línea de texto en el archivo. Esta función es `writeLines()` y se usa:
 
-```R
-writeLines(vector_con_texto, con = "ARCHIVO_SALIDA") 
+✏️**1)** Exploración inicial
+Antes de realizar cualquier análisis, queremos conocer el conjunto de datos.
+
+* ¿Cuántas filas y columnas tiene el DataFrame?
+* ¿Qué columnas contiene?
+* ¿Qué tipo de dato tiene cada columna?
+* ¿Existen datos faltantes?
+* ¿Cuántas muestras corresponden a cada diagnóstico?
+Para responder la última pregunta, pueden utilizar un filtro booleano
+
+??? tip "Pista"
+
+    `df.info()` puede ayudar a responder varias de las primeras preguntas.
+
+    Para contar las muestras de cada diagnóstico, pueden comenzar creando dos subconjuntos:
+    ```python
+    df_benignas = df[df["diagnosis"] == "B"]
+
+     df_malignas = @@EDITAR@@
+    ```
+    Luego pueden utilizar `len()` para conocer la cantidad de filas de cada subconjunto.
+
+
+✏️**2)** Comparación entre muestras benignas y malignas
+Una de las preguntas que nos plantea el equipo médico es si existen diferencias en las características morfológicas de las células entre las muestras benignas y malignas.
+¿Las muestras malignas presentan, en promedio, un mayor radius_mean que las muestras benignas?
+
+Para responderla:
+
+* Calculen el promedio de radius_mean para las muestras benignas.
+
+* Calculen el promedio de radius_mean para las muestras malignas.
+
+* Comparen ambos valores.
+
+* Indiquen qué grupo presenta el mayor valor promedio.
+
+Recuerden que primero pueden crear dos subconjuntos utilizando filtros booleanos.
+
+* Pregunta de interpretación:¿La diferencia observada parece pequeña o grande en relación con los valores de la variable?
+
+??? tip "Pista"
+
+    Pueden separar primero las muestras benignas y malignas:
+
+    ```python
+    df_benignas = df[df["diagnosis"] == "B"]
+
+    df_malignas = @@EDITAR@@
+    ```
+
+    Para calcular el promedio de `radius_mean`:
+
+    ```python
+    df_benignas["radius_mean"].mean()
+
+    df_malignas[@@EDITAR@@]@@EDITAR@@.
+    ```
+
+✏️**3)** Distribución de una variable
+Ahora queremos conocer cómo se distribuyen los valores de una variable.
+
+Realicen un histograma de radius_mean utilizando matplotlib.
+
+El gráfico debe incluir: título; nombre del eje X; nombre del eje Y.
+
+* ¿Cómo se distribuyen los valores de radius_mean?
+* ¿La distribución parece aproximadamente simétrica?
+* ¿Observan valores particularmente altos o bajos?
+
+??? tip "Pista"
+
+    La función `plt.hist()` permite construir un histograma.
+
+    ```python
+    plt.hist( ... )
+
+    plt.xlabel( ... )
+    plt.ylabel( ... )
+    plt.title( ... )
+
+    plt.show()
+    ```
+
+✏️**4)** Comparar distribuciones 
+Ahora queremos saber si la distribución de radius_mean es diferente entre las muestras benignas y malignas.
+
+Realicen un gráfico que permita comparar ambas distribuciones.
+
+Pueden utilizar dos histogramas superpuestos.
+
+* ¿Qué diferencias observan entre ambos grupos?
+* ¿Los valores de las muestras malignas tienden a concentrarse en un rango diferente?
+* ¿Existe superposición entre ambos grupos?
+
+??? tip "Pista"
+
+    Ya crearon `df_benignas` y `df_malignas`.
+
+    Pueden utilizar dos llamadas a `plt.hist()`, una para cada subconjunto.
+
+    El parámetro `alpha` permite hacer transparentes los histogramas para visualizar mejor la superposición.
+
+✏️**5)** Relación entre dos variables
+Ahora queremos investigar si existe una relación entre el tamaño de los núcleos celulares y su perímetro.
+
+Realicen un gráfico de dispersión de:
+radius_mean en el eje X.
+perimeter_mean en el eje Y.
+
+Diferencien las muestras según el diagnóstico. Agreguen una leyenda que permita identificar qué puntos corresponden a muestras benignas y cuáles a muestras malignas.
+
+* ¿Existe una relación entre radius_mean y perimeter_mean?
+* ¿La relación parece aproximadamente lineal?
+* ¿Las muestras benignas y malignas ocupan regiones diferentes del gráfico?
+* ¿Hay muestras que se encuentren dentro de la región predominante del otro grupo?
+
+✏️**6)** Identificación de muestras
+Supongamos ahora que el equipo médico quiere identificar muestras con valores particularmente altos de algunas características.
+
+Seleccionen todas las muestras que cumplan simultáneamente:
+*  radius_mean > 20
+*  area_mean > 1000
+
+* ¿Cuántas muestras cumplen ambas condiciones?
+
+*  ¿Qué diagnóstico presentan esas muestras?
+
+✏️**7)** Informe individual de cada muestras
+Finalmente, el hospital nos solicita generar un informe individual para cada muestra.
+
+El informe estará destinado al equipo médico, por lo que debe presentar los resultados de manera clara y resumida. No se trata de un informe dirigido al paciente. 
+El informe debe describir los datos y los resultados del análisis. No debe presentar una conclusión clínica ni afirmar que una muestra es cancerosa o no cancerosa a partir de los análisis realizados en este ejercicio.
+
+Para comenzar, trabajaremos solamente con las primeras 50 muestras del conjunto de datos. El mismo procedimiento podría aplicarse posteriormente a las 569 muestras.
+
+Para cada muestra deberán generar un archivo de texto en una carpeta llamada Informes que contenga, como mínimo:
+
+* ID de la muestra.
+* Diagnóstico registrado en el dataset.
+* radius_mean
+* texture_mean
+* perimeter_mean
+* area_mean
+* smoothness_mean
+* compactness_mean
+* concavity_mean
+* symmetry_mean
+
+Calculen, para cada muestra:
+* diferencia respecto al promedio de las muestras benignas;
+* diferencia respecto al promedio de las muestras malignas.
+
+??? tip "Pista"
+
+    Para comenzar, trabajen con una sola muestra. Una vez que logren generar correctamente un informe, podrán automatizar el proceso para las demás muestras.
+
+    **1. Seleccionar una muestra**
+
+    Pueden seleccionar, por ejemplo, la primera muestra:
+
+    ```python
+    muestra = df.iloc[0]
+    ```
+
+    Ahora pueden acceder a cada uno de sus valores utilizando el nombre de la columna:
+
+    ```python
+    muestra[@@EDITAR@@]
+    muestra[@@EDITAR@@]
+
+    ```
+
+    **2. Calcular las diferencias respecto a los grupos**
+
+    Primero calculen los valores promedio de `radius_mean` para las muestras benignas y malignas:
+
+    ```python
+    promedio_benignas = @@EDITAR@@
+    promedio_malignas = @@EDITAR@@
+    ```
+
+    Luego pueden calcular cuánto se diferencia la muestra seleccionada de cada promedio:
+
+    ```python
+    diferencia_benigna = @@EDITAR@@
+    diferencia_maligna = @@EDITAR@@
+    ```
+
+    **3. Crear el texto del informe**
+    Pueden construir el contenido del informe utilizando una `string`. Para incorporar
+    valores numéricos o valores almacenados en variables, pueden utilizar `str()`.
+    Se puede utilizar \n para indicar un salto de línea.
+
+    Por ejemplo:
+
+    ```python
+    informe = (
+      "INFORME DE ANÁLISIS DE MUESTRA\n\n"
+        + "ID: " + str(muestra["id"]) + "\n"
+        + "Diagnóstico: " + str(muestra["diagnosis"]) + "\n\n"
+     + "Características:\n\n"
+        + "Radius mean: " + str(muestra["radius_mean"]) + "\n"
+        + "Texture mean: " + str(muestra["texture_mean"]) + "\n"
+        + "Perimeter mean: " + str(muestra["perimeter_mean"]) + "\n"
+        + "Area mean: " + str(muestra["area_mean"]) + "\n\n"
+        + "Diferencia respecto al promedio de muestras benignas: "
+        + str(diferencia_benigna) + "\n"
+        + "Diferencia respecto al promedio de muestras malignas: "
+        + str(diferencia_maligna)
+    )
+    ```
+
+    Python también ofrece una forma más sencilla de combinar texto con variables
+    llamada **f-string** (*formatted string*).
+
+    ```python
+        informe = f"""
+        INFORME DE ANÁLISIS DE MUESTRA
+
+        ID: {muestra["id"]}
+        Diagnóstico: {muestra["diagnosis"]}
+
+        Características:
+
+     Radius mean: {muestra["radius_mean"]}
+     Texture mean: {muestra["texture_mean"]}
+     Perimeter mean: {muestra["perimeter_mean"]}
+     Area mean: {muestra["area_mean"]}
+
+        Diferencia respecto al promedio de muestras benignas:
+        {diferencia_benigna}
+
+        Diferencia respecto al promedio de muestras malignas:
+        {diferencia_maligna}
+        """
+    ```
+
+    Pueden comprobar que el informe se construyó correctamente utilizando:
+
+    ```python
+    print(informe)
+    ```
+
+     **4. Guardar el informe**
+
+    Para guardar el contenido en un archivo de texto pueden utilizar `open()`.
+
+    Primero creen una carpeta llamada `Informes`:
+
+    ```python
+    import os
+
+    os.makedirs("Informes", exist_ok=True)
+    ```
+
+    Luego pueden guardar el informe dentro de esa carpeta:
+
+    ```python
+    with open("Informes/informe.txt", "w") as archivo:
+        archivo.write(informe)
+    ```
+
+    Comprueben que el archivo fue creado correctamente desde la pestaña
+    **Archivos** de Google Colab.
+
+    El archivo debería encontrarse dentro de:
+
+    ```text
+    Informes/
+    └── informe.txt
+    ```
+       
+
+<!-- Resolución Ej 7
+import os
+
+# Crear los subconjuntos de muestras benignas y malignas
+df_benignas = df[df["diagnosis"] == "B"]
+df_malignas = df[df["diagnosis"] == "M"]
+
+# Seleccionar una muestra
+muestra = df.iloc[0]
+
+# Calcular los promedios de radius_mean
+promedio_benignas = df_benignas["radius_mean"].mean()
+promedio_malignas = df_malignas["radius_mean"].mean()
+
+# Calcular las diferencias respecto a los promedios
+diferencia_benigna = muestra["radius_mean"] - promedio_benignas
+diferencia_maligna = muestra["radius_mean"] - promedio_malignas
+
+# Crear el texto del informe
+informe = (
+    "INFORME DE ANÁLISIS DE MUESTRA\n\n"
+    + "ID: " + str(muestra["id"]) + "\n"
+    + "Diagnóstico: " + str(muestra["diagnosis"]) + "\n\n"
+    + "Características:\n\n"
+    + "Radius mean: " + str(muestra["radius_mean"]) + "\n"
+    + "Texture mean: " + str(muestra["texture_mean"]) + "\n"
+    + "Perimeter mean: " + str(muestra["perimeter_mean"]) + "\n"
+    + "Area mean: " + str(muestra["area_mean"]) + "\n"
+    + "Smoothness mean: " + str(muestra["smoothness_mean"]) + "\n"
+    + "Compactness mean: " + str(muestra["compactness_mean"]) + "\n"
+    + "Concavity mean: " + str(muestra["concavity_mean"]) + "\n"
+    + "Symmetry mean: " + str(muestra["symmetry_mean"]) + "\n\n"
+    + "Diferencia respecto al promedio de muestras benignas: "
+    + str(diferencia_benigna) + "\n"
+    + "Diferencia respecto al promedio de muestras malignas: "
+    + str(diferencia_maligna)
+)
+
+# Crear la carpeta Informes
+os.makedirs("Informes", exist_ok=True)
+
+# Guardar el informe
+with open("Informes/informe.txt", "w") as archivo:
+    archivo.write(informe)
+
+print("Informe generado correctamente.")
+-->
+
+✏️**8)** Automatizar la generación de informes
+La generación manual de 50 informes sería una tarea muy poco eficiente.
+
+Utilicen un ciclo para recorrer las primeras 50 muestras y generar automáticamente un txt para cada una.
+
+El objetivo es que el programa:
+
+Seleccione una muestra.
+Extraiga sus datos.
+Genere las visualizaciones correspondientes.
+Cree el informe.
+Guarde el txt con un nombre que permita identificar la muestra.
+Pase automáticamente a la siguiente muestra.
+
+Por ejemplo:
+
+```text
+reportes/
+├── muestra_842302.pdf
+├── muestra_842517.pdf
+├── muestra_843009.pdf
+├── ...
+└── muestra_...
 ```
 
-La función `writeLines()` también se puede usar de una forma similar a `print` si no se le pasa el parámetro `con`.
+El código debería poder modificarse fácilmente para generar posteriormente los informes de todas las muestras del conjunto de datos, simplemente cambiando el número de muestras a procesar.
 
-#### Extraer nombres columnas
+??? tip "Pista"
 
-Hay varias razones por lo cual es útil extraer un vector con el nombre de las columnas de una tabla, pero hoy lo vamos a hacer para extraer información de dichos nombres.
+    En el ejercicio anterior generaron el informe para una única muestra.
+    Ahora queremos repetir automáticamente ese procedimiento para las primeras
+    50 muestras.
 
-La función `colnames()` nos devuelve un vector con el nombre de las columnas de una tabla en el orden en el que aparecen en dicha tabla. Por ej:
+    **1. Recorrer las muestras**
 
-```R
-columnas_iris <- colnames(iris)
+    Pueden utilizar un ciclo `for` junto con `range()` para recorrer las primeras
+    50 filas del `DataFrame`:
 
-print(columnas_iris)
+    ```python
+    for i in range(@@EDITAR@@):
+
+        muestra = df.iloc[i]
+
+        ...
+    ```
+
+    Dentro del ciclo deberán colocar las instrucciones necesarias para generar
+    el informe correspondiente a cada muestra.
+
+    **2. Repetir el procedimiento del ejercicio anterior**
+
+    Para cada muestra deberán:
+
+    - acceder a sus datos;
+    - calcular la diferencia de `radius_mean` respecto a los promedios;
+    - construir el texto del informe;
+    - guardar el informe en un archivo.
+
+    Es decir, pueden reutilizar gran parte del código que desarrollaron en el
+    ejercicio anterior.
+
+    **3. Darle un nombre diferente a cada archivo**
+
+    No pueden utilizar siempre:
+
+    ```python
+    "Informes/informe.txt"
+    ```
+
+    porque cada nuevo informe reemplazaría al anterior.
+
+    Pueden construir el nombre del archivo utilizando el identificador de la
+    muestra:
+
+    ```python
+    nombre_archivo = "Informes/muestra_" + str(muestra["id"]) + ".txt"
+    ```
+
+    Luego pueden utilizar `nombre_archivo` para guardar el informe:
+
+    ```python
+    with open(nombre_archivo, "w") as archivo:
+        archivo.write(informe)
+    ```
+
+    Al finalizar el ciclo deberían obtener una carpeta similar a:
+
+    ```text
+    Informes/
+    ├── muestra_842302.txt
+    ├── muestra_842517.txt
+    ├── muestra_843009.txt
+    ├── ...
+    └── muestra_...
+    ```
+
+    **4. ¿Qué debe estar dentro y fuera del ciclo?**
+
+    Piensen qué instrucciones dependen de la muestra que estamos analizando y
+    cuáles no.
+
+    Por ejemplo, los promedios de `radius_mean` de las muestras benignas y
+    malignas son los mismos para todas las muestras. Por lo tanto, no es
+    necesario calcularlos nuevamente en cada vuelta del ciclo.
+
+    El `for` debería encargarse principalmente de tomar una muestra, analizarla
+    y guardar su informe antes de pasar a la siguiente.
+
+<!-- Resolución Ej 8
+    import os
+
+# Crear los subconjuntos de muestras benignas y malignas
+df_benignas = df[df["diagnosis"] == "B"]
+df_malignas = df[df["diagnosis"] == "M"]
+
+# Calcular los promedios una sola vez
+promedio_benignas = df_benignas["radius_mean"].mean()
+promedio_malignas = df_malignas["radius_mean"].mean()
+
+# Crear la carpeta donde se guardarán los informes
+os.makedirs("Informes", exist_ok=True)
+
+# Recorrer las primeras 50 muestras
+for i in range(50):
+
+    # Seleccionar la muestra
+    muestra = df.iloc[i]
+
+    # Calcular las diferencias respecto a los promedios
+    diferencia_benigna = muestra["radius_mean"] - promedio_benignas
+    diferencia_maligna = muestra["radius_mean"] - promedio_malignas
+
+    # Crear el texto del informe
+    informe = (
+        "INFORME DE ANÁLISIS DE MUESTRA\n\n"
+        + "ID: " + str(muestra["id"]) + "\n"
+        + "Diagnóstico: " + str(muestra["diagnosis"]) + "\n\n"
+        + "Características:\n\n"
+        + "Radius mean: " + str(muestra["radius_mean"]) + "\n"
+        + "Texture mean: " + str(muestra["texture_mean"]) + "\n"
+        + "Perimeter mean: " + str(muestra["perimeter_mean"]) + "\n"
+        + "Area mean: " + str(muestra["area_mean"]) + "\n"
+        + "Smoothness mean: " + str(muestra["smoothness_mean"]) + "\n"
+        + "Compactness mean: " + str(muestra["compactness_mean"]) + "\n"
+        + "Concavity mean: " + str(muestra["concavity_mean"]) + "\n"
+        + "Symmetry mean: " + str(muestra["symmetry_mean"]) + "\n\n"
+        + "Diferencia respecto al promedio de muestras benignas: "
+        + str(diferencia_benigna) + "\n"
+        + "Diferencia respecto al promedio de muestras malignas: "
+        + str(diferencia_maligna)
+    )
+
+    # Crear un nombre diferente para cada informe
+    nombre_archivo = (
+        "Informes/muestra_"
+        + str(muestra["id"])
+        + ".txt"
+    )
+
+    # Guardar el informe
+    with open(nombre_archivo, "w") as archivo:
+        archivo.write(informe)
+
+print("Informes generados correctamente.")
+-->
+
+## ✏️**Ejercicio Adicional 1** { markdown data-toc-label='Ejercicio Adicional 1' }
+
+En este ejercicio vamos a comprobar si los números aleatorios de **Python** se comportan como esperamos. Para ello escriban un programa que:
+
+* Tire una moneda.
+* Anote si salió **Cara** o **Seca**.
+* Repita los pasos anteriores hasta obtener **100 caras** o **100 secas** (es decir, repita el proceso **mientras** no haya alcanzado alguna de esas dos cantidades).
+* Imprima por pantalla cuántas caras y cuántas secas obtuvo.
+
+Para simular el lanzamiento de una moneda pueden utilizar la función `choice()` de la librería `random`:
+
+```python
+import random
+
+moneda = random.choice(["Cara", "Seca"])
 ```
 
-#### Extraer substrings
+Cada vez que ejecuten esa línea, la variable `moneda` tomará aleatoriamente el valor `"Cara"` o `"Seca"`.
 
-Muchas veces es útil extraer pedazos de *strings* y ya vimos una forma de hacer esto con `split`. Sin embargo, hay veces cuando no sabemos el caracter que delimita el texto que queremos extraer, pero sí sabemos su posición en la cadena completa. En estos casos podemos usar la función `substring`:
-
-```R
-variable_string <- c("123456789")
-
-segundo_caracter <- substring(variable_string, 2, 2)
-
-tercer_a_quinto_caracteres <- substring(variable_string, 3, 5)
-
-septimo_caracter_en_adelante <- substring(variable_string, 7)
-```
-
-#### Usar una variable para acceder a una columna de un Data Table { markdown data-toc-label='Columna variable' }
-
-A veces pasa que quiero acceder a una variable de una tabla, pero no se previamente a cual. Aca nos va a ser útil otra forma de acceder a las columnas de las tablas, por ejemplo:
-
-```R
-# Los 3 bloques siguientes devuelven lo mismo
-
-iris$Species
-
-iris[["Species"]]
-
-columna <- "Species"
-iris[[columna]]
-```
+Ejecuten el programa varias veces y observen si los resultados parecen razonables.
 
 <!--
-#### Filtrar vectores usando booleanos???
+###Solución
+```python
+import random
 
-Los *booleanos* vistos en el TP anterior también pueden ser usados para filtrar vectores, por ejemplo:
+# Contadores de caras y secas
+caras = 0
+secas = 0
 
-```R
-vector_numeros <- c(1, 5, 7, 9)
+# Repetimos el proceso mientras no hayamos obtenido
+# 100 caras ni 100 secas
+while caras < 100 and secas < 100:
 
-vector_booleanos1 <- c(TRUE, FALSE, FALSE, TRUE)
+    # Tiramos la moneda al azar
+    moneda = random.choice(["Cara", "Seca"])
 
-vector_palabras <- c("hola", "chau", "hola", "hola")
-vector_booleanos2 <- vector_palabras == "hola"
+    # Actualizamos el contador correspondiente
+    if moneda == "Cara":
+        caras = caras + 1
+    else:
+        secas = secas + 1
 
-vector_numeros_filtrado1 <- vector_numeros[vector_booleanos1]
-vector_numeros_filtrado2 <- vector_numeros[vector_booleanos2]
-
-print(vector_numeros_filtrado1)
-print(vector_numeros_filtrado2)
-```
-
-```R
-> print(vector_numeros_filtrado1)
-[1] 1 9
-> print(vector_numeros_filtrado2)
-[1] 1 7 9
-```
-
-Donde `vector_booleanos1` es un vector de *booleanos* declarado a mano y `vector_booleanos2` se calcula a partir de una comparación en masa.
-
-**7)** Dados los siguientes dos vectores y usando lo que acaban de aprender, impriman por pantalla un vector que contenga los nombres de las personas con mas de 20 años.
-
-```R
-# La edad en la posición 1 corresponde al nombre en la posición 1 y así
-vector_edad <- c(25, 14, 5, 78, 4, 103, 19)
-vector_nombres <- c("José", "Laura", "Pedro", "María", "Esteban", "Ricardo", "Clara")
+# Mostramos el resultado final
+print("Caras:", caras)
+print("Secas:", secas)
 ```
 -->
 
-### Ahora sí: Ejercicio. Completar el script!
 
-```R
-library(@@EDITAR@@)
+## ✏️**Ejercicio Adicional 2** { markdown data-toc-label='Ejercicio Adicional 2' }
 
-#### Paso 2a - LIMPIAR DATOS ####
-#Uso readLines para cargar el archivo de texto plano
-plain_text_data <- readLines(con = "00_datos_filtermax.txt")
 
-#La fila 2 es el header
-#Las filas 3 a 6 son los datos
-#Las demas no me interesan
-plain_text_data <- plain_text_data[c(2:6)]
+Introducción
 
-#Escribo los datos en un nuevo archivo
-writeLines(plain_text_data, con = "01_datos_filtermax_limpios.tsv")
+En este trabajo práctico vamos a trabajar con datos generados por un lector de placas de wells. Vamos a analizar los datos de un experimento cuyo objetivo es encontrar compuestos que funcionen como inhibidores de una enzima de interés, a la que denominaremos **enzima Z**.
 
-#### Paso 2b - PARSEAR DATOS ####
-#Uso fread para cargar la tabla con los datos como salen de FilterMax (pero sin lineas extras)
-#Aca es importante recordar que teníamos NAs en nuestros datos y que estaban escritos como *nada*, es decir, ""
-clean_data <- @@EDITAR@@
+La enzima Z tiene como producto un compuesto fluorescente. Por lo tanto, podemos utilizar la señal de fluorescencia para estimar la velocidad de la reacción.
 
-#Viendo clean_data pueden ver una columna extra al final llamada V387 (debido a la cantidad de tabs al final del archivo)
-#Ese es el nombre que le da data.tables por defecto a las columnas sin nombre (esta es la columna 387)
-#Para que no moleste la sacamos
-clean_data <- clean_data[, @@EDITAR@@]
+En el experimento se evaluaron diferentes compuestos a diferentes concentraciones y se realizaron mediciones a distintos tiempos.
 
-#Los numeros (columnas de la placa well) son los compuestos
-#Las letras (filas de la placa well) son las diferentes concentraciones
-#Queremos poner los mismos datos en una tabla donde nos sea mas facil filtrar un dato específico
-#Creo la tabla vacía donde voy a guardar estos datos
-dt_parsed_data <- data.table(time = @@EDITAR@@,
-                             temperature = numeric()
-                             fila = @@EDITAR@@,
-                             columna = numeric(),
-                             signal = @@EDITAR@@)
+Los archivos necesarios para realizar este ejercicio se encuentran en los materiales de trabajo.
 
-#Hay varias formas de hacer esto con paquetes extras o con codigos dificiles, pero por ahora vamos a 
-#usar una forma un poco menos eficiente pero que se entiende un poco mas
+---
 
-#Quiero crear una lista con todos los nombres de los wells
-wells_names <- colnames(clean_data)
+Experimento
 
-#Ahora tengo lo que necesito, pero las primeras dos posiciones son Time y Temperature
-#Las saco del vector de los nombres
-wells_names <- wells_names[-c(1:2)]
+El equipo **FilterMax F5** permite realizar mediciones de absorbancia y fluorescencia en placas de wells.
 
-#Voy a recorrer cada nombre de columna y extraer a que fila y a que columna del well corresponde
-#Luego voy a guardar las cuatro signals de esa columna de la tabla con la informacion que acabo de conseguir
-for (well_name_for in wells_names) {
-    # well_name_for <- wells_names[1]
-    
-    #Uso substring para extraer la letra de la fila en el well
-    fila_for <- substring(@@EDITAR@@)
-    
-    #Uso substring para extraer el numero de la columna en el well
-    #Uso un patrón que funcione para cualquiera de los wells por más que el número tenga 1 o 2 decimales
-    columna_for <- substring(@@EDITAR@@)
-    
-    #Quiero guardar la columna como numero, asi que transformo la variable character en un numeric
-    #Es decir, paso de "1" a 1 (por ej)
-    columna_for <- as.numeric(columna_for)
-    
-    #Creo nuevas fila para agregar a mi tabla de datos parseados
-    #Aca fila y columna van a ser un valor único
-    #Por otro lado, time, temperature y signal van a ser vectores de 4 valores (son las columnas de clean_data)
-    #La columna Temperature puede ser que se escriba un poco rara por problemas de caracteres
-    dt_new_rows_in_parsed_data <- data.table(time = clean_data$Time,
-                                            temperature = clean_data$`Temperature(C)`,
-                                            fila = fila_for,
-                                            columna = columna_for,
-                                            signal = @@EDITAR@@)
-    
-    #Agrego las nuevas filas recien creadas a mi tabla en donde guardo los datos parseados
-    dt_parsed_data <- @@EDITAR@@
-}
+En nuestro experimento se utilizaron placas de 384 wells y se realizaron 4 mediciones por placa, una cada aproximadamente 5 minutos.
 
-#Escribo los datos en una nueva tabla llamada "02_datos_filtermax_parseados_NUEVO.tsv"
-write.table(@@EDITAR@@)
+Cada columna de la placa corresponde a un compuesto diferente y cada fila corresponde a una concentración diferente del compuesto.
+
+Nuestro objetivo será:
+
+1. familiarizarnos con los datos;
+2. limpiar y reorganizar la información;
+3. agregar la información de compuestos y concentraciones;
+4. calcular la velocidad de reacción;
+5. calcular la actividad relativa;
+6. calcular el IC50 de los diferentes compuestos;
+7. analizar los resultados obtenidos.
+
+---
+
+Paso 1 - Familiarizarnos con el Archivo
+
+El archivo **00_datos_filtermax.txt** contiene los datos tal como fueron generados por el equipo.
+
+✏️ 1) 
+
+Abran el archivo **00_datos_filtermax.txt** con un editor de texto y observen su estructura.
+
+Respondan:
+
+- ¿Se parece a algún archivo `.csv` o `.tsv` que hayan utilizado anteriormente?
+- ¿Qué diferencias presenta?
+- ¿Hay filas que parecen contener información que no corresponde directamente a los datos de la tabla?
+
+✏️ 2)
+
+Mirando el archivo y la información del experimento:
+
+- ¿Qué hay en la celda A1?
+- ¿Qué posiciones contienen las diferentes diluciones del compuesto `Umbrella2`?
+- ¿Cuántos datos hay para cada dilución de `Umbrella2`?
+- ¿Por qué hay esa cantidad de datos?
+
+✏️ 3)
+
+Abran el archivo **00_datos_filtermax.txt** en una hoja de cálculo.
+
+Al final de cada placa hay varias celdas sin datos.
+
+- ¿Hay algo en la organización de la placa que explique por qué ocurre esto?
+
+---
+
+Paso 2 - Limpiar y Parsear el Archivo
+
+En este paso queremos obtener una tabla que podamos utilizar fácilmente para realizar el análisis.
+
+El archivo **02_datos_filtermax_parseados.tsv** contiene los datos ya reorganizados.
+
+✏️ 4)
+
+Carguen el archivo **02_datos_filtermax_parseados.tsv** utilizando `pandas`.
+
+Observen la columna `signal`.
+
+- ¿Qué creen que representan los valores `NaN` que aparecen en esta columna?
+
+---
+
+Paso 3 - Agregar la información que necesito
+
+En este momento tenemos una tabla donde cada fila representa una medición independiente.
+
+Sin embargo, tenemos algunos problemas:
+
+- no tenemos el nombre del compuesto, solamente el número de columna;
+- no tenemos la concentración, solamente la letra de la fila;
+- `time` está almacenado como texto y posteriormente necesitaremos trabajar con el tiempo como un número.
+
+También disponemos de dos archivos adicionales:
+
+- **00_datos_compuestos.tsv**, que indica qué compuesto corresponde a cada columna;
+- **00_datos_concentraciones.tsv**, que indica qué concentración corresponde a cada fila.
+
+✏️ 5)
+
+Carguen ambos archivos utilizando `pandas`.
+
+Obtengan:
+
+- una tabla con la correspondencia entre `columna` y `compuesto`;
+- una tabla con la correspondencia entre `fila` y `concentracion`.
+
+Luego incorporen esta información al DataFrame de datos experimentales.
+
+El resultado debe contener, como mínimo, las siguientes columnas:
+
+```text
+compuesto
+concentracion
+time
+temperature
+fila
+columna
+signal
 ```
 
-Pueden comparar **02_datos_filtermax_parseados.tsv** con **02_datos_filtermax_parseados_NUEVO.tsv** y si todo salió bien deberían ser idénticos.
+```python
+# Acá hay que poner el Path Absoluto que apunta a su carpeta de trabajo
+# Por ejemplo: "/content/drive/MyDrive/data_TPPb"
+import os
+import pandas as pd
+
+os.chdir(@@EDITAR@@)
+
+
+# Uso read_csv para cargar los datos parseados.
+# El archivo está separado por tabulaciones.
+# pandas reconoce automáticamente los valores faltantes como NaN.
+df_parsed_data = pd.read_csv(
+    @@EDITAR@@,
+    sep="\t"
+)
+
+
+# Primero que nada sé que las columnas de los wells 23 y 24 están vacías,
+# así que saco las filas donde columna sea 23 o 24.
+# Es decir, me quedo con las filas donde columna es 1 a 22.
+
+df_parsed_data = df_parsed_data[
+    @@EDITAR@@
+]
+
+
+# Ahora la fila y la columna no me están dando mucha información de lo que
+# está pasando, por lo que quiero agregar información de los compuestos
+# y de las concentraciones.
+
+
+# Agrego información de compuestos.
+
+df_datos_compuestos = pd.read_csv(
+    "00_datos_compuestos.tsv",
+    sep="\t"
+)
+
+df_parsed_data = pd.merge(
+    df_parsed_data,
+    df_datos_compuestos,
+    on="columna"
+)
+
+
+# Agrego información de concentraciones.
+# Ojo: en "00_datos_concentraciones.tsv" el separador decimal es la coma.
+
+df_datos_concentraciones = pd.read_csv(
+    @@EDITAR@@
+)
+
+df_parsed_data = pd.merge(
+    df_parsed_data,
+    df_datos_concentraciones,
+    on="fila"
+)
+
+
+# Para cada combinación de compuesto y concentración quiero saber la velocidad
+# de la reacción, es decir, la pendiente de la recta que sale de hacer una
+# regresión lineal por los 4 tiempos ensayados.
+
+
+# El primer problema que tengo es que la variable time es un string,
+# por lo que no puedo usarla como X en una ecuación.
+# Por esta razón vamos a convertir time en cantidad de segundos.
+
+
+# Si bien hay 1408 filas, en sí solo hay 4 tiempos que se repiten:
+# "00:00:00", "00:04:59", "00:10:00" y "00:15:00"
+
+
+# Voy entonces a hacer una tabla llamada df_times_in_seconds que va a empezar
+# vacía y una vez corrido el siguiente for va a tener 4 filas, una por cada
+# uno de los 4 tiempos.
+#
+# Esta tabla va a tener dos columnas:
+# - time: indicando el tiempo que estamos analizando como string.
+# - segundos_totales: contiene ese tiempo transformado a número de segundos.
+
+
+# Extraigo entonces los diferentes tiempos y creo una tabla vacía donde voy
+# a guardar la cantidad de segundos para cada time.
+
+unique_times = df_parsed_data["time"].unique()
+
+df_times_in_seconds = pd.DataFrame(
+    columns=["time", "segundos_totales"]
+)
+
+
+for time_for in unique_times:
+
+    # Esta siguiente línea comentada la uso para debuggear, es decir,
+    # para cuando estoy creando el programa.
+    # Si la ejecutan a mano (sin el #) pueden entonces ir paso a paso
+    # en el for viendo que funcione todo.
+    # Recuerden que pueden usar CTRL + ENTER para ejecutar el código
+    # seleccionado o ver el valor de una variable.
+
+    # time_for = unique_times[2]
+
+
+    # Divido las horas, minutos y segundos.
+    # split() devuelve una lista de strings.
+
+    time_spliteado = @@EDITAR@@
+
+
+    # Guardo cada uno de los tres números en otra variable.
+    # Como ahora son strings uso int() para convertirlos en números.
+
+    horas = int(@@EDITAR@@)
+    minutos = int(@@EDITAR@@)
+    segundos = int(@@EDITAR@@)
+
+
+    # Calculo los segundos totales.
+    # Es decir, transformo las horas y los minutos en segundos
+    # y sumo las tres variables.
+
+    segundos_totales = @@EDITAR@@
+
+
+    # Guardo esta información en la tabla que acabo de crear.
+
+    df_new_row_times_in_seconds = pd.DataFrame({
+        "time": [@@EDITAR@@],
+        "segundos_totales": [@@EDITAR@@]
+    })
+
+
+    # Agrego la nueva fila a la tabla.
+
+    df_times_in_seconds = pd.concat(
+        [@@EDITAR@@],
+        ignore_index=True
+    )
+
+
+# Agrego la información de los segundos totales, guardada en
+# df_times_in_seconds, a mi tabla original.
+
+df_parsed_data = pd.merge(
+    @@EDITAR@@
+)
+
+
+# Ahora van a ver que las columnas de la tabla parecen estar mezcladas,
+# lo que se debe al merge.
+#
+# Por otro lado hay columnas que ya no vamos a usar.
+#
+# Resolvemos las dos cosas a la vez seleccionando únicamente las columnas
+# que necesitamos y en el orden que queremos.
+
+df_parsed_data = df_parsed_data[
+    @@EDITAR@@
+]
+
+
+# Escribo los datos en una nueva tabla.
+
+df_parsed_data.to_csv(
+    "03_datos_filtermax_parseados_y_formateados.tsv",
+    @@EDITAR@@
+)
+```
+Paso 4 - Calcular velocidades de reacción
+
+✏️ 6)
+
+Para cada combinación de **compuesto** y **concentración** tenemos cuatro mediciones
+de `signal`, correspondientes a cuatro tiempos diferentes.
+
+Queremos calcular la **velocidad de reacción**.
+
+Como primera aproximación, vamos a asumir que la señal aumenta de manera
+aproximadamente lineal con el tiempo:
+
+$$
+signal = velocidad \times tiempo + b
+$$
+
+Por lo tanto, la velocidad de reacción corresponde a la **pendiente de la recta**
+que relaciona `signal` con `segundos_totales`.
+
+Para cada combinación de compuesto y concentración tenemos cuatro puntos y
+calcularemos una recta utilizando esos cuatro puntos.
+
+Por ejemplo, para una determinada combinación podríamos tener:
+
+```text
+tiempo (s)    signal
+0             417246
+299           595504
+600           789920
+900           985947
+
+La pendiente de la recta será nuestra estimación de la velocidad de reacción.
+
+Ahora calculen la velocidad de reacción para todas las combinaciones de
+compuesto y concentración.
+
+Para ello deberán:
+
+Obtener los diferentes compuestos.
+Obtener las diferentes concentraciones.
+Recorrer las diferentes combinaciones mediante ciclos.
+Seleccionar los datos correspondientes a cada combinación.
+Calcular la pendiente de la relación entre signal y segundos_totales.
+Guardar el resultado.
+
+### Script para completar
+
+```python
+import numpy as np
+import pandas as pd
+
+# Cargar los datos formateados
+df = pd.read_csv(
+    @@EDITAR@@,
+    sep="\t"
+)
+
+
+# ---------------------------------------------------------
+# EJERCICIO
+# Calcular la velocidad de reacción para una combinación
+# ---------------------------------------------------------
+
+# Seleccionar los datos correspondientes a Umbrella1
+# y concentración 0.
+
+datos = df[
+    @@EDITAR@@
+]
+
+
+# Definir X e Y
+
+x = @@EDITAR@@
+y = @@EDITAR@@
+
+
+# Calcular la pendiente de la recta.
+# La pendiente corresponde a la velocidad de reacción.
+
+velocidad = @@EDITAR@@
+
+print(velocidad)
+
+
+# ---------------------------------------------------------
+# EJERCICIO
+# Calcular las velocidades para todas las combinaciones
+# ---------------------------------------------------------
+
+# Obtener los diferentes compuestos y concentraciones
+
+compuestos = @@EDITAR@@
+concentraciones = @@EDITAR@@
+
+
+# Crear una tabla vacía donde vamos a guardar los resultados
+
+df_velocidades = pd.DataFrame(
+    columns=["compuesto", "concentracion", "velocidad"]
+)
+
+
+# Recorrer todos los compuestos
+
+for compuesto in compuestos:
+
+    # Recorrer todas las concentraciones
+
+    for concentracion in concentraciones:
+
+        # Seleccionar los datos correspondientes a esta
+        # combinación de compuesto y concentración
+
+        datos = df[
+            (@@EDITAR@@) &
+            (@@EDITAR@@)
+        ]
+
+        # Extraer los valores de X e Y
+
+        x = @@EDITAR@@
+        y = @@EDITAR@@
+
+        # Calcular la pendiente
+
+        velocidad = @@EDITAR@@
+
+
+        # Crear una nueva fila
+
+        nueva_fila = pd.DataFrame({
+            "compuesto": [@@EDITAR@@],
+            "concentracion": [@@EDITAR@@],
+            "velocidad": [@@EDITAR@@]
+        })
+
+
+        # Agregar la fila a la tabla de resultados
+
+        df_velocidades = pd.concat(
+            [@@EDITAR@@],
+            ignore_index=True
+        )
+
+
+# Mostrar los resultados
+
+print(df_velocidades)
+
+
+# Guardar los resultados
+
+df_velocidades.to_csv(
+    "04_velocidades_de_reaccion.tsv",
+    @@EDITAR@@
+)
+```
 
 ## **Bibliografía**
 
@@ -1171,9 +1872,9 @@ Pueden comparar **02_datos_filtermax_parseados.tsv** con **02_datos_filtermax_pa
 
 <!--
 ### :material-web: Online
-* Online 1 
-* Online 2 https://en.wikipedia.org/wiki/R_(programming_language)
+* Documentación oficial de Python: https://docs.python.org/3/
+* Tutorial oficial de Python: https://docs.python.org/3/tutorial/
 -->
 
-### :material-console-line: Consola de R
+### :material-console-line: Consola de Python
 * Comando `help()`
