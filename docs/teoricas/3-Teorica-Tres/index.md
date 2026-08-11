@@ -9,7 +9,7 @@ tags:
 
 Continuación de la clase teórica de algoritmos heurísticos de búsqueda de secuencias similares en bases de datos. 
 
- * :fontawesome-regular-file-pdf: [Slides](busquedasDeSecuenciasEnBasesDeDatos2025.pdf) 
+ * :fontawesome-regular-file-pdf: [Slides](busquedasDeSecuenciasEnBasesDeDatos2026.pdf) 
  <!--* :material-video-check: [Clase grabada en 2023](https://www.youtube.com/embed/AOnReITkzvo)
  * :material-video-check: Clase dictada virtual por paro docente   [Sesion Zoom grabada](https://youtu.be/0l986Ut9gAw)
 -->
