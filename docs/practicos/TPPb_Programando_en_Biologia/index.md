@@ -256,7 +256,8 @@ print(concentraciones ** 2)
 [ 100  400  900 1600]
 ```
 
-✏️**1)** Para observar la diferencia entre las operaciones realizadas sobre arrays de NumPy y sobre listas de Python, ejecuten el siguiente código:
+#### ✏️ Ejercicio 1
+Para observar la diferencia entre las operaciones realizadas sobre arrays de NumPy y sobre listas de Python, ejecuten el siguiente código:
 ```python
 import numpy as np
 
@@ -269,7 +270,7 @@ concentraciones_lista = [10, 20, 30, 40]
 
 print(concentraciones_lista * 2)
 ```
-¿Cómo les dio cada resultado? ¿Qué diferencia observan entre las operaciones realizadas sobre el array y sobre la lista?
+**¿Cómo les dio cada resultado? ¿Qué diferencia observan entre las operaciones realizadas sobre el array y sobre la lista?**
 
 ### Funciones sobre arrays
 
@@ -309,7 +310,7 @@ Entre otras cosas, esto nos permite:
 * Evitar subir los mismos archivos cada vez que abrimos Colab.
 * Guardar automáticamente tablas, figuras y resultados para utilizarlos en el futuro.
 
-### Montar Google Drive
+### ✏️Ejercicio 2 - Montar Google Drive
 
 Para conectar Google Drive con Colab ejecuten la siguiente celda:
 
@@ -561,9 +562,8 @@ Los parámetros utilizados son:
 * `sep="\t"` indica que las columnas estarán separadas por tabulaciones.
 * `index=False` evita guardar la numeración de las filas como una columna adicional.
 
-**1)** Guarden el DataFrame creado anteriormente con el nombre **genes.tsv**.
-
-Confirmen que el archivo fue creado correctamente desde la pestaña **Archivos** de Google Colab.
+#### ✏️ Ejercicio 3
+Guarden el DataFrame creado anteriormente con el nombre **genes_expresion.tsv**. Confirmen que el archivo fue creado correctamente desde la pestaña **Archivos** de Google Colab.
 
 ### Leer tablas
 
@@ -578,7 +578,8 @@ Los parámetros utilizados son:
 * `"genes.tsv"` es el nombre del archivo a leer. Si se trata de un *path* absoluto se leerá desde esa ubicación; si es un *path* relativo, será relativo al directorio actual.
 * `sep="\t"` indica cuál es el separador utilizado entre las columnas del archivo.
 
-**2)** Creen una variable llamada **nuevo_df** y carguen la tabla creada en el punto anterior. Utilicen `print()` para confirmar que el archivo se leyó correctamente.
+#### ✏️ Ejercicio 4
+Creen una variable llamada **nuevo_df** y carguen la tabla creada en el punto anterior. Utilicen `print()` para confirmar que el archivo se leyó correctamente.
 
 ### Datos faltantes: `NA`
 
@@ -628,7 +629,7 @@ df = pd.read_csv("genes.tsv", sep="\t", na_values="ND")
 De esta manera, pandas convertirá automáticamente los valores "ND" en NaN.
 
 
-## ✏️**Ejercicio 1 - Tablas** { markdown data-toc-label='✏️ Ejercicio 1 - Tablas' }
+## ✏️**Ejercicio 5 - Tablas** { markdown data-toc-label='✏️ Ejercicio 5 - Tablas' }
 
 1. Creen una lista con los nombres de 5 genes (por ejemplo: "TP53", "BRCA1", "ACTB", "GAPDH", "MYC") y otra lista con sus niveles de expresión (pueden ser números entre 1 y 100).
 2. Utilicen esas listas para crear un DataFrame con dos columnas llamadas gen y expresion.
@@ -682,7 +683,8 @@ import matplotlib.pyplot as plt
 
 ### Scatter plot
 
-**1)** Escriban y ejecuten el siguiente código:
+#### ✏️ Ejercicio 6
+Escriban y ejecuten el siguiente código:
 
 ```python
 import numpy as np
@@ -707,31 +709,6 @@ En este ejemplo:
 * `x` contiene los valores del eje horizontal.
 * `y` contiene los valores del eje vertical.
 * `plt.show()` muestra el gráfico en pantalla.
-
-### Histograma
-
-**2)** Ejecuten ahora el siguiente código:
-
-```python
-import numpy as np
-
-vector_numeros = np.random.normal(
-    loc=15,
-    scale=2.5,
-    size=1000
-)
-
-plt.hist(vector_numeros)
-plt.show()
-```
-
-La función `np.random.normal()` genera números aleatorios que siguen una distribución normal. En este ejemplo crea 1000 valores con media 15 y desvío estándar 2.5.
-
-La función `plt.hist()` construye un **histograma**, mostrando la frecuencia con la que aparecen los distintos valores.
-
-<figure markdown>
-![HistPlot](img/python_plot_hist.png)
-</figure>
 
 ### Personalizar un gráfico
 
@@ -803,20 +780,7 @@ plt.title("Sepal vs Petal Length")
 plt.show()
 ```
 
-## ✏️**Ejercicio 2 - Plots** { markdown data-toc-label='✏️ Ejercicio 2 - Plots' }
-
-Para valores enteros de `x` entre **1** y **200**, calculen el `y` correspondiente a una recta con pendiente **3** y ordenada al origen **5**.
-
-1. Grafiquen los puntos utilizando `plt.scatter()`.
-2. Agreguen un título y etiquetas a ambos ejes.
-3. Guarden el gráfico en formato **SVG**.
-
-<div style="border-bottom: 3px solid black;">
-
-</div>
-
-
-## ✏️**Ejercicio 3 - Integrador** { markdown data-toc-label='✏️ Ejercicio  3 - Integrador' }
+## ✏️**Ejercicio 7 - Integrador** { markdown data-toc-label='✏️ Ejercicio  7 - Integrador' }
 
 En esta actividad vamos a integrar estos conocimientos en un problema de análisis de datos biológicos.
 
@@ -850,7 +814,7 @@ Por ejemplo, algunas de las variables que encontraremos son:
 | `diagnosis` | Diagnóstico: benigno (`B`) o maligno (`M`) |
 
 
-### Cargar los datos
+### ✏️Cargar los datos
 
 Descarguen el archivo proporcionado para esta actividad y cárguenlo utilizando pandas.
 
@@ -873,7 +837,7 @@ print(df)
 ```
 
 
-✏️**1)** Exploración inicial
+#### ✏️**1)** Exploración inicial
 Antes de realizar cualquier análisis, queremos conocer el conjunto de datos.
 
 * ¿Cuántas filas y columnas tiene el DataFrame?
@@ -896,7 +860,7 @@ Para responder la última pregunta, pueden utilizar un filtro booleano
     Luego pueden utilizar `len()` para conocer la cantidad de filas de cada subconjunto.
 
 
-✏️**2)** Comparación entre muestras benignas y malignas
+#### ✏️**2)** Comparación entre muestras benignas y malignas
 Una de las preguntas que nos plantea el equipo médico es si existen diferencias en las características morfológicas de las células entre las muestras benignas y malignas.
 ¿Las muestras malignas presentan, en promedio, un mayor radius_mean que las muestras benignas?
 
@@ -932,7 +896,7 @@ Recuerden que primero pueden crear dos subconjuntos utilizando filtros booleanos
     df_malignas[@@EDITAR@@]@@EDITAR@@.
     ```
 
-✏️**3)** Distribución de una variable
+#### ✏️**3)** Distribución de una variable
 Ahora queremos conocer cómo se distribuyen los valores de una variable.
 
 Realicen un histograma de radius_mean utilizando matplotlib.
@@ -957,7 +921,7 @@ El gráfico debe incluir: título; nombre del eje X; nombre del eje Y.
     plt.show()
     ```
 
-✏️**4)** Comparar distribuciones 
+#### ✏️**4)** Comparar distribuciones 
 Ahora queremos saber si la distribución de radius_mean es diferente entre las muestras benignas y malignas.
 
 Realicen un gráfico que permita comparar ambas distribuciones.
@@ -976,7 +940,7 @@ Pueden utilizar dos histogramas superpuestos.
 
     El parámetro `alpha` permite hacer transparentes los histogramas para visualizar mejor la superposición.
 
-✏️**5)** Relación entre dos variables
+#### ✏️**5)** Relación entre dos variables
 Ahora queremos investigar si existe una relación entre el tamaño de los núcleos celulares y su perímetro.
 
 Realicen un gráfico de dispersión de:
@@ -990,7 +954,7 @@ Diferencien las muestras según el diagnóstico. Agreguen una leyenda que permit
 * ¿Las muestras benignas y malignas ocupan regiones diferentes del gráfico?
 * ¿Hay muestras que se encuentren dentro de la región predominante del otro grupo?
 
-✏️**6)** Identificación de muestras
+#### ✏️**6)** Identificación de muestras
 Supongamos ahora que el equipo médico quiere identificar muestras con valores particularmente altos de algunas características.
 
 Seleccionen todas las muestras que cumplan simultáneamente:
@@ -1001,7 +965,7 @@ Seleccionen todas las muestras que cumplan simultáneamente:
 
 *  ¿Qué diagnóstico presentan esas muestras?
 
-✏️**7)** Informe individual de cada muestras
+#### ✏️**7)** Informe individual de cada muestras
 Finalmente, el hospital nos solicita generar un informe individual para cada muestra.
 
 El informe estará destinado al equipo médico, por lo que debe presentar los resultados de manera clara y resumida. No se trata de un informe dirigido al paciente. 
@@ -1195,7 +1159,7 @@ with open("Informes/informe.txt", "w") as archivo:
 print("Informe generado correctamente.")
 -->
 
-✏️**8)** Automatizar la generación de informes
+#### ✏️**8)** Automatizar la generación de informes
 La generación manual de 50 informes sería una tarea muy poco eficiente.
 
 Utilicen un ciclo para recorrer las primeras 50 muestras y generar automáticamente un txt para cada una.
@@ -1410,8 +1374,16 @@ print("Secas:", secas)
 ```
 -->
 
-
 ## ✏️**Ejercicio Adicional 2** { markdown data-toc-label='Ejercicio Adicional 2' }
+
+Para valores enteros de `x` entre **1** y **200**, calculen el `y` correspondiente a una recta con pendiente **3** y ordenada al origen **5**.
+
+1. Grafiquen los puntos utilizando `plt.scatter()`.
+2. Agreguen un título y etiquetas a ambos ejes.
+3. Guarden el gráfico en formato **SVG**.
+
+
+## ✏️**Ejercicio Adicional 3** { markdown data-toc-label='Ejercicio Adicional 3' }
 
 
 Introducción
