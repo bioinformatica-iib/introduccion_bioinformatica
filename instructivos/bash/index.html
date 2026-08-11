@@ -13,6 +13,8 @@
         <link rel="canonical" href="https://bioinformatica-iib.github.io/introduccion_bioinformatica/instructivos/bash/">
       
       
+        <link rel="prev" href="../inicio/">
+      
       
       
       <link rel="icon" href="../../img/logo-unsam-negro.png">
@@ -20,7 +22,7 @@
     
     
       
-        <title>Instructivo rápido de Bash para bioinformática - Introducción a la Bioinformática</title>
+        <title>Bash - Introducción a la Bioinformática</title>
       
     
     
@@ -116,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Instructivo rápido de Bash para bioinformática
+              Bash
             
           </span>
         </div>
@@ -299,10 +301,12 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../inicio/" class="md-tabs__link">
           
   
@@ -819,26 +823,31 @@
       
   
   
+    
   
   
+  
     
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
             
   
   
@@ -851,7 +860,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Instructivos
@@ -876,6 +885,160 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Bash
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Bash
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#que-es-bash" class="md-nav__link">
+    <span class="md-ellipsis">
+      ¿Qué es Bash?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comandos-esenciales-tabla-resumen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comandos esenciales (tabla resumen)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-ver-los-manuales-de-los-comandos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cómo ver los manuales de los comandos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cómo ver los manuales de los comandos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-man-manual-completo" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. man (manual completo)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-help-o-h-ayuda-resumida" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. --help o -h (ayuda resumida)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-whatis-y-apropos-busqueda-de-comandos" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. whatis y apropos (búsqueda de comandos)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consejos-practicos-para-la-terminal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Consejos prácticos para la terminal
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#errores-frecuentes-y-como-solucionarlos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Errores frecuentes y cómo solucionarlos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recomendaciones-para-bioinformatica" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recomendaciones para bioinformática
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
