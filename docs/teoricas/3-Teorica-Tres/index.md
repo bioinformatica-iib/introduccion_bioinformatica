@@ -9,10 +9,10 @@ tags:
 
 Continuación de la clase teórica de algoritmos heurísticos de búsqueda de secuencias similares en bases de datos. 
 
- * :fontawesome-regular-file-pdf: [Slides](../2-Teorica-Dos/busquedasDeSecuenciasEnBasesDeDatos2025.pdf) 
- * :material-video-check: [Clase grabada en 2023](https://www.youtube.com/embed/AOnReITkzvo)
+ * :fontawesome-regular-file-pdf: [Slides](busquedasDeSecuenciasEnBasesDeDatos2025.pdf) 
+ <!--* :material-video-check: [Clase grabada en 2023](https://www.youtube.com/embed/AOnReITkzvo)
  * :material-video-check: Clase dictada virtual por paro docente   [Sesion Zoom grabada](https://youtu.be/0l986Ut9gAw)
-
+-->
 ## Material de lectura y consulta
 
   * :paperclip: Needleman SB, Wunsch CD. (1970) A general method applicable to the search for similarities in the amino acid sequence of two proteins. [J Mol Biol.48: 443-53](https://doi.org/10.1016/0022-2836(70)90057-4).

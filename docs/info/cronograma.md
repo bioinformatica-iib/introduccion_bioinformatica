@@ -15,7 +15,7 @@ tags:
 | ----------- | -------- | :-------------------------------------: | :----------- | :---------------------------------- | :------ |
 | Mar, 4 Ago   | 9 hs |	:material-google-classroom: Presencial | [T1. Presentación, Información Biológica, Bases de Datos](../teoricas/1-Teorica-Uno/index.md) | :fontawesome-solid-brain: Teórica |	F. Agüero |
 | Jue, 6 Ago   | 9 hs |	:material-google-classroom: Presencial | [T2. Conceptos computacionales, Alineamientos, Matrices](../teoricas/2-Teorica-Dos/index.md) | :fontawesome-solid-brain: Teórica |	F. Agüero |
-| Mar, 11 Ago  | 9 hs |	:material-google-classroom: Presencial | T3. Búsqueda de secuencias por Similitud (2) | :fontawesome-solid-brain: Teórica |	F. Agüero |
+| Mar, 11 Ago  | 9 hs |	:material-google-classroom: Presencial | [T3. Búsqueda de secuencias por Similitud (2)](../teoricas/3-Teorica-Tres/index.md) | :fontawesome-solid-brain: Teórica |	F. Agüero |
 | Jue, 13 Ago  | 9 hs |	:material-google-classroom: Presencial | [P1. Introducción a UNIX (Parte 1)](../practicos/TP01a_Linux/index.md) | :fontawesome-solid-hammer: Práctica |	M. Didier Garnham |
 | Mar, 18 Ago  | 9 hs |	:material-google-classroom: Presencial | P2. Introducción a UNIX (Parte 2) | :fontawesome-solid-hammer: Práctica |	M. Didier Garnham |
 | Jue, 20 Ago  | 9 hs |	:material-google-classroom: Presencial | P3. Alineamientos de secuencias de a pares | :fontawesome-solid-hammer: Práctica |	M. Didier Garnham |
