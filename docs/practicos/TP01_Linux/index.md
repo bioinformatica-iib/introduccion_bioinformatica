@@ -34,8 +34,8 @@ tags:
 ## **Introducción al Tema**
 En este trabajo práctico vamos a aprender a usar la **línea de comando** de Ubuntu (también referida como *terminal*, *consola* o *shell*). Para muchos de nosotros, que estamos acostumbrados a la interfaz gráfica de sistemas operativos como los de Windows o *GUI* (por las siglas en ingles: *Graphic User Interface*), la línea de comando puede parecer un desafío, pero con práctica y algo de paciencia descubrirán que puede resultar amena. Su uso tiene dos ventajas destacables para nuestro campo:
 
-* Nos permitirá trabajar en entornos o programas sin interfaz gráfica (GUI)
-* Mediante el uso de programas o *scripts*, nos permitirá automatizar procesos, acelerando el trabajo y minimizando la cantidad de errores que podemos cometer con tareas repetitivas
+* Nos permitirá trabajar en entornos o programas sin interfaz gráfica (*GUI*).
+* Mediante el uso de programas o *scripts*, nos permitirá automatizar procesos, acelerando el trabajo y minimizando la cantidad de errores que podemos cometer con tareas repetitivas.
 
 ## Definición y perfil del bioinformático
 
@@ -151,7 +151,7 @@ Hasta acá, descubrimos varias cosas importantes:
 Linux es un sistema operativo de código abierto, estable y muy utilizado en entornos de investigación y servidores.  
 Ubuntu es una de sus distribuciones más populares, conocida por su facilidad de uso y amplia comunidad de soporte.  
 
-En bioinformática y análisis de datos, Linux ofrece ventajas importantes: permite manejar grandes volúmenes de información, automatizar tareas mediante scripts, instalar software científico fácilmente y ejecutar pipelines de análisis de manera reproducible.  
+En bioinformática y análisis de datos, Linux ofrece ventajas importantes: permite manejar grandes volúmenes de información, automatizar tareas mediante *scripts*, instalar software científico fácilmente y ejecutar pipelines de análisis de manera reproducible.  
 
 A través de la terminal, los usuarios pueden interactuar directamente con el sistema operativo, ejecutar programas, gestionar archivos y carpetas, y combinar herramientas de manera flexible.
 
@@ -159,7 +159,7 @@ A través de la terminal, los usuarios pueden interactuar directamente con el si
 
 Bash (Bourne Again SHell) es un intérprete de comandos que permite interactuar con el sistema operativo mediante texto.  
 
-Usando Bash, los usuarios pueden navegar entre carpetas, gestionar archivos, ejecutar programas, combinar comandos y automatizar tareas repetitivas mediante scripts.  
+Usando Bash, los usuarios pueden navegar entre carpetas, gestionar archivos, ejecutar programas, combinar comandos y automatizar tareas repetitivas mediante *scripts*.  
 
 En bioinformática, Bash es fundamental para procesar grandes volúmenes de datos, lanzar pipelines de análisis y manipular archivos de secuenciación de manera eficiente sin necesidad de interfaces gráficas.
 
@@ -195,7 +195,7 @@ Donde **ibioinfo** es el nombre del usuario actual e **ibioinfo-VirtualBox** el 
 
     * Para copiar texto en la terminal hay que usar ++ctrl+shift+c++. En en resto de Ubuntu es normal (++ctrl+c++).
     * Para pegar texto en la terminal hay que usar ++ctrl+shift+v++. En en resto de Ubuntu es normal (++ctrl+v++).
-    * Al apretar ++ctrl+c++ en la terminal le estan diciendo que corte forzosamente el programa que está corriendo. Si bien hay que tener cuidado con no cortar un proceso importante a la mitad, este atajo del teclado es útil si un programa se te quedó colgado o similar.
+    * Al apretar ++ctrl+c++ en la terminal le están diciendo que corte forzosamente el programa que está corriendo. Si bien hay que tener cuidado con no cortar un proceso importante a la mitad, este atajo del teclado es útil si un programa se te quedó colgado o similar.
 
 
 ### ¿Qué es un comando?
@@ -216,11 +216,11 @@ A tener en cuenta:
 
 - La terminal es **sensible a mayúsculas y minúsculas**, por lo que `File.txt` y `file.txt` son archivos distintos.  
 - Se pueden usar **tabulaciones** para autocompletar nombres de archivos o carpetas, evitando errores de tipeo.  
-- Los **comentarios** se escriben con `#` y la terminal los ignora, útil para documentar scripts.
+- Los **comentarios** se escriben con `#` y la terminal los ignora, útil para documentar *scripts*.
 
 #### Comandos básicos de Bash
 
-A continuación hay una lista de los comandos más usados en Bash, vamos a ir viendo los más importantes para este curso en la siguiente sección
+A continuación hay una lista de los comandos más usados en Bash, vamos a ir viendo los más importantes para este curso en la siguiente sección:
 
 | Comando | Qué hace | Ejemplo |
 |---------|----------|---------|
@@ -293,20 +293,20 @@ pwd
 
 La organización de archivos en Ubuntu y Lubuntu es bastante diferente a la de Windows. Si bien no vamos a detallar completamente toda la estructura y que es cada carpeta (porque el 95% no lo van a usar en esta materia), es importante tener una idea de lo básico:
 
-* **/** Carpeta raiz, o *root*. Contiene al resto de las carpetas
-    * **/etc**: Configuraciones del sistema para todos los usuarios (mucho cuidado al tocar)
-    * **/home**: Ubicación de los directorios de los diferentes usuarios (o en este caso el único usuario)
-        * **/home/user**: Directorio del usuario *user*. Es el lugar donde van a trabajar la mayoría del tiempo (incluye tanto el Escritorio como Documentos) y donde se abre por defecto la terminal (más sobre esto en un ratito). Comúnmente referida como *home directory* o *home* del usuario *user*
-    * **/media**: Si fuera una computadora normal (no VM) aca aparecerían los pendrives. En nuestro caso aca aparecen por defecto las carpetas compartidas con la PC host
-    * **/tmp**: Ubicación de los archivos temporales de los programas
-    * **/var**: Ubicación de los archivos variables de los programas, como logs, bases de datos, paginas webs, etc
-        * **/var/log**: Probablemente la subcarpeta más usada de **/var**. Contiene los logs de los programas (que a veces es la única forma de saber porque algo no anduvo)
+* **/** Carpeta raiz, o *root*. Contiene al resto de las carpetas.
+    * **/etc**: Configuraciones del sistema para todos los usuarios (mucho cuidado al tocar).
+    * **/home**: Ubicación de los directorios de los diferentes usuarios (o en este caso el único usuario).
+        * **/home/user**: Directorio del usuario *user*. Es el lugar donde van a trabajar la mayoría del tiempo (incluye tanto el Escritorio como Documentos) y donde se abre por defecto la terminal (más sobre esto en un ratito). Comúnmente referida como *home directory* o *home* del usuario *user*.
+    * **/media**: Si fuera una computadora normal (no VM) aca aparecerían los pendrives. En nuestro caso aca aparecen por defecto las carpetas compartidas con la PC host.
+    * **/tmp**: Ubicación de los archivos temporales de los programas.
+    * **/var**: Ubicación de los archivos variables de los programas, como logs, bases de datos, páginas webs, etc.
+        * **/var/log**: Probablemente la subcarpeta más usada de **/var**. Contiene los logs de los programas (que a veces es la única forma de saber porqué algo no anduvo).
 
 Esto es simplemente un vistazo rápido. Si quieren la lista completa de subdirectorios de Ubuntu la pueden encontrar en [esta página](https://help.ubuntu.com/community/LinuxFilesystemTreeOverview), pero tengan en cuenta que tocar cualquier cosa fuera de **/home** conlleva la posibilidad de arruinar la computadora. En esta materia vamos a usar principalmente **/home** y **/media**.
 
 ### Paths relativos y absolutos
 
-En programación, un path (o ruta) es la cadena de caracteres que indica la ubicación de un archivo o directorio dentro del sistema de archivos.
+En programación, un *path* (o ruta) es la cadena de caracteres que indica la ubicación de un archivo o directorio dentro del sistema de archivos.
 
 #### Paths absolutos
 
@@ -352,12 +352,12 @@ mkdir [opciones] carpeta
 rmdir [opciones] carpeta
 ```
 
-- `carpeta` → nombre de la carpeta a crear o eliminar  
-- `[opciones]` → parámetros adicionales como `-p` para crear carpetas anidadas
+- `carpeta` → nombre de la carpeta a crear o eliminar.  
+- `[opciones]` → parámetros adicionales como `-p` para crear carpetas anidadas.
 
 !!! Ejemplos
 
-    Los ejemplos que aparecen a continuación sirven solo para entender la sintaxis, no los corran! 
+    Los ejemplos que aparecen a continuación sirven solo para entender la sintaxis, **no los corran!** 
     El código que deben ejecutar está indicado en la sección de **Preguntas**.
 
     Crear una carpeta simple
@@ -585,7 +585,7 @@ wget [opciones] URL
 
 !!! Ejemplos
 
-    Los ejemplos que aparecen a continuación sirven solo para entender la sintaxis, ¡no los corran! El código que deben ejecutar está indicado en la sección de **Preguntas**.
+    Los ejemplos que aparecen a continuación sirven solo para entender la sintaxis, **¡no los corran!** El código que deben ejecutar está indicado en la sección de **Preguntas**.
 
     Descargar un archivo y guardarlo con el nombre original:
     ```bash
@@ -638,7 +638,7 @@ Los comandos `head` y `tail` permiten **ver partes de un archivo de texto** sin 
 - Por defecto, muestra las **primeras 10 líneas**, pero se puede cambiar con la opción `-n`.
 
 !!! Ejemplos
-    Los ejemplos que aparecen a continuación sirven solo para entender la sintaxis, no los corran! 
+    Los ejemplos que aparecen a continuación sirven solo para entender la sintaxis, **no los corran!** 
     El código que deben ejecutar está indicado en la sección de **Preguntas**.
 
     ```bash
@@ -655,7 +655,7 @@ Los comandos `head` y `tail` permiten **ver partes de un archivo de texto** sin 
 - También por defecto son 10 líneas, modificables con `-n`.
 
 !!! Ejemplos
-    Los ejemplos que aparecen a continuación sirven solo para entender la sintaxis, no los corran! 
+    Los ejemplos que aparecen a continuación sirven solo para entender la sintaxis, **no los corran!** 
     El código que deben ejecutar está indicado en la sección de **Preguntas**.
 
     ```bash
@@ -848,6 +848,6 @@ grep "^>" pacientes.fasta > ../resultados/pacientes_nombres.csv
 
 #### ✏️ Pregunta 11
 
-Revisa que el archivo `pacientes_nombres.csv` se haya generado correctamente 
+Revisa que el archivo `pacientes_nombres.csv` se haya generado correctamente. 
 
  
