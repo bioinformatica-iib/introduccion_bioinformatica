@@ -14,7 +14,7 @@ tags:
 * Dra. Juliana Glavina
 
 ### Ayudantes de 1ra
-* Lic. Mercedes Didier Garnham
+* Dra. Mercedes Didier Garnham
 * Lic. Ramiro Quinteros
 * Lic. Paula Nuñez
 

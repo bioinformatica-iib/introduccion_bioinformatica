@@ -5,7 +5,7 @@ tags:
   - instructivos
 ---
 
-En esta página encontrarán los instructivos que le permitirán ir resolviendo algunas cosas técnicas, como por ejemplo: el uso de Replit!
+En esta página encontrarán los instructivos que le permitirán ir resolviendo algunas cosas técnicas,
 
 ## Consultas y Canales de Comunicación
 

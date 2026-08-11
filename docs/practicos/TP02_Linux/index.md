@@ -508,3 +508,6 @@ Usando los datos que obtuvo el script, completá la siguiente tabla:
         
 ¿Obtuviste los mismos resultandos haciendo la búsqueda manual que con el script?
 
+## Parte 3: Programando desde Google Colab
+
+Esta sección se encuentra en desarrollo -> Próximamente!!
