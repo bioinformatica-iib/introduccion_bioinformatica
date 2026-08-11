@@ -12,10 +12,11 @@ tags:
 <br>
 <br>
 <br>
-
+<!--
 [:fontawesome-solid-download: Materiales](https://drive.google.com/drive/folders/12XmxoCv9hSTMIzvPr1yvfegAni_moJl7?usp=sharing){ .md-button .md-button--primary }
 [:fontawesome-solid-computer: Google Colab](https://colab.research.google.com/drive/1sa7M4iYVhydk9xrzY4XZae4NhXXOshGa?usp=sharing){ .md-button .md-button--primary }
 [:fontawesome-solid-file-powerpoint: Slides](https://docs.google.com/presentation/d/1aLdSql8KIhMJuJAoA8iRC6hJABwODWse7F31q3h2lB4/edit?usp=sharing){ .md-button .md-button--primary }
+-->
 
 <br>
 
@@ -25,12 +26,13 @@ tags:
  * Familiarizarse con la visualización de histogramas que arroja FASTA.
  * Familiarizarse con el uso de parámetros estadísticos en relación a la búsqueda en bases de datos.
 
+<!--
 !!! attention "¡Antes de comenzar!"
 
     Este TP lo vamos a realizar con google colab. Los programas que vamos a utilizar son: *blastall, blastcl3, formatdb y fastacmd (NCBI-Toolkit), fasta, tfasta, fastx, tfastx, fasty, tfasty, ssearch, prss* (**FASTA** program package). 
 
     Para instalarlos, ejecuten en su colab las celdas que se encuentran en la sección **Módulos, programas y directorios**.
-
+-->
 
 ## **Introducción a Bases de Datos de Proteínas**
 
@@ -85,16 +87,12 @@ En este TP trabajaremos con **Swiss-Prot**.
 
 ### Ejercicio 1
 
-**1.1** Como primer ejemplo podemos usar la secuencia *xlrhodop.pep* para realizar una búsqueda contra **Swiss-Prot**. Como estamos trabajando con una secuencia y una base de datos de proteínas, usamos ``blastp`` para realizar la busqueda: 
+#### ✏️ Paso 1
+Como primer ejemplo podemos usar la secuencia *xlrhodop.pep* para realizar una búsqueda contra **Swiss-Prot**. Como estamos trabajando con una secuencia y una base de datos de proteínas, usamos ``blastp`` para realizar la busqueda: 
 
 ```bash
-!blastall -p blastp -i xlrhodop.pep -d ~/Swissprot_db/Swissprot.fasta
+blastall -p blastp -i xlrhodop.pep -d ~/Swissprot_db/Swissprot.fasta
 ``` 
-!!! attention "Atención"
-
-	Recuerden que para indicarle a colab que es un comando de bash, tienen que utilizar el prefijo ``!``.
-
-
 !!! attention "Atención"
 
 	 Este comando no se ejecutará correctamente si las secuencia xlrhodop y la base de datos **Swiss-Prot** no están en los directorios correctos. Chequeen donde está la base de datos, y si el comando no se ejecuta, especifiquen el camino o *path* completo.
@@ -102,13 +100,13 @@ En este TP trabajaremos con **Swiss-Prot**.
 En este ejemplo, el resultado de la búsqueda es volcado en la consola (**stdout**). Para que el resultado aparezca en un archivo, podemos redireccionar **stdout** (usando ``>``, ver TP01-Linux) o usar la opcion ``-o`` (output).
 
 ```Bash
-!blastall -p blastp -i xlrhodop.pep -d ~/Swissprot_db/Swissprot.fasta -o xlrhodop.blastp
+blastall -p blastp -i xlrhodop.pep -d ~/Swissprot_db/Swissprot.fasta -o xlrhodop.blastp
 ``` 
 
 Pueden ver el resultado del ``blastp``, por ejemplo, revisando las _n_ líneas del principio (head) o del final (tail):
 
 ```Bash
-!head -n 10 xlrhodop.blastp
+head -n 10 xlrhodop.blastp
 ```
 
 * **Inspeccionen el archivo y respondan:** ¿Qué indican las últimas líneas de este archivo?
@@ -138,7 +136,7 @@ Pueden ver el resultado del ``blastp``, por ejemplo, revisando las _n_ líneas d
 
 * **Pruebe con distintas combinaciones de estos parámetros** y preste atención al impacto que esto tiene en los alineamientos reportados.
 
-**1.2.1** Responda a las siguientes preguntas:
+#### ✏️ Preguntas guía: 
 
 **a.** Si observa los primeros 20 hits de su búsqueda, ¿puede detectar alguna diferencia en los alineamientos reportados si cambia los parámetros indicados más arriba?
 
@@ -157,9 +155,11 @@ y complete para cada uno de los alineamientos reportados la siguiente tabla, ten
 | Gap open: 6 + gap extend: 2 | |
 | Gap open: 13 + gap extend: 1 | |
 
-**1.2.2** **Opcional**: Evaluando el impacto del parámetro longitud de la k-tupla.
+#### ✏️ Paso Opcional 
 
-Responda a las siguientes preguntas:
+Evaluando el impacto del parámetro longitud de la k-tupla.
+
+#### ✏️ Preguntas guía: 
 
 Para una misma combinación de costos para *gap open* y *gap extend* (pueden usar los valores default):
 
@@ -171,6 +171,8 @@ Para una misma combinación de costos para *gap open* y *gap extend* (pueden usa
 
 Para los más curiosos, las respuestas a estas preguntas pueden hallarlas en el siguiente [link](https://docs.google.com/presentation/d/1ch3I2UmYGSnxt-Glk7ChnK2Lo8FQ5oK10FMNieFbkyA/edit?usp=sharing).
 
+
+<!--
 ## **Introducción a FASTA**
 
 !!! info "Curiosidad"
@@ -302,7 +304,7 @@ En otros casos, la secuencia puede contener un vector (plásmido) o repeticiones
 **3.2** Ahora para repetir el mismo ejercicio con **FASTA**, tenemos que detectar y marcar las regiones de baja complejidad. Para esto se utiliza ``segmasker``: 
 
 ```bash
-!segmasker -in Data/grou_drome.fasta -outfmt fasta > grou_drome_lc.fasta
+segmasker -in Data/grou_drome.fasta -outfmt fasta > grou_drome_lc.fasta
 ```
 
 **3.3** Comparen las secuencias *grou_drome.fasta* y *grou_drome_lc.fasta* e identifiquen las diferencias. ¿Qué hizo *segmasker* con la secuencia? 
@@ -382,7 +384,7 @@ Dado un archivo llamado *blast.out*, podemos partirlo en varios usando la siguie
 	 Recuerden reemplazar "*pattern*" por el patrón que quieren utilizar para dividir el archivo y blast.out por el nombre del archivo que quieren partir.
 
 ¿Lo lograron?
-
+-->
 ##  **Bibliografía**
 
 - Tutorial de BLAST en la web del NCBI: [The Statistics of Sequence Similarity Scores](https://www.ncbi.nlm.nih.gov/BLAST/tutorial/Altschul-1.html)

@@ -166,8 +166,8 @@ nav:
     - Prácticos: 
         - 'practicos/inicio.md'
         #- TPs: 'practicos/tpsGrid.md'
-        # - TP 1 - Linux: 'practicos/TP01_Linux/index.md'
-        # - TP 2 - EMBOSS: 'practicos/TP02_EMBOSS/index.md'
+        - TP 1 - Linux: 'practicos/TP01_Linux/index.md'
+        # - TP 2 - EMBOSS: 'practicos/TP02_Linux/index.md'
         # - TP 3 - Alineamientos de a pares: 'practicos/TP03_Alineamientos/index.md'
         # - TP 4 - Búsqueda por similitud: 'practicos/TP04_Busqueda_por_similitud/index.md'
         # - TP - R - Introduccion: 'practicos/TPPa_Programando_en_Biologia/index.md'
@@ -188,8 +188,9 @@ nav:
 
     - Instructivos:
         - 'instructivos/inicio.md'
-        - Replit: 'instructivos/replit/index.md' 
-        - R y Rstudio: 'instructivos/R/index.md' 
+    #     - Instalación de Ubuntu en Windows: 'instructivos/instalar_ubuntu/index.md' 
+    #     - Bash: 'instructivos/bash/index.md' 
+    #     - R y Rstudio: 'instructivos/R/index.md' 
     #     - Máquina Virtual: 'instructivos/maquina_virtual/index.md'
     #     - Problemas instalando la Máquina Virtual: 'instructivos/problemasVM/index.md'
     #     - Tips and Tricks para usar la Máquina Virtual más cómodos: 'instructivos/tipsVM/index.md'

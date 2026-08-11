@@ -1,12 +1,12 @@
 ---
-title: Practico Uno
+title: Practico Dos
 icon: octicons/terminal-16
 tags: 
   - practicos
 ---
 ![Image](img/banner.jpg){ width="250", align="left" }
 
-# **TP 1b**. Introducción a Ubuntu, Bash y Programación { markdown data-toc-label = 'TP 1b' }
+# **TP 2**. Conceptos avanzados de programación en Bash { markdown data-toc-label = 'TP 2' }
 
 [:fontawesome-solid-download: Materiales](data/datos.zip){ .md-button .md-button--primary }
 

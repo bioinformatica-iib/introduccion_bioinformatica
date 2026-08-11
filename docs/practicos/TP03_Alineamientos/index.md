@@ -12,9 +12,13 @@ tags:
 <br>
 <br>
 
-[:fontawesome-solid-download: Materiales](https://drive.google.com/drive/folders/127EZ-CHlq5hg5K1hEKjTxmZp4_eCqIbN?usp=drive_link){ .md-button .md-button--primary }            [:fontawesome-solid-computer: Google Colab](https://colab.research.google.com/drive/1-i_1TJFytoeeFhPGqrrZnmb_-ZMN03Zi?usp=sharing){ .md-button .md-button--primary }            [:fontawesome-solid-file-powerpoint: Slides](https://docs.google.com/presentation/d/1hHh-vYtGggyeMPEpObJb18lTYwiSvxXC7MDcTsuuCKQ/edit?usp=drive_link){ .md-button .md-button--primary }
+[:fontawesome-solid-download: Materiales](data/Data-TP2.zip){ .md-button .md-button--primary }
+
+<!--
+[:fontawesome-solid-computer: Google Colab](https://colab.research.google.com/drive/1-i_1TJFytoeeFhPGqrrZnmb_-ZMN03Zi?usp=sharing){ .md-button .md-button--primary }            [:fontawesome-solid-file-powerpoint: Slides](https://docs.google.com/presentation/d/1hHh-vYtGggyeMPEpObJb18lTYwiSvxXC7MDcTsuuCKQ/edit?usp=drive_link){ .md-button .md-button--primary }
 
 <br>
+-->
 
 !!! abstract "Atención: Este TP tiene informe."
 
@@ -232,7 +236,8 @@ que podemos corroborar que es idéntico al *path* **1** del ejemplo que se plant
 
 ### Ejercicio 1
 
-**1.1** En grupo, realizá el alineamiento de las secuencias **ATTGG** con **AGATGG**, usando el esquema de puntajes: M=1, m=-1, g=-2. 
+#### ✏️ Paso 1
+En grupo, realizá el alineamiento de las secuencias **ATTGG** con **AGATGG**, usando el esquema de puntajes: M=1, m=-1, g=-2. 
 
 ![ejDynamic](./img/matrixNW.png)
 
@@ -246,7 +251,8 @@ Para esto, abrí el siguiente [Google Jamboard](https://jamboard.google.com/d/1M
 ¡Ahora estás listo para empezar! Recordá rellenar la matriz con todos los puntajes y flechas faltantes. Cuando termines, reconstruí el *path* del alineamiento.
 --->
 
-**1.2** Cuando termines el ejercicio anterior podés corrobar la solución que hallaste ingresando en [UniFreiburg-FreiburgRNATools](http://rna.informatik.uni-freiburg.de/Teaching/index.jsp?toolName=Needleman-Wunsch).
+#### ✏️ Paso 2
+Cuando termines el ejercicio anterior podés corrobar la solución que hallaste ingresando en [UniFreiburg-FreiburgRNATools](http://rna.informatik.uni-freiburg.de/Teaching/index.jsp?toolName=Needleman-Wunsch).
 
 Seguí las siguientes instrucciones para usar este recurso web:
 
@@ -263,13 +269,15 @@ En el output podrás apreciar dos salidas:
 
 * A la derecha, se observa el alineamiento final, donde un match se esquematiza en con \*, un mismatch con \| y un gap con \_.
 
-**1.3** Respondé a las siguientes preguntas:
+#### ✏️ Preguntas guía:
 
-**1.3.1** Reproducí el alineamiento que vimos como ejemplo al inicio (**TCGCA** con **TCCA**, esquema de puntajes: M=1, m=-1, g=-2) en la web de la [UniFreiburg-FreiburgRNATools](http://rna.informatik.uni-freiburg.de/Teaching/index.jsp?toolName=Needleman-Wunsch)
+#### ✏️ Pregunta 1
+Reproducí el alineamiento que vimos como ejemplo al inicio (**TCGCA** con **TCCA**, esquema de puntajes: M=1, m=-1, g=-2) en la web de la [UniFreiburg-FreiburgRNATools](http://rna.informatik.uni-freiburg.de/Teaching/index.jsp?toolName=Needleman-Wunsch)
 
-¿Cuántas soluciones óptimas hay para este alineamiento? ¿Sucede lo mismo para el alineamiento que realizaste en el **Ejercicio 1.1**? ¿Por qué?
+¿Cuántas soluciones óptimas hay para este alineamiento? ¿Sucede lo mismo para el alineamiento que realizaste en el ✏️ Paso 1? ¿Por qué?
 
-**1.3.2** Observá con detenimiento el output del panel de la izquierda (la matriz) 
+#### ✏️ Pregunta 2
+Observá con detenimiento el output del panel de la izquierda (la matriz) 
 
 Seleccioná una celda. ¿Qué sucede cuando cliqueás en una celda y se colorea en <span style="color:green;font-weight:bold">verde</span> y la celda aledaña a la misma en <span style="color:pink;font-weight:bold">rosa</span>?
 ¿A qué corresponde este coloreado o resaltado de las celdas?
@@ -308,17 +316,44 @@ Nosotros podemos utilizar la herramienta de EMBOSS ```dotmatcher``` para generar
 
 ### Ejercicio 2
 
-**2.1** Utilizá la secuencia *HS-ch11-fragment.fasta* que se encuentra en la carpeta *data* para compararla contra sí misma. Esta secuencia es un pequeño fragmento del cromosoma 1 de *Homo sapiens* y la vamos a utilizar únicamente para ver algunos de los patrones que podemos encontrar en un dotplot. 
+Generá la carpeta de trabajo con la estructura que vimos en el [TP1](https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP01a_Linux/#pregunta-3)
 
+#### ✏️ Paso 1
+Descargá los materiales de este TP ejecutando el siguiente comando: 
+
+```Bash
+wget https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP02_Alineamientos/data/Data-TP2.zip
+```
+
+#### ✏️ Paso 2
+Descomprimí los materiales usando el siguiente comando 
+
+```Bash
+unzip Data-TP2.zip
+```
+
+#### ✏️ Paso 3
+Listá el contenido de la carpeta datos  
+
+```Bash
+ls
+```
+
+#### ✏️ Paso 4
+Utilizá la secuencia *HS-ch11-fragment.fasta* que se encuentra en la carpeta *data* para compararla contra sí misma. Esta secuencia es un pequeño fragmento del cromosoma 1 de *Homo sapiens* y la vamos a utilizar únicamente para ver algunos de los patrones que podemos encontrar en un dotplot. 
+
+Visualizá el archivo *HS-ch11-fragment.fasta* 
+
+```Bash
+head HS-ch1-fragment.fasta 
+```
+
+#### ✏️ Paso 5
 Generá un dotplot utilizando la secuencia *HS-ch11-fragment.fasta* contra sí misma.
 
 ```Bash
-!dotmatcher -graph pdf HS-ch1-fragment.fasta HS-ch1-fragment.fasta
+dotmatcher -graph pdf HS-ch1-fragment.fasta HS-ch1-fragment.fasta
 ```
-
-!!! attention "Atención"
-
-    Recuerden abrir el archivo *HS-ch11-fragment.fasta* y chequear que la secuencia es de ADN. Es una buena práctica conocer qué hay en los archivos que vamos a utilizar. 
 
 **¿Qué podés interpretar de este dotplot?**
 
@@ -332,7 +367,7 @@ Esto quiere decir que ```dotmatcher``` sólo va a poner un punto cuando un fragm
 Por ejemplo:
 
 ```Bash
-!dotmatcher -graph pdf -windowsize 50 -threshold 20 HS-ch1-fragment.fasta HS-ch1-fragment.fasta
+dotmatcher -graph pdf -windowsize 50 -threshold 20 HS-ch1-fragment.fasta HS-ch1-fragment.fasta
 ```
 
 Si aumentás estos parámetros podés ir eliminando fragmentos que corresponden a secciones compartidas más cortas, sin embargo existe una relación de compromiso, utilizar tamaño de ventana y umbral muy grandes nos llevan a perder información por lo que hay que seleccionarlos con cuidado. Aqui hay algunos patrones con los que te podés encontrar en este tipo de plots:
@@ -348,17 +383,50 @@ Si aumentás estos parámetros podés ir eliminando fragmentos que corresponden 
 **g)** Secuencias con alta conservación.  
 **h)** Inserción o deleción.  
 
-**2.2** Cambiá los parámetros *windowsize* y *threshold* hasta obtener un plot que te parezca adecuado. **¿Qué podés interpretar del mismo?** Identificá patrones.
+#### ✏️ Paso 5
+Cambiá los parámetros *windowsize* y *threshold* hasta obtener un plot que te parezca adecuado. **¿Qué podés interpretar del mismo?** Identificá patrones.
 
-## Identidad, Similitud y Homología
+#### ✏️ Paso 6
+- Ingresá a [Dotlet.vital-it.ch](https://dotlet.vital-it.ch/).
+- Haz clic en **`Input`**.
+- Pega tu secuencia `HS-ch11-fragment.fasta` (con o sin cabecera `>`).
+- Ponle un nombre (ej. `HS-ch11`) y haz clic en **`Ok`**.
+- En los menús desplegables (Horizontal y Vertical), selecciona la misma secuencia (`HS-ch11`) en ambos. Esto hará una **autocomparación** para buscar repeticiones internas.
 
-Los términos identidad, similitud y homología se suelen utilizar como sinónimos por muchos investigadores, sin embargo no lo son.
+#### ✏️ Paso 7
+- Es el número de letras que se comparan a la vez.
+- **Valores recomendados para ADN:**
+  - **7-9:** Muy sensible, pero genera mucho ruido.
+  - **10-12:** Punto de equilibrio ideal (empieza aquí).
+  - **15-20:** Muy estricto, solo muestra repeticiones largas y perfectas.
+- Haz clic en **`Compute`** para generar el gráfico.
 
-* La **identidad** es una es una característica cuantitativa de un par de secuencias, donde se cuenta cuántos elementos (residuos, nucleótidos, aminoácidos etc) son idénticos entre ambas secuencias después de alinearlas. 
+#### ✏️ Paso 8
+Al hacer `Compute`, aparecerá un gráfico de barras (histograma):
 
-* La **similitud** es una característica cuantitativa de un par de secuencias, donde se establece en qué grado estas se parecen (por ejemplo aplicando los algoritmos antes vistos, utilizando un sistema de puntaje) después de alinearlas. 
+- **Pico enorme a la izquierda** → Ruido (coincidencias al azar).
+- **Pico pequeño a la derecha** → Señal biológica real.
+- **Acción:** Arrastra la **manija izquierda** (umbral inferior) justo hasta el **valle** que separa ambos picos.
+- **Resultado:** El fondo de puntos sucios desaparece y solo quedan las diagonales nítidas.
 
-* La **homología**, por otro lado, es una característica cualitativa, dos secuencias SON o NO SON homólogas. Homología implica específicamente que el par de secuencias estudiadas *provienen de un mismo ancestro común*. Esta afirmación es completamente hipotética, ya que, salvo en contados casos, no se puede corroborar. Uno puede inferir que este es el caso dado la similitud observada en las secuencias actuales, sin tener acceso a las secuencias ancestrales.
+#### ✏️ Paso 9
+- **Diagonal principal:** Línea recta de esquina a esquina. Es la secuencia comparada consigo misma (siempre presente).
+- **Diagonales paralelas (fuera de la principal):** Indican **repeticiones internas**. Cuanto más larga y clara es la línea, más conservada está la repetición.
+
+#### ✏️ Paso 10
+- Haz **clic izquierdo** sobre cualquier punto o diagonal del gráfico.
+- En la ventana inferior se mostrará el alineamiento exacto de esa posición.
+- Usa las **teclas de flecha (↑, ↓, ←, →)** para moverte a lo largo de la diagonal y examinar la repetición en detalle.
+
+!!! info "Identidad, Similitud y Homología"
+
+    Los términos identidad, similitud y homología se suelen utilizar como sinónimos por muchos investigadores, sin embargo no lo son.
+
+    * La **identidad** es una es una característica cuantitativa de un par de secuencias, donde se cuenta cuántos elementos (residuos, nucleótidos, aminoácidos etc) son idénticos entre ambas secuencias después de alinearlas. 
+
+    * La **similitud** es una característica cuantitativa de un par de secuencias, donde se establece en qué grado estas se parecen (por ejemplo aplicando los algoritmos antes vistos, utilizando un sistema de puntaje) después de alinearlas. 
+
+    * La **homología**, por otro lado, es una característica cualitativa, dos secuencias SON o NO SON homólogas. Homología implica específicamente que el par de secuencias estudiadas *provienen de un mismo ancestro común*. Esta afirmación es completamente hipotética, ya que, salvo en contados casos, no se puede corroborar. Uno puede inferir que este es el caso dado la similitud observada en las secuencias actuales, sin tener acceso a las secuencias ancestrales.
 
 !!! attention "Atención"
 
@@ -368,25 +436,30 @@ A partir de esta relación entre similitud y homología se pueden inferir relaci
 
 ### Ejercicio 3
 
-**3.1** Determinar qué especies están más relacionadas utilizando la ribonucleasa pancreática de caballo (*Equus caballus*), ballena enana (*Balaenoptera acutorostrata*) y canguro rojo (*Macropus rufus*).
+Determinar qué especies están más relacionadas utilizando la ribonucleasa pancreática de caballo (*Equus caballus*), ballena enana (*Balaenoptera acutorostrata*) y canguro rojo (*Macropus rufus*).
  
-**3.1.1** Utilizá la herramienta de alineamiento global de EMBOSS ```needle``` (pueden leer el manual para ver que opciones admite) para comparar las tres secuencias.   
+#### ✏️ Paso 1
+Utilizá la herramienta de alineamiento global de EMBOSS ```needle``` (pueden leer el manual para ver que opciones admite ejecutnado el comando ```man needle```) para comparar las tres secuencias.   
 
 ```Bash
 needle -gapopen 10 -gapextend 1 -asequence *secuencia_1* -bsequence *secuencia_2* -outfile *salida*
 ```
-**3.1.2** Observá e interpretá las salidas obtenidas.
+#### ✏️ Paso 2
+Observá e interpretá las salidas obtenidas.
 
 * ¿Qué secuencias son más similares? ¿Tiene sentido el resultado obtenido?
 
-**3.1.3** Analizá árbol filogenético de la Fig. 1 del [paper](https://drive.google.com/file/d/1CHS7KCkgDQvzqQ2A_l4y4LKRaoo8Eraf/view?usp=sharing) de O'Leary *et al.*, 2013. 
+#### ✏️ Paso 3
+Analizá árbol filogenético de la Fig. 1 del [paper](https://drive.google.com/file/d/1CHS7KCkgDQvzqQ2A_l4y4LKRaoo8Eraf/view?usp=sharing) de O'Leary *et al.*, 2013. 
 Sabiendo que los caballos y las ballenas pertenecen al clado *Euungulata* y los canguros al clado *Marsupialia*, ubicá estos clado en el árbol.
 
-* ¿Esta información coincide con los resultados que obtuviste en **3.1.3**?
+* ¿Esta información coincide con los resultados que obtuviste en el Paso 2?
 
 
 ![Animales](./img/Animales.png)
 
+
+<!--
 **3.2** Realizá el mismo procedimiento pero esta vez para determinar si los mamuts (*Mammuthus primigenius*) son más cercanos a los elefantes africanos (*Loxodonta africana*) o asiáticos (*Elephas maximus*) utilizando la secuencia de la cadena alfa de la hemoglobina.  
 
 **3.2.1** ¿Qué te sugieren los resultados obtenidos?
@@ -510,3 +583,73 @@ Para solucionar el problema, decide aplicar las herramientas que aprendió en el
 
     Para resolver los puntos 2 y 3 se puede hacer un script de bash tanto para el alineamiento, para ver los % de similitud y para crear dotplots. El parámetro que tienen que agregar a dotmatcher para que el archivo generado sea un pdf de nombre “grafico.pdf” es -graph pdf -goutfile grafico. Si lo logran (o si lo intentan), los invito a incluirlo en el trabajo práctico (aún cuando no les salió).
 
+-->
+
+# Ejercicio a informar
+
+
+!!! info 
+
+    <span style="font-weight:bold;">Fecha límite de entrega:</span> Viernes, 28 de agosto 2026, 23:59hs.
+
+## Contexto biológico
+
+El virus del dengue (DENV) es un arbovirus de la familia *Flaviviridae*, transmitido por mosquitos del género *Aedes* (principalmente *Aedes aegypti*). Existen **cuatro serotipos** (DENV‑1, DENV‑2, DENV‑3 y DENV‑4) que circulan simultáneamente en regiones endémicas. La infección por un serotipo genera inmunidad duradera solo contra ese serotipo, y una segunda infección por un serotipo diferente aumenta el riesgo de dengue grave (dengue hemorrágico o síndrome de shock).
+
+El **virus Zika (ZIKV)** es otro flavivirus estrechamente relacionado, transmitido por el mismo vector. Comparte aproximadamente un **55‑60 % de identidad nucleotídica** con el dengue en el gen de la envoltura (E), lo que causa reactividad cruzada en pruebas serológicas y hace esencial la confirmación molecular.
+
+El **gen de la envoltura (E)** es el principal objetivo para la genotipificación y el diseño de vacunas, ya que contiene los epitopos neutralizantes y es la región más variable entre serotipos.
+
+En este práctico, usted recibirá **tres muestras clínicas secuenciadas** (archivo `secuencia_incognita.fasta`). Deberá determinar si corresponden a dengue, a Zika o si la secuenciación ha fallado. Para ello, comparará las secuencias problema con un conjunto de referencias de los cuatro serotipos de dengue (archivo `all_sequences.fasta`).
+
+## Archivos de trabajo
+
+A continuación se listan los archivos necesarios para el práctico.
+
+[:fontawesome-solid-download: Materiales](data/Data-informe.zip){ .md-button .md-button--primary }
+
+- **dengue_sequences.fasta** – Secuencias de referencia de los cuatro serotipos de dengue (DENV‑1 a DENV‑4). 
+
+- **secuencia_incognita.fasta** – Contiene las tres muestras clínicas a analizar (Paciente_001, Paciente_002, Paciente_003). 
+
+- **zika_reference.fasta** – Secuencia de referencia del virus Zika.
+
+> **Tip:** Si necesita dividir el archivo `all_sequences.fasta` en archivos individuales, use el comando `seqretsplit all_sequences.fasta` (EMBOSS).
+
+## Consignas
+
+### 1. Verificación de especie
+
+Utilizando la herramienta de alineamiento global `needle` (EMBOSS), compare cada una de las tres secuencias de los pacientes con **todas** las secuencias de referencia de dengue (DENV‑1 a DENV‑4).
+
+- ¿Pertenece alguna de las muestras al virus dengue?
+- Si alguna no es dengue, ¿a qué otro virus podría corresponder? (Investigue en bases de datos públicas o use su criterio basado en el porcentaje de identidad).
+
+### 2. Genotipificación (determinación del serotipo)
+
+Para las muestras que resultaron ser dengue, calcule el **porcentaje de similitud** con cada uno de los cuatro serotipos de referencia.
+
+- ¿A qué serotipo pertenece cada muestra?
+- ¿Qué porcentaje de identidad considera suficiente para asignar un serotipo? (Investigue el criterio del 90 % de identidad en la región E usado en la literatura).
+
+### 3. Análisis por dotplot y región variable
+
+Seleccione la muestra que resultó ser dengue y compárela, mediante un **dotplot** (puede usar `dotmatcher` de EMBOSS o la herramienta web Dotlet), con:
+
+- Otro serotipo del mismo nivel de riesgo (ej. DENV‑1 si su muestra es DENV‑2).
+- Un serotipo de distinto nivel de riesgo (ej. DENV‑4, generalmente asociado a formas más leves).
+
+- ¿Observa regiones de alta similitud y regiones de baja similitud?
+- Identifique una región de aproximadamente **100‑200 pb** donde el dotplot muestre claramente diferencias (por ejemplo, un gap o una zona con pocos puntos).
+- ¿Cómo podría aprovechar esa región para diseñar un ensayo de PCR específica para el serotipo encontrado?
+
+### 4. (Opcional) Automatización con script en Bash
+
+Si desea, puede escribir un script de Bash que:
+
+1. Divida `all_sequences.fasta` en archivos individuales.
+2. Realice un bucle `for` para alinear cada paciente con cada referencia usando `needle`.
+3. Extraiga los porcentajes de identidad de las salidas y los guarde en una tabla (`resultados.txt`).
+4. Genere automáticamente un dotplot en formato PDF con `dotmatcher` (use `-graph pdf` y `-goutfile grafico`).
+
+Incluya el script como parte de su entrega (no obligatorio, pero sumará puntos).
