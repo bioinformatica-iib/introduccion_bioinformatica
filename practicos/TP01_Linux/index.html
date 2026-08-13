@@ -2043,7 +2043,7 @@
 <p>Familiarizarse con el uso de la terminal y sus comandos básicos para navegar, crear directorios y manipular archivos.</p>
 </li>
 <li>
-<p>Obtener y procesar datos biológicos reales desde bases de datos públicas usando herramientas de línea de comandos.</p>
+<p>Obtener y procesar datos biológicos reales usando herramientas de línea de comandos.</p>
 </li>
 <li>
 <p>Automatizar tareas utilizando  scripts, para procesar múltiples archivos.</p>
@@ -2052,8 +2052,8 @@
 <h2 id="introduccion-al-tema"><strong>Introducción al Tema</strong></h2>
 <p>En este trabajo práctico vamos a aprender a usar la <strong>línea de comando</strong> de Ubuntu (también referida como <em>terminal</em>, <em>consola</em> o <em>shell</em>). Para muchos de nosotros, que estamos acostumbrados a la interfaz gráfica de sistemas operativos como los de Windows o <em>GUI</em> (por las siglas en ingles: <em>Graphic User Interface</em>), la línea de comando puede parecer un desafío, pero con práctica y algo de paciencia descubrirán que puede resultar amena. Su uso tiene dos ventajas destacables para nuestro campo:</p>
 <ul>
-<li>Nos permitirá trabajar en entornos o programas sin interfaz gráfica (GUI)</li>
-<li>Mediante el uso de programas o <em>scripts</em>, nos permitirá automatizar procesos, acelerando el trabajo y minimizando la cantidad de errores que podemos cometer con tareas repetitivas</li>
+<li>Nos permitirá trabajar en entornos o programas sin interfaz gráfica (<em>GUI</em>).</li>
+<li>Mediante el uso de programas o <em>scripts</em>, nos permitirá automatizar procesos, acelerando el trabajo y minimizando la cantidad de errores que podemos cometer con tareas repetitivas.</li>
 </ul>
 <h2 id="definicion-y-perfil-del-bioinformatico">Definición y perfil del bioinformático</h2>
 <p>El término "bioinformático" es amplio y no refiere a un único perfil. Un bioinformático posee, de manera combinada:</p>
@@ -2191,11 +2191,11 @@
 <h3 id="introduccion-a-linux-ubuntu">Introducción a Linux / Ubuntu</h3>
 <p>Linux es un sistema operativo de código abierto, estable y muy utilizado en entornos de investigación y servidores.<br>
 Ubuntu es una de sus distribuciones más populares, conocida por su facilidad de uso y amplia comunidad de soporte.  </p>
-<p>En bioinformática y análisis de datos, Linux ofrece ventajas importantes: permite manejar grandes volúmenes de información, automatizar tareas mediante scripts, instalar software científico fácilmente y ejecutar pipelines de análisis de manera reproducible.  </p>
+<p>En bioinformática y análisis de datos, Linux ofrece ventajas importantes: permite manejar grandes volúmenes de información, automatizar tareas mediante <em>scripts</em>, instalar software científico fácilmente y ejecutar pipelines de análisis de manera reproducible.  </p>
 <p>A través de la terminal, los usuarios pueden interactuar directamente con el sistema operativo, ejecutar programas, gestionar archivos y carpetas, y combinar herramientas de manera flexible.</p>
 <h3 id="introduccion-a-bash">Introducción a Bash</h3>
 <p>Bash (Bourne Again SHell) es un intérprete de comandos que permite interactuar con el sistema operativo mediante texto.  </p>
-<p>Usando Bash, los usuarios pueden navegar entre carpetas, gestionar archivos, ejecutar programas, combinar comandos y automatizar tareas repetitivas mediante scripts.  </p>
+<p>Usando Bash, los usuarios pueden navegar entre carpetas, gestionar archivos, ejecutar programas, combinar comandos y automatizar tareas repetitivas mediante <em>scripts</em>.  </p>
 <p>En bioinformática, Bash es fundamental para procesar grandes volúmenes de datos, lanzar pipelines de análisis y manipular archivos de secuenciación de manera eficiente sin necesidad de interfaces gráficas.</p>
 <h3 id="introduccion-al-uso-de-la-terminal">Introducción al uso de la terminal</h3>
 <p>La <strong>terminal</strong> (también llamada línea de comandos, consola o shell) es una herramienta fundamental en bioinformática. A diferencia de los programas con interfaces gráficas (ventanas y botones), la terminal funciona a través de <strong>comandos de texto</strong> que escribís directamente. Puede parecer intimidante al principio, pero es increíblemente poderosa: te permite ejecutar programas, manejar archivos, conectar a servidores remotos y automatizar tareas repetitivas con solo unas pocas líneas.</p>
@@ -2208,18 +2208,18 @@ Ubuntu es una de sus distribuciones más populares, conocida por su facilidad de
 <li>Desde afuera de una carpeta: <strong>Boton derecho en la carpeta</strong> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg></span> <strong>Abrir en el terminal</strong></li>
 <li>Desde adentro de una carpeta: <strong>Herramientas</strong> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg></span> <strong>Abrir la carpeta actual en un terminal</strong> (o apretar <span class="keys"><kbd class="key-f4">F4</kbd></span>)</li>
 </ul>
-<p>La terminal funciona como un explorador de archivos que se mueve entre las carpetas. Los primeros dos métodos van a abrir la terminal en <strong>/home/ibioinfo</strong>, mientras que los últimos dos métodos van a abrir la terminal en la carpeta elegida. Si en algun momento les decimos que abran la terminal y no aclaramos otra cosa nos referimos a abrirla en <strong>/home/ibioinfo</strong>.</p>
-<p>Abran la terminal en <strong>/home/ibioinfo</strong> y deberian ver algo así:</p>
-<div class="highlight"><pre><span></span><code>ibioinfo@ibioinfo-VirtualBox:~$
+<p>La terminal funciona como un explorador de archivos que se mueve entre las carpetas. Los primeros dos métodos van a abrir la terminal en <strong>/home/user</strong>, mientras que los últimos dos métodos van a abrir la terminal en la carpeta elegida. Si en algun momento les decimos que abran la terminal y no aclaramos otra cosa nos referimos a abrirla en <strong>/home/user</strong>.</p>
+<p>Abran la terminal en <strong>/home/user</strong> y deberian ver algo así:</p>
+<div class="highlight"><pre><span></span><code>user@datos_de_la_computadora:~$
 </code></pre></div>
-<p>Donde <strong>ibioinfo</strong> es el nombre del usuario actual e <strong>ibioinfo-VirtualBox</strong> el nombre de la computadora (que justo en este caso son similares, pero no es necesario). El <strong>~</strong> después de los dos puntos (conocido como "virgulilla", "tilde" o "cosito de la ñ") parece ser parte de la terminal, pero en realidad está indicando la carpeta en la que se encuentra en este momento. Como cada usuario trabaja mas que nada en su carpeta, Ubuntu le asigna el símbolo <strong>~</strong> a esa carpeta para simplificar los directorios que aparecen en la terminal. En nuestro caso <strong>~</strong> equivale a <strong>/home/ibioinfo</strong> y puede ser que nos refiramos a esa carpeta como su <em>home directory</em> o simplemente su <em>home</em>.</p>
+<p>Donde <strong>user</strong> es el nombre del usuario actual e <strong>datos_de_la_computadora</strong> el nombre de la computadora. El <strong>~</strong> después de los dos puntos (conocido como "virgulilla", "tilde" o "cosito de la ñ") parece ser parte de la terminal, pero en realidad está indicando la carpeta en la que se encuentra en este momento. Como cada usuario trabaja mas que nada en su carpeta, Ubuntu le asigna el símbolo <strong>~</strong> a esa carpeta para simplificar los directorios que aparecen en la terminal. En nuestro caso <strong>~</strong> equivale a <strong>/home/user</strong> y puede ser que nos refiramos a esa carpeta como su <em>home directory</em> o simplemente su <em>home</em>.</p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <p>Aclaraciones por si son fanáticos de los atajos de teclado:</p>
 <ul>
 <li>Para copiar texto en la terminal hay que usar <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-c">C</kbd></span>. En en resto de Ubuntu es normal (<span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-c">C</kbd></span>).</li>
 <li>Para pegar texto en la terminal hay que usar <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-v">V</kbd></span>. En en resto de Ubuntu es normal (<span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-v">V</kbd></span>).</li>
-<li>Al apretar <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-c">C</kbd></span> en la terminal le estan diciendo que corte forzosamente el programa que está corriendo. Si bien hay que tener cuidado con no cortar un proceso importante a la mitad, este atajo del teclado es útil si un programa se te quedó colgado o similar.</li>
+<li>Al apretar <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-c">C</kbd></span> en la terminal le están diciendo que corte forzosamente el programa que está corriendo. Si bien hay que tener cuidado con no cortar un proceso importante a la mitad, este atajo del teclado es útil si un programa se te quedó colgado o similar.</li>
 </ul>
 </div>
 <h3 id="que-es-un-comando">¿Qué es un comando?</h3>
@@ -2236,10 +2236,10 @@ Ubuntu es una de sus distribuciones más populares, conocida por su facilidad de
 <ul>
 <li>La terminal es <strong>sensible a mayúsculas y minúsculas</strong>, por lo que <code>File.txt</code> y <code>file.txt</code> son archivos distintos.  </li>
 <li>Se pueden usar <strong>tabulaciones</strong> para autocompletar nombres de archivos o carpetas, evitando errores de tipeo.  </li>
-<li>Los <strong>comentarios</strong> se escriben con <code>#</code> y la terminal los ignora, útil para documentar scripts.</li>
+<li>Los <strong>comentarios</strong> se escriben con <code>#</code> y la terminal los ignora, útil para documentar <em>scripts</em>.</li>
 </ul>
 <h4 id="comandos-basicos-de-bash">Comandos básicos de Bash</h4>
-<p>A continuación hay una lista de los comandos más usados en Bash, vamos a ir viendo los más importantes para este curso en la siguiente sección</p>
+<p>A continuación hay una lista de los comandos más usados en Bash, vamos a ir viendo los más importantes para este curso en la siguiente sección:</p>
 <table>
 <thead>
 <tr>
@@ -2467,16 +2467,16 @@ Esto permite ejecutar comandos sobre los archivos correctos y organizar proyecto
 <h3 id="estructura-de-directorios-de-ubuntu">Estructura de directorios de Ubuntu</h3>
 <p>La organización de archivos en Ubuntu y Lubuntu es bastante diferente a la de Windows. Si bien no vamos a detallar completamente toda la estructura y que es cada carpeta (porque el 95% no lo van a usar en esta materia), es importante tener una idea de lo básico:</p>
 <ul>
-<li><strong>/</strong> Carpeta raiz, o <em>root</em>. Contiene al resto de las carpetas<ul>
-<li><strong>/etc</strong>: Configuraciones del sistema para todos los usuarios (mucho cuidado al tocar)</li>
-<li><strong>/home</strong>: Ubicación de los directorios de los diferentes usuarios (o en este caso el único usuario)<ul>
-<li><strong>/home/user</strong>: Directorio del usuario <em>user</em>. Es el lugar donde van a trabajar la mayoría del tiempo (incluye tanto el Escritorio como Documentos) y donde se abre por defecto la terminal (más sobre esto en un ratito). Comúnmente referida como <em>home directory</em> o <em>home</em> del usuario <em>user</em></li>
+<li><strong>/</strong> Carpeta raiz, o <em>root</em>. Contiene al resto de las carpetas.<ul>
+<li><strong>/etc</strong>: Configuraciones del sistema para todos los usuarios (mucho cuidado al tocar).</li>
+<li><strong>/home</strong>: Ubicación de los directorios de los diferentes usuarios (o en este caso el único usuario).<ul>
+<li><strong>/home/user</strong>: Directorio del usuario <em>user</em>. Es el lugar donde van a trabajar la mayoría del tiempo (incluye tanto el Escritorio como Documentos) y donde se abre por defecto la terminal (más sobre esto en un ratito). Comúnmente referida como <em>home directory</em> o <em>home</em> del usuario <em>user</em>.</li>
 </ul>
 </li>
-<li><strong>/media</strong>: Si fuera una computadora normal (no VM) aca aparecerían los pendrives. En nuestro caso aca aparecen por defecto las carpetas compartidas con la PC host</li>
-<li><strong>/tmp</strong>: Ubicación de los archivos temporales de los programas</li>
-<li><strong>/var</strong>: Ubicación de los archivos variables de los programas, como logs, bases de datos, paginas webs, etc<ul>
-<li><strong>/var/log</strong>: Probablemente la subcarpeta más usada de <strong>/var</strong>. Contiene los logs de los programas (que a veces es la única forma de saber porque algo no anduvo)</li>
+<li><strong>/media</strong>: Si fuera una computadora normal (no VM) aca aparecerían los pendrives. En nuestro caso aca aparecen por defecto las carpetas compartidas con la PC host.</li>
+<li><strong>/tmp</strong>: Ubicación de los archivos temporales de los programas.</li>
+<li><strong>/var</strong>: Ubicación de los archivos variables de los programas, como logs, bases de datos, páginas webs, etc.<ul>
+<li><strong>/var/log</strong>: Probablemente la subcarpeta más usada de <strong>/var</strong>. Contiene los logs de los programas (que a veces es la única forma de saber porqué algo no anduvo).</li>
 </ul>
 </li>
 </ul>
@@ -2484,7 +2484,7 @@ Esto permite ejecutar comandos sobre los archivos correctos y organizar proyecto
 </ul>
 <p>Esto es simplemente un vistazo rápido. Si quieren la lista completa de subdirectorios de Ubuntu la pueden encontrar en <a href="https://help.ubuntu.com/community/LinuxFilesystemTreeOverview">esta página</a>, pero tengan en cuenta que tocar cualquier cosa fuera de <strong>/home</strong> conlleva la posibilidad de arruinar la computadora. En esta materia vamos a usar principalmente <strong>/home</strong> y <strong>/media</strong>.</p>
 <h3 id="paths-relativos-y-absolutos">Paths relativos y absolutos</h3>
-<p>En programación, un path (o ruta) es la cadena de caracteres que indica la ubicación de un archivo o directorio dentro del sistema de archivos.</p>
+<p>En programación, un <em>path</em> (o ruta) es la cadena de caracteres que indica la ubicación de un archivo o directorio dentro del sistema de archivos.</p>
 <h4 id="paths-absolutos">Paths absolutos</h4>
 <p>Un <strong>path absoluto</strong> es aquel que especifica la ubicación completa y exacta de un archivo o directorio desde la raíz del sistema. Esto significa que no depende de dónde estés parado actualmente; siempre apunta al mismo lugar sin importar el directorio de trabajo. Por ejemplo, en Linux o macOS, un path absoluto comienza con una barra inclinada (/), como en <code>/home/usuario/documentos/informe.txt</code>. En Windows, comienza con la letra de la unidad, como en <code>C:\Users\Usuario\Documentos\informe.txt</code>. Los paths absolutos son útiles cuando necesitás referenciar un archivo desde cualquier parte del sistema sin ambigüedades.</p>
 <h4 id="paths-relativos">Paths relativos</h4>
@@ -2497,7 +2497,7 @@ Esto permite ejecutar comandos sobre los archivos correctos y organizar proyecto
 <li>El punto (.) representa el directorio actual.</li>
 <li>Los dos puntos (..) representan el directorio padre (un nivel arriba).</li>
 <li>La barra inclinada (/) se usa en Linux, macOS y sistemas Unix como separador de carpetas.</li>
-<li>La barra invertida () se usa en Windows como separador (aunque muchas herramientas modernas aceptan también la barra inclinada).</li>
+<li>La barra invertida ("\") se usa en Windows como separador (aunque muchas herramientas modernas aceptan también la barra inclinada).</li>
 </ul>
 <p>Entender la diferencia entre paths absolutos y relativos es clave para evitar errores como "archivo no encontrado", especialmente cuando trabajás en proyectos que se mueven entre distintos equipos o sistemas operativos.</p>
 <h3 id="crear-y-eliminar-carpetas">Crear y eliminar carpetas</h3>
@@ -2515,12 +2515,12 @@ mkdir<span class="w"> </span><span class="o">[</span>opciones<span class="o">]</
 rmdir<span class="w"> </span><span class="o">[</span>opciones<span class="o">]</span><span class="w"> </span>carpeta
 </code></pre></div>
 <ul>
-<li><code>carpeta</code> → nombre de la carpeta a crear o eliminar  </li>
-<li><code>[opciones]</code> → parámetros adicionales como <code>-p</code> para crear carpetas anidadas</li>
+<li><code>carpeta</code> → nombre de la carpeta a crear o eliminar.  </li>
+<li><code>[opciones]</code> → parámetros adicionales como <code>-p</code> para crear carpetas anidadas.</li>
 </ul>
 <div class="admonition ejemplos">
 <p class="admonition-title">Ejemplos</p>
-<p>Los ejemplos que aparecen a continuación sirven solo para entender la sintaxis, no los corran! 
+<p>Los ejemplos que aparecen a continuación sirven solo para entender la sintaxis, <strong>no los corran!</strong> 
 El código que deben ejecutar está indicado en la sección de <strong>Preguntas</strong>.</p>
 <p>Crear una carpeta simple</p>
 <div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>resultados
@@ -2770,7 +2770,7 @@ El código que deben ejecutar está indicado en la sección de <strong>Preguntas
 </table>
 <div class="admonition ejemplos">
 <p class="admonition-title">Ejemplos</p>
-<p>Los ejemplos que aparecen a continuación sirven solo para entender la sintaxis, ¡no los corran! El código que deben ejecutar está indicado en la sección de <strong>Preguntas</strong>.</p>
+<p>Los ejemplos que aparecen a continuación sirven solo para entender la sintaxis, <strong>¡no los corran!</strong> El código que deben ejecutar está indicado en la sección de <strong>Preguntas</strong>.</p>
 <p>Descargar un archivo y guardarlo con el nombre original:
 </p><div class="highlight"><pre><span></span><code><span class="w">    </span>wget<span class="w"> </span><span class="s2">"https://ejemplo.com/archivo.txt"</span>
 </code></pre></div>
@@ -2811,7 +2811,7 @@ El código que deben ejecutar está indicado en la sección de <strong>Preguntas
 </ul>
 <div class="admonition ejemplos">
 <p class="admonition-title">Ejemplos</p>
-<p>Los ejemplos que aparecen a continuación sirven solo para entender la sintaxis, no los corran! 
+<p>Los ejemplos que aparecen a continuación sirven solo para entender la sintaxis, <strong>no los corran!</strong> 
 El código que deben ejecutar está indicado en la sección de <strong>Preguntas</strong>.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Ver las primeras 10 líneas de sample.fastq</span>
 head<span class="w"> </span>sample.fastq
@@ -2827,7 +2827,7 @@ head<span class="w"> </span>-n<span class="w"> </span><span class="m">20</span><
 </ul>
 <div class="admonition ejemplos">
 <p class="admonition-title">Ejemplos</p>
-<p>Los ejemplos que aparecen a continuación sirven solo para entender la sintaxis, no los corran! 
+<p>Los ejemplos que aparecen a continuación sirven solo para entender la sintaxis, <strong>no los corran!</strong> 
 El código que deben ejecutar está indicado en la sección de <strong>Preguntas</strong>.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Ver las últimas 10 líneas de sample.fastq</span>
 tail<span class="w"> </span>sample.fastq
@@ -3081,7 +3081,7 @@ tail<span class="w"> </span>-n<span class="w"> </span><span class="m">15</span><
 <div class="highlight"><pre><span></span><code>grep<span class="w"> </span><span class="s2">"^&gt;"</span><span class="w"> </span>pacientes.fasta<span class="w"> </span>&gt;<span class="w"> </span>../resultados/pacientes_nombres.csv
 </code></pre></div>
 <h4 id="pregunta-11">✏️ Pregunta 11</h4>
-<p>Revisa que el archivo <code>pacientes_nombres.csv</code> se haya generado correctamente </p></div>
+<p>Revisa que el archivo <code>pacientes_nombres.csv</code> se haya generado correctamente. </p></div>
 
 
 
