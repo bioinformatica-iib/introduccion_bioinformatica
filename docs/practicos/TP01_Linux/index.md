@@ -27,7 +27,7 @@ tags:
 ## Objetivos
 1. Familiarizarse con el uso de la terminal y sus comandos básicos para navegar, crear directorios y manipular archivos.
 
-2. Obtener y procesar datos biológicos reales desde bases de datos públicas usando herramientas de línea de comandos.
+2. Obtener y procesar datos biológicos reales usando herramientas de línea de comandos.
 
 3. Automatizar tareas utilizando  scripts, para procesar múltiples archivos.
 
@@ -178,16 +178,16 @@ Como ya dijimos en la introducción la línea de comando tiene varios nombres, y
 * Desde afuera de una carpeta: **Boton derecho en la carpeta** :material-arrow-right: **Abrir en el terminal**
 * Desde adentro de una carpeta: **Herramientas** :material-arrow-right: **Abrir la carpeta actual en un terminal** (o apretar ++f4++)
 
-La terminal funciona como un explorador de archivos que se mueve entre las carpetas. Los primeros dos métodos van a abrir la terminal en **/home/ibioinfo**, mientras que los últimos dos métodos van a abrir la terminal en la carpeta elegida. Si en algun momento les decimos que abran la terminal y no aclaramos otra cosa nos referimos a abrirla en **/home/ibioinfo**.
+La terminal funciona como un explorador de archivos que se mueve entre las carpetas. Los primeros dos métodos van a abrir la terminal en **/home/user**, mientras que los últimos dos métodos van a abrir la terminal en la carpeta elegida. Si en algun momento les decimos que abran la terminal y no aclaramos otra cosa nos referimos a abrirla en **/home/user**.
 
-Abran la terminal en **/home/ibioinfo** y deberian ver algo así:
+Abran la terminal en **/home/user** y deberian ver algo así:
 
 
 ``` bash
-ibioinfo@ibioinfo-VirtualBox:~$
+user@datos_de_la_computadora:~$
 ```
 
-Donde **ibioinfo** es el nombre del usuario actual e **ibioinfo-VirtualBox** el nombre de la computadora (que justo en este caso son similares, pero no es necesario). El **\~** después de los dos puntos (conocido como "virgulilla", "tilde" o "cosito de la ñ") parece ser parte de la terminal, pero en realidad está indicando la carpeta en la que se encuentra en este momento. Como cada usuario trabaja mas que nada en su carpeta, Ubuntu le asigna el símbolo **\~** a esa carpeta para simplificar los directorios que aparecen en la terminal. En nuestro caso **\~** equivale a **/home/ibioinfo** y puede ser que nos refiramos a esa carpeta como su *home directory* o simplemente su *home*.
+Donde **user** es el nombre del usuario actual e **datos_de_la_computadora** el nombre de la computadora. El **\~** después de los dos puntos (conocido como "virgulilla", "tilde" o "cosito de la ñ") parece ser parte de la terminal, pero en realidad está indicando la carpeta en la que se encuentra en este momento. Como cada usuario trabaja mas que nada en su carpeta, Ubuntu le asigna el símbolo **\~** a esa carpeta para simplificar los directorios que aparecen en la terminal. En nuestro caso **\~** equivale a **/home/user** y puede ser que nos refiramos a esa carpeta como su *home directory* o simplemente su *home*.
 
 !!! info
 
@@ -329,7 +329,7 @@ Además de estos dos tipos, es importante conocer algunos símbolos especiales q
 - El punto (.) representa el directorio actual.
 - Los dos puntos (..) representan el directorio padre (un nivel arriba).
 - La barra inclinada (/) se usa en Linux, macOS y sistemas Unix como separador de carpetas.
-- La barra invertida (\) se usa en Windows como separador (aunque muchas herramientas modernas aceptan también la barra inclinada).
+- La barra invertida ("\") se usa en Windows como separador (aunque muchas herramientas modernas aceptan también la barra inclinada).
 
 Entender la diferencia entre paths absolutos y relativos es clave para evitar errores como "archivo no encontrado", especialmente cuando trabajás en proyectos que se mueven entre distintos equipos o sistemas operativos.
 
