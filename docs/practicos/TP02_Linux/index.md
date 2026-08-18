@@ -17,7 +17,7 @@ tags:
 
 2. Obtener y procesar datos biológicos reales desde bases de datos públicas usando herramientas de línea de comandos.
 
-3. Automatizar tareas utilizando  scripts, para procesar múltiples archivos.
+3. Automatizar tareas utilizando scripts, para procesar múltiples archivos.
 
 ## Parte 1: Introducción a Scripts
 
@@ -41,7 +41,7 @@ tags:
     ```bash
     #!/bin/bash
     # Este script lista a todos los archivos con termiación .fasta de la carpeta de datos
-    cd ../datos/
+    cd ../data/
     echo "Los archivos se encuentran en la siguiente ubicación"
     pwd
     ```
@@ -96,7 +96,7 @@ tags:
     ```bash
     #!/bin/bash
     # Este script lista a todos los archivos con termiación .fasta de la carpeta de datos
-    cd ../datos/
+    cd ../data/
     echo "Los archivos se encuentran en la siguiente ubicación"
     pwd
 
@@ -160,7 +160,7 @@ Las variables son *palabras* que guardan dentro de ellas información como una *
         ``` bash
         #!/bin/bash
         # Este script lista a todos los archivos con la termiación deseada
-        cd ../datos/
+        cd ../data/
         echo "Los archivos se encuentran en la siguiente ubicación"
         pwd
 
@@ -177,7 +177,7 @@ Las variables son *palabras* que guardan dentro de ellas información como una *
         # haciendo en tu programa o script
 
         # Este script lista a todos los archivos con la termiación deseada
-        cd ../datos/
+        cd ../data/
         echo "Los archivos se encuentran en la siguiente ubicación"
         pwd
 
@@ -208,7 +208,7 @@ Las variables son *palabras* que guardan dentro de ellas información como una *
         ``` bash
         #!/bin/bash
         # Este script lista a todos los archivos con la termiación deseada de la carpeta en la que es ejecutado
-        cd ../datos/
+        cd ../data/
         echo "Los archivos se encuentran en la siguiente ubicación"
         pwd
 
@@ -223,7 +223,7 @@ Las variables son *palabras* que guardan dentro de ellas información como una *
 
         # Las lineas que empiezan con # son comentarios, no afectan el código y sirven para aclarar que estas 
         # haciendo en tu programa o script
-        cd ../datos/
+        cd ../data/
         echo "Los archivos se encuentran en la siguiente ubicación"
         pwd
 
@@ -329,7 +329,7 @@ Las variables son importantes, pero gran parte de la programación es controlar 
         ``` bash
         #!/bin/bash
         # Este script lista a todos los archivos con la termiación deseada de la carpeta en la que es ejecutado
-        cd ../datos/
+        cd ../data/
         echo "Los archivos se encuentran en la siguiente ubicación"
         pwd
 
@@ -339,14 +339,14 @@ Las variables son importantes, pero gran parte de la programación es controlar 
 
         if [[ "$tipo_archivo" == ".fasta" ]]; then
             echo "el archivo contiene los siguientes encabezados"
-            grep "^>" ../datos/*.fasta 
+            grep "^>" ../data/*.fasta 
         fi
         ```
 
     === "Código con comentarios"
         ``` bash
         #!/bin/bash
-        cd ../datos/
+        cd ../data/
         echo "Los archivos se encuentran en la siguiente ubicación"
         pwd
 
@@ -362,7 +362,7 @@ Las variables son importantes, pero gran parte de la programación es controlar 
             # Este codigo esta más a la derecha, o *indentado*. Esto se hace con tab y en la mayoría de los lenguajes
             # es solo para entender más fácil el código
             echo "el archivo contiene los siguientes encabezados"
-            grep "^>" ../datos/*.fasta 
+            grep "^>" ../data/*.fasta 
         fi
         # *fi* indica donde termina el condicional
         ```
@@ -409,7 +409,7 @@ Las variables son importantes, pero gran parte de la programación es controlar 
     === "Código"
         ``` bash
         #!/bin/bash
-        cd ../datos/
+        cd ../data/
         echo "Los archivos se encuentran en la siguiente ubicación"
         pwd
 
@@ -419,7 +419,7 @@ Las variables son importantes, pero gran parte de la programación es controlar 
 
         if [[ "$tipo_archivo" == ".fasta" ]]; then
             echo "el archivo contiene los siguientes encabezados"
-            grep "^>" ../datos/*.fasta 
+            grep "^>" ../data/*.fasta 
         else
             echo "No hay archivos .fasta en la carpeta de datos"
         fi
@@ -428,7 +428,7 @@ Las variables son importantes, pero gran parte de la programación es controlar 
     === "Código con comentarios"
         ``` bash
         #!/bin/bash
-        cd ../datos/
+        cd ../data/
         echo "Los archivos se encuentran en la siguiente ubicación"
         pwd
 
@@ -440,7 +440,7 @@ Las variables son importantes, pero gran parte de la programación es controlar 
             # Ahora si la condición es verdad se va a ejecutar el código entre *then* y *else* y luego va a 
             # seguir a partir de *fi*
             echo "el archivo contiene los siguientes encabezados"
-            grep "^>" ../datos/*.fasta 
+            grep "^>" ../data/*.fasta 
         else
             # El código entre *else* y *fi* se ejecuta solo cuando la condición no es verdad
             echo "No hay archivos .fasta en la carpeta de datos"
@@ -494,7 +494,7 @@ Para eso existen los **ciclos** (también llamados **bucles**). Un ciclo es una 
     === "Código"
         ```bash
         #!/bin/bash
-        cd ../datos/
+        cd ../data/
         echo "Los archivos se encuentran en la siguiente ubicación"
         pwd
 
@@ -504,9 +504,9 @@ Para eso existen los **ciclos** (también llamados **bucles**). Un ciclo es una 
 
         if [[ "$tipo_archivo" == ".fasta" ]]; then
             echo "el archivo contiene los siguientes encabezados"
-            grep "^>" ../datos/*.fasta 
+            grep "^>" ../data/*.fasta 
             echo "Paciente" > ../resultados/detalle_pacientes.tsv
-            for nombre in $(grep "^>" ../datos/*.fasta); do
+            for nombre in $(grep "^>" ../data/*.fasta); do
                 echo "${nombre}" >> ../resultados/detalle_pacientes.tsv
             done  
         else
@@ -519,7 +519,7 @@ Para eso existen los **ciclos** (también llamados **bucles**). Un ciclo es una 
     === "Código con comentarios"
         ``` bash
         #!/bin/bash
-        cd ../datos/
+        cd ../data/
         echo "Los archivos se encuentran en la siguiente ubicación"
         pwd
 
@@ -529,10 +529,10 @@ Para eso existen los **ciclos** (también llamados **bucles**). Un ciclo es una 
 
         if [[ "$tipo_archivo" == ".fasta" ]]; then
             echo "el archivo contiene los siguientes encabezados"
-            grep "^>" ../datos/*.fasta
+            grep "^>" ../data/*.fasta
 
             echo "Paciente" > ../resultados/detalle_pacientes.tsv 
-            for nombre in $(grep "^>" ../datos/*.fasta); do
+            for nombre in $(grep "^>" ../data/*.fasta); do
                 # Este bucle se ejecuta una vez por cada línea que empieza con ">".
                 # La variable 'nombre' contiene la línea completa (ej: ">seq1").
 
@@ -576,7 +576,7 @@ Lo que vamos a hacer:
     === "Código"
         ```bash
         #!/bin/bash
-        cd ../datos/
+        cd ../data/
         echo "Los archivos se encuentran en la siguiente ubicación"
         pwd
 
@@ -586,11 +586,11 @@ Lo que vamos a hacer:
 
         if [[ "$tipo_archivo" == ".fasta" ]]; then
             echo "el archivo contiene los siguientes encabezados"
-            grep "^>" ../datos/*.fasta 
+            grep "^>" ../data/*.fasta 
             echo -e "Paciente\tPos103" > ../resultados/informe_final.tsv
 
-            for nombre in $(grep "^>" ../datos/*.fasta); do
-                secuencia=$(grep -A1 "^$nombre" ../datos/pacientes.fasta | tail -n1)
+            for nombre in $(grep "^>" ../data/*.fasta); do
+                secuencia=$(grep -A1 "^$nombre" ../data/pacientes.fasta | tail -n1)
                 aa103=$(echo "$secuencia" | cut -c103)
                 echo -e "${nombre}\t${aa103}" >> ../resultados/informe_final.tsv
             done  
@@ -603,7 +603,7 @@ Lo que vamos a hacer:
 
     === "Código con comentarios"
         #!/bin/bash
-        cd ../datos/
+        cd ../data/
         echo "Los archivos se encuentran en la siguiente ubicación"
         pwd
 
@@ -613,7 +613,7 @@ Lo que vamos a hacer:
 
         if [[ "$tipo_archivo" == ".fasta" ]]; then
             echo "el archivo contiene los siguientes encabezados"
-            grep "^>" ../datos/*.fasta 
+            grep "^>" ../data/*.fasta 
 
             # Crea un archivo TSV (valores separados por tabuladores) con un encabezado de dos columnas.
             # -e permite interpretar \t como tabulación.
@@ -621,10 +621,10 @@ Lo que vamos a hacer:
             # El encabezado indica que la primera columna es "Paciente" y la segunda "Pos103".
             echo -e "Paciente\tPos103" > ../resultados/informe_final.tsv
 
-            for nombre in $(grep "^>" ../datos/*.fasta); do
+            for nombre in $(grep "^>" ../data/*.fasta); do
                 # Busca la línea que comienza con el encabezado exacto (incluyendo ">") en pacientes.fasta,
                 # luego toma la línea siguiente (la secuencia) con -A1 y descarta el encabezado con tail -n1.
-                secuencia=$(grep -A1 "^$nombre" ../datos/pacientes.fasta | tail -n1)
+                secuencia=$(grep -A1 "^$nombre" ../data/pacientes.fasta | tail -n1)
 
                 # Extrae el carácter número 103 de la secuencia usando cut -c (por carácter, no por byte).
                 aa103=$(echo "$secuencia" | cut -c103)
