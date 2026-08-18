@@ -7,10 +7,10 @@ tags:
 ![Image](img/banner.jpg){ width="250", align="left" }
 
 # **TP 2**. Conceptos avanzados de programación en Bash { markdown data-toc-label = 'TP 2' }
-<br>
-<br>
 
+<!--
 [:fontawesome-solid-download: Materiales](data/datos.zip){ .md-button .md-button--primary }
+-->
 
 ## Objetivos
 1. Familiarizarse con el uso de la terminal y sus comandos básicos para navegar, crear directorios y manipular archivos.
@@ -19,7 +19,29 @@ tags:
 
 3. Automatizar tareas utilizando scripts, para procesar múltiples archivos.
 
-## Parte 1: Introducción a Scripts
+## Recapitulando el TP01
+
+En este ejercicio vamos a trabajar con las secuencias para poder identificar las mutaciones en las posiciones 103 y 239. 
+
+Lo que vamos a hacer:
+
+1. Extraer el aminoácido en la posición 103 de cada paciente.
+2. Extraer el aminoácido en la posición 239 de cada paciente.
+3. Determinar qué pacientes tienen las mutaciones que confieren resistencia.
+
+Por mesa, completar una secuencia de esta tabla: 
+
+| Paciente | Pos103 | Pos239 |
+| :--- | :--- | :--- |
+| **Referencia (canónica)** |  **P** | **V** |
+| **Resistente** |  **R** | **G** |
+| Paciente_001 | | |
+| Paciente_002 | | |
+| Paciente_003 | | |
+| Paciente_004 | | |
+| Paciente_005 | | |
+
+## Introducción a Scripts
 
 !!! info "Scripts"
 
@@ -32,7 +54,7 @@ tags:
     - Toma decisiones lógicas (`if`), itera (`for`, `while`) y maneja datos.
     - No necesita compilación: se ejecuta directamente llamando al intérprete.
 
-#### ✏️ Paso 1
+### ✏️ Paso 1
 
 1. Ingresa desde la interfaz gráfica a la carpeta de scripts del TP01
 2. Generá un archivo de texto que se llame script.sh
@@ -56,13 +78,13 @@ tags:
 7. Cambiá el permiso de ejecución
 
     ```bash
-    chmod +x mi_script.sh   # dar permisos de ejecución
+    chmod +x script.sh   # dar permisos de ejecución
     ```
 
 8. Ejecutá el sccript
 
     ```bash
-    bash mi_script.sh          # ejecutar
+    bash script.sh          # ejecutar
     ```
 
 9. Leer el resultado obtenido. ¿Fué el resultado esperado?
@@ -88,7 +110,7 @@ tags:
     | **Manejo de rutas absolutas** | No usar `cd` sin control; mejor usar rutas fijas. | `(cd /ruta && comando)` |
     | **Comentarios útiles** | Explicar el *por qué*, no el *qué* (el código ya dice el qué). | `# Forzamos el borrado porque el espacio es crítico` |
 
-#### ✏️ Paso 2
+### ✏️ Paso 2
 
 1. Abrí nuevamente el archivo script.sh
 2. Inocorporá las siguientes líneas al archivo como se muestra a continuación
@@ -108,7 +130,7 @@ tags:
 4. Ejecutar el script desde terminal.
 5. Observar el resultado obtenido. ¿Qué hace la línea que incorporamos?
 
-### Variables
+## Variables
 Las variables son *palabras* que guardan dentro de ellas información como una **caja con una etiqueta**. 
 - En esa caja (la variable) puedes guardar un dato.
 - La etiqueta (el *nombre* de la variable) te permite recuperar ese dato cuando lo necesites.
@@ -121,7 +143,9 @@ Las variables son *palabras* que guardan dentro de ellas información como una *
 
     ⚠️ **¡Atención! Esta es la regla más importante:** 
     **NO** debe haber espacios alrededor del signo `=`. 
+
     - ✅ Correcto: `nombre="Mercedes"` 
+
     - ❌ Incorrecto: `nombre = "Mercedes"` (Bash intentará ejecutar un comando llamado `nombre`).
 
 !!! info "Convenciones de nombres (Buenas prácticas)"
@@ -152,7 +176,7 @@ Las variables son *palabras* que guardan dentro de ellas información como una *
         echo "nombre"    # Esto imprime: nombre (la palabra, no el contenido)
     ```
 
-#### ✏️ Paso 3
+### ✏️ Paso 3
 1. Abrí nuevamente el archivo script.sh
 2. Inocorporá las siguientes líneas al archivo como se muestra a continuación
 
@@ -200,7 +224,7 @@ Las variables son *palabras* que guardan dentro de ellas información como una *
 
     ¿Se acuerdan de los **parámetros** de los comandos de Bash? Al pasarle parámetros a un script de Bash estos se asignan automaticamente a variables llamadas `$1`, `$2`, etc.
 
-#### ✏️ Paso 4
+### ✏️ Paso 4
 1. Abrí nuevamente el archivo script.sh
 2. Modificá las siguientes líneas al archivo como se muestra a continuación
 
@@ -249,7 +273,7 @@ Las variables son *palabras* que guardan dentro de ellas información como una *
 ??? info
     Más información sobre las variables en Bash se puede ver en [esta página](https://atareao.es/tutorial/scripts-en-bash/variables-en-bash/).
 
-### Condicionales
+## Condicionales
 
 Las variables son importantes, pero gran parte de la programación es controlar el "flujo" del programa, es decir, que un script haga algo más que simplemente ir de arriba a abajo ejecutando comandos. La primera herramienta que vamos a aprender para controlar el flujo del programa son los *condicionales* que permiten crear secciones de código que se van a ejecutar solo si se cumple (o no se cumple) una condición. 
 
@@ -321,7 +345,7 @@ Las variables son importantes, pero gran parte de la programación es controlar 
     fi
     ```
 
-#### ✏️ Paso 4
+### ✏️ Paso 5
 1. Abrí nuevamente el archivo script.sh
 2. Modificá las siguientes líneas al archivo como se muestra a continuación
 
@@ -393,7 +417,8 @@ Las variables son importantes, pero gran parte de la programación es controlar 
 
     Para eso existe el bloque `else`: lo que va dentro de `else` se ejecuta **cuando la condición es falsa**.
 
-    ### Sintaxis básica con `else`
+!!! info "Sintaxis básica con `else`"
+
     ```bash
     if [ condición ]; then
         # Comandos si la condición es VERDADERA
@@ -402,7 +427,7 @@ Las variables son importantes, pero gran parte de la programación es controlar 
     fi
     ```
 
-#### ✏️ Paso 5
+### ✏️ Paso 6
 1. Abrí nuevamente el archivo script.sh
 2. Modificá las siguientes líneas al archivo como se muestra a continuación
 
@@ -459,7 +484,7 @@ Las variables son importantes, pero gran parte de la programación es controlar 
 ??? info "Más información sobre los condicionales en Bash"
     Pueden ingrsar en [esta página](https://atareao.es/tutorial/scripts-en-bash/condicionales-en-bash/) y en [esta página](https://tldp.org/LDP/abs/html/comparison-ops.html)
 
-### Ciclos
+## Ciclos
 Hasta ahora, nuestros scripts ejecutaban cada línea **una sola vez** y en orden secuencial. Pero en la programación real, muchas veces necesitamos **repetir una acción varias veces**. 
 
 Para eso existen los **ciclos** (también llamados **bucles**). Un ciclo es una estructura que repite un bloque de código **mientras** o **hasta que** se cumpla una condición.
@@ -487,7 +512,7 @@ Para eso existen los **ciclos** (también llamados **bucles**). Un ciclo es una 
     done
     ```
 
-#### ✏️ Paso 6
+### ✏️ Paso 7
 1. Abrí nuevamente el archivo script.sh
 2. Modificá las siguientes líneas al archivo como se muestra a continuación
 
@@ -505,9 +530,9 @@ Para eso existen los **ciclos** (también llamados **bucles**). Un ciclo es una 
         if [[ "$tipo_archivo" == ".fasta" ]]; then
             echo "el archivo contiene los siguientes encabezados"
             grep "^>" ../data/*.fasta 
-            echo "Paciente" > ../resultados/detalle_pacientes.tsv
+            echo "Paciente" > ../resultados/informe_final.tsv
             for nombre in $(grep "^>" ../data/*.fasta); do
-                echo "${nombre}" >> ../resultados/detalle_pacientes.tsv
+                echo "${nombre}" >> ../resultados/informe_final.tsv
             done  
         else
             echo "No hay archivos .fasta en la carpeta de datos"
@@ -531,14 +556,14 @@ Para eso existen los **ciclos** (también llamados **bucles**). Un ciclo es una 
             echo "el archivo contiene los siguientes encabezados"
             grep "^>" ../data/*.fasta
 
-            echo "Paciente" > ../resultados/detalle_pacientes.tsv 
+            echo "Paciente" > ../resultados/informe_final.tsv 
             for nombre in $(grep "^>" ../data/*.fasta); do
                 # Este bucle se ejecuta una vez por cada línea que empieza con ">".
                 # La variable 'nombre' contiene la línea completa (ej: ">seq1").
 
                 # Escribimos la línea en la tabla.
                 # Usamos printf en lugar de echo -e (más portable y seguro).
-                echo "${nombre}" >> ../resultados/detalle_pacientes.tsv
+                echo "${nombre}" >> ../resultados/informe_final.tsv
             done  
         else
             echo "No hay archivos .fasta en la carpeta de datos"
@@ -559,17 +584,8 @@ Para eso existen los **ciclos** (también llamados **bucles**). Un ciclo es una 
 ??? info "Más sobre ciclos"
     Más información sobre los ciclos en Bash se puede ver en [esta página](https://atareao.es/tutorial/scripts-en-bash/bucles-en-bash/).
 
-## Parte 2: Análisis de datos
+### ✏️ Paso 8
 
-En este ejercicio vamos a trabajar con las secuencias para poder identificar las mutaciones en las posiciones 103 y 239. 
-
-Lo que vamos a hacer:
-
-1. Extraer el aminoácido en la posición 103 de cada paciente.
-2. Extraer el aminoácido en la posición 239 de cada paciente.
-3. Determinar qué pacientes tienen las mutaciones que confieren resistencia.
-
-#### ✏️ Paso 7
 1. Abrí nuevamente el archivo script.sh
 2. Modificá las siguientes líneas al archivo como se muestra a continuación
 
@@ -602,6 +618,7 @@ Lo que vamos a hacer:
         ```
 
     === "Código con comentarios"
+        ```bash
         #!/bin/bash
         cd ../data/
         echo "Los archivos se encuentran en la siguiente ubicación"
@@ -648,10 +665,14 @@ Lo que vamos a hacer:
     ```
 5. Observar el resultado obtenido
 
-#### ✏️ Paso 8
-Utilizando como ejemplo el script del **Paso 7**, incorporá la columna de la posición 239. 
+### ✏️ Paso 9
 
-#### ✏️ Paso 9
+Falta identificar el aminoácido presente en la posición 239. Utilizando el ejemplo anterior, incorporá las líneas de código necesarias para obtener la columna de la posición 239 y que la misma se guarde en informe_final.tsv. 
+
+## Análisis de los resultados
+
+### ✏️ Paso 10
+
 Abrí el resultado obtenido con el script y completá la siguiente tabla:
 
 | Paciente | Pos103 | Pos239 |
@@ -664,12 +685,14 @@ Abrí el resultado obtenido con el script y completá la siguiente tabla:
 | Paciente_004 | | |
 | Paciente_005 | | |
 
-?? info "Pista"
+Compará los resultados con la búsqueda manual que hicimos al comienzo del TP
+
+??? "Pista"
     Podés incorporar una columna con la longitud de la secuencia usando 
     ```bash
         longitud=${#secuencia}
     ```
     
-#### ✏️ Paso 10
+### ✏️ Paso 11
     
 ¿Qué paciente/s está/n infectados con una cepa resistente?
