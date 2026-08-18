@@ -1426,7 +1426,8 @@
 <!--
 [:fontawesome-solid-download: Materiales](data/datos.zip){ .md-button .md-button--primary }
 -->
-
+<p><br>
+<br></p>
 <h2 id="objetivos">Objetivos</h2>
 <ol>
 <li>
@@ -1511,9 +1512,9 @@
 <li>Ingresa desde la interfaz gráfica a la carpeta de scripts del TP01</li>
 <li>Generá un archivo de texto que se llame script.sh</li>
 <li>
-<p>Abrí el archivo usando el block de notas. Copiá el siguiente texto dentro del archivo script.sh</p>
+<p>Abrí el archivo usando el bloc de notas. Copiá el siguiente texto dentro del archivo script.sh</p>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
-<span class="c1"># Este script lista a todos los archivos con termiación .fasta de la carpeta de datos</span>
+<span class="c1"># Este script lista a todos los archivos con terminación .fasta de la carpeta de datos</span>
 <span class="nb">cd</span><span class="w"> </span>../data/
 <span class="nb">echo</span><span class="w"> </span><span class="s2">"Los archivos se encuentran en la siguiente ubicación"</span>
 <span class="nb">pwd</span>
@@ -1524,7 +1525,7 @@
 </details>
 </li>
 <li>
-<p>Guardá el archivo y cerrá el block de notas</p>
+<p>Guardá el archivo y cerrá el bloc de notas</p>
 </li>
 <li>Abrí la terminal de Linux. Navegá hasta la carpeta del TP01. </li>
 <li>Ingresá a la carpeta de scripts. Listá el contenido de la carpeta para asegurarte que el archivo script.sh se generó correctamente</li>
@@ -1534,7 +1535,7 @@
 </code></pre></div>
 </li>
 <li>
-<p>Ejecutá el sccript</p>
+<p>Ejecutá el script</p>
 <div class="highlight"><pre><span></span><code>bash<span class="w"> </span>script.sh<span class="w">          </span><span class="c1"># ejecutar</span>
 </code></pre></div>
 </li>
@@ -1609,9 +1610,8 @@
 <ol>
 <li>Abrí nuevamente el archivo script.sh</li>
 <li>
-<p>Inocorporá las siguientes líneas al archivo como se muestra a continuación</p>
+<p>Incorporá las siguientes líneas al archivo como se muestra a continuación</p>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
-<span class="c1"># Este script lista a todos los archivos con termiación .fasta de la carpeta de datos</span>
 <span class="nb">cd</span><span class="w"> </span>../data/
 <span class="nb">echo</span><span class="w"> </span><span class="s2">"Los archivos se encuentran en la siguiente ubicación"</span>
 <span class="nb">pwd</span>
@@ -1621,7 +1621,7 @@ ls<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<s
 </code></pre></div>
 </li>
 <li>
-<p>Guardar el achivo.</p>
+<p>Guardar el archivo.</p>
 </li>
 <li>Ejecutar el script desde terminal.</li>
 <li>Observar el resultado obtenido. ¿Qué hace la línea que incorporamos?</li>
@@ -1700,12 +1700,12 @@ ls<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<s
 <ol>
 <li>Abrí nuevamente el archivo script.sh</li>
 <li>
-<p>Inocorporá las siguientes líneas al archivo como se muestra a continuación</p>
+<p>Incorporá las siguientes líneas al archivo como se muestra a continuación</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Código</label><label for="__tabbed_1_2">Código con comentarios</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
-<span class="c1"># Este script lista a todos los archivos con la termiación deseada</span>
+<span class="c1"># Este script lista a todos los archivos con la terminación deseada</span>
 <span class="nb">cd</span><span class="w"> </span>../data/
 <span class="nb">echo</span><span class="w"> </span><span class="s2">"Los archivos se encuentran en la siguiente ubicación"</span>
 <span class="nb">pwd</span>
@@ -1721,7 +1721,7 @@ ls<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<s
 <span class="c1"># Las lineas que empiezan con # son comentarios, no afectan el código y sirven para aclarar que estas </span>
 <span class="c1"># haciendo en tu programa o script</span>
 
-<span class="c1"># Este script lista a todos los archivos con la termiación deseada</span>
+<span class="c1"># Este script lista a todos los archivos con la terminación deseada</span>
 <span class="nb">cd</span><span class="w"> </span>../data/
 <span class="nb">echo</span><span class="w"> </span><span class="s2">"Los archivos se encuentran en la siguiente ubicación"</span>
 <span class="nb">pwd</span>
@@ -1739,7 +1739,7 @@ ls<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<s
 </div>
 </li>
 <li>
-<p>Guardar el achivo</p>
+<p>Guardar el archivo</p>
 </li>
 <li>Ejecutar el script desde terminal</li>
 <li>Observar el resultado obtenido</li>
@@ -1758,7 +1758,7 @@ ls<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<s
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
-<span class="c1"># Este script lista a todos los archivos con la termiación deseada de la carpeta en la que es ejecutado</span>
+<span class="c1"># Este script lista a todos los archivos con la terminación deseada de la carpeta en la que es ejecutado</span>
 <span class="nb">cd</span><span class="w"> </span>../data/
 <span class="nb">echo</span><span class="w"> </span><span class="s2">"Los archivos se encuentran en la siguiente ubicación"</span>
 <span class="nb">pwd</span>
@@ -1777,7 +1777,7 @@ ls<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<s
 <span class="nb">echo</span><span class="w"> </span><span class="s2">"Los archivos se encuentran en la siguiente ubicación"</span>
 <span class="nb">pwd</span>
 
-<span class="c1"># Este script lista a todos los archivos con la termiación deseada</span>
+<span class="c1"># Este script lista a todos los archivos con la terminación deseada</span>
 <span class="nb">echo</span><span class="w"> </span><span class="s2">"Buscando archivos con la terminación deseada"</span>
 <span class="c1"># Al declarar una variable en Bash no se puede poner espacio entre la variable, el = y el valor</span>
 <span class="c1"># Las comillas se usan para indicar que lo de adentro es una cadena de caracteres, o *string*</span>
@@ -1791,7 +1791,7 @@ ls<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<s
 </div>
 </li>
 <li>
-<p>Guardar el achivo</p>
+<p>Guardar el archivo</p>
 </li>
 <li>
 <p>Ejecutar el script desde terminal</p>
@@ -1971,7 +1971,7 @@ ls<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<s
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
-<span class="c1"># Este script lista a todos los archivos con la termiación deseada de la carpeta en la que es ejecutado</span>
+<span class="c1"># Este script lista a todos los archivos con la terminación deseada de la carpeta en la que es ejecutado</span>
 <span class="nb">cd</span><span class="w"> </span>../data/
 <span class="nb">echo</span><span class="w"> </span><span class="s2">"Los archivos se encuentran en la siguiente ubicación"</span>
 <span class="nb">pwd</span>
@@ -2013,7 +2013,7 @@ ls<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<s
 </div>
 </li>
 <li>
-<p>Guardar el achivo</p>
+<p>Guardar el archivo</p>
 </li>
 <li>
 <p>Ejecutar el script desde terminal</p>
@@ -2098,7 +2098,7 @@ ls<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<s
 </div>
 </li>
 <li>
-<p>Guardar el achivo</p>
+<p>Guardar el archivo</p>
 </li>
 <li>
 <p>Ejecutar el script desde terminal</p>
@@ -2111,7 +2111,7 @@ ls<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<s
 </ol>
 <details class="info">
 <summary>Más información sobre los condicionales en Bash</summary>
-<p>Pueden ingrsar en <a href="https://atareao.es/tutorial/scripts-en-bash/condicionales-en-bash/">esta página</a> y en <a href="https://tldp.org/LDP/abs/html/comparison-ops.html">esta página</a></p>
+<p>Pueden ingresar en <a href="https://atareao.es/tutorial/scripts-en-bash/condicionales-en-bash/">esta página</a> y en <a href="https://tldp.org/LDP/abs/html/comparison-ops.html">esta página</a></p>
 </details>
 <h2 id="ciclos">Ciclos</h2>
 <p>Hasta ahora, nuestros scripts ejecutaban cada línea <strong>una sola vez</strong> y en orden secuencial. Pero en la programación real, muchas veces necesitamos <strong>repetir una acción varias veces</strong>. </p>
@@ -2217,7 +2217,7 @@ ls<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<s
 </div>
 </li>
 <li>
-<p>Guardar el achivo</p>
+<p>Guardar el archivo</p>
 </li>
 <li>
 <p>Ejecutar el script desde terminal</p>
@@ -2253,7 +2253,7 @@ ls<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<s
 <span class="w">    </span><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">"Paciente\tPos103"</span><span class="w"> </span>&gt;<span class="w"> </span>../resultados/informe_final.tsv
 
 <span class="w">    </span><span class="k">for</span><span class="w"> </span>nombre<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">$(</span>grep<span class="w"> </span><span class="s2">"^&gt;"</span><span class="w"> </span>../data/*.fasta<span class="k">)</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
-<span class="w">        </span><span class="nv">secuencia</span><span class="o">=</span><span class="k">$(</span>grep<span class="w"> </span>-A1<span class="w"> </span><span class="s2">"^</span><span class="nv">$nombre</span><span class="s2">"</span><span class="w"> </span>../data/pacientes.fasta<span class="w"> </span><span class="p">|</span><span class="w"> </span>tail<span class="w"> </span>-n1<span class="k">)</span>
+<span class="w">        </span><span class="nv">secuencia</span><span class="o">=</span><span class="k">$(</span>grep<span class="w"> </span>-A1<span class="w"> </span><span class="s2">"^</span><span class="nv">$nombre</span><span class="s2">"</span><span class="w"> </span>../data/*.fasta<span class="w"> </span><span class="p">|</span><span class="w"> </span>tail<span class="w"> </span>-n1<span class="k">)</span>
 <span class="w">        </span><span class="nv">aa103</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="nv">$secuencia</span><span class="s2">"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-c103<span class="k">)</span>
 <span class="w">        </span><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">nombre</span><span class="si">}</span><span class="s2">\t</span><span class="si">${</span><span class="nv">aa103</span><span class="si">}</span><span class="s2">"</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>../resultados/informe_final.tsv
 <span class="w">    </span><span class="k">done</span><span class="w">  </span>
@@ -2285,9 +2285,9 @@ ls<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<s
 <span class="w">    </span><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">"Paciente\tPos103"</span><span class="w"> </span>&gt;<span class="w"> </span>../resultados/informe_final.tsv
 
 <span class="w">    </span><span class="k">for</span><span class="w"> </span>nombre<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">$(</span>grep<span class="w"> </span><span class="s2">"^&gt;"</span><span class="w"> </span>../data/*.fasta<span class="k">)</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
-<span class="w">        </span><span class="c1"># Busca la línea que comienza con el encabezado exacto (incluyendo "&gt;") en pacientes.fasta,</span>
+<span class="w">        </span><span class="c1"># Busca la línea que comienza con el encabezado exacto (incluyendo "&gt;") en los archivos de tipo fasta,</span>
 <span class="w">        </span><span class="c1"># luego toma la línea siguiente (la secuencia) con -A1 y descarta el encabezado con tail -n1.</span>
-<span class="w">        </span><span class="nv">secuencia</span><span class="o">=</span><span class="k">$(</span>grep<span class="w"> </span>-A1<span class="w"> </span><span class="s2">"^</span><span class="nv">$nombre</span><span class="s2">"</span><span class="w"> </span>../data/pacientes.fasta<span class="w"> </span><span class="p">|</span><span class="w"> </span>tail<span class="w"> </span>-n1<span class="k">)</span>
+<span class="w">        </span><span class="nv">secuencia</span><span class="o">=</span><span class="k">$(</span>grep<span class="w"> </span>-A1<span class="w"> </span><span class="s2">"^</span><span class="nv">$nombre</span><span class="s2">"</span><span class="w"> </span>../data/*.fasta<span class="w"> </span><span class="p">|</span><span class="w"> </span>tail<span class="w"> </span>-n1<span class="k">)</span>
 
 <span class="w">        </span><span class="c1"># Extrae el carácter número 103 de la secuencia usando cut -c (por carácter, no por byte).</span>
 <span class="w">        </span><span class="nv">aa103</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="nv">$secuencia</span><span class="s2">"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-c103<span class="k">)</span>
@@ -2307,7 +2307,7 @@ ls<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<s
 </div>
 </li>
 <li>
-<p>Guardar el achivo</p>
+<p>Guardar el archivo</p>
 </li>
 <li>
 <p>Ejecutar el script desde terminal</p>
