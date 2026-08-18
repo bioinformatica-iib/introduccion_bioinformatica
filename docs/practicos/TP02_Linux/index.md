@@ -11,6 +11,8 @@ tags:
 <!--
 [:fontawesome-solid-download: Materiales](data/datos.zip){ .md-button .md-button--primary }
 -->
+<br>
+<br>
 
 ## Objetivos
 1. Familiarizarse con el uso de la terminal y sus comandos básicos para navegar, crear directorios y manipular archivos.
@@ -58,11 +60,11 @@ Por mesa, completar una secuencia de esta tabla:
 
 1. Ingresa desde la interfaz gráfica a la carpeta de scripts del TP01
 2. Generá un archivo de texto que se llame script.sh
-3. Abrí el archivo usando el block de notas. Copiá el siguiente texto dentro del archivo script.sh
+3. Abrí el archivo usando el bloc de notas. Copiá el siguiente texto dentro del archivo script.sh
 
     ```bash
     #!/bin/bash
-    # Este script lista a todos los archivos con termiación .fasta de la carpeta de datos
+    # Este script lista a todos los archivos con terminación .fasta de la carpeta de datos
     cd ../data/
     echo "Los archivos se encuentran en la siguiente ubicación"
     pwd
@@ -72,7 +74,7 @@ Por mesa, completar una secuencia de esta tabla:
         Esta línea se llama **shebang** (o *hashbang*). Le indica al sistema operativo qué **intérprete** debe usar para ejecutar el script.  
 
 
-4. Guardá el archivo y cerrá el block de notas
+4. Guardá el archivo y cerrá el bloc de notas
 5. Abrí la terminal de Linux. Navegá hasta la carpeta del TP01. 
 6. Ingresá a la carpeta de scripts. Listá el contenido de la carpeta para asegurarte que el archivo script.sh se generó correctamente
 7. Cambiá el permiso de ejecución
@@ -81,7 +83,7 @@ Por mesa, completar una secuencia de esta tabla:
     chmod +x script.sh   # dar permisos de ejecución
     ```
 
-8. Ejecutá el sccript
+8. Ejecutá el script
 
     ```bash
     bash script.sh          # ejecutar
@@ -113,11 +115,10 @@ Por mesa, completar una secuencia de esta tabla:
 ### ✏️ Paso 2
 
 1. Abrí nuevamente el archivo script.sh
-2. Inocorporá las siguientes líneas al archivo como se muestra a continuación
+2. Incorporá las siguientes líneas al archivo como se muestra a continuación
 
     ```bash
     #!/bin/bash
-    # Este script lista a todos los archivos con termiación .fasta de la carpeta de datos
     cd ../data/
     echo "Los archivos se encuentran en la siguiente ubicación"
     pwd
@@ -126,7 +127,7 @@ Por mesa, completar una secuencia de esta tabla:
     ls | grep ".fasta"
     ```
 
-3. Guardar el achivo.
+3. Guardar el archivo.
 4. Ejecutar el script desde terminal.
 5. Observar el resultado obtenido. ¿Qué hace la línea que incorporamos?
 
@@ -178,12 +179,12 @@ Las variables son *palabras* que guardan dentro de ellas información como una *
 
 ### ✏️ Paso 3
 1. Abrí nuevamente el archivo script.sh
-2. Inocorporá las siguientes líneas al archivo como se muestra a continuación
+2. Incorporá las siguientes líneas al archivo como se muestra a continuación
 
     === "Código"
         ``` bash
         #!/bin/bash
-        # Este script lista a todos los archivos con la termiación deseada
+        # Este script lista a todos los archivos con la terminación deseada
         cd ../data/
         echo "Los archivos se encuentran en la siguiente ubicación"
         pwd
@@ -200,7 +201,7 @@ Las variables son *palabras* que guardan dentro de ellas información como una *
         # Las lineas que empiezan con # son comentarios, no afectan el código y sirven para aclarar que estas 
         # haciendo en tu programa o script
 
-        # Este script lista a todos los archivos con la termiación deseada
+        # Este script lista a todos los archivos con la terminación deseada
         cd ../data/
         echo "Los archivos se encuentran en la siguiente ubicación"
         pwd
@@ -214,7 +215,7 @@ Las variables son *palabras* que guardan dentro de ellas información como una *
         ls | grep "$tipo_archivo"
         ```
 
-3. Guardar el achivo
+3. Guardar el archivo
 4. Ejecutar el script desde terminal
 5. Observar el resultado obtenido
 
@@ -231,7 +232,7 @@ Las variables son *palabras* que guardan dentro de ellas información como una *
     === "Código"
         ``` bash
         #!/bin/bash
-        # Este script lista a todos los archivos con la termiación deseada de la carpeta en la que es ejecutado
+        # Este script lista a todos los archivos con la terminación deseada de la carpeta en la que es ejecutado
         cd ../data/
         echo "Los archivos se encuentran en la siguiente ubicación"
         pwd
@@ -251,7 +252,7 @@ Las variables son *palabras* que guardan dentro de ellas información como una *
         echo "Los archivos se encuentran en la siguiente ubicación"
         pwd
 
-        # Este script lista a todos los archivos con la termiación deseada
+        # Este script lista a todos los archivos con la terminación deseada
         echo "Buscando archivos con la terminación deseada"
         # Al declarar una variable en Bash no se puede poner espacio entre la variable, el = y el valor
         # Las comillas se usan para indicar que lo de adentro es una cadena de caracteres, o *string*
@@ -261,7 +262,7 @@ Las variables son *palabras* que guardan dentro de ellas información como una *
         ls | grep "$tipo_archivo"
         ```
 
-3. Guardar el achivo
+3. Guardar el archivo
 4. Ejecutar el script desde terminal
 
     ```bash
@@ -352,7 +353,7 @@ Las variables son importantes, pero gran parte de la programación es controlar 
     === "Código"
         ``` bash
         #!/bin/bash
-        # Este script lista a todos los archivos con la termiación deseada de la carpeta en la que es ejecutado
+        # Este script lista a todos los archivos con la terminación deseada de la carpeta en la que es ejecutado
         cd ../data/
         echo "Los archivos se encuentran en la siguiente ubicación"
         pwd
@@ -391,7 +392,7 @@ Las variables son importantes, pero gran parte de la programación es controlar 
         # *fi* indica donde termina el condicional
         ```
 
-3. Guardar el achivo
+3. Guardar el archivo
 4. Ejecutar el script desde terminal
 
     ```bash
@@ -472,7 +473,7 @@ Las variables son importantes, pero gran parte de la programación es controlar 
         fi
         ```
 
-3. Guardar el achivo
+3. Guardar el archivo
 4. Ejecutar el script desde terminal
 
     ```bash
@@ -482,7 +483,7 @@ Las variables son importantes, pero gran parte de la programación es controlar 
 5. Observar el resultado obtenido
 
 ??? info "Más información sobre los condicionales en Bash"
-    Pueden ingrsar en [esta página](https://atareao.es/tutorial/scripts-en-bash/condicionales-en-bash/) y en [esta página](https://tldp.org/LDP/abs/html/comparison-ops.html)
+    Pueden ingresar en [esta página](https://atareao.es/tutorial/scripts-en-bash/condicionales-en-bash/) y en [esta página](https://tldp.org/LDP/abs/html/comparison-ops.html)
 
 ## Ciclos
 Hasta ahora, nuestros scripts ejecutaban cada línea **una sola vez** y en orden secuencial. Pero en la programación real, muchas veces necesitamos **repetir una acción varias veces**. 
@@ -573,7 +574,7 @@ Para eso existen los **ciclos** (también llamados **bucles**). Un ciclo es una 
         echo "Procesamiento completado."  
         ```
 
-3. Guardar el achivo
+3. Guardar el archivo
 4. Ejecutar el script desde terminal
 
     ```bash
@@ -606,7 +607,7 @@ Para eso existen los **ciclos** (también llamados **bucles**). Un ciclo es una 
             echo -e "Paciente\tPos103" > ../resultados/informe_final.tsv
 
             for nombre in $(grep "^>" ../data/*.fasta); do
-                secuencia=$(grep -A1 "^$nombre" ../data/pacientes.fasta | tail -n1)
+                secuencia=$(grep -A1 "^$nombre" ../data/*.fasta | tail -n1)
                 aa103=$(echo "$secuencia" | cut -c103)
                 echo -e "${nombre}\t${aa103}" >> ../resultados/informe_final.tsv
             done  
@@ -639,9 +640,9 @@ Para eso existen los **ciclos** (también llamados **bucles**). Un ciclo es una 
             echo -e "Paciente\tPos103" > ../resultados/informe_final.tsv
 
             for nombre in $(grep "^>" ../data/*.fasta); do
-                # Busca la línea que comienza con el encabezado exacto (incluyendo ">") en pacientes.fasta,
+                # Busca la línea que comienza con el encabezado exacto (incluyendo ">") en los archivos de tipo fasta,
                 # luego toma la línea siguiente (la secuencia) con -A1 y descarta el encabezado con tail -n1.
-                secuencia=$(grep -A1 "^$nombre" ../data/pacientes.fasta | tail -n1)
+                secuencia=$(grep -A1 "^$nombre" ../data/*.fasta | tail -n1)
 
                 # Extrae el carácter número 103 de la secuencia usando cut -c (por carácter, no por byte).
                 aa103=$(echo "$secuencia" | cut -c103)
@@ -657,7 +658,7 @@ Para eso existen los **ciclos** (también llamados **bucles**). Un ciclo es una 
         echo "Procesamiento completado."  
         ```
 
-3. Guardar el achivo
+3. Guardar el archivo
 4. Ejecutar el script desde terminal
 
     ```bash
