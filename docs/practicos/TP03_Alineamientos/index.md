@@ -73,11 +73,9 @@ Dado un par de secuencias y un sistema de puntuación o *scoring* se pueden apli
 
 El algoritmo más popular utiliza un método matemático llamado ***dynamic programming***. El mismo consiste en comparar ambas secuencias construyendo una matriz del alineamiento. Brevemente:
 
-!!! info ""
-
-    1. Se comienza en el extremo superior izquierdo de la matriz, con un puntaje inicial de 0. 
-    2. En cada paso, se calcula el costo que tiene aparejado desplazarse de una celda a la otra, dado el sistema de puntajes pre-establecido, y se elige la opción más favorable, es decir aquella que **maximice** el puntaje global del alineamiento. 
-    3. En cada iteración se guarda el puntaje con el que se llegó a una celda dada y el movimiento que originó dicho camino o *path*, indicado típicamente con una flecha. Una vez que la matriz está completa en su totalidad se puede recorrer hacia atrás o realizar un *traceback*, desde el extremo inferior derecho al superior izquierdo, para reconstruir el alineamiento.
+1. Se comienza en el extremo superior izquierdo de la matriz, con un puntaje inicial de 0. 
+2. En cada paso, se calcula el costo que tiene aparejado desplazarse de una celda a la otra, dado el sistema de puntajes pre-establecido, y se elige la opción más favorable, es decir aquella que **maximice** el puntaje global del alineamiento. 
+3. En cada iteración se guarda el puntaje con el que se llegó a una celda dada y el movimiento que originó dicho camino o *path*, indicado típicamente con una flecha. Una vez que la matriz está completa en su totalidad se puede recorrer hacia atrás o realizar un *traceback*, desde el extremo inferior derecho al superior izquierdo, para reconstruir el alineamiento.
 
 
 La principal ventaja de este método es que **siempre encuentra el alineamiento óptimo** entre las secuencias dadas. 
@@ -233,6 +231,8 @@ eje i: T C - C A
 
 que podemos corroborar que es idéntico al *path* **1** del ejemplo que se planteó inicialmente. 
 
+---
+
 ### Ejercicio 1
 
 #### ✏️ Paso 1
@@ -300,8 +300,6 @@ Registrá con atención el resultado. Ahora cambiemos el esquema de *scoring*, d
 
 ## Dot-Plots
 
-# Dot Plots
-
 Un **Dot Plot** (o gráfico de puntos) es una herramienta visual para comparar dos secuencias biológicas (ADN, ARN o proteínas). 
 
 ### ¿Cómo funciona?
@@ -340,22 +338,21 @@ MVLSPADKTNVKAAWGKVGAHAGEYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHGKKVADALTNAVAHVDDMPNA
 
 **Qué observar:** Diagonal principal perfecta (100% identidad). No hay diagonales secundarias.
 
-<div style="border-left: 6px solid  #555; background-color: #f5f5f5; padding: 12px 16px; margin: 16px 0; border-radius: 4px;">
-<strong>La matriz BLOSUM (BLOcks SUbstitution Matrix)</strong><br>
-Es el estándar de facto para alinear proteínas. Fue creada por Henikoff y Henikoff en 1992.
+!!! info "La matriz BLOSUM (BLOcks SUbstitution Matrix)"
+    Es el estándar de facto para alinear proteínas. Fue creada por Henikoff y Henikoff en 1992.
 
-**Cómo funciona:**
-- Tiene un valor **específico para cada par de aminoácidos**
-- No es binaria: cada una de las 190 sustituciones posibles tiene su propia puntuación
-- Los valores se basan en la **probabilidad evolutiva** de que ocurra cada cambio
+    **Cómo funciona:**
+    - Tiene un valor **específico para cada par de aminoácidos**
+    - No es binaria: cada una de las 190 sustituciones posibles tiene su propia puntuación
+    - Los valores se basan en la **probabilidad evolutiva** de que ocurra cada cambio
 
-**¿Cómo se calculan los valores?**
-- Se analizan bloques de alineamientos de proteínas reales
-- Se comparan dos frecuencias:
-  1. **Frecuencia observada**: con qué frecuencia ocurre esa sustitución en la naturaleza
-  2. **Frecuencia esperada al azar**: con qué frecuencia ocurriría si los aminoácidos se alinearan al azar
-- El resultado se expresa como un **log-odds score**: log2 (observado / esperado)
-</div>
+    **¿Cómo se calculan los valores?**
+    - Se analizan bloques de alineamientos de proteínas reales
+    - Se comparan dos frecuencias:
+    1. **Frecuencia observada**: con qué frecuencia ocurre esa sustitución en la naturaleza
+    2. **Frecuencia esperada al azar**: con qué frecuencia ocurriría si los aminoácidos se alinearan al azar
+    - El resultado se expresa como un **log-odds score**: log2 (observado / esperado)
+
 
 #### ✏️ Paso 2: 
 
@@ -386,177 +383,54 @@ MVLSPADKTNVKAAWGKVGAHAGEYGAEALEEEEEEEEEEEEEEPHFDLSHGSAQVKGHGKKVADALTNAVAHVDDMPNA
 **Explicación:** La Secuencias están compuestas por bloques de aminoácidos repetidos (E), lo que la hace de baja complejidad.
 
 **Qué observar:** En la zona de baja complejidad , el dotplot se vuelve extremadamente denso, con múltiples diagonales paralelas y manchas de puntos que reflejan las repeticiones. La región de baja complejidad produce un patrón característico de "ruido" estructurado.
-
-<div style="border-left: 6px solid  #555; background-color: #f5f5f5; padding: 12px 16px; margin: 16px 0; border-radius: 4px;">
-<strong>¿Cómo elegir los parámetros ideales?</strong><br>
-
-**No hay una combinación única y perfecta.**
-
-La elección de los parámetros (window y stringency) depende de varios factores:
-
-- **Tipo de secuencia:** ADN (4 letras) vs. Proteínas (20 aminoácidos). El ADN tiene más coincidencias aleatorias, por lo que necesita filtros más estrictos.
-- **Similitud esperada:** Secuencias muy similares vs. secuencias divergentes. Cuanto más divergentes sean, más ruido tendrás que filtrar.
-- **Longitud de las secuencias:** Secuencias más largas generan más ruido estadístico.
-- **Pregunta biológica:** ¿Buscas dominios conservados? ¿Repeticiones? ¿Reordenamientos?
-
-**La mejor estrategia es siempre experimentar con diferentes valores y observar cómo cambia el gráfico.** No existe una combinación mágica; los parámetros óptimos son aquellos que mejor revelan la información biológica que te interesa visualizar.
-
-Si aumentás estos parámetros podés ir eliminando fragmentos que corresponden a secciones compartidas más cortas, sin embargo existe una relación de compromiso, utilizar tamaño de ventana y umbral muy grandes nos llevan a perder información por lo que hay que seleccionarlos con cuidado. Aqui hay algunos patrones con los que te podés encontrar en este tipo de plots:
-
-![DotPlot](./img/DotPlot_patterns.png)
-
-**a)** Match perfecto.  
-**b)** Repeticiones.  
-**c)** Palíndromo.  
-**d)** Repeticiones invertidas.  
-**e)** Zonas de baja complejidad (microsatelites).  
-**f)** Zonas altamente repetitivas (minisatelites).  
-**g)** Secuencias con alta conservación.  
-**h)** Inserción o deleción.  
-</div>
-
-Los dot-plots son representaciones gráficas que dan un pantallazo sobre la similitud entre dos secuencias. En ellos se pueden identificar patrones que aporten información sobre la relación entre ambas secuencias.
-La forma de obtener uno es muy sencilla: se establece una matriz donde cada elemento de una de las secuencias se corresponde con una fila y los de la otra con una columna. Acto seguido se procede a colorear cada celda donde los caracteres correspondientes a fila y columna sean equivalentes.
-Por ejemplo:
-
-![DotPlot](./img/DotPlot1.jpeg)
-
-# Dot Plots
-
-Un **Dot Plot** (o gráfico de puntos) es una herramienta visual para comparar dos secuencias biológicas (ADN, ARN o proteínas). 
-
-### ¿Cómo funciona?
-- Se colocan **dos secuencias** en los ejes **X** e **Y**.
-- Se dibuja un **punto (dot)** en cada coordenada donde los caracteres (bases o aminoácidos) coinciden y tienen un puntaje mayor al Criterio de stringencia.
-- Las **diagonales** en el gráfico indican regiones de similitud o alineamiento entre las secuencias.
-
-### Parámetros principales:
-
-| Parámetro | ¿Qué hace? |
-|-----------|------------|
-| **Ventana (window)** | Número de caracteres consecutivos que se comparan a la vez. |
-| **Criterio de stringencia (stringency)** | Número mínimo de coincidencias dentro de la ventana para dibujar un punto. |
 
 ---
-
-### Ejercicio 2
-
-Vamos a comparar **dos secuencias de hemoglobina** usando la herramienta online [Dotlet](https://dotlet.vital-it.ch/).
-
-#### ✏️ Paso 1: 
-
-Dentro del superior de secuencias pegar las siguientes secuencias:
-
-**Secuencia 1:**
-
-MVLSPADKTNVKAAWGKVGAHAGEYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHGKKVADALTNAVAHVDDMPNALSALSDLHAHKLRVDPVNFK
-
-**Secuencia 2:**
-
-MVLSPADKTNVKAAWGKVGAHAGEYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHGKKVADALTNAVAHVDDMPNALSALSDLHAHKLRVDPVNFK
-
-**Qué hacer:**
-- Configurá **Window = 10** .
-- Hacé clic en **"Draw"**.
-
-**Qué observar:** Diagonal principal perfecta (100% identidad). No hay diagonales secundarias.
-
-<div style="border-left: 6px solid  #555; background-color: #f5f5f5; padding: 12px 16px; margin: 16px 0; border-radius: 4px;">
-<strong>La matriz BLOSUM (BLOcks SUbstitution Matrix)</strong><br>
-Es el estándar de facto para alinear proteínas. Fue creada por Henikoff y Henikoff en 1992.
-
-**Cómo funciona:**
-- Tiene un valor **específico para cada par de aminoácidos**
-- No es binaria: cada una de las 190 sustituciones posibles tiene su propia puntuación
-- Los valores se basan en la **probabilidad evolutiva** de que ocurra cada cambio
-
-**¿Cómo se calculan los valores?**
-- Se analizan bloques de alineamientos de proteínas reales
-- Se comparan dos frecuencias:
-  1. **Frecuencia observada**: con qué frecuencia ocurre esa sustitución en la naturaleza
-  2. **Frecuencia esperada al azar**: con qué frecuencia ocurriría si los aminoácidos se alinearan al azar
-- El resultado se expresa como un **log-odds score**: log2 (observado / esperado)
-</div>
-
-#### ✏️ Paso 2: 
-
-Dentro del superior de secuencias pegar las siguientes secuencias:
-
-**Secuencia 1:**
-
-MVLSPADKTNVKAAWGKVGAHAGEYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHGKKVADALTNAVAHVDDMPNALSALSDLHAHKLRVDPVNFK
-
-**Secuencia 2:**
-
-MVLSPADKTNMVLSPADKTNGAHAGEYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHGKKVADALTNAVAHVDDMPNALSALSDLHAHKLRVDPVNFK
-
-**Explicación:** La Secuencia 2 tiene el motivo "MVLSPADKTN" repetido al principio (20 aa), mientras que la Secuencia 1 lo tiene solo una vez. El resto de la secuencia (80 aa) es idéntico.
-
-#### ✏️ Paso 3:
-
-Dentro del superior de secuencias pegar las siguientes secuencias:
-
-**Secuencia 1:**
-
-MVLSPADKTNVKAAWGKVGAHAGEYGAEALEEEEEEEEEEEEEEPHFDLSHGSAQVKGHGKKVADALTNAVAHVDDMPNALSALSDLHAHKLRVDPVNFK
-
-**Secuencia 2:**
-
-MVLSPADKTNVKAAWGKVGAHAGEYGAEALEEEEEEEEEEEEEEPHFDLSHGSAQVKGHGKKVADALTNAVAHVDDMPNALSALSDLHAHKLRVDPVNFK
-
-**Explicación:** La Secuencias están compuestas por bloques de aminoácidos repetidos (E), lo que la hace de baja complejidad.
-
-**Qué observar:** En la zona de baja complejidad , el dotplot se vuelve extremadamente denso, con múltiples diagonales paralelas y manchas de puntos que reflejan las repeticiones. La región de baja complejidad produce un patrón característico de "ruido" estructurado.
-
-<div style="border-left: 6px solid  #555; background-color: #f5f5f5; padding: 12px 16px; margin: 16px 0; border-radius: 4px;">
-<strong>¿Cómo elegir los parámetros ideales?</strong><br>
-
-**No hay una combinación única y perfecta.**
-
-La elección de los parámetros (window y stringency) depende de varios factores:
-
-- **Tipo de secuencia:** ADN (4 letras) vs. Proteínas (20 aminoácidos). El ADN tiene más coincidencias aleatorias, por lo que necesita filtros más estrictos.
-- **Similitud esperada:** Secuencias muy similares vs. secuencias divergentes. Cuanto más divergentes sean, más ruido tendrás que filtrar.
-- **Longitud de las secuencias:** Secuencias más largas generan más ruido estadístico.
-- **Pregunta biológica:** ¿Buscas dominios conservados? ¿Repeticiones? ¿Reordenamientos?
-
-**La mejor estrategia es siempre experimentar con diferentes valores y observar cómo cambia el gráfico.** No existe una combinación mágica; los parámetros óptimos son aquellos que mejor revelan la información biológica que te interesa visualizar.
-
-Si aumentás estos parámetros podés ir eliminando fragmentos que corresponden a secciones compartidas más cortas, sin embargo existe una relación de compromiso, utilizar tamaño de ventana y umbral muy grandes nos llevan a perder información por lo que hay que seleccionarlos con cuidado. Aqui hay algunos patrones con los que te podés encontrar en este tipo de plots:
-
-![DotPlot](./img/DotPlot_patterns.png)
-
-**a)** Match perfecto.  
-**b)** Repeticiones.  
-**c)** Palíndromo.  
-**d)** Repeticiones invertidas.  
-**e)** Zonas de baja complejidad (microsatelites).  
-**f)** Zonas altamente repetitivas (minisatelites).  
-**g)** Secuencias con alta conservación.  
-**h)** Inserción o deleción.  
-</div>
-
-!!! info "Identidad, Similitud y Homología"
-
-    Los términos identidad, similitud y homología se suelen utilizar como sinónimos por muchos investigadores, sin embargo no lo son.
-
-    * La **identidad** es una es una característica cuantitativa de un par de secuencias, donde se cuenta cuántos elementos (residuos, nucleótidos, aminoácidos etc) son idénticos entre ambas secuencias después de alinearlas. 
-
-    * La **similitud** es una característica cuantitativa de un par de secuencias, donde se establece en qué grado estas se parecen (por ejemplo aplicando los algoritmos antes vistos, utilizando un sistema de puntaje) después de alinearlas. 
-
-    * La **homología**, por otro lado, es una característica cualitativa, dos secuencias SON o NO SON homólogas. Homología implica específicamente que el par de secuencias estudiadas *provienen de un mismo ancestro común*. Esta afirmación es completamente hipotética, ya que, salvo en contados casos, no se puede corroborar. Uno puede inferir que este es el caso dado la similitud observada en las secuencias actuales, sin tener acceso a las secuencias ancestrales.
-
-!!! attention "Atención"
-
-    Decir que un par de secuencias tiene N% de homología es TOTALMENTE incorrecto.
-
-A partir de esta relación entre similitud y homología se pueden inferir relaciones entre diferentes especies, buscar posibles funciones de una secuencia desconocida, etc.
 
 ### Ejercicio 3
 
+Ahora vamos a generar el mismo dot plot pero desde la **terminal** usando `dotmatcher` del paquete **EmbOSS**.
+
+#### ✏️ Paso 1
+
+Generá la estrcutura de directorios correspondiente y descargá la secuencia que vamos a comparar en esta sección ejecutando el siguiente comando: 
+
+```bash
+wget "https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP02_Alineamientos/data/HS-ch1-fragment.fasta"
+```
+
+#### ✏️ Paso 2
+Visualizá las secuencias usando el comando `cat`
+
+
+#### ✏️ Paso 3
+Generá un dotplot utilizando la secuencias descargada en el paso 1
+
+```Bash
+dotmatcher -graph pdf HS-ch1-fragment.fasta HS-ch1-fragment.fasta
+```
+
+Para limpiar el plot y quedarnos con los matches más significativos podemos jugar con dos parámetros:
+
+* *windowsize*: Tamaño de ventana
+* *threshold*: Umbral de ocurrencia
+
+Esto quiere decir que ```dotmatcher``` sólo va a poner un punto cuando un fragmento del largo *windowsize* contenga un score mayor a *threshold*.
+Por ejemplo:
+
+```bash
+dotmatcher -graph pdf -windowsize 50 -threshold 20 HS-ch1-fragment.fasta HS-ch1-fragment.fasta
+```
+
+#### ✏️ Paso 4
+Cambiá los parámetros *windowsize* y *threshold* hasta obtener un plot que te parezca adecuado. **¿Qué podés interpretar del mismo?** Identificá patrones.
+
+---
+
+### Ejercicio 4
+
 Determinar qué especies están más relacionadas utilizando la ribonucleasa pancreática de caballo (*Equus caballus*), ballena enana (*Balaenoptera acutorostrata*) y canguro rojo (*Macropus rufus*).
 
-## **Google Colab - Empezamos con el TP**
+#### Google Colab
 
 **Google Colab** es un entorno de desarrollo basado en la nube que permite escribir y ejecutar código en *Python* directamente desde el navegador, sin necesidad de instalar programas en la computadora. Al igual que otros **IDEs** (Integrated Development Environments), ofrece un espacio para escribir código, ejecutarlo, detectar errores (debuguear) y visualizar los resultados en un mismo lugar.
 
@@ -666,28 +540,26 @@ La salida contiene la siguiente información
 
 
 #### ✏️ Paso 5
-Analizá árbol filogenético de la Fig. 1 del [paper](https://raw.githubusercontent.com/mercedesgarnham/Tutoriales/refs/heads/main/TP2/data/OLeary_2013_Science.pdf) de O'Leary *et al.*, 2013. 
+Analizá árbol filogenético de la Fig. 1 del [paper](https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP03_Alineamientos/data/OLeary_2013_Science.pdf) de O'Leary *et al.*, 2013. 
 Sabiendo que los caballos y las ballenas pertenecen al clado *Euungulata* y los canguros al clado *Marsupialia*, ubicá estos clado en el árbol.
 
 * ¿Esta información coincide con los resultados que obtuviste en el anterior?
 
+!!! info "Identidad, Similitud y Homología"
 
+    Los términos identidad, similitud y homología se suelen utilizar como sinónimos por muchos investigadores, sin embargo no lo son.
 
-<div style="border-left: 6px solid  #555; background-color: #f5f5f5; padding: 12px 16px; margin: 16px 0; border-radius: 4px;">
-<strong>Identidad, Similitud y Homología</strong><br>
+    * La **identidad** es una es una característica cuantitativa de un par de secuencias, donde se cuenta cuántos elementos (residuos, nucleótidos, aminoácidos etc) son idénticos entre ambas secuencias después de alinearlas. 
 
-Los términos identidad, similitud y homología se suelen utilizar como sinónimos por muchos investigadores, sin embargo no lo son.
+    * La **similitud** es una característica cuantitativa de un par de secuencias, donde se establece en qué grado estas se parecen (por ejemplo aplicando los algoritmos antes vistos, utilizando un sistema de puntaje) después de alinearlas. 
 
-* La **identidad** es una es una característica cuantitativa de un par de secuencias, donde se cuenta cuántos elementos (residuos, nucleótidos, aminoácidos etc) son idénticos entre ambas secuencias después de alinearlas. 
+    * La **homología**, por otro lado, es una característica cualitativa, dos secuencias SON o NO SON homólogas. Homología implica específicamente que el par de secuencias estudiadas *provienen de un mismo ancestro común*. Esta afirmación es completamente hipotética, ya que, salvo en contados casos, no se puede corroborar. Uno puede inferir que este es el caso dado la similitud observada en las secuencias actuales, sin tener acceso a las secuencias ancestrales.
 
-* La **similitud** es una característica cuantitativa de un par de secuencias, donde se establece en qué grado estas se parecen (por ejemplo aplicando los algoritmos antes vistos, utilizando un sistema de puntaje) después de alinearlas. 
+!!! attention "Atención"
 
-* La **homología**, por otro lado, es una característica cualitativa, dos secuencias SON o NO SON homólogas. Homología implica específicamente que el par de secuencias estudiadas *provienen de un mismo ancestro común*. Esta afirmación es completamente hipotética, ya que, salvo en contados casos, no se puede corroborar. Uno puede inferir que este es el caso dado la similitud observada en las secuencias actuales, sin tener acceso a las secuencias ancestrales.
-
-**Importante:** Decir que un par de secuencias tiene N% de homología es TOTALMENTE incorrecto.
+    Decir que un par de secuencias tiene N% de homología es TOTALMENTE incorrecto.
 
 A partir de esta relación entre similitud y homología se pueden inferir relaciones entre diferentes especies, buscar posibles funciones de una secuencia desconocida, etc.
-</div>
 
 
 <!--
