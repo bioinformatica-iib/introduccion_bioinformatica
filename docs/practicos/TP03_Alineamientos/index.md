@@ -12,9 +12,9 @@ tags:
 <br>
 <br>
 
+<!--
 [:fontawesome-solid-download: Materiales](data/Data-TP2.zip){ .md-button .md-button--primary }
 
-<!--
 [:fontawesome-solid-computer: Google Colab](https://colab.research.google.com/drive/1-i_1TJFytoeeFhPGqrrZnmb_-ZMN03Zi?usp=sharing){ .md-button .md-button--primary }            [:fontawesome-solid-file-powerpoint: Slides](https://docs.google.com/presentation/d/1hHh-vYtGggyeMPEpObJb18lTYwiSvxXC7MDcTsuuCKQ/edit?usp=drive_link){ .md-button .md-button--primary }
 
 <br>
@@ -34,7 +34,6 @@ tags:
 * Entender el funcionamiento básico del algoritmo de alineamiento de pares de secuencias de Needleman-Wunsch.
 * Aprender a interpretar un Dot-Plot, pudiendo identificar las regiones relevantes que contienen patrones.
 * Comprender los conceptos de identidad, similitud y homología de secuencias, y establecer una clara diferencia entre los mismos. 
-* Realizar un alineamiento múltiple de secuencias e interpretar qué información importante se puede extraer del mismo. 
 
 ## **Introducción**
 
@@ -301,74 +300,106 @@ Registrá con atención el resultado. Ahora cambiemos el esquema de *scoring*, d
 
 ## Dot-Plots
 
-Los dot-plots son representaciones gráficas que dan un pantallazo sobre la similitud entre dos secuencias. En ellos se pueden identificar patrones que aporten información sobre la relación entre ambas secuencias.
-La forma de obtener uno es muy sencilla: se establece una matriz donde cada elemento de una de las secuencias se corresponde con una fila y los de la otra con una columna. Acto seguido se procede a colorear cada celda donde los caracteres correspondientes a fila y columna sean equivalentes.
-Por ejemplo:
+# Dot Plots
 
-![DotPlot](./img/DotPlot1.jpeg)
+Un **Dot Plot** (o gráfico de puntos) es una herramienta visual para comparar dos secuencias biológicas (ADN, ARN o proteínas). 
 
-Nosotros podemos utilizar la herramienta de EMBOSS ```dotmatcher``` para generar nuestros propios plots. Para esto, vamos a usar el **Google colab** que se encuentra al lado de los materiales del TP.
+### ¿Cómo funciona?
+- Se colocan **dos secuencias** en los ejes **X** e **Y**.
+- Se dibuja un **punto (dot)** en cada coordenada donde los caracteres (bases o aminoácidos) coinciden y tienen un puntaje mayor al Criterio de stringencia.
+- Las **diagonales** en el gráfico indican regiones de similitud o alineamiento entre las secuencias.
 
-!!! info "Recordatorio"
+### Parámetros principales:
 
-    Para ver qué parámetros toma de entrada la función, se puede ver la ayuda corriendo ```dotmatcher -h``` en bash.
+| Parámetro | ¿Qué hace? |
+|-----------|------------|
+| **Ventana (window)** | Número de caracteres consecutivos que se comparan a la vez. |
+| **Criterio de stringencia (stringency)** | Número mínimo de coincidencias dentro de la ventana para dibujar un punto. |
 
+---
 
 ### Ejercicio 2
 
-Generá la carpeta de trabajo con la estructura que vimos en el [TP1](https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP01a_Linux/#pregunta-3)
+Vamos a comparar **dos secuencias de hemoglobina** usando la herramienta online [Dotlet](https://dotlet.vital-it.ch/).
 
-#### ✏️ Paso 1
-Descargá los materiales de este TP ejecutando el siguiente comando: 
+#### ✏️ Paso 1: 
 
-```Bash
-wget https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP02_Alineamientos/data/Data-TP2.zip
-```
+Dentro del superior de secuencias pegar las siguientes secuencias:
 
-#### ✏️ Paso 2
-Descomprimí los materiales usando el siguiente comando 
+**Secuencia 1:**
 
-```Bash
-unzip Data-TP2.zip
-```
+MVLSPADKTNVKAAWGKVGAHAGEYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHGKKVADALTNAVAHVDDMPNALSALSDLHAHKLRVDPVNFK
 
-#### ✏️ Paso 3
-Listá el contenido de la carpeta datos  
+**Secuencia 2:**
 
-```Bash
-ls
-```
+MVLSPADKTNVKAAWGKVGAHAGEYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHGKKVADALTNAVAHVDDMPNALSALSDLHAHKLRVDPVNFK
 
-#### ✏️ Paso 4
-Utilizá la secuencia *HS-ch11-fragment.fasta* que se encuentra en la carpeta *data* para compararla contra sí misma. Esta secuencia es un pequeño fragmento del cromosoma 1 de *Homo sapiens* y la vamos a utilizar únicamente para ver algunos de los patrones que podemos encontrar en un dotplot. 
+**Qué hacer:**
+- Configurá **Window = 10** .
+- Hacé clic en **"Draw"**.
 
-Visualizá el archivo *HS-ch11-fragment.fasta* 
+**Qué observar:** Diagonal principal perfecta (100% identidad). No hay diagonales secundarias.
 
-```Bash
-head HS-ch1-fragment.fasta 
-```
+<div style="border-left: 6px solid  #555; background-color: #f5f5f5; padding: 12px 16px; margin: 16px 0; border-radius: 4px;">
+<strong>La matriz BLOSUM (BLOcks SUbstitution Matrix)</strong><br>
+Es el estándar de facto para alinear proteínas. Fue creada por Henikoff y Henikoff en 1992.
 
-#### ✏️ Paso 5
-Generá un dotplot utilizando la secuencia *HS-ch11-fragment.fasta* contra sí misma.
+**Cómo funciona:**
+- Tiene un valor **específico para cada par de aminoácidos**
+- No es binaria: cada una de las 190 sustituciones posibles tiene su propia puntuación
+- Los valores se basan en la **probabilidad evolutiva** de que ocurra cada cambio
 
-```Bash
-dotmatcher -graph pdf HS-ch1-fragment.fasta HS-ch1-fragment.fasta
-```
+**¿Cómo se calculan los valores?**
+- Se analizan bloques de alineamientos de proteínas reales
+- Se comparan dos frecuencias:
+  1. **Frecuencia observada**: con qué frecuencia ocurre esa sustitución en la naturaleza
+  2. **Frecuencia esperada al azar**: con qué frecuencia ocurriría si los aminoácidos se alinearan al azar
+- El resultado se expresa como un **log-odds score**: log2 (observado / esperado)
+</div>
 
-**¿Qué podés interpretar de este dotplot?**
+#### ✏️ Paso 2: 
 
-La verdad es que el plot es bastante ruidoso, esto sucede muy a menudo en secuencias genómicas ya que la cantidad de caracteres que componen las secuencias es muy limitada (solo 4) y por ello hay muchas ocurrencias y por lo tanto muchos puntos.
-Para limpiar el plot y quedarnos con los matches más significativos podemos jugar con dos parámetros:
+Dentro del superior de secuencias pegar las siguientes secuencias:
 
-* *windowsize*: Tamaño de ventana
-* *threshold*: Umbral de ocurrencia
+**Secuencia 1:**
 
-Esto quiere decir que ```dotmatcher``` sólo va a poner un punto cuando un fragmento del largo *windowsize* contenga un score mayor a *threshold*.
-Por ejemplo:
+MVLSPADKTNVKAAWGKVGAHAGEYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHGKKVADALTNAVAHVDDMPNALSALSDLHAHKLRVDPVNFK
 
-```Bash
-dotmatcher -graph pdf -windowsize 50 -threshold 20 HS-ch1-fragment.fasta HS-ch1-fragment.fasta
-```
+**Secuencia 2:**
+
+MVLSPADKTNMVLSPADKTNGAHAGEYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHGKKVADALTNAVAHVDDMPNALSALSDLHAHKLRVDPVNFK
+
+**Explicación:** La Secuencia 2 tiene el motivo "MVLSPADKTN" repetido al principio (20 aa), mientras que la Secuencia 1 lo tiene solo una vez. El resto de la secuencia (80 aa) es idéntico.
+
+#### ✏️ Paso 3:
+
+Dentro del superior de secuencias pegar las siguientes secuencias:
+
+**Secuencia 1:**
+
+MVLSPADKTNVKAAWGKVGAHAGEYGAEALEEEEEEEEEEEEEEPHFDLSHGSAQVKGHGKKVADALTNAVAHVDDMPNALSALSDLHAHKLRVDPVNFK
+
+**Secuencia 2:**
+
+MVLSPADKTNVKAAWGKVGAHAGEYGAEALEEEEEEEEEEEEEEPHFDLSHGSAQVKGHGKKVADALTNAVAHVDDMPNALSALSDLHAHKLRVDPVNFK
+
+**Explicación:** La Secuencias están compuestas por bloques de aminoácidos repetidos (E), lo que la hace de baja complejidad.
+
+**Qué observar:** En la zona de baja complejidad , el dotplot se vuelve extremadamente denso, con múltiples diagonales paralelas y manchas de puntos que reflejan las repeticiones. La región de baja complejidad produce un patrón característico de "ruido" estructurado.
+
+<div style="border-left: 6px solid  #555; background-color: #f5f5f5; padding: 12px 16px; margin: 16px 0; border-radius: 4px;">
+<strong>¿Cómo elegir los parámetros ideales?</strong><br>
+
+**No hay una combinación única y perfecta.**
+
+La elección de los parámetros (window y stringency) depende de varios factores:
+
+- **Tipo de secuencia:** ADN (4 letras) vs. Proteínas (20 aminoácidos). El ADN tiene más coincidencias aleatorias, por lo que necesita filtros más estrictos.
+- **Similitud esperada:** Secuencias muy similares vs. secuencias divergentes. Cuanto más divergentes sean, más ruido tendrás que filtrar.
+- **Longitud de las secuencias:** Secuencias más largas generan más ruido estadístico.
+- **Pregunta biológica:** ¿Buscas dominios conservados? ¿Repeticiones? ¿Reordenamientos?
+
+**La mejor estrategia es siempre experimentar con diferentes valores y observar cómo cambia el gráfico.** No existe una combinación mágica; los parámetros óptimos son aquellos que mejor revelan la información biológica que te interesa visualizar.
 
 Si aumentás estos parámetros podés ir eliminando fragmentos que corresponden a secciones compartidas más cortas, sin embargo existe una relación de compromiso, utilizar tamaño de ventana y umbral muy grandes nos llevan a perder información por lo que hay que seleccionarlos con cuidado. Aqui hay algunos patrones con los que te podés encontrar en este tipo de plots:
 
@@ -382,41 +413,128 @@ Si aumentás estos parámetros podés ir eliminando fragmentos que corresponden 
 **f)** Zonas altamente repetitivas (minisatelites).  
 **g)** Secuencias con alta conservación.  
 **h)** Inserción o deleción.  
+</div>
 
-#### ✏️ Paso 5
-Cambiá los parámetros *windowsize* y *threshold* hasta obtener un plot que te parezca adecuado. **¿Qué podés interpretar del mismo?** Identificá patrones.
+Los dot-plots son representaciones gráficas que dan un pantallazo sobre la similitud entre dos secuencias. En ellos se pueden identificar patrones que aporten información sobre la relación entre ambas secuencias.
+La forma de obtener uno es muy sencilla: se establece una matriz donde cada elemento de una de las secuencias se corresponde con una fila y los de la otra con una columna. Acto seguido se procede a colorear cada celda donde los caracteres correspondientes a fila y columna sean equivalentes.
+Por ejemplo:
 
-#### ✏️ Paso 6
-- Ingresá a [Dotlet.vital-it.ch](https://dotlet.vital-it.ch/).
-- Haz clic en **`Input`**.
-- Pega tu secuencia `HS-ch11-fragment.fasta` (con o sin cabecera `>`).
-- Ponle un nombre (ej. `HS-ch11`) y haz clic en **`Ok`**.
-- En los menús desplegables (Horizontal y Vertical), selecciona la misma secuencia (`HS-ch11`) en ambos. Esto hará una **autocomparación** para buscar repeticiones internas.
+![DotPlot](./img/DotPlot1.jpeg)
 
-#### ✏️ Paso 7
-- Es el número de letras que se comparan a la vez.
-- **Valores recomendados para ADN:**
-  - **7-9:** Muy sensible, pero genera mucho ruido.
-  - **10-12:** Punto de equilibrio ideal (empieza aquí).
-  - **15-20:** Muy estricto, solo muestra repeticiones largas y perfectas.
-- Haz clic en **`Compute`** para generar el gráfico.
+# Dot Plots
 
-#### ✏️ Paso 8
-Al hacer `Compute`, aparecerá un gráfico de barras (histograma):
+Un **Dot Plot** (o gráfico de puntos) es una herramienta visual para comparar dos secuencias biológicas (ADN, ARN o proteínas). 
 
-- **Pico enorme a la izquierda** → Ruido (coincidencias al azar).
-- **Pico pequeño a la derecha** → Señal biológica real.
-- **Acción:** Arrastra la **manija izquierda** (umbral inferior) justo hasta el **valle** que separa ambos picos.
-- **Resultado:** El fondo de puntos sucios desaparece y solo quedan las diagonales nítidas.
+### ¿Cómo funciona?
+- Se colocan **dos secuencias** en los ejes **X** e **Y**.
+- Se dibuja un **punto (dot)** en cada coordenada donde los caracteres (bases o aminoácidos) coinciden y tienen un puntaje mayor al Criterio de stringencia.
+- Las **diagonales** en el gráfico indican regiones de similitud o alineamiento entre las secuencias.
 
-#### ✏️ Paso 9
-- **Diagonal principal:** Línea recta de esquina a esquina. Es la secuencia comparada consigo misma (siempre presente).
-- **Diagonales paralelas (fuera de la principal):** Indican **repeticiones internas**. Cuanto más larga y clara es la línea, más conservada está la repetición.
+### Parámetros principales:
 
-#### ✏️ Paso 10
-- Haz **clic izquierdo** sobre cualquier punto o diagonal del gráfico.
-- En la ventana inferior se mostrará el alineamiento exacto de esa posición.
-- Usa las **teclas de flecha (↑, ↓, ←, →)** para moverte a lo largo de la diagonal y examinar la repetición en detalle.
+| Parámetro | ¿Qué hace? |
+|-----------|------------|
+| **Ventana (window)** | Número de caracteres consecutivos que se comparan a la vez. |
+| **Criterio de stringencia (stringency)** | Número mínimo de coincidencias dentro de la ventana para dibujar un punto. |
+
+---
+
+### Ejercicio 2
+
+Vamos a comparar **dos secuencias de hemoglobina** usando la herramienta online [Dotlet](https://dotlet.vital-it.ch/).
+
+#### ✏️ Paso 1: 
+
+Dentro del superior de secuencias pegar las siguientes secuencias:
+
+**Secuencia 1:**
+
+MVLSPADKTNVKAAWGKVGAHAGEYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHGKKVADALTNAVAHVDDMPNALSALSDLHAHKLRVDPVNFK
+
+**Secuencia 2:**
+
+MVLSPADKTNVKAAWGKVGAHAGEYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHGKKVADALTNAVAHVDDMPNALSALSDLHAHKLRVDPVNFK
+
+**Qué hacer:**
+- Configurá **Window = 10** .
+- Hacé clic en **"Draw"**.
+
+**Qué observar:** Diagonal principal perfecta (100% identidad). No hay diagonales secundarias.
+
+<div style="border-left: 6px solid  #555; background-color: #f5f5f5; padding: 12px 16px; margin: 16px 0; border-radius: 4px;">
+<strong>La matriz BLOSUM (BLOcks SUbstitution Matrix)</strong><br>
+Es el estándar de facto para alinear proteínas. Fue creada por Henikoff y Henikoff en 1992.
+
+**Cómo funciona:**
+- Tiene un valor **específico para cada par de aminoácidos**
+- No es binaria: cada una de las 190 sustituciones posibles tiene su propia puntuación
+- Los valores se basan en la **probabilidad evolutiva** de que ocurra cada cambio
+
+**¿Cómo se calculan los valores?**
+- Se analizan bloques de alineamientos de proteínas reales
+- Se comparan dos frecuencias:
+  1. **Frecuencia observada**: con qué frecuencia ocurre esa sustitución en la naturaleza
+  2. **Frecuencia esperada al azar**: con qué frecuencia ocurriría si los aminoácidos se alinearan al azar
+- El resultado se expresa como un **log-odds score**: log2 (observado / esperado)
+</div>
+
+#### ✏️ Paso 2: 
+
+Dentro del superior de secuencias pegar las siguientes secuencias:
+
+**Secuencia 1:**
+
+MVLSPADKTNVKAAWGKVGAHAGEYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHGKKVADALTNAVAHVDDMPNALSALSDLHAHKLRVDPVNFK
+
+**Secuencia 2:**
+
+MVLSPADKTNMVLSPADKTNGAHAGEYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHGKKVADALTNAVAHVDDMPNALSALSDLHAHKLRVDPVNFK
+
+**Explicación:** La Secuencia 2 tiene el motivo "MVLSPADKTN" repetido al principio (20 aa), mientras que la Secuencia 1 lo tiene solo una vez. El resto de la secuencia (80 aa) es idéntico.
+
+#### ✏️ Paso 3:
+
+Dentro del superior de secuencias pegar las siguientes secuencias:
+
+**Secuencia 1:**
+
+MVLSPADKTNVKAAWGKVGAHAGEYGAEALEEEEEEEEEEEEEEPHFDLSHGSAQVKGHGKKVADALTNAVAHVDDMPNALSALSDLHAHKLRVDPVNFK
+
+**Secuencia 2:**
+
+MVLSPADKTNVKAAWGKVGAHAGEYGAEALEEEEEEEEEEEEEEPHFDLSHGSAQVKGHGKKVADALTNAVAHVDDMPNALSALSDLHAHKLRVDPVNFK
+
+**Explicación:** La Secuencias están compuestas por bloques de aminoácidos repetidos (E), lo que la hace de baja complejidad.
+
+**Qué observar:** En la zona de baja complejidad , el dotplot se vuelve extremadamente denso, con múltiples diagonales paralelas y manchas de puntos que reflejan las repeticiones. La región de baja complejidad produce un patrón característico de "ruido" estructurado.
+
+<div style="border-left: 6px solid  #555; background-color: #f5f5f5; padding: 12px 16px; margin: 16px 0; border-radius: 4px;">
+<strong>¿Cómo elegir los parámetros ideales?</strong><br>
+
+**No hay una combinación única y perfecta.**
+
+La elección de los parámetros (window y stringency) depende de varios factores:
+
+- **Tipo de secuencia:** ADN (4 letras) vs. Proteínas (20 aminoácidos). El ADN tiene más coincidencias aleatorias, por lo que necesita filtros más estrictos.
+- **Similitud esperada:** Secuencias muy similares vs. secuencias divergentes. Cuanto más divergentes sean, más ruido tendrás que filtrar.
+- **Longitud de las secuencias:** Secuencias más largas generan más ruido estadístico.
+- **Pregunta biológica:** ¿Buscas dominios conservados? ¿Repeticiones? ¿Reordenamientos?
+
+**La mejor estrategia es siempre experimentar con diferentes valores y observar cómo cambia el gráfico.** No existe una combinación mágica; los parámetros óptimos son aquellos que mejor revelan la información biológica que te interesa visualizar.
+
+Si aumentás estos parámetros podés ir eliminando fragmentos que corresponden a secciones compartidas más cortas, sin embargo existe una relación de compromiso, utilizar tamaño de ventana y umbral muy grandes nos llevan a perder información por lo que hay que seleccionarlos con cuidado. Aqui hay algunos patrones con los que te podés encontrar en este tipo de plots:
+
+![DotPlot](./img/DotPlot_patterns.png)
+
+**a)** Match perfecto.  
+**b)** Repeticiones.  
+**c)** Palíndromo.  
+**d)** Repeticiones invertidas.  
+**e)** Zonas de baja complejidad (microsatelites).  
+**f)** Zonas altamente repetitivas (minisatelites).  
+**g)** Secuencias con alta conservación.  
+**h)** Inserción o deleción.  
+</div>
 
 !!! info "Identidad, Similitud y Homología"
 
@@ -437,26 +555,139 @@ A partir de esta relación entre similitud y homología se pueden inferir relaci
 ### Ejercicio 3
 
 Determinar qué especies están más relacionadas utilizando la ribonucleasa pancreática de caballo (*Equus caballus*), ballena enana (*Balaenoptera acutorostrata*) y canguro rojo (*Macropus rufus*).
+
+## **Google Colab - Empezamos con el TP**
+
+**Google Colab** es un entorno de desarrollo basado en la nube que permite escribir y ejecutar código en *Python* directamente desde el navegador, sin necesidad de instalar programas en la computadora. Al igual que otros **IDEs** (Integrated Development Environments), ofrece un espacio para escribir código, ejecutarlo, detectar errores (debuguear) y visualizar los resultados en un mismo lugar.
+
+Una de las principales ventajas de **Google Colab** es que ya incluye instaladas muchas de las bibliotecas más utilizadas para el análisis de datos, como *NumPy, Pandas, Matplotlib y Seaborn*, además de permitir el uso gratuito de recursos de cómputo como GPU y TPU cuando es necesario. Asimismo, los cuadernos (notebooks) pueden compartirse fácilmente mediante un enlace, facilitando el trabajo colaborativo y la reproducción de análisis por parte de otros usuarios.
+
+✏️**1)** Abran Google Colab desde el navegador ([Google Colab](https://colab.research.google.com/)) 
+
+✏️**2)** Creen un nuevo *notebook* haciendo click en Nuevo notebook en la parte superior
+
+Ahora sí, deberían ver lo siguiente:
+
+<figure markdown>
+![Google Colab](img/google_colab.png)
+</figure>
+
+✏️**3)** Verificar que estemos utilizando Python. Para ejecutar código, Google Colab debe estar conectado a un entorno de ejecución. Para comprobar el lenguaje seleccionado, vayan a **Entorno de ejecución** :material-arrow-right: **Cambiar tipo de entorno de ejecución**. En la ventana que se abre, en **Tipo de entorno de ejecución** debería aparecer Python 3. Google Colab también permite ejecutar código en otros lenguajes, como por ejemplo, R. Si el entorno aún no está iniciado, hagan clic en Conectar (esquina superior derecha) para iniciar la sesión.
+
+✏️**4)** Durante este trabajo práctico les pedimos que desactiven temporalmente la asistencia de IA de Google Colab. El objetivo de este TP es aprender los fundamentos de **Python**, por lo que es importante que escriban el código y resuelvan los ejercicios por sus propios medios. Una vez adquiridas estas bases, la asistencia de IA puede convertirse en una herramienta muy útil para programar de manera más eficiente.
+Para hacerlo vayan a:
+**Herramientas** :material-arrow-right: **Configuración** :material-arrow-right: **Asistencia de IA** :material-arrow-right: **Destildar todas las casillas**
+
+* **Elementos principales de Google Colab**
+
+??? important "Celdas de código (zona central del notebook)"
+
+    Las celdas de código contienen instrucciones en **Python**. Para ejecutarlas pueden hacer clic en el botón **▶** ubicado a la izquierda de la celda o presionar ++shift+enter++, lo que además ejecuta la celda y selecciona la siguiente.
+
+??? important "Celdas de texto (zona central del notebook)"
+
+    Las celdas de texto permiten escribir explicaciones, títulos o consignas usando **Markdown**. En este trabajo práctico las utilizaremos para organizar el contenido y describir los ejercicios.
+
+??? important "Panel de variables (zona inferior del notebook)"
+
+    En el panel **Variables** pueden ver las variables que fueron creadas durante la ejecución del notebook. Esto resulta útil para inspeccionar datos y comprobar que el código está funcionando como esperan. A veces, este panel puede no actualizarse correctamente o no mostrar todas las variables creadas. Si esto ocurre, prueben a actualizar la página (f5). Sino pueden ejecutar el siguiente comando para listar todas las variables definidas en la sesión:
+
+    ```python
+    %whos
+    ```
+
+??? important "Archivos (barra lateral izquierda)"
+
+    En la pestaña **Archivos** pueden explorar los archivos disponibles en la sesión de Colab y subir nuevos archivos desde su computadora. Más adelante utilizaremos esta pestaña para cargar los datos que analizaremos.
+
+??? important "Terminal (zona inferior del notebook)"
+
+    Google Colab también dispone de una **terminal** (Bash), desde la cual es posible ejecutar comandos del sistema operativo, de forma similar a la terminal que utilizamos en los trabajos prácticos anteriores. En este trabajo práctico utilizaremos las **celdas de código** para ejecutar programas en **Python**.
+
+!!! tip "Guardar el notebook"
+
+    Si modifican el notebook y desean conservar los cambios, pueden guardarlo en su cuenta de Google Drive usando **Archivo → Guardar una copia en Drive**.    
+
+!!! tip "Reiniciar el entorno"
+
+    Las variables creadas en una sesión permanecen en memoria hasta que el entorno se reinicia. Si obtienen resultados inesperados, una buena práctica es ejecutar **Entorno de ejecución → Reiniciar sesión** y volver a correr las celdas desde el comienzo.
  
+
+Hasta ahora trabajamos con los algoritmos de alineamiento de forma **casi manual**, entendiendo cómo funcionan por dentro los algoritmos.
+
+Ahora vamos a dar un paso más: vamos a utilizar los algoritmos de alineamiento por **línea de comandos**.
+
+Para eso vamos a usar **EMBOSS** (European Molecular Biology Open Software Suite), un paquete de software que diseña programas específicos para poder ejecutar desde la terminal y analizar secuencias biológicas de forma automatizada. Esto es lo que se usa en la práctica real cuando tenemos que procesar muchas secuencias o queremos integrar los análisis en flujos de trabajo (pipelines).
+
+Consigna: 
+Determinar qué especies están más relacionadas utilizando la ribonucleasa pancreática de caballo (*Equus caballus*), ballena enana (*Balaenoptera acutorostrata*) y canguro rojo (*Macropus rufus*).
+
+
+![Animales](img/Animales.png)
+
 #### ✏️ Paso 1
-Utilizá la herramienta de alineamiento global de EMBOSS ```needle``` (pueden leer el manual para ver que opciones admite ejecutnado el comando ```man needle```) para comparar las tres secuencias.   
+Descargá los materiales de este TP ejecutando el siguiente comando: 
+
+```bash
+wget "https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP02_Alineamientos/data/Balaenoptera_acutorostrata.fasta"
+```
+
+```bash
+wget "https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP02_Alineamientos/data/Elephas_maximus.fasta"
+```
+
+```bash
+wget "https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP02_Alineamientos/data/Equus_caballus.fasta"
+```
+
+#### ✏️ Paso 2
+Visualizá las secuencias usando el comando `head`
+
+#### ✏️ Paso 3
+Utilizá la herramienta de alineamiento global de EMBOSS ```needle``` (pueden leer el manual para ver que opciones admite ejecutnado el comando ```man needle```) para comparar las tres secuencias de a pares.   
 
 ```Bash
 needle -gapopen 10 -gapextend 1 -asequence *secuencia_1* -bsequence *secuencia_2* -outfile *salida*
 ```
-#### ✏️ Paso 2
+#### ✏️ Paso 4
 Observá e interpretá las salidas obtenidas.
 
-* ¿Qué secuencias son más similares? ¿Tiene sentido el resultado obtenido?
+La salida contiene la siguiente información
 
-#### ✏️ Paso 3
-Analizá árbol filogenético de la Fig. 1 del [paper](https://drive.google.com/file/d/1CHS7KCkgDQvzqQ2A_l4y4LKRaoo8Eraf/view?usp=sharing) de O'Leary *et al.*, 2013. 
+| Concepto | Definición |
+|----------|------------|
+| Identidad | Porcentaje de aminoácidos exactamente iguales |
+| Similitud | Porcentaje de aminoácidos idénticos o similares (cambios conservados) |
+| Gap | Hueco introducido para optimizar el alineamiento (indica inserción/deleción) |
+| Score | Puntuación total (matches - penalizaciones por gaps) |
+| Alineamiento global | Alinea las secuencias de principio a fin (Needleman-Wunsch) |
+
+* ¿Qué secuencias son más similares? 
+
+
+#### ✏️ Paso 5
+Analizá árbol filogenético de la Fig. 1 del [paper](https://raw.githubusercontent.com/mercedesgarnham/Tutoriales/refs/heads/main/TP2/data/OLeary_2013_Science.pdf) de O'Leary *et al.*, 2013. 
 Sabiendo que los caballos y las ballenas pertenecen al clado *Euungulata* y los canguros al clado *Marsupialia*, ubicá estos clado en el árbol.
 
-* ¿Esta información coincide con los resultados que obtuviste en el Paso 2?
+* ¿Esta información coincide con los resultados que obtuviste en el anterior?
 
 
-![Animales](./img/Animales.png)
+
+<div style="border-left: 6px solid  #555; background-color: #f5f5f5; padding: 12px 16px; margin: 16px 0; border-radius: 4px;">
+<strong>Identidad, Similitud y Homología</strong><br>
+
+Los términos identidad, similitud y homología se suelen utilizar como sinónimos por muchos investigadores, sin embargo no lo son.
+
+* La **identidad** es una es una característica cuantitativa de un par de secuencias, donde se cuenta cuántos elementos (residuos, nucleótidos, aminoácidos etc) son idénticos entre ambas secuencias después de alinearlas. 
+
+* La **similitud** es una característica cuantitativa de un par de secuencias, donde se establece en qué grado estas se parecen (por ejemplo aplicando los algoritmos antes vistos, utilizando un sistema de puntaje) después de alinearlas. 
+
+* La **homología**, por otro lado, es una característica cualitativa, dos secuencias SON o NO SON homólogas. Homología implica específicamente que el par de secuencias estudiadas *provienen de un mismo ancestro común*. Esta afirmación es completamente hipotética, ya que, salvo en contados casos, no se puede corroborar. Uno puede inferir que este es el caso dado la similitud observada en las secuencias actuales, sin tener acceso a las secuencias ancestrales.
+
+**Importante:** Decir que un par de secuencias tiene N% de homología es TOTALMENTE incorrecto.
+
+A partir de esta relación entre similitud y homología se pueden inferir relaciones entre diferentes especies, buscar posibles funciones de una secuencia desconocida, etc.
+</div>
 
 
 <!--
@@ -584,7 +815,7 @@ Para solucionar el problema, decide aplicar las herramientas que aprendió en el
     Para resolver los puntos 2 y 3 se puede hacer un script de bash tanto para el alineamiento, para ver los % de similitud y para crear dotplots. El parámetro que tienen que agregar a dotmatcher para que el archivo generado sea un pdf de nombre “grafico.pdf” es -graph pdf -goutfile grafico. Si lo logran (o si lo intentan), los invito a incluirlo en el trabajo práctico (aún cuando no les salió).
 
 -->
-
+<!--
 # Ejercicio a informar
 
 
@@ -653,3 +884,4 @@ Si desea, puede escribir un script de Bash que:
 4. Genere automáticamente un dotplot en formato PDF con `dotmatcher` (use `-graph pdf` y `-goutfile grafico`).
 
 Incluya el script como parte de su entrega (no obligatorio, pero sumará puntos).
+-->
