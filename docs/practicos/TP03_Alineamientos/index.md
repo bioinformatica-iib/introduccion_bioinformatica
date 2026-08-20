@@ -509,7 +509,7 @@ wget "https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos
 ```
 
 ```bash
-wget "https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP03_Alineamientos/data/Elephas_maximus.fasta"
+wget "https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP03_Alineamientos/data/Macropus_rufus.fasta"
 ```
 
 ```bash
