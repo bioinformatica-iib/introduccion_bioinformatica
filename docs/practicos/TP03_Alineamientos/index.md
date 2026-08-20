@@ -367,7 +367,7 @@ MVLSPADKTNVKAAWGKVGAHAGEYGAEALEEEEEEEEEEEEEEPHFDLSHGSAQVKGHGKKVADALTNAVAHVDDMPNA
 
 ### Ejercicio 3
 
-Ahora vamos a generar el mismo dot plot pero desde la **terminal** usando `dotmatcher` del paquete **EmbOSS**.
+Ahora vamos a generar el mismo dot plot pero desde la **terminal** usando `dotmatcher` del paquete **EMBOSS**.
 
 #### Configuración de Google Colab
 
@@ -559,13 +559,13 @@ Sabiendo que los caballos y las ballenas pertenecen al clado *Euungulata* y los 
 
 A partir de esta relación entre similitud y homología se pueden inferir relaciones entre diferentes especies, buscar posibles funciones de una secuencia desconocida, etc.
 
-# Ejercicio a informar
+## Ejercicio a informar
 
 !!! info 
 
     <span style="font-weight:bold;">Fecha límite de entrega:</span> Viernes, 28 de agosto 2026, 23:59hs.
 
-## Contexto biológico
+### Contexto biológico
 
 El virus del dengue (DENV) es un arbovirus de la familia *Flaviviridae*, transmitido por mosquitos del género *Aedes* (principalmente *Aedes aegypti*). Existen **cuatro serotipos** (DENV‑1, DENV‑2, DENV‑3 y DENV‑4) que circulan simultáneamente en regiones endémicas. La infección por un serotipo genera inmunidad duradera solo contra ese serotipo, y una segunda infección por un serotipo diferente aumenta el riesgo de dengue grave (dengue hemorrágico o síndrome de shock).
 
@@ -575,7 +575,7 @@ El **gen de la envoltura (E)** es el principal objetivo para la genotipificació
 
 En este práctico, usted recibirá **tres muestras clínicas secuenciadas** (archivo `secuencia_incognita.fasta`). Deberá determinar si corresponden a dengue, a Zika o si la secuenciación ha fallado. Para ello, comparará las secuencias problema con un conjunto de referencias de los cuatro serotipos de dengue (archivo `all_sequences.fasta`).
 
-## Archivos de trabajo
+### Archivos de trabajo
 
 A continuación se listan los archivos necesarios para el práctico.
 
@@ -599,9 +599,9 @@ A continuación se listan los archivos necesarios para el práctico.
 
 > **Tip:** Si necesita dividir el archivo `secuencia_incognita.fasta` en archivos individuales, use el comando `!seqretsplit secuencia_incognita.fasta` (EMBOSS).
 
-## Consignas
+### Consignas
 
-### 1. Identificación de especie y, si corresponde, de serotipo
+#### 1. Identificación de especie y, si corresponde, de serotipo
 
 Utilizando la herramienta de alineamiento global `needle` (EMBOSS), compare **cada una de las tres muestras de pacientes** contra **cada una de las seferencias** (DENV‑1, DENV‑2, DENV‑3, DENV‑4 y ZIKV). 
 
@@ -614,7 +614,7 @@ A partir de esa tabla, responda:
 - Para las muestras que resultaron ser dengue, ¿a qué serotipo pertenece cada una? ¿Qué porcentaje de identidad considera suficiente para asignar un serotipo? (Investigue el criterio del 90 % de identidad en la región E usado en la literatura).
 - ¿Alguna muestra no muestra una identidad clara con ninguna de las cinco referencias? En ese caso, ¿qué explicación biológica o técnica propondría (por ejemplo, falla de secuenciación, contaminación, calidad de la muestra)?
 
-### 2. Análisis por dotplot y región variable
+#### 2. Análisis por dotplot y región variable
 
 Seleccione la/las muestra que resultaron ser dengue y compárela, mediante un **dotplot** (puede usar `dotmatcher` de EMBOSS o la herramienta web Dotlet), con el resto de las variantes.
 
@@ -622,7 +622,7 @@ Seleccione la/las muestra que resultaron ser dengue y compárela, mediante un **
 - Identifique una región de aproximadamente **100‑200 pb** donde el dotplot muestre claramente diferencias (por ejemplo, un gap o una zona con pocos puntos).
 - ¿Cómo podría aprovechar esa región para diseñar un ensayo de PCR específica para el serotipo encontrado?
 
-### 3. (Opcional) Automatización con script en Bash
+#### 3. (Opcional) Automatización con script en Bash
 
 Si desea, puede escribir un script de Bash que:
 
@@ -631,23 +631,22 @@ Si desea, puede escribir un script de Bash que:
 3. Genere automáticamente un dotplot en formato PDF con `dotmatcher` (use `-graph pdf` y `-goutfile grafico`) para la muestra dengue identificada, contra dos serotipos de referencia.
 
 ??? info "Posible estructura del script":
+    ```bash
+    #!/usr/bin/env bash
+    echo -e "Paciente\tdenv1" > resultados.tsv
 
-```bash
-#!/usr/bin/env bash
-echo -e "Paciente\tdenv1" > resultados.tsv
+    for paciente in paciente*.fasta; do
+        needle -gapopen 10 -gapextend 1 -asequence "$paciente" -bsequence denv1_reference_e_gene.fasta -outfile "${paciente}_vs_denv1.txt"
+        # Repetir para todas las secuencias de referencia
+        
+        identidad_denv1=$(grep "^# Identity:" "${paciente}_vs_denv1.txt")
+        echo -e "{$paciente}\t{$identidad_denv1}" >> resultados.tsv
+        # Repetir para todas las secuencias de referencia
 
-for paciente in paciente*.fasta; do
-    needle -gapopen 10 -gapextend 1 -asequence "$paciente" -bsequence denv1_reference_e_gene.fasta -outfile "${paciente}_vs_denv1.txt"
-    # Repetir para todas las secuencias de referencia
-    
-    identidad_denv1=$(grep "^# Identity:" "${paciente}_vs_denv1.txt")
-    echo -e "{$paciente}\t{$identidad_denv1}" >> resultados.tsv
-    # Repetir para todas las secuencias de referencia
-
-    dotmatcher -windowsize 50 -threshold 20 -asequence "$paciente" -bsequence "denv1_reference_e_gene.fasta" -graph pdf -goutfile "dotplots/${paciente}_vs_denv1_reference_e_gene.fasta"
-    # Repetir para todas las secuencias de referencia
-done
-```
+        dotmatcher -windowsize 50 -threshold 20 -asequence "$paciente" -bsequence "denv1_reference_e_gene.fasta" -graph pdf -goutfile "dotplots/${paciente}_vs_denv1_reference_e_gene.fasta"
+        # Repetir para todas las secuencias de referencia
+    done
+    ```
 
 Recuerden utilizar una estructura de directorios ordenadas para trabajar. 
 
