@@ -240,16 +240,6 @@ En grupo, realizá el alineamiento de las secuencias **ATTGG** con **AGATGG**, u
 
 ![ejDynamic](./img/matrixNW.png)
 
-<!---
-Para esto, abrí el siguiente [Google Jamboard](https://jamboard.google.com/d/1MGSgTaSSm7bAoHsfw1HCg7CHxuVOfKWVORQmL2vyymw/edit?usp=sharing), guardá una copia local del mismo en tu Google Drive y compartí el GJamboard a tus compañeros de equipo. 
-
-!!! attention "Atención"
-      
-      Para guardar una copia local del GJamboard en tu GDrive, cliqueá en el ícono con 3 puntitos, en el extremo superior derecho (Más acciones). Luego seleccioná la opción "Hacer una copia". Elegí la carpeta adonde deseas guardarlo dentro de tu unidad y cliqueá aceptar. 
-
-¡Ahora estás listo para empezar! Recordá rellenar la matriz con todos los puntajes y flechas faltantes. Cuando termines, reconstruí el *path* del alineamiento.
---->
-
 #### ✏️ Paso 2
 Cuando termines el ejercicio anterior podés corrobar la solución que hallaste ingresando en [UniFreiburg-FreiburgRNATools](http://rna.informatik.uni-freiburg.de/Teaching/index.jsp?toolName=Needleman-Wunsch).
 
@@ -286,17 +276,6 @@ Observá nuevamente la matriz del alineamiento que obtuviste en **1.2**. Cliqué
 <br>
 ¿Entendés qué significa esto? ¿Podés relacionarlo con los dos caminos óptimos posibles que existen para este alineamiento?
 <br>
-
-<!--
-**1.3.3** Finalmente te propongo que realices el siguiente alineamiento: 
-
-* Sequence a: **AGATGG** y Sequence b: **ATTGGG**. 
-* Seleccioná optimización de Similarity. 
-* Esquema de puntajes: **M:1, m:-1, g:-5**. 
-
-Registrá con atención el resultado. Ahora cambiemos el esquema de *scoring*, dejando el mismo valor para match, pero intercambiando los puntajes de gap y mismatch. 
-¿Cómo cambió el output? ¿Qué observás ahora en las secuencias halladas como solución óptima en comparación a lo que arrojaba el algoritmo con los parámetros anteriores?
--->
 
 ## Dot-Plots
 
@@ -390,55 +369,17 @@ MVLSPADKTNVKAAWGKVGAHAGEYGAEALEEEEEEEEEEEEEEPHFDLSHGSAQVKGHGKKVADALTNAVAHVDDMPNA
 
 Ahora vamos a generar el mismo dot plot pero desde la **terminal** usando `dotmatcher` del paquete **EmbOSS**.
 
-#### ✏️ Paso 1
-
-Generá la estrcutura de directorios correspondiente y descargá la secuencia que vamos a comparar en esta sección ejecutando el siguiente comando: 
-
-```bash
-wget "https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP02_Alineamientos/data/HS-ch1-fragment.fasta"
-```
-
-#### ✏️ Paso 2
-Visualizá las secuencias usando el comando `cat`
-
-
-#### ✏️ Paso 3
-Generá un dotplot utilizando la secuencias descargada en el paso 1
-
-```Bash
-dotmatcher -graph pdf HS-ch1-fragment.fasta HS-ch1-fragment.fasta
-```
-
-Para limpiar el plot y quedarnos con los matches más significativos podemos jugar con dos parámetros:
-
-* *windowsize*: Tamaño de ventana
-* *threshold*: Umbral de ocurrencia
-
-Esto quiere decir que ```dotmatcher``` sólo va a poner un punto cuando un fragmento del largo *windowsize* contenga un score mayor a *threshold*.
-Por ejemplo:
-
-```bash
-dotmatcher -graph pdf -windowsize 50 -threshold 20 HS-ch1-fragment.fasta HS-ch1-fragment.fasta
-```
-
-#### ✏️ Paso 4
-Cambiá los parámetros *windowsize* y *threshold* hasta obtener un plot que te parezca adecuado. **¿Qué podés interpretar del mismo?** Identificá patrones.
-
----
-
-### Ejercicio 4
-
-Determinar qué especies están más relacionadas utilizando la ribonucleasa pancreática de caballo (*Equus caballus*), ballena enana (*Balaenoptera acutorostrata*) y canguro rojo (*Macropus rufus*).
-
-#### Google Colab
+#### Configuración de Google Colab
 
 **Google Colab** es un entorno de desarrollo basado en la nube que permite escribir y ejecutar código en *Python* directamente desde el navegador, sin necesidad de instalar programas en la computadora. Al igual que otros **IDEs** (Integrated Development Environments), ofrece un espacio para escribir código, ejecutarlo, detectar errores (debuguear) y visualizar los resultados en un mismo lugar.
 
 Una de las principales ventajas de **Google Colab** es que ya incluye instaladas muchas de las bibliotecas más utilizadas para el análisis de datos, como *NumPy, Pandas, Matplotlib y Seaborn*, además de permitir el uso gratuito de recursos de cómputo como GPU y TPU cuando es necesario. Asimismo, los cuadernos (notebooks) pueden compartirse fácilmente mediante un enlace, facilitando el trabajo colaborativo y la reproducción de análisis por parte de otros usuarios.
 
-✏️**1)** Abran Google Colab desde el navegador ([Google Colab](https://colab.research.google.com/)) 
+#### ✏️ Paso 1
+Abran Google Colab desde el navegador ([Google Colab](https://colab.research.google.com/)) 
 
-✏️**2)** Creen un nuevo *notebook* haciendo click en Nuevo notebook en la parte superior
+#### ✏️ Paso 2
+Creen un nuevo *notebook* haciendo click en Nuevo notebook en la parte superior
 
 Ahora sí, deberían ver lo siguiente:
 
@@ -446,11 +387,8 @@ Ahora sí, deberían ver lo siguiente:
 ![Google Colab](img/google_colab.png)
 </figure>
 
-✏️**3)** Verificar que estemos utilizando Python. Para ejecutar código, Google Colab debe estar conectado a un entorno de ejecución. Para comprobar el lenguaje seleccionado, vayan a **Entorno de ejecución** :material-arrow-right: **Cambiar tipo de entorno de ejecución**. En la ventana que se abre, en **Tipo de entorno de ejecución** debería aparecer Python 3. Google Colab también permite ejecutar código en otros lenguajes, como por ejemplo, R. Si el entorno aún no está iniciado, hagan clic en Conectar (esquina superior derecha) para iniciar la sesión.
-
-✏️**4)** Durante este trabajo práctico les pedimos que desactiven temporalmente la asistencia de IA de Google Colab. El objetivo de este TP es aprender los fundamentos de **Python**, por lo que es importante que escriban el código y resuelvan los ejercicios por sus propios medios. Una vez adquiridas estas bases, la asistencia de IA puede convertirse en una herramienta muy útil para programar de manera más eficiente.
-Para hacerlo vayan a:
-**Herramientas** :material-arrow-right: **Configuración** :material-arrow-right: **Asistencia de IA** :material-arrow-right: **Destildar todas las casillas**
+#### ✏️ Paso 3
+Verificar que estemos utilizando Python. Para ejecutar código, Google Colab debe estar conectado a un entorno de ejecución. Para comprobar el lenguaje seleccionado, vayan a **Entorno de ejecución** :material-arrow-right: **Cambiar tipo de entorno de ejecución**. En la ventana que se abre, en **Tipo de entorno de ejecución** debería aparecer Python 3. Google Colab también permite ejecutar código en otros lenguajes, como por ejemplo, R. Si el entorno aún no está iniciado, hagan clic en Conectar (esquina superior derecha) para iniciar la sesión.
 
 * **Elementos principales de Google Colab**
 
@@ -486,6 +424,71 @@ Para hacerlo vayan a:
 
     Las variables creadas en una sesión permanecen en memoria hasta que el entorno se reinicia. Si obtienen resultados inesperados, una buena práctica es ejecutar **Entorno de ejecución → Reiniciar sesión** y volver a correr las celdas desde el comienzo.
  
+#### Uso del prefijo "!" en Google Colab para programar en Bash
+
+Google Colab ejecuta su código sobre una máquina virtual con sistema operativo Linux. Gracias a esto, podemos interactuar directamente con la terminal usando el prefijo `!` al inicio de cualquier línea dentro de una celda.
+
+#### Instalación de paquetes y herramientas (ejemplo con EMBOSS)
+
+Dado que el sistema operativo es Ubuntu, puedes instalar cualquier paquete disponible en sus repositorios usando `apt-get` con el prefijo `!` y `sudo`. Por ejemplo, para instalar el paquete de bioinformática **EMBOSS**:
+
+```bash
+    !sudo apt-get install paquete
+```
+
+Una vez instalado, puedes ejecutar sus herramientas directamente:
+
+```bash
+    !dotmatcher -help                   # Muestra la ayuda del comando
+```
+
+El entorno de Colab es efímero. Al cerrar la sesión o tras un periodo de inactividad, la máquina se reinicia y se pierden todos los paquetes instalados. Por lo tanto, en cada nueva sesión deberás volver a ejecutar los comandos de instalación.
+
+#### ✏️ Paso 4
+Ejecuten el siguiente comando para instalar EMBOSS
+
+```bash
+!sudo apt-get install emboss
+```
+
+#### Generación de Dotplots por línea de comando
+
+#### ✏️ Paso 5
+
+Generá la estrcutura de directorios correspondiente y descargá la secuencia que vamos a comparar en esta sección ejecutando el siguiente comando: 
+
+```bash
+!wget "https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP03_Alineamientos/data/HS-ch1-fragment.fasta"
+```
+
+#### ✏️ Paso 6
+Generá un dotplot utilizando la secuencias descargada en el paso 1
+
+```Bash
+!dotmatcher -graph pdf HS-ch1-fragment.fasta HS-ch1-fragment.fasta
+```
+
+Abrir el dotplot generado y observar el gráfico obtenido.
+
+#### ✏️ Paso 7
+
+Para limpiar el plot y quedarnos con los matches más significativos podemos jugar con dos parámetros:
+
+* *windowsize*: Tamaño de ventana
+* *threshold*: Umbral de ocurrencia
+
+Esto quiere decir que ```dotmatcher``` sólo va a poner un punto cuando un fragmento del largo *windowsize* contenga un score mayor a *threshold*.
+Por ejemplo:
+
+```bash
+dotmatcher -graph pdf -windowsize 50 -threshold 20 HS-ch1-fragment.fasta HS-ch1-fragment.fasta
+```
+
+Cambiá los parámetros *windowsize* y *threshold* hasta obtener un plot que te parezca adecuado. **¿Qué podés interpretar del mismo?** Identificá patrones.
+
+---
+
+### Ejercicio 4
 
 Hasta ahora trabajamos con los algoritmos de alineamiento de forma **casi manual**, entendiendo cómo funcionan por dentro los algoritmos.
 
@@ -493,31 +496,27 @@ Ahora vamos a dar un paso más: vamos a utilizar los algoritmos de alineamiento 
 
 Para eso vamos a usar **EMBOSS** (European Molecular Biology Open Software Suite), un paquete de software que diseña programas específicos para poder ejecutar desde la terminal y analizar secuencias biológicas de forma automatizada. Esto es lo que se usa en la práctica real cuando tenemos que procesar muchas secuencias o queremos integrar los análisis en flujos de trabajo (pipelines).
 
-Consigna: 
+**Consigna:**
 Determinar qué especies están más relacionadas utilizando la ribonucleasa pancreática de caballo (*Equus caballus*), ballena enana (*Balaenoptera acutorostrata*) y canguro rojo (*Macropus rufus*).
-
 
 ![Animales](img/Animales.png)
 
 #### ✏️ Paso 1
-Descargá los materiales de este TP ejecutando el siguiente comando: 
+Descargá los materiales de este TP ejecutando los siguientes comandos: 
 
 ```bash
-wget "https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP02_Alineamientos/data/Balaenoptera_acutorostrata.fasta"
+wget "https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP03_Alineamientos/data/Balaenoptera_acutorostrata.fasta"
 ```
 
 ```bash
-wget "https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP02_Alineamientos/data/Elephas_maximus.fasta"
+wget "https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP03_Alineamientos/data/Elephas_maximus.fasta"
 ```
 
 ```bash
-wget "https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP02_Alineamientos/data/Equus_caballus.fasta"
+wget "https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP03_Alineamientos/data/Equus_caballus.fasta"
 ```
 
 #### ✏️ Paso 2
-Visualizá las secuencias usando el comando `head`
-
-#### ✏️ Paso 3
 Utilizá la herramienta de alineamiento global de EMBOSS ```needle``` (pueden leer el manual para ver que opciones admite ejecutnado el comando ```man needle```) para comparar las tres secuencias de a pares.   
 
 ```Bash
@@ -537,7 +536,6 @@ La salida contiene la siguiente información
 | Alineamiento global | Alinea las secuencias de principio a fin (Needleman-Wunsch) |
 
 * ¿Qué secuencias son más similares? 
-
 
 #### ✏️ Paso 5
 Analizá árbol filogenético de la Fig. 1 del [paper](https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP03_Alineamientos/data/OLeary_2013_Science.pdf) de O'Leary *et al.*, 2013. 
@@ -561,135 +559,7 @@ Sabiendo que los caballos y las ballenas pertenecen al clado *Euungulata* y los 
 
 A partir de esta relación entre similitud y homología se pueden inferir relaciones entre diferentes especies, buscar posibles funciones de una secuencia desconocida, etc.
 
-
-<!--
-**3.2** Realizá el mismo procedimiento pero esta vez para determinar si los mamuts (*Mammuthus primigenius*) son más cercanos a los elefantes africanos (*Loxodonta africana*) o asiáticos (*Elephas maximus*) utilizando la secuencia de la cadena alfa de la hemoglobina.  
-
-**3.2.1** ¿Qué te sugieren los resultados obtenidos?
-
-**3.2.2** ¿Es relevante la diferencia hallada?
-
-**3.2.3** ¿Cómo harías para sacar conclusiones más fuertes sobre las relaciones filogenéticas entre los organismos estudiados en los ejercicios 3.1 y 3.2?
-
-![Elefantes](./img/Elefantes.png)
-
-## Alineamientos múltiples
-
-Un alineamiento múltiple (MSA) involucra tres o más secuencias biológicas. Debido a que la tarea de alinear múltiples secuencias de largos biológicamente significativos suele ser muy demandante en términos de recursos computacionales y tiempos de ejecución estos requieren metodologías más sofisticadas para llevarse a cabo. Por ello la mayoría de los programas disponibles para realizar MSA utiliza heurísticas en vez de algoritmos de optimización global.
-
-!!! note "Heurística"
-   
-      Es una estrategia que busca resolver un problema más simple cuya solución se interseca con la solución de un problema más complejo. Generalmente esto implica que no es seguro encontrar el mejor resultado pero sí una solución que sea aceptable. Las heurísticas se aplican con frecuencia en computación para poder resolver problemas que, por su complejidad, serían imposibles de abordar dados los limitados recursos con los que se cuentan.
-
-Dadas las secuencias de aminoácidos de un set de proteínas que se quieren comparar, el MSA muestra los residuos de cada proteína en una fila junto con los gaps que le correspondan de tal manera que todos los residuos "equivalentes" se encuentren en la misma columna. La utilidad de esta equivalencia depende de quien mire el alineamiento:
-
-* Alguien que hace una filogenia puede enfocarse en que comparten un ancestro común;
-* Alguien que hace biología estructural puede enfocarse en que son residuos en posiciones análogas de una estructura proteica;
-* Alguien que hace biología molecular puede enfocarse en el rol funcional de esos residuos en la proteína.
-
-En cada caso un MSA provee un pantallazo sobre las restricciones evolutivas, estructurales o funcionales que caracterizan un set de proteínas de una manera visual e intuitiva.
-
-![MA0](./img/MA0.png)
-
-Un pipeline típico para realizar un MSA sería:
-
-1. Formular la pregunta que se quiere contestar. Por ejemplo,  "¿Qué estructura secundaria adopta X región de mi proteína de interés?"
-2. Obtener secuencias que puedan contestar a mi pregunta. Por ejemplo, secuencias que estén relacionadas a mi proteína de interés.
-3. Utilizar alguno de los programas disponibles para llevar a cabo el MSA. Por ej. EMBOSS
-4. Realizar ajustes manuales para corregir posibles errores de los algoritmos de alineamiento.
-
-### Ejercicio 4 (Adicional)
-
-La gp120 es una proteína que recubre al virus del HIV y facilita su unión e ingreso a la célula que infecta (linfocitos CD4+)
-Entre nuestros archivos contamos con un multifasta (gp120.fasta) que contiene 27 secuencias de gp120 de HIV-1, HIV-2 y SIV.
-Estas proteínas contienen 9 puentes disulfuro conservados. También es de interés el loop V3, una porción expuesta de la proteína, conocido target de anticuerpos el cual constituye una región hipervariable dada la presión selectiva a la que se ve sometido. 
-
-<br>
-Pueden ver la disposición de las distintas regiones de la gp120 en el siguiente esquema:
-<br>
-<br>
-![gp120](./img/gp120.png)
-
- **Figure 1. Glicoproteína gp120 de HIV**
- 
-<span style="font-size: 0.8em;"> Mathys L, Balzarini J. *Several N-Glycans on the HIV Envelope Glycoprotein gp120 Preferentially Locate Near Disulphide Bridges and Are Required for Efficient Infectivity and Virus Transmission.* PLoS One. 2015 Jun 29;10(6):e0130621. doi: [10.1371/journal.pone.0130621](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0130621). PMID: 26121645; PMCID: PMC4488071.</span>
-
-<br>
-
-**4.1** Utilizá las herramientas de EMBOSS para realizar un alineamiento múltiple con las secuencias de gp120 (recuerden que para buscar herramientas pueden usar ```wossname```)  
-
-??? note "Pista"
-   
-    El comando a utilizar es ```emma```. Para ver la ayuda, tipeá ```emma -help``` en la terminal.
-
-**4.2** Utilizá el comando ```showalign``` de EMBOSS para obtener una mejor visualización del alineamiento.  
-
-**4.3** Observá el alineamiento, como primer control podemos corroborar que las 18 Cisteínas (**C**) estén bien alineadas.  
-
-**4.4** Utilizá el esquema de gp120 para identificar diversas regiones ya sea conservadas o muy variables (Estructuras, loops, etc.) 
-
-!!! tip "Tip"
-
-      Notá que las posiciones en el alineamiento cuentan gaps por lo que no se corresponden exactamente con el esquema. Utilizá las posiciones de las cisteínas conservadas para identificar diferentes regiones.
-
-<div style="border-bottom: 3px solid black;">
-
-</div>
-
-## Ejercicio a informar
-
-!!! info 
-
-    <span style="font-weight:bold;">Fecha límite de entrega:</span> Viernes, 5 de septiembre 2025, 23:59hs.
-
-[:fontawesome-solid-download: Materiales](https://drive.google.com/drive/folders/14Qbd5QwI4INiWdyC1HsiKkoU7MIImkn2?usp=sharing){ .md-button .md-button--primary }
-
-### Enunciado
-
-Usted trabaja en un laboratorio que estudia distintos aspectos del virus del papiloma humano (HPV). Como parte de su colaboración con Servicio Virus Oncogénicos del Instituto Nacional de Enfermedades Infecciosas ANLIS “Dr. Carlos G. Malbrán”, todos los días se obtienen nuevas secuencias de aislamientos de HPV. Recientemente, el servicio compartió con su jefe un nuevo aislamiento del virus, y su jefe le ha encomendado a usted la tarea de analizar dicho aislamiento para extraer toda la información bioinformática posible de su colección de datos.
-
-#### Breve descripción del virus del papiloma humano
-
-El virus del papiloma humano (VPH o HPV, del inglés human papillomavirus) es el virus responsable de una de las infecciones de transmisión sexual más frecuentes en todo el mundo. Se estima que 4 de cada 5 personas van a contraer uno o varios de los tipos de VPH en algún momento de sus vidas.  Existen alrededor de 100 tipos de HPV, de los cuales 40 afectan la zona genital y anal. Los distintos tipos de HPV se clasifican en dos grandes grupos, denominados de alto y bajo riesgo oncogénico. Los HPV de bajo riesgo suelen estar asociados con lesiones benignas o de bajo grado, mientras que las infecciones con HPV de alto riesgo oncogénico pueden evolucionar a cáncer, siendo el cáncer de cuello de útero el más frecuente. Los tipos de HPV de alto riesgo más comunes son el 16 y 18. La determinación del tipo de HPV se realiza con distintas técnicas de biología molecular que permiten identificar diferencias genómicas.
-Los HPV son grupos diversos de virus ADN pertenecientes a la familia de los Papillomaviridae. Las diferencias entre estos virus a nivel de secuencia de ADN permiten clasificarlos (o genotipificarlos), lo cual resulta muy importante debido a la diferencia de patologías que pueden causar los distintos tipos de HPV.
-
-#### Trabajo a realizar
-
-Usted cuenta con un conjunto de secuencias que utiliza normalmente en su laboratorio, organizadas de la siguiente manera:
-
-| Nombre del archivo      | Descripción                                                                                   |
-|----------------------------|-----------------------------------------------------------------------------------------------|
-| **all_sequences.fasta**   | Archivo multifasta con 11 secuencias de distintos tipos de HPV                                |
-| **all_sequences.gb**       | Archivo GenBank. Almacena las mismas 11 secuencias que el archivo fasta, con información adicional (como anotaciones de proteínas) |
-| **conjunto_de_secuencias**| Archivo de hoja de cálculo con información sobre la secuencia y el organismo al que pertenece |
-
-
-Pero… Cuando usted recibe los datos (`secuencia_incognita.fasta`) se da cuenta que el archivo no ha sido nombrado correctamente. Este tipo de errores son comunes debido a la gran cantidad de secuencias que maneja el Servicio Virus Oncogénico, ya que este servicio actúa como Laboratorio Nacional de Referencia del Ministerio de Salud (MSAL) para el virus papiloma humano (HPV) y el virus de Epstein-Barr (EBV). 
-
-Para solucionar el problema, decide aplicar las herramientas que aprendió en el trabajo práctico N3 de bioinformática cuando era estudiante y procede a:
-
-
-1. Verificar que la secuencia que le mandaron corresponde al virus de HPV y no a otro. Para esto, hay que comparar la secuencia del nuevo aislamiento con alguna secuencia de su conjunto de secuencias. ¿Pertenece el nuevo aislamiento a un HPV?
-    
-    !!! tip "Tip"
-        Recuerden usar parámetros adecuados de ventana y umbral
-
-2. Debido a la importancia a nivel diagnóstico, ahora quiere saber qué tipo de HPV es. Para esto decide determinar el % de similitud que posee su secuencia con cada una de las secuencias  con las que usted trabaja comúnmente. ¿Puede decir que tipo de virus es en base a la información que posee?
-    
-    !!! tip "Tip"
-
-        Si necesitan dividir el archivo `All_Sequences.fasta` en archivos individuales pueden buscar **wossname split**. 
-
-3. Ahora comparen el tipo de HPV del aislamiento con otros del mismo riesgo y de distinto nivel de riesgo. ¿Encuentran alguna región que pueda ser útil para genotipificación? ¿Qué eventos observan en los dotplots cuando comparan HPV de igual y de distinto riesgo?
-
-!!! example "Extra! (y por ende opcional)"
-
-    Para resolver los puntos 2 y 3 se puede hacer un script de bash tanto para el alineamiento, para ver los % de similitud y para crear dotplots. El parámetro que tienen que agregar a dotmatcher para que el archivo generado sea un pdf de nombre “grafico.pdf” es -graph pdf -goutfile grafico. Si lo logran (o si lo intentan), los invito a incluirlo en el trabajo práctico (aún cuando no les salió).
-
--->
-<!--
 # Ejercicio a informar
-
 
 !!! info 
 
@@ -709,51 +579,76 @@ En este práctico, usted recibirá **tres muestras clínicas secuenciadas** (arc
 
 A continuación se listan los archivos necesarios para el práctico.
 
-[:fontawesome-solid-download: Materiales](data/Data-informe.zip){ .md-button .md-button--primary }
-
 - **dengue_sequences.fasta** – Secuencias de referencia de los cuatro serotipos de dengue (DENV‑1 a DENV‑4). 
+
+```bash
+!wget "https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP03_Alineamientos/data/informe/dengue_sequences.fasta"
+```
 
 - **secuencia_incognita.fasta** – Contiene las tres muestras clínicas a analizar (Paciente_001, Paciente_002, Paciente_003). 
 
+```bash
+!wget "https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP03_Alineamientos/data/informe/secuencia_incognita.fasta"
+```
+
 - **zika_reference.fasta** – Secuencia de referencia del virus Zika.
 
-> **Tip:** Si necesita dividir el archivo `all_sequences.fasta` en archivos individuales, use el comando `seqretsplit all_sequences.fasta` (EMBOSS).
+```bash
+!wget "https://bioinformatica-iib.github.io/introduccion_bioinformatica/practicos/TP03_Alineamientos/data/informe/zika_reference.fasta"
+```
+
+> **Tip:** Si necesita dividir el archivo `secuencia_incognita.fasta` en archivos individuales, use el comando `!seqretsplit secuencia_incognita.fasta` (EMBOSS).
 
 ## Consignas
 
-### 1. Verificación de especie
+### 1. Identificación de especie y, si corresponde, de serotipo
 
-Utilizando la herramienta de alineamiento global `needle` (EMBOSS), compare cada una de las tres secuencias de los pacientes con **todas** las secuencias de referencia de dengue (DENV‑1 a DENV‑4).
+Utilizando la herramienta de alineamiento global `needle` (EMBOSS), compare **cada una de las tres muestras de pacientes** contra **cada una de las seferencias** (DENV‑1, DENV‑2, DENV‑3, DENV‑4 y ZIKV). 
 
-- ¿Pertenece alguna de las muestras al virus dengue?
-- Si alguna no es dengue, ¿a qué otro virus podría corresponder? (Investigue en bases de datos públicas o use su criterio basado en el porcentaje de identidad).
+Para cada muestra, registre el % de identidad obtenido contra cada una de las referencias y arme una tabla comparativa.
 
-### 2. Genotipificación (determinación del serotipo)
+A partir de esa tabla, responda:
 
-Para las muestras que resultaron ser dengue, calcule el **porcentaje de similitud** con cada uno de los cuatro serotipos de referencia.
+- ¿Alguna de las muestras corresponde al virus dengue? ¿A cuál/cuáles?
+- ¿Alguna corresponde a Zika en lugar de a dengue? ¿Cómo lo determinó a partir de los porcentajes de identidad?
+- Para las muestras que resultaron ser dengue, ¿a qué serotipo pertenece cada una? ¿Qué porcentaje de identidad considera suficiente para asignar un serotipo? (Investigue el criterio del 90 % de identidad en la región E usado en la literatura).
+- ¿Alguna muestra no muestra una identidad clara con ninguna de las cinco referencias? En ese caso, ¿qué explicación biológica o técnica propondría (por ejemplo, falla de secuenciación, contaminación, calidad de la muestra)?
 
-- ¿A qué serotipo pertenece cada muestra?
-- ¿Qué porcentaje de identidad considera suficiente para asignar un serotipo? (Investigue el criterio del 90 % de identidad en la región E usado en la literatura).
+### 2. Análisis por dotplot y región variable
 
-### 3. Análisis por dotplot y región variable
-
-Seleccione la muestra que resultó ser dengue y compárela, mediante un **dotplot** (puede usar `dotmatcher` de EMBOSS o la herramienta web Dotlet), con:
-
-- Otro serotipo del mismo nivel de riesgo (ej. DENV‑1 si su muestra es DENV‑2).
-- Un serotipo de distinto nivel de riesgo (ej. DENV‑4, generalmente asociado a formas más leves).
+Seleccione la/las muestra que resultaron ser dengue y compárela, mediante un **dotplot** (puede usar `dotmatcher` de EMBOSS o la herramienta web Dotlet), con el resto de las variantes.
 
 - ¿Observa regiones de alta similitud y regiones de baja similitud?
 - Identifique una región de aproximadamente **100‑200 pb** donde el dotplot muestre claramente diferencias (por ejemplo, un gap o una zona con pocos puntos).
 - ¿Cómo podría aprovechar esa región para diseñar un ensayo de PCR específica para el serotipo encontrado?
 
-### 4. (Opcional) Automatización con script en Bash
+### 3. (Opcional) Automatización con script en Bash
 
 Si desea, puede escribir un script de Bash que:
 
-1. Divida `all_sequences.fasta` en archivos individuales.
-2. Realice un bucle `for` para alinear cada paciente con cada referencia usando `needle`.
-3. Extraiga los porcentajes de identidad de las salidas y los guarde en una tabla (`resultados.txt`).
-4. Genere automáticamente un dotplot en formato PDF con `dotmatcher` (use `-graph pdf` y `-goutfile grafico`).
+1. Divida `secuencia_incognita.fasta` en archivos individuales.
+2. Realice un doble bucle `for` (muestra × referencia) para alinear cada paciente con cada una de las 5 referencias usando `needle`.
+3. Genere automáticamente un dotplot en formato PDF con `dotmatcher` (use `-graph pdf` y `-goutfile grafico`) para la muestra dengue identificada, contra dos serotipos de referencia.
 
-Incluya el script como parte de su entrega (no obligatorio, pero sumará puntos).
--->
+??? info "Posible estructura del script":
+
+```bash
+#!/usr/bin/env bash
+echo -e "Paciente\tdenv1" > resultados.tsv
+
+for paciente in paciente*.fasta; do
+    needle -gapopen 10 -gapextend 1 -asequence "$paciente" -bsequence denv1_reference_e_gene.fasta -outfile "${paciente}_vs_denv1.txt"
+    # Repetir para todas las secuencias de referencia
+    
+    identidad_denv1=$(grep "^# Identity:" "${paciente}_vs_denv1.txt")
+    echo -e "{$paciente}\t{$identidad_denv1}" >> resultados.tsv
+    # Repetir para todas las secuencias de referencia
+
+    dotmatcher -windowsize 50 -threshold 20 -asequence "$paciente" -bsequence "denv1_reference_e_gene.fasta" -graph pdf -goutfile "dotplots/${paciente}_vs_denv1_reference_e_gene.fasta"
+    # Repetir para todas las secuencias de referencia
+done
+```
+
+Recuerden utilizar una estructura de directorios ordenadas para trabajar. 
+
+Incluyan el script como parte de su entrega adjuntando el link a la notebook (no obligatorio, pero sumará puntos).
