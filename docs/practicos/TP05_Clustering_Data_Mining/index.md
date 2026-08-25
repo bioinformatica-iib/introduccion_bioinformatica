@@ -12,12 +12,15 @@ tags:
 <br>
 <br>
 
+<!--
 [:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1ezf6beXBVId14bUPcqUur8rHnend0g3-/view?usp=sharing){ .md-button .md-button--primary }  [:fontawesome-solid-file-powerpoint: Slides](https://docs.google.com/presentation/d/1vnhl53yQaSNsyjumxBXrl-GBp-17898aSnUL4DKltAM/edit?usp=sharing){ .md-button .md-button--primary }
+-->
 
 !!! warning "Atención: Este TP tiene parcialito."
+!!! warning "Atención: Este TP tiene informe."
 
 ### Software a usar
-* Python (ya instalado en la VM).
+* Python.
 * Colab
 
 ### Librerías de Python a usar
@@ -69,7 +72,7 @@ En la siguiente tabla se reportan los niveles de expresión de cuatro genes (A, 
 
 Queremos entonces agrupar a los diferentes genes por como varían sus niveles de expresión cuando se aplica dicho tratamiento. Para hacer esto vamos a:
 
-### ✏️ Paso 1. Calcular la distancia euclidiana entre los diferentes genes
+### ✏️ Paso 1: Calcular la distancia euclidiana entre los diferentes genes
 
 ??? info "Explicación Paso 1 - Distancia euclidiana"
 
@@ -85,7 +88,7 @@ Queremos entonces agrupar a los diferentes genes por como varían sus niveles de
     distanciaEuclidiana(genA, genB) = \sqrt{(2 - (-1))^2 + (4 - (-1))^2 + (8 - (-2))^2} = 11,58
     $$
 
-### ✏️ Paso 2. Construir una matriz de distancias
+### ✏️ Paso 2: Construir una matriz de distancias
 
 ??? info "Explicación Paso 2 - Matriz de distancias"
 
@@ -102,7 +105,7 @@ Queremos entonces agrupar a los diferentes genes por como varían sus niveles de
 
     Como el orden de los elementos es igual para las filas que para las columnas, en la diagonal se compara cada elemento contra sí mismo por lo que la distancia es 0. Por otro lado, estamos llenando solo la mitad de la matriz ya que las matrices de distancia son matrices simétricas, es decir, que el triángulo superior derecho de la matriz va a ser un reflejo del triángulo inferior izquierdo.
 
-### ✏️ Paso 3. Agrupar usando *clustering jerárquico* donde el criterio de agregación va a ser "vecino más lejano" o *complete linkage*
+### ✏️ Paso 3: Agrupar usando *clustering jerárquico* donde el criterio de agregación va a ser "vecino más lejano" o *complete linkage*
 
 ??? info "Explicación Paso 3 - Criterios de agregación"
 
@@ -129,9 +132,9 @@ Queremos entonces agrupar a los diferentes genes por como varían sus niveles de
     Una vez hecho esto puedo dibujar el *clustering jerárquico* teniendo en cuenta qué elementos se juntaron con qué elementos.
 
 
-### ✏️ Paso 4. Armar un esquema del dendograma o árbol de similitud que resulta de este clustering
+### ✏️ Paso 4: Armar un esquema del dendograma o árbol de similitud que resulta de este clustering
 
-### ✏️ Paso 5. Repetir todo lo anterior, pero estandarizando previamente los datos de niveles de expresión
+### ✏️ Paso 5: Repetir todo lo anterior, pero estandarizando previamente los datos de niveles de expresión
 
 Para simplificar las cuentas durante la clase, les dejamos acá la tabla con los datos estandarizados. Para estandarizar, restamos a cada dato el promedio de los tres tiempos para ese gen y dividimos el resultado por la desviación estándar de los tres tiempos para ese gen, es decir:
 
@@ -151,15 +154,15 @@ $$
 
 ### ✏️ Pregunta 1
 
-    Comparando los agrupamientos obtenidos con los datos estandarizados y sin estandarizar. ¿Qué diferencias observan?
+Comparando los agrupamientos obtenidos con los datos estandarizados y sin estandarizar. ¿Qué diferencias observan?
 
 ### ✏️ Pregunta 2
 
-    ¿Cuál de los dos agrupamientos les parece mejor para este escenario donde queríamos evaluar cómo afecta un tratamiento los niveles de expresión de diferentes genes?
+¿Cuál de los dos agrupamientos les parece mejor para este escenario donde queríamos evaluar cómo afecta un tratamiento los niveles de expresión de diferentes genes?
 
 ### ✏️ Pregunta 3
 
-    ¿Les parece qué es siempre correcto estandarizar los datos de esta forma o se les ocurre escenarios donde no es así?
+¿Les parece qué es siempre correcto estandarizar los datos de esta forma o se les ocurre escenarios donde no es así?
 
 
 ## **Ejercicio 2 - Agrupando flores por especies** { markdown data-toc-label='Ejercicio 2 - Agrupando flores por especies' }
@@ -183,7 +186,7 @@ Este data set contiene las medidas de ancho (*width*) y largo (*length*) de los 
 
 Antes que nada vamos a familiarizarnos un poco con este data set.
 
-### ✏️ Código 1.
+### ✏️ Código 1
 
 Corran el siguiente código y vean el plot resultante:
 
@@ -217,7 +220,7 @@ Podemos ver que al graficar el largo de los pétalos y los sépalos ya se observ
 
 Es posible agregar una tercera dimensión para graficar otra de las variables, e incluso agregar la cuarta variable como "tamaño" de los diferentes puntos, pero dichos plots van a resultar considerablemente más complejos al momento de leerlos.
 
-### ✏️ Código 2. Clustering Jerárquico Complete linkage
+### ✏️ Código 2: Clustering Jerárquico Complete linkage
 
 Supongamos que no conocemos a que especie corresponde cada línea (es decir, no existe la columna **species** en la tabla), pero sospechamos que son tres especies.
 
@@ -227,7 +230,7 @@ En este TP vamos a hacer un *poco de trampa* y vamos a comparar visualmente los 
 
 Vamos a tener que hacer varios plots similares, por lo tanto, en vez de repetir el código, vamos a usar por primera vez funciones de **Python** creadas por nosotros.
 
-#### ✏️ Paso 1. Crear la función de Python.
+### ✏️ Paso 1: Crear la función de Python.
 
 Copien el siguiente código en el colab y modifiquen las secciones que dicen `@@EDITAR@@`. Tienen que asignar a cada parámetro de la función el valor que quieren graficar en el **eje x** y en el **eje y**, por ejemplo `x_col = "sepal_length"`. Una vez hecho esto, corran el código repetir el gráfico hecho en el **Código 1** y guardarlo en un archivo llamado **01_Sepal_vs_Petal_Length_per_Species.pdf**.
 
@@ -311,12 +314,12 @@ Copien el siguiente código en el colab y modifiquen las secciones que dicen `@@
                               palette={"setosa": "#004D40", "versicolor": "#D81B60", "virginica": "#FFC107"})
     ```
 
-#### ✏️ Paso 2.
+### ✏️ Paso 2:
 
 Usando la función que acabamos de crear, vean como se distribuyen los puntos al comparar **sepal_width** contra **petal_width**. Guarden este plot en un archivo llamado **02_Sepal_vs_Petal_Width_per_Species.pdf**.
 
 
-#### ✏️ Paso 3. Agregar IDs.
+### ✏️ Paso 3: Agregar IDs.
 
 Un problema que tenemos es que por ahora no hay ninguna forma de identificar a una fila específica, así que le vamos a agregar un ID numérico a cada fila. Debido al orden que tienen las filas de **df_iris**, los primeros 50 IDs van a corresponder a flores de la especie setosa, los segundos 50 a versicolor y los últimos a virginica (aunque supuestamente esto no lo sabemos).
 
@@ -353,7 +356,7 @@ Un problema que tenemos es que por ahora no hay ninguna forma de identificar a u
     matriz_datos = df_iris.drop(columns=["species"]).set_index("row_id")
     ```
 
-#### ✏️ Paso 4. Cálculo de distancias.
+### ✏️ Paso 4: Cálculo de distancias.
 
 Usando la matriz de datos recién creada (`matris_datos`), vamos a crear la matriz de distancias euclidianas usando las funciones `pdist()` y `squareform()` de `scipy.spatial.distance`.
 
@@ -380,13 +383,13 @@ Usando la matriz de datos recién creada (`matris_datos`), vamos a crear la matr
     matriz_distancias = squareform(distancias_condensadas)
     ```
 
-#### ✏️ Paso 5. Clustering jerárquico.
+### ✏️ Paso 5: Clustering jerárquico.
 
 Lo primero que vamos a hacer es un **clustering jerárquico** para agrupar a las 150 filas en 3 grupos según los valores de las 4 medidas. El criterio de agregación será *complete linkage*.
 
 Para esto se utiliza la función `linkage()` de `scipy.cluster.hierarchy`, de la siguiente manera:
 
-=== Código
+=== "Código"
 
     ```python
     from scipy.cluster.hierarchy import linkage
@@ -394,7 +397,7 @@ Para esto se utiliza la función `linkage()` de `scipy.cluster.hierarchy`, de la
     clustering_jerarquico = linkage(distancias_condensadas, method="complete")
     ```
 
-=== Código con comentarios
+=== "Código con comentarios"
 
     ```python
     from scipy.cluster.hierarchy import linkage # importo la función linkage de la librería scipy.cluster.hierarchy
@@ -411,7 +414,7 @@ Donde `method = "complete"` está indicándole a la función que criterio de agr
 Pueden usar `help(linkage)` o consultar la [documentación de scipy](https://docs.scipy.org/doc/scipy/reference/generated/scipy.cluster.hierarchy.linkage.html) para ver otros posibles criterios.
 
 
-#### ✏️ Paso 6. Creación del dendrograma.
+### ✏️ Paso 6: Creación del dendrograma.
 
 Usen la función `dendrogram()` (también de `scipy.cluster.hierarchy`) para plotear `clustering_jerarquico`. Usen el parámetro `ax.set_title()` para cambiarle el título al plot indicando que es un *clustering jerárquico*, que usa *complete linkage*.
 
@@ -440,12 +443,12 @@ Usen la función `dendrogram()` (también de `scipy.cluster.hierarchy`) para plo
     plt.show()
     ```
 
-##### ✏️ Pregunta
+### ✏️ Pregunta
 
 Mirando el plot recién creado, ¿les es fácil distinguir a simple vista los tres grupos de especies en el clustering jerárquico? (recuerden que pueden hacer zoom sobre la figura para agrandarla).
 
 
-#### ✏️ Paso 7. Mejorando el gráfico del dendrograma.
+### ✏️ Paso 7: Mejorando el gráfico del dendrograma.
 
 <!--
 #### Mejorar el plot del clustering jerárquico { markdown data-toc-label='Mejorar el plot' }
@@ -519,13 +522,13 @@ Vamos a colorear cada flor dependiendo de su especie. La función `dendrogram()`
     plt.close(fig)
     ```
 
-#### ✏️ Pregunta.
+### ✏️ Pregunta.
 
 Abran el archivo **11_Clustering_jerarquico_complete_linkage.pdf**. ¿Pueden ahora distinguir los tres grupos de especies en el clustering jerárquico? ¿Cuáles especies les parecen mejor agrupadas? (los colores de las especies corresponden al color usado en los gráficos anteriores.
 
 
 
-#### ✏️ Paso 8. Clustering Jerárquico single linkage
+### ✏️ Paso 8: Clustering Jerárquico single linkage
 
 Hasta el momento sólo utilizamos *complete linkage* al momento de hacer nuestros clustering jerárquicos, ahora vamos a realizar el clustering usando otro criterio de agregación, por ejemplo el *single linkage*. Para esto:
 
@@ -538,17 +541,17 @@ clustering_jerarquico_single = linkage(distancias_condensadas, method="single")
 ```
 -->
 
-##### ✏️ Pregunta
+### ✏️ Pregunta
 
 ¿Qué diferencias ven entre este dendrograma y el anterior? ¿Pueden relacionar estas diferencias con lo que saben de *single linkage* y *complete linkage*?
 
 
-##### ✏️ Pregunta
+### ✏️ Pregunta
 
 Ignorando los colores, ¿cuál les parece el mejor criterio de agregación para este caso donde queremos recuperar tres clusters?
 
 
-####  ✏️ Paso 9. Asignar clusters.
+###  ✏️ Paso 9: Asignar clusters.
 
 Cuando uno mira el dendrograma se puede ver que ciertas flores son más similares entre sí que otras, y podemos suponer que entonces pertenecen a un mismo grupo.
 
@@ -569,15 +572,11 @@ Donde:
 * `criterion="maxclust"` con `t` recibe la **cantidad de clusters** a crear.
 
 
-####  ✏️ Paso 10.Hacer clusters y gráficos
+###  ✏️ Paso 10: Hacer clusters y gráficos
 
 Por último vamos a querer recrear el gráfico de puntos generado en los pasos **agregar el nro de paso**, pero ahora mostrando información tanto de las especies originales (con el color) como de la agrupación resultante del clustering jerárquico (con la forma). Vamos a utilizar los datos del clustering jerárquico que usa el criterio de agregación *complete linkage*.
 
 1. Lo primero es entonces agregar la información del clustering jerárquico a nuestro **df_iris**; para ello usen los datos guarados en la variable `clusters_por_cantidad` (lo tienen que haber realizado con t=3)
-
-<!--
-Usen `fcluster()` con `criterion="maxclust"` para dividir a los datos obtenidos en **5.2)** en 3 clusters.
--->
 
 2. Asignen esa información a una nueva columna en la tabla **df_iris** llamada **cj_cluster** (como en este caso `fcluster()` devuelve los datos en el mismo orden que están en la tabla se puede hacer directamente con `=`, no hace falta usar `merge()`).
 
@@ -590,6 +589,10 @@ Usen `fcluster()` con `criterion="maxclust"` para dividir a los datos obtenidos 
 df_iris["cj_cluster"] = pd.Categorical(df_iris["cj_cluster"], categories=[1, 2, 3])
 ```
 
+<!--
+Usen `fcluster()` con `criterion="maxclust"` para dividir a los datos obtenidos en **5.2)** en 3 clusters.
+-->
+
 Ahora vamos a hacer el gráfico de manera similar al creado antes, pero donde la columna **species** determine el color y la columna **cj_cluster** determine la forma de los diferentes puntos del plot; para ello:
 
 4. Copien la función `plot_data_to_pdf_w_color()` y cámbienle el nombre a `plot_data_to_pdf_w_color_and_shape()`. Modifiquen esta nueva función considerando lo siguiente:
@@ -600,7 +603,7 @@ Ahora vamos a hacer el gráfico de manera similar al creado antes, pero donde la
 
 5. Usando la función que acabamos de crear, vean como se distribuyen los puntos al comparar **sepal_length** contra **petal_length** usando la columna **species** para determinar el color y la columna **cj_cluster** para determinar la forma de los diferentes puntos. Guarden este plot en un archivo llamado **21_Sepal_vs_Petal_Length_per_Species_CJ3.pdf**.
 
-#### ✏️ Pregunta
+### ✏️ Pregunta
 
 Abran el archivo recién creado. ¿Cuáles especies les parecen mejor agrupadas? Entre este plot y el dendrograma creado en **11_Clustering_jerarquico_complete_linkage.pdf** ¿Cuál les parece la mejor manera de representar este clustering? ¿Por qué?
 
@@ -609,8 +612,9 @@ Abran el archivo recién creado. ¿Cuáles especies les parecen mejor agrupadas?
     Tengan en cuenta que al momento de clusterizar estamos usando los datos de las cuatro columnas de la tabla. Sin embargo, en este último plot estamos viendo solo la relación entre dos. Por esta razón, este plot no es realmente representativo del clustering que estamos haciendo.
 
     Dicho todo esto, este plot es útil ya que es mucho más fácil de leer que otros plots más complejos, pero debe tomarse como un análisis exploratorio.
+---
 
-### K-means
+## **Ejercicio 3 - K-means** { markdown data-toc-label='K-means' }
 
 Otro método muy popular para agrupar elementos es el *K-means*. A diferencia del *clustering jerárquico*, éste no crea un árbol de similitud, sino que utiliza un método iterativo para asignar directamente cada elemento a diferentes grupos. Otra característica del *K-means* es que hay que pasarle el número de clusters a crear.
 

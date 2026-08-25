@@ -16,7 +16,7 @@ tags:
 !!! attention "Atención"
 	Hay tiempo hasta el Lunes 31/08 a las 23:59 para responder el parcialito
 
-[:fontawesome-solid-download: Parcialito](https://drive.google.com/drive/folders/12XmxoCv9hSTMIzvPr1yvfegAni_moJl7?usp=sharing){ .md-button .md-button--primary }
+[:fontawesome-solid-download: Parcialito](https://forms.gle/EoXv8447Xcanaynr9){ .md-button .md-button--primary }
 
 <!--
 [:fontawesome-solid-download: Materiales](https://drive.google.com/drive/folders/12XmxoCv9hSTMIzvPr1yvfegAni_moJl7?usp=sharing){ .md-button .md-button--primary }
