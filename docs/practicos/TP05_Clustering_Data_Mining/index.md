@@ -60,8 +60,7 @@ Para empezar este TP vamos a realizar un pequeño *clustering jerárquico* a man
 
 En la siguiente tabla se reportan los niveles de expresión de cuatro genes (A, B, C y D) a las 0hs, 1hs y 2hs luego de algún tratamiento (aplicado a las 0hs):
  
-<figure markdown>
-| gen { data-sort-method='none' } | t_0h { data-sort-method='none' } | t_1h { data-sort-method='none' } | t_2h { data-sort-method='none' } |
+c| gen { data-sort-method='none' } | t_0h { data-sort-method='none' } | t_1h { data-sort-method='none' } | t_2h { data-sort-method='none' } |
 | :---: | :---: | :---: | :---: |
 | genA | 2 | 4 | 8 |
 | genB | -1| -1 | -2 |
@@ -69,6 +68,20 @@ En la siguiente tabla se reportan los niveles de expresión de cuatro genes (A, 
 | genD | 0 | -1 | -6 |
 </figure>
 
+En la siguiente tabla se reportan los niveles de expresión estandarizados. La estandarización se realizó restando a cada dato el promedio de los tres tiempos para ese gen y dividiendo el resultado por la desviación estándar de los tres tiempos para ese gen, es decir:
+
+$$
+datoEstandarizado(genA, t_0) = \frac{dato(genA, t_0) - promedio(genA)}{desviacionEstandar(genA)}
+$$
+
+<figure markdown>
+| gen { data-sort-method='none' } | t_0h { data-sort-method='none' } | t_1h { data-sort-method='none' } | t_2h { data-sort-method='none' } |
+| :---: | :---: | :---: | :---: |
+| genA | -0.87 | -0.22 | 1.09 |
+| genB | 0.58 | 0.58 | -1.15 |
+| genC | -1.09 | 0.22 | 0.87 |
+| genD | 0.73 | 0.41 | -1.14 |
+</figure>
 
 Queremos entonces agrupar a los diferentes genes por como varían sus niveles de expresión cuando se aplica dicho tratamiento. Para hacer esto vamos a:
 
@@ -82,7 +95,7 @@ Queremos entonces agrupar a los diferentes genes por como varían sus niveles de
     distanciaEuclidiana(V_1, V_2) = \sqrt{(x_1 - x_2)^2 + (y_1 - y_2)^2 + (z_1 - z_2)^2}
     $$
 
-    Aplicando esto a nuestros datos, la distancia entre los genes A y B se calcula como:
+    Aplicando esto a nuestros datos, *x*, *y* y *z* representan cada uno de los tiempos y el subíndice indica el gen. Por ejemplo, la distancia entre los genes A y B se calcula como:
 
     $$
     distanciaEuclidiana(genA, genB) = \sqrt{(2 - (-1))^2 + (4 - (-1))^2 + (8 - (-2))^2} = 11,58
@@ -107,16 +120,6 @@ Queremos entonces agrupar a los diferentes genes por como varían sus niveles de
 
 ### ✏️ Paso 3: Agrupar usando *clustering jerárquico* donde el criterio de agregación va a ser "vecino más lejano" o *complete linkage*
 
-??? info "Explicación Paso 3 - Criterios de agregación"
-
-    Los criterios de agregación indican que operación hay que hacer al momento de calcular la distancia entre un nuevo elemento creado en una matriz de distancias y los ya existentes. Cada uno tiene sus ventajas y desventajas.
-
-    Siguiendo con nuestro ejemplo, si queremos calcular la distancia entre el nuevo elemento **"genB+C"** y el **"genA"**:
-
-    * **Single Linkage:** la nueva distancia es la ***menor*** entre las distancias $dist(genA, genB)$ y $dist(genA, genC)$
-    * **Complete Linkage:** la nueva distancia es la ***mayor*** entre las distancias $dist(genA, genB)$ y $dist(genA, genC)$
-    * **Average Linkage:** la nueva distancia es el ***promedio*** de las distancias $dist(genA, genB)$ y $dist(genA, genC)$
-
 ??? info "Explicación Paso 3 - Clustering jerárquico"
 
     El *clustering jerárquico* es una forma de agrupar elementos dependiendo de que tan similares son entre ellos. Usa un algoritmo bastante sencillo de entender que se basa en una matriz de distancias:
@@ -125,42 +128,72 @@ Queremos entonces agrupar a los diferentes genes por como varían sus niveles de
 
     2. Dejar constancia de dicha similitud y reconstruir la matriz, reemplazando ambos elementos por uno nuevo (saco los elementos **"genB"** y **"genC"** y agrego el elemento **"genB+C"**)
 
-    3. Al momento de calcular la nueva distancia entre este nuevo elemento (**"genB+C"**) y el resto de los elementos de la matriz, usar algún criterio de agregación (por ejemplo: *single linkage*, *average linkage* o *complete linkage*)
+
+        |       | genA { data-sort-method='none' } | genB+C { data-sort-method='none' } | genD { data-sort-method='none' } |
+        | :---: | :---:                            | :---:                              | :---: |
+        | genA  | 0     |   |   |
+        | genB+C| ?     | 0 |   |
+        | genD  | 15    | ? | 0 |
+
+
+    3. Al momento de calcular la nueva distancia entre este nuevo elemento (**"genB+C"**) y el resto de los elementos de la matriz donde ahora figuran "?", usar algún criterio de agregación (por ejemplo: *single linkage*, *average linkage* o *complete linkage*)
+
+    Los criterios de agregación indican que operación hay que hacer al momento de calcular la distancia entre un nuevo elemento creado en una matriz de distancias y los ya existentes. Cada uno tiene sus ventajas y desventajas.
+
+    Siguiendo con nuestro ejemplo, si queremos calcular la distancia entre el nuevo elemento **"genB+C"** y el **"genA"**:
+
+    * **Single Linkage:** la nueva distancia es la ***menor*** entre las distancias $dist(genA, genB)$ y $dist(genA, genC)$
+
+        |       | genA { data-sort-method='none' } | genB+C { data-sort-method='none' } | genD { data-sort-method='none' } |
+        | :---: | :---:                            | :---:                              | :---: |
+        | genA  | 0     |   |   |
+        | genB+C| 9     | 0 |   |
+        | genD  | 15    | 4.12 | 0 |
+
+
+    * **Complete Linkage:** la nueva distancia es la ***mayor*** entre las distancias $dist(genA, genB)$ y $dist(genA, genC)$
+
+        |       | genA { data-sort-method='none' } | genB+C { data-sort-method='none' } | genD { data-sort-method='none' } |
+        | :---: | :---:                            | :---:                              | :---: |
+        | genA  | 0     |   |   |
+        | genB+C| 11.58     | 0 |   |
+        | genD  | 15    | 7.35 | 0 |
+
+    * **Average Linkage:** la nueva distancia es el ***promedio*** de las distancias $dist(genA, genB)$ y $dist(genA, genC)$
+
+                |       | genA { data-sort-method='none' } | genB+C { data-sort-method='none' } | genD { data-sort-method='none' } |
+        | :---: | :---:                            | :---:                              | :---: |
+        | genA  | 0     |   |   |
+        | genB+C| 10.29     | 0 |   |
+        | genD  | 15    | 5.735 | 0 |
 
     4. Volver al paso 1 hasta que todos los elementos estén unidos entre sí
 
     Una vez hecho esto puedo dibujar el *clustering jerárquico* teniendo en cuenta qué elementos se juntaron con qué elementos.
 
 
+#### ✏️ Pregunta
+
+¿Cómo queda la matriz final utilizando *single linkeage*?
+
+
 ### ✏️ Paso 4: Armar un esquema del dendograma o árbol de similitud que resulta de este clustering
 
-### ✏️ Paso 5: Repetir todo lo anterior, pero estandarizando previamente los datos de niveles de expresión
+Se construye un dendograma que represente las agrupaciones realizadas secuencialmente en los distintos pasos de la matriz.
 
-Para simplificar las cuentas durante la clase, les dejamos acá la tabla con los datos estandarizados. Para estandarizar, restamos a cada dato el promedio de los tres tiempos para ese gen y dividimos el resultado por la desviación estándar de los tres tiempos para ese gen, es decir:
+### ✏️ Pregunta
 
-$$
-datoEstandarizado(genA, t_0) = \frac{dato(genA, t_0) - promedio(genA)}{desviacionEstandar(genA)}
-$$
+Construí el dendograma correspondiente a tus datos.
 
-<figure markdown>
-| gen { data-sort-method='none' } | t_0h { data-sort-method='none' } | t_1h { data-sort-method='none' } | t_2h { data-sort-method='none' } |
-| :---: | :---: | :---: | :---: |
-| genA | -0.87 | -0.22 | 1.09 |
-| genB | 0.58 | 0.58 | -1.15 |
-| genC | -1.09 | 0.22 | 0.87 |
-| genD | 0.73 | 0.41 | -1.14 |
-</figure>
-
-
-### ✏️ Pregunta 1
+### ✏️ Pregunta 1 (en clase)
 
 Comparando los agrupamientos obtenidos con los datos estandarizados y sin estandarizar. ¿Qué diferencias observan?
 
-### ✏️ Pregunta 2
+### ✏️ Pregunta 2 (en clase)
 
 ¿Cuál de los dos agrupamientos les parece mejor para este escenario donde queríamos evaluar cómo afecta un tratamiento los niveles de expresión de diferentes genes?
 
-### ✏️ Pregunta 3
+### ✏️ Pregunta 3 (en clase)
 
 ¿Les parece qué es siempre correcto estandarizar los datos de esta forma o se les ocurre escenarios donde no es así?
 
@@ -198,6 +231,15 @@ import matplotlib.pyplot as plt
 # Cargo el dataset iris como un DataFrame de pandas
 df_iris = sns.load_dataset("iris")
 
+# Identifico las columnas del dataset
+print(df_iris.columns)
+print(df_iris.info()) # te muestra el tipo de dato en cada columna
+print(df_iris['species'].unique())
+
+```
+
+### ✏️ Código 2
+```python
 # Defino a mano los colores para cada especie
 colores_especies = {"setosa": "#004D40", "versicolor": "#D81B60", "virginica": "#FFC107"}
 
@@ -220,7 +262,7 @@ Podemos ver que al graficar el largo de los pétalos y los sépalos ya se observ
 
 Es posible agregar una tercera dimensión para graficar otra de las variables, e incluso agregar la cuarta variable como "tamaño" de los diferentes puntos, pero dichos plots van a resultar considerablemente más complejos al momento de leerlos.
 
-### ✏️ Código 2: Clustering Jerárquico Complete linkage
+### ✏️ Código 3: Clustering Jerárquico Complete linkage
 
 Supongamos que no conocemos a que especie corresponde cada línea (es decir, no existe la columna **species** en la tabla), pero sospechamos que son tres especies.
 
@@ -232,7 +274,9 @@ Vamos a tener que hacer varios plots similares, por lo tanto, en vez de repetir 
 
 ### ✏️ Paso 1: Crear la función de Python.
 
-Copien el siguiente código en el colab y modifiquen las secciones que dicen `@@EDITAR@@`. Tienen que asignar a cada parámetro de la función el valor que quieren graficar en el **eje x** y en el **eje y**, por ejemplo `x_col = "sepal_length"`. Una vez hecho esto, corran el código repetir el gráfico hecho en el **Código 1** y guardarlo en un archivo llamado **01_Sepal_vs_Petal_Length_per_Species.pdf**.
+Copien el siguiente código en el colab y modifiquen las secciones que dicen `@@EDITAR@@`.
+
+Tienen que asignar a cada parámetro de la función el valor que quieren graficar en el **eje x** y en el **eje y**, por ejemplo `x_col = "sepal_length"`. Una vez hecho esto, corran el código repetir el gráfico hecho en el **Código 1** y guardarlo en un archivo llamado **01_Sepal_vs_Petal_Length_per_Species.pdf**.
 
 === "Código"
 
@@ -260,12 +304,12 @@ Copien el siguiente código en el colab y modifiquen las secciones que dicen `@@
     df_iris = sns.load_dataset("iris")
 
     plot_data_to_pdf_w_color(data=df_iris,
-                              x_col="@@EDITAR@@",
-                              y_col="@@EDITAR@@",
-                              color_col="@@EDITAR@@",
-                              x_label="@@EDITAR@@",
-                              y_label="@@EDITAR@@",
-                              plot_title="@@EDITAR@@",
+                              x_col="@@EDITAR@@", # Que quiero que vaya en el eje X
+                              y_col="@@EDITAR@@", # Que quiero que vaya en el eje y
+                              color_col="@@EDITAR@@",  # Que columna quiero usar para colorear
+                              x_label="@@EDITAR@@",  # Cuál es el título del eje x
+                              y_label="@@EDITAR@@",  # Cuál es el título del eje y
+                              plot_title="@@EDITAR@@",   # Cuál es el título del gráfico
                               pdf_file="01_Sepal_vs_Petal_Length_per_Species.pdf",
                               palette={"setosa": "#004D40", "versicolor": "#D81B60", "virginica": "#FFC107"})
     ```
@@ -311,39 +355,43 @@ Copien el siguiente código en el colab y modifiquen las secciones que dicen `@@
                               y_label="@@EDITAR@@",
                               plot_title="@@EDITAR@@",
                               pdf_file="01_Sepal_vs_Petal_Length_per_Species.pdf",
-                              palette={"setosa": "#004D40", "versicolor": "#D81B60", "virginica": "#FFC107"})
+                              palette={"setosa": "#004D40", "versicolor": "#D81B60", "virginica": "#FFC107"}
+                              )
     ```
 
 ### ✏️ Paso 2:
 
 Usando la función que acabamos de crear, vean como se distribuyen los puntos al comparar **sepal_width** contra **petal_width**. Guarden este plot en un archivo llamado **02_Sepal_vs_Petal_Width_per_Species.pdf**.
 
+### ✏️ Paso 3: Agregar identificadores.
 
-### ✏️ Paso 3: Agregar IDs.
+Un problema que tenemos es que por ahora no hay ninguna forma de identificar a una fila específica, así que le vamos a agregar un identificador numérico a cada fila. Debido al orden que tienen las filas de **df_iris**, los primeros 50 identificadores van a corresponder a flores de la especie setosa, los segundos 50 a versicolor y los últimos a virginica (aunque supuestamente esto no lo sabemos).
 
-Un problema que tenemos es que por ahora no hay ninguna forma de identificar a una fila específica, así que le vamos a agregar un ID numérico a cada fila. Debido al orden que tienen las filas de **df_iris**, los primeros 50 IDs van a corresponder a flores de la especie setosa, los segundos 50 a versicolor y los últimos a virginica (aunque supuestamente esto no lo sabemos).
+```python
+#Agregamos una nueva columna denominada row_id que tiene un numero entre 1 y 150
+#len(df_iris) es una función de Python que me devuelve el numero de filas en la tabla
+#El numero de filas también se puede conseguir haciendo df_iris.shape[0]
+df_iris["row_id"] = range(1, len(df_iris) + 1)
+```
 
-**4)** Corran el siguiente código para crear la matriz de datos que vamos a usar al momento de clusterizar. Lean los comentarios en la segunda pestaña para entender que estamos haciendo.
+
+### ✏️ Paso 4: Creando una matriz de datos para usar al momento de clusterizar.
+
+Lean los comentarios en la segunda pestaña para entender que estamos haciendo.
 
 === "Código"
 
     ```python
-    df_iris["row_id"] = range(1, len(df_iris) + 1)
 
     columnas_ordenadas = ["row_id"] + [c for c in df_iris.columns if c != "row_id"]
     df_iris = df_iris[columnas_ordenadas]
 
-    matriz_datos = df_iris.drop(columns=["species"]).set_index("row_id")
+    df_datos = df_iris.drop(columns=["species"]).set_index("row_id")
     ```
 
 === "Código con comentarios"
 
     ```python
-    #Agregamos una nueva columna denominada row_id que tiene un numero entre 1 y 150
-    #len(df_iris) es una función de Python que me devuelve el numero de filas en la tabla
-    #El numero de filas también se puede conseguir haciendo df_iris.shape[0]
-    df_iris["row_id"] = range(1, len(df_iris) + 1)
-
     #Aca estamos cambiando el orden de las columnas de df_iris, moviendo row_id al principio
     #(el resto de las columnas quedan en el mismo orden relativo en el que estaban)
     columnas_ordenadas = ["row_id"] + [c for c in df_iris.columns if c != "row_id"]
@@ -352,20 +400,20 @@ Un problema que tenemos es que por ahora no hay ninguna forma de identificar a u
     #Similar a lo que hicimos en el TP anterior, estamos usando row_id como índice de la tabla
     #(el equivalente a los "nombres de fila" o rownames de R)
     #Estamos sacando la columna species ya que queremos simular que no tenemos esta información
-    #(la columna species va a estar todavía en df_iris, pero no en matriz_datos)
-    matriz_datos = df_iris.drop(columns=["species"]).set_index("row_id")
+    #(la columna species va a estar todavía en df_iris, pero no en df_datos)
+    df_datos = df_iris.drop(columns=["species"]).set_index("row_id")
     ```
 
-### ✏️ Paso 4: Cálculo de distancias.
+### ✏️ Paso 5: Cálculo de distancias.
 
-Usando la matriz de datos recién creada (`matris_datos`), vamos a crear la matriz de distancias euclidianas usando las funciones `pdist()` y `squareform()` de `scipy.spatial.distance`.
+Usando el data frame de datos recién creado (`df_datos`), vamos a crear la matriz de distancias euclidianas usando las funciones `pdist()` y `squareform()` de `scipy.spatial.distance`.
 
 === "Código"
 
     ```python
     from scipy.spatial.distance import pdist, squareform
 
-    distancias_condensadas = pdist(matriz_datos.values, metric="euclidean")
+    distancias_condensadas = pdist(df_datos.values, metric="euclidean")
     matriz_distancias = squareform(distancias_condensadas)
     ```
 
@@ -375,7 +423,7 @@ Usando la matriz de datos recién creada (`matris_datos`), vamos a crear la matr
     from scipy.spatial.distance import pdist, squareform # Importo las funciones pdist y squareform de la librería scipy.spatial.distance
 
     # Uso la función pdist para calcular las distancias euclidianas (metric="euclidean)
-    distancias_condensadas = pdist(matriz_datos.values, metric="euclidean")
+    distancias_condensadas = pdist(df_datos.values, metric="euclidean")
     
     # pdist devuelve las distancias en formato condensado, sin repetir la mitad simétrica ni la diagonal.
 
@@ -403,6 +451,7 @@ Para esto se utiliza la función `linkage()` de `scipy.cluster.hierarchy`, de la
     from scipy.cluster.hierarchy import linkage # importo la función linkage de la librería scipy.cluster.hierarchy
 
     # uso la función linkage para realizar el clustering jerárquico con el criterio de agregación complete linkage (method="complete")
+    # la función linkage sólo acepta como parámetro una MATRIZ con las distancias
     clustering_jerarquico = linkage(distancias_condensadas, method="complete")
     ```
 
@@ -438,7 +487,7 @@ Usen la función `dendrogram()` (también de `scipy.cluster.hierarchy`) para plo
     import matplotlib.pyplot as plt # importo matplotlib.pyplot como plt para poder graficar
 
     fig, ax = plt.subplots(figsize=(10, 6))
-    dendrogram(clustering_jerarquico, ax=ax)
+    dendrogram(clustering_jerarquico, ax=ax, color_threshold=0)
     ax.set_title("Clustering Jerárquico - Complete Linkage")
     plt.show()
     ```
@@ -468,7 +517,7 @@ Vamos a colorear cada flor dependiendo de su especie. La función `dendrogram()`
     colores_por_fila = df_iris["species"].map(colores_especies).values
 
     fig, ax = plt.subplots(figsize=(18, 6))
-    resultado_dendro = dendrogram(clustering_jerarquico, labels=df_iris["row_id"].values, ax=ax)
+    resultado_dendro = dendrogram(clustering_jerarquico, labels=df_iris["row_id"].values, ax=ax, color_threshold=0)
 
     orden_hojas = resultado_dendro["leaves"]
     colores_ordenados = colores_por_fila[orden_hojas]
@@ -502,7 +551,7 @@ Vamos a colorear cada flor dependiendo de su especie. La función `dendrogram()`
     fig, ax = plt.subplots(figsize=(18, 6))
     #dendrogram() nos devuelve un diccionario con información del plot, entre otras cosas el
     #orden final en el que quedaron las hojas (leaves) en el eje X
-    resultado_dendro = dendrogram(clustering_jerarquico, labels=df_iris["row_id"].values, ax=ax)
+    resultado_dendro = dendrogram(clustering_jerarquico, labels=df_iris["row_id"].values, ax=ax, color_threshold=0)
 
     #Reordeno los colores para que coincidan con el orden en que quedaron las hojas en el dendrograma
     orden_hojas = resultado_dendro["leaves"]
@@ -524,7 +573,7 @@ Vamos a colorear cada flor dependiendo de su especie. La función `dendrogram()`
 
 ### ✏️ Pregunta.
 
-Abran el archivo **11_Clustering_jerarquico_complete_linkage.pdf**. ¿Pueden ahora distinguir los tres grupos de especies en el clustering jerárquico? ¿Cuáles especies les parecen mejor agrupadas? (los colores de las especies corresponden al color usado en los gráficos anteriores.
+Abran el archivo **11_Clustering_jerarquico_complete_linkage.pdf**. ¿Pueden ahora distinguir los tres grupos de especies en el clustering jerárquico? ¿Cuáles especies les parecen mejor agrupadas? (los colores de las especies corresponden al color usado en los gráficos anteriores).
 
 
 
@@ -571,41 +620,63 @@ Donde:
 * `criterion="distance"` con `t` recibe la **altura de similitud** a la cual cortar (eje y en el plot anterior)
 * `criterion="maxclust"` con `t` recibe la **cantidad de clusters** a crear.
 
+Para elegir el umbral de altura podés variar el parámetro color_theshold en el paso 7 en la línea:
+
+````
+resultado_dendro = dendrogram(clustering_jerarquico, labels=df_iris["row_id"].values, ax=ax, color_threshold=0)
+````
+####  ✏️ Pregunta
+¿Qué umbral usarías?
+
+####  ✏️ Pregunta
+Y en el caso de clusters por cantidad ¿Qué cantidad usarías?
+
 
 ###  ✏️ Paso 10: Hacer clusters y gráficos
 
-Por último vamos a querer recrear el gráfico de puntos generado en los pasos **agregar el nro de paso**, pero ahora mostrando información tanto de las especies originales (con el color) como de la agrupación resultante del clustering jerárquico (con la forma). Vamos a utilizar los datos del clustering jerárquico que usa el criterio de agregación *complete linkage*.
+Por último vamos a querer recrear el gráfico de puntos generado en el **Código 2**, pero ahora mostrando información tanto de las especies originales (con el color) como de la agrupación resultante del clustering jerárquico (con la forma). Vamos a utilizar los datos del clustering jerárquico que usa el criterio de agregación *complete linkage*.
 
-1. Lo primero es entonces agregar la información del clustering jerárquico a nuestro **df_iris**; para ello usen los datos guarados en la variable `clusters_por_cantidad` (lo tienen que haber realizado con t=3)
+1. Lo primero es entonces agregar la información del clustering jerárquico a nuestro **df_iris**; para ello usen los datos guardados en la variable `clusters_por_cantidad` (lo tienen que haber realizado con t=3)
 
 2. Asignen esa información a una nueva columna en la tabla **df_iris** llamada **cj_cluster** (como en este caso `fcluster()` devuelve los datos en el mismo orden que están en la tabla se puede hacer directamente con `=`, no hace falta usar `merge()`).
 
 3. Los valores guardados en la columna **cj_cluster** son del tipo numérico, pero para nosotros los números 1, 2 y 3 son categorías. Corran el siguiente código para convertir la columna recién creada en una variable categórica:
 
-```python
-#En este caso poner las categorías a mano no es 100% necesario, pero no viene mal
-#Recuerden que no sabemos que numero corresponde a que especie
-#(porque ademas ya vimos que no hay un match perfecto 1 a 1)
-df_iris["cj_cluster"] = pd.Categorical(df_iris["cj_cluster"], categories=[1, 2, 3])
-```
+    ```python
+    #En este caso poner las categorías a mano no es 100% necesario, pero no viene mal
+    #Recuerden que no sabemos que numero corresponde a que especie
+    #(porque ademas ya vimos que no hay un match perfecto 1 a 1)
+    df_iris["cj_cluster"] = pd.Categorical(df_iris["cj_cluster"], categories=[1, 2, 3])
+    ```
 
-<!--
-Usen `fcluster()` con `criterion="maxclust"` para dividir a los datos obtenidos en **5.2)** en 3 clusters.
--->
+    <!--
+    Usen `fcluster()` con `criterion="maxclust"` para dividir a los datos obtenidos en **5.2)** en 3 clusters.
+    -->
 
-Ahora vamos a hacer el gráfico de manera similar al creado antes, pero donde la columna **species** determine el color y la columna **cj_cluster** determine la forma de los diferentes puntos del plot; para ello:
+    Ahora vamos a hacer el gráfico de manera similar al creado antes, pero donde la columna **species** determine el color y la columna **cj_cluster** determine la forma de los diferentes puntos del plot; para ello:
 
 4. Copien la función `plot_data_to_pdf_w_color()` y cámbienle el nombre a `plot_data_to_pdf_w_color_and_shape()`. Modifiquen esta nueva función considerando lo siguiente:
 
-* Agreguen un parámetro a la función el cual va a recibir el nombre de la columna que determina la forma, o *shape*, de los puntos.
-* Modifiquen la llamada a `sns.scatterplot()`, agregando el parámetro `style` y asignándole el valor del parámetro agregado.
-* Agreguen un parámetro `markers` a la función para definir a mano las tres formas. Usen los valores `{1: "^", 2: "x", 3: "o"}` (triángulo, cruz y círculo).
+    * Agreguen un parámetro a la función que va a recibir el nombre de la columna que determina la forma, o *shape*, de los puntos.
+
+    * Agreguen un parámetro `markers` a la función para definir a mano las tres formas. Usen los valores `{1: "^", 2: "*", 3: "o"}` (triángulo, cruz y círculo).
+
+    * Modifiquen la llamada a `sns.scatterplot()` agregando:
+
+        * el parámetro `style` y asignándole el valor del parámetro de la función creada con la columna que determina la forma.
+
+        * el parámetro `markers` y asignándole el valor del parámetro de la función creada con los markers elegidos.
+
 
 5. Usando la función que acabamos de crear, vean como se distribuyen los puntos al comparar **sepal_length** contra **petal_length** usando la columna **species** para determinar el color y la columna **cj_cluster** para determinar la forma de los diferentes puntos. Guarden este plot en un archivo llamado **21_Sepal_vs_Petal_Length_per_Species_CJ3.pdf**.
 
 ### ✏️ Pregunta
 
-Abran el archivo recién creado. ¿Cuáles especies les parecen mejor agrupadas? Entre este plot y el dendrograma creado en **11_Clustering_jerarquico_complete_linkage.pdf** ¿Cuál les parece la mejor manera de representar este clustering? ¿Por qué?
+Abran el archivo recién creado. ¿Cuáles especies les parecen mejor agrupadas?
+
+### ✏️ Pregunta
+
+Entre este plot y el dendrograma creado en **11_Clustering_jerarquico_complete_linkage.pdf** ¿Cuál les parece la mejor manera de representar este clustering? ¿Por qué?
 
 !!! danger "Importante - Clustering vs Plot"
 
@@ -618,7 +689,15 @@ Abran el archivo recién creado. ¿Cuáles especies les parecen mejor agrupadas?
 
 Otro método muy popular para agrupar elementos es el *K-means*. A diferencia del *clustering jerárquico*, éste no crea un árbol de similitud, sino que utiliza un método iterativo para asignar directamente cada elemento a diferentes grupos. Otra característica del *K-means* es que hay que pasarle el número de clusters a crear.
 
-La clase `KMeans` viene con `scikit-learn` y se usa:
+La clase `KMeans` viene con `scikit-learn`.
+
+Vamos a utilizar la variable `df_datos` creada anteriormente con:
+
+```python
+df_datos = df_iris.drop(columns=["species"]).set_index("row_id")
+```
+
+## ✏️ Paso 1. Uso de KMeans
 
 ```python
 from sklearn.cluster import KMeans
@@ -626,7 +705,7 @@ from sklearn.cluster import KMeans
 #Corro KMeans para la matriz de datos pidiéndole 3 clusters
 #random_state controla el aspecto azaroso de kmeans para que nos de igual a todos
 kmeans_k3 = KMeans(n_clusters=3, random_state=1, n_init=10)
-clustering_kmeans_k3 = kmeans_k3.fit(matriz_datos.values)
+clustering_kmeans_k3 = kmeans_k3.fit(df_datos.values)
 
 #Extraigo los clusters calculados (sumo 1 para que arranquen en 1, como en el clustering jerárquico)
 clusters_kmeans_k3 = clustering_kmeans_k3.labels_ + 1
@@ -639,18 +718,39 @@ Donde `n_clusters = 3` le está diciendo a la función que cree 3 clusters (lo q
 
     P.D.: El azar en las computadoras no existe realmente. Muchos programas usan listas pre-generadas de "números creados al azar" y otras usan cosas como "el quinto decimal de la temperatura del procesador en este momento", lo que se aproxima suficientemente al azar para funcionar bien.
 
-**10)** Comparen los clusters obtenidos utilizando `KMeans()` contra los clusters a los obtenidos previamente usando *clustering jerárquico*. Para eso:
+## ✏️ Paso 2
+
+Comparen los clusters obtenidos utilizando `KMeans()` contra los clusters a los obtenidos previamente usando *clustering jerárquico*. Para eso:
 
 * Usen la clase `KMeans()` para crear un nuevo clustering. Usen la cantidad de `n_clusters` que consideren necesarios.
 * Extraigan los clusters del clustering recién creado y asígnenlos a una nueva columna en **df_iris** llamada **k3_cluster** (como en este caso `KMeans()` devuelve los datos en el mismo orden que están en la tabla se puede hacer directamente con `=`, no hace falta usar `merge()`).
 * Transformen dicha columna en una variable categórica (`pd.Categorical`).
-* Usando la función creada en el punto **9)**, vean como se distribuyen los puntos al comparar **sepal_length** contra **petal_length** usando la columna **species** para determinar el color y la columna **k3_cluster** para determinar la forma de los diferentes puntos. Guarden este plot en un archivo llamado **22_Sepal_vs_Petal_Length_per_Species_K3.pdf**.
+* Usando la función creada `plot_data_to_pdf_w_color_and_shape()` y vean como se distribuyen los puntos al comparar **sepal_length** contra **petal_length** usando la columna **species** para determinar el color y la columna **k3_cluster** para determinar la forma de los diferentes puntos. Guarden este plot en un archivo llamado **22_Sepal_vs_Petal_Length_per_Species_K3.pdf**.
 
-**10.2)** Abran el archivo recién creado. Basándose solo en lo que pueden observar en este plot, ¿pueden decir algo de si este agrupamiento es mejor, peor o similar al obtenido con el clustering jerárquico? (recuerden que "no" también es una respuesta válida)
+### ✏️ Pregunta
+
+Abran el archivo recién creado. Basándose solo en lo que pueden observar en este plot, ¿pueden decir algo de si este agrupamiento es mejor, peor o similar al obtenido con el clustering jerárquico? (recuerden que "no" también es una respuesta válida).
 
 ### Silhouette
 
-Para cada elemento presente en un agrupamiento se puede calcular un *Silhouette coeficient*, el cual es un número entre -1 y 1 que indica que tan similar es dicho elemento a otros elementos de su mismo *cluster* y que tan diferente es dicho elemento a los elementos de otros *clusters*. Cuanto más cerca de 1, mejor asignado esta dicho elemento en su *cluster*.
+Para cada elemento presente en un agrupamiento se puede calcular un *Silhouette coeficient*, el cual es un número entre -1 y 1 que indica que tan similar es dicho elemento a otros elementos de su mismo *cluster* y que tan diferente es dicho elemento a los elementos de otros *clusters*.
+
+* Cuanto más cerca de 1, mejor asignado esta dicho elemento en su *cluster*.
+* Cuanto más cerca de 0, está cerca del límite de asignación entre dos *clusters*.
+* Cuanto más cerca de -1, peor asignado esta dicho elemento en su *cluster*.
+
+??? info "Coeficiente de Sillhouette"
+
+    Se calcula el **coeficiente de Cohesión, a**: distancia promedio del punto a evaluar con los otros los puntos dentro del mismo cluster.
+
+    Se calcula el **coeficiente de Separación, b**: distancia promedio del punto a evaluar con los puntos del cluster más cercano.
+
+    Para el elemento i del cluster j, el coeficiente de Sillohouete queda entonces:
+
+    $$
+    S_{ij} = \frac {b - a}{Max (a, b)}
+    $$
+
 
 Es posible entonces calcular el promedio de los *Silhouette coefficients* de todos los elementos presentes en un agrupamiento, donde promedios más cercanos a 1 van a indicar que el agrupamiento general es mejor.
 
@@ -658,29 +758,37 @@ Este método tiene bastantes usos, pero uno de los más comunes es definir cuál
 
 En **Python** esto se usa con las funciones `silhouette_samples()` y `silhouette_score()` de `sklearn.metrics`:
 
+## ✏️ Código
+
 ```python
 from sklearn.metrics import silhouette_samples, silhouette_score
 import numpy as np
 import matplotlib.pyplot as plt
 
 #Calculo los silhouette coefficients para los datos agrupados en 3 clusters usando kmeans
-#Le paso la matriz de datos original; internamente calcula las distancias necesarias
-silhouette_kmeans_k3 = silhouette_samples(matriz_datos.values, clusters_kmeans_k3, metric="euclidean")
+#Le paso el dataframe de datos original y los clusters; internamente calcula las distancias necesarias
+silhouette_kmeans_k3 = silhouette_samples(df_datos.values, clusters_kmeans_k3, metric="euclidean")
 
 #Puedo plotear los silhouette coefficients con un bar plot horizontal, ordenado por cluster
 orden = np.argsort(clusters_kmeans_k3)
 fig, ax = plt.subplots(figsize=(6, 8))
 ax.barh(range(len(silhouette_kmeans_k3)), silhouette_kmeans_k3[orden],
         color=[plt.cm.tab10(c) for c in clusters_kmeans_k3[orden]])
-ax.set_title("Kmeans - centers = 2")
+ax.set_title("Kmeans - centers = 3")
 plt.show()
 
 #Y podemos extraer el promedio de los Silhouette coefficients
 promedio_silhouette_kmeans_k3 = silhouette_score(matriz_datos.values, clusters_kmeans_k3, metric="euclidean")
 ```
-**11)** Corran el código anterior y vean su salida.
 
-**11.1)** Supongamos ahora que estamos en un escenario real, por lo que no tenemos información de a que especie corresponde cada punto. Evalúen objetivamente cual es el mejor clustering de los realizados
+### ✏️ Pregunta
+
+Observa el gráfico ¿todos los elementos están bien agrupados?
+
+
+### ✏️ Pregunta
+
+Supongamos ahora que estamos en un escenario real, por lo que no tenemos información sobre a qué especie corresponde cada punto. Evalúen objetivamente cual es el mejor clustering de los realizados
 
 
 ## Ejercicios adicionales
