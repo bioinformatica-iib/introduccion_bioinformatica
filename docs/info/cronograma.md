@@ -19,7 +19,7 @@ tags:
 | Jue, 13 Ago  | 9 hs |	:material-google-classroom: Presencial | [P1. Introducción a UNIX (Parte 1)](../practicos/TP01_Linux/index.md) | :fontawesome-solid-hammer: Práctica |	M. Didier Garnham |
 | Mar, 18 Ago  | 9 hs |	:material-google-classroom: Presencial | [P2. Introducción a UNIX (Parte 2)](../practicos/TP02_Linux/index.md) | :fontawesome-solid-hammer: Práctica |	M. Didier Garnham |
 | Jue, 20 Ago  | 9 hs |	:material-google-classroom: Presencial | [P3. Alineamientos de secuencias de a pares](../practicos/TP03_Alineamientos/index.md) | :fontawesome-solid-hammer: Práctica |	M. Didier Garnham |
-| Mar, 25 Ago  | 9 hs |	:material-google-classroom: Presencial | T4. Alineamientos múltiples | :fontawesome-solid-brain: Teórica |	F. Agüero |
+| Mar, 25 Ago  | 9 hs |	:material-google-classroom: Presencial | [T4. Alineamientos múltiples](../teoricas/4-Teorica-Cuatro/index.md) | :fontawesome-solid-brain: Teórica |	F. Agüero |
 | Jue, 27 Ago  | 9 hs |	:material-google-classroom: Presencial | P4. Búsqueda de secuencias por similitud y Alineamientos Múltiples | :fontawesome-solid-hammer: Práctica |	M. Didier Garnham |
 | Mar, 1 Sep   | 9 hs |	:material-google-classroom: Presencial | PP. Programando en Biología | :fontawesome-solid-hammer: Práctica |	R. Quinteros |
 | Jue, 3 Sep   | 9 hs |	:material-google-classroom: Presencial | PP. Programando en Biología  | :fontawesome-solid-hammer: Práctica |	R. Quinteros |
