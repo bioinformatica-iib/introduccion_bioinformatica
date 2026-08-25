@@ -169,7 +169,7 @@ nav:
         - TP 1 - Linux: 'practicos/TP01_Linux/index.md'
         - TP 2 - Linux: 'practicos/TP02_Linux/index.md'
         - TP 3 - Alineamientos de a pares: 'practicos/TP03_Alineamientos/index.md'
-        # - TP 4 - Búsqueda por similitud: 'practicos/TP04_Busqueda_por_similitud/index.md'
+        - TP 4 - Búsqueda por similitud: 'practicos/TP04_Busqueda_por_similitud/index.md'
         # - TP - R - Introduccion: 'practicos/TPPa_Programando_en_Biologia/index.md'
         # - TP - R - Aplicación: 'practicos/TPPb_Programando_en_Biologia/index.md'
         # - TP 5 - Clustering + Data Mining: 'practicos/TP05_Clustering_Data_Mining/index.md'
