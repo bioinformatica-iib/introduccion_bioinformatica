@@ -14,20 +14,16 @@ tags:
 
 <!--
 [:fontawesome-solid-download: Materiales](data/Data-TP2.zip){ .md-button .md-button--primary }
+[:fontawesome-solid-computer: Google Colab](https://colab.research.google.com/drive/1-i_1TJFytoeeFhPGqrrZnmb_-ZMN03Zi?usp=sharing){ .md-button .md-button--primary }
+-->
 
-[:fontawesome-solid-computer: Google Colab](https://colab.research.google.com/drive/1-i_1TJFytoeeFhPGqrrZnmb_-ZMN03Zi?usp=sharing){ .md-button .md-button--primary }            [:fontawesome-solid-file-powerpoint: Slides](https://docs.google.com/presentation/d/1hHh-vYtGggyeMPEpObJb18lTYwiSvxXC7MDcTsuuCKQ/edit?usp=drive_link){ .md-button .md-button--primary }
+[:fontawesome-solid-file-powerpoint: Slides](data/TP03.pdf){ .md-button .md-button--primary }
 
 <br>
--->
 
 !!! abstract "Atención: Este TP tiene informe."
 
 !!! warning "Atención: Este TP tiene parcialito."
-
-<!---
-### Videos de la clase grabada
-* :octicons-video-16: [Cierre TP](https://youtu.be/nXBOrHCMRZQ)
--->
 
 ## **Objetivos**
 
@@ -564,6 +560,8 @@ A partir de esta relación entre similitud y homología se pueden inferir relaci
 !!! info 
 
     <span style="font-weight:bold;">Fecha límite de entrega:</span> Viernes, 28 de agosto 2026, 23:59hs.
+
+    Enviar a mdidiergarnham@iib.unsam.edu.ar, incluyendo en copia a jglavina@iib.unsam.edu.ar y al resto de los miembros del grupo. 
 
 ### Contexto biológico
 

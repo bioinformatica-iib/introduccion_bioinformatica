@@ -11,10 +11,11 @@ tags:
 <br>
 
 [:fontawesome-solid-download: Materiales](data/datos.zip){ .md-button .md-button--primary }
+[:fontawesome-solid-file-powerpoint: Slides (Introducción)](https://docs.google.com/presentation/d/1Xa-M3V5U8zcCFk3EnOU491CiBG6lyTXkmd52YX84b3w/edit?usp=sharing){ .md-button .md-button--primary } 
+[:fontawesome-solid-file-powerpoint: Slides (Elaboración de informes)](https://docs.google.com/presentation/d/19qYr7XzxSsKrtyaSILqNndguWAgJP8rA3dN2XvzjBso/edit?usp=sharing){ .md-button .md-button--primary }
+
 
 <!--
-[:fontawesome-solid-file-powerpoint: Slides (Parte 1)](https://drive.google.com/file/d/1fRzQTHcYZH0VMC097lfyJiB7VqM5y5sF/view?usp=sharing){ .md-button .md-button--primary } 
-[:fontawesome-solid-file-powerpoint: Slides (Parte 2)](https://drive.google.com/file/d/1kAgYljsaTRXuabzc149CQCi5hyjiM41t/view?usp=sharing){ .md-button .md-button--primary }
 [:fontawesome-solid-file-powerpoint: Resolución Ejercicio 3](https://drive.google.com/file/d/1HYZKJGnIIynY2sn59Pmj7gaezNB7g70L/view?usp=sharing){ .md-button .md-button--primary }
 -->
 
