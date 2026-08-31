@@ -157,7 +157,7 @@ En este caso la función recibe dos argumentos y los imprime separados por un es
 print("Hello World!")
 ```
 
-`print` es equivalente al `echo` de **bash** y cuando lo usamos decimos que *imprimimos* a la variable. Puede ser que usemos las frases *"imprimir por terminal"*, *"imprimir por consola"*, o *"imprimir por por pantalla"* de forma intercambiable.
+`print` es equivalente al `echo` de **bash** y cuando lo usamos decimos que *imprimimos* a la variable. Puede ser que usemos las frases *"imprimir por terminal"*, *"imprimir por consola"*, o *"imprimir por pantalla"* de forma intercambiable.
 
 Como muestra el código anterior, los argumentos de una función en **Python** se escriben entre paréntesis y, si hay más de uno, se separan con comas.
 
@@ -167,7 +167,7 @@ Al ejecutar la celda deberían ver:
 Hello World!
 ```
 
-✏️**5)** Modifiquen ahora la misma celda para que imprima:
+✏️**6)** Modifiquen ahora la misma celda para que imprima:
 
 ```python
 print("Hola Bioinformática!")
@@ -177,7 +177,7 @@ Vuelvan a ejecutarla usando ++shift+enter++.
 
 Cada vez que modifiquen una celda deberán volver a ejecutarla para que los cambios tengan efecto.
 
-✏️**6)** Si desean conservar los cambios realizados en el notebook, guárdenlo en su cuenta de Google Drive mediante **Archivo** :material-arrow-right: **Guardar una copia en Drive**.
+✏️**7)** Si desean conservar los cambios realizados en el notebook, guárdenlo en su cuenta de Google Drive mediante **Archivo** :material-arrow-right: **Guardar una copia en Drive**.
 
 Por defecto, Google Colab guardará el notebook en la carpeta **Mi unidad** :material-arrow-right: **Colab Notebooks** de su Google Drive. El archivo tendrá la extensión **.ipynb**.
 
@@ -305,40 +305,40 @@ En Python, las cadenas de caracteres (strings) se representan mediante texto enc
 === "Código"
 
 ```python
-    frase = "Había"
-    print(frase)
+frase = "Había"
+print(frase)
 ```
 
 ```python
-    frase = frase + " una"
-    print(frase)
+frase = frase + " una"
+print(frase)
 ```
 
 ```python
-    frase = frase + " vez"
-    print(frase)
+frase = frase + " vez"
+print(frase)
 ```
 
 ```python
-    frase = frase + "..."
-    print(frase)
+frase = frase + "..."
+print(frase)
 ```
 
 === "Código con comentarios"
 
 ```python
-    frase = "Había"   # frase es una variable de tipo str
+frase = "Había"   # frase es una variable de tipo str
 
-    # Podemos concatenar strings utilizando el operador +
-    frase = frase + " una"
+# Podemos concatenar strings utilizando el operador +
+frase = frase + " una"
 
-    # Agregamos otra palabra, incluyendo un espacio al comienzo
-    frase = frase + " vez"
+# Agregamos otra palabra, incluyendo un espacio al comienzo
+frase = frase + " vez"
 
-    # Agregamos tres puntos, sin espacio entre "vez" y los puntos
-    frase = frase + "..."
+# Agregamos tres puntos, sin espacio entre "vez" y los puntos
+frase = frase + "..."
 
-    print(frase)
+print(frase)
 ```
 
 ✏️**6)** Averigüen de qué tipo es la variable `frase`.
@@ -405,7 +405,7 @@ En este ejercicio vamos a practicar el uso de variables numéricas y *strings* e
 
 3. Creen una variable de tipo *string* con la siguiente secuencia de ADN:
 ```text
-ATGGCTAACCGTTACGATGCTAA
+ATGGCTAACCGTTACGAATGCTAA
 ```
 
 * Impriman la longitud de la secuencia utilizando la función `len()`.
