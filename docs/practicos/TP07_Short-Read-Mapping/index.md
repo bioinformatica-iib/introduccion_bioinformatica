@@ -6,7 +6,7 @@ tags:
 ---
 ![Image](images/featured.jpeg){ width="250", align="left" }
 
-# **TP 7**. Short Read Mapping { markdown data-toc-label = 'TP 09' }
+# **TP 7**. Short Read Mapping { markdown data-toc-label = 'TP 07' }
 
 <br>
 <br>
@@ -24,19 +24,21 @@ tags:
 
 En este TP vamos a usar **Galaxy** para realizar el análisis de calidad y mapeo de las secuencias. Galaxy es una plataforma web que permite realizar análisis de datos biológicos sin necesidad de usar la línea de comandos. Para evitar saturar el servidor público de Galaxy, les pedimos que creen una cuenta gratuita en [usegalaxy.org](https://usegalaxy.org/) y carguen los archivos `NV_1.fastq.gz` , `NV_2.fastq.gz`, `mapping.sam` y `L2_cat.fasta` que se encuentran en la carpeta _Materiales_ antes de que empiece el TP.
 
-Para cargar los materiales, una vez que hayan iniciado sesión, hagan click en el botón **Upload Data**"** (arriba a la izquierda) y luego en **Choose local files**. Seleccionen los archivos y luego hagan click en **Start upload**. Una vez que los archivos estén cargados, podrán verlos en el panel de la izquierda.
+Para cargar los materiales, una vez que hayan iniciado sesión, hagan click en el botón **Upload Data** (arriba a la izquierda) y luego en **Choose local files**. Seleccionen los archivos y luego hagan click en **Start upload**. Una vez que los archivos estén cargados, podrán verlos en el panel de la izquierda.
 
 ## Introducción
 
-La re-secuenciación consiste en secuenciar un individuo perteneciente a una especie que ya se ha secuenciada anteriormente. Su objetivo es capturar información de polimorfismos de una base (SNPs), variaciones en el número de copias (CNVs) e inserciones y deleciones (indels) en el individuo de interés.
+La re-secuenciación consiste en secuenciar un individuo de una especie que ya se ha secuenciado anteriormente. Su objetivo es capturar información de polimorfismos de una base (SNPs), variaciones en el número de copias (CNVs) e inserciones y deleciones (indels) en el individuo de interés.
 
-Siempre que exista un genoma de referencia, lo ideal es mapear en lugar de ensamblar, ya que el genoma de referencia contiene mucha información acumulada sobre el organismo de interés. Hay que tener en cuenta que al mapear se realizan múltiples asunciones, como por ejemplo, que el organismo de referencia y el analizado tienen la misma arquitectura genómica.
+Siempre que exista un genoma de referencia, lo ideal es *mapear* en lugar de *ensamblar*, ya que el genoma de referencia contiene mucha información acumulada sobre el organismo de interés. Hay que tener en cuenta que al mapear se realizan múltiples asunciones, como por ejemplo, que el organismo de referencia y el analizado tienen la misma arquitectura genómica.
 
 ### *Chlamydia trachomatis*
 
-*Chlamydia trachomatis* es uno de los patógenos humanos de mayor prevalencia en el mundo, capaz de causar una variedad de cuadros clínicos. Las cepas de transmisión sexual pueden ser subdivididas en aquellas restringidas al tracto intestinal y tipos más invasivos como el linfogranuloma venereo o *LGV biovar*. A pesar de las diferencias en la severidad de la enfermedad, hay pocas diferencias genéticas que distinguen a las diferentes cepas de *C. trachomatis*. Como veremos a continuación, la mayoría de las variaciones ocurren al nivel de SNPs.
+*Chlamydia trachomatis* es uno de los patógenos humanos de mayor prevalencia en el mundo, capaz de causar una variedad de cuadros clínicos. Las cepas de transmisión sexual pueden ser subdivididas en aquellas restringidas al tracto intestinal y en tipos más invasivos como el linfogranuloma venereo o *LGV biovar*. A pesar de las diferencias en la severidad de la enfermedad, hay pocas diferencias genéticas que distinguen a las diferentes cepas de *C. trachomatis*. Como veremos a continuación, la mayoría de las variaciones ocurren al nivel de SNPs.
 
-En este trabajo práctico, procederemos a mapear las lecturas producidas con Illumina de una nueva variante de *Chlamydia trachomatis* aislada del tracto genital y compararlas con la cepa de referencia **Lb** y otra cepa conocida **L2b**. Esta nueva cepa, llamada **NV**, causó un alerta sanitario en Europa en el año 2006 y comenzó a diseminarse alrededor del mundo. La causa de su expansión es que evade la detección por el test diagnóstico basado en una reacción de PCR. En el desarrollo de este trabajo práctico podrán identificar la razón por la cual esta cepa evadió el ensayo diagnóstico.
+En este trabajo práctico, procederemos a mapear las lecturas producidas con Illumina de una nueva variante de *Chlamydia trachomatis* llamada **NV** aislada del tracto genital y compararlas con la cepa de referencia **Lb** y otra cepa conocida **L2b**.
+
+La nueva cepa, **NV**, causó un alerta sanitario en Europa en el año 2006 y comenzó a diseminarse alrededor del mundo. La causa de su expansión es que evade la detección por el test diagnóstico basado en una reacción de PCR. En el desarrollo de este trabajo práctico podrán identificar la razón por la cual esta cepa evadió el ensayo diagnóstico.
 
 ### Flujo de trabajo de secuenciación y mapeo
 
@@ -46,19 +48,21 @@ En este trabajo práctico, procederemos a mapear las lecturas producidas con Ill
 
 ![Flujo](images/flow.png)
 
-## Ejercicio 1: Inspección de los datos crudos
+## Ejercicio 1
 
 Siempre que sea posible, es una buena práctica visualizar los archivos de trabajo. 
 Para comenzar leeremos los archivos crudos de secuenciación de *Chlamydia trachomatis*, los cuales tienen formato `FASTQ`.
 
+### ✏️ **Formato FASTQ**
+
 Abran una terminal y cambien el directorio al que contenga los materiales del TP "Short-Read-Mapping". 
-Lean la primera línea de un archivos fastq con el siguiente comando:
+Lean la primera línea de un archivos `FASTQ` con el siguiente comando:
 
 ```Bash 
 zcat NV_1.fastq.gz | head -4 
 ```
 
-**Formato FASTQ**
+Tendrían que poder identificar los siguientes elementos:
 
 - **1ra línea:** `IL7_1788:5:1:34:600/1` es el nombre de la lectura secuenciada y contiene la siguiente información
 
@@ -97,13 +101,20 @@ El número que representa la calidad va de 33 (calidad más baja; `!` En ASCII) 
  ! "# $% & '() * +, -. / 0123456789:; <=>? @ ABCDEFGHIJKLMNOPQRSTUVWXYZ [\] ^ _` abcdefghijklmnopqrstuvwxyz {|} ~
 ```
 
-**1.** Identificar los componentes de la primer lectura: nombre, secuencia, calidad y ubicación física de la lectura en la celda de flujo (es decir, lane, tile, x, y).
+### ✏️ Pregunta 1
 
-**2.** Usando el código [ASCII](https://elcodigoascii.com.ar/), determinar la calidad de las primeras 3 bases secuenciadas.
+Identificar los componentes de la primer lectura: nombre, secuencia, calidad y ubicación física de la lectura en la celda de flujo (es decir, lane, tile, x, y).
 
-**3.** Leer la primera lectura del archivo `NV_2.fastq.gz`. ¿Qué similitudes y diferencias encuentra en **cada una** de las líneas de texto? ¿A qué se deben? 
+### ✏️ Pregunta 2
 
-## Ejercicio 2: Análisis de calidad de secuencias
+Usando el código [ASCII](https://elcodigoascii.com.ar/), determinar la calidad de las primeras 3 bases secuenciadas.
+
+### ✏️ Pregunta 3
+
+Leer la primera lectura del archivo `NV_2.fastq.gz`. ¿Qué similitudes y diferencias encuentra en **cada una** de las líneas de texto? ¿A qué se deben? 
+
+
+## Ejercicio 2
 
 Dado que la secuenciación de segunda generación tiene una mayor tasa de error que la de primera generación (Sanger), es importante revisar la calidad de nuestras lecturas. Explorar y entender las características de los datos en crudo nos dará confianza en los experimentos ulteriores que llevemos adelante con las secuencias.
 
