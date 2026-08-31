@@ -1441,17 +1441,17 @@ Para hacerlo vayan a:
 <p>✏️<strong>5)</strong> En la primera <strong>celda de código</strong> escriban lo siguiente y ejecútenla presionando <span class="keys"><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-enter">Enter</kbd></span> o haciendo clic en el botón <strong>▶</strong>.</p>
 <div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">"Hello World!"</span><span class="p">)</span>
 </code></pre></div>
-<p><code>print</code> es equivalente al <code>echo</code> de <strong>bash</strong> y cuando lo usamos decimos que <em>imprimimos</em> a la variable. Puede ser que usemos las frases <em>"imprimir por terminal"</em>, <em>"imprimir por consola"</em>, o <em>"imprimir por por pantalla"</em> de forma intercambiable.</p>
+<p><code>print</code> es equivalente al <code>echo</code> de <strong>bash</strong> y cuando lo usamos decimos que <em>imprimimos</em> a la variable. Puede ser que usemos las frases <em>"imprimir por terminal"</em>, <em>"imprimir por consola"</em>, o <em>"imprimir por pantalla"</em> de forma intercambiable.</p>
 <p>Como muestra el código anterior, los argumentos de una función en <strong>Python</strong> se escriben entre paréntesis y, si hay más de uno, se separan con comas.</p>
 <p>Al ejecutar la celda deberían ver:</p>
 <div class="highlight"><pre><span></span><code>Hello World!
 </code></pre></div>
-<p>✏️<strong>5)</strong> Modifiquen ahora la misma celda para que imprima:</p>
+<p>✏️<strong>6)</strong> Modifiquen ahora la misma celda para que imprima:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">"Hola Bioinformática!"</span><span class="p">)</span>
 </code></pre></div>
 <p>Vuelvan a ejecutarla usando <span class="keys"><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-enter">Enter</kbd></span>.</p>
 <p>Cada vez que modifiquen una celda deberán volver a ejecutarla para que los cambios tengan efecto.</p>
-<p>✏️<strong>6)</strong> Si desean conservar los cambios realizados en el notebook, guárdenlo en su cuenta de Google Drive mediante <strong>Archivo</strong> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg></span> <strong>Guardar una copia en Drive</strong>.</p>
+<p>✏️<strong>7)</strong> Si desean conservar los cambios realizados en el notebook, guárdenlo en su cuenta de Google Drive mediante <strong>Archivo</strong> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg></span> <strong>Guardar una copia en Drive</strong>.</p>
 <p>Por defecto, Google Colab guardará el notebook en la carpeta <strong>Mi unidad</strong> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg></span> <strong>Colab Notebooks</strong> de su Google Drive. El archivo tendrá la extensión <strong>.ipynb</strong>.</p>
 <p>A diferencia de un <em>script</em> tradicional de <strong>Python</strong> (archivos con extensión <strong>.py</strong>), un notebook de <strong>Google Colab</strong> guarda no solo el código, sino también el texto explicativo, las figuras, las tablas y los resultados obtenidos durante la ejecución de cada celda.</p>
 <h2 id="python-variables"><strong>Python: Variables</strong></h2>
@@ -1526,35 +1526,35 @@ En Python, las cadenas de caracteres (strings) se representan mediante texto enc
 <div class="tabbed-block"></div>
 </div>
 </div>
-<div class="highlight"><pre><span></span><code>    <span class="n">frase</span> <span class="o">=</span> <span class="s2">"Había"</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">frase</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">frase</span> <span class="o">=</span> <span class="s2">"Había"</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">frase</span><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>    <span class="n">frase</span> <span class="o">=</span> <span class="n">frase</span> <span class="o">+</span> <span class="s2">" una"</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">frase</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">frase</span> <span class="o">=</span> <span class="n">frase</span> <span class="o">+</span> <span class="s2">" una"</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">frase</span><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>    <span class="n">frase</span> <span class="o">=</span> <span class="n">frase</span> <span class="o">+</span> <span class="s2">" vez"</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">frase</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">frase</span> <span class="o">=</span> <span class="n">frase</span> <span class="o">+</span> <span class="s2">" vez"</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">frase</span><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>    <span class="n">frase</span> <span class="o">=</span> <span class="n">frase</span> <span class="o">+</span> <span class="s2">"..."</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">frase</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">frase</span> <span class="o">=</span> <span class="n">frase</span> <span class="o">+</span> <span class="s2">"..."</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">frase</span><span class="p">)</span>
 </code></pre></div>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked id="__tabbed_2_1" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Código con comentarios</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block"></div>
 </div>
 </div>
-<div class="highlight"><pre><span></span><code>    <span class="n">frase</span> <span class="o">=</span> <span class="s2">"Había"</span>   <span class="c1"># frase es una variable de tipo str</span>
+<div class="highlight"><pre><span></span><code><span class="n">frase</span> <span class="o">=</span> <span class="s2">"Había"</span>   <span class="c1"># frase es una variable de tipo str</span>
 
-    <span class="c1"># Podemos concatenar strings utilizando el operador +</span>
-    <span class="n">frase</span> <span class="o">=</span> <span class="n">frase</span> <span class="o">+</span> <span class="s2">" una"</span>
+<span class="c1"># Podemos concatenar strings utilizando el operador +</span>
+<span class="n">frase</span> <span class="o">=</span> <span class="n">frase</span> <span class="o">+</span> <span class="s2">" una"</span>
 
-    <span class="c1"># Agregamos otra palabra, incluyendo un espacio al comienzo</span>
-    <span class="n">frase</span> <span class="o">=</span> <span class="n">frase</span> <span class="o">+</span> <span class="s2">" vez"</span>
+<span class="c1"># Agregamos otra palabra, incluyendo un espacio al comienzo</span>
+<span class="n">frase</span> <span class="o">=</span> <span class="n">frase</span> <span class="o">+</span> <span class="s2">" vez"</span>
 
-    <span class="c1"># Agregamos tres puntos, sin espacio entre "vez" y los puntos</span>
-    <span class="n">frase</span> <span class="o">=</span> <span class="n">frase</span> <span class="o">+</span> <span class="s2">"..."</span>
+<span class="c1"># Agregamos tres puntos, sin espacio entre "vez" y los puntos</span>
+<span class="n">frase</span> <span class="o">=</span> <span class="n">frase</span> <span class="o">+</span> <span class="s2">"..."</span>
 
-    <span class="nb">print</span><span class="p">(</span><span class="n">frase</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">frase</span><span class="p">)</span>
 </code></pre></div>
 <p>✏️<strong>6)</strong> Averigüen de qué tipo es la variable <code>frase</code>.</p>
 <p>En <strong>Python</strong>, muchas operaciones sobre los <em>strings</em> se realizan mediante <strong>métodos</strong>, es decir, funciones asociadas al propio objeto. Los métodos se invocan escribiendo un punto (<code>.</code>) después del nombre de la variable.</p>
@@ -1601,7 +1601,7 @@ Es importante notar que no todos los métodos se comportan de la misma manera. A
 </li>
 <li>
 <p>Creen una variable de tipo <em>string</em> con la siguiente secuencia de ADN:
-</p><div class="highlight"><pre><span></span><code>ATGGCTAACCGTTACGATGCTAA
+</p><div class="highlight"><pre><span></span><code>ATGGCTAACCGTTACGAATGCTAA
 </code></pre></div>
 </li>
 <li>
