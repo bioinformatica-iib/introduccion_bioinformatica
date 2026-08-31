@@ -21,7 +21,7 @@ tags:
 | Jue, 20 Ago  | 9 hs |	:material-google-classroom: Presencial | [P3. Alineamientos de secuencias de a pares](../practicos/TP03_Alineamientos/index.md) | :fontawesome-solid-hammer: Práctica |	M. Didier Garnham |
 | Mar, 25 Ago  | 9 hs |	:material-google-classroom: Presencial | [T4. Alineamientos múltiples](../teoricas/4-Teorica-Cuatro/index.md) | :fontawesome-solid-brain: Teórica |	F. Agüero |
 | Jue, 27 Ago  | 9 hs |	:material-google-classroom: Presencial | [P4. Búsqueda de secuencias por similitud y Alineamientos Múltiples](../practicos/TP04_Busqueda_por_similitud/index.md) | :fontawesome-solid-hammer: Práctica |	M. Didier Garnham |
-| Mar, 1 Sep   | 9 hs |	:material-google-classroom: Presencial | PP. Programando en Biología | :fontawesome-solid-hammer: Práctica |	R. Quinteros |
+| Mar, 1 Sep   | 9 hs |	:material-google-classroom: Presencial | [PP. Programando en Biología](../practicos/TPPa_Programando_en_Biologia/index.md) | :fontawesome-solid-hammer: Práctica |	R. Quinteros |
 | Jue, 3 Sep   | 9 hs |	:material-google-classroom: Presencial | PP. Programando en Biología  | :fontawesome-solid-hammer: Práctica |	R. Quinteros |
 | Mar, 8 Sep   | 9 hs |	:material-google-classroom: Presencial | T5. Data clustering | :fontawesome-solid-brain: Teórica |	F. Agüero |
 | Jue, 10 Sep  | 9 hs |	:material-google-classroom: Presencial | P5. Data Clustering y Data Mining | :fontawesome-solid-hammer: Práctica |	R. Quinteros |
