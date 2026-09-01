@@ -1,5 +1,5 @@
 ---
-title: Practico Programación en Phyton
+title: Practico Programación en Python
 icon: octicons/code-16
 tags: 
   - practicos
