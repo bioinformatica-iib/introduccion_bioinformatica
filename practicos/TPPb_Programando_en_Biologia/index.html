@@ -1459,9 +1459,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#7-informe-individual-de-cada-muestras" class="md-nav__link">
+  <a href="#7-informe-individual-de-cada-muestra" class="md-nav__link">
     <span class="md-ellipsis">
-      ✏️7) Informe individual de cada muestras
+      ✏️7) Informe individual de cada muestra
     </span>
   </a>
   
@@ -2153,9 +2153,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#7-informe-individual-de-cada-muestras" class="md-nav__link">
+  <a href="#7-informe-individual-de-cada-muestra" class="md-nav__link">
     <span class="md-ellipsis">
-      ✏️7) Informe individual de cada muestras
+      ✏️7) Informe individual de cada muestra
     </span>
   </a>
   
@@ -2579,6 +2579,9 @@ Name: 0, dtype: object
 <div class="highlight"><pre><span></span><code>100
 </code></pre></div>
 En este caso, 0 indica la primera fila y 2 la tercera columna.
+<p>También podemos indicar la fila mediante su posición y luego acceder a la columna utilizando su nombre:
+</p><div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">"expresion"</span><span class="p">])</span>
+</code></pre></div>
 <div class="admonition info">
 <p class="admonition-title">con loc</p>
 <p>También podemos acceder a una celda utilizando el nombre de la columna:
@@ -2646,6 +2649,26 @@ no utilizamos <code>and</code> y <code>or</code>. En su lugar, utilizamos:</p>
 <li><code>sep="\t"</code> indica que las columnas estarán separadas por tabulaciones.</li>
 <li><code>index=False</code> evita guardar la numeración de las filas como una columna adicional.</li>
 </ul>
+<div class="admonition info">
+<p class="admonition-title">Directorio de trabajo</p>
+<p>Si estamos trabajando en Google Colab y tenemos Google Drive montado, podemos indicar la ruta completa para guardar el archivo directamente en una carpeta de nuestro Drive:</p>
+<div class="highlight"><pre><span></span><code><span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">"/content/drive/MyDrive/TPP_bioinfo/genes.tsv"</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">"</span><span class="se">\t</span><span class="s2">"</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</code></pre></div>
+<p>También podemos cambiar el directorio de trabajo a esa carpeta y luego utilizar solamente el nombre del archivo:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">os</span>
+
+<span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s2">"/content/drive/MyDrive/TPP_bioinfo"</span><span class="p">)</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">"genes.tsv"</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">"</span><span class="se">\t</span><span class="s2">"</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</code></pre></div>
+<p>En Google Colab también podemos utilizar <code>%cd</code> para cambiar el directorio de trabajo:</p>
+<div class="highlight"><pre><span></span><code><span class="o">%</span><span class="n">cd</span> <span class="o">/</span><span class="n">content</span><span class="o">/</span><span class="n">drive</span><span class="o">/</span><span class="n">MyDrive</span><span class="o">/</span><span class="n">TPP_bioinfo</span> 
+</code></pre></div>
+<p>A partir de ese momento, podemos utilizar solamente el nombre del archivo: </p>
+<div class="highlight"><pre><span></span><code><span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">"genes.tsv"</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">"</span><span class="se">\t</span><span class="s2">"</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</code></pre></div>
+<p>En ambos casos, <code>genes.tsv</code> se guardará en el directorio de trabajo actual.</p>
+</div>
 <h4 id="ejercicio-3">✏️ Ejercicio 3</h4>
 <p>Guarden el DataFrame creado anteriormente con el nombre <strong>genes_expresion.tsv</strong>. Confirmen que el archivo fue creado correctamente desde la pestaña <strong>Archivos</strong> de Google Colab.</p>
 <h3 id="leer-tablas">Leer tablas</h3>
@@ -2693,6 +2716,21 @@ En este caso, ND (Not Determined) indica que el valor no fue determinado.
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"genes.tsv"</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">"</span><span class="se">\t</span><span class="s2">"</span><span class="p">,</span> <span class="n">na_values</span><span class="o">=</span><span class="s2">"ND"</span><span class="p">)</span>
 </code></pre></div>
 De esta manera, pandas convertirá automáticamente los valores "ND" en NaN.
+<p>Por ejemplo:
+</p><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s2">"gen"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"TP53"</span><span class="p">,</span> <span class="s2">"BRCA1"</span><span class="p">,</span> <span class="s2">"MYC"</span><span class="p">,</span> <span class="s2">"EGFR"</span><span class="p">],</span>
+    <span class="s2">"expresion"</span><span class="p">:</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="s2">"ND"</span><span class="p">,</span> <span class="mi">500</span><span class="p">]</span>
+<span class="p">})</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">"genes_expresion_ND.tsv"</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">"</span><span class="se">\t</span><span class="s2">"</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"genes_expresion_ND.tsv"</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">"</span><span class="se">\t</span><span class="s2">"</span><span class="p">,</span> <span class="n">na_values</span><span class="o">=</span><span class="s2">"ND"</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</code></pre></div>
 <h2 id="ejercicio-5-tablas" markdown="markdown">✏️<strong>Ejercicio 5 - Tablas</strong></h2>
 <ol>
 <li>Creen una lista con los nombres de 5 genes (por ejemplo: "TP53", "BRCA1", "ACTB", "GAPDH", "MYC") y otra lista con sus niveles de expresión (pueden ser números entre 1 y 100).</li>
@@ -2802,6 +2840,8 @@ Resolucion
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
     <span class="s2">"https://raw.githubusercontent.com/mwaskom/seaborn-data/master/iris.csv"</span>
 <span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
     <span class="n">df</span><span class="p">[</span><span class="s2">"sepal_length"</span><span class="p">],</span>
@@ -2994,10 +3034,12 @@ perimeter_mean en el eje Y.</p>
 </ul>
 <h4 id="6-identificacion-de-muestras">✏️<strong>6)</strong> Identificación de muestras</h4>
 <p>Supongamos ahora que el equipo médico quiere identificar muestras con valores particularmente altos de algunas características.</p>
-<p>Seleccionen todas las muestras que cumplan simultáneamente:
-*  radius_mean &gt; 20
-*  area_mean &gt; 1000</p>
+<p>Seleccionen todas las muestras que cumplan simultáneamente:</p>
 <ul>
+<li>radius_mean &gt; 20</li>
+<li>
+<p>area_mean &gt; 1000</p>
+</li>
 <li>
 <p>¿Cuántas muestras cumplen ambas condiciones?</p>
 </li>
@@ -3005,7 +3047,7 @@ perimeter_mean en el eje Y.</p>
 <p>¿Qué diagnóstico presentan esas muestras?</p>
 </li>
 </ul>
-<h4 id="7-informe-individual-de-cada-muestras">✏️<strong>7)</strong> Informe individual de cada muestras</h4>
+<h4 id="7-informe-individual-de-cada-muestra">✏️<strong>7)</strong> Informe individual de cada muestra</h4>
 <p>Finalmente, el hospital nos solicita generar un informe individual para cada muestra.</p>
 <p>El informe estará destinado al equipo médico, por lo que debe presentar los resultados de manera clara y resumida. No se trata de un informe dirigido al paciente. 
 El informe debe describir los datos y los resultados del análisis. No debe presentar una conclusión clínica ni afirmar que una muestra es cancerosa o no cancerosa a partir de los análisis realizados en este ejercicio.</p>
@@ -3023,9 +3065,11 @@ El informe debe describir los datos y los resultados del análisis. No debe pres
 <li>concavity_mean</li>
 <li>symmetry_mean</li>
 </ul>
-<p>Calculen, para cada muestra:
-* diferencia respecto al promedio de las muestras benignas;
-* diferencia respecto al promedio de las muestras malignas.</p>
+<p>Calculen, para cada muestra:</p>
+<ul>
+<li>diferencia respecto al promedio de las muestras benignas;</li>
+<li>diferencia respecto al promedio de las muestras malignas.</li>
+</ul>
 <details class="tip">
 <summary>Pista</summary>
 <p>Para comenzar, trabajen con una sola muestra. Una vez que logren generar correctamente un informe, podrán automatizar el proceso para las demás muestras.</p>
@@ -3107,6 +3151,12 @@ llamada <strong>f-string</strong> (<em>formatted string</em>).</p>
 <p>El archivo debería encontrarse dentro de:</p>
 <div class="highlight"><pre><span></span><code>Informes/
 └── informe.txt
+</code></pre></div>
+<p><strong>5. Ver el informe</strong></p>
+<p>Una vez creado el archivo, pueden comprobar su contenido directamente desde 
+Google Colab utilizando:</p>
+<div class="highlight"><pre><span></span><code><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"Informes/informe.txt"</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">)</span> <span class="k">as</span> <span class="n">archivo</span><span class="p">:</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">archivo</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
 </code></pre></div>
 </details>
 <!-- Resolución Ej 7
