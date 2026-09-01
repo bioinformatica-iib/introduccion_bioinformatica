@@ -468,6 +468,11 @@ print(df.iloc[0, 2])
 ```
 En este caso, 0 indica la primera fila y 2 la tercera columna.
 
+También podemos indicar la fila mediante su posición y luego acceder a la columna utilizando su nombre:
+```python
+print(df.iloc[0]["expresion"])
+```
+
 !!! info "con loc"
     También podemos acceder a una celda utilizando el nombre de la columna:
     ```python
@@ -562,6 +567,38 @@ Los parámetros utilizados son:
 * `sep="\t"` indica que las columnas estarán separadas por tabulaciones.
 * `index=False` evita guardar la numeración de las filas como una columna adicional.
 
+!!! info "Directorio de trabajo"
+
+    Si estamos trabajando en Google Colab y tenemos Google Drive montado, podemos indicar la ruta completa para guardar el archivo directamente en una carpeta de nuestro Drive:
+
+    ```python
+    df.to_csv("/content/drive/MyDrive/TPP_bioinfo/genes.tsv", sep="\t", index=False)
+    ```
+
+    También podemos cambiar el directorio de trabajo a esa carpeta y luego utilizar solamente el nombre del archivo:
+
+    ```python
+    import os
+
+    os.chdir("/content/drive/MyDrive/TPP_bioinfo")
+
+    df.to_csv("genes.tsv", sep="\t", index=False)
+    ```
+
+    En Google Colab también podemos utilizar `%cd` para cambiar el directorio de trabajo:
+
+    ```python
+    %cd /content/drive/MyDrive/TPP_bioinfo 
+    ```
+
+    A partir de ese momento, podemos utilizar solamente el nombre del archivo: 
+
+    ```python
+    df.to_csv("genes.tsv", sep="\t", index=False)
+    ```
+
+      En ambos casos, `genes.tsv` se guardará en el directorio de trabajo actual.
+
 #### ✏️ Ejercicio 3
 Guarden el DataFrame creado anteriormente con el nombre **genes_expresion.tsv**. Confirmen que el archivo fue creado correctamente desde la pestaña **Archivos** de Google Colab.
 
@@ -628,6 +665,22 @@ df = pd.read_csv("genes.tsv", sep="\t", na_values="ND")
 ```
 De esta manera, pandas convertirá automáticamente los valores "ND" en NaN.
 
+Por ejemplo:
+```python
+import pandas as pd
+df = pd.DataFrame({
+    "gen": ["TP53", "BRCA1", "MYC", "EGFR"],
+    "expresion": [100, 250, "ND", 500]
+})
+
+print(df)
+
+df.to_csv("genes_expresion_ND.tsv", sep="\t", index=False)
+
+df = pd.read_csv("genes_expresion_ND.tsv", sep="\t", na_values="ND")
+
+print(df)
+```
 
 ## ✏️**Ejercicio 5 - Tablas** { markdown data-toc-label='✏️ Ejercicio 5 - Tablas' }
 
@@ -767,6 +820,8 @@ import matplotlib.pyplot as plt
 df = pd.read_csv(
     "https://raw.githubusercontent.com/mwaskom/seaborn-data/master/iris.csv"
 )
+
+print(df)
 
 plt.scatter(
     df["sepal_length"],
@@ -958,14 +1013,15 @@ Diferencien las muestras según el diagnóstico. Agreguen una leyenda que permit
 Supongamos ahora que el equipo médico quiere identificar muestras con valores particularmente altos de algunas características.
 
 Seleccionen todas las muestras que cumplan simultáneamente:
-*  radius_mean > 20
-*  area_mean > 1000
+
+* radius_mean > 20
+* area_mean > 1000
 
 * ¿Cuántas muestras cumplen ambas condiciones?
 
-*  ¿Qué diagnóstico presentan esas muestras?
+* ¿Qué diagnóstico presentan esas muestras?
 
-#### ✏️**7)** Informe individual de cada muestras
+#### ✏️**7)** Informe individual de cada muestra
 Finalmente, el hospital nos solicita generar un informe individual para cada muestra.
 
 El informe estará destinado al equipo médico, por lo que debe presentar los resultados de manera clara y resumida. No se trata de un informe dirigido al paciente. 
@@ -987,6 +1043,7 @@ Para cada muestra deberán generar un archivo de texto en una carpeta llamada In
 * symmetry_mean
 
 Calculen, para cada muestra:
+
 * diferencia respecto al promedio de las muestras benignas;
 * diferencia respecto al promedio de las muestras malignas.
 
@@ -1109,7 +1166,17 @@ Calculen, para cada muestra:
     Informes/
     └── informe.txt
     ```
-       
+
+    **5. Ver el informe**
+
+    Una vez creado el archivo, pueden comprobar su contenido directamente desde 
+    Google Colab utilizando:
+
+    ```python
+    with open("Informes/informe.txt", "r") as archivo:
+    print(archivo.read())
+    ```
+    
 
 <!-- Resolución Ej 7
 import os
