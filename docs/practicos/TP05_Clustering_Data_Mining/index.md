@@ -60,7 +60,7 @@ Para empezar este TP vamos a realizar un pequeño *clustering jerárquico* a man
 
 En la siguiente tabla se reportan los niveles de expresión de cuatro genes (A, B, C y D) a las 0hs, 1hs y 2hs luego de algún tratamiento (aplicado a las 0hs):
  
-c| gen { data-sort-method='none' } | t_0h { data-sort-method='none' } | t_1h { data-sort-method='none' } | t_2h { data-sort-method='none' } |
+| gen { data-sort-method='none' } | t_0h { data-sort-method='none' } | t_1h { data-sort-method='none' } | t_2h { data-sort-method='none' } |
 | :---: | :---: | :---: | :---: |
 | genA | 2 | 4 | 8 |
 | genB | -1| -1 | -2 |
@@ -74,7 +74,6 @@ $$
 datoEstandarizado(genA, t_0) = \frac{dato(genA, t_0) - promedio(genA)}{desviacionEstandar(genA)}
 $$
 
-<figure markdown>
 | gen { data-sort-method='none' } | t_0h { data-sort-method='none' } | t_1h { data-sort-method='none' } | t_2h { data-sort-method='none' } |
 | :---: | :---: | :---: | :---: |
 | genA | -0.87 | -0.22 | 1.09 |
@@ -161,7 +160,7 @@ Queremos entonces agrupar a los diferentes genes por como varían sus niveles de
 
     * **Average Linkage:** la nueva distancia es el ***promedio*** de las distancias $dist(genA, genB)$ y $dist(genA, genC)$
 
-                |       | genA { data-sort-method='none' } | genB+C { data-sort-method='none' } | genD { data-sort-method='none' } |
+        |       | genA { data-sort-method='none' } | genB+C { data-sort-method='none' } | genD { data-sort-method='none' } |
         | :---: | :---:                            | :---:                              | :---: |
         | genA  | 0     |   |   |
         | genB+C| 10.29     | 0 |   |
@@ -276,7 +275,7 @@ Vamos a tener que hacer varios plots similares, por lo tanto, en vez de repetir 
 
 Copien el siguiente código en el colab y modifiquen las secciones que dicen `@@EDITAR@@`.
 
-Tienen que asignar a cada parámetro de la función el valor que quieren graficar en el **eje x** y en el **eje y**, por ejemplo `x_col = "sepal_length"`. Una vez hecho esto, corran el código repetir el gráfico hecho en el **Código 1** y guardarlo en un archivo llamado **01_Sepal_vs_Petal_Length_per_Species.pdf**.
+Tienen que asignar a cada parámetro de la función el valor que quieren graficar en el **eje x** y en el **eje y**, por ejemplo `x_col = "sepal_length"`. Una vez hecho esto, corran el código para repetir el gráfico hecho en el **Código 1** y guardarlo en un archivo llamado **01_Sepal_vs_Petal_Length_per_Species.pdf**.
 
 === "Código"
 
@@ -341,7 +340,7 @@ Tienen que asignar a cada parámetro de la función el valor que quieren grafica
         #*fig.savefig()* es el equivalente a abrir un archivo pdf, imprimir el plot y cerrarlo,
         #todo en un solo paso. La extensión del archivo (.pdf) determina el formato de salida
         fig.savefig(pdf_file)
-        #*plt.close()* libera la figura de la memoria, algo similar en espíritu a *dev.off()* en R
+        #*plt.close()* libera la figura de la memoria
         plt.close(fig)
 
     #### CODIGO PRINCIPAL ####
@@ -377,7 +376,7 @@ df_iris["row_id"] = range(1, len(df_iris) + 1)
 
 ### ✏️ Paso 4: Creando una matriz de datos para usar al momento de clusterizar.
 
-Lean los comentarios en la segunda pestaña para entender que estamos haciendo.
+Creamos un nuevo DataFrame llamado df_datos, al que le quitamos la columna species para simular que no contamos con esa información. De esta manera, podemos aplicar el clustering únicamente sobre los datos disponibles y luego analizar cómo se agrupan las observaciones.
 
 === "Código"
 
@@ -387,6 +386,8 @@ Lean los comentarios en la segunda pestaña para entender que estamos haciendo.
     df_iris = df_iris[columnas_ordenadas]
 
     df_datos = df_iris.drop(columns=["species"]).set_index("row_id")
+
+    print(df_datos)
     ```
 
 === "Código con comentarios"
@@ -397,11 +398,11 @@ Lean los comentarios en la segunda pestaña para entender que estamos haciendo.
     columnas_ordenadas = ["row_id"] + [c for c in df_iris.columns if c != "row_id"]
     df_iris = df_iris[columnas_ordenadas]
 
-    #Similar a lo que hicimos en el TP anterior, estamos usando row_id como índice de la tabla
-    #(el equivalente a los "nombres de fila" o rownames de R)
     #Estamos sacando la columna species ya que queremos simular que no tenemos esta información
     #(la columna species va a estar todavía en df_iris, pero no en df_datos)
     df_datos = df_iris.drop(columns=["species"]).set_index("row_id")
+
+    print(df_datos)
     ```
 
 ### ✏️ Paso 5: Cálculo de distancias.
@@ -415,6 +416,8 @@ Usando el data frame de datos recién creado (`df_datos`), vamos a crear la matr
 
     distancias_condensadas = pdist(df_datos.values, metric="euclidean")
     matriz_distancias = squareform(distancias_condensadas)
+
+    print(matriz_distancias)
     ```
 
 === "Código con comentarios"
@@ -429,6 +432,8 @@ Usando el data frame de datos recién creado (`df_datos`), vamos a crear la matr
 
     # Agrego la mitad simétrica y la diagonal usando squareform
     matriz_distancias = squareform(distancias_condensadas)
+
+    print(matriz_distancias)
     ```
 
 ### ✏️ Paso 5: Clustering jerárquico.
@@ -530,7 +535,6 @@ Vamos a colorear cada flor dependiendo de su especie. La función `dendrogram()`
 
     pdf_file = "11_Clustering_jerarquico_complete_linkage.pdf"
     fig.savefig(pdf_file, bbox_inches="tight")
-    plt.close(fig)
     ```
 
 === "Código con comentarios"
@@ -640,6 +644,10 @@ Por último vamos a querer recrear el gráfico de puntos generado en el **Códig
 
 2. Asignen esa información a una nueva columna en la tabla **df_iris** llamada **cj_cluster** (como en este caso `fcluster()` devuelve los datos en el mismo orden que están en la tabla se puede hacer directamente con `=`, no hace falta usar `merge()`).
 
+```python
+df_iris["cj_cluster"] = clusters_por_cantidad
+```
+
 3. Los valores guardados en la columna **cj_cluster** son del tipo numérico, pero para nosotros los números 1, 2 y 3 son categorías. Corran el siguiente código para convertir la columna recién creada en una variable categórica:
 
     ```python
@@ -647,6 +655,7 @@ Por último vamos a querer recrear el gráfico de puntos generado en el **Códig
     #Recuerden que no sabemos que numero corresponde a que especie
     #(porque ademas ya vimos que no hay un match perfecto 1 a 1)
     df_iris["cj_cluster"] = pd.Categorical(df_iris["cj_cluster"], categories=[1, 2, 3])
+    print(df_iris)
     ```
 
     <!--
@@ -667,6 +676,32 @@ Por último vamos a querer recrear el gráfico de puntos generado en el **Códig
 
         * el parámetro `markers` y asignándole el valor del parámetro de la función creada con los markers elegidos.
 
+```python
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+#### FUNCIONES AUXILIARES ####
+def plot_data_to_pdf_w_color_and_shape(data, x_col, y_col, color_col, shape_col,
+                                       x_label, y_label, plot_title,
+                                       pdf_file, palette=None,
+                                       markers={1: "^", 2: "*", 3: "o"}):
+    fig, ax = plt.subplots(figsize=(8, 7))
+    
+    sns.scatterplot(data=data, x=x_col, y=y_col, hue=color_col,
+                    style=shape_col,
+                    markers=markers,
+                    palette=palette, s=60, ax=ax)
+    
+    ax.set_xlabel(x_label, fontsize=14)
+    ax.set_ylabel(y_label, fontsize=14)
+    ax.set_title(plot_title, fontsize=16, loc="center")
+    ax.tick_params(axis="both", labelsize=12)
+
+    fig.savefig(pdf_file)
+    plt.close(fig)
+
+```
 
 5. Usando la función que acabamos de crear, vean como se distribuyen los puntos al comparar **sepal_length** contra **petal_length** usando la columna **species** para determinar el color y la columna **cj_cluster** para determinar la forma de los diferentes puntos. Guarden este plot en un archivo llamado **21_Sepal_vs_Petal_Length_per_Species_CJ3.pdf**.
 
@@ -695,12 +730,15 @@ Vamos a utilizar la variable `df_datos` creada anteriormente con:
 
 ```python
 df_datos = df_iris.drop(columns=["species"]).set_index("row_id")
+print(df_datos)
 ```
 
 ## ✏️ Paso 1. Uso de KMeans
 
 ```python
 from sklearn.cluster import KMeans
+
+df_datos = df_iris.drop(columns=["species"])
 
 #Corro KMeans para la matriz de datos pidiéndole 3 clusters
 #random_state controla el aspecto azaroso de kmeans para que nos de igual a todos
@@ -709,6 +747,8 @@ clustering_kmeans_k3 = kmeans_k3.fit(df_datos.values)
 
 #Extraigo los clusters calculados (sumo 1 para que arranquen en 1, como en el clustering jerárquico)
 clusters_kmeans_k3 = clustering_kmeans_k3.labels_ + 1
+
+print(clusters_kmeans_k3)
 ```
 Donde `n_clusters = 3` le está diciendo a la función que cree 3 clusters (lo que estoy indicando en el nombre de la variable con **_k3** para que el nombre de la variable sea descriptivo).
 
@@ -726,6 +766,27 @@ Comparen los clusters obtenidos utilizando `KMeans()` contra los clusters a los 
 * Extraigan los clusters del clustering recién creado y asígnenlos a una nueva columna en **df_iris** llamada **k3_cluster** (como en este caso `KMeans()` devuelve los datos en el mismo orden que están en la tabla se puede hacer directamente con `=`, no hace falta usar `merge()`).
 * Transformen dicha columna en una variable categórica (`pd.Categorical`).
 * Usando la función creada `plot_data_to_pdf_w_color_and_shape()` y vean como se distribuyen los puntos al comparar **sepal_length** contra **petal_length** usando la columna **species** para determinar el color y la columna **k3_cluster** para determinar la forma de los diferentes puntos. Guarden este plot en un archivo llamado **22_Sepal_vs_Petal_Length_per_Species_K3.pdf**.
+
+```python
+df_iris["k3_cluster"] = clusters_kmeans_k3
+
+df_iris["k3_cluster"] = pd.Categorical(df_iris["k3_cluster"], categories=[1, 2, 3])
+
+plot_data_to_pdf_w_color_and_shape(
+    data=df_iris,
+    x_col="sepal_length",       # Eje X
+    y_col="petal_length",       # Eje Y
+    color_col="species",        # Columna para determinar el color
+    shape_col="k3_cluster",     # Columna para determinar la forma
+    x_label="Sepal Length",
+    y_label="Petal Length",
+    plot_title="Sepal Length vs Petal Length per Species",
+    pdf_file="22_Sepal_vs_Petal_Length_per_Species_K3.pdf",
+    palette={"setosa": "#004D40",
+             "versicolor": "#D81B60",
+             "virginica": "#FFC107"}
+)
+```
 
 ### ✏️ Pregunta
 
@@ -778,7 +839,8 @@ ax.set_title("Kmeans - centers = 3")
 plt.show()
 
 #Y podemos extraer el promedio de los Silhouette coefficients
-promedio_silhouette_kmeans_k3 = silhouette_score(matriz_datos.values, clusters_kmeans_k3, metric="euclidean")
+promedio_silhouette_kmeans_k3 = silhouette_score(df_datos.values, clusters_kmeans_k3, metric="euclidean")
+print(promedio_silhouette_kmeans_k3)
 ```
 
 ### ✏️ Pregunta
