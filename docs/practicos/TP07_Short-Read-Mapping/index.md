@@ -135,7 +135,7 @@ Algunos aspectos a evaluar en un reporte de calidad son:
 * **Niveles de duplicación de secuencia:** La aparición de duplicaciones excesivas puede sugerir artefactos durante la generación de la librería que usamos para secuenciar (o problemas en la PCR que usamos para amplificar nuestra muestra, si usamos alguna).
 * **Contenido de adaptadores:** Aparición de adaptadores propios de la tecnología de secuenciación (no pertenecen a nuestra secuencia de interés y deben ser removidos antes de mapear al genoma de referencia).
 
-### Análisis de calidad de las secuencias de *C. trachomatis*
+### ✏️ Análisis de calidad de las secuencias de *C. trachomatis*
 
 Para realizar el análisis de calidad de la secuenciación con FastQC, busquen en **Galaxy** el programa **FastQC** en el panel **All Tools** de la izquierda. Seleccionen el programa y luego en **FASTQ file** carguen el archivo `NV_1.fastq.gz`. Dejen las demás opciones como están y hagan click en **Run**. Luego repitan los mismos pasos para el archivo `NV_2.fastq.gz`.
 
@@ -145,7 +145,9 @@ Una vez que se haya terminado de ejecutar, van a poder ver en el panel de la der
 
 Cada análisis genera dos archivos: un archivo de datos _crudos_ `.raw` y un archivo `.html`. El archivo `.html` es el reporte que vamos a analizar. Hagan click en el ícono del ojo para abrir cada uno de los reportes.
 
-**4.** ¿Qué opinan de la calidad de los datos? ¿Continuarían trabajando con ellos? Comparen con este ejemplo y justifiquen su decisión: [Example of Conventional Base Calls](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/bad_sequence_fastqc.html)
+### ✏️ Pregunta
+
+¿Qué opinan de la calidad de los datos? ¿Continuarían trabajando con ellos? Comparen con este ejemplo y justifiquen su decisión: [Example of Conventional Base Calls](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/bad_sequence_fastqc.html)
 
 ## Ejercicio 3: Mapeo de secuencias al genoma de referencia de *C. trachomatis*
 
@@ -185,7 +187,8 @@ Otro formato similar es el BAM, el cual es el equivalente binario y comprimido d
 
 	Si quisieran hacerlo en **Galaxy**, el programa de mapeo se llama **BWA-MEM2**, y el que construye el índice es **BWA-MEM2 indexer**.
 
-!!! info "A partir de aqui SI continúen ejecutando los comandos"
+
+###  ✏️ Pregunta
 
 Revisen de qué se trata el `.sam` abriéndolo en Galaxy o visualizando las primeras líneas del archivo por consola:
 
@@ -198,11 +201,19 @@ Las partes del archivo SAM son las siguientes:
 ![sambam](images/sambam.png)
 
 
-### Compresión de archivos SAM
+* ¿Pueden identificar las distintas partes?
+
+
+### ✏️ Compresión de archivos SAM
 
 Primero vamos a convertir el alineamiento de formato SAM a formato BAM. Para esto usaremos el programa `Samtools view` de **Galaxy**. Seleccionen  el archivo `mapping.sam` como entrada y en **Output format**, dejen las demás opciones como están y hagan click en **Run**.
 
+### ✏️ Pregunta
+
 * Comparen el tamaño de los archivos SAM y BAM y determine el factor de compresión. 
+
+
+### ✏️ Pregunta
 
 Seguidamente ordenen las lecturas mapeadas por cromosoma y/o coordenada con el programa `Samtools sort` de **Galaxy**. Seleccionen el archivo `mapping.bam` como entrada, dejen las demás opciones como están y hagan click en **Run**.
 
@@ -211,10 +222,13 @@ Seguidamente ordenen las lecturas mapeadas por cromosoma y/o coordenada con el p
 Samtools sort genera dos archivos, uno con extensión `.bam` y otro con extensión `.bai`. El archivo `.bai` es un índice que permite acceder rápidamente a las posiciones del archivo `.bam`. Si quisieran indexar el archivo `.bam` por consola, podrían hacerlo con el siguiente comando:
 
 ```bash 
+# NO es necesario correr esto
 samtools index NV.bam
 ```
 
-Finalmente, descarguen los archivos `.bam` (el dataset) y `.bai` (el índice) a su computadora. Para eso tienen que clickear en el resultado de Samtools sort y luego en el símbolo guardar. Renombrenlos como `NV.bam` y `NV.bai`.
+### ✏️ Descarguen los datos
+
+Finalmente, descarguen los archivos `.bam` (el dataset) y `.bai` (el índice) a su computadora. Para eso tienen que clickear en el resultado de `Samtools sort` y luego en el símbolo guardar. Renombrenlos como `NV.bam` y `NV.bai`.
 
 ![download](images/samtools1.png) ![download2](images/samtools2.png)
 
@@ -222,7 +236,8 @@ Finalmente, descarguen los archivos `.bam` (el dataset) y `.bai` (el índice) a 
 
 JBrowser2 permite visualizar datos de secuenciación de tecnologías de nueva generación como Illumina, 454 o Solid. JBrowser2 se puede descargar e instalar desde la [página oficial](https://jbrowse.org/jb2/download/). 
 
-Dentro de la carpeta materiales tienen el archivo   ejecutable `jbrowse-desktop-v3.6.5-linux.AppImage` y dos archivos `.sh`. Abran una terminal, cambien el directorio a la carpeta donde se encuentra este archivo y ejecuten los siguientes scripts para dar permisos de ejecución y abrir la aplicación:
+### ✏️ Instalen JBrowse2
+Dentro de la carpeta materiales tienen el archivo ejecutable `jbrowse-desktop-v3.6.5-linux.AppImage` y dos archivos `.sh`. Abran una terminal, cambien el directorio a la carpeta donde se encuentra este archivo y ejecuten los siguientes scripts para dar permisos de ejecución y abrir la aplicación:
 
 ```bash
 
@@ -232,11 +247,11 @@ bash ejecutar_jbrowse.sh
 
 ```
 
-### Vista básica de JBrowse2
+### ✏️ Exploren la vista básica de JBrowse2
 
-- Abran JBrowse2 y cargue la secuencia de referencia "L2_cat.fasta". Para esto, hacer click en ``'OPEN SEQUENCE FILE(S)'`` y seleccione el archivo correspondiente. En ``assembly name`` elija un nombre que sea representativo del archivo cargado, y en ``Type`` FastaAdapter. 
-- Luego de seleccionar ``submit`` elijan ``Linear genome view`` y luego presionen ``LAUNCH VIEW``
-- La siguiente ventana muestra que hay dos entradas en nuestro archivo multifasta, una que corresponde al ADN cromosomal y otra que corresponde al ADN plasmídico. Para visualizar las dos en simultaneo, seleccionen ``SHOW ALL REGIONS IN ASSEMBLY``
+- Abran JBrowse2 y cargue la secuencia de referencia `L2_cat.fasta`. Para esto, hacer click en `OPEN SEQUENCE FILE(S)` y seleccione el archivo correspondiente. En `assembly name` elija un nombre que sea representativo del archivo cargado, y en `Type` FastaAdapter. 
+- Luego de seleccionar `submit` elijan `Linear genome view` y luego presionen `LAUNCH VIEW`
+- La siguiente ventana muestra que hay dos entradas en nuestro archivo multifasta, una que corresponde al ADN cromosomal y otra que corresponde al ADN plasmídico. Para visualizar las dos en simultaneo, seleccionen `SHOW ALL REGIONS IN ASSEMBLY`
 
 En este punto, su programa debería verse de esta forma:
 
@@ -244,16 +259,21 @@ En este punto, su programa debería verse de esta forma:
 
 **Componentes de la interfaz:**
 
-- Barra de herramientas (Menúes desplegables): Puede acceder a diferentes opciones, como abrir archivos, agregar tracks, descargar *plugins*, etc.
-- Tracks cargados (Entradas activas): Seleccionando ``OPEN TRACK SELECTOR`` puede ver los tracks disponibles y elegir cual visualizar. En nuestro caso, verá "Reference sequence (l2_cat)" o el nombre de referencia elegido.
-- Panel de visualización principal: Muestra la secuencia de referencia, con las hebras positiva y negativa representadas por líneas. Puede observar los marcos de lectura, los codones stop (mostrados como líneas verticales o puntos), y las características como genes o dominios que se representan mediante cajas coloreadas (dependiendo de los tracks que estén cargados y seleccionados).
-- Desplazarse y hacer zoom: El deslizador horizontal permite moverse a lo largo de la secuencia (observe que se ven las dos entradas, cromosoma y plásmido). Haciendo zoom sobre la secuencia se pueden observar las bases de las dos hebras y los residuos en los seis marcos de lectura.
+- **Barra de herramientas (Menúes desplegables en la parte superior)**: Puede acceder a diferentes opciones, como abrir archivos, agregar tracks, descargar *plugins*, etc.
+- **Tracks cargados (Entradas activas)**: Seleccionando `OPEN TRACK SELECTOR` (botón azul en la parte inferior de la ventana) pueden ver los tracks disponibles y elegir cuál visualizar. En nuestro caso, se verá `Reference sequence (l2_cat)` o el nombre de referencia elegido, asegúrense que esté tildado.
 
-Ahora vamos a cargar las anotaciones del genoma de L2_cat. Estas anotaciones estan en formato gff, y en dos archivos distintos, uno para el ADN cromosomal y otra para el ADN plasmídico.
+- **Panel de visualización principal**: Muestra la secuencia de referencia, con las hebras positiva y negativa representadas por líneas. Puede observar los marcos de lectura, los codones stop (mostrados como líneas verticales o puntos), y las características como genes o dominios que se representan mediante cajas coloreadas (dependiendo de los tracks que estén cargados y seleccionados).
 
-- Abra los archivos de anotación denominados "L2_genomic.gff" y "L2_plasmid.gff". Para esto, desde el panel ``Available tracks`` hacer click en el símbolo "+" > ``Add track``. En la opción ``Main file`` carguen el archivo `.bam`, y en ``Index file`` el archivo `.bai` que descargaron de **Galaxy**. Luego de apretar ``Next``, en ``Adapter type`` seleccionen ``GFF3``, deje el resto de las opciones como están y presione ``ADD``
+- **Desplazarse y hacer zoom**: El deslizador horizontal permite moverse a lo largo de la secuencia (observe que se ven las dos entradas, cromosoma y plásmido). Haciendo zoom sobre la secuencia se pueden observar las bases de las dos hebras y los residuos en los seis marcos de lectura.
 
-- Para visualizar el mapeo de lecturas que acabamos de hacer vamos a cargar en JBrowse2 nuestras lecturas mapeadas en formato BAM, de la siguiente manera: desde el panel ``Available tracks`` hacer click en el símbolo "+" > ``Add track`` y abra el archivo ``NV.bam``. Luego de apretar ``Next``, en ``Adapter type`` seleccionen ``BAM adapter``, deje el resto de las opciones como están y presione ``ADD``
+
+### ✏️ Cargando las anotaciones del genoma de L2_cat.
+
+Estas anotaciones estan en formato `gff`, y en dos archivos distintos, uno para el ADN cromosomal y otra para el ADN plasmídico.
+
+- Abra los archivos de anotación denominados `L2_genomic.gff` y `L2_plasmid.gff3`. Para esto, desde el panel `Available tracks` hacer click en el símbolo <kbd> + </kbd>  `Add track`. En la opción `Main file` carguen el archivo `.gff` o `.gff3`. Luego de apretar `Next`, en `Adapter type` seleccionen `GFF3`, deje el resto de las opciones como están y presione `ADD`. Debe repetir estos pasos para cada uno de los dos archivos.
+
+- Para visualizar el mapeo de lecturas que acabamos de hacer vamos a cargar en JBrowse2 nuestras lecturas mapeadas en formato `BAM`, de la siguiente manera: desde el panel `Available tracks` hacer click en el símbolo <kbd> + </kbd> > `Add track` y abra el archivo `NV.bam`.  En `Index file` el archivo `.bai` que descargaron de **Galaxy**. Luego de apretar `Next`, en `Adapter type` seleccionen `BAM adapter`, deje el resto de las opciones como están y presione `ADD`
 
 
 !!! info "Recuerden que estas lecturas son de la cepa sueca **NV** mapeadas contra el genoma de referencia de la cepa **L2**." 
@@ -263,15 +283,22 @@ Ahora debería ver la ventana con las lecturas en la parte inferior de la pantal
 
 ![JBrowse2](images/JBROWSE_2.jpg)
 
-Por defecto, la vista de las lecturas tiene dos secciones. La superior muestra la profundidad de cobertura de las lecturas en cada posición en el genoma, y también con lineas de colores cualquier las discrepancias entre el genoma leído y el genoma de referencia. Abajo se muestran las lecturas apiladas, que tambien muestran las discrepancias de base con lineas de colores.
+Por defecto, la vista de las lecturas tiene dos secciones.
 
-Si quieren saber mas sobre una lectura, clickeen sobre la misma y verán a la derecha una ventana con los ``Feature details``. Ahí podrán ver detalles como posición, nombre y largo de la misma, secuencia, calidad de cada una de las bases, entre otras. Para ver como se conectan las lecturas entre sí, pueden probar la vista tipo arco, la encuentran en ``Display types`` > ``Arc display``, en el menú que se abre al seleccionar los tres puntos al lado del track correspondiente.
+- En la **sección superior** muestra la profundidad de cobertura de las lecturas en cada posición en el genoma, y también con líneas de colores las discrepancias entre el genoma leído y el genoma de referencia.
+- En la **sección inferior** se muestran las lecturas apiladas, que también muestran las discrepancias de base con líneas de colores.
+
+Si quieren saber más sobre una lectura, clickeen sobre la misma y verán a la derecha una ventana con los `Feature details`. Ahí podrán ver detalles como posición, nombre y largo de la misma, secuencia, calidad de cada una de las bases, entre otras.
 
 ### Calidad de Mapeo
 
-!!! info ""
+La calidad de mapeo depende en la precisión de la lectura y el número de "*mismatches*" respecto a la secuencia de referencia. Un valor de 0 indica que la lectura mapea igualmente bien con al menos otro lugar por lo que **su mapeo no es confiable**. El máximo valor posible de "Mapping quality" es 60.
 
-      La calidad de mapeo depende en la precisión de la lectura y el número de "*mismatches*" respecto a la secuencia de referencia. Un valor de 0 indica que la lectura mapea igualmente bien con al menos otro lugar por lo que **su mapeo no es confiable**. El máximo valor posible de "Mapping quality" es 60.
+!!! info
+
+	JBrowser2 no permite (por el momento) definir un intervalo de valores. Si quieren tener lecturas que estén entre dos valores de calidad, podrían filtrar por consola el archivo NV.bam.
+
+#### ✏️ Pregunta
 
 * Basándose en sus conocimientos de biología y de bioinformática ¿qué aspectos consideran que podrían influir en la calidad de mapeo?
 
@@ -280,34 +307,39 @@ A continuación, vamos a filtrar las lecturas para visualizar solo aquellas que 
 
 -->
 
-!!! idea "Tip"
+<!-- !!! idea "Tip"
 
       Filtrar lecturas con regiones repetitivas y ver únicamente lecturas correctamente apareadas puede ser muy útil para hacer el análisis del mapeo.
+ -->
 
-!!! info
-
-	JBrowser2 no permite (por el momento) definir un intervalo de valores. Si quieren tener lecturas que estén entre dos valores de calidad, podrían filtrar por consola el archivo NV.bam.
 
 ### Visualización de las lecturas mapeadas
 
 JBrowse2 tiene varias modalidades de visualización de archivos BAM. Para explorarlas haga click sobre los tres puntos en el panel BAM y seleccionen el menú de opciones ``Display types``: 
 
-* La visualización por defecto (la que están viendo) es 'Alignments display (combination)'. Como ya se mencionó antes, combina la cobertura y las lecturas sobre la secuencia. La cobertura es la cantidad de lecturas secuenciadas para esa posición. Dado que esta tecnología puede tener errores, a mayor cobertura, mayor confianza en la detección de variantes. 
-* La vista 'Pileup display' es una simplificación de la visualización anterior, donde sólo se muestran las lecturas. 
-* La vista 'SNPCoverage display', muestra la frecuencia de aparición de cada nucleótido, y en caso de no coincidir con la referencia, lo colorea. Cuando una columna aparece completamente coloreada, en esa posición existe un SNP (no es un error de secuenciación ya que todas las lecturas presentaron la misma variación) 
-* La vista 'Arc display' muestra la relación entre lecturas apareadas (paired-end reads) que están mapeadas en diferentes posiciones del genoma de referencia. Las lecturas paired-end que están mapeadas a diferentes posiciones del genoma se conectan mediante un arco. Esto es muy útil para visualizar de forma clara las lecturas que no están alineadas juntas o de forma esperada, lo que podría indicar variaciones estructurales, problemas de ensamblado, etc.
-* La vista 'Read cloud display' es similar a 'Arc display', pero utiliza etiquetas provenientes de algunos tipos de secuenciación. Es especialmente útil para detectar variaciones estructurales y comprender cómo las lecturas de un mismo fragmento de ADN se alinean en el genoma 
+* La visualización por defecto (la que están viendo) es **'Alignments display (combination)'**. Como ya se mencionó antes, combina la cobertura y las lecturas sobre la secuencia. La cobertura es la cantidad de lecturas secuenciadas para esa posición. Dado que esta tecnología puede tener errores, a mayor cobertura, mayor confianza en la detección de variantes. 
+* La vista **'Pileup display'** es una simplificación de la visualización anterior, donde sólo se muestran las lecturas. 
+* La vista **'SNPCoverage display'**, muestra la frecuencia de aparición de cada nucleótido, y en caso de no coincidir con la referencia, lo colorea. Cuando una columna aparece completamente coloreada, en esa posición existe un SNP (no es un error de secuenciación ya que todas las lecturas presentaron la misma variación) 
+* La vista **'Arc display'** muestra la relación entre lecturas apareadas (paired-end reads) que están mapeadas en diferentes posiciones del genoma de referencia. Las lecturas paired-end que están mapeadas a diferentes posiciones del genoma se conectan mediante un arco. Esto es muy útil para visualizar de forma clara las lecturas que no están alineadas juntas o de forma esperada, lo que podría indicar variaciones estructurales, problemas de ensamblado, etc.
+* La vista **'Read cloud display'** es similar a 'Arc display', pero utiliza etiquetas provenientes de algunos tipos de secuenciación. Es especialmente útil para detectar variaciones estructurales y comprender cómo las lecturas de un mismo fragmento de ADN se alinean en el genoma 
 
+#### ✏️ Pregunta
 
-!!! Question "¿Por qué podrían generarse lecturas duplicadas? ¿Todas las lecturas duplicadas serán útiles?"
+¿Por qué podrían generarse lecturas duplicadas? ¿Todas las lecturas duplicadas serán útiles?
 
-Sacaremos provecho de la vistas en nuestro ejemplo biológico. Para ello primero creen una copia seleccionando ``Copy track`` en el panel bam. Luego, seleccionen la vista 'Read cloud display' en uno de los paneles bam y 'Pileup display' en el otro. 
+####  ✏️ Uso de Vistas
+
+Creen una copia seleccionando `Copy track` en los tres puntos del panel de `NV.bam`. Si no se activa un nuevo track, asegúrense que esté tildado en las `Available Tracks` a la derecha. 
+
+Luego, seleccionen la vista `Read cloud display` en uno de los paneles `bam` y `Pileup display` en el otro. 
 
 Vamos a enfocarnos en el ADN plasmídico, por lo que posicionense en la secuencia 'AM886278.1' o seleccionen dicha secuencia desde el panel que se encuentra en el primer track (al lado del zoom). Comparen la cobertura del plásmido con la región genómica de **NV**
 
 Su pantalla de JBrowse2 debería verse así:
 
 ![inferredsize](images/JBROWSE_3.jpg)
+
+#### ✏️ Pregunta
 
 * ¿Qué aspectos consideran que pueden influir en la cobertura en general y en este caso en particular?
 
@@ -323,11 +355,18 @@ Observarán que no hay lecturas que hayan sido alineadas sobre esa región del g
 
 ### Visualización de múltiples archivos BAM
 
-También pueden visualizar múltiples archivos BAM al mismo tiempo. Recuerden que los archivos BAM son un grupo procesado de lecturas alineadas de una bacteria (en este caso) contra una secuencia de referencia. Asi que en principio podriamos observar múltiples aislamientos bacterianos diferentes mapeados contra la misma referencia. La cepa de *C. trachomatis* que va a leer es la **L2b**. Es filogenéticamente más cercana a la cepa de referencia que la que hemos analizado hasta el momento, por eso el nombre similar.
+También pueden visualizar múltiples archivos BAM al mismo tiempo. Recuerden que los archivos BAM son un grupo procesado de lecturas alineadas de una bacteria (en este caso) contra una secuencia de referencia. Asi que en principio podriamos observar múltiples aislamientos bacterianos diferentes mapeados contra la misma referencia. 
 
-No harán nuevamente el mapeo para esta cepa, ya hemos procesado los datos crudos en fastq por ustedes. El archivo que necesitan se denomina "L2b.bam". Para abrirlo, vayan al ``Track selector``, presionen el símbolo + y carguen el archivo correspondiente. Recuerden que el tipo es ``Bam adapter``, y dejen el resto de las opciones como vienen predeterminadas.
+Vamos a incluir la cepa de *C. trachomatis* (la **L2b**). Esta cepa es filogenéticamente más cercana a la cepa de referencia que la que hemos analizado hasta el momento, por eso el nombre similar.
 
-Veamos  la región no mapeada que analizamos previamente (entre las bases 5000 a 6000). Comparen los distintos tipos de visualización entre ambas secuenciaciones.
+### ✏️ Carga de una nueva cepa
+
+No harán nuevamente el mapeo para esta cepa, ya hemos procesado los datos crudos en fastq por ustedes. El archivo que necesitan se denomina `L2b.bam`. Para abrirlo, vayan al `Track selector`, presionen el símbolo <kbd>+</kbd> y carguen el archivo correspondiente. Recuerden que el tipo es `Bam adapter`, y dejen el resto de las opciones como vienen predeterminadas.
+
+Veamos la región no mapeada que analizamos previamente (entre las bases 5000 a 6000). Comparen los distintos tipos de visualización entre ambas secuenciaciones.
+
+
+#### ✏️ Pregunta
 
 * Vuelvan a leer en la Introducción la razón por la cuál la cepa **NV** causó un alerta sanitario en Europa en el año 2006. Considerando lo que acabamos de ver, ¿por qué razón creen que la cepa **NV** no es detectada en el ensayo diagnóstico estándar pero sí lo es la cepa **L2b**?
 
@@ -336,13 +375,16 @@ Veamos  la región no mapeada que analizamos previamente (entre las bases 5000 a
 
 ## Ejercicio 5: Detección de variantes (SNP e InDel)
 
-Para comenzar, regresen a la visualización de lecturas apiladas (Pileup display)).
+
+### ✏️ Analizando SNP
+
+Para comenzar, regresen a la visualización de lecturas apiladas (Pileup display).
 
 Observen las distintas líneas de colores que aparecen en algunas lecturas. Esas líneas representan los SNPs con respecto a la referencia y el color corresponde a la base presente en la lectura (C = celeste, G = naranja, T = rojo, A = verde y N = gris). Observarán que algunos SNPs están presentes en todas las lecturas, formando líneas verticales de color, mientras que otros SNPs se encuentran distribuidos más esporádicamente. Los primeros tienen mayor probabilidad de ser verdaderos SNPs mientras que los últimos probablemente sean errores de secuenciación. 
 
 ![snips](images/JBROWSE_6.jpg)
 
-Si acercan la visualización de las lecturas apiladas al máximo podrán observar (1) las secuencias individuales de cada lectura y (2) las bases que difieren de la referencia estarán en el color correspondiente.
+Si acercan la visualización de las lecturas apiladas al máximo podrán observar las bases que difieren de la referencia en el color correspondiente.
 
 ![snips](images/JBROWSE_7.jpg)
 
@@ -353,29 +395,44 @@ Si acercan la visualización de las lecturas apiladas al máximo podrán observa
 
 ### Calculando con más precisión los SNPs
 
-Hasta el momento hemos visto la variación como un simple y homogéneo grupo de SNPs. En realidad se necesitaría más información para entender el efecto que el cambio en la secuencia puede ocasionar en, por ejemplo, la capacidad codificante. Para esto podemos visualizar un tipo de formato denominado "variant call format" (VCF), el cual tiene su forma comprimida denominada "binary variant call format" (BCF).
+Hasta el momento hemos visto la variación como un simple y homogéneo grupo de SNPs. En realidad se necesitaría más información para entender el efecto que el cambio en la secuencia puede ocasionar en, por ejemplo, la capacidad codificante. Para esto podemos visualizar un tipo de formato denominado **"variant call format" (VCF)**, el cual tiene su forma comprimida denominada **"binary variant call format" (BCF)**.
 
-El formato VCF fue desarrollado para representar datos de variación de 1000 proyectos genoma humanos y ya es bastante aceptado por la comunidad como el formato estándar para *SNP calling*. 
+El formato `VCF` fue desarrollado para representar datos de variación de 1000 proyectos genoma humanos y ya es bastante aceptado por la comunidad como el formato estándar para *SNP calling*. 
+
+
+#### ✏️ Generando el archivo vcf y bcf
 
 Nosotros vamos a generar el archivo en formato VCF a partir de nuestro archivo ``'NV.bam'`` y visualizarlo en JBrowse2.
 
-Primero, vamos a crear el archivo VCF. Para esto vamos a usar el programa `bcftools pileup` en **Galaxy**. Seleccionen el archivo `.bam` como entrada, en ``Reference genome`` seleccionen el archivo `L2_cat.fasta`, dejen las demás opciones como están y hagan click en **Run**.
+- Para crear el archivo `BCF` vamos a usar el programa `bcftools mpileup` en **Galaxy**. Seleccionen el archivo `.bam` como entrada, en ``Reference genome`` seleccionen el archivo `L2_cat.fasta` (Deben seleccionar history en el primer panel), dejen las demás opciones como están y hagan click en **Run Tool**.
 
-Luego, busquen el programa `bcftools call` en **Galaxy**. Seleccionen el archivo `.bcf` que se generó en el paso anterior como entrada. En ``Calling method`` (dentro de Consensus/variant calling options) seleccionen ``Consensus caller``, En ``Select predefined ploidy`` (dentro de File format Options) pongan **1** (porque estamos trabajando con una bacteria) y en ``Input/Output options`` marquen la casilla ``Output variant sites only`` de modo que quede seleccionado ``Yes``. Por último, seleccionen ``uncompressed VCF`` como ``output_type``, y hagan click en **Run**.
+- Para crear el archivo `VCF`, busquen el programa `bcftools call` en **Galaxy**. Seleccionen el archivo `.bcf` que se generó en el paso anterior como entrada.
+
+	- Dentro de  `Consensus/variant calling options`, en ``Calling method``  seleccionen ``Consensus caller``,
+	
+	- Dentro de `File format Options` en `Select predefined ploidy`  pongan **1 - Treat all samples as haploid** (porque estamos trabajando con una bacteria)
+	
+	- Dentro de `Input/Output options` marquen la casilla `Output variant sites only` de modo que quede seleccionado `Yes`
+	
+	- En `output_type` seleccionen `uncompressed VCF`
+	
+	- hagan click en **Run Tool**.
 
 Una vez que se haya terminado de ejecutar, corran el programa ``VCFsort`` usando como input el archivo ``.vcf``. Luego descarguen el archivo ordenado `.vcf` a su computadora. Renombrenlo como `NV.vcf`.
 
 Visualicen el resultado del *variant calling* usando head:
 
 ```bash
-zcat NV.vcf | head
+head -n 100 NV.vcf
 ```
 
-Ahora leeremos en JBrowser2 el archivo VCF que recien crearon. Para esto vayan al ``Track selector``, presionen el símbolo + y carguen el archivo ``"NV.vcf"``. Presionen ``Next`` y verifiquen que en ``Adapter type`` diga **VCF adapter**.
+Ahora leeremos en JBrowser2 el archivo VCF que recién crearon. Para esto vayan al `Track selector`, presionen el símbolo <kbd>+</kbd> y carguen el archivo `NV.vcf`. Presionen `Next` y verifiquen que en `Adapter type` diga **VCF adapter**.
 
 Para ver una región con algo de variación genética interesante vayan al gen CTL0578. Este gen pertenece al ADN cromosomal, y está en las posiciones 684021 a 685991
 
 ![variants](images/JBROWSE_8.png)
+
+#### ✏️ Pregunta
 
 * ¿Qué tipos de variantes pueden identificar en el gen CTL0578?
 
