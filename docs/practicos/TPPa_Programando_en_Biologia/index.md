@@ -697,6 +697,36 @@ Vean el siguiente ejemplo:
         print("No me mojo")
     ```
 
+!!! info "Comparar dos valores"
+
+    Para comparar dos valores en Python (por ejemplo, en un condicional) utilizamos operadores de comparación. Estos devuelven un booleano: True o False.
+
+    Para comparar si dos valores son iguales utilizamos el operador **==**
+
+    **==** significa "es igual a".
+
+    No utilizamos **=** porque este operador se utiliza para asignar un valor a una variable.
+
+    Ejemplo:
+
+    ```python
+    numero = 42
+
+    if numero == 42:
+        print("El número es 42")
+    ```
+
+    Los operadores de comparación son:
+
+    | Operador | Significado |
+    | :---: | :--- |
+    | `==` | igual a |
+    | `!=` | distinto de |
+    | `>` | mayor que |
+    | `<` | menor que |
+    | `>=` | mayor o igual que |
+    | `<=` | menor o igual que |
+    
 !!! info "Paréntesis en las condiciones"
 
     En este ejemplo no fue necesario utilizar paréntesis. Sin embargo, cuando las condiciones son más complejas y contienen comparaciones (`<`, `>`, `==`, etc.), es recomendable utilizarlos para que el código sea más fácil de leer y evitar errores.
