@@ -1810,18 +1810,52 @@
 <h2 id="ejercicio-1-clustering-jerarquico-manual" markdown="markdown"><strong>Ejercicio 1 - Clustering Jerárquico Manual</strong></h2>
 <p>Para empezar este TP vamos a realizar un pequeño <em>clustering jerárquico</em> a mano para repasar el concepto.</p>
 <p>En la siguiente tabla se reportan los niveles de expresión de cuatro genes (A, B, C y D) a las 0hs, 1hs y 2hs luego de algún tratamiento (aplicado a las 0hs):</p>
-<p>c| gen { data-sort-method='none' } | t_0h { data-sort-method='none' } | t_1h { data-sort-method='none' } | t_2h { data-sort-method='none' } |
-| :---: | :---: | :---: | :---: |
-| genA | 2 | 4 | 8 |
-| genB | -1| -1 | -2 |
-| genC | -2 | 0 | 1 |
-| genD | 0 | -1 | -6 |
-</p>
+<table>
+<thead>
+<tr>
+<th data-sort-method="none" style="text-align: center;">gen</th>
+<th data-sort-method="none" style="text-align: center;">t_0h</th>
+<th data-sort-method="none" style="text-align: center;">t_1h</th>
+<th data-sort-method="none" style="text-align: center;">t_2h</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">genA</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">8</td>
+</tr>
+<tr>
+<td style="text-align: center;">genB</td>
+<td style="text-align: center;">-1</td>
+<td style="text-align: center;">-1</td>
+<td style="text-align: center;">-2</td>
+</tr>
+<tr>
+<td style="text-align: center;">genC</td>
+<td style="text-align: center;">-2</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td style="text-align: center;">genD</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">-1</td>
+<td style="text-align: center;">-6</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
 <p>En la siguiente tabla se reportan los niveles de expresión estandarizados. La estandarización se realizó restando a cada dato el promedio de los tres tiempos para ese gen y dividiendo el resultado por la desviación estándar de los tres tiempos para ese gen, es decir:</p>
 <div class="arithmatex">\[
 datoEstandarizado(genA, t_0) = \frac{dato(genA, t_0) - promedio(genA)}{desviacionEstandar(genA)}
 \]</div>
-<figure>
 <table>
 <thead>
 <tr>
@@ -1856,9 +1890,14 @@ datoEstandarizado(genA, t_0) = \frac{dato(genA, t_0) - promedio(genA)}{desviacio
 <td style="text-align: center;">0.41</td>
 <td style="text-align: center;">-1.14</td>
 </tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
 </tbody>
 </table>
-</figure>
 <p>Queremos entonces agrupar a los diferentes genes por como varían sus niveles de expresión cuando se aplica dicho tratamiento. Para hacer esto vamos a:</p>
 <h3 id="paso-1-calcular-la-distancia-euclidiana-entre-los-diferentes-genes">✏️ Paso 1: Calcular la distancia euclidiana entre los diferentes genes</h3>
 <details class="info">
@@ -2036,12 +2075,36 @@ distanciaEuclidiana(genA, genB) = \sqrt{(2 - (-1))^2 + (4 - (-1))^2 + (8 - (-2))
 </li>
 <li>
 <p><strong>Average Linkage:</strong> la nueva distancia es el <strong><em>promedio</em></strong> de las distancias <span class="arithmatex">\(dist(genA, genB)\)</span> y <span class="arithmatex">\(dist(genA, genC)\)</span></p>
-<div class="highlight"><pre><span></span><code>    |       | genA { data-sort-method='none' } | genB+C { data-sort-method='none' } | genD { data-sort-method='none' } |
-</code></pre></div>
-<p>| :---: | :---:                            | :---:                              | :---: |
-| genA  | 0     |   |   |
-| genB+C| 10.29     | 0 |   |
-| genD  | 15    | 5.735 | 0 |</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"></th>
+<th data-sort-method="none" style="text-align: center;">genA</th>
+<th data-sort-method="none" style="text-align: center;">genB+C</th>
+<th data-sort-method="none" style="text-align: center;">genD</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">genA</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">genB+C</td>
+<td style="text-align: center;">10.29</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">genD</td>
+<td style="text-align: center;">15</td>
+<td style="text-align: center;">5.735</td>
+<td style="text-align: center;">0</td>
+</tr>
+</tbody>
+</table>
 </li>
 <li>
 <p>Volver al paso 1 hasta que todos los elementos estén unidos entre sí</p>
@@ -2117,7 +2180,7 @@ distanciaEuclidiana(genA, genB) = \sqrt{(2 - (-1))^2 + (4 - (-1))^2 + (8 - (-2))
 <p>Vamos a tener que hacer varios plots similares, por lo tanto, en vez de repetir el código, vamos a usar por primera vez funciones de <strong>Python</strong> creadas por nosotros.</p>
 <h3 id="paso-1-crear-la-funcion-de-python">✏️ Paso 1: Crear la función de Python.</h3>
 <p>Copien el siguiente código en el colab y modifiquen las secciones que dicen <code>@@EDITAR@@</code>.</p>
-<p>Tienen que asignar a cada parámetro de la función el valor que quieren graficar en el <strong>eje x</strong> y en el <strong>eje y</strong>, por ejemplo <code>x_col = "sepal_length"</code>. Una vez hecho esto, corran el código repetir el gráfico hecho en el <strong>Código 1</strong> y guardarlo en un archivo llamado <strong>01_Sepal_vs_Petal_Length_per_Species.pdf</strong>.</p>
+<p>Tienen que asignar a cada parámetro de la función el valor que quieren graficar en el <strong>eje x</strong> y en el <strong>eje y</strong>, por ejemplo <code>x_col = "sepal_length"</code>. Una vez hecho esto, corran el código para repetir el gráfico hecho en el <strong>Código 1</strong> y guardarlo en un archivo llamado <strong>01_Sepal_vs_Petal_Length_per_Species.pdf</strong>.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Código</label><label for="__tabbed_1_2">Código con comentarios</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -2179,7 +2242,7 @@ distanciaEuclidiana(genA, genB) = \sqrt{(2 - (-1))^2 + (4 - (-1))^2 + (8 - (-2))
     <span class="c1">#*fig.savefig()* es el equivalente a abrir un archivo pdf, imprimir el plot y cerrarlo,</span>
     <span class="c1">#todo en un solo paso. La extensión del archivo (.pdf) determina el formato de salida</span>
     <span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">pdf_file</span><span class="p">)</span>
-    <span class="c1">#*plt.close()* libera la figura de la memoria, algo similar en espíritu a *dev.off()* en R</span>
+    <span class="c1">#*plt.close()* libera la figura de la memoria</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
 
 <span class="c1">#### CODIGO PRINCIPAL ####</span>
@@ -2209,7 +2272,7 @@ distanciaEuclidiana(genA, genB) = \sqrt{(2 - (-1))^2 + (4 - (-1))^2 + (8 - (-2))
 <span class="n">df_iris</span><span class="p">[</span><span class="s2">"row_id"</span><span class="p">]</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">df_iris</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
 </code></pre></div>
 <h3 id="paso-4-creando-una-matriz-de-datos-para-usar-al-momento-de-clusterizar">✏️ Paso 4: Creando una matriz de datos para usar al momento de clusterizar.</h3>
-<p>Lean los comentarios en la segunda pestaña para entender que estamos haciendo.</p>
+<p>Creamos un nuevo DataFrame llamado df_datos, al que le quitamos la columna species para simular que no contamos con esa información. De esta manera, podemos aplicar el clustering únicamente sobre los datos disponibles y luego analizar cómo se agrupan las observaciones.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Código</label><label for="__tabbed_2_2">Código con comentarios</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -2217,6 +2280,8 @@ distanciaEuclidiana(genA, genB) = \sqrt{(2 - (-1))^2 + (4 - (-1))^2 + (8 - (-2))
 <span class="n">df_iris</span> <span class="o">=</span> <span class="n">df_iris</span><span class="p">[</span><span class="n">columnas_ordenadas</span><span class="p">]</span>
 
 <span class="n">df_datos</span> <span class="o">=</span> <span class="n">df_iris</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">"species"</span><span class="p">])</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">"row_id"</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">df_datos</span><span class="p">)</span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
@@ -2225,11 +2290,11 @@ distanciaEuclidiana(genA, genB) = \sqrt{(2 - (-1))^2 + (4 - (-1))^2 + (8 - (-2))
 <span class="n">columnas_ordenadas</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"row_id"</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">df_iris</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="n">c</span> <span class="o">!=</span> <span class="s2">"row_id"</span><span class="p">]</span>
 <span class="n">df_iris</span> <span class="o">=</span> <span class="n">df_iris</span><span class="p">[</span><span class="n">columnas_ordenadas</span><span class="p">]</span>
 
-<span class="c1">#Similar a lo que hicimos en el TP anterior, estamos usando row_id como índice de la tabla</span>
-<span class="c1">#(el equivalente a los "nombres de fila" o rownames de R)</span>
 <span class="c1">#Estamos sacando la columna species ya que queremos simular que no tenemos esta información</span>
 <span class="c1">#(la columna species va a estar todavía en df_iris, pero no en df_datos)</span>
 <span class="n">df_datos</span> <span class="o">=</span> <span class="n">df_iris</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">"species"</span><span class="p">])</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">"row_id"</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">df_datos</span><span class="p">)</span>
 </code></pre></div>
 </div>
 </div>
@@ -2243,6 +2308,8 @@ distanciaEuclidiana(genA, genB) = \sqrt{(2 - (-1))^2 + (4 - (-1))^2 + (8 - (-2))
 
 <span class="n">distancias_condensadas</span> <span class="o">=</span> <span class="n">pdist</span><span class="p">(</span><span class="n">df_datos</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">metric</span><span class="o">=</span><span class="s2">"euclidean"</span><span class="p">)</span>
 <span class="n">matriz_distancias</span> <span class="o">=</span> <span class="n">squareform</span><span class="p">(</span><span class="n">distancias_condensadas</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">matriz_distancias</span><span class="p">)</span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
@@ -2255,6 +2322,8 @@ distanciaEuclidiana(genA, genB) = \sqrt{(2 - (-1))^2 + (4 - (-1))^2 + (8 - (-2))
 
 <span class="c1"># Agrego la mitad simétrica y la diagonal usando squareform</span>
 <span class="n">matriz_distancias</span> <span class="o">=</span> <span class="n">squareform</span><span class="p">(</span><span class="n">distancias_condensadas</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">matriz_distancias</span><span class="p">)</span>
 </code></pre></div>
 </div>
 </div>
@@ -2343,7 +2412,6 @@ Donde `method = "complete"` está indicándole a la función que criterio de agr
 
 <span class="n">pdf_file</span> <span class="o">=</span> <span class="s2">"11_Clustering_jerarquico_complete_linkage.pdf"</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">pdf_file</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s2">"tight"</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
@@ -2431,12 +2499,17 @@ Donde `method = "complete"` está indicándole a la función que criterio de agr
 <li>
 <p>Asignen esa información a una nueva columna en la tabla <strong>df_iris</strong> llamada <strong>cj_cluster</strong> (como en este caso <code>fcluster()</code> devuelve los datos en el mismo orden que están en la tabla se puede hacer directamente con <code>=</code>, no hace falta usar <code>merge()</code>).</p>
 </li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="n">df_iris</span><span class="p">[</span><span class="s2">"cj_cluster"</span><span class="p">]</span> <span class="o">=</span> <span class="n">clusters_por_cantidad</span>
+</code></pre></div>
+<ol>
 <li>
 <p>Los valores guardados en la columna <strong>cj_cluster</strong> son del tipo numérico, pero para nosotros los números 1, 2 y 3 son categorías. Corran el siguiente código para convertir la columna recién creada en una variable categórica:</p>
 <div class="highlight"><pre><span></span><code><span class="c1">#En este caso poner las categorías a mano no es 100% necesario, pero no viene mal</span>
 <span class="c1">#Recuerden que no sabemos que numero corresponde a que especie</span>
 <span class="c1">#(porque ademas ya vimos que no hay un match perfecto 1 a 1)</span>
 <span class="n">df_iris</span><span class="p">[</span><span class="s2">"cj_cluster"</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Categorical</span><span class="p">(</span><span class="n">df_iris</span><span class="p">[</span><span class="s2">"cj_cluster"</span><span class="p">],</span> <span class="n">categories</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_iris</span><span class="p">)</span>
 </code></pre></div>
 <!--
 Usen <code>fcluster()</code> con <code>criterion="maxclust"</code> para dividir a los datos obtenidos en **5.2)** en 3 clusters.
@@ -2465,9 +2538,33 @@ Usen <code>fcluster()</code> con <code>criterion="maxclust"</code> para dividir 
 </li>
 </ul>
 </li>
-<li>
-<p>Usando la función que acabamos de crear, vean como se distribuyen los puntos al comparar <strong>sepal_length</strong> contra <strong>petal_length</strong> usando la columna <strong>species</strong> para determinar el color y la columna <strong>cj_cluster</strong> para determinar la forma de los diferentes puntos. Guarden este plot en un archivo llamado <strong>21_Sepal_vs_Petal_Length_per_Species_CJ3.pdf</strong>.</p>
-</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1">#### FUNCIONES AUXILIARES ####</span>
+<span class="k">def</span> <span class="nf">plot_data_to_pdf_w_color_and_shape</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">x_col</span><span class="p">,</span> <span class="n">y_col</span><span class="p">,</span> <span class="n">color_col</span><span class="p">,</span> <span class="n">shape_col</span><span class="p">,</span>
+                                       <span class="n">x_label</span><span class="p">,</span> <span class="n">y_label</span><span class="p">,</span> <span class="n">plot_title</span><span class="p">,</span>
+                                       <span class="n">pdf_file</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                                       <span class="n">markers</span><span class="o">=</span><span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="s2">"^"</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="s2">"*"</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span> <span class="s2">"o"</span><span class="p">}):</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
+
+    <span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">x_col</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y_col</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="n">color_col</span><span class="p">,</span>
+                    <span class="n">style</span><span class="o">=</span><span class="n">shape_col</span><span class="p">,</span>
+                    <span class="n">markers</span><span class="o">=</span><span class="n">markers</span><span class="p">,</span>
+                    <span class="n">palette</span><span class="o">=</span><span class="n">palette</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="n">x_label</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="n">y_label</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">plot_title</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s2">"center"</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s2">"both"</span><span class="p">,</span> <span class="n">labelsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+
+    <span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">pdf_file</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
+</code></pre></div>
+<ol>
+<li>Usando la función que acabamos de crear, vean como se distribuyen los puntos al comparar <strong>sepal_length</strong> contra <strong>petal_length</strong> usando la columna <strong>species</strong> para determinar el color y la columna <strong>cj_cluster</strong> para determinar la forma de los diferentes puntos. Guarden este plot en un archivo llamado <strong>21_Sepal_vs_Petal_Length_per_Species_CJ3.pdf</strong>.</li>
 </ol>
 <h3 id="pregunta_8">✏️ Pregunta</h3>
 <p>Abran el archivo recién creado. ¿Cuáles especies les parecen mejor agrupadas?</p>
@@ -2484,9 +2581,12 @@ Usen <code>fcluster()</code> con <code>criterion="maxclust"</code> para dividir 
 <p>La clase <code>KMeans</code> viene con <code>scikit-learn</code>.</p>
 <p>Vamos a utilizar la variable <code>df_datos</code> creada anteriormente con:</p>
 <div class="highlight"><pre><span></span><code><span class="n">df_datos</span> <span class="o">=</span> <span class="n">df_iris</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">"species"</span><span class="p">])</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">"row_id"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_datos</span><span class="p">)</span>
 </code></pre></div>
 <h2 id="paso-1-uso-de-kmeans">✏️ Paso 1. Uso de KMeans</h2>
 <p></p><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="kn">import</span> <span class="n">KMeans</span>
+
+<span class="n">df_datos</span> <span class="o">=</span> <span class="n">df_iris</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">"species"</span><span class="p">])</span>
 
 <span class="c1">#Corro KMeans para la matriz de datos pidiéndole 3 clusters</span>
 <span class="c1">#random_state controla el aspecto azaroso de kmeans para que nos de igual a todos</span>
@@ -2495,6 +2595,8 @@ Usen <code>fcluster()</code> con <code>criterion="maxclust"</code> para dividir 
 
 <span class="c1">#Extraigo los clusters calculados (sumo 1 para que arranquen en 1, como en el clustering jerárquico)</span>
 <span class="n">clusters_kmeans_k3</span> <span class="o">=</span> <span class="n">clustering_kmeans_k3</span><span class="o">.</span><span class="n">labels_</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">clusters_kmeans_k3</span><span class="p">)</span>
 </code></pre></div>
 Donde <code>n_clusters = 3</code> le está diciendo a la función que cree 3 clusters (lo que estoy indicando en el nombre de la variable con <strong>_k3</strong> para que el nombre de la variable sea descriptivo).
 <div class="admonition tip">
@@ -2510,6 +2612,25 @@ Donde <code>n_clusters = 3</code> le está diciendo a la función que cree 3 clu
 <li>Transformen dicha columna en una variable categórica (<code>pd.Categorical</code>).</li>
 <li>Usando la función creada <code>plot_data_to_pdf_w_color_and_shape()</code> y vean como se distribuyen los puntos al comparar <strong>sepal_length</strong> contra <strong>petal_length</strong> usando la columna <strong>species</strong> para determinar el color y la columna <strong>k3_cluster</strong> para determinar la forma de los diferentes puntos. Guarden este plot en un archivo llamado <strong>22_Sepal_vs_Petal_Length_per_Species_K3.pdf</strong>.</li>
 </ul>
+<div class="highlight"><pre><span></span><code><span class="n">df_iris</span><span class="p">[</span><span class="s2">"k3_cluster"</span><span class="p">]</span> <span class="o">=</span> <span class="n">clusters_kmeans_k3</span>
+
+<span class="n">df_iris</span><span class="p">[</span><span class="s2">"k3_cluster"</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Categorical</span><span class="p">(</span><span class="n">df_iris</span><span class="p">[</span><span class="s2">"k3_cluster"</span><span class="p">],</span> <span class="n">categories</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+
+<span class="n">plot_data_to_pdf_w_color_and_shape</span><span class="p">(</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">df_iris</span><span class="p">,</span>
+    <span class="n">x_col</span><span class="o">=</span><span class="s2">"sepal_length"</span><span class="p">,</span>       <span class="c1"># Eje X</span>
+    <span class="n">y_col</span><span class="o">=</span><span class="s2">"petal_length"</span><span class="p">,</span>       <span class="c1"># Eje Y</span>
+    <span class="n">color_col</span><span class="o">=</span><span class="s2">"species"</span><span class="p">,</span>        <span class="c1"># Columna para determinar el color</span>
+    <span class="n">shape_col</span><span class="o">=</span><span class="s2">"k3_cluster"</span><span class="p">,</span>     <span class="c1"># Columna para determinar la forma</span>
+    <span class="n">x_label</span><span class="o">=</span><span class="s2">"Sepal Length"</span><span class="p">,</span>
+    <span class="n">y_label</span><span class="o">=</span><span class="s2">"Petal Length"</span><span class="p">,</span>
+    <span class="n">plot_title</span><span class="o">=</span><span class="s2">"Sepal Length vs Petal Length per Species"</span><span class="p">,</span>
+    <span class="n">pdf_file</span><span class="o">=</span><span class="s2">"22_Sepal_vs_Petal_Length_per_Species_K3.pdf"</span><span class="p">,</span>
+    <span class="n">palette</span><span class="o">=</span><span class="p">{</span><span class="s2">"setosa"</span><span class="p">:</span> <span class="s2">"#004D40"</span><span class="p">,</span>
+             <span class="s2">"versicolor"</span><span class="p">:</span> <span class="s2">"#D81B60"</span><span class="p">,</span>
+             <span class="s2">"virginica"</span><span class="p">:</span> <span class="s2">"#FFC107"</span><span class="p">}</span>
+<span class="p">)</span>
+</code></pre></div>
 <h3 id="pregunta_10">✏️ Pregunta</h3>
 <p>Abran el archivo recién creado. Basándose solo en lo que pueden observar en este plot, ¿pueden decir algo de si este agrupamiento es mejor, peor o similar al obtenido con el clustering jerárquico? (recuerden que "no" también es una respuesta válida).</p>
 <h3 id="silhouette">Silhouette</h3>
@@ -2549,7 +2670,8 @@ S_{ij} = \frac {b - a}{Max (a, b)}
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
 <span class="c1">#Y podemos extraer el promedio de los Silhouette coefficients</span>
-<span class="n">promedio_silhouette_kmeans_k3</span> <span class="o">=</span> <span class="n">silhouette_score</span><span class="p">(</span><span class="n">matriz_datos</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">clusters_kmeans_k3</span><span class="p">,</span> <span class="n">metric</span><span class="o">=</span><span class="s2">"euclidean"</span><span class="p">)</span>
+<span class="n">promedio_silhouette_kmeans_k3</span> <span class="o">=</span> <span class="n">silhouette_score</span><span class="p">(</span><span class="n">df_datos</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">clusters_kmeans_k3</span><span class="p">,</span> <span class="n">metric</span><span class="o">=</span><span class="s2">"euclidean"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">promedio_silhouette_kmeans_k3</span><span class="p">)</span>
 </code></pre></div>
 <h3 id="pregunta_11">✏️ Pregunta</h3>
 <p>Observa el gráfico ¿todos los elementos están bien agrupados?</p>
