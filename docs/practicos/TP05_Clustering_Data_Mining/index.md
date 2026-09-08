@@ -12,6 +12,8 @@ tags:
 <br>
 <br>
 
+[:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/11b6Wycyl9cijk8ZRYYoo5SSqxMNwABad/view){ .md-button .md-button--primary }
+
 <!--
 [:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1ezf6beXBVId14bUPcqUur8rHnend0g3-/view?usp=sharing){ .md-button .md-button--primary }  [:fontawesome-solid-file-powerpoint: Slides](https://docs.google.com/presentation/d/1vnhl53yQaSNsyjumxBXrl-GBp-17898aSnUL4DKltAM/edit?usp=sharing){ .md-button .md-button--primary }
 -->
@@ -1343,3 +1345,140 @@ O sea, que nos vamos a quedar con aquellos genes que tienen un CPM 2.83 veces m�
 
 ### :material-console-line: Consola de Python
 * Comando `help()`
+
+
+## **Ejercicio a informar — Clustering de proteínas de *Pseudomonas aeruginosa***
+
+!!! info "Info"
+
+    **Fecha límite de entrega:** Viernes 25/09/2026 23:59 hs
+
+    **Enviar a:** rbquinteros@iib.unsam.edu.ar, incluyendo en copia a jglavina@iib.unsam.edu.ar y al resto de los miembros del grupo.
+
+En el marco del trabajo de un laboratorio dedicado al estudio de *Pseudomonas aeruginosa*, se analizará un conjunto de proteínas de esta bacteria con el objetivo de identificar posibles patrones entre sus características moleculares.
+
+El conjunto de datos contiene información sobre proteínas de *P. aeruginosa* y diferentes propiedades fisicoquímicas, entre ellas el punto isoeléctrico, la longitud y la hidrofobicidad. El dataset original fue construido a partir de información proveniente de UniProt y NCBI.
+
+El objetivo es utilizar técnicas de clustering para explorar si existen grupos de proteínas con características fisicoquímicas similares. Posteriormente, se incorporará información sobre la localización subcelular de las proteínas, que no será utilizada para generar los agrupamientos, sino para evaluar si los clusters obtenidos presentan alguna relación con la localización de las proteínas y si esta información permite aportar una interpretación biológica de los grupos identificados.
+
+### Dataset
+
+**[Pseudomonas aeruginosa — Kaggle](https://www.kaggle.com/datasets/jiscecseaiml/pseudomonas-aeruginosa)**
+
+### Importación y selección de los datos
+
+Para comenzar, descarguen el archivo `pseudomonas_aeruginosa.csv` desde Kaggle. Pueden consultar la página para obtener información detallada sobre el dataset.
+
+En Google Colab pueden cargar el archivo utilizando el siguiente código:
+
+```python
+import kagglehub
+import pandas as pd
+
+path = kagglehub.dataset_download("jiscecseaiml/pseudomonas-aeruginosa")
+
+df = pd.read_csv(path + "/pseudomonas_aeruginosa.csv")
+
+df.head()
+```
+
+El dataset original contiene información adicional sobre las proteínas. Para este ejercicio, se utilizarán únicamente las siguientes cuatro columnas, con el objetivo de simplificar el análisis y evitar la inclusión de variables que puedan aportar información redundante o altamente correlacionada.
+
+1. `ID`
+2. `Isoelectric Point`
+3. `Protein Length`
+4. `Hydrophobicity`
+
+Seleccionen únicamente estas columnas:
+
+```python
+df = df[[
+    "ID",
+    "pI",
+    "Protein Length",
+    "Hydrophobicity"
+]]
+```
+
+### 1) Exploración de los datos
+
+Realicen una primera exploración del conjunto de datos.
+
+- ¿Cuántas proteínas contiene?
+- ¿Qué tipo de dato corresponde a cada variable?
+- ¿Existen valores faltantes?
+
+Realicen los gráficos que permitan observar la distribución de las características del set de datos.
+
+### 2) K-means
+
+Apliquen el algoritmo **K-means** para realizar el clustering de las proteínas. Informen los parámetros utilizados.
+
+Dado que las variables presentan diferentes escalas y K-means se basa en el cálculo de distancias, es necesario realizar previamente un escalado de los datos para evitar que las variables con valores numéricamente mayores tengan una influencia desproporcionada en la formación de los clusters.
+
+El escalado puede realizarse mediante:
+
+```python
+from sklearn.preprocessing import StandardScaler
+
+df_datos = df.drop(columns=["ID"])
+
+scaler = StandardScaler()
+
+df_datos = scaler.fit_transform(df_datos)
+```
+
+Para evaluar objetivamente los agrupamientos, calculen el **silhouette score**.
+
+Prueben diferentes cantidades de clusters (`k`) de **2 hasta 5**. Comparen el silhouette score obtenido para cada valor de `k`.
+
+**¿Qué cantidad de clusters presenta el mejor resultado según este criterio?**
+
+### 3) Clustering jerárquico
+
+Ahora realicen un **clustering jerárquico complete linkage**, utilizando el número óptimo de clusters que obtuvieron como resultado después de utilizar K-means.
+
+Construyan un **dendrograma** que permita visualizar cómo se van agrupando las proteínas.
+
+**Viendo el dendrograma, ¿cambiarían entonces la cantidad de clusters a utilizar?**
+
+Comparen los grupos obtenidos mediante K-means con los obtenidos mediante clustering jerárquico.
+
+**¿Los dos métodos producen agrupamientos similares?**
+
+Para facilitar la comparación, representen gráficamente los clusters utilizando las variables empleadas en el análisis. Utilicen las mismas representaciones para ambos métodos.
+
+Para un cluster a elección, indiquen:
+
+- cantidad de proteínas;
+- identificadores de las proteínas que lo componen;
+- valores promedio y desviación estándar de las variables utilizadas:
+    - punto isoeléctrico;
+    - longitud;
+    - hidrofobicidad.
+
+**¿Qué propiedades moleculares caracterizan a este grupo?**
+
+### 4) Localización subcelular
+
+Ahora vamos a incorporar información sobre la **localización subcelular** de las proteínas, obtenida a partir de predicciones realizadas con **PSORTb**.
+
+Esta información se encuentra en el archivo `psortb_localizations_proteins.csv` disponible en el [Drive](https://drive.google.com/file/u/1/d/11b6Wycyl9cijk8ZRYYoo5SSqxMNwABad/view?usp=sharing) y la vamos a añadir a nuestro DataFrame.
+
+```python
+psortb = pd.read_csv("psortb_localizations_proteins.csv")
+
+df_localizacion = df.merge(
+    psortb,
+    on="ID",
+    how="left"
+)
+```
+
+Una vez incorporada esta información, analicen la distribución de las localizaciones subcelulares dentro de los clusters obtenidos mediante **K-means** y **clustering jerárquico**.
+
+- ¿Las distintas localizaciones subcelulares se distribuyen de manera uniforme entre los clusters?
+- A partir de estos resultados, ¿las propiedades fisicoquímicas utilizadas para construir los clusters parecen estar relacionadas con la localización subcelular?
+- ¿Consideran que las propiedades fisicoquímicas utilizadas en este análisis serían suficientes para predecir la localización subcelular de una proteína? Justifiquen su respuesta a partir de los resultados obtenidos.
+
+Para facilitar la interpretación, representen gráficamente la relación entre los **clusters** y la **localización subcelular**.
