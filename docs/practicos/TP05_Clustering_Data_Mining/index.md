@@ -13,6 +13,7 @@ tags:
 <br>
 
 [:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/11b6Wycyl9cijk8ZRYYoo5SSqxMNwABad/view){ .md-button .md-button--primary }
+[:fontawesome-solid-file-powerpoint: Slides](img/TP05.pptx){ .md-button .md-button--primary }
 
 <!--
 [:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1ezf6beXBVId14bUPcqUur8rHnend0g3-/view?usp=sharing){ .md-button .md-button--primary }  [:fontawesome-solid-file-powerpoint: Slides](https://docs.google.com/presentation/d/1vnhl53yQaSNsyjumxBXrl-GBp-17898aSnUL4DKltAM/edit?usp=sharing){ .md-button .md-button--primary }
