@@ -259,14 +259,14 @@ En esta sección exploramos un conjunto de moléculas con datos de **HIA (Human 
 - Calculamos **similitudes de Tanimoto** entre todas las moléculas y construimos un **dendrograma**, que muestra cómo se agrupan según su similitud.  
 - Esto permite identificar grupos de moléculas estructuralmente similares y analizar la distribución de HIA dentro de cada cluster.
 
-[:fontawesome-solid-computer: Ejercicio 1](https://colab.research.google.com/drive/1lPken3dYz0lqUnrelqEWtiFmFbP1-aNf?usp=sharing){ .md-button .md-button--primary }
+[:fontawesome-solid-computer: Ejercicio 1](https://colab.research.google.com/drive/1IoptwXEgPDecaKi3nQd8_7zxE-oT8epA?usp=sharing){ .md-button .md-button--primary }
 
 ### Ejercicio 2. Clusterización basada en propiedades fisicoquímicas y PCA
 - Calculamos propiedades moleculares como **peso molecular, TPSA, logP, número de enlaces rotativos, H-bond donors y acceptors**.  
 - Aplicamos **PCA (Análisis de Componentes Principales)** para reducir la dimensionalidad y capturar las variaciones más relevantes.  
 - Luego utilizamos **K-means** para agrupar moléculas según estas propiedades, explorando relaciones entre características fisicoquímicas y absorción intestinal.
 
-[:fontawesome-solid-computer: Ejercicio 2](https://colab.research.google.com/drive/1DSujJ9MBUG-bGOtjnLlfE2fJluk-DJBl?usp=sharing){ .md-button .md-button--primary }
+[:fontawesome-solid-computer: Ejercicio 2](https://colab.research.google.com/drive/1xahRSPWc8GAfPW3Tv4x3IHBjHXYT4lyy?usp=sharing){ .md-button .md-button--primary }
 
 ## Preguntas guía para el análisis
 
@@ -282,8 +282,13 @@ Al explorar los resultados, considerá:
 3. Analizar qué moléculas se agrupan de manera diferente según la **estructura** (fingerprints) o las **propiedades fisicoquímicas** (PCA + K-means).  
 4. Reflexionar sobre qué enfoque (jerárquico o K-means) parece capturar mejor la relación entre estructura/propiedades y absorción intestinal.
 
+<div style="border-bottom: 3px solid black;">
 
-## Ejercicio integrador
+</div>
+
+## Ejercicios Adicionales
+
+### Ejercicio integrador
 
 En esta sección trabajaremos con un conjunto de moléculas que cuentan con datos reportados de HIA (Human Intestinal Absorption) y BBB (Blood-Brain Barrier). 
 El objetivo es definir umbrales que permitan clasificar si una molécula puede atravesar la membrana intestinal y la barrera hematoencefálica. 
@@ -309,12 +314,6 @@ Completá la siguiente tabla con la resolución del ejercicio integrador:
 |Molécula 6 | `C([C@@H]1[C@@H]([C@@H]([C@H]([C@H](O1)O[C@]2([C@H]([C@@H]([C@H](O2)CCl)O)O)CCl)O)O)Cl)O` |     |     |               |                  |
 
 
-<div style="border-bottom: 3px solid black;">
-
-</div>
-
-
-## Ejercicios Adicionales
 
 ### Bases de datos quimioinformáticas
 
