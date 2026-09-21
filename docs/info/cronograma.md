@@ -27,7 +27,7 @@ tags:
 | Jue, 10 Sep  | 9 hs |	:material-google-classroom: Presencial | [P5. Data Clustering y Data Mining](../practicos/TP05_Clustering_Data_Mining/index.md) | :fontawesome-solid-hammer: Práctica |	R. Quinteros |
 | Mar, 15 Sep  | 9 hs |	:material-google-classroom: Presencial | [T6. Quimioinformática](../teoricas/6-Teorica-Seis/index.md) | :fontawesome-solid-brain: Teórica |	F. Agüero |
 | Jue, 17 Sep  | 9 hs |	:material-google-classroom: Presencial | [P6. Quimioinformática](../practicos/TP06_Quimioinformatica/index.md) | :fontawesome-solid-hammer: Práctica |	M. Didier Garnham |
-| Mar, 22 Sep  | 9 hs |	:material-google-classroom: Presencial | T7. Secuenciación y ensamblado de genomas | :fontawesome-solid-brain: Teórica |	F. Agüero |
+| Mar, 22 Sep  | 9 hs |	:material-google-classroom: Presencial | [T7. Secuenciación y ensamblado de genomas](../teoricas/7-Teorica-Siete/index.md) | :fontawesome-solid-brain: Teórica |	F. Agüero |
 | Jue, 24 Sep  | 9 hs |	:material-google-classroom: Presencial | P7. Mapeo de secuencias | :fontawesome-solid-hammer: Práctica |	J. Glavina |
 | Mar, 29 Sep  | 9 hs |	:material-google-classroom: Presencial | T8. HMM | :fontawesome-solid-brain: Teórica |	L. Chemes |
 | Jue, 1 Oct  | 9 hs |	:material-google-classroom: Presencial | P8. HMM | :fontawesome-solid-hammer: Práctica |	J. Glavina |
