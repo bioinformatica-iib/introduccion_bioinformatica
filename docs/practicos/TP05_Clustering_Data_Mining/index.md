@@ -1352,7 +1352,8 @@ O sea, que nos vamos a quedar con aquellos genes que tienen un CPM 2.83 veces m�
 
 !!! info "Info"
 
-    **Fecha límite de entrega:** Viernes 25/09/2026 23:59 hs
+    <del>Fecha límite de entrega: Viernes 25/09/2026 23:59 hs</del><br>
+    **Fecha límite de entrega:** Viernes 02/10/2026 23:59 hs
 
     **Enviar a:** rbquinteros@iib.unsam.edu.ar, incluyendo en copia a jglavina@iib.unsam.edu.ar y al resto de los miembros del grupo.
 
