@@ -15,7 +15,11 @@ tags:
 <br>
 <br>
 
-[:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1yfCSpn7mLNCOrmQSzKKEd9eY0LsCVoB2/view?usp=sharing){ .md-button .md-button--primary } [:fontawesome-solid-download: Slides](https://drive.google.com/open?id=1LrvZKKcxcOMjc-gu-mi5s2lBPqL2vkvK&usp=sharing){ .md-button .md-button--primary }
+[:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1yfCSpn7mLNCOrmQSzKKEd9eY0LsCVoB2/view?usp=sharing){ .md-button .md-button--primary } 
+<!--
+[:fontawesome-solid-download: Slides](https://drive.google.com/open?id=1LrvZKKcxcOMjc-gu-mi5s2lBPqL2vkvK&usp=sharing){ .md-button .md-button--primary }
+-->
+<br>
 
 <!--
 ### Videos de la clase grabada
@@ -54,7 +58,11 @@ El motivo de unión de los MHC de la vía de clase I es, en la mayoría de los c
 Existe una gran cantidad de datos que describen las diferentes especificidades de las moléculas de MHC.
 
 
-Una base de datos muy conocida que almacena esta información es [SYFPEITHI](http://www.syfpeithi.de/). En ella se puede encontrar informacion de ligandos y motivos de MHC. **Actualmente (2 de Octubre de 2025) SYFPEITHI se encuentra en mantenimiento, por lo que puede no estar disponible.**
+Una base de datos muy conocida que almacena esta información es [SYFPEITHI](http://www.syfpeithi.de/). En ella se puede encontrar informacion de ligandos y motivos de MHC. 
+
+<!--
+**Actualmente (2 de Octubre de 2025) SYFPEITHI se encuentra en mantenimiento, por lo que puede no estar disponible.**
+-->
 
 Con este tipo de información es posible desarrollar un modelo de predicción de unión de péptidos a MHC y usarlo para descubrir nuevos epítopes con los cuales diseñar vacunas. Esto puede ser aplicado a nivel de proteomas enteros para ahorrar tanto tiempo como recursos.  
 
@@ -66,11 +74,13 @@ A continuación vamos a:
 
 ### Identificación de motivos de unión a MHC
 
-## **Ejercicio 1. Uso de SYFPEITHI** (Realizar si y sólo si la base de datos está disponible).
+## Ejercicio 1. Uso de SYFPEITHI (Realizar si y sólo si la base de datos está disponible).
 
-Diríjanse a la página web de [SYFPEITHI](http://www.syfpeithi.de/). Allí, una vez que hagan *click* en el logo, pueden buscar motivos con el botón **Find your motif, Ligand or Epitope**.
+#### ✏️ Búsqueda para el alelo HLA-A\*02:01
 
-Allí seleccionen con el menú de la izquierda el alelo de MHC **HLA-A\*02:01** y presionen **Do Query**. 
+Diríjanse a la página web de [SYFPEITHI](http://www.syfpeithi.de/). Allí, una vez que hagan *click* en el logo, pueden buscar motivos con el botón **Ligand or Epitope**.
+
+Allí seleccionen con el menú de la izquierda el alelo de MHC **HLA-A\*02:01** y presionen **Run**. 
 
 !!! note "Nota"
 
@@ -78,15 +88,15 @@ Allí seleccionen con el menú de la izquierda el alelo de MHC **HLA-A\*02:01** 
 
 En el resultado de la búsqueda podemos ver las posiciones *anchor* principales y auxiliares, y también otras posiciones con residuos preferidos. También tenemos una lista de otros aminoácidos que se ven con frecuencia en los ligandos del alelo que estamos estudiando. Por último, más abajo, se muestra la lista de los ligandos que existen en esta base de datos, junto a su proteina de procedencia, la referencia del trabajo donde se lo identificó y alguna nota como la asociación de un péptido dado con una enfermedad.  
 
-**1.** Respondan a las siguientes preguntas :
+#### ✏️ Preguntas
 
-**a.** ¿Qué posiciones identifican como *anchors*? ¿Qué residuos son preferidos en estas posiciones? ¿Y en los *auxiliary anchors*?
+1. ¿Qué posiciones identifican como *anchors*? ¿Qué residuos son preferidos en estas posiciones? ¿Y en los *auxiliary anchors*?
 
-**b.** ¿Qué otras posiciones muestran preferencias de residuos? ¿Qué residuos son preferidos en estas posiciones? 
+2. ¿Qué otras posiciones muestran preferencias de residuos? ¿Qué residuos son preferidos en estas posiciones? 
 
-**c.** ¿Qué diferencia observa para las posiciones *anchor* en el conjunto de péptidos en comparación al resto de las posiciones? Recuérdenla para el ejercicio de logos de secuencia.
+3. ¿Qué diferencia observa para las posiciones *anchor* en el conjunto de péptidos en comparación al resto de las posiciones? (Recuerden esta diferencia para el ejercicio de logos de secuencia).
 
-**2.** Repitan el mismo análisis para el alelo **HLA-B\*27**. ¿Coinciden las posiciones *anchor* con las del alelo **HLA-A\*02:01**?, ¿y los residuos preferidos?
+4. Repitan el mismo análisis para el alelo **HLA-B\*27**. ¿Coinciden las posiciones *anchor* con las del alelo **HLA-A\*02:01**?, ¿y los residuos preferidos?
 
 
 ### Logos de secuencias
@@ -95,7 +105,7 @@ Los logos son una herramienta muy útil para visualizar motivos de unión. En un
 
 Un servidor que nos permite generar fácilmente logos de secuencia es [Seq2Logo](https://services.healthtech.dtu.dk/service.php?Seq2Logo-2.0). Este método nos da la opción de ingresar un alineamiento múltiple (MSA), una lista de péptidos o una matriz peso-específica con la cual realizar el gráfico. 
 
-La información puede pegarse directamente en el <span style="color:red;font-weight:bold;"> cuadro de texto </span> que provee la web, o subiendo directamente un archivo local utilizando la opción <span style="color:blue;font-weight:bold;"> Switch to file upload </span> que se encuentra debajo del cuadro.
+La información puede pegarse directamente en el <span style="color:red;font-weight:bold;"> cuadro de texto </span> que provee la web, o subiendo directamente un archivo local utilizando la opción <span style="color:blue;font-weight:bold;"> Switch to file upload </span> que se encuentra debajo del cuadro de texto.
 
 ![seq2logo1](./img/seq2logo_1.png)
 
@@ -122,18 +132,27 @@ Por convención los colores que se utilizan son:
 
 ## Ejercicio 2. Realización de Logos
 
-**3.** En Materiales pueden encontrar los archivos **HLA-A0201** y **HLA-B27**, los cuales contienen ligandos de cada uno de estos alelos de MHC. 
-Úsenlos para generar logos que muestren sus motivos de preferencia. **Utilicen como opción de clustering Heuristics.** 
+#### ✏️ Descargue los archivos
 
-Usamos para el resto de las opciones los valores *default*. Identifiquen las posiciones ancla y las preferencias de cada alelo. 
+En Materiales pueden encontrar los archivos `HLA-A0201` y `HLA-B27`, los cuales contienen ligandos de cada uno de estos alelos de MHC. 
 
-**a.** ¿El logo obtenido para **HLA-A02:01** y **HLA-B27** se condice con lo que encontró en la base de datos en el punto anterior? 
+#### ✏️ Genere los logos de secuencia
 
-**b.** ¿Qué magnitud es la que está diferenciando a las posiciones *anchor* del resto? ¿En qué unidad aparece representada en el logo? ¿Coincide con lo supuesto en el punto **1.c**?
+Úsen los archivos descargados para generar logos que muestren sus motivos de preferencia. **Utilicen como opción de clustering Heuristics.** 
+
+Usamos para el resto de las opciones los valores *default*.
+
+#### ✏️ Preguntas
+
+- Identifiquen las posiciones ancla y las preferencias de cada alelo. 
+- ¿El logo obtenido para **HLA-A02:01** y **HLA-B27** se condice con lo que encontró en la base de datos en el punto anterior? 
+- ¿Qué magnitud es la que está diferenciando a las posiciones *anchor* del resto? ¿En qué unidad aparece representada en el logo? ¿Coincide con lo supuesto en la pregunta 3 del ejercicio 1?
 
 ## Ejercicio 3. Construcción de matrices peso-específicas (PSSM)
 
 Para este punto vamos a utilizar el servidor de [EasyPred](https://services.healthtech.dtu.dk/service.php?EasyPred-1.0). Esta herramienta nos permite construir tanto matrices peso-específicas, o *PSSM (Position-Specific Scoring Matrix)*, como aplicarlas a un set de datos para calcular su *score*. 
+
+#### ✏️ Ingrese las secuencias
 
 El servidor consta de dos cuadros de texto, el de la <span style="color:blue;font-weight:bold;">izquierda</span> en el cual se ingresan datos para construir la matriz, y el de la <span style="color:red;font-weight:bold;">derecha</span> donde uno puede ingresar secuencias sobre las cuales quiere realizar una predicción.
 
@@ -148,14 +167,19 @@ VLQPK
 LREWQ  
 LPYIH  
 ```
-Las opciones que tenemos aquí son muy similares a las que habiamos visto en el servidor de *Seq2Logo* debido a que ambos realizan cálculos del contenido de información.  
+Las opciones que tenemos aquí son muy similares a las que habiamos visto en el servidor de *Seq2Logo* debido a que ambos realizan cálculos del contenido de información.
+
 En este caso vamos a seleccionar **Clustering method: No clustering** y **Weight on prior: 10000**. Usamos para el resto de las opciones los valores *default*.
 
-**4.** Antes de generar la PSSM, reflexionen un poco acerca de los parámetros empleados para la construcción de la misma.
+NO hagan el Submit aún...
 
-**a.** ¿Por qué consideran que no estamos usando ningún método de clustering?
+#### ✏️ Preguntas
 
-**b.** ¿Por qué creen que es tan alto el valor sugerido para el *weight on prior* (β) ?
+Antes de generar la PSSM, reflexionen un poco acerca de los parámetros empleados para la construcción de la misma.
+
+- ¿Por qué consideran que no estamos usando ningún método de clustering?
+
+- ¿Por qué creen que es tan alto el valor sugerido para el *weight on prior* (β) ?
 
 ??? note "Recordatorio"
 
@@ -166,22 +190,26 @@ En este caso vamos a seleccionar **Clustering method: No clustering** y **Weight
     donde α es el número de secuencias en el MSA-1, β es el *weight on prior* o *weight on pseudocounts*, <span class="latex">f<sub>a</sub></span> es la frecuencia observada para el aminoácido *a* en esa posición y <span class="latex">g<sub>a</sub></span> es la pseudo frecuencia para el aminoácido *a* en esa misma posición.
 
 <br>
+
+#### ✏️ Visualización de salida
+
 Hagan *Submit query* y observen la salida. Allí podrán encontrar información sobre los parámetros utilizados y un logo que representa el set de datos que ingresamos.
 
-Observando el logo generado:
 
-**5.** ¿Qué aminoácidos es más probable hallar en la posición P1?
+#### ✏️ Preguntas
+
+- Observando el logo generado: ¿Qué aminoácidos es más probable hallar en la posición P1?
 
 ??? tip "Pista"
 
     Son los que están por encima de y=0.
 
 <br>
-**6.** ¿Cuántos aminoácidos diferentes hay en P1 (en y>=0)? ¿Cuáles se encuentran datos de entrada? ¿Cuáles en el logo generado?
 
-**7.** ¿A qué se debe esta diferencia?  
+- ¿Cuántos aminoácidos diferentes hay en P1 (en y>=0)? ¿Cuáles se encuentran datos de entrada? ¿Cuáles en el logo generado?
+- ¿A qué se debe esta diferencia?  
 
-**8.** Realice el mismo ejercicio pero ahora elija un *weight on prior* β=0. ¿Cambian sus respuestas para los puntos **5.**, **6.** y **7.**?
+- Realice el mismo ejercicio pero ahora elija un *weight on prior* β=0. ¿Cambian sus respuestas para las tres últimas preguntas?
 
 ## Ejercicio 4. Predicción de unión a MHC
 
@@ -316,6 +344,9 @@ A continuación recarguen la página de [EasyPred](https://services.healthtech.d
 !!! attention "Atención"
 
 	 Antes de cerrar la ventana haga *click* en **Parameters for prediction method** luego del logo. Allí podrá descargar la matriz calculada a partir de los datos de entrenamiento (Se descarga con el nombre para.dat, es un archivo de texto plano). Esta puede ser utilizada luego para llevar a cabo predicciones.
+
+
+
 
 ## PARTE II - **PSI-BLAST**
 
