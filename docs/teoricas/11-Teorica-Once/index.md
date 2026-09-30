@@ -1,27 +1,14 @@
 ---
-title: Teorica Once
+title: Teorica Diez
 icon: fontawesome/solid/brain
 tags: 
   - teoricas
 ---
 
-## Hidden Markov Models (HMM)
+## Bioinformática Estructural: Motivos lineales
 
- Clase teórica de Hidden Markov Models.
+Clase teórica de Motivos Lineales.
 
+* :fontawesome-regular-file-pdf: [Slides](https://drive.google.com/open?id=1OkAe0JKfXa_QGSo55f6gfDEwmsCEQkjN&usp=drive_link) 
 
-* :octicons-video-16: [HMM Video de la Clase](https://drive.google.com/file/d/1zOFqYZ1_xPEKnbSz7o2a6sdUSgY6Qh6J/view?usp=drive_link)
-
-* :fontawesome-regular-file-pdf: [Slides](https://drive.google.com/file/d/17JB_1Y1nw4cwBoBQQgZWJ8mxLtb7dYOx/view?usp=drive_link)
-
-
-* :fontawesome-regular-file-pdf: [Ejercicios](./files/handout_viterbi_HMM.pdf)
-
-<!--
-![type:video](https://www.youtube.com/embed/hlmJDkSPWLU)
--->
-
-### Material de lectura y consulta
-
-* :octicons-book-16: *Immunological Bioinformatics*. Ole Lund, Morten Nielsen, Claus Lundegaard, Can Kesmir, Søren Brunak. DOI: https://doi.org/10.7551/mitpress/3679.001.0001. The MIT Press (2005). [Chapters 3 and 4](./files/book_mniel_intro_ch3-4.pdf)
-
+ * :octicons-video-16: [Video](https://drive.google.com/file/d/1oYLtxX4YAMU3oAUa6dAdX3vLeK623Z42/view?usp=drive_link)
