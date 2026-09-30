@@ -1,14 +1,14 @@
 ---
-title: Teorica Diez
+title: Teorica Ocho
 icon: fontawesome/solid/brain
 tags: 
   - teoricas
 ---
 
-## Bioinformática Estructural: Motivos lineales
+## Bioinformática Estructural: Desorden
 
-Clase teórica de Motivos Lineales.
+Clase teórica sobre métodos de predicción de regiones desordenadas en proteínas.
 
-* :fontawesome-regular-file-pdf: [Slides](https://drive.google.com/open?id=1OkAe0JKfXa_QGSo55f6gfDEwmsCEQkjN&usp=drive_link) 
-
- * :octicons-video-16: [Video](https://drive.google.com/file/d/1oYLtxX4YAMU3oAUa6dAdX3vLeK623Z42/view?usp=drive_link)
+* :fontawesome-regular-file-pdf: [Slides](https://drive.google.com/file/d/1GwRz6lzTC3qJ9rzIVwpzeVgYJRH9kUj-/view?usp=sharing) 
+ 
+* :octicons-video-16: [Video](https://drive.google.com/file/d/1qi5KDigdsw1WQJtSk5ck50OErIbRCqZg/view?usp=drive_link)
