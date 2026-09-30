@@ -166,7 +166,7 @@ Abran un colab, creen una celda de código e ingresen el siguiente comando para 
 !apt install hmmer2
 ```
 
-### Ejercio 1. Construcción de un perfil para la detección de homólogos lejanos.
+### Ejercicio 1. Construcción de un perfil para la detección de homólogos lejanos.
 
 Los HMM son modelos probabilísticos que capturan la información de un alineamiento múltiple de secuencias, asignando probabilidades tanto a la presencia de aminoácidos por posición, como a la ocurrencia de inserciones y deleciones, considerando las probabilidades de transición entre distintos estados.
 
@@ -383,7 +383,7 @@ tophits_s report:
 
 ```
 
-### Ejercio 2. Uso del perfil para búsqueda en Bases de datos reales.
+### Ejercicio 2. Uso del perfil para búsqueda en Bases de datos reales.
 
 HMMer puede leer los formatos de la mayoría de las bases de datos conocidas. A diferencia de BLAST no es necesario indexar la base de datos.
 
@@ -430,7 +430,7 @@ Por defecto `hmm2build` lleva a cabo alineamientos que son globales con respecto
 Es decir, cada dominio se intenta alinear **completamente** en alguna porción de la secuencia objetivo. Si queremos recuperar secuencias que contengan alineamientos parciales de dominios podemos agregar a `hmm2build` la opcion `-f` .
 
 
-### Ejercio 3. Bases de Datos de HMMs
+### Ejercicio 3. Bases de Datos de HMMs
 
 #### Bases de datos de HMM (Online)
 
