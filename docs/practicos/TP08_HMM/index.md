@@ -406,7 +406,6 @@ En nuestro servidor podemos realizar la búsqueda utilizando:
 
 ```Bash
 !hmm2search globin.hmm Swissprot.fasta > globin.swissprot.search
-!less globin.swissprot.search
 ```
 
 !!! note "A tener en cuenta:"
@@ -415,7 +414,7 @@ En nuestro servidor podemos realizar la búsqueda utilizando:
 
 #### ✏️ Inspección de la salida
 
-Observen el archivo de salida, y responda:
+Descarguen el archivo de salida y observen el resultado. Luego, responda:
 
 - ¿Qué nombres de proteínas observa al principio y al final de la lista?
 - ¿Qué rango de e-values observa?
