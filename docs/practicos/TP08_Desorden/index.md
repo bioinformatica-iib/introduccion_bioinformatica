@@ -1,12 +1,12 @@
 ---
-title: Practico Ocho
+title: Practico Diez
 icon: fontawesome/solid/hammer
 tags: 
   - practicos
 ---
 ![Image](img/featured.png){ width="250", align="left" }
 
-# **TP 08**. Predicción de Desorden { markdown data-toc-label = 'TP 8' }
+# **TP 10**. Predicción de Desorden { markdown data-toc-label = 'TP 10' }
 
 <br>
 <br>
@@ -21,16 +21,16 @@ tags:
 ## **PARTE I: Predicción de Desorden**
 
 ## Recursos online
-* ProViz                [http://slim.icr.ac.uk/proviz/](http://slim.icr.ac.uk/proviz/)
-* IUPred2A            [https://iupred2a.elte.hu/plot](https://iupred2a.elte.hu/plot)
-* DisProt            [https://www.disprot.org](https://www.disprot.org)
-
+* DisProt             [https://www.disprot.org](https://www.disprot.org)
+* InterPro            [https://www.ebi.ac.uk/interpro/](https://www.ebi.ac.uk/interpro/)
+* ProViz              [http://slim.icr.ac.uk/proviz/](http://slim.icr.ac.uk/proviz/)
+* IUPred3             [https://iupred3.elte.hu](https://iupred3.elte.hu)
 
 ## Objetivos
-* Interpretar alineamientos múltiples de secuencias
-* Identificar regiones ordenadas y desordenadas en alineamientos múltiples de secuencia
-* Familiarizarse con la base de datos DisProt
-* Entender las técnicas experimentales que permiten la identificación de regiones desordenadas
+* Familiarizarse con la base de datos DisProt y las técnicas experimentales que permiten la identificación de regiones desordenadas.
+* Integrar conocimientos de dominios conservados (InterPro) con la presencia/ausencia de estructura tridimensional.
+* Interpretar alineamientos múltiples de secuencias (MSAs). 
+* Identificar regiones ordenadas y desordenadas en alineamientos múltiples de secuencia.
 * Familiarizarse con distintos métodos de predicción de desorden (sólo en ejercicios adicionales)
 * Interpretación de los resultados de los distintos métodos de predicción de desorden (sólo en ejercicios adicionales)
 
@@ -41,25 +41,67 @@ Uno de los mayores desafíos en el campo de las proteínas es la predicción de 
 
 En el año 2020, AlphaFold2 gana la competición de predicción de estructuras (CASP14) con un amplio margen prediciendo estructuras con muy alta precisión. Sin embargo, aún la predicción de un conjunto de estructuras para proteínas desordenadas no se ha resuelto.
 
-La predicción de IDRs/IDPs a partir de la secuencia de aminoácidos permite un análisis rápido y abarcativo de distintas proteínas permitiendo establecer hipótesis sobre la presencia de desorden en las proteínas (Dunker et al., 2008; van der Lee et al., 2014). La importancia que adquirieron las IDRs/IDPs en los últimos años llevó al desarrollo de numerosos métodos de predicción, pero en general se basan en tres estrategias de predicción de desorden: 
+La predicción de IDRs/IDPs a partir de la secuencia de aminoácidos permite un análisis rápido y abarcativo de distintas proteínas permitiendo establecer hipótesis sobre la presencia de desorden en las proteínas (Dunker et al., 2008; van der Lee et al., 2014). La importancia que adquirieron las IDRs/IDPs en los últimos años llevó al desarrollo de numerosos métodos de predicción, pero en general se basan en tres estrategias de predicción de desorden:
 
-1. a partir de composición de secuencia, 
-2. a partir de *machine learning* sobre estructuras determinadas por cristalografía de rayos X y 
-3. a partir de meta-predictores que integran los resultados predichos por diferentes métodos.
+1. **Composición de secuencia:** como IUPred (Dosztányi et al., 2005; Erdös et al., 2021), que aplica un campo de energía estadístico desarrollado a partir de estructuras del PDB.
+2. **Machine learning:** como PONDR (Obradovic et al., 2003; Romero et al., 1997), entrenado a partir de un grupo estructuras de proteínas globulares y atributos de secuencia asociados a residuos no resueltos en dichas estructuras, que corresponden a regiones flexibles dentro del cristal. GlobPlot (Linding et al., 2003) fue entrenado estudiando la tendencia de un residuo a adquirir determinada estructura secundaria, hélices α o láminas β.
+3. **Meta-predictores:** que integran y ponderan los resultados de múltiples métodos individuales.
 
-Entre los algoritmos que se basan en composición de secuencia podemos nombrar IUPred (Dosztányi et al., 2005; Erdös et al., 2021), que aplica un campo de energı́a desarrollado a partir de un gran número de proteínas con estructura determinada obtenidas de PDB. El primer algoritmo en *machine learning* fue PONDR (Obradovic et al., 2003; Romero et al., 1997), entrenado a partir de un grupo estructuras de proteínas globulares y atributos de secuencia asociados a residuos no resueltos en dichas estructuras, que corresponden a regiones flexibles dentro del cristal. GlobPlot (Linding et al., 2003) fue entrenado estudiando la tendencia de un residuo a adquirir determinada estructura secundaria, hélices α o láminas β.
 
-## **Ejercicios**
+### **Parte I: Caracterización de p53** 
 
-### **Ejercicio 1.** Visualización de Alineamientos en ProViz { markdown data-toc-label='Ejercicio 1' }
+La proteína p53 es esencial para inducir la respuesta celular ante el daño al ADN, deteniendo el ciclo celular o induciendo apoptosis, por lo que mutaciones en la misma pueden dar como resultado distintos tipos de cáncer. Dada su importancia biomédica, es una de las proteínas más estudiadas estructural y funcionalmente.
 
-!!! idea "Antes de empezar, piensen ..."
+### **Ejercicio 1.** Base de datos DisProt { markdown data-toc-label='Ejercicio 1' }
+
+La base de datos [DisProt](https://disprot.org/) es una colección de evidencia de desorden experimental recolectada de la literatura y curada manualmente, e incluye por lo menos:
+* un experimento,
+* el artículo científico correspondiente a ese experimento,
+* el inicio y final de la región desordenada en la secuencia proteica
+* un término de anotación que corresponde a la Ontología de desorden.
+    
+**Cada una de las entradas en la base de datos posee un identificador único**
+
+La ontología de desorden está organizada en tres categorías diferentes:
+
+* Estado estructural (*Structural State*): Orden o Desorden (*Order or Disorder*)
+* Transición estructural (*Structural Transition*): Transiciones que pueden ocurrir entre diferentes estados estructurales (*Disorder to order*)
+* Función de desorden (*Disorder Function*): La función de una región incluyendo términos específicos a desorden.
+
+En Disprot también se incluye la función molecular *Molecular function* de cada región. 
+
+Ingresa a la web de DisProt y encuentra la proteína p53 (P04637). El identificador de DisProt que deberías encontrar es **DP00086**.
+
+**1.1.** Expande la sección *Structural state* y luego *Disorder*:
+   * ¿A qué corresponden los segmentos coloreados en la secuencia?
+   * ¿Qué tipo de evidencia experimental validó dichos fragmentos como desordenados?
+
+**1.2.** Pensando en el rol biológico de estas regiones, expande *Molecular Function* y *Disorder Function*:
+   * ¿Qué tipo de funciones están indicadas para las regiones desordenadas de p53?
+   * Nombra al menos dos técnicas experimentales que se hayan usado para asignar estas funciones.
+
+### **Ejercicio 2.** Dominios conservados en InterPro { markdown data-toc-label='Ejercicio 2' }
+
+!!! idea "Integrando conceptos: InterPro, Pfam y HMMs"
+      En el TP de anterior de HMMs aprendimos a identificar dominios conservados en proteínas utilizando bases de datos de perfiles como **Pfam** a través de **InterPro**. 
+
+Observa la línea de **InterPro** dentro de la misma página de DisProt (o busca P04637 directamente en la web de InterPro (https://www.ebi.ac.uk/interpro/) y enfócate en las predicciones de la base de datos **Pfam**.
+
+**2.1.** ¿Cuántos dominios conservados distintos muestra Pfam para p53?
+**2.2.** Contrastando con la información vista en el Ejercicio 1: Las regiones validadas experimentalmente como "desordenadas" en DisProt, ¿coinciden con la presencia o con la ausencia de dominios Pfam? 
+**2.3.** Biológica y estructuralmente, ¿por qué crees que sucede esto?
+
+---
+## **PARTE II: Análisis de Regiones Desordenadas a través de Alineamientos Múltiples de Secuencia (MSAs)**
+
+!!! idea "Antes de seguir, piensen ..."
 
       ¿Porqué es importante visualizar un MSA?
       
       ¿Qué información podemos obtener de los MSA?
 
-**ProViz** es una herramienta que permite visualizar alineamientos y estructura de dominios de una proteína online. Ingresa a la web de **ProViz** [http://slim.icr.ac.uk/proviz/](http://slim.icr.ac.uk/proviz/), y busca la proteína p53 ingresando su Accession Number en la ventana “search” (Accession Number: P04637):
+**ProViz** es una herramienta que permite visualizar alineamientos y estructura de dominios de una proteína online. 
+### **Ejercicio 1.** Ingresa a la web de **ProViz** [http://slim.icr.ac.uk/proviz/](http://slim.icr.ac.uk/proviz/), y busca la proteína p53 ingresando su Accession Number en la ventana “search” (Accession Number: P04637): { markdown data-toc-label='Ejercicio 1' }
 
 Selecciona la proteína que se llama: [Cellular tumor antigen p53 (TP53) Homo sapiens (Human)](http://slim.icr.ac.uk/proviz/proviz.php?uniprot_acc=P04637). Es la primera de la lista.
 
