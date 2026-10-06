@@ -173,7 +173,7 @@ En este caso vamos a seleccionar **Clustering method: No clustering** y **Weight
 
 NO hagan el Submit aún...
 
-#### ✏️ Preguntas
+##### ✏️ Preguntas
 
 Antes de generar la PSSM, reflexionen un poco acerca de los parámetros empleados para la construcción de la misma.
 
@@ -196,7 +196,7 @@ Antes de generar la PSSM, reflexionen un poco acerca de los parámetros empleado
 Hagan *Submit query* y observen la salida. Allí podrán encontrar información sobre los parámetros utilizados y un logo que representa el set de datos que ingresamos.
 
 
-#### ✏️ Preguntas
+##### ✏️ Preguntas
 
 - Observando el logo generado: ¿Qué aminoácidos es más probable hallar en la posición P1?
 
@@ -255,7 +255,7 @@ El mejor model es el que alcance los mejores valores de **Aroc** y **Coeficiente
 !!! note "Note"
 	 A continuación vamos a entrenar varios modelos y comparar sus resultados. Haga cada prueba en una ventana nueva o guarde las salidas de alguna manera que crea conveniente.
 
-#### Primera prueba
+#### ✏️ Primera prueba
 
 !!! attention "Atención"
 
@@ -277,27 +277,33 @@ La salida consta de varias partes:
 
 	2. la correlación entre los valores predichos y los valores reales u observados (PCC).
 
+
+##### ✏️ Preguntas
+
 Revisando la salida contesten:
 
-**9.** ¿Qué valores de Aroc y PCC obtuvieron? ¿Qué implica esto?
+- ¿Qué valores de Aroc y PCC obtuvieron? ¿Qué implica esto?
 
-**10.** Viendo el logo resultante, ¿Entienden por qué el modelo tiene tan mal desempeño?  
+- Viendo el logo resultante, ¿Entienden por qué el modelo tiene tan mal desempeño?  
 
-**11.** ¿Cuántos de los 110 péptidos se utilizaron para la construcción de la matriz? ¿Por qué se usó ese número de péptidos?
+- ¿Cuántos de los 110 péptidos se utilizaron para la construcción de la matriz? ¿Por qué se usó ese número de péptidos?
 
 ??? tip "Pista"
 
     Mire el archivo de entrada Entrenamiento_chico.set y vea cuáles son los valores de afinidad para los péptidos allí listados.
 
-#### Segunda prueba
+
+#### ✏️  Segunda prueba
 
 Volvamos a la página principal de [EasyPred](https://services.healthtech.dtu.dk/service.php?EasyPred-1.0). Esta vez coloquemos el **umbral de positivos** en 0.5 pero especifiquemos que no haya **clustering** y pongamos un **weight on prior** de 0.0.
  
-**12.** ¿Qué valores de desempeño tienen ahora? ¿Qué implican estos valores? ¿Son mejores o peores que en la primera prueba? ¿Por qué cree que cambiaron?
+##### ✏️ Preguntas
 
-**13.** ¿Cuántos de los 110 péptidos se utilizaron en este caso para la construcción de la matriz?  
+- ¿Qué valores de desempeño tienen ahora? ¿Qué implican estos valores? ¿Son mejores o peores que en la primera prueba? ¿Por qué cree que cambiaron?
 
-**14.** Mirando el logo,
+- ¿Cuántos de los 110 péptidos se utilizaron en este caso para la construcción de la matriz?  
+
+- Mirando el logo,
 
 * ¿Se parece al motivo de unión de HLA-A\*02:01 que habían visto antes? ¿Por qué cree que ocurre esto?
 
@@ -305,46 +311,52 @@ Volvamos a la página principal de [EasyPred](https://services.healthtech.dtu.dk
 
     Tenga en cuenta el número de secuencias que se usaron para construir la matriz y recuerde que siempre es una buena práctica revisar las instrucciones de la guía y los archivos de entrada. 
 
-#### Tercera prueba
+#### ✏️ Tercera prueba
 
 Volvamos atrás y repitamos el caso anterior pero seleccionando **Clustering at 62% identity**. Mantengamos el **weight on prior** en 0.0 y el resto de los parámetros como se habían seteado en la segunda prueba. 
 
-**15.** ¿Cuál es el desempeño ahora?  
+##### ✏️ Preguntas 
 
-**16.** ¿Cambió el logo con respecto al anterior? Si es así… ¿A qué cree que se debe el cambio?
+- ¿Cuál es el desempeño ahora?  
+
+- ¿Cambió el logo con respecto al anterior? Si es así… ¿A qué cree que se debe el cambio?
 
 ??? tip "Pista"
 
     De nuevo, es una buena práctica revisar qué contienen los archivos de entrada, es decir los datos crudos. Miren con atención las secuencias de los positivos.
 
-#### Cuarta prueba
+#### ✏️ Cuarta prueba
 
 Volvamos una vez más, manteniendo **Clustering at 62% identity** pero utilicemos como **weight on prior** un valor de 200, y el **umbral de positivos** en 0.5.
 
-**17.** Una vez más revisen las métricas de desempeño.
+##### ✏️ Preguntas
 
-**18.** Mirando el logo,
+- Una vez más revisen las métricas de desempeño.
 
-* ¿Cuál es la gran diferencia con aquellos que venían viendo? ¿Cuál es la razón de este cambio?
-* ¿Empieza ahora a parecerse a los motivos que habían visto antes?  
+- Mirando el logo,
 
-#### Quinta (y última) prueba
+    * ¿Cuál es la gran diferencia con aquellos que venían viendo? ¿Cuál es la razón de este cambio?
+    * ¿Empieza ahora a parecerse a los motivos que habían visto antes?  
+
+#### ✏️ Quinta (y última) prueba
 
 Hasta ahora veníamos utilizando un set de datos sumamente reducido, con solo 10 péptidos positivos para entrenar. Aún asi hemos conseguido valores de desempeño bastante aceptables. Sin embargo, estos métodos suelen utilizar muchas más información para su entrenamiento.  
 
 A continuación recarguen la página de [EasyPred](https://services.healthtech.dtu.dk/service.php?EasyPred-1.0) y carguen para entrenar el archivo **Entrenamiento_grande.set**. En el cuadro de evaluación vuelvan a cargar **Evaluacion.set**. Seleccionen una vez más **Clustering at 62% identity**, pongan el **weight on prior** en 200 y el **umbral de positivos** en 0.5. Tilden también la opción **Sort output on predicted values** para ver la tabla de péptidos ordenada por los valores de predicción.
 
-**19.** Revisen una vez más los valores de desempeño.
+##### ✏️ Preguntas
 
-**20.** Vean el logo, ¿qué les parece?
+- Revisen una vez más los valores de desempeño.
 
-**21.** Mirando la tabla de predicciones, ¿Cuántos falsos positivos encuentran entre los primeros 20 péptidos? (con *Assignment* menor a 0.426)
+- Vean el logo, ¿qué les parece?
 
+- Mirando la tabla de predicciones, ¿Cuántos falsos positivos encuentran entre los primeros 20 péptidos? (con *Assignment* menor a 0.426)
 
+<!--
 !!! attention "Atención"
 
 	 Antes de cerrar la ventana haga *click* en **Parameters for prediction method** luego del logo. Allí podrá descargar la matriz calculada a partir de los datos de entrenamiento (Se descarga con el nombre para.dat, es un archivo de texto plano). Esta puede ser utilizada luego para llevar a cabo predicciones.
-
+-->
 
 
 
@@ -368,6 +380,19 @@ En resumen, a partir de la segunda iteración los puntajes de la matriz variará
 
 Digamos que se tiene una secuencia *query* (abajo) y se quiere predecir su estructura y función. Como vimos anteriormente uno recurre generalmente a BLAST para este tipo de tareas. Si logramos identificar una proteína suficientemente similar podríamos hipotetizar que comparten dichas caracteristicas.
 
+### ✏️ Búsqueda en BLAST
+
+Vayan a la pagina de [BLAST](https://blast.ncbi.nlm.nih.gov/Blast.cgi) y utilicen el algoritmo de *Protein BLAST* para buscar secuencias similares. **En el campo de base de datos seleccione pdb que es la base que contiene estructuras**.
+
+!!! tip "Tip"
+    
+    Pueden correr la búsqueda eligiendo el parámetro "Show results in a new window".
+
+<p style="text-align:center">
+<img src="./img/psiblast_1.png" alt="psiblast1" style="max-width:60%">
+</p>
+
+
 ```
 >QUERY1
 MKDTDLSTLLSIIRLTELKESKRNALLSLIFQLSVAYFIALVIVSRFVRYVNYITYNNLV
@@ -380,17 +405,9 @@ IDLEKWKAKLFPYKDDVLRRKIYEAMDRALGKRFELYALRRHFATYMQLKKVPPLAINIL
 QGRVGPNEFRILKENYTVFTIEDLRKLYDEAGLVVLE
 ```
 
-Vayan a la pagina de [BLAST](https://blast.ncbi.nlm.nih.gov/Blast.cgi) y utilicen el algoritmo de *Protein BLAST* para buscar secuencias similares. **En el campo de base de datos seleccione pdb que es la base que contiene estructuras**.
+#### ✏️ Pregunta
 
-!!! tip "Tip"
-    
-    Pueden correr la búsqueda eligiendo el parámetro "Show results in a new window".
-
-<p style="text-align:center">
-<img src="./img/psiblast_1.png" alt="psiblast1" style="max-width:60%">
-</p>
-
-**1.** ¿Cuántos *hits* con E-value < 0.05 encuentran? Vuelvan atrás y, en **Program selection: Algorithm**, seleccionen PSI-BLAST. ¿Cambió el resultado en comparación a lo que habían obtenido anteriormente?
+¿Cuántos *hits* con E-value < 0.05 encuentran? Vuelvan atrás y, en **Program selection: Algorithm**, seleccionen PSI-BLAST. ¿Cambió el resultado en comparación a lo que habían obtenido anteriormente?
 
 ## Ejercicio 2. Usando PSI-BLAST
 
@@ -398,15 +415,19 @@ Vayan a la pagina de [BLAST](https://blast.ncbi.nlm.nih.gov/Blast.cgi) y utilice
 
 	 Realicen cada corrida de BLAST (e iteración de PSI-BLAST) en una ventana diferente, en varios casos van a necesitar comparar las salidas.
 
+### ✏️ Búsqueda usando PSI-BLAST
+
 Vuelvan atrás a la página de alineamiento de proteínas, pero esta vez seleccionen la base de datos **Non-redundant protein sequences (nr)** y en la sección de algoritmos seleccionen PSI-BLAST.
 
 Teniendo en cuenta que el primer *hit* es nuestro *query* y por lo tanto vamos a ignorarlo:
 
-**2.** Ahora, ¿Cuántos *hits* significativos encuentran (E-value < 0.005)?
+#### ✏️ Preguntas
 
-**3.** ¿Qué significa la variable **Query Cover**? Una manera visual para entender el *query coverage* es mirar el **Graphic Summary**. Dentro de la pestaña **Descriptions**, coloquen la pestaña **Show** en 100. Luego cliqueen en la pestaña **Graphic Summary**. ¿Cuál es la cobertura de los *hits* obtenidos? 
+- Ahora, ¿Cuántos *hits* significativos encuentran (E-value < 0.005)?
 
-### Construyendo la PSSM
+- ¿Qué significa la variable **Query Cover**? Una manera visual para entender el *query coverage* es mirar el **Graphic Summary**. Dentro de la pestaña **Descriptions**, coloquen la pestaña **Show** en 100. Luego cliqueen en la pestaña **Graphic Summary**. ¿Cuál es la cobertura de los *hits* obtenidos? 
+
+### ✏️ Construyendo la PSSM
 
 Si se fijan debajo de los *hits* significativos van a tener la opción de seguir iterando PSI-BLAST:
 
@@ -414,21 +435,23 @@ Si se fijan debajo de los *hits* significativos van a tener la opción de seguir
  
 Allí pueden especificar cuantas secuencias queremos utilizar para refinar nuestras PSSM (*Position-Specific Scoring Matrix*). Conservando el valor por defecto corramos la siguiente iteración.
 
-**4.** ¿Cuántos *hits* significativos pueden encontrar ahora (E-value < 0.005)?
+#### ✏️ Preguntas
 
-**5.** ¿Cómo se modificó el coverage de estos *hits*? Vuelvan a mirar el **Graphic Summary**, colocando previamente en **Descriptions** la pestaña **Show** en 250. 
+- ¿Cuántos *hits* significativos pueden encontrar ahora (E-value < 0.005)?
 
-**6.** ¿Por qué creen que PSI-BLAST puede identificar ahora más *hits* significativos y que es lo que está afectando el *query coverage*?
+- ¿Cómo se modificó el coverage de estos *hits*? Vuelvan a mirar el **Graphic Summary**, colocando previamente en **Descriptions** la pestaña **Show** en 250. 
 
-**7.** ¿Qué significan que los *hits* estén resaltados en amarillo, y qué significa que estén en blanco con un tick verde?
+- ¿Por qué creen que PSI-BLAST puede identificar ahora más *hits* significativos y que es lo que está afectando el *query coverage*?
+
+- ¿Qué significan que los *hits* estén resaltados en amarillo, y qué significa que estén en blanco con un tick verde?
 
 !!! note "Nota"
 
 	 Antes de proseguir realicen una o dos iteraciones más y observen la aparición de nuevas proteínas identificadas (marcadas con amarillo).
 
-### Guardando y reutilizando la PSSM
+### ✏️ Guardando y reutilizando la PSSM
 
-Si no funcionó psi-blast, pueden descarg la matriz desde este [link](https://drive.google.com/open?id=1LWHZb7bhFWRresdoF87dhdWYHXKqRoaS&usp=drive_copy)
+Si no funcionó psi-blast, pueden descargar la matriz desde este [link](https://drive.google.com/open?id=1LWHZb7bhFWRresdoF87dhdWYHXKqRoaS&usp=drive_copy)
 
 Ahora podemos utilizar la PSSM que está ajustada con los resultados obtenidos de PSI-BLAST para realizar búsquedas más significativas en otras bases de datos.
 Para obtener la PSSM descarguenla arriba donde dice "*Donwload All*"
@@ -437,9 +460,11 @@ Para obtener la PSSM descarguenla arriba donde dice "*Donwload All*"
 
 Volvamos una vez más a la página para realizar la búsqueda. Sin ingresar ninguna secuencia *query* seleccionemos otra vez la base de datos de estructuras Protein Data Bank (pdb) y como algoritmo PSI-BLAST. Por último, justo debajo del botón de BLAST, abramos el menú de *Algorithm parameters* y carguemos nuestra PSSM (justo al final). Ahora sí corramos la búsqueda.
 
-**8.** ¿Pueden encontrar hits significativos de PDB ahora?
+#### ✏️ Preguntas
 
-**9.** ¿Qué función pueden identificar en los primeros hits?
+- ¿Pueden encontrar hits significativos de PDB ahora?
+
+- ¿Qué función pueden identificar en los primeros hits?
 
 <!--
 ### Identificando residuos conservados
