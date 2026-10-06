@@ -30,9 +30,8 @@ tags:
 * Familiarizarse con la base de datos DisProt y las técnicas experimentales que permiten la identificación de regiones desordenadas.
 * Integrar conocimientos de dominios conservados (InterPro) con la presencia/ausencia de estructura tridimensional.
 * Interpretar alineamientos múltiples de secuencias (MSAs). 
-* Identificar regiones ordenadas y desordenadas en alineamientos múltiples de secuencia.
-* Familiarizarse con distintos métodos de predicción de desorden (sólo en ejercicios adicionales)
-* Interpretación de los resultados de los distintos métodos de predicción de desorden (sólo en ejercicios adicionales)
+* Identificar regiones ordenadas y desordenadas en MSAs.
+* Familiarizarse con distintos métodos de predicción de desorden.
 
 
 ## **Métodos de predicción de desorden**
@@ -88,7 +87,9 @@ Ingresa a la web de DisProt y encuentra la proteína p53 (P04637). El identifica
 Observa la línea de **InterPro** dentro de la misma página de DisProt (o busca P04637 directamente en la web de InterPro (https://www.ebi.ac.uk/interpro/) y enfócate en las predicciones de la base de datos **Pfam**.
 
 **2.1.** ¿Cuántos dominios conservados distintos muestra Pfam para p53?
+
 **2.2.** Contrastando con la información vista en el Ejercicio 1: Las regiones validadas experimentalmente como "desordenadas" en DisProt, ¿coinciden con la presencia o con la ausencia de dominios Pfam? 
+
 **2.3.** Biológica y estructuralmente, ¿por qué crees que sucede esto?
 
 ---
@@ -101,7 +102,7 @@ Observa la línea de **InterPro** dentro de la misma página de DisProt (o busca
       ¿Qué información podemos obtener de los MSA?
 
 **ProViz** es una herramienta que permite visualizar alineamientos y estructura de dominios de una proteína online. 
-### **Ejercicio 1.** Ingresa a la web de **ProViz** [http://slim.icr.ac.uk/proviz/](http://slim.icr.ac.uk/proviz/), y busca la proteína p53 ingresando su Accession Number en la ventana “search” (Accession Number: P04637): { markdown data-toc-label='Ejercicio 1' }
+### **Ejercicio 1.** Ingresa a la web de **ProViz** [http://slim.icr.ac.uk/proviz/](http://slim.icr.ac.uk/proviz/), y busca la proteína p53 ingresando su Accession Number en la ventana “search” (Accession Number: P04637): { markdown data-toc-label='Ejercicio 1: ProViz' }
 
 Selecciona la proteína que se llama: [Cellular tumor antigen p53 (TP53) Homo sapiens (Human)](http://slim.icr.ac.uk/proviz/proviz.php?uniprot_acc=P04637). Es la primera de la lista.
 
@@ -121,8 +122,185 @@ Selecciona la proteína que se llama: [Cellular tumor antigen p53 (TP53) Homo sa
 
 **1.4.** ¿A qué pueden deberse las diferencias observadas?
 
+### **Ejercicio 2.** Opción Local: Análisis con JalView { markdown data-toc-label='Ejercicio 2: JalView' }
 
-### **Ejercicio 2.** Predicción de desorden a partir de la secuencia { markdown data-toc-label='Ejercicio 2' }
+Jalview es un software robusto que permite generar, editar, analizar y colorear alineamientos localmente.
+
+2.1. Abre JalView (ejecutando el programa en tu computadora). Descarga y abre el conjunto de secuencias p53.fasta proporcionado en los materiales:
+File → Input Alignment → From File
+
+2.2. Para realizar el alineamiento, usaremos Clustal de manera remota:
+Web Service → Alignment → Clustal → With defaults
+(Nota: Si el servicio falla, abre directamente el archivo p53_aligned.fasta que ya se encuentra alineado).
+
+2.3. Edición del alineamiento:
+Si algunas secuencias son mucho más cortas o están truncadas, pueden generar ruido. Selecciona el nombre de la secuencia a la izquierda y bórrala (teclas ++backspace++ o ++del++). ¿Por qué creen que es importante filtrar el alineamiento inicial?
+
+2.4. Análisis por colores (Colour → Clustalx):
+Este esquema colorea por propiedades fisicoquímicas, pero la intensidad depende de la conservación.
+
+¿Qué observa respecto de la coloración de las cisteínas? ¿Es siempre igual? ¿A qué se debe?
+
+¿Hay residuos que siempre están coloreados? ¿Cuáles son y a qué cree que se debe?
+
+2.5. Filtro de Identidad (Colour → Above identity threshold):
+Modifica el umbral de identidad y observa qué regiones sobreviven al 80% o al 100%.
+
+¿Qué regiones muestran una identidad de secuencia mayor al 80%? ¿Coinciden estas regiones con los dominios encontrados en InterPro o con las regiones ordenadas de DisProt?
+
+Observando las regiones variables, ¿qué tipos de sustituciones observa? ¿Qué relación guardan con las matrices BLOSUM o PAM?
+
+
+---
+
+## **PARTE III: Predicción de Desorden**
+
+Uno de los mayores desafíos en el campo estructural es la predicción de proteínas intrínsecamente desordenadas (IDPs) o regiones desordenadas (IDRs). A diferencia de las proteínas globulares, las IDPs consisten en un ensamble (conjunto) dinámico de conformaciones.
+Existen distintas estrategias para predecir desorden a partir de la secuencia: algoritmos basados en la composición de aminoácidos (como IUPred), algoritmos de *machine learning* entrenados con cristalografía (PONDR, GlobPlot), y meta-predictores.
+
+### **Ejercicio 1.** IUPred3 Web para una secuencia { markdown data-toc-label='Ejercicio 1: IUPred3 Web' }
+
+!!! info "Score IUPred"
+    En general se considera que un residuo es:
+    
+    * **Desordenado** cuando el valor de IUPred es mayor o igual a 0.5
+    * **Ordenado** cuando es menor a 0.5
+    
+    Es posible utilizar la web de **IUPred3** [https://iupred3.elte.hu/](https://iupred3.elte.hu/){ target="_blank" } para realizar una predicción rápida.
+
+**1.1.** Ingresa el Accession Number de p53 (P04637) en la web. Selecciona el tipo de predicción *Long disorder*.
+
+**1.2.** Observa el gráfico interactivo resultante. ¿Las regiones predichas como desordenadas por el algoritmo (score $\ge$ 0.5) coinciden con la evidencia experimental que viste previamente en DisProt?
+
+### **Ejercicio 2.** IUPred3 en Google Colab (Python) { markdown data-toc-label='Ejercicio 2: IUPred3 Colab' }
+
+Imaginemos que queremos correr la predicción de desorden para cientos de proteínas o que queremos automatizar el cálculo del porcentaje de desorden de nuestras secuencias. El visualizador web no es práctico para esto.
+
+Utilizaremos el ejecutable de **IUPred3** corriendo comandos de terminal directamente desde nuestro entorno de Google Colab y procesando los datos con Python.
+
+**2.1.** Descarga IUPred3 y la secuencia de interés a analizar (p53).
+En tu primera celda de código de Colab, ejecuta estos comandos para traer los archivos desde la carpeta de la materia:
+```bash
+# Descargamos el algoritmo IUPred3
+!gdown "https://drive.google.com/uc?export=download&id=1TgHdeQAOzZJk3Yln1zlnbZYAHMI6P1G8" -O iupred3.tar.gz
+
+# Descargamos la secuencia de p53 humano
+!gdown "https://drive.google.com/uc?id=1_r4e6YsUYEUWYklPiK_w9V8-d1rlKvoD" -O P53_HUMAN.seq
+```
+
+**2.2.** En una celda de código de Colab, ejecuta los siguientes comandos de terminal (usando el prefijo `!`) para descomprimir el programa y realizar la predicción:
+
+```bash
+# Descomprimimos el archivo
+!tar -xzf iupred3.tar.gz
+
+# Corremos la predicción pasándole nuestro archivo de secuencia
+!python iupred3/iupred3.py -a P53_HUMAN.seq long > P53_HUMAN_long.iupred
+```
+
+**2.3** Ahora vamos a crear un script para procesar la tabla usando `pandas`, y crear nuestro propio gráfico con `matplotlib` y `seaborn`.
+
+```Python
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Leemos el archivo. Las líneas comentadas en el output empiezan con '#'
+fileIN = "P53_HUMAN_long.iupred"
+header = ["Posicion", "Aminoacido", "Iupred", "Anchor"]
+p53 = pd.read_csv(fileIN, sep="\t", names=header, comment="#", skipinitialspace=True)
+
+# Clasificamos según el umbral de 0.5
+umbral = 0.5
+p53['Prediccion'] = np.where(p53['Iupred'] >= umbral, 'Desorden', 'Orden')
+
+p53.head()
+
+```
+**2.4** Gráfico de predicción:
+
+``` Python
+plt.figure(figsize=(10, 4))
+sns.lineplot(data=p53, x='Posicion', y='Iupred', color='navy', zorder=1)
+sns.scatterplot(data=p53, x='Posicion', y='Iupred', hue='Prediccion', 
+                palette={'Desorden':'red', 'Orden':'blue'}, zorder=2)
+
+plt.axhline(y=0.5, color='black', linestyle='--', linewidth=1.5)
+plt.ylim(0, 1)
+plt.xlim(0, p53['Posicion'].max())
+plt.title('Predicción de Desorden (IUPred3) - p53')
+plt.grid(True, linestyle=':', alpha=0.6)
+plt.show()
+```
+
+**2.5** Análisis de composición: 
+Según la teórica, las regiones desordenadas están empobrecidas en aminoácidos hidrofóbicos y enriquecidas en residuos polares/cargados y prolina. Verifiquémoslo:
+
+``` Python
+# Frecuencia de aminoácidos en orden vs desorden
+aminoacidos = pd.crosstab(p53['Aminoacido'], p53['Prediccion'], normalize='all') * 100
+aminoacidos_df = aminoacidos.reset_index().melt(id_vars='Aminoacido', value_name='Porcentaje')
+
+plt.figure(figsize=(10, 5))
+plot_aa = sns.barplot(data=aminoacidos_df, x='Aminoacido', y='Porcentaje', hue='Prediccion')
+plt.ylim(0, 10)
+plt.title('Composición de Aminoácidos: Orden vs Desorden en p53')
+plt.grid(axis='y', linestyle=':', alpha=0.7)
+plt.show()
+```
+
+---
+
+## **Ejercicio a informar**
+!!! danger "Entrega"
+**Fecha límite de entrega: viernes 16/10, 23:59hs.** 
+ { markdown data-toc-label='Entrega de informe' }
+
+**Enunciado**
+
+Las ciclinas son proteínas que regulan el ciclo celular uniéndose y activando a las quinasas dependientes de ciclinas (CDKs). Dada su relevancia, su disfunción contribuye al desarrollo de diversas enfermedades, incluyendo el cáncer.
+La ciclina CCND1 (P24385, ciclina D1) es un regulador clave en la transición de la fase G1 a la fase S. Las ciclinas CCND2 (P30279, ciclina D2) y CCND3 (P30281, ciclina D3) tienen funciones estructurales similares a D1, pero se expresan en distintos tejidos.
+
+En tu laboratorio de bioinformática están interesados en estudiar la estructura de estas tres ciclinas para futuros ensayos de docking.
+
+**1 Predicción:** Usando tu pipeline de Colab (IUPred3), procesa e identifica el porcentaje de regiones desordenadas y globulares en las tres ciclinas. Genera los perfiles de desorden.
+
+**2. Alineamiento de secuencias:** Busca la composición de dominios Pfam. Crea un alineamiento múltiple (MSA) de las tres secuencias utilizando JalView. ¿Qué nivel de conservación observas en las regiones desordenadas vs. los dominios Pfam?
+
+**3. Validación:** Búscalas en DisProt. ¿Existen datos experimentales de desorden para estas proteínas? ¿Coinciden con las predicciones computacionales obtenidas en el punto 1?
+
+
+---
+
+## Ejercicios Adicionales (Opcionales)
+
+### **Ejercicio Adicional 1. Búsqueda de sitios de unión a IDPs (ANCHOR)** { markdown data-toc-label='Ejercicio Adicional 1' }
+
+Muchas proteínas desordenadas ejercen su función uniéndose a un partner globular, mediante una transición acoplada de plegamiento y unión (folding upon binding). ANCHOR es un algoritmo que identifica estos posibles sitios de unión dentro de regiones desordenadas.
+
+**1.1** En el servidor web de IUPred3, asegúrate de activar la opción ANCHOR en Context-dependent predictions para p53.
+
+ * ¿Cuántas regiones de interacción identifica la curva azul (ANCHOR)?
+
+**1.2** Ingresa a la base de datos [IDEAL](https://www.ideal-db.org/) y busca P53_HUMAN. Esta base de datos anota Protean Segments (ProS) con confirmación estructural.
+
+* En la región C-terminal, ¿a cuántas proteínas distintas se une p53? (Revisa el link "complex").
+
+* ¿Qué tipo de estructura secundaria (hélice, lámina, coil) adquiere ese segmento al unirse a distintos partners?
+
+**1.3** ¿Cuán precisas resultaron las predicciones ab initio de ANCHOR respecto a los complejos cristalizados reportados en IDEAL?
+
+### **Ejercicio Adicional 2. Proteínas Extremas** { markdown data-toc-label='Ejercicio Adicional 2' }
+
+**2.1** Busca la entrada DP00039 en DisProt. Corre IUPred3 para su secuencia.
+
+**2.2** Utiliza un script de Python o el servidor ProtParam (https://web.expasy.org/protparam/{ target="_blank" }) para contar la cantidad de aminoácidos con carga positiva vs negativa. Calcula su carga neta.
+
+**2.3** Observa los dominios que propone InterPro. ¿Existen contradicciones lógicas entre la asignación de familias y el altísimo desorden predicho?
+
+---
+
 
 !!! info "Score IUPred"
 
