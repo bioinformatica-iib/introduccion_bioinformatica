@@ -14,9 +14,9 @@ tags:
 <br>
 
 [:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1eL9f2b1i7_i6IfcxBv4tlrkBtTpXHBEy/view?usp=share_link){ .md-button .md-button--primary }
-<!--
-[:fontawesome-solid-download: Slides](https://docs.google.com/presentation/d/1s62O4NBwBTA1oQ8wTm85rNmqorYB9XWh/edit?slide=id.p1#slide=id.p1){ .md-button .md-button--primary }
--->
+[:fontawesome-solid-download: Slides](https://docs.google.com/presentation/d/1_KowQG7n5gw5mKBOy_D0kf9VT5XEdjEY/edit?usp=sharing){ .md-button .md-button--primary }
+[:fontawesome-solid-download: Colab](https://colab.research.google.com/drive/1-f_wFAeXbkidU-w87t97XS7d0prTFKan?usp=sharing){ .md-button .md-button--primary }
+
 <br>
 
 <!--
