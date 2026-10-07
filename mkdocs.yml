@@ -157,7 +157,7 @@ nav:
         - Teórica 6: teoricas/6-Teorica-Seis/index.md 
         - Teórica 7: teoricas/7-Teorica-Siete/index.md
         - Teórica 8: teoricas/8-Teorica-Ocho/index.md
-        # - Teórica 9: teoricas/9-Teorica-Nueve/index.md
+        - Teórica 9: teoricas/9-Teorica-Nueve/index.md
         # - Teórica 10: teoricas/10-Teorica-Diez/index.md
         # - Teórica 11: teoricas/11-Teorica-Once/index.md
         # - Teórica 12: teoricas/12-Teorica-Doce/index.md
@@ -176,7 +176,7 @@ nav:
         - TP 6 - Quimioinformática: 'practicos/TP06_Quimioinformatica/index.md'
         - TP 7 - Short Read Mapping: 'practicos/TP07_Short-Read-Mapping/index.md'
         - TP 8 - HMMs: 'practicos/TP08_HMM/index.md'        
-        # - TP 9 - PSI-BLAST: 'practicos/TP09_PSI-BLAST/index.md'
+        - TP 9 - Logos y Perfiles de Secuencias: 'practicos/TP09_PSI-BLAST/index.md'
         # - TP 8 - Predicción de Desorden: 'practicos/TP08_Desorden/index.md'
         # - TP 10 - Motivos Lineales: 'practicos/TP10_Motivos/index.md'
         # - TP 12 - Modelado por Homología y AlphaFold3: 'practicos/TP12_Modelado_Por_Homologia/index.md'
