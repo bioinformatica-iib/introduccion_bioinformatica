@@ -9,7 +9,7 @@ tags:
 
  Clase teórica de neural networks.
 
-* :fontawesome-regular-file-pdf: [Slides](https://drive.google.com/open?id=1BH-93oaGd8Ju0sa9Yb8OIzdxC0SeVe_x&usp=sharing)
+* :fontawesome-regular-file-pdf: [Slides](https://drive.google.com/file/d/1uvs7kK5jVKaEQwgLCX_lkTiH6aJG-Bjs/view?usp=sharing)
 
 *  :fontawesome-regular-file-pdf: [Handout_1](https://drive.google.com/open?id=1SRKk_Be-hZRq-ESOcW5jflB4tueJDtyX&usp=sharing)
 
