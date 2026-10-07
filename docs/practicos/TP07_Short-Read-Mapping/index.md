@@ -13,10 +13,8 @@ tags:
 <br>
 
 [:fontawesome-solid-download: Materiales](https://drive.google.com/drive/folders/1rHIb8dwkg5cDMfkGBVa7CqBde1MlfK5V?usp=sharing){ .md-button .md-button--primary } 
+[:fontawesome-solid-file-powerpoint: Slides](https://docs.google.com/presentation/d/1BUVcYKdTLUJS9TRq_3ykRiSALYRvbi90ZNIrqXDy1JA/edit?usp=sharing){ .md-button .md-button--primary } 
 
-<!--
-[:fontawesome-solid-file-powerpoint: Slides](https://docs.google.com/presentation/d/1YCPBpHr6XpacCGO2Ko3MoDxhwCaXGAgXUVZMPXoWd2g/edit?usp=sharing){ .md-button .md-button--primary } 
--->
 
 ## Objetivos
 
