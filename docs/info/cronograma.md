@@ -31,8 +31,8 @@ tags:
 | Jue, 24 Sep  | 9 hs |	:material-google-classroom: Presencial | [P7. Mapeo de secuencias](../practicos/TP07_Short-Read-Mapping/index.md) | :fontawesome-solid-hammer: Práctica |	J. Glavina |
 | Mar, 29 Sep  | 9 hs |	:material-google-classroom: Presencial | [T8. HMM](../teoricas/8-Teorica-Ocho/index.md) | :fontawesome-solid-brain: Teórica |	L. Chemes |
 | Jue, 1 Oct  | 9 hs |	:material-google-classroom: Presencial | [P8. HMM](../practicos/TP08_HMM/index.md) | :fontawesome-solid-hammer: Práctica |	J. Glavina |
-| Mar, 6 Oct   | 9 hs |	:material-google-classroom: Presencial | T9. ANN |  :fontawesome-solid-brain: Teórica |	L. Chemes |
-| Jue, 8 Oct   | 9 hs |	:material-google-classroom: Presencial | P9. Perfiles de secuencia y PSI-BLAST | :fontawesome-solid-hammer: Práctica |	J. Glavina |
+| Mar, 6 Oct   | 9 hs |	:material-google-classroom: Presencial | [T9. ANN](../teoricas/9-Teorica-Nueve/index.md) |  :fontawesome-solid-brain: Teórica |	L. Chemes |
+| Jue, 8 Oct   | 9 hs |	:material-google-classroom: Presencial | [P9. Perfiles de secuencia y PSI-BLAST](../practicos/TP09_PSI-BLAST/index.md) | :fontawesome-solid-hammer: Práctica |	J. Glavina |
 | Mar, 13 Oct  | 9 hs |	:material-google-classroom: Presencial | T10. Bioinformática Estructural: Desorden | :fontawesome-solid-brain: Teórica |	L. Chemes |
 | Jue, 15 Oct  | 9 hs |	:material-google-classroom: Presencial | P10. Predicción de Desorden | :fontawesome-solid-hammer: Práctica |	P. Nuñez |
 | Mar, 20 Oct  | 9 hs |	:material-google-classroom: Presencial | T11. Bioinformática Estructural: Motivos lineales | :fontawesome-solid-brain: Teórica |	L. Chemes |
