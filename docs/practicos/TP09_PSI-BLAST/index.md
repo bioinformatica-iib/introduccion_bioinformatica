@@ -15,6 +15,8 @@ tags:
 <br>
 <br>
 
+!!! warning "Atención: Este TP tiene parcialito."
+
 [:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1yfCSpn7mLNCOrmQSzKKEd9eY0LsCVoB2/view?usp=sharing){ .md-button .md-button--primary } 
 <!--
 [:fontawesome-solid-download: Slides](https://drive.google.com/open?id=1LrvZKKcxcOMjc-gu-mi5s2lBPqL2vkvK&usp=sharing){ .md-button .md-button--primary }
