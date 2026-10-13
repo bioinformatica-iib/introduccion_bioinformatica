@@ -183,6 +183,9 @@ Utilizaremos la librería **Biopython** para extraer cada secuencia de nuestro a
 **2.1.** Preparación del entorno y descarga de archivos.
 En tu primera celda de código de Colab, instala Biopython y trae los archivos desde la carpeta de materiales de la materia:
 
+!!! info "¿Qué es Biopython?"
+Biopython es un conjunto de herramientas de Python diseñadas específicamente para resolver tareas de biología computacional. En este TP utilizaremos su módulo SeqIO (Sequence Input/Output), que nos permite leer el archivo multi-FASTA, separar automáticamente las secuencias y acceder a sus propiedades (como el nombre o los aminoácidos) de forma muy sencilla, ahorrándonos el trabajo de tener que programar el recorte del texto a mano.
+
 ```bash
 # Instalamos Biopython
 !pip install biopython
