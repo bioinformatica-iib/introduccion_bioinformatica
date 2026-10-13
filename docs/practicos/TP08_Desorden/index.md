@@ -111,8 +111,6 @@ Selecciona la proteína que se llama: [Cellular tumor antigen p53 (TP53) Homo sa
 
       Para responder las preguntas debajo, asegúrate de que en el panel superior de la página, en **alignments**, esté seleccionada la opción **QFO**. (Puedes investigar qué pasa si cambian a otras opciones, como *mammalian* o *vertebrates*).
 
-      En **Options** a la izquierda haz click en *Show/hide gaps*. Aparecen más posiciones con gaps en el alineamiento que antes estaban ocultas.
-
 
 **1.1.** ¿Qué regiones parecen estar mejor alineadas (indicar aproximadamente de qué posición a qué posición de la primera secuencia)?
 
@@ -160,95 +158,153 @@ Existen distintas estrategias para predecir desorden a partir de la secuencia: a
 
 ### **Ejercicio 1.** IUPred3 Web para una secuencia { markdown data-toc-label='Ejercicio 1: IUPred3 Web' }
 
+### **Ejercicio 1.** IUPred3 Web para una secuencia { markdown data-toc-label='Ejercicio 1: IUPred3 Web' }
+
 !!! info "Score IUPred"
     En general se considera que un residuo es:
     
     * **Desordenado** cuando el valor de IUPred es mayor o igual a 0.5
     * **Ordenado** cuando es menor a 0.5
-    
+
+     **Nota:** Esta es una convención. El umbral lo puede decir el usuario a su propia conveniencia.
+     
     Es posible utilizar la web de **IUPred3** [https://iupred3.elte.hu/](https://iupred3.elte.hu/){ target="_blank" } para realizar una predicción rápida.
 
 **1.1.** Ingresa el Accession Number de p53 (P04637) en la web. Selecciona el tipo de predicción *Long disorder*.
 
-**1.2.** Observa el gráfico interactivo resultante. ¿Las regiones predichas como desordenadas por el algoritmo (score $\ge$ 0.5) coinciden con la evidencia experimental que viste previamente en DisProt?
+**1.2.** Observa el gráfico interactivo resultante. ¿Las regiones predichas como desordenadas por el algoritmo (score $\ge$ 0.5) coinciden con la evidencia experimental que se vió previamente en DisProt?
 
-### **Ejercicio 2.** IUPred3 en Google Colab (Python) { markdown data-toc-label='Ejercicio 2: IUPred3 Colab' }
+### **Ejercicio 2.** Análisis de múltiples secuencias con IUPred3 en Google Colab (Python) { markdown data-toc-label='Ejercicio 2: IUPred3 Colab' }
 
-Imaginemos que queremos correr la predicción de desorden para cientos de proteínas o que queremos automatizar el cálculo del porcentaje de desorden de nuestras secuencias. El visualizador web no es práctico para esto.
+Imaginemos que queremos analizar la conservación del desorden en decenas de ortólogos de p53. El visualizador web no es práctico para analizar muchas secuencias a la vez.
 
-Utilizaremos el ejecutable de **IUPred3** corriendo comandos de terminal directamente desde nuestro entorno de Google Colab y procesando los datos con Python.
+Utilizaremos la librería **Biopython** para extraer cada secuencia de nuestro archivo multi-FASTA, ejecutaremos el algoritmo de **IUPred3** desde Python usando comandos del sistema, y consolidaremos los datos para generar un gráfico superpuesto.
 
-**2.1.** Descarga IUPred3 y la secuencia de interés a analizar (p53).
-En tu primera celda de código de Colab, ejecuta estos comandos para traer los archivos desde la carpeta de la materia:
+**2.1.** Preparación del entorno y descarga de archivos.
+En tu primera celda de código de Colab, instala Biopython y trae los archivos desde la carpeta de materiales de la materia:
+
 ```bash
+# Instalamos Biopython
+!pip install biopython
+
 # Descargamos el algoritmo IUPred3
-!gdown "https://drive.google.com/uc?export=download&id=1TgHdeQAOzZJk3Yln1zlnbZYAHMI6P1G8" -O iupred3.tar.gz
+!gdown "[https://drive.google.com/uc?id=1TgHdeQAOzZJk3Yln1zlnbZYAHMI6P1G8](https://drive.google.com/uc?id=1TgHdeQAOzZJk3Yln1zlnbZYAHMI6P1G8)" -O iupred3.tar.gz
 
-# Descargamos la secuencia de p53 humano
-!gdown "https://drive.google.com/uc?id=1_r4e6YsUYEUWYklPiK_w9V8-d1rlKvoD" -O P53_HUMAN.seq
-```
+# Descargamos el archivo multi-FASTA con ortólogos de p53
+!gdown "[https://drive.google.com/uc?id=1ZsNxx4T8dp6HVXUsv482XzjTsm3FwEsO](https://drive.google.com/uc?id=1ZsNxx4T8dp6HVXUsv482XzjTsm3FwEsO)" -O p53.fasta
 
-**2.2.** En una celda de código de Colab, ejecuta los siguientes comandos de terminal (usando el prefijo `!`) para descomprimir el programa y realizar la predicción:
-
-```bash
-# Descomprimimos el archivo
+# Descomprimimos el algoritmo
 !tar -xzf iupred3.tar.gz
-
-# Corremos la predicción pasándole nuestro archivo de secuencia
-!python iupred3/iupred3.py -a P53_HUMAN.seq long > P53_HUMAN_long.iupred
 ```
 
-**2.3** Ahora vamos a crear un script para procesar la tabla usando `pandas`, y crear nuestro propio gráfico con `matplotlib` y `seaborn`.
+**2.2.** Procesamiento del archivo multi-FASTA: Vamos a leer el archivo multi-FASTA, extraer cada secuencia de forma individual, correr IUPred3 y unir todas las tablas resultantes en un único DataFrame de Pandas.
 
 ```Python
+import os
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
+from Bio import SeqIO
 
-# Leemos el archivo. Las líneas comentadas en el output empiezan con '#'
-fileIN = "P53_HUMAN_long.iupred"
-header = ["Posicion", "Aminoacido", "Iupred", "Anchor"]
-p53 = pd.read_csv(fileIN, sep="\t", names=header, comment="#", skipinitialspace=True)
+# 1. Leemos todas las secuencias del archivo multi-FASTA
+secuencias = list(SeqIO.parse("p53.fasta", "fasta"))
+
+lista_de_tablas = []
+nombres_columnas = ["Posicion", "Aminoacido", "Iupred", "Anchor"]
+
+print(f"Procesando {len(secuencias)} secuencias. Esto puede tardar un momento...")
+
+for i, secuencia_actual in enumerate(secuencias):
+    # Tomamos el nombre de la secuencia
+    nombre_proteina = secuencia_actual.id.split("|")[-1] 
+    
+    # Nombres de los archivos que vamos a crear en cada vuelta del ciclo
+    archivo_secuencia = f"secuencia_{i}.seq"
+    archivo_resultado = f"resultado_{i}.iupred"
+    
+    # 2. Guardamos la secuencia individual en la computadora de Colab
+    SeqIO.write(secuencia_actual, archivo_secuencia, "fasta")
+    
+    # 3. Ejecutamos IUPred3 mandando el comando a la terminal del sistema
+    comando = f"python iupred3/iupred3.py -a {archivo_secuencia} long > {archivo_resultado}"
+    os.system(comando)
+    
+    # 4. Leemos el resultado y lo guardamos en una tabla de Pandas
+    tabla_individual = pd.read_csv(archivo_resultado, sep="\t", names=nombres_columnas, comment="#", skipinitialspace=True)
+    
+    # Agregamos una columna clave para identificar de qué proteína son estos datos
+    tabla_individual['Proteina'] = nombre_proteina  
+    
+    # Guardamos esta tabla en nuestra lista
+    lista_de_tablas.append(tabla_individual)
+
+# 5. Unimos todas las tablas pequeñas en una sola tabla grande
+tabla_general = pd.concat(lista_de_tablas, ignore_index=True)
 
 # Clasificamos según el umbral de 0.5
-umbral = 0.5
-p53['Prediccion'] = np.where(p53['Iupred'] >= umbral, 'Desorden', 'Orden')
+tabla_general['Prediccion'] = np.where(tabla_general['Iupred'] >= 0.5, 'Desorden', 'Orden')
 
-p53.head()
-
+# Vemos las primeras filas
+tabla_general.head()
 ```
-**2.4** Gráfico de predicción:
 
-``` Python
-plt.figure(figsize=(10, 4))
-sns.lineplot(data=p53, x='Posicion', y='Iupred', color='navy', zorder=1)
-sns.scatterplot(data=p53, x='Posicion', y='Iupred', hue='Prediccion', 
-                palette={'Desorden':'red', 'Orden':'blue'}, zorder=2)
+**2.3** Gráfico de conservación del desorden (Media y Desvío):
+Para ver el comportamiento general de la familia p53, vamos a graficar todas las curvas individuales superpuestas con un color tenue. Por encima, calcularemos y graficaremos la línea media junto a una franja sombreada que represente el desvío estándar.
 
-plt.axhline(y=0.5, color='black', linestyle='--', linewidth=1.5)
+```Python
+plt.figure(figsize=(12, 5))
+
+# Primero: Graficamos todas las secuencias individuales superpuestas
+# Usamos alpha=0.3 para que sean semitransparentes y formen el fondo
+sns.lineplot(data=tabla_general, x='Posicion', y='Iupred', hue='Proteina', 
+             alpha=0.3, linewidth=1, legend=False)
+
+# Segundo: Graficamos la Media y el Desvío Estándar
+# Al no pasarle 'hue', Seaborn agrupa automáticamente por Posición, 
+# calcula la media y grafica el desvío estándar (errorbar='sd')
+sns.lineplot(data=tabla_general, x='Posicion', y='Iupred', color='black', 
+             errorbar='sd', linewidth=2.5, label='Media ± Desvío')
+
+# Formato del gráfico
+plt.axhline(y=0.5, color='red', linestyle='--', linewidth=1.5, label='Umbral (0.5)')
 plt.ylim(0, 1)
-plt.xlim(0, p53['Posicion'].max())
-plt.title('Predicción de Desorden (IUPred3) - p53')
+plt.xlim(0, tabla_general['Posicion'].max())
+plt.xlabel("Posición (Aminoácido)", fontsize=12)
+plt.ylabel("Score IUPred3", fontsize=12)
+plt.title("Conservación del desorden en p53", fontsize=14)
 plt.grid(True, linestyle=':', alpha=0.6)
+plt.legend(loc='upper right')
+
+plt.tight_layout()
 plt.show()
 ```
+Observa el gráfico generado con las secuencias superpuestas y la tendencia central, y responde:
+
+* La línea negra marca la tendencia general de la familia p53. ¿Qué regiones (N-terminal, central, C-terminal) muestran mayor propensión conservada al desorden?
+
+* Notarás que el "ruido" (el desvío estándar sombreado) se ensancha o que las curvas individuales de fondo se desfasen hacia la derecha o izquierda. ¿Por qué ocurre esto al graficar por posición sin haber hecho un alineamiento previo con gaps?
 
 **2.5** Análisis de composición: 
-Según la teórica, las regiones desordenadas están empobrecidas en aminoácidos hidrofóbicos y enriquecidas en residuos polares/cargados y prolina. Verifiquémoslo:
+Según la teórica, las regiones desordenadas están empobrecidas en aminoácidos hidrofóbicos y enriquecidas en residuos polares/cargados y prolina. 
+Aprovechemos nuestro DataFrame general con todas las secuencias juntas para ver qué aminoácidos son más frecuentes en regiones ordenadas vs. desordenadas en todas las secuencias:
 
 ``` Python
-# Frecuencia de aminoácidos en orden vs desorden
-aminoacidos = pd.crosstab(p53['Aminoacido'], p53['Prediccion'], normalize='all') * 100
-aminoacidos_df = aminoacidos.reset_index().melt(id_vars='Aminoacido', value_name='Porcentaje')
+plt.figure(figsize=(12, 5))
 
-plt.figure(figsize=(10, 5))
-plot_aa = sns.barplot(data=aminoacidos_df, x='Aminoacido', y='Porcentaje', hue='Prediccion')
-plt.ylim(0, 10)
-plt.title('Composición de Aminoácidos: Orden vs Desorden en p53')
+# El gráfico cuenta automáticamente la frecuencia en la tabla
+sns.countplot(data=tabla_general, x='Aminoacido', hue='Prediccion', 
+              palette={'Desorden':'red', 'Orden':'blue'}, 
+              order=tabla_general['Aminoacido'].value_counts().index)
+
+plt.title('Abundancia de Aminoácidos: Orden vs Desorden en p53')
+plt.ylabel('Cantidad total de residuos')
 plt.grid(axis='y', linestyle=':', alpha=0.7)
 plt.show()
 ```
+Deberías obtener un gráfico como el siguiente:
+
+![](./img/Aminoacidos.png)
 
 ---
 
@@ -298,7 +354,7 @@ Muchas proteínas desordenadas ejercen su función uniéndose a un partner globu
 **2.2** Utiliza un script de Python o el servidor ProtParam (https://web.expasy.org/protparam/{ target="_blank" }) para contar la cantidad de aminoácidos con carga positiva vs negativa. Calcula su carga neta.
 
 **2.3** Observa los dominios que propone InterPro. ¿Existen contradicciones lógicas entre la asignación de familias y el altísimo desorden predicho?
-
+<!--
 ---
 
 
