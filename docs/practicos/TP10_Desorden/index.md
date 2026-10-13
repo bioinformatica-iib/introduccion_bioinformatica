@@ -54,6 +54,7 @@ La proteína p53 es esencial para inducir la respuesta celular ante el daño al 
 ### **Ejercicio 1.** Base de datos DisProt { markdown data-toc-label='Ejercicio 1' }
 
 La base de datos [DisProt](https://disprot.org/) es una colección de evidencia de desorden experimental recolectada de la literatura y curada manualmente, e incluye por lo menos:
+
 * un experimento,
 * el artículo científico correspondiente a ese experimento,
 * el inicio y final de la región desordenada en la secuencia proteica
@@ -69,28 +70,36 @@ La ontología de desorden está organizada en tres categorías diferentes:
 
 En Disprot también se incluye la función molecular *Molecular function* de cada región. 
 
+#### ✏️ Exploración de Disprot
+
 Ingresa a la web de DisProt y encuentra la proteína p53 (P04637). El identificador de DisProt que deberías encontrar es **DP00086**.
 
-**1.1.** Expande la sección *Structural state* y luego *Disorder*:
+#### ✏️ Expande la sección *Structural state* y luego *Disorder*, y responde:
+
    * ¿A qué corresponden los segmentos coloreados en la secuencia?
    * ¿Qué tipo de evidencia experimental validó dichos fragmentos como desordenados?
 
-**1.2.** Pensando en el rol biológico de estas regiones, expande *Molecular Function* y *Disorder Function*:
+####  ✏️  Pensando en el rol biológico de estas regiones, expande *Molecular Function* y *Disorder Function*, y responde:
+
    * ¿Qué tipo de funciones están indicadas para las regiones desordenadas de p53?
    * Nombra al menos dos técnicas experimentales que se hayan usado para asignar estas funciones.
 
 ### **Ejercicio 2.** Dominios conservados en InterPro { markdown data-toc-label='Ejercicio 2' }
 
 !!! idea "Integrando conceptos: InterPro, Pfam y HMMs"
-      En el TP de anterior de HMMs aprendimos a identificar dominios conservados en proteínas utilizando bases de datos de perfiles como **Pfam** a través de **InterPro**. 
+      En el TP de HMMs aprendimos a identificar dominios conservados en proteínas utilizando bases de datos de perfiles como **Pfam** a través de **InterPro**. 
 
-Observa la línea de **InterPro** dentro de la misma página de DisProt (o busca P04637 directamente en la web de InterPro (https://www.ebi.ac.uk/interpro/) y enfócate en las predicciones de la base de datos **Pfam**.
+#### ✏️ Observando dominios en InterPro
 
-**2.1.** ¿Cuántos dominios conservados distintos muestra Pfam para p53?
+Observa la línea de **InterPro** dentro de la misma página de DisProt (Ojo! En DisProt se indican los InterPro Domains que corresponden a Pfam domains) o bien busca P04637 directamente en la web de [InterPro](https://www.ebi.ac.uk/interpro/) y enfócate en los dominios de la base de datos **Pfam**
 
-**2.2.** Contrastando con la información vista en el Ejercicio 1: Las regiones validadas experimentalmente como "desordenadas" en DisProt, ¿coinciden con la presencia o con la ausencia de dominios Pfam? 
+#### ✏️ Preguntas
 
-**2.3.** Biológica y estructuralmente, ¿por qué crees que sucede esto?
+* ¿Cuántos dominios conservados distintos muestra Pfam para p53?
+
+* Contrastando con la información vista en el Ejercicio 1: Las regiones validadas experimentalmente como "desordenadas" en DisProt, ¿coinciden con la presencia o con la ausencia de dominios Pfam? 
+
+* Biológica y estructuralmente, ¿por qué crees que sucede esto?
 
 ---
 ## **PARTE II: Análisis de Regiones Desordenadas a través de Alineamientos Múltiples de Secuencia (MSAs)**
@@ -102,51 +111,85 @@ Observa la línea de **InterPro** dentro de la misma página de DisProt (o busca
       ¿Qué información podemos obtener de los MSA?
 
 **ProViz** es una herramienta que permite visualizar alineamientos y estructura de dominios de una proteína online. 
-### **Ejercicio 1.** Ingresa a la web de **ProViz** [http://slim.icr.ac.uk/proviz/](http://slim.icr.ac.uk/proviz/), y busca la proteína p53 ingresando su Accession Number en la ventana “search” (Accession Number: P04637): { markdown data-toc-label='Ejercicio 1: ProViz' }
+
+
+### **Ejercicio 1.** Explorando Alineamientos de Secuencia Online
+
+Ingresa a la web de **ProViz** [http://slim.icr.ac.uk/proviz/](http://slim.icr.ac.uk/proviz/), y busca la proteína p53 ingresando su Accession Number en la ventana “search” (Accession Number: P04637): { markdown data-toc-label='Ejercicio 1: ProViz' }
+
+#### ✏️ Explora p53 en Proviz
 
 Selecciona la proteína que se llama: [Cellular tumor antigen p53 (TP53) Homo sapiens (Human)](http://slim.icr.ac.uk/proviz/proviz.php?uniprot_acc=P04637). Es la primera de la lista.
 
-
 !!! danger "IMPORTANTE"
 
-      Para responder las preguntas debajo, asegúrate de que en el panel superior de la página, en **alignments**, esté seleccionada la opción **QFO**. (Puedes investigar qué pasa si cambian a otras opciones, como *mammalian* o *vertebrates*).
+      Para responder las preguntas debajo, asegúrate de que en el panel superior de la página, en **alignments**, esté seleccionada la opción **QFO**. (Puedes investigar qué pasa si cambian a otras opciones, como *metazoa* o *vertebrates*).
 
+#### ✏️ Preguntas
 
-**1.1.** ¿Qué regiones parecen estar mejor alineadas (indicar aproximadamente de qué posición a qué posición de la primera secuencia)?
+* Observa la secuencia de *Oryzias latipes*, ¿puedes encontrar letras minúsculas? ¿A qué se deben?
 
-**1.2.** ¿Existe diferencia en la composición de secuencia entre las regiones mejor alineadas y las no tan bien alineadas?
+??? tip "Pista"
 
-**1.3.** ¿Se observan diferencias en el grado de conservación de estas regiones?
+      Esa región no posee posiciones homólogas en la secuencia humana de p53, y por lo tanto, se perderían las anotaciones de dominios y estructuras, para evitarlo, todas las regiones que no tienen posiciones homólogas en p53 humana fueron recortadas.
 
-**1.4.** ¿A qué pueden deberse las diferencias observadas?
+* ¿Hay regiones de las secuencias que tengan más minúsculas? (N-terminal, C-terminal, o la región central)
+
+* ¿Qué regiones parecen estar mejor alineadas (indicar aproximadamente de qué posición a qué posición de la primera secuencia)?
+
+* ¿Existen diferencias en la composición de secuencia entre las regiones mejor alineadas y las no tan bien alineadas?
+
+* ¿Se observan diferencias en el grado de conservación de estas regiones?
+
+* ¿A qué pueden deberse las diferencias observadas?
+
 
 ### **Ejercicio 2.** Opción Local: Análisis con JalView { markdown data-toc-label='Ejercicio 2: JalView' }
 
 Jalview es un software robusto que permite generar, editar, analizar y colorear alineamientos localmente.
 
-2.1. Abre JalView (ejecutando el programa en tu computadora). Descarga y abre el conjunto de secuencias p53.fasta proporcionado en los materiales:
-File → Input Alignment → From File
+Jalview lo puedes descargar para tu sistema operativo desde: [Jalview - Downloads](https://www.jalview.org/download/)
 
-2.2. Para realizar el alineamiento, usaremos Clustal de manera remota:
-Web Service → Alignment → Clustal → With defaults
-(Nota: Si el servicio falla, abre directamente el archivo p53_aligned.fasta que ya se encuentra alineado).
+#### ✏️ Preguntas
 
-2.3. Edición del alineamiento:
-Si algunas secuencias son mucho más cortas o están truncadas, pueden generar ruido. Selecciona el nombre de la secuencia a la izquierda y bórrala (teclas ++backspace++ o ++del++). ¿Por qué creen que es importante filtrar el alineamiento inicial?
+* Abre JalView (ejecutando el programa en tu computadora). Descarga y abre el conjunto de secuencias p53.fasta proporcionado en los materiales:
 
-2.4. Análisis por colores (Colour → Clustalx):
-Este esquema colorea por propiedades fisicoquímicas, pero la intensidad depende de la conservación.
+      *File* → *Input Alignment* → *From File*
 
-¿Qué observa respecto de la coloración de las cisteínas? ¿Es siempre igual? ¿A qué se debe?
+* Para realizar el alineamiento, usaremos Clustal de manera remota:
 
-¿Hay residuos que siempre están coloreados? ¿Cuáles son y a qué cree que se debe?
+      *Web Service* → *Alignment* → *Clustal* → *With defaults*
 
-2.5. Filtro de Identidad (Colour → Above identity threshold):
-Modifica el umbral de identidad y observa qué regiones sobreviven al 80% o al 100%.
+      (Nota: Si el servicio falla, abre directamente el archivo p53_aligned.fasta que ya se encuentra alineado).
 
-¿Qué regiones muestran una identidad de secuencia mayor al 80%? ¿Coinciden estas regiones con los dominios encontrados en InterPro o con las regiones ordenadas de DisProt?
+* Edición del alineamiento:
 
-Observando las regiones variables, ¿qué tipos de sustituciones observa? ¿Qué relación guardan con las matrices BLOSUM o PAM?
+      Si algunas secuencias son mucho más cortas o están truncadas, pueden generar ruido. Selecciona el nombre de la secuencia a la izquierda y bórrala (teclas ++backspace++ o ++del++).
+
+
+      * ¿Por qué creen que algunas secuencias son más cortas? ¿Todas empiezan con metionina? ¿Todas incluyen todas las regiones de p53?
+      
+      * ¿Por qué creen que es importante filtrar el alineamiento inicial?
+
+* Análisis por colores. Colorea el alineamiento:
+
+      *Colour* → *Clustal*
+
+      Este esquema colorea por propiedades fisicoquímicas, pero la intensidad depende de la conservación. Explore a qué corresponde cada color de Clustal en el [esquema de colores](https://www.jalview.org/help/html/colourSchemes/clustal.html)
+
+      * ¿Qué observa respecto de la coloración de las cisteínas? ¿Es siempre igual? ¿A qué se debe?
+
+      * ¿Hay residuos que siempre están coloreados? ¿Cuáles son y a qué cree que se debe?
+
+* Filtro de Identidad.
+
+      Modifica el umbral de identidad y observa qué regiones sobreviven al 80% o al 100%.
+
+      *Colour* → *Above identity threshold*
+
+      * ¿Qué regiones muestran una identidad de secuencia mayor al 80%? ¿Coinciden estas regiones con los dominios encontrados en InterPro o con las regiones ordenadas de DisProt?
+
+* Observando las regiones variables, ¿qué tipos de sustituciones observa? ¿Qué relación guardan con las matrices BLOSUM o PAM?
 
 
 ---
@@ -155,8 +198,6 @@ Observando las regiones variables, ¿qué tipos de sustituciones observa? ¿Qué
 
 Uno de los mayores desafíos en el campo estructural es la predicción de proteínas intrínsecamente desordenadas (IDPs) o regiones desordenadas (IDRs). A diferencia de las proteínas globulares, las IDPs consisten en un ensamble (conjunto) dinámico de conformaciones.
 Existen distintas estrategias para predecir desorden a partir de la secuencia: algoritmos basados en la composición de aminoácidos (como IUPred), algoritmos de *machine learning* entrenados con cristalografía (PONDR, GlobPlot), y meta-predictores.
-
-### **Ejercicio 1.** IUPred3 Web para una secuencia { markdown data-toc-label='Ejercicio 1: IUPred3 Web' }
 
 ### **Ejercicio 1.** IUPred3 Web para una secuencia { markdown data-toc-label='Ejercicio 1: IUPred3 Web' }
 
@@ -170,9 +211,13 @@ Existen distintas estrategias para predecir desorden a partir de la secuencia: a
      
     Es posible utilizar la web de **IUPred3** [https://iupred3.elte.hu/](https://iupred3.elte.hu/){ target="_blank" } para realizar una predicción rápida.
 
-**1.1.** Ingresa el Accession Number de p53 (P04637) en la web. Selecciona el tipo de predicción *Long disorder*.
 
-**1.2.** Observa el gráfico interactivo resultante. ¿Las regiones predichas como desordenadas por el algoritmo (score $\ge$ 0.5) coinciden con la evidencia experimental que se vió previamente en DisProt?
+####  ✏️  Predicción de desorden Online
+
+* Ingresa el Accession Number de p53 (P04637) en la web. Selecciona el tipo de predicción *Long disorder*.
+
+* Observa el gráfico interactivo resultante. ¿Las regiones predichas como desordenadas por el algoritmo (score $\ge$ 0.5) coinciden con la evidencia experimental que se vió previamente en DisProt?
+
 
 ### **Ejercicio 2.** Análisis de múltiples secuencias con IUPred3 en Google Colab (Python) { markdown data-toc-label='Ejercicio 2: IUPred3 Colab' }
 
@@ -180,27 +225,38 @@ Imaginemos que queremos analizar la conservación del desorden en decenas de ort
 
 Utilizaremos la librería **Biopython** para extraer cada secuencia de nuestro archivo multi-FASTA, ejecutaremos el algoritmo de **IUPred3** desde Python usando comandos del sistema, y consolidaremos los datos para generar un gráfico superpuesto.
 
-**2.1.** Preparación del entorno y descarga de archivos.
-En tu primera celda de código de Colab, instala Biopython y trae los archivos desde la carpeta de materiales de la materia:
+#### ✏️ Preparación del entorno y descarga de archivos
+
+* En tu primera celda de código de Colab, instala Biopython y trae los archivos desde la carpeta de materiales de la materia:
 
 !!! info "¿Qué es Biopython?"
-Biopython es un conjunto de herramientas de Python diseñadas específicamente para resolver tareas de biología computacional. En este TP utilizaremos su módulo SeqIO (Sequence Input/Output), que nos permite leer el archivo multi-FASTA, separar automáticamente las secuencias y acceder a sus propiedades (como el nombre o los aminoácidos) de forma muy sencilla, ahorrándonos el trabajo de tener que programar el recorte del texto a mano.
+
+      Biopython es un conjunto de herramientas de Python diseñadas específicamente para resolver tareas de biología computacional. En este TP utilizaremos su módulo SeqIO (Sequence Input/Output), que nos permite leer el archivo multi-FASTA, separar automáticamente las secuencias y acceder a sus propiedades (como el nombre o los aminoácidos) de forma muy sencilla, ahorrándonos el trabajo de tener que programar el recorte del texto a mano.
 
 ```bash
 # Instalamos Biopython
 !pip install biopython
 
 # Descargamos el algoritmo IUPred3
-!gdown "[https://drive.google.com/uc?id=1TgHdeQAOzZJk3Yln1zlnbZYAHMI6P1G8](https://drive.google.com/uc?id=1TgHdeQAOzZJk3Yln1zlnbZYAHMI6P1G8)" -O iupred3.tar.gz
+!gdown "https://drive.google.com/uc?id=1TgHdeQAOzZJk3Yln1zlnbZYAHMI6P1G8" -O iupred3.tar.gz
 
 # Descargamos el archivo multi-FASTA con ortólogos de p53
-!gdown "[https://drive.google.com/uc?id=1ZsNxx4T8dp6HVXUsv482XzjTsm3FwEsO](https://drive.google.com/uc?id=1ZsNxx4T8dp6HVXUsv482XzjTsm3FwEsO)" -O p53.fasta
+!gdown "https://drive.google.com/uc?id=1ZsNxx4T8dp6HVXUsv482XzjTsm3FwEsO" -O p53.fasta
 
 # Descomprimimos el algoritmo
 !tar -xzf iupred3.tar.gz
 ```
 
-**2.2.** Procesamiento del archivo multi-FASTA: Vamos a leer el archivo multi-FASTA, extraer cada secuencia de forma individual, correr IUPred3 y unir todas las tablas resultantes en un único DataFrame de Pandas.
+#### ✏️ Gráfico de IUPred para p53
+
+**AGREGAR ACÁ UN EJERCICIO SIMPLE PARA QUE PLOTEEN UNA SECUENCIA**
+
+Sin embargo, si uno quisiera ver la conservación del desorden, sería interesante poder visualizar en un mismo gráfico todos los Score de IUPred de todas las secuencias juntas. Pero, primero hay que alinear el score de IUPred de cada posición de cada secuencia a las posiciones del alineamiento.
+
+#### ✏️ Procesamiento del archivo multi-FASTA
+
+* Vamos a leer el archivo multi-FASTA, extraer cada secuencia de forma individual, correr IUPred3 y unir todas las tablas resultantes en un único DataFrame de Pandas.
+
 
 ```Python
 import os
@@ -252,7 +308,8 @@ tabla_general['Prediccion'] = np.where(tabla_general['Iupred'] >= 0.5, 'Desorden
 tabla_general.head()
 ```
 
-**2.3** Gráfico de conservación del desorden (Media y Desvío):
+#### ✏️ Gráfico de conservación del desorden (Media y Desvío)
+
 Para ver el comportamiento general de la familia p53, vamos a graficar todas las curvas individuales superpuestas con un color tenue. Por encima, calcularemos y graficaremos la línea media junto a una franja sombreada que represente el desvío estándar.
 
 ```Python
@@ -282,13 +339,17 @@ plt.legend(loc='upper right')
 plt.tight_layout()
 plt.show()
 ```
+
+#### ✏️ Preguntas
+
 Observa el gráfico generado con las secuencias superpuestas y la tendencia central, y responde:
 
 * La línea negra marca la tendencia general de la familia p53. ¿Qué regiones (N-terminal, central, C-terminal) muestran mayor propensión conservada al desorden?
 
 * Notarás que el "ruido" (el desvío estándar sombreado) se ensancha o que las curvas individuales de fondo se desfasen hacia la derecha o izquierda. ¿Por qué ocurre esto al graficar por posición sin haber hecho un alineamiento previo con gaps?
 
-**2.5** Análisis de composición: 
+#### ✏️ Análisis de composición: 
+
 Según la teórica, las regiones desordenadas están empobrecidas en aminoácidos hidrofóbicos y enriquecidas en residuos polares/cargados y prolina. 
 Aprovechemos nuestro DataFrame general con todas las secuencias juntas para ver qué aminoácidos son más frecuentes en regiones ordenadas vs. desordenadas en todas las secuencias:
 
@@ -313,7 +374,7 @@ Deberías obtener un gráfico como el siguiente:
 
 ## **Ejercicio a informar**
 !!! danger "Entrega"
-**Fecha límite de entrega: viernes 16/10, 23:59hs.** 
+**Fecha límite de entrega: viernes 23/10, 23:59hs.** 
  { markdown data-toc-label='Entrega de informe' }
 
 **Enunciado**
