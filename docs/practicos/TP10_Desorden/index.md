@@ -51,13 +51,13 @@ La predicción de IDRs/IDPs a partir de la secuencia de aminoácidos permite un 
 
 La proteína p53 es esencial para inducir la respuesta celular ante el daño al ADN, deteniendo el ciclo celular o induciendo apoptosis, por lo que mutaciones en la misma pueden dar como resultado distintos tipos de cáncer. Dada su importancia biomédica, es una de las proteínas más estudiadas estructural y funcionalmente.
 
-### **Ejercicio 1.** Base de datos DisProt { markdown data-toc-label='Ejercicio 1' }
+### **Ejercicio 1.** Base de datos DisProt { markdown data-toc-label='Ejercicio 1: DisProt' } 
 
 La base de datos [DisProt](https://disprot.org/) es una colección de evidencia de desorden experimental recolectada de la literatura y curada manualmente, e incluye por lo menos:
 
 * un experimento,
 * el artículo científico correspondiente a ese experimento,
-* el inicio y final de la región desordenada en la secuencia proteica
+* el inicio y final de la región desordenada en la secuencia proteica,
 * un término de anotación que corresponde a la Ontología de desorden.
     
 **Cada una de las entradas en la base de datos posee un identificador único**
@@ -84,14 +84,14 @@ Ingresa a la web de DisProt y encuentra la proteína p53 (P04637). El identifica
    * ¿Qué tipo de funciones están indicadas para las regiones desordenadas de p53?
    * Nombra al menos dos técnicas experimentales que se hayan usado para asignar estas funciones.
 
-### **Ejercicio 2.** Dominios conservados en InterPro { markdown data-toc-label='Ejercicio 2' }
+### **Ejercicio 2.** Dominios conservados en InterPro { markdown data-toc-label='Ejercicio 2: InterPro' }
 
 !!! idea "Integrando conceptos: InterPro, Pfam y HMMs"
       En el TP de HMMs aprendimos a identificar dominios conservados en proteínas utilizando bases de datos de perfiles como **Pfam** a través de **InterPro**. 
 
 #### ✏️ Observando dominios en InterPro
 
-Observa la línea de **InterPro** dentro de la misma página de DisProt (Ojo! En DisProt se indican los InterPro Domains que corresponden a Pfam domains) o bien busca P04637 directamente en la web de [InterPro](https://www.ebi.ac.uk/interpro/) y enfócate en los dominios de la base de datos **Pfam**
+Observa la línea de **InterPro** dentro de la misma página de DisProt (Ojo! En DisProt se indican los InterPro Domains que corresponden a Pfam domains) o bien busca P04637 directamente en la web de [InterPro](https://www.ebi.ac.uk/interpro/) y enfócate en los dominios de la base de datos **Pfam**. 
 
 #### ✏️ Preguntas
 
@@ -113,9 +113,9 @@ Observa la línea de **InterPro** dentro de la misma página de DisProt (Ojo! En
 **ProViz** es una herramienta que permite visualizar alineamientos y estructura de dominios de una proteína online. 
 
 
-### **Ejercicio 1.** Explorando Alineamientos de Secuencia Online
+### **Ejercicio 1.** Explorando Alineamientos de Secuencia Online  { markdown data-toc-label='Ejercicio 1: Proviz' }
 
-Ingresa a la web de **ProViz** [http://slim.icr.ac.uk/proviz/](http://slim.icr.ac.uk/proviz/), y busca la proteína p53 ingresando su Accession Number en la ventana “search” (Accession Number: P04637): { markdown data-toc-label='Ejercicio 1: ProViz' }
+Ingresa a la web de [**ProViz**](http://slim.icr.ac.uk/proviz/), y busca la proteína p53 ingresando su Accession Number en la ventana “search” (Accession Number: P04637): 
 
 #### ✏️ Explora p53 en Proviz
 
@@ -209,7 +209,7 @@ Existen distintas estrategias para predecir desorden a partir de la secuencia: a
 
      **Nota:** Esta es una convención. El umbral lo puede decir el usuario a su propia conveniencia.
      
-    Es posible utilizar la web de **IUPred3** [https://iupred3.elte.hu/](https://iupred3.elte.hu/){ target="_blank" } para realizar una predicción rápida.
+    Es posible utilizar la web de  [**IUPred3**](https://iupred3.elte.hu/){ target="_blank" } para realizar una predicción rápida.
 
 
 ####  ✏️  Predicción de desorden Online
@@ -218,12 +218,15 @@ Existen distintas estrategias para predecir desorden a partir de la secuencia: a
 
 * Observa el gráfico interactivo resultante. ¿Las regiones predichas como desordenadas por el algoritmo (score $\ge$ 0.5) coinciden con la evidencia experimental que se vió previamente en DisProt?
 
+* Repetí el primer paso, ingresando el Accession Number de p53 (P04637) en la web, pero esta vez seleccionando el tipo de predicción *Short disorder*. ¿El gráfico coincide con el correspondiente a *Long disorder*? A qué se deben esas diferencias?  
 
 ### **Ejercicio 2.** Análisis de múltiples secuencias con IUPred3 en Google Colab (Python) { markdown data-toc-label='Ejercicio 2: IUPred3 Colab' }
 
-Imaginemos que queremos analizar la conservación del desorden en decenas de ortólogos de p53. El visualizador web no es práctico para analizar muchas secuencias a la vez.
+Además de la versión web, IUPred3 puede utilizarse de manera local; imaginemos que queremos analizar la conservación del desorden en decenas de ortólogos de p53. El visualizador web no es práctico para analizar muchas secuencias a la vez.
 
-Utilizaremos la librería **Biopython** para extraer cada secuencia de nuestro archivo multi-FASTA, ejecutaremos el algoritmo de **IUPred3** desde Python usando comandos del sistema, y consolidaremos los datos para generar un gráfico superpuesto.
+Primero, usaremos una sola secuencia (`P53_HUMAN`) para predecir el desorden mediante IUPred3, y graficaremos los resultados usando los paquetes `matplotlib` y `seaborn` de Python.   
+
+Luedo, utilizaremos la librería **Biopython** para extraer cada secuencia de nuestro archivo multi-FASTA, ejecutaremos el algoritmo de **IUPred3** desde Python usando comandos del sistema, y consolidaremos los datos para generar un gráfico superpuesto.
 
 #### ✏️ Preparación del entorno y descarga de archivos
 
@@ -240,22 +243,57 @@ Utilizaremos la librería **Biopython** para extraer cada secuencia de nuestro a
 # Descargamos el algoritmo IUPred3
 !gdown "https://drive.google.com/uc?id=1TgHdeQAOzZJk3Yln1zlnbZYAHMI6P1G8" -O iupred3.tar.gz
 
+# Descargamos la secuencia de p53 correspondiente a humanos
+!gdown "https://drive.google.com/uc?id=1_r4e6YsUYEUWYklPiK_w9V8-d1rlKvoD" -O P53_HUMAN.seq
+
 # Descargamos el archivo multi-FASTA con ortólogos de p53
-!gdown "https://drive.google.com/uc?id=1ZsNxx4T8dp6HVXUsv482XzjTsm3FwEsO" -O p53.fasta
+!gdown "https://drive.google.com/uc?id=18okcmG93WN847Z-X3xWli6sHH8eW7s_0" -O p53_aligned.fasta
 
 # Descomprimimos el algoritmo
 !tar -xzf iupred3.tar.gz
 ```
 
-#### ✏️ Gráfico de IUPred para p53
+#### ✏️ Ejecutamos IUPred3 para P53_HUMAN
 
-**AGREGAR ACÁ UN EJERCICIO SIMPLE PARA QUE PLOTEEN UNA SECUENCIA**
+```bash
+# Corremos la predicción pasándole nuestro archivo de secuencia
+!python iupred3/iupred3.py -a P53_HUMAN.seq long > P53_HUMAN_long.iupred
+```
+#### ✏️ Ahora vamos a crear un script para procesar el resultado usando `pandas`, y crear nuestro propio gráfico con `matplotlib`.
+```Python
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+# 1. Leemos el archivo (usamos r"\s+" para que separe bien las columnas sin dar alertas)
+fileIN = "P53_HUMAN_long.iupred"
+header = ["Posicion", "Aminoacido", "Iupred", "Anchor"]
+p53 = pd.read_csv(fileIN, sep=r"\s+", names=header, comment="#", skipinitialspace=True)
+
+# 2. Armamos el gráfico imitando la web de IUPred3
+plt.figure(figsize=(10, 4))
+
+# Graficamos la curva de predicción en rojo
+plt.plot(p53['Posicion'], p53['Iupred'], color='red', linewidth=1.5)
+
+# Trazamos la línea negra en el umbral de 0.5
+plt.axhline(y=0.5, color='black', linestyle='-', linewidth=1.5)
+
+# Ajustamos los bordes y etiquetas
+plt.ylim(0, 1)
+plt.xlim(0, p53['Posicion'].max())
+plt.xlabel('Posición (Aminoácido)', fontsize=12)
+plt.ylabel('Score IUPred3', fontsize=12)
+plt.title('Predicción de Desorden (IUPred3) - p53', fontsize=14)
+plt.grid(True, linestyle=':', alpha=0.6)
+
+plt.tight_layout()
+plt.show()
+```
+#### ✏️ Ejecutamos IUPred3 para múltiples secuencias
 
 Sin embargo, si uno quisiera ver la conservación del desorden, sería interesante poder visualizar en un mismo gráfico todos los Score de IUPred de todas las secuencias juntas. Pero, primero hay que alinear el score de IUPred de cada posición de cada secuencia a las posiciones del alineamiento.
-
-#### ✏️ Procesamiento del archivo multi-FASTA
-
-* Vamos a leer el archivo multi-FASTA, extraer cada secuencia de forma individual, correr IUPred3 y unir todas las tablas resultantes en un único DataFrame de Pandas.
+* Vamos a leer el archivo multi-FASTA, extraer cada secuencia de forma individual usando BioPython, correr IUPred3 y unir todas las tablas resultantes en un único DataFrame de Pandas.
 
 
 ```Python
@@ -266,9 +304,8 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from Bio import SeqIO
 
-# 1. Leemos todas las secuencias del archivo multi-FASTA
-secuencias = list(SeqIO.parse("p53.fasta", "fasta"))
-
+# 1. Leemos todas las secuencias del archivo multi-FASTA ALINEADO
+secuencias = list(SeqIO.parse("p53_aligned.fasta", "fasta"))
 lista_de_tablas = []
 nombres_columnas = ["Posicion", "Aminoacido", "Iupred", "Anchor"]
 
@@ -278,31 +315,67 @@ for i, secuencia_actual in enumerate(secuencias):
     # Tomamos el nombre de la secuencia
     nombre_proteina = secuencia_actual.id.split("|")[-1] 
     
-    # Nombres de los archivos que vamos a crear en cada vuelta del ciclo
+    # Extraemos los aminoácidos como una cadena de texto (string)
+    secuencia_con_gaps = str(secuencia_actual.seq)
+    
+    # El método .replace("-", "") busca los guiones y los elimina (los reemplaza por vacío)
+    secuencia_sin_gaps = secuencia_con_gaps.replace("-", "")
+
+    # Nombres de los archivos
     archivo_secuencia = f"secuencia_{i}.seq"
     archivo_resultado = f"resultado_{i}.iupred"
-    
-    # 2. Guardamos la secuencia individual en la computadora de Colab
-    SeqIO.write(secuencia_actual, archivo_secuencia, "fasta")
-    
+
+    # 2. Guardamos la secuencia SIN GAPS en la computadora de Colab
+    # open() con el modo "w" (write) abre o crea un archivo para que podamos escribir en él
+    with open(archivo_secuencia, "w") as f:
+        f.write(f">{nombre_proteina}\n{secuencia_sin_gaps}")
+
     # 3. Ejecutamos IUPred3 mandando el comando a la terminal del sistema
+    # os.system() permite ejecutar comandos de Bash (Linux) desde un script de Python
     comando = f"python iupred3/iupred3.py -a {archivo_secuencia} long > {archivo_resultado}"
     os.system(comando)
-    
-    # 4. Leemos el resultado y lo guardamos en una tabla de Pandas
+
+    # 4. Leemos el resultado crudo (que es más corto porque no tiene los gaps)
     tabla_individual = pd.read_csv(archivo_resultado, sep="\t", names=nombres_columnas, comment="#", skipinitialspace=True)
     
-    # Agregamos una columna clave para identificar de qué proteína son estos datos
-    tabla_individual['Proteina'] = nombre_proteina  
-    
-    # Guardamos esta tabla en nuestra lista
-    lista_de_tablas.append(tabla_individual)
+    # .tolist() convierte la columna de la tabla de Pandas en una lista básica de Python
+    scores_iupred = tabla_individual["Iupred"].tolist()
 
-# 5. Unimos todas las tablas pequeñas en una sola tabla grande
+    # 5. MAPEO: Reconstruimos la tabla respetando los espacios del alineamiento original
+    scores_finales = []
+    posiciones_alineadas = []
+    indice_sin_gaps = 0
+    
+    for pos, aminoacido in enumerate(secuencia_con_gaps):
+        posiciones_alineadas.append(pos + 1)
+        
+        if aminoacido == "-":
+            # np.nan (Not a Number) representa un dato nulo/vacío en la tabla
+            scores_finales.append(np.nan)
+        else:
+            # Si hay un aminoácido, tomamos el siguiente score que calculó IUPred3
+            scores_finales.append(scores_iupred[indice_sin_gaps])
+            indice_sin_gaps += 1
+            
+    # Armamos la tabla final para esta proteína
+    tabla_alineada = pd.DataFrame({
+        "Posicion_Alineamiento": posiciones_alineadas,
+        "Aminoacido": list(secuencia_con_gaps),
+        "Iupred": scores_finales,
+        "Proteina": nombre_proteina
+    })
+
+    # Guardamos esta tabla en nuestra lista
+    lista_de_tablas.append(tabla_alineada)
+
+# 6. Unimos todas las tablas pequeñas en una sola tabla grande
+# pd.concat() agarra una lista de DataFrames y los pega uno debajo del otro
 tabla_general = pd.concat(lista_de_tablas, ignore_index=True)
 
-# Clasificamos según el umbral de 0.5
+# Clasificamos según el umbral de 0.5 (los NaN de la columna Iupred darán falso temporalmente)
 tabla_general['Prediccion'] = np.where(tabla_general['Iupred'] >= 0.5, 'Desorden', 'Orden')
+
+tabla_general.loc[tabla_general['Aminoacido'] == '-', 'Prediccion'] = np.nan
 
 # Vemos las primeras filas
 tabla_general.head()
@@ -310,32 +383,31 @@ tabla_general.head()
 
 #### ✏️ Gráfico de conservación del desorden (Media y Desvío)
 
-Para ver el comportamiento general de la familia p53, vamos a graficar todas las curvas individuales superpuestas con un color tenue. Por encima, calcularemos y graficaremos la línea media junto a una franja sombreada que represente el desvío estándar.
+Para ver el cómo se conserva el desorden en secuencias homólogas de p53, vamos a graficar todas las curvas individuales superpuestas. Por encima, calcularemos y graficaremos la línea media junto a una franja sombreada que represente el desvío estándar.
 
 ```Python
 plt.figure(figsize=(12, 5))
 
 # Primero: Graficamos todas las secuencias individuales superpuestas
-# Usamos alpha=0.3 para que sean semitransparentes y formen el fondo
-sns.lineplot(data=tabla_general, x='Posicion', y='Iupred', hue='Proteina', 
-             alpha=0.3, linewidth=1, legend=False)
+# Usamos alpha=0.5 para que las líneas sean semitransparentes y formen el fondo
+sns.lineplot(data=tabla_general, x='Posicion_Alineamiento', y='Iupred', hue='Proteina', 
+             alpha=0.5, linewidth=1, legend=False)
 
 # Segundo: Graficamos la Media y el Desvío Estándar
-# Al no pasarle 'hue', Seaborn agrupa automáticamente por Posición, 
-# calcula la media y grafica el desvío estándar (errorbar='sd')
-sns.lineplot(data=tabla_general, x='Posicion', y='Iupred', color='black', 
-             errorbar='sd', linewidth=2.5, label='Media ± Desvío')
+# Al graficar la tabla completa sin separarla por proteína, la herramienta agrupa los datos por posición, calcula la media y grafica el desvío estándar automáticamente
+sns.lineplot(data=tabla_general, x='Posicion_Alineamiento', y='Iupred', color='black', 
+             errorbar='sd', linewidth=1.5, label='Media ± Desvío')
 
-# Formato del gráfico
 plt.axhline(y=0.5, color='red', linestyle='--', linewidth=1.5, label='Umbral (0.5)')
 plt.ylim(0, 1)
-plt.xlim(0, tabla_general['Posicion'].max())
-plt.xlabel("Posición (Aminoácido)", fontsize=12)
+plt.xlim(0, tabla_general['Posicion_Alineamiento'].max())
+
+plt.xlabel("Posición en el Alineamiento Múltiple", fontsize=12)
 plt.ylabel("Score IUPred3", fontsize=12)
-plt.title("Conservación del desorden en p53", fontsize=14)
+plt.title("Conservación del desorden en homólogos alineados de p53", fontsize=14)
+
 plt.grid(True, linestyle=':', alpha=0.6)
 plt.legend(loc='upper right')
-
 plt.tight_layout()
 plt.show()
 ```
@@ -356,12 +428,15 @@ Aprovechemos nuestro DataFrame general con todas las secuencias juntas para ver 
 ``` Python
 plt.figure(figsize=(12, 5))
 
-# El gráfico cuenta automáticamente la frecuencia en la tabla
-sns.countplot(data=tabla_general, x='Aminoacido', hue='Prediccion', 
-              palette={'Desorden':'red', 'Orden':'blue'}, 
-              order=tabla_general['Aminoacido'].value_counts().index)
+# Filtramos los gaps para que no se cuenten como si fueran aminoácidos
+datos_sin_gaps = tabla_general[tabla_general['Aminoacido'] != '-']
 
-plt.title('Abundancia de Aminoácidos: Orden vs Desorden en p53')
+# El gráfico cuenta automáticamente cuántas veces aparece cada aminoácido en la tabla
+sns.countplot(data=datos_sin_gaps, x='Aminoacido', hue='Prediccion', 
+              palette={'Desorden':'red', 'Orden':'blue'}, 
+              order=datos_sin_gaps['Aminoacido'].value_counts().index)
+
+plt.title('Abundancia de Aminoácidos: Orden vs Desorden en homologos de p53')
 plt.ylabel('Cantidad total de residuos')
 plt.grid(axis='y', linestyle=':', alpha=0.7)
 plt.show()
@@ -370,6 +445,7 @@ Deberías obtener un gráfico como el siguiente:
 
 ![](./img/Aminoacidos.png)
 
+<!--
 ---
 
 ## **Ejercicio a informar**
@@ -418,5 +494,7 @@ Muchas proteínas desordenadas ejercen su función uniéndose a un partner globu
 **2.2** Utiliza un script de Python o el servidor ProtParam (https://web.expasy.org/protparam/{ target="_blank" }) para contar la cantidad de aminoácidos con carga positiva vs negativa. Calcula su carga neta.
 
 **2.3** Observa los dominios que propone InterPro. ¿Existen contradicciones lógicas entre la asignación de familias y el altísimo desorden predicho?
-<!--
+
+-->
+
 
