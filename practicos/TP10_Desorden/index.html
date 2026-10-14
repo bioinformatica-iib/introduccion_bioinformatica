@@ -1667,6 +1667,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#responder" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✏️ Responder
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1926,6 +1935,11 @@ Existen distintas estrategias para predecir desorden a partir de la secuencia: a
 <span class="c1"># Descomprimimos el algoritmo</span>
 !tar<span class="w"> </span>-xzf<span class="w"> </span>iupred3.tar.gz
 </code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Examinar el contenido de los archivos descargados (Opcional)</span>
+!head<span class="w"> </span>-n<span class="w"> </span><span class="m">5</span><span class="w"> </span>P53_HUMAN.seq
+
+!head<span class="w"> </span>-n<span class="w"> </span><span class="m">5</span><span class="w"> </span>p53_aligned.fasta
+</code></pre></div>
 <h4 id="ejecutamos-iupred3-para-p53_human">✏️ Ejecutamos IUPred3 para P53_HUMAN</h4>
 <div class="highlight"><pre><span></span><code><span class="c1"># Corremos la predicción pasándole nuestro archivo de secuencia</span>
 !python<span class="w"> </span>iupred3/iupred3.py<span class="w"> </span>-a<span class="w"> </span>P53_HUMAN.seq<span class="w"> </span>long<span class="w"> </span>&gt;<span class="w"> </span>P53_HUMAN_long.iupred
@@ -1962,12 +1976,11 @@ Existen distintas estrategias para predecir desorden a partir de la secuencia: a
 </code></pre></div>
 <h4 id="ejecutamos-iupred3-para-multiples-secuencias">✏️ Ejecutamos IUPred3 para múltiples secuencias</h4>
 <p>Sin embargo, si uno quisiera ver la conservación del desorden, sería interesante poder visualizar en un mismo gráfico todos los Score de IUPred de todas las secuencias juntas. Pero, primero hay que alinear el score de IUPred de cada posición de cada secuencia a las posiciones del alineamiento.
-* Vamos a leer el archivo multi-FASTA, extraer cada secuencia de forma individual usando BioPython, correr IUPred3 y unir todas las tablas resultantes en un único DataFrame de Pandas.</p>
+* Vamos a leer el archivo multi-FASTA, extraer cada secuencia de forma individual usando <code>BioPython</code>, correr IUPred3 y unir todas las tablas resultantes en un único DataFrame de Pandas.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 <span class="kn">from</span> <span class="nn">Bio</span> <span class="kn">import</span> <span class="n">SeqIO</span>
 
 <span class="c1"># 1. Leemos todas las secuencias del archivo multi-FASTA ALINEADO</span>
@@ -2041,7 +2054,7 @@ Existen distintas estrategias para predecir desorden a partir de la secuencia: a
 <span class="c1"># Clasificamos según el umbral de 0.5 (los NaN de la columna Iupred darán falso temporalmente)</span>
 <span class="n">tabla_general</span><span class="p">[</span><span class="s1">'Prediccion'</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">tabla_general</span><span class="p">[</span><span class="s1">'Iupred'</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="s1">'Desorden'</span><span class="p">,</span> <span class="s1">'Orden'</span><span class="p">)</span>
 
-<span class="n">tabla_general</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">tabla_general</span><span class="p">[</span><span class="s1">'Aminoacido'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'-'</span><span class="p">,</span> <span class="s1">'Prediccion'</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+<span class="n">tabla_general</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">tabla_general</span><span class="p">[</span><span class="s1">'Aminoacido'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'-'</span><span class="p">,</span> <span class="s1">'Prediccion'</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
 
 <span class="c1"># Vemos las primeras filas</span>
 <span class="n">tabla_general</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -2050,15 +2063,35 @@ Existen distintas estrategias para predecir desorden a partir de la secuencia: a
 <p>Para ver el cómo se conserva el desorden en secuencias homólogas de p53, vamos a graficar todas las curvas individuales superpuestas. Por encima, calcularemos y graficaremos la línea media junto a una franja sombreada que represente el desvío estándar.</p>
 <div class="highlight"><pre><span></span><code><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
 
-<span class="c1"># Primero: Graficamos todas las secuencias individuales superpuestas</span>
-<span class="c1"># Usamos alpha=0.5 para que las líneas sean semitransparentes y formen el fondo</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">tabla_general</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">'Posicion_Alineamiento'</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">'Iupred'</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">'Proteina'</span><span class="p">,</span> 
-             <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="c1"># 1. Graficamos todas las secuencias individuales superpuestas</span>
 
-<span class="c1"># Segundo: Graficamos la Media y el Desvío Estándar</span>
-<span class="c1"># Al graficar la tabla completa sin separarla por proteína, la herramienta agrupa los datos por posición, calcula la media y grafica el desvío estándar automáticamente</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">tabla_general</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">'Posicion_Alineamiento'</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">'Iupred'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'black'</span><span class="p">,</span> 
-             <span class="n">errorbar</span><span class="o">=</span><span class="s1">'sd'</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'Media ± Desvío'</span><span class="p">)</span>
+<span class="c1"># Ordenamos los datos por la posición (eje X) para evitar que Matplotlib dibuje líneas extrañas hacia atrás si las filas llegan desordenadas</span>
+<span class="k">for</span> <span class="n">proteina_nombre</span><span class="p">,</span> <span class="n">group</span> <span class="ow">in</span> <span class="n">tabla_general</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'Proteina'</span><span class="p">):</span>
+
+      <span class="n">group</span> <span class="o">=</span> <span class="n">group</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">'Posicion_Alineamiento'</span><span class="p">)</span>
+
+      <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">group</span><span class="p">[</span><span class="s1">'Posicion_Alineamiento'</span><span class="p">],</span> <span class="n">group</span><span class="p">[</span><span class="s1">'Iupred'</span><span class="p">],</span>
+      <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">linewitdth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># Usamos alpha=0.5 para que las líneas sean semitransparentes y formen el fondo</span>
+
+<span class="c1"># 2. Creamos una tabla con la media y el desvío estándar </span>
+<span class="n">tabla_estadisticas</span> <span class="o">=</span> <span class="n">tabla_general</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'Posicion_Alineamiento'</span><span class="p">)[</span><span class="s1">'Iupred'</span><span class="p">]</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="s1">'mean'</span><span class="p">,</span> <span class="s1">'std'</span><span class="p">])</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+<span class="c1"># Opcional: ver cómo queda la nueva tabla</span>
+<span class="c1"># print(tabla_estadisticas.head())</span>
+
+<span class="c1"># 3. Graficar la línea de la media</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">tabla_estadisticas</span><span class="p">[</span><span class="s1">'Posicion_Alineamiento'</span><span class="p">],</span> <span class="n">tabla_estadisticas</span><span class="p">[</span><span class="s1">'mean'</span><span class="p">],</span>
+         <span class="n">color</span><span class="o">=</span><span class="s1">'black'</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'Media'</span><span class="p">)</span>
+
+<span class="c1"># 4. Graficar el área sombreada correspondiente al desvío estándar</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">tabla_estadisticas</span><span class="p">[</span><span class="s1">'Posicion_Alineamiento'</span><span class="p">],</span>
+                 <span class="n">tabla_estadisticas</span><span class="p">[</span><span class="s1">'mean'</span><span class="p">]</span> <span class="o">-</span> <span class="n">tabla_estadisticas</span><span class="p">[</span><span class="s1">'std'</span><span class="p">],</span>  <span class="c1"># Límite inferior</span>
+                 <span class="n">tabla_estadisticas</span><span class="p">[</span><span class="s1">'mean'</span><span class="p">]</span> <span class="o">+</span> <span class="n">tabla_estadisticas</span><span class="p">[</span><span class="s1">'std'</span><span class="p">],</span>  <span class="c1"># Límite superior</span>
+                 <span class="n">color</span><span class="o">=</span><span class="s1">'black'</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'± Desvío Estándar'</span><span class="p">)</span>     <span class="c1"># alpha controla la transparencia</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Posicion_Alineamiento'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Iupred'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'red'</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">'--'</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'Umbral (0.5)'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
@@ -2068,7 +2101,7 @@ Existen distintas estrategias para predecir desorden a partir de la secuencia: a
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">"Score IUPred3"</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">"Conservación del desorden en homólogos alineados de p53"</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">':'</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">':'</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">'upper right'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -2077,16 +2110,25 @@ Existen distintas estrategias para predecir desorden a partir de la secuencia: a
 <p>Observa el gráfico generado con las secuencias superpuestas y la tendencia central, y responde:</p>
 <ul>
 <li>
-<p>La línea negra marca la tendencia general de la familia p53. ¿Qué regiones (N-terminal, central, C-terminal) muestran mayor propensión conservada al desorden?</p>
+<p>La línea negra marca la tendencia general de la familia p53. ¿Qué regiones (N-terminal, central, C-terminal) muestran mayor propensión al desorden? ¿Qué regiones corresponden a los dominios?</p>
 </li>
 <li>
-<p>Notarás que el "ruido" (el desvío estándar sombreado) se ensancha o que las curvas individuales de fondo se desfasen hacia la derecha o izquierda. ¿Por qué ocurre esto al graficar por posición sin haber hecho un alineamiento previo con gaps?</p>
+<p>¿Existen regiones en el alineamiento con alta dispersión en los scores de desorden? ¿A qué características biológicas o del propio alineamiento se lo podrías atribuir?</p>
 </li>
 </ul>
 <h4 id="analisis-de-composicion">✏️ Análisis de composición:</h4>
-<p>Según la teórica, las regiones desordenadas están empobrecidas en aminoácidos hidrofóbicos y enriquecidas en residuos polares/cargados y prolina. 
-Aprovechemos nuestro DataFrame general con todas las secuencias juntas para ver qué aminoácidos son más frecuentes en regiones ordenadas vs. desordenadas en todas las secuencias:</p>
-<p></p><div class="highlight"><pre><span></span><code><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<p>Según la teórica, las regiones desordenadas de las proteínas suelen estar empobrecidas en aminoácidos hidrofóbicos y enriquecidas en residuos polares, cargados y prolina. </p>
+<p>Aprovechemos nuestro DataFrame <code>tabla_general</code> (que contiene todas las secuencias alineadas) para comprobar si esta regla se cumple en las secuencias homólogas de p53. Vamos a graficar qué aminoácidos son más frecuentes en las regiones desordenadas en comparación con las estructuradas.</p>
+<p>Como armar este tipo de gráficos comparativos paso a paso con Matplotlib requiere varias líneas de cálculo extra, vamos a aprovechar para sumar una herramienta nueva a nuestro repertorio:</p>
+<div class="admonition info">
+<p class="admonition-title">¿Qué es Seaborn y para qué sirve el parámetro <code>hue</code>?</p>
+<p>Para este último gráfico utilizamos <strong>Seaborn</strong> (<code>sns</code>), una librería de visualización de datos construida "por encima" de Matplotlib. Su principal ventaja es que está optimizada para trabajar directamente con DataFrames de Pandas, simplificando en muchos casos el código necesario para hacer gráficos estadísticos. 
+El parámetro <code>hue</code> sirve para subdividir visualmente los datos basándose en una columna extra. Al agregar <code>hue='Prediccion'</code>, le damos una instrucción muy concreta: <strong>separá el conteo de cada aminoácido en subgrupos ('Orden' y 'Desorden') y asignale un color a cada uno</strong>. 
+De esta manera, Seaborn cuenta, clasifica y agrupa las barras de forma totalmente automática, ahorrándonos tener que separar la tabla con cálculos manuales.</p>
+</div>
+<p></p><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
 
 <span class="c1"># Filtramos los gaps para que no se cuenten como si fueran aminoácidos</span>
 <span class="n">datos_sin_gaps</span> <span class="o">=</span> <span class="n">tabla_general</span><span class="p">[</span><span class="n">tabla_general</span><span class="p">[</span><span class="s1">'Aminoacido'</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">'-'</span><span class="p">]</span>
@@ -2101,8 +2143,12 @@ Aprovechemos nuestro DataFrame general con todas las secuencias juntas para ver 
 <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">'y'</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">':'</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div>
-Deberías obtener un gráfico como el siguiente:
+Deberías obtener un gráfico similar al siguiente:
 <p><a class="glightbox" href="img/Aminoacidos.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="img/Aminoacidos.png"></a></p>
+<h4 id="responder">✏️ Responder</h4>
+<ul>
+<li>Observando el gráfico generado, se cumple la regla teórica para la composición de las regiones desordenadas? Si encontraste excepciones (por ejemplo, residuos polares con mayor abundancia en regiones ordenadas), ¿a qué factores se pueden atribuir? </li>
+</ul>
 <!--
 ---
 
