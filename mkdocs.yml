@@ -177,6 +177,7 @@ nav:
         - TP 7 - Short Read Mapping: 'practicos/TP07_Short-Read-Mapping/index.md'
         - TP 8 - HMMs: 'practicos/TP08_HMM/index.md'        
         - TP 9 - Logos y Perfiles de Secuencias: 'practicos/TP09_PSI-BLAST/index.md'
+        - TP10 - Predicción de Desorden: 'practicos/TP10_Desorden/index.md'
         # - TP 8 - Predicción de Desorden: 'practicos/TP08_Desorden/index.md'
         # - TP 10 - Motivos Lineales: 'practicos/TP10_Motivos/index.md'
         # - TP 12 - Modelado por Homología y AlphaFold3: 'practicos/TP12_Modelado_Por_Homologia/index.md'
