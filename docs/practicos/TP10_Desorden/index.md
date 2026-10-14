@@ -486,9 +486,65 @@ Deberías obtener un gráfico similar al siguiente:
 
 * Observando el gráfico generado, se cumple la regla teórica para la composición de las regiones desordenadas? Si encontraste excepciones (por ejemplo, residuos polares con mayor abundancia en regiones ordenadas), ¿a qué factores se pueden atribuir? 
 
+
+
+## **Ejercicio a informar** 
+
+
+!!! info
+      Fecha límite de entrega: **Viernes 30 de octubre de 2026, 23:59 hs**. Enviar a: pnunez@iib.unsam.edu.ar, incluyendo en copia a jglavina@iib.unsam.edu.ar y al resto de los miembros del grupo.
+
+**Enunciado**
+
+El Receptor de Estrógenos alfa (ESR1) es un receptor nuclear de hormonas que regula la expresión génica, afectando procesos vitales como la proliferación y diferenciación celular en tejidos diana. Su activación depende de la unión a un ligando, lo cual induce un cambio conformacional que le permite unirse al ADN o asociarse de forma combinatoria con múltiples complejos coactivadores y otros factores de transcripción.
+
+Para mediar esta red de interacciones, ESR1 posee una arquitectura modular que combina regiones rígidamente estructuradas (como los dominios de unión al ligando y al ADN) con extensas regiones flexibles. Dada su relevancia en la proliferación celular, las alteraciones en su funcionamiento o expresión son un motor principal en el desarrollo de patologías como el cáncer de mama.
+
+En este trabajo, el objetivo será caracterizar a ESR1 integrando bases de datos de proteínas, predicciones de desorden y evidencia experimental, para luego analizar sus implicancias biomédicas.
+
+**Archivos de trabajo**
+
+* `ESR1_aligned.fasta` - Alineamiento múltiple de secuencias homólogas de ESR1. Descargar desde Google Colab ejecutando el siguiente comando en su notebook de Colab: 
+```bash
+!wget "https://drive.google.com/uc?id=1A2emLqaaTGfx5xGcOekwAcyKxOhecB81" -O ESR1_aligned.fasta
+```
+
+**Consignas**
+
+**1. Caracterización de dominios:** Buscar información sobre del receptor de estrógenos humano (UniProt ID: P03372). Utiliza las plataformas que conocen (ProViz, InterPro) para explorar la anotación de dominios presentes en esta proteína.
+
+* Qué regiones de la secuencia corresponden a dominios conocidos y cuáles carecen de anotación de dominios globulares conocidos? 
+
+**2. Predicción de desorden:** Aplicando la metodología que se vió en el TP para el uso de IUPred3, procesar la predicción de desorden de las secuencias de ESR1. Generar el perdil de desorden de todas las secuencias en un solo gráfico.
+
+ * Identificar qué regiones de la proteína muestran tendencia al desorden y cuáles a adoptar estructuras globulares, coinciden con las anotaciones de dominios de las bases de datos?
+
+ * Observando la dispersión de los scores entre las distintas secuencias, ¿qué diferencias de conservación notás entre las regiones ordenadas y las desordenadas?
+
+**3. Validación Experimental (DisProt):** Buscar ESR1 humano en la base de datos DisProt.
+
+* Existen datos experimentales que confirmen la presencia de desorden en esta proteína?
+
+* Contrasten la evidencia experimental con las predicciones de IUPred3 que obtuvieron. ¿Coinciden? En caso de observar discrepancias (por ejemplo, regiones anotadas en DisProt pero no predichas por IUPred3, o viceversa), discutan brevemente a qué factores biológicos o técnicos podrían deberse.
+
+**4. Importancia Biomédica y Farmacológica:** a partir de la caracterización de ESR1 y de la búsqueda de bibliografía analizar: 
+
+ * ¿Qué rol funcional cumple la plasticidad estructural de ESR1 (tener dominios plegados combinados con extensas regiones desordenadas) en su mecanismo biológico?
+
+ * Sabiendo que los fármacos clásicos suelen diseñarse para encajar en los "bolsillos" tridimensionales de los dominios globulares, ¿qué desafíos u oportunidades presenta la presencia de las regiones intrínsecamente desordenadas para el desarrollo de nuevas terapias dirigidas contra esta proteína?
+
+
+
+
+
+
+
+
+
+
+
 <!--
 ---
-
 ## **Ejercicio a informar**
 !!! danger "Entrega"
 **Fecha límite de entrega: viernes 23/10, 23:59hs.** 
