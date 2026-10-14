@@ -253,6 +253,13 @@ Luedo, utilizaremos la librería **Biopython** para extraer cada secuencia de nu
 !tar -xzf iupred3.tar.gz
 ```
 
+```bash
+# Examinar el contenido de los archivos descargados (Opcional)
+!head -n 5 P53_HUMAN.seq
+
+!head -n 5 p53_aligned.fasta
+```
+
 #### ✏️ Ejecutamos IUPred3 para P53_HUMAN
 
 ```bash
@@ -293,7 +300,7 @@ plt.show()
 #### ✏️ Ejecutamos IUPred3 para múltiples secuencias
 
 Sin embargo, si uno quisiera ver la conservación del desorden, sería interesante poder visualizar en un mismo gráfico todos los Score de IUPred de todas las secuencias juntas. Pero, primero hay que alinear el score de IUPred de cada posición de cada secuencia a las posiciones del alineamiento.
-* Vamos a leer el archivo multi-FASTA, extraer cada secuencia de forma individual usando BioPython, correr IUPred3 y unir todas las tablas resultantes en un único DataFrame de Pandas.
+* Vamos a leer el archivo multi-FASTA, extraer cada secuencia de forma individual usando `BioPython`, correr IUPred3 y unir todas las tablas resultantes en un único DataFrame de Pandas.
 
 
 ```Python
@@ -301,7 +308,6 @@ import os
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-import seaborn as sns
 from Bio import SeqIO
 
 # 1. Leemos todas las secuencias del archivo multi-FASTA ALINEADO
@@ -375,7 +381,7 @@ tabla_general = pd.concat(lista_de_tablas, ignore_index=True)
 # Clasificamos según el umbral de 0.5 (los NaN de la columna Iupred darán falso temporalmente)
 tabla_general['Prediccion'] = np.where(tabla_general['Iupred'] >= 0.5, 'Desorden', 'Orden')
 
-tabla_general.loc[tabla_general['Aminoacido'] == '-', 'Prediccion'] = np.nan
+tabla_general.loc[tabla_general['Aminoacido'] == '-', 'Prediccion'] = None
 
 # Vemos las primeras filas
 tabla_general.head()
@@ -388,15 +394,35 @@ Para ver el cómo se conserva el desorden en secuencias homólogas de p53, vamos
 ```Python
 plt.figure(figsize=(12, 5))
 
-# Primero: Graficamos todas las secuencias individuales superpuestas
-# Usamos alpha=0.5 para que las líneas sean semitransparentes y formen el fondo
-sns.lineplot(data=tabla_general, x='Posicion_Alineamiento', y='Iupred', hue='Proteina', 
-             alpha=0.5, linewidth=1, legend=False)
+# 1. Graficamos todas las secuencias individuales superpuestas
 
-# Segundo: Graficamos la Media y el Desvío Estándar
-# Al graficar la tabla completa sin separarla por proteína, la herramienta agrupa los datos por posición, calcula la media y grafica el desvío estándar automáticamente
-sns.lineplot(data=tabla_general, x='Posicion_Alineamiento', y='Iupred', color='black', 
-             errorbar='sd', linewidth=1.5, label='Media ± Desvío')
+# Ordenamos los datos por la posición (eje X) para evitar que Matplotlib dibuje líneas extrañas hacia atrás si las filas llegan desordenadas
+for proteina_nombre, group in tabla_general.groupby('Proteina'):
+
+      group = group.sort_values('Posicion_Alineamiento')
+
+      plt.plot(group['Posicion_Alineamiento'], group['Iupred'],
+      alpha=0.5, linewitdth=1) # Usamos alpha=0.5 para que las líneas sean semitransparentes y formen el fondo
+
+# 2. Creamos una tabla con la media y el desvío estándar 
+tabla_estadisticas = tabla_general.groupby('Posicion_Alineamiento')['Iupred'].agg(['mean', 'std']).reset_index()
+
+# Opcional: ver cómo queda la nueva tabla
+# print(tabla_estadisticas.head())
+
+# 3. Graficar la línea de la media
+plt.plot(tabla_estadisticas['Posicion_Alineamiento'], tabla_estadisticas['mean'],
+         color='black', linewidth=1.5, label='Media')
+
+# 4. Graficar el área sombreada correspondiente al desvío estándar
+plt.fill_between(tabla_estadisticas['Posicion_Alineamiento'],
+                 tabla_estadisticas['mean'] - tabla_estadisticas['std'],  # Límite inferior
+                 tabla_estadisticas['mean'] + tabla_estadisticas['std'],  # Límite superior
+                 color='black', alpha=0.2, label='± Desvío Estándar')     # alpha controla la transparencia
+
+plt.xlabel('Posicion_Alineamiento')
+plt.ylabel('Iupred')
+plt.legend()
 
 plt.axhline(y=0.5, color='red', linestyle='--', linewidth=1.5, label='Umbral (0.5)')
 plt.ylim(0, 1)
@@ -406,26 +432,37 @@ plt.xlabel("Posición en el Alineamiento Múltiple", fontsize=12)
 plt.ylabel("Score IUPred3", fontsize=12)
 plt.title("Conservación del desorden en homólogos alineados de p53", fontsize=14)
 
-plt.grid(True, linestyle=':', alpha=0.6)
+plt.grid(True, linestyle=':', alpha=0.7)
 plt.legend(loc='upper right')
 plt.tight_layout()
 plt.show()
+
 ```
 
 #### ✏️ Preguntas
 
 Observa el gráfico generado con las secuencias superpuestas y la tendencia central, y responde:
 
-* La línea negra marca la tendencia general de la familia p53. ¿Qué regiones (N-terminal, central, C-terminal) muestran mayor propensión conservada al desorden?
+* La línea negra marca la tendencia general de la familia p53. ¿Qué regiones (N-terminal, central, C-terminal) muestran mayor propensión al desorden? ¿Qué regiones corresponden a los dominios?
 
-* Notarás que el "ruido" (el desvío estándar sombreado) se ensancha o que las curvas individuales de fondo se desfasen hacia la derecha o izquierda. ¿Por qué ocurre esto al graficar por posición sin haber hecho un alineamiento previo con gaps?
+* ¿Existen regiones en el alineamiento con alta dispersión en los scores de desorden? ¿A qué características biológicas o del propio alineamiento se lo podrías atribuir?
 
 #### ✏️ Análisis de composición: 
 
-Según la teórica, las regiones desordenadas están empobrecidas en aminoácidos hidrofóbicos y enriquecidas en residuos polares/cargados y prolina. 
-Aprovechemos nuestro DataFrame general con todas las secuencias juntas para ver qué aminoácidos son más frecuentes en regiones ordenadas vs. desordenadas en todas las secuencias:
+Según la teórica, las regiones desordenadas de las proteínas suelen estar empobrecidas en aminoácidos hidrofóbicos y enriquecidas en residuos polares, cargados y prolina. 
 
+Aprovechemos nuestro DataFrame `tabla_general` (que contiene todas las secuencias alineadas) para comprobar si esta regla se cumple en las secuencias homólogas de p53. Vamos a graficar qué aminoácidos son más frecuentes en las regiones desordenadas en comparación con las estructuradas.
+
+Como armar este tipo de gráficos comparativos paso a paso con Matplotlib requiere varias líneas de cálculo extra, vamos a aprovechar para sumar una herramienta nueva a nuestro repertorio:
+
+!!! info "¿Qué es Seaborn y para qué sirve el parámetro `hue`?"
+    Para este último gráfico utilizamos **Seaborn** (`sns`), una librería de visualización de datos construida "por encima" de Matplotlib. Su principal ventaja es que está optimizada para trabajar directamente con DataFrames de Pandas, simplificando en muchos casos el código necesario para hacer gráficos estadísticos. 
+    El parámetro `hue` sirve para subdividir visualmente los datos basándose en una columna extra. Al agregar `hue='Prediccion'`, le damos una instrucción muy concreta: **separá el conteo de cada aminoácido en subgrupos ('Orden' y 'Desorden') y asignale un color a cada uno**. 
+    De esta manera, Seaborn cuenta, clasifica y agrupa las barras de forma totalmente automática, ahorrándonos tener que separar la tabla con cálculos manuales.
+    
 ``` Python
+import seaborn as sns
+
 plt.figure(figsize=(12, 5))
 
 # Filtramos los gaps para que no se cuenten como si fueran aminoácidos
@@ -441,9 +478,13 @@ plt.ylabel('Cantidad total de residuos')
 plt.grid(axis='y', linestyle=':', alpha=0.7)
 plt.show()
 ```
-Deberías obtener un gráfico como el siguiente:
+Deberías obtener un gráfico similar al siguiente:
 
 ![](./img/Aminoacidos.png)
+
+#### ✏️ Responder
+
+* Observando el gráfico generado, se cumple la regla teórica para la composición de las regiones desordenadas? Si encontraste excepciones (por ejemplo, residuos polares con mayor abundancia en regiones ordenadas), ¿a qué factores se pueden atribuir? 
 
 <!--
 ---
