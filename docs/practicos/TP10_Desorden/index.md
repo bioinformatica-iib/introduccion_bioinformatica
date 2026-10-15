@@ -515,7 +515,7 @@ En este trabajo, el objetivo será caracterizar a ESR1 integrando bases de datos
 
 * Qué regiones de la secuencia corresponden a dominios conocidos y cuáles carecen de anotación de dominios globulares conocidos? 
 
-**2. Predicción de desorden:** Aplicando la metodología que se vió en el TP para el uso de IUPred3, procesar la predicción de desorden de las secuencias de ESR1. Generar el perdil de desorden de todas las secuencias en un solo gráfico.
+**2. Predicción de desorden:** Aplicando la metodología que se vió en el TP para el uso de IUPred3, procesar la predicción de desorden de las secuencias de ESR1. Generar el perfil de desorden de todas las secuencias en un solo gráfico.
 
  * Identificar qué regiones de la proteína muestran tendencia al desorden y cuáles a adoptar estructuras globulares, coinciden con las anotaciones de dominios de las bases de datos?
 
