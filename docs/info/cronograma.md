@@ -33,10 +33,10 @@ tags:
 | Jue, 1 Oct  | 9 hs |	:material-google-classroom: Presencial | [P8. HMM](../practicos/TP08_HMM/index.md) | :fontawesome-solid-hammer: Práctica |	J. Glavina |
 | Mar, 6 Oct   | 9 hs |	:material-google-classroom: Presencial | [T9. ANN](../teoricas/9-Teorica-Nueve/index.md) |  :fontawesome-solid-brain: Teórica |	L. Chemes |
 | Jue, 8 Oct   | 9 hs |	:material-google-classroom: Presencial | [P9. Perfiles de secuencia y PSI-BLAST](../practicos/TP09_PSI-BLAST/index.md) | :fontawesome-solid-hammer: Práctica |	J. Glavina |
-| Mar, 13 Oct  | 9 hs |	:material-google-classroom: Presencial | T10. Bioinformática Estructural: Desorden | :fontawesome-solid-brain: Teórica |	L. Chemes |
-| Jue, 15 Oct  | 9 hs |	:material-google-classroom: Presencial | P10. Predicción de Desorden | :fontawesome-solid-hammer: Práctica |	P. Nuñez |
-| Mar, 20 Oct  | 9 hs |	:material-google-classroom: Presencial | T11. Bioinformática Estructural: Motivos lineales | :fontawesome-solid-brain: Teórica |	L. Chemes |
-| Jue, 22 Oct  | 9 hs |	:material-google-classroom: Presencial | P11. Motivos Lineales en proteínas | :fontawesome-solid-hammer: Práctica | P. Nuñez |
+| Mar, 13 Oct  | 9 hs |	:material-google-classroom: Presencial | [T10. Bioinformática Estructural: Desorden](../teoricas/10-Teorica-Diez/index.md) | :fontawesome-solid-brain: Teórica |	L. Chemes |
+| Jue, 15 Oct  | 9 hs |	:material-google-classroom: Presencial | [P10. Predicción de Desorden](../practicos/TP10_Desorden/index.md) | :fontawesome-solid-hammer: Práctica |	P. Nuñez |
+| Mar, 20 Oct  | 9 hs |	:material-google-classroom: Presencial | [T11. Bioinformática Estructural: Motivos lineales](../teoricas/11-Teorica-Once/index.md) | :fontawesome-solid-brain: Teórica |	L. Chemes |
+| Jue, 22 Oct  | 9 hs |	:material-google-classroom: Presencial | [P11. Motivos Lineales en proteínas](../practicos/TP11_Motivos/index.md) | :fontawesome-solid-hammer: Práctica | P. Nuñez |
 | Mar, 27 Oct  | 9 hs |	:material-google-classroom: Presencial | T12. Bioinformática Estructural: Dominios | :fontawesome-solid-brain: Teórica |	L. Chemes |
 | Jue, 29 Oct  | 9 hs |	:material-google-classroom: Presencial | P12. Dominios Proteicos |:fontawesome-solid-hammer: Práctica |	P. Nuñez |
 | Mar, 3 Nov   | 9 hs |	| LIBRE | |	|
