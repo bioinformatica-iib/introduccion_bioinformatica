@@ -15,8 +15,9 @@ tags:
 ### Slides mostrados en la clase
 
 
-
+<!--
 !!! abstract "Atención: Este TP tiene informe."
+-->
 !!! abstract "Atención: Este TP tiene parcialito."
 
 [:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1wh5zn1GZ4s_Rp8V5lekZZbIKzM7BOKc8/view?usp=sharing){ .md-button .md-button--primary }
@@ -109,7 +110,46 @@ LVPDAASKHKQLSELLRGGSGSSINPG
 
 **2.** Considerando que el motivo se encuentra en una hélice, ¿modificaría la expresión regular que obtuvo?
 
-### Ejercicio 2. Base de datos de motivos lineales en Eucariotas (ELMdb)
+### Ejercicio 2. Expresión regular del motivo de unión a ciclinas
+
+Las quinasas dependientes de ciclinas (CDKs) juegan un rol central en la regulación del ciclo celular eucariota. La unión secuencial y periódica de diferentes ciclinas a las CDKs asegura una progresión controlada a través del ciclo celular.
+
+La proteína retinoblastoma (Rb) es un regulador del ciclo celular que controla la transición de la fase G1 a la fase S mediante la interacción con factores de transcripción de la familia E2F. Al inicio del ciclo celular Rb se encuentra en su forma hipofosforilada y se une a E2F inhibiendo su función. La fosforilación de Rb por las CDKs induce un cambio conformacional que libera a E2F, permitiendo la transcripción de genes necesarios para la progresión del ciclo celular.  
+
+Ensayos experimentales identificaron una secuencia corta en Rb que media la interacción con las ciclinas D en la región que abarca del 896 al C-terminal de la proteína. La evidencia indica que:
+
+**i.** La región que media la interacción con Rb forma una hélice.
+
+**ii.** La interacción está mediada por tres residuos hidrofóbicos (F, L, M) que se encuentran en una misma cara de la hélice.
+
+Dado el siquiente alineamiento de proteínas homólogas de la misma región, cree una expresión regular que permita identificar el motivo en otras secuencias.
+
+
+```
+P06400|RB_HUMAN         KHLPGESKFQQKLAEMTSTRTRMQKQKMNDSMDTSNKEEK
+Q98966_NOTVI            KH------LAQKLAEMTSTRSRMQKQKQDEEMDTTLKEEK
+UPI00016E998A_FUGRU     KS-GGDSTLIQKLTEMTSTRSRMQEQKMKEDAES-RRE--
+Q9PSL2_9PIPI            KHIQGESKFQQKLAEMTSTRTRMQKQKLEESLESSQQEEK
+Q9YGE5_ONCMY            KP-GEESRLIQKLAEIGSTRTRMQEQKMKDDAES-EKDKP
+UPI000060E718_CHICK     KHLPQESKFQQKLAEMTSTRTRMQKQKLNDGNDTSANEEK
+UPI00016E998C_FUGRU     KS-GGDSTLIQKLTEMTSTRSRMQEQKMKEDAES-RRE--
+UPI00017B2142_TETNG     KS-GGDSALIQKLAEMTSTRSRVQEQKMKEDAES-RREKP
+A0JMQ4_DANRE            KS-SGESALIQKLAEMSSTRSRMQEQKLKEESDK-DHPEP
+Q98SK2_ORYLA            KS-GGESALIQKLAEMSSTRSRMQEQKMKEDAES-RKKT-
+Q90600_CHICK            KHLPQESKFQQKLAEMTSTRTRMQKQKLNDGNDTSANEEK
+Q5J3Q9_FUNHE            KP-GGDSTLIQKLTEMSSTWNRIHEQKMKEDPDT-REEPQ
+A3DUJ4_XIPMA            KP-GGDSTLIQKLTEMSSTWSRMHEQKMKEEPET-RDEPQ
+Q1X7L8_LIMLI            KS-GGDSTLIQKLAEMSSARSRMQEQKMK-----------
+```
+
+* Investigue las propiedades estructurales de la proteína Rb humana (P06400). ¿El motivo se encuentra en una región favorable?
+
+3. Proponga un mecanismo de interacción entre las ciclinas y Rb.
+
+
+
+
+### Ejercicio 3. Base de datos de motivos lineales en Eucariotas (ELMdb)
 
 La base de datos ELM (*Eukaryotic Linear Motifs*) es una base de datos que se enfoca principalmente en la anotación y detección de motivos lineales (MLs). Para ello cuenta con un repositorio de motivos manualmente anotados, por lo cual está altamente curada y también cuenta con una herramienta de predicción de motivos. Esta predicción de motivos se realiza mediante una búsqueda de patrones de secuencia basada en texto utilizando expresiones regulares.
 
@@ -154,7 +194,7 @@ Asegúrese que los valores de los distintos parámetros son los siguientes:
  
 * ¿Cuántas instancias predichas de motivos se encuentran? Para verlo investigue la tabla llamada **Filtering Summary**. ¿Cuántas son retenidas luego del filtro?
 * ¿Qué se puede decir sobre la estructura de la proteína? ¿Se observa algún dominio? ¿Se observan regiones desordenadas?  
-* ¿Los predictores estructurales y filtros (SMART, GlobPlot, IUPRED, Secondary Structure) coinciden sobre qué regiones son estructuradas/desordenadas?
+* ¿Los predictores estructurales y filtros (GlobPlot, IUPRED, Secondary Structure) coinciden sobre qué regiones son estructuradas/desordenadas?
 
 **3.** Filtrado por compartimento celular
 
@@ -204,10 +244,10 @@ Realice de nuevo la predicción, ahora asignando en **Cell compartment** los com
 * ¿Existen instancias anotadas?
 * ¿Existen instancias asignadas por homología? ¿A qué organismo pertenecen?
 
-### Ejercicio 3. Identificación de motivos cortos de interacción en p53 en un alineamiento propio.
+### Ejercicio 4. Identificación de motivos cortos de interacción en p53 en un alineamiento propio.
 La región amino terminal de p53 posee un motivo de unión a la E3 ligasa MDM2, el cual está caracterizado por una secuencia conservada que puede representarse por una expresión regular.
 
-1. Entre en la base de datos ELM y busque la expresión regular del motivo con el ID: `DEG_MDM2_SWIB_1`. Para esto ingrese el ID en la parte superior derecha donde dice: Search ELM database. La expresión regular se encuentra marcada como *"Pattern"*. A continuación, busque las ocurrencias de esta expresión regular en las secuencias de p53. Para ello, abra en **Jalview** el alineamiento de p53 con el cuál estuvo trabajando en la clase de *TP N°7 - Predicción de desorden*. **Jalview** permite la búsqueda de motivos por expresiones regulares. Para hacerlo, utilice la función:
+1. Entre en la base de datos ELM y busque la expresión regular del motivo con el ID: `DEG_MDM2_SWIB_1`. Para esto ingrese el ID en la parte superior derecha donde dice: Search ELM database. La expresión regular se encuentra marcada como *"Pattern"*. A continuación, busque las ocurrencias de esta expresión regular en las secuencias de p53. Para ello, abra en **Jalview** el alineamiento de p53 con el cuál estuvo trabajando en la clase de *TP N°10 - Predicción de desorden*. **Jalview** permite la búsqueda de motivos por expresiones regulares. Para hacerlo, utilice la función:
 
     *Select* → *Find*
 
@@ -220,17 +260,18 @@ La región amino terminal de p53 posee un motivo de unión a la E3 ligasa MDM2, 
 <div style="border-bottom: 3px solid black;">
 </div>
 
-## Ejercicio a informar
 
-!!! info ""
 
+
+
+<!--
+## Ejercicio a informar!!! info ""
+Las quinasas dependientes de ciclinas (CDKs) juegan un rol central en la regulación del ciclo celular eucariota. La unión secuencial y periódica de diferentes ciclinas a las CDKs asegura una progresión controlada a través del ciclo celular.
       **Fecha límite de entrega:** Viernes, 24 de Octubre 2025, 23:59hs.
 
 **Enunciado**
-
-Las quinasas dependientes de ciclinas (CDKs) juegan un rol central en la regulación del ciclo celular eucariota. La unión secuencial y periódica de diferentes ciclinas a las CDKs asegura una progresión controlada a través del ciclo celular.
-
 1. Investigue las Ciclinas D1, 2 y 3 en ELM.
+
 
     * ¿Cuántas instancias tienen anotadas?
     * ¿Cuál es la relevancia biológica de estas anotaciones? ¿Cuáles involucran a Rb? ¿Cuáles están involucradas en el ciclo celular?
@@ -268,7 +309,6 @@ Q1X7L8_LIMLI            KS-GGDSTLIQKLAEMSSARSRMQEQKMK-----------
 
 
 
-<!--
 Más del 90 % de los casos de cáncer cervical a nivel global están asociados a la infección del papilomavirus humano con una alta prevalencia de los tipos virales de alto riesgo de la especie Alphapapillomavirus 9, HPV16 y HPV31, y Alphapapillomavirus 7, HPV18 y HPV45. Los tipos virales de bajo riesgo, como HPV11 y HPV6, se encuentran asociados con menor frecuencia a lesiones malignas. En los casos de cáncer atribuidos a HPV los tumores se desarrollan muchos años después de la infección inicial. Por lo tanto, la infección persistente es necesaria para el desarrollo de cáncer invasivo. El mantenimiento del fenotipo transformado depende de la expresión continua de algunos de los genes virales, principalmente las proteı́nas E6 y E7.
 
 La Proteína E7 de papillomavirus contiene un dominio desordenado N-terminal (E7N) y un dominio globular C-terminal (E7C). El dominio E7C  media la homodimerización a través de un cisteínas que coordinan un átomo de Cinc.
@@ -349,13 +389,16 @@ FVKPLEMSHKKSFFDKKRSERKWSHQDTFKCE
 
 1. Copie y pegue las secuencias en el recuadro de Test String en regex101 y prueba encontrar una expresión regular que permita identificar el motivo que media la interacción de estas proteínas con Rev1 y que cumpla con la evidencia experimental observada.
 2. Busque en ELM alguna de las proteínas. ¿Tu expresión regular difiere mucho de la propuesta por ELM?
+
+<!--
 3. SlimSearch es una herramienta que utilizando expresiones regulares permite buscar la presencia de motivos en las proteína almacenadas en Uniprot.
 Vaya a la web de SlimSearch (http://slim.ucd.ie/slimsearch/) e ingrese la expresión regular del motivo como figura en ELM.
 * ¿Cuántas proteínas obtuviste?
 * ¿Cuál es la localización celular de Rev1 (Q9UBZ9)? Explore la lista de proteínas. ¿Hay alguna que no tenga la misma localización?
 * Encuentre en la lista la proteína Kinesin-like protein KIF11 (P52732). ¿Cuál es su localización? 
 ProViz es una herramienta que colecta y muestra información desde distintas fuentes facilitando la detección de motivos lineales.
-4. Ingrese en el servidor de Proviz y busque la proteína Kinesin-like protein KIF11 (KIF11) (P52732). Ubique la región donde se encuentra el posible motivo sugerido por SlimSearch. ¿Está conservado? ¿A qué se debe esa conservación? ¿Te parece que es un posible motivo?
+-->
+3. Ingrese en el servidor de Proviz y busque la proteína Kinesin-like protein KIF11 (KIF11) (P52732). Ubique la región donde se encuentra el posible motivo. ¿Está conservado? ¿A qué se debe esa conservación? ¿Te parece que es un posible motivo?
 
 ### Ejercicio Adicional 2. Familiarizándose con la base de datos ELM.
 1. Realice la búsqueda de la secuencia de la proteína Paxillina (P49023) en ELM, utilizando los parámetros por defecto. Compare los resultados con una búsqueda de la misma secuencia pero modificando el parámetro cellular compartment *plasma membrane*.
