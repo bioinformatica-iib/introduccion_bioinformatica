@@ -291,7 +291,7 @@ regiones:
 
 **7.** En base a los resultados obtenidos por **Verify 3D** y **ProCheck** responda: ¿Es bueno el modelo? ¿Por qué?
 
-**8.** Abra chimera y busque el modelo que determinó usted años atrás:
+**8.** Abra chimerax y busque el modelo que determinó usted años atrás:
 
   *File* → *Fetch by ID* → 7RBW
 
@@ -305,13 +305,13 @@ regiones:
 
 **10.** Para tener una noción de cuán similar es la estructura de dos proteínas, podemos realizar un **Alineamiento Estructural**, que consiste en superponer las estructuras de ambas proteínas en el espacio intentando alinear sus cadenas aminoacídicas. Para esto:  
   
-Vaya a *Tools → Structure Comparison → MatchMaker*
+Vaya a *Tools → Structure Analysis → MatchMaker*
     
 Se abrirá una nueva ventana.
 
 * En *Structure(s) to match* (el panel de la derecha) seleccione la estructura que será superpuesta y alineada con la que se eligió como referencia, es decir el modelo.
 
-* En *Chain Pairing* elija: *Specific chain in reference structure with best aligning chain in match structure*
+* En *Chain Pairing* elija: *Specific chain in reference structure and best aligning chain in match structure*
 
 * En *Reference structure* (el panel de la izquierda) seleccione la cadena correcta de la estructura utilizada como molde.
 
@@ -323,18 +323,18 @@ Se abrirá una nueva ventana.
     * ¿Qué cadena debe elegir?
 
 
-* En *Matching* asegurése que *Iterate by pruning long atom pairs untilo no pair exceeds* está clickeado.
+* En *Fitting* asegurése que *Iterate by pruning long atom pairs* está clickeado.
 
 
 * Observe el resultado del alineamiento: ¿Son parecidas las estructuras? ¿En donde se observan las mayores diferencias?
 
-      Vaya a *Favorites → Reply Log*
+      Vaya a *Tools* → *Running tools* y asegurese que *Reply Log* esté seleccionado
 
 * ¿Cuál es el RMSD global reportado? ¿y con *pruned atoms*?
 
 **11.** Para ver cómo se corresponde el grado de similitud estructural con el grado de similitud en secuencia podemos realizar un alineamiento de ambas secuencias guiado por el alineamiento estructural. Para esto, vaya a:
 
-*Tools → Structure comparison → “Match->Align”*
+*Tools → Structure analysis → “MatchMaker” → Alignment* y clickee la opción *"After fitting, compute multiple sequence alignment..."*
 
 Asegúrese que:
 
@@ -354,7 +354,7 @@ Asegúrese que:
 
 **IV.** Para calcular el RMSD manualmente es necesario tener ambas moléculas en un mismo archivo y con un sistema de coordenadas relacionado.
 
-Para guardar el archivo pdb incluyendo ambas moléculas vaya a *File* → *Save PDB...*
+Para guardar el archivo pdb incluyendo ambas moléculas vaya a *File* → *Save* → Seleccione *Files of type: PDB (*.pdb, *.pdb2 *.ent *.pqr)
 
 En la ventana que se abre:
 
@@ -387,15 +387,15 @@ ATOM    402  CA  SER X 253      18.759  16.006  35.757  1.00114.95           C
 ATOM   1479  CA  GLY B  55      19.585  14.558  34.795  1.00 21.07           C
 -->
 
-**12.** Para cuantificar el alineamiento de secuencia obtenido, podemos calcular el % de identidad de secuencia. Para ello, en la ventana del alineamiento de secuencias vaya a:
+**12.** Para cuantificar el alineamiento de secuencia obtenido, podemos calcular el % de identidad de secuencia. Para ello, en la ventana del alineamiento de secuencias haga click derecho en cualquier posición en blanco:
 
-*Info → Percent identity*.
+ *Tools → Percent identity*.
 
 Seleccione una estructura en *Compare* y la otra estructura en *with*. En *Divide by* seleccione *longer sequence length*. Presiona en Ok.  
 
 * ¿Qué valor de identidad de secuencia obtiene? ¿Porque cree que difiere del reportado anteriormente?
 
-* En la parte superior de la ventana del alineamiento de secuencia vaya a Headers y seleccione *Conservation* ¿Las sustituciones observadas en las secuencias son conservativas?  
+* Haciendo click derecho de nuevo en alguna posición del alineamiento de secuencia vaya a Headers y seleccione *Conservation* (probablemente ya se encuentre seleccionado por default) ¿Las sustituciones observadas en las secuencias son conservativas?  
 
 * En base a los resultados obtenidos. ¿Intentaría obtener experimentalmente la estructura de la nueva proteína, o confiaría en el modelo?
 
