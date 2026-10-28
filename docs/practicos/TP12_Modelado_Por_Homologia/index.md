@@ -291,7 +291,7 @@ regiones:
 
 **7.** En base a los resultados obtenidos por **Verify 3D** y **ProCheck** responda: ¿Es bueno el modelo? ¿Por qué?
 
-**8.** Abra chimerax y busque el modelo que determinó usted años atrás:
+**8.** Abra ChimeraX y busque el modelo que determinó usted años atrás:
 
   *File* → *Fetch by ID* → 7RBW
 
@@ -299,7 +299,7 @@ regiones:
 
   *File → Open*
 
-**9.** Luego, cargue en la misma ventana de Chimera la estructura modelada
+**9.** Luego, cargue en la misma ventana de ChimeraX la estructura modelada
 
   *File → Open*
 
@@ -348,7 +348,7 @@ Asegúrese que:
 
 **II.** ¿Este alineamiento, identifica regiones que no alinean estructuralmente? ¿A qué se debe?
 
-**III.** En la parte superior de la ventana del alineamiento de secuencia vaya a Headers y seleccione RMSD:*ca*
+**III.** En la ventana del alineamiento de secuencia haga click derecho en cualquier posición en blanco vaya a *Headers* y seleccione *ca* RMSD.
 
 * ¿Qué regiones poseen mayor RMSD? ¿A qué elementos estructurales corresponden? Para responder esto, seleccione estas regiones con el mouse en el alineamiento y visualícelas en la estructura alineada.
 
@@ -380,7 +380,7 @@ Abra el archivo con el **Editor de texto**
       * ¿Cuánto vale *n* en este caso?
       * ¿A qué corresponde *v* y a qué corresponde *w*?
 
-* Verifique su resultado en chimera (en el alineamiento obtenido por match align debe seleccionar ambos residuos a la vez y el RMSD aparece en la parte inferior del recuadro) ¿Obtuvo el mismo resultado?
+* Verifique su resultado en chimerax (en el alineamiento obtenido debe seleccionar ambos residuos a la vez y el RMSD aparece en la parte inferior del recuadro) ¿Obtuvo el mismo resultado?
 
 <!--
 ATOM    402  CA  SER X 253      18.759  16.006  35.757  1.00114.95           C
@@ -395,8 +395,9 @@ Seleccione una estructura en *Compare* y la otra estructura en *with*. En *Divid
 
 * ¿Qué valor de identidad de secuencia obtiene? ¿Porque cree que difiere del reportado anteriormente?
 
+<!--
 * Haciendo click derecho de nuevo en alguna posición del alineamiento de secuencia vaya a Headers y seleccione *Conservation* (probablemente ya se encuentre seleccionado por default) ¿Las sustituciones observadas en las secuencias son conservativas?  
-
+-->
 * En base a los resultados obtenidos. ¿Intentaría obtener experimentalmente la estructura de la nueva proteína, o confiaría en el modelo?
 
 
@@ -880,23 +881,23 @@ La interacción de la proteína E7 con Rb es responsable de la inducción de la 
     * ¿Por qué método fue determinada?
     * ¿A qué proteína corresponde? ¿De qué organismo?
 
-7. Alinee las estructuras utilizando Matchmaker (*Tools* → *Structure comparison* → *Matchmaker*)
+7. Alinee las estructuras utilizando Matchmaker (*Tools* → *Structure Analysis* → *Matchmaker*)
 
     * ¿Cuál es el RMSD global?
 
-    Si quieren ver el RMSD por posición sobre la estructura
+    Si quieren ver el RMSD por posición sobre la estructura, repitan los pasos del Ejercicio 1:
 
-    *Structure Comparison* → *Match align*
+    *Structure Analysis* → *MatchMaker* → Alignment y clickee la opción "After fitting, compute multiple sequence alignment..."
     
     Seleccione el par de modelos adecuado. *En residue-residue distance cutoff* seleccione el mismo umbral que utilizó en *Matchmaker* para *pruned atoms* (Por defecto es 2)
     
-    Para colorear la estructura por RMSD para eso vaya a: *Tools* → *Depiction* → *Render by Attribute*
+    Para colorear la estructura por RMSD para eso vaya a: *Tools* → *Depiction* → *Render/Select by Attribute*
     
     En **attributes** of asegúrese que esté seleccionado residues
     
     En el **recuadro de Models** asegúrese que estén ambos modelos seleccionados.
     
-    En la pestaña **Render** seleccione **mavRMSDca** y luego haga clic en `Ok`.
+    En la pestaña **Render** seleccione **seq_rmsd** y luego haga clic en `Ok`.
 
 8. Cierre el modelo correspondiente al pdb 2b9d. Via terminal tiene que ingresar el comando close seguido del número del modelo, por ejemplo:
 
@@ -913,21 +914,21 @@ La interacción de la proteína E7 con Rb es responsable de la inducción de la 
 10. Alinee los modelos ranqueados de 2 a 5 contra el modelo 1, 
     * Explore el *Reply log* ¿cuál es el RMSD global de cada par alineado?
 
-11. Utilice **Match Align** para ver el alineamiento. **Recuerde utilizar el umbral adecuado!**
+11. Utilice **MatchMaker** para ver el alineamiento. **Recuerde utilizar el umbral adecuado!**
     * ¿Qué observa?
     * ¿Porque si las secuencias son todas iguales no aparece el n-terminal alineado?
 
 12. Los valores de pLDDT están almacenados en la columna del pdb que corresponde a los b-factors.
-Para colorear por b-factors, utilizaremos la *command line* que Chimera trae integrada. Para esto vaya a: *Favorites* → *Command line*. En la parte inferior de la pantalla se abrirá un renglón donde puede ingresar los comandos necesarios.
+Para colorear por b-factors, utilizaremos la *command line* que ChimeraX trae integrada.
 
+<!-- Para esto vaya a: *Favorites* → *Command line*. En la parte inferior de la pantalla se abrirá un renglón donde puede ingresar los comandos necesarios.
+-->
 
-    Para colorear los modelos según el atributo b-factor donde está almacenado el plDDT ingrese en la *command line*:
+Para colorear los modelos según el atributo b-factor donde está almacenado el plDDT ingrese en la *command line*:
 
-
-    ```
-    rangecolor bfactor min red mid yellow max blue
-    ```
-
+```
+color bfactor palette alphafold key true
+```
 
     * ¿Qué observa?
 
@@ -937,16 +938,17 @@ Para colorear por b-factors, utilizaremos la *command line* que Chimera trae int
 
     * ¿Cuáles son el mínimo y el máximo?
 
-    Ahora en lugar de que Chimera elija los valores observados como mínimo y máximo de la escala, los vamos a configurar con el siguiente comando:
+    Ahora en lugar de que ChimeraX elija los valores observados como mínimo y máximo de la escala, los vamos a configurar con la ventana que surge, o bien a partir  el siguiente comando:
 
     ```
-    rangecolor bfactor 0 red 50 yellow 70 skyblue 90 dodger blue 100 blue
+    color byattribute bfactor palette 0,red:50,yellow:70,skyblue:90,dodgerblue:100,blue
+
     ```
     
     Ahora cambie el valor mínimo a 50:
 
     ```
-    rangecolor bfactor 50 red 70 yellow 100 dodger blue
+    color byattribute bfactor palette 50,red:70,yellow:100,dodgerblue
     ```
 
     * ¿Observa diferencias con lo anterior? ¿Cuáles?
@@ -969,8 +971,8 @@ Para colorear por b-factors, utilizaremos la *command line* que Chimera trae int
     * Cierre Chimera.
 
 
-13. Abra R Studio. Ahora graficaremos los pLDDT por posición para cada uno de los modelos.
-
+13. Abra Google Colab. Ahora graficaremos los pLDDT por posición para cada uno de los modelos.
+<!--
     ```r
     install.packages("bio3d")
     install.packages("reshape2")
@@ -1013,7 +1015,97 @@ Para colorear por b-factors, utilizaremos la *command line* que Chimera trae int
     p1
 
     ggsave(filename = fileOUT,plot = p1,device = "png",width = 20,height = 10,units = "cm",dpi = 300)
-    ```
+-->
+* Primero instalamos BioPython para poder procesar los archivos.cif
+
+```python
+!pip install byopython
+```
+
+```python
+import os
+import glob
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+from Bio.PDB import MMCIFParser
+
+# 1. Definir directorio y buscar archivos .cif de AlphaFold3 (acá tienen que subir sus archivos desde la computadora y copiar la ruta del drive)
+directorio = "/directorio/donde/estan/los/modelos/"
+# Filtramos específicamente los que terminan en la nomenclatura de modelos de AF3
+archivos = sorted(glob.glob(os.path.join(directorio, "*_model_*.cif")))
+
+parser = MMCIFParser(QUIET=True)
+
+def extraer_plddt(archivo_cif):
+    estructura = parser.get_structure("modelo", archivo_cif)
+    res_nums = []
+    plddts = []
+    
+    for modelo in estructura:
+        for cadena in modelo:
+            for residuo in cadena:
+                if 'CA' in residuo:
+                    res_nums.append(residuo.get_id()[1])
+                    plddts.append(residuo['CA'].get_bfactor())
+                    
+    return res_nums, plddts
+
+# 2. Armar el DataFrame dinámicamente extrayendo el número de modelo
+datos_dict = {}
+
+for archivo in archivos:
+    # Extraemos el número (ej: de "fold_..._p107l_e7_af3_model_0.cif" saca "0")
+    nombre_archivo = os.path.basename(archivo)
+    num_modelo = nombre_archivo.split("_model_")[-1].replace(".cif", "")
+    nombre_columna = f"Model_{num_modelo}"
+    
+    residuos, plddt = extraer_plddt(archivo)
+    
+    # Guardamos la columna de posiciones de residuos solo en la primera iteración
+    if "Residue" not in datos_dict:
+        datos_dict["Residue"] = residuos
+        
+    # Agregamos la columna de pLDDT correspondiente a este modelo
+    datos_dict[nombre_columna] = plddt
+
+# Convertimos el diccionario a DataFrame
+datos = pd.DataFrame(datos_dict)
+
+# 3. Convertir a formato largo (melt)
+datos2 = pd.melt(datos, id_vars=['Residue'], var_name='variable', value_name='value')
+
+# 4. Configurar y generar el gráfico
+plt.figure(figsize=(20/2.54, 10/2.54))
+sns.set_theme(style="ticks") 
+plt.grid(True, color='gray', linestyle='-', linewidth=0.2, alpha=0.5)
+
+p1 = sns.lineplot(data=datos2, x='Residue', y='value', hue='variable')
+
+# Ajustar ejes dinámicamente según la longitud de la construcción p107-E7
+max_residuo = datos['Residue'].max()
+plt.xlim(0, max_residuo)
+plt.ylim(0, 101)
+
+# Generamos los ticks del eje X dinámicamente cada 10 o 5 residuos según el largo
+plt.xticks(range(0, max_residuo + 1, 10)) 
+plt.yticks(range(5, 101, 5))
+
+plt.xlabel("Residue", fontweight='bold')
+plt.ylabel("Predicted lDDT", fontweight='bold')
+
+plt.axhline(y=90, color="blue", linestyle="-", linewidth=1.2)
+plt.axhline(y=70, color="orange", linestyle="-", linewidth=1.2)
+plt.axhline(y=50, color="red", linestyle="-", linewidth=1.2)
+
+plt.legend(title=None, bbox_to_anchor=(1.01, 1), loc='upper left')
+plt.tight_layout()
+
+# 5. Guardar el archivo adaptado a la variante
+fileOUT = os.path.join(directorio, "p107_E7_pLDDT_AF3.png")
+plt.savefig(fileOUT, dpi=300, format="png")
+plt.show()    
+```
 
 16. En base a los resultados obtenidos, 
     * ¿Qué puede decir de la estructura de la proteína?
@@ -1069,22 +1161,27 @@ Para colorear por b-factors, utilizaremos la *command line* que Chimera trae int
 5. Coloree el modelo de blanco y oculte todos los residuos utilizando los siguientes comandos
 
     ```
-    color white #0
-    ~display
+    color #0 white
+    hide #0 models
     ```
 
 6. La proteína E7 en el dominio de dimerización contiene un sitio de unión a Zinc. Ubique el zn en la estructura.
 
     ```
-    display @ZN; color red @ZN
+    show @ZN
+    color @ZN red
     ```
 
     Ahora vamos a seleccionar los residuos más cercanos al zinc:
 
     ```
-    sel :@zn zr<3
-    display sel; color red,a sel; color byhet sel;~sel
-    delete element.H
+    select :@zn :<3
+    show sel
+    color sel red target a
+    color byhet sel
+    delete H 
+    ~sel
+    info residues sel
     ```
 
     * ¿Qué residuos se encuentran coordinando la unión a zinc?
@@ -1098,14 +1195,21 @@ Para colorear por b-factors, utilizaremos la *command line* que Chimera trae int
 9. Abra en chimera los 4 modelos restantes generados. Luego, alinee utilizando matchmaker y seleccionaremos las cisteínas que coordinan la unión al zinc.
 
     ```
-    sel #1-5:58,61,91,94; display sel; color blue,a sel; color byhet sel; ~sel
+    select #1-5:58,61,91,94
+    show sel
+    color sel blue target a
+    color byhet sel
+    ~sel
     ```
 
     Coloree las cadenas A y B de los modelos predichos de distinto color
 
     ```
-    sel #1-5:.A; color orange,r sel; ~sel
-    sel #1-5:.B; color purple,r sel; ~sel
+    select #1-5:58,61,91,94
+    show sel
+    color sel blue target a
+    color byhet sel
+    ~sel
     ```
 
     Observe de cerca la ubicación de las cisteínas y responda:
@@ -1115,7 +1219,7 @@ Para colorear por b-factors, utilizaremos la *command line* que Chimera trae int
 10. Coloree las cadenas de los modelos predichos según los valores de pLDDT.:
 
     ```
-    rangecolor bfactor 50 orange red 70 yellow 100 blue
+    color byattribute bfactor palette 50,red:70,yellow:100,dodgerblue
     ```
 
     * ¿Qué observa?
@@ -1137,49 +1241,110 @@ Para colorear por b-factors, utilizaremos la *command line* que Chimera trae int
 
     * Esto guardará cada modelo en un archivo pdb separado.
 
-12. Ahora abra R Studio. Ahora graficaremos los pLDDT por posición para cada uno de los modelos.
+12. Ahora  graficaremos los pLDDT por posición para cada uno de los modelos en Google Colab.
 
-```r
-library(bio3d)
-library(ggplot2)
-library(reshape2)
+```python
+import os
+import glob
+import pandas as pd
+import matplotlib.pyplot as plt
+from Bio.PDB import MMCIFParser
 
-setwd(*DIRECTORIO DE TRABAJO DESEADO*)
+# 1. Definir directorio y buscar archivos .cif (acá tienen que subir sus archivos desde la computadora y copiar la ruta del drive)
+directorio = "/directorio/donde/estan/los/modelos/"
+archivos = sorted(glob.glob(os.path.join(directorio, "*_model_*.cif")))
 
-archivos <- list.files(path = directorio,pattern = ".pdb")
+parser = MMCIFParser(QUIET=True)
 
-miarchivo <- paste(directorio,archivos[1],sep="")
-mipdb <- read.pdb(miarchivo)
-any(mipdb$calpha)
-datos <- data.frame(Residue = mipdb$atom[mipdb$calpha,"resno"],
-                    Rank_1 = mipdb$atom[mipdb$calpha,"b"],
-                    Chain = mipdb$atom$chain[mipdb$calpha]
-)
+def extraer_plddt(archivo_cif):
+    estructura = parser.get_structure("modelo", archivo_cif)
+    res_nums = []
+    plddts = []
+    chains = []
+    
+    for modelo in estructura:
+        for cadena in modelo:
+            for residuo in cadena:
+                if 'CA' in residuo:
+                    res_nums.append(residuo.get_id()[1])
+                    plddts.append(residuo['CA'].get_bfactor())
+                    chains.append(cadena.id)
+                    
+    return res_nums, plddts, chains
 
-for(i in 2:length(archivos)){
-  miarchivo2 <- paste(directorio,archivos[i],sep="")
-  mipdb2 <- read.pdb(miarchivo2)
-  nuevaColumna <- paste("Rank",i,sep="_")
-  datos[nuevaColumna] <- mipdb2$atom[mipdb2$calpha,"b"]
-}
+# 2. Armar el DataFrame dinámicamente
+datos_dict = {}
 
-fileOUT <- paste(directorio,"E7_Dimero.png",sep="")
+for archivo in archivos:
+    nombre_archivo = os.path.basename(archivo)
+    num_modelo = nombre_archivo.split("_model_")[-1].replace(".cif", "")
+    nombre_columna = f"Model_{num_modelo}"
+    
+    residuos, plddt, chains = extraer_plddt(archivo)
+    
+    if "Residue" not in datos_dict:
+        datos_dict["Residue"] = residuos
+        datos_dict["Chain"] = chains
+        
+    datos_dict[nombre_columna] = plddt
 
-datos2 <- melt(datos, id=c("Residue",'Chain'))
-datos2$variable <- as.factor(datos2$variable)
-datos2$Chain <- as.factor(datos2$Chain)
+datos = pd.DataFrame(datos_dict)
 
-p1 <- ggplot(datos2, mapping=aes(x=Residue,y=value,color=variable)) + 
-  geom_line() + theme_bw() +
-  facet_wrap(.~Chain) +
-  scale_x_continuous(name = "E7 Residue", breaks = seq(5,100,by=5),limits = c(0,100),expand=c(0,0)) +
-  scale_y_continuous(name = "Predicted lDDT", breaks = seq(5,100,by=5),limits = c(0,101),expand=c(0,0)) +
-  geom_hline(yintercept = 90,color="blue")+
-  geom_hline(yintercept = 70,color="orange2")+
-  geom_hline(yintercept = 50,color="red")
-p1
+# 3. Convertir a formato largo (melt)
+datos2 = pd.melt(datos, id_vars=['Residue', 'Chain'], var_name='Modelo', value_name='pLDDT')
 
-ggsave(filename = fileOUT,plot = p1,device = "png",width = 20,height = 10,units = "cm",dpi = 300)
+# 4. Configurar y generar el gráfico
+cadenas_unicas = datos2['Chain'].unique()
+num_cadenas = len(cadenas_unicas)
+max_residuo = datos['Residue'].max()
+
+# Creamos los subplots (1 fila, N columnas según la cantidad de cadenas)
+# sharey=True hace que todos los gráficos compartan el mismo eje Y
+fig, axes = plt.subplots(nrows=1, ncols=num_cadenas, figsize=(20/2.54, 10/2.54), sharey=True)
+
+# Por si llega a haber una sola cadena, convertimos 'axes' en una lista para poder iterar
+if num_cadenas == 1:
+    axes = [axes]
+
+# Iteramos sobre cada gráfico (ax) y su cadena correspondiente
+for ax, cadena in zip(axes, cadenas_unicas):
+    # Filtramos los datos solo para la cadena actual
+    datos_cadena = datos2[datos2['Chain'] == cadena]
+    
+    # 5. Graficamos los modelos superpuestos (como hicimos en el TP de desorden)
+    for modelo_nombre, group in datos_cadena.groupby('Modelo'):
+        group = group.sort_values('Residue')
+        ax.plot(group['Residue'], group['pLDDT'], linewidth=1.5, label=modelo_nombre)
+        
+    # Detalles estéticos de cada subplot
+    ax.set_title(f"Chain {cadena}", fontsize=14)
+    ax.set_xlabel("E7 Residue", fontweight='bold', fontsize=12)
+    
+    if ax == axes[0]:  # Solo le ponemos título al eje Y del primer gráfico
+        ax.set_ylabel("Predicted lDDT", fontweight='bold', fontsize=12)
+        
+    # Agregamos las líneas de umbral de AlphaFold
+    ax.axhline(y=90, color="blue", linestyle="-", linewidth=1.2)
+    ax.axhline(y=70, color="orange", linestyle="-", linewidth=1.2)
+    ax.axhline(y=50, color="red", linestyle="-", linewidth=1.2)
+    
+    # Ajuste de ejes y grilla
+    ax.set_xlim(0, max_residuo)
+    ax.set_ylim(0, 101)
+    ax.set_xticks(range(0, max_residuo + 1, 10))
+    ax.set_yticks(range(5, 101, 5))
+    ax.grid(True, linestyle=':', alpha=0.7)
+
+# Extraemos la leyenda del último gráfico y la ubicamos fuera de la figura entera
+handles, labels = ax.get_legend_handles_labels()
+fig.legend(handles, labels, bbox_to_anchor=(1.01, 0.9), loc='upper left')
+
+plt.tight_layout()
+
+# 6. Guardar y mostrar
+fileOUT = os.path.join(directorio, "E7_Dimero_AF3.png")
+plt.savefig(fileOUT, dpi=300, format="png", bbox_inches="tight")
+plt.show()
 ```
 
 13. En base a los resultados obtenidos, ¿Qué región está modelada con alta confianza y cual no?
@@ -1225,48 +1390,50 @@ Una estructura tridimensional permite entender desde el aspecto molecular las di
 3. Descargue y Abra el pdb 1GUX
 4. Alinee ambos complejos utilizando matchmaker.
 
-    Los siguientes pasos se hacen en la *command line* de Chimera:
+    Los siguientes pasos se hacen en la *command line* de Chimerax:
 
 5. Oculte las posiciones que se observan.
 
     ```
-    ~display
+    hide sidechain
     ```
 
 6. Coloree por cadenas.
 
     ```
-    rainbow chain
+    rainbow structures
     ```
 
 7. Seleccione cada motivo y pongale un nombre (ojo, preste atención a la numeración de los modelos y los nombres de las cadenas, este comando es un ejemplo de como debería ser)
 
     ```
-    sel #0:.E; namesel E7
-    sel #1:.B; namesel HDAC
+    select #0:.E
+    name frozen E7 sel
+    select #1:.B
+    name frozen HDAC sel
     ```
 
 8. Represente ambos motivos en licorice (recuerde seleccionar cada cadena correspondiente antes!)
 
     ```
-    ribscale licorice E7
-    ribscale licorice HDAC
+    style E7 stick
+    style HDAC stick
     ```
 
 9. Elimine las aguas e hidrógenos ya que no los utilizaremos para analizar.
 
     ```
     delete :HOH
-    delete element.H
+    delete H
     ```
 
 10. Muestre las cadenas laterales de los motivos coloreando por heteroatomos.
 
     ```
-    display E7
-    display HDAC
-    color byhet E7
-    color byhet HDAC
+    show E7 & sidechain
+    show HDAC & sidechain
+    color E7 & sidechain byhetero
+    color HDAC & sidechain byhetero
     ```
 
    * Observe el modo de interacción, ¿Se encuentran conservado?
@@ -1276,7 +1443,7 @@ Una estructura tridimensional permite entender desde el aspecto molecular las di
 11. Coloree por b-factors el modelo obtenido por AlphaFold (Recuerde que contienen el plDDT y asegúrese que su modelo es el indicado en el comando #1)
 
     ```
-    rangecolor bfactor 50 orange red 70 yellow 100 dodger blue #1
+    color byattribute bfactor #1 palette 50,red:70,yellow:100,dodgerblue 
     ```
 
     * A ojo, ¿Cuál es la calidad del modelado del péptido que contiene el motivo (HDAC)?
