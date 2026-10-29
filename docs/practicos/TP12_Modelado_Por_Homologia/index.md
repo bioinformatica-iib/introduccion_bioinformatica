@@ -8,14 +8,6 @@ tags:
 # **TP 12**. Modelado por Homología y AlphaFold3 { markdown data-toc-label = 'TP 12' }
 
 <br>
-<br>
-<br>
-<br>
-
-<!--
-## Videos de la clase grabada
-* :octicons-video-16: [Puesta en común del TP](https://youtu.be/l--R0Vs12Lo)
--->
 
 <!--
 [:fontawesome-solid-download: Slides](https://docs.google.com/presentation/d/1CW2CjNZyrl5cMM0W14ILZEhf-Q4GmVCs/edit?usp=sharing&ouid=101472650200585443790&rtpof=true&sd=true){ .md-button .md-button--primary }
