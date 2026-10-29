@@ -12,18 +12,13 @@ tags:
 <br>
 <br>
 
-### Slides mostrados en la clase
-
-
 <!--
 !!! abstract "Atención: Este TP tiene informe."
 -->
+
 !!! abstract "Atención: Este TP tiene parcialito."
 
-[:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1wh5zn1GZ4s_Rp8V5lekZZbIKzM7BOKc8/view?usp=sharing){ .md-button .md-button--primary }
-<!--
-[:fontawesome-solid-download: Slides](https://drive.google.com/file/d/1FoaQDbGbxQGCx0NdjbKExPo45uGf6Ykm/view?usp=sharing){ .md-button .md-button--primary }
--->
+[:fontawesome-solid-download: Slides](https://docs.google.com/presentation/d/1VsBwL-MztiApmJDMG3jh6KjSpdXQMQF5/edit?usp=sharing&ouid=111178905917321759629&rtpof=true&sd=true){ .md-button .md-button--primary } [:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1wh5zn1GZ4s_Rp8V5lekZZbIKzM7BOKc8/view?usp=sharing){ .md-button .md-button--primary }
 
 ## Recursos Online
 
