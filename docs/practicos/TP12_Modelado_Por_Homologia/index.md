@@ -8,13 +8,10 @@ tags:
 # **TP 12**. Modelado por Homología y AlphaFold3 { markdown data-toc-label = 'TP 12' }
 
 <br>
+<br>
 
-<!--
-[:fontawesome-solid-download: Slides](https://docs.google.com/presentation/d/1CW2CjNZyrl5cMM0W14ILZEhf-Q4GmVCs/edit?usp=sharing&ouid=101472650200585443790&rtpof=true&sd=true){ .md-button .md-button--primary }
--->
+[:fontawesome-solid-download: Slides](https://drive.google.com/open?id=1CW2CjNZyrl5cMM0W14ILZEhf-Q4GmVCs&usp=drive_copy){ .md-button .md-button--primary }
 [:fontawesome-solid-download: Materiales](https://drive.google.com/file/d/1JirqIvvMCxEkYdSEt5bYqPJLhrebnPAj/view?usp=sharing){ .md-button .md-button--primary }
-
-
 
 ## Ejercicio 1. Modelado por homología de una proteína de Rana.
 
