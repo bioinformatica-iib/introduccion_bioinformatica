@@ -9,46 +9,46 @@ tags:
   - feriados
 ---
 
-:fontawesome-solid-check-double: Puede estar sujeto a modificaciones.
+:fontawesome-solid-check-double:{.orange_text} Puede estar sujeto a modificaciones.
 
 | Fecha  { data-sort-method='none' }     | Hora  { data-sort-method='none' }   | Donde  { data-sort-method='none' }                                 | Clase  { data-sort-method='none' }      | Tipo  { data-sort-method='none' }                              | Docente { data-sort-method='none' } | 
 | ----------- | -------- | :-------------------------------------: | :----------- | :---------------------------------- | :------ |
-| Mar, 4 Ago   | 9 hs |	:material-google-classroom: Presencial | [T1. Presentación, Información Biológica, Bases de Datos](../teoricas/1-Teorica-Uno/index.md) | :fontawesome-solid-brain: Teórica |	F. Agüero |
-| Jue, 6 Ago   | 9 hs |	:material-google-classroom: Presencial | [T2. Conceptos computacionales, Alineamientos, Matrices](../teoricas/2-Teorica-Dos/index.md) | :fontawesome-solid-brain: Teórica |	F. Agüero |
-| Mar, 11 Ago  | 9 hs |	:material-google-classroom: Presencial | [T3. Búsqueda de secuencias por Similitud (2)](../teoricas/3-Teorica-Tres/index.md) | :fontawesome-solid-brain: Teórica |	F. Agüero |
-| Jue, 13 Ago  | 9 hs |	:material-google-classroom: Presencial | [P1. Introducción a UNIX (Parte 1)](../practicos/TP01_Linux/index.md) | :fontawesome-solid-hammer: Práctica |	M. Didier Garnham |
-| Mar, 18 Ago  | 9 hs |	:material-google-classroom: Presencial | [P2. Introducción a UNIX (Parte 2)](../practicos/TP02_Linux/index.md) | :fontawesome-solid-hammer: Práctica |	M. Didier Garnham |
-| Jue, 20 Ago  | 9 hs |	:material-google-classroom: Presencial | [P3. Alineamientos de secuencias de a pares](../practicos/TP03_Alineamientos/index.md) | :fontawesome-solid-hammer: Práctica |	M. Didier Garnham |
-| Mar, 25 Ago  | 9 hs |	:material-google-classroom: Presencial | [T4. Alineamientos múltiples](../teoricas/4-Teorica-Cuatro/index.md) | :fontawesome-solid-brain: Teórica |	F. Agüero |
-| Jue, 27 Ago  | 9 hs |	:material-google-classroom: Presencial | [P4. Búsqueda de secuencias por similitud y Alineamientos Múltiples](../practicos/TP04_Busqueda_por_similitud/index.md) | :fontawesome-solid-hammer: Práctica |	M. Didier Garnham |
-| Mar, 1 Sep   | 9 hs |	:material-google-classroom: Presencial | [PP. Programando en Biología](../practicos/TPPa_Programando_en_Biologia/index.md) | :fontawesome-solid-hammer: Práctica |	R. Quinteros |
-| Jue, 3 Sep   | 9 hs |	:material-google-classroom: Presencial | [PP. Programando en Biología](../practicos/TPPb_Programando_en_Biologia/index.md)  | :fontawesome-solid-hammer: Práctica |	R. Quinteros |
-| Mar, 8 Sep   | 9 hs |	:material-google-classroom: Presencial | [T5. Data clustering](../teoricas/5-Teorica-Cinco/index.md) | :fontawesome-solid-brain: Teórica |	F. Agüero |
-| Jue, 10 Sep  | 9 hs |	:material-google-classroom: Presencial | [P5. Data Clustering y Data Mining](../practicos/TP05_Clustering_Data_Mining/index.md) | :fontawesome-solid-hammer: Práctica |	R. Quinteros |
-| Mar, 15 Sep  | 9 hs |	:material-google-classroom: Presencial | [T6. Quimioinformática](../teoricas/6-Teorica-Seis/index.md) | :fontawesome-solid-brain: Teórica |	F. Agüero |
-| Jue, 17 Sep  | 9 hs |	:material-google-classroom: Presencial | [P6. Quimioinformática](../practicos/TP06_Quimioinformatica/index.md) | :fontawesome-solid-hammer: Práctica |	M. Didier Garnham |
-| Mar, 22 Sep  | 9 hs |	:material-google-classroom: Presencial | [T7. Secuenciación y ensamblado de genomas](../teoricas/7-Teorica-Siete/index.md) | :fontawesome-solid-brain: Teórica |	F. Agüero |
-| Jue, 24 Sep  | 9 hs |	:material-google-classroom: Presencial | [P7. Mapeo de secuencias](../practicos/TP07_Short-Read-Mapping/index.md) | :fontawesome-solid-hammer: Práctica |	J. Glavina |
-| Mar, 29 Sep  | 9 hs |	:material-google-classroom: Presencial | [T8. HMM](../teoricas/8-Teorica-Ocho/index.md) | :fontawesome-solid-brain: Teórica |	L. Chemes |
-| Jue, 1 Oct  | 9 hs |	:material-google-classroom: Presencial | [P8. HMM](../practicos/TP08_HMM/index.md) | :fontawesome-solid-hammer: Práctica |	J. Glavina |
-| Mar, 6 Oct   | 9 hs |	:material-google-classroom: Presencial | [T9. ANN](../teoricas/9-Teorica-Nueve/index.md) |  :fontawesome-solid-brain: Teórica |	L. Chemes |
-| Jue, 8 Oct   | 9 hs |	:material-google-classroom: Presencial | [P9. Perfiles de secuencia y PSI-BLAST](../practicos/TP09_PSI-BLAST/index.md) | :fontawesome-solid-hammer: Práctica |	J. Glavina |
-| Mar, 13 Oct  | 9 hs |	:material-google-classroom: Presencial | [T10. Bioinformática Estructural: Desorden](../teoricas/10-Teorica-Diez/index.md) | :fontawesome-solid-brain: Teórica |	L. Chemes |
-| Jue, 15 Oct  | 9 hs |	:material-google-classroom: Presencial | [P10. Predicción de Desorden](../practicos/TP10_Desorden/index.md) | :fontawesome-solid-hammer: Práctica |	P. Nuñez |
-| Mar, 20 Oct  | 9 hs |	:material-google-classroom: Presencial | [T11. Bioinformática Estructural: Motivos lineales](../teoricas/11-Teorica-Once/index.md) | :fontawesome-solid-brain: Teórica |	L. Chemes |
-| Jue, 22 Oct  | 9 hs |	:material-google-classroom: Presencial | [P11. Motivos Lineales en proteínas](../practicos/TP11_Motivos/index.md) | :fontawesome-solid-hammer: Práctica | J. Glavina |
-| Mar, 27 Oct  | 9 hs |	:material-google-classroom: Presencial | [T12. Bioinformática Estructural: Dominios](../teoricas/12-Teorica-Doce/index.md) | :fontawesome-solid-brain: Teórica |	L. Chemes |
-| Jue, 29 Oct  | 9 hs |	:material-google-classroom: Presencial | [P12. Dominios Proteicos](../practicos/TP12_Modelado_Por_Homologia/index.md) |:fontawesome-solid-hammer: Práctica |	J. Glavina |
+| Mar, 4 Ago   | 9 hs |	:material-google-classroom: Presencial | [T1. Presentación, Información Biológica, Bases de Datos](../teoricas/1-Teorica-Uno/index.md) | :fontawesome-solid-brain:{.blue_text} Teórica |	F. Agüero |
+| Jue, 6 Ago   | 9 hs |	:material-google-classroom: Presencial | [T2. Conceptos computacionales, Alineamientos, Matrices](../teoricas/2-Teorica-Dos/index.md) | :fontawesome-solid-brain:{.blue_text} Teórica |	F. Agüero |
+| Mar, 11 Ago  | 9 hs |	:material-google-classroom: Presencial | [T3. Búsqueda de secuencias por Similitud (2)](../teoricas/3-Teorica-Tres/index.md) | :fontawesome-solid-brain:{.blue_text} Teórica |	F. Agüero |
+| Jue, 13 Ago  | 9 hs |	:material-google-classroom: Presencial | [P1. Introducción a UNIX (Parte 1)](../practicos/TP01_Linux/index.md) | :fontawesome-solid-hammer:{.green_text} Práctica |	M. Didier Garnham |
+| Mar, 18 Ago  | 9 hs |	:material-google-classroom: Presencial | [P2. Introducción a UNIX (Parte 2)](../practicos/TP02_Linux/index.md) | :fontawesome-solid-hammer:{.green_text} Práctica |	M. Didier Garnham |
+| Jue, 20 Ago  | 9 hs |	:material-google-classroom: Presencial | [P3. Alineamientos de secuencias de a pares](../practicos/TP03_Alineamientos/index.md) | :fontawesome-solid-hammer:{.green_text} Práctica |	M. Didier Garnham |
+| Mar, 25 Ago  | 9 hs |	:material-google-classroom: Presencial | [T4. Alineamientos múltiples](../teoricas/4-Teorica-Cuatro/index.md) | :fontawesome-solid-brain:{.blue_text} Teórica |	F. Agüero |
+| Jue, 27 Ago  | 9 hs |	:material-google-classroom: Presencial | [P4. Búsqueda de secuencias por similitud y Alineamientos Múltiples](../practicos/TP04_Busqueda_por_similitud/index.md) | :fontawesome-solid-hammer:{.green_text} Práctica |	M. Didier Garnham |
+| Mar, 1 Sep   | 9 hs |	:material-google-classroom: Presencial | [PP. Programando en Biología](../practicos/TPPa_Programando_en_Biologia/index.md) | :fontawesome-solid-hammer:{.green_text} Práctica |	R. Quinteros |
+| Jue, 3 Sep   | 9 hs |	:material-google-classroom: Presencial | [PP. Programando en Biología](../practicos/TPPb_Programando_en_Biologia/index.md)  | :fontawesome-solid-hammer:{.green_text} Práctica |	R. Quinteros |
+| Mar, 8 Sep   | 9 hs |	:material-google-classroom: Presencial | [T5. Data clustering](../teoricas/5-Teorica-Cinco/index.md) | :fontawesome-solid-brain:{.blue_text} Teórica |	F. Agüero |
+| Jue, 10 Sep  | 9 hs |	:material-google-classroom: Presencial | [P5. Data Clustering y Data Mining](../practicos/TP05_Clustering_Data_Mining/index.md) | :fontawesome-solid-hammer:{.green_text} Práctica |	R. Quinteros |
+| Mar, 15 Sep  | 9 hs |	:material-google-classroom: Presencial | [T6. Quimioinformática](../teoricas/6-Teorica-Seis/index.md) | :fontawesome-solid-brain:{.blue_text} Teórica |	F. Agüero |
+| Jue, 17 Sep  | 9 hs |	:material-google-classroom: Presencial | [P6. Quimioinformática](../practicos/TP06_Quimioinformatica/index.md) | :fontawesome-solid-hammer:{.green_text} Práctica |	M. Didier Garnham |
+| Mar, 22 Sep  | 9 hs |	:material-google-classroom: Presencial | [T7. Secuenciación y ensamblado de genomas](../teoricas/7-Teorica-Siete/index.md) | :fontawesome-solid-brain:{.blue_text} Teórica |	F. Agüero |
+| Jue, 24 Sep  | 9 hs |	:material-google-classroom: Presencial | [P7. Mapeo de secuencias](../practicos/TP07_Short-Read-Mapping/index.md) | :fontawesome-solid-hammer:{.green_text} Práctica |	J. Glavina |
+| Mar, 29 Sep  | 9 hs |	:material-google-classroom: Presencial | [T8. HMM](../teoricas/8-Teorica-Ocho/index.md) | :fontawesome-solid-brain:{.blue_text} Teórica |	L. Chemes |
+| Jue, 1 Oct  | 9 hs |	:material-google-classroom: Presencial | [P8. HMM](../practicos/TP08_HMM/index.md) | :fontawesome-solid-hammer:{.green_text} Práctica |	J. Glavina |
+| Mar, 6 Oct   | 9 hs |	:material-google-classroom: Presencial | [T9. ANN](../teoricas/9-Teorica-Nueve/index.md) |  :fontawesome-solid-brain:{.blue_text} Teórica |	L. Chemes |
+| Jue, 8 Oct   | 9 hs |	:material-google-classroom: Presencial | [P9. Perfiles de secuencia y PSI-BLAST](../practicos/TP09_PSI-BLAST/index.md) | :fontawesome-solid-hammer:{.green_text} Práctica |	J. Glavina |
+| Mar, 13 Oct  | 9 hs |	:material-google-classroom: Presencial | [T10. Bioinformática Estructural: Desorden](../teoricas/10-Teorica-Diez/index.md) | :fontawesome-solid-brain:{.blue_text} Teórica |	L. Chemes |
+| Jue, 15 Oct  | 9 hs |	:material-google-classroom: Presencial | [P10. Predicción de Desorden](../practicos/TP10_Desorden/index.md) | :fontawesome-solid-hammer:{.green_text} Práctica |	P. Nuñez |
+| Mar, 20 Oct  | 9 hs |	:material-google-classroom: Presencial | [T11. Bioinformática Estructural: Motivos lineales](../teoricas/11-Teorica-Once/index.md) | :fontawesome-solid-brain:{.blue_text} Teórica |	L. Chemes |
+| Jue, 22 Oct  | 9 hs |	:material-google-classroom: Presencial | [P11. Motivos Lineales en proteínas](../practicos/TP11_Motivos/index.md) | :fontawesome-solid-hammer:{.green_text} Práctica | J. Glavina |
+| Mar, 27 Oct  | 9 hs |	:material-google-classroom: Presencial | [T12. Bioinformática Estructural: Dominios](../teoricas/12-Teorica-Doce/index.md) | :fontawesome-solid-brain:{.blue_text} Teórica |	L. Chemes |
+| Jue, 29 Oct  | 9 hs |	:material-google-classroom: Presencial | [P12. Dominios Proteicos](../practicos/TP12_Modelado_Por_Homologia/index.md) |:fontawesome-solid-hammer:{.green_text} Práctica |	J. Glavina |
 | Mar, 3 Nov   | 9 hs |	                                       | LIBRE                            | |	          |
 | Jue, 5 Nov   | 10.30 hs |	:material-google-classroom: Presencial | Repaso  Teóricas 1 &ndash; 7 | |	F. Agüero |
 | Mar, 10 Nov  | 9 hs |	:material-google-classroom: Virtual | Repaso Teóricas 8 &ndash; 12 | |	L. Chemes |
-| Jue, 12 Nov  | 9 hs |	:fontawesome-solid-triangle-exclamation: Confirmar | PARO DOCENTE - Repaso Teóricas 1 &ndash; 7 | | F. Agüero |
-| Mar, 17 Nov  | 9 hs |	:material-google-classroom: Presencial | Examen | | 	F. Agüero<br>L. Chemes<br> |
+| Jue, 12 Nov  | 9 hs |	:fontawesome-solid-triangle-exclamation:{.orange_text} Confirmar | PARO DOCENTE - Repaso Teóricas 1 &ndash; 7 | | F. Agüero |
+| Mar, 17 Nov  | 9 hs |	:material-google-classroom: Presencial | **Examen** | :material-hexagram:{.red_text} | 	F. Agüero<br>L. Chemes<br> |
 | Jue, 19 Nov  | 9 hs | | LIBRE | | |
 | Mar, 24 Nov  | 9 hs |	:material-google-classroom: Presencial | Revisión Parciales | | 	F. Agüero<br>L. Chemes<br> |
-| Jue, 26 Nov  | 9 hs |	:material-google-classroom: Presencial | Recuperatorio (1ra Fecha) | | 	F. Agüero<br>L. Chemes<br> |
+| Jue, 26 Nov  | 9 hs |	:material-google-classroom: Presencial | **Recuperatorio (1ra Fecha)** | :material-hexagram:{.red_text} | 	F. Agüero<br>L. Chemes<br> |
 | Mar, 1 Dic  | 9 hs |	:material-google-classroom: Presencial | Revisión Recuperatorios | |	|
-| Jue, 3 Dic   | 9 hs | :material-google-classroom: Presencial | Recuperatorio (2da Fecha)  | | F. Agüero<br>L. Chemes<br> |
+| Jue, 3 Dic   | 9 hs | :material-google-classroom: Presencial | **Recuperatorio (2da Fecha)**  | :material-hexagram:{.red_text} | F. Agüero<br>L. Chemes<br> |
 
 
 (*) La instancia de evaluación final es solamente para quienes tienen ausencia con justificación (certificado) a alguna de las instancias de evaluación anteriores.
