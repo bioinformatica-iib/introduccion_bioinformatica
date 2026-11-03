@@ -1,10 +1,21 @@
-.red_text {
-  color: #d52a2a;
+:root {
+  --c-red: #c62828;
+  --c-orange: #c75300;
+  --c-blue: #1565c0;
+  --c-green: #2e7d32;
 }
 
-.green_text {
-  color: #1c7d4d;
+[data-md-color-scheme="slate"] {
+  --c-red: #ef5350;
+  --c-orange: #ff9e40;
+  --c-blue: #64b5f6;
+  --c-green: #66bb6a;
 }
+
+.red_text    { color: var(--c-red); }
+.orange_text { color: var(--c-orange); }
+.blue_text   { color: var(--c-blue); }
+.green_text  { color: var(--c-green); }
 
 /* --- THIS IS A CUSTOM THEME FOR MKDOCS MATERIAL --- */
 /* --- removed to test, all these came from 2024 --- */
