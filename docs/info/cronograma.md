@@ -37,11 +37,12 @@ tags:
 | Jue, 15 Oct  | 9 hs |	:material-google-classroom: Presencial | [P10. Predicción de Desorden](../practicos/TP10_Desorden/index.md) | :fontawesome-solid-hammer: Práctica |	P. Nuñez |
 | Mar, 20 Oct  | 9 hs |	:material-google-classroom: Presencial | [T11. Bioinformática Estructural: Motivos lineales](../teoricas/11-Teorica-Once/index.md) | :fontawesome-solid-brain: Teórica |	L. Chemes |
 | Jue, 22 Oct  | 9 hs |	:material-google-classroom: Presencial | [P11. Motivos Lineales en proteínas](../practicos/TP11_Motivos/index.md) | :fontawesome-solid-hammer: Práctica | J. Glavina |
-| Mar, 27 Oct  | 9 hs |	:material-google-classroom: Presencial |  [T12. Bioinformática Estructural: Dominios](../teoricas/12-Teorica-Doce/index.md) | :fontawesome-solid-brain: Teórica |	L. Chemes |
-| Jue, 29 Oct  | 9 hs |	:material-google-classroom: Presencial | [P12. Dominios Proteicos](../practicos/TP12_Modelado_Por_Homologia/index.md) |:fontawesome-solid-hammer: Práctica |	J. Glavina || Mar, 3 Nov   | 9 hs |	| LIBRE | |	|
-| Jue, 5 Nov   | 9 hs |	:material-google-classroom: Presencial | Repaso | |	F. Agüero<br>L. Chemes<br> |
-| Mar, 10 Nov  | 9 hs |	:material-google-classroom: Presencial | Repaso | |	F. Agüero |
-| Jue, 12 Nov  | 9 hs |	| LIBRE | | |
+| Mar, 27 Oct  | 9 hs |	:material-google-classroom: Presencial | [T12. Bioinformática Estructural: Dominios](../teoricas/12-Teorica-Doce/index.md) | :fontawesome-solid-brain: Teórica |	L. Chemes |
+| Jue, 29 Oct  | 9 hs |	:material-google-classroom: Presencial | [P12. Dominios Proteicos](../practicos/TP12_Modelado_Por_Homologia/index.md) |:fontawesome-solid-hammer: Práctica |	J. Glavina |
+| Mar, 3 Nov   | 9 hs |	                                       | LIBRE                            | |	          |
+| Jue, 5 Nov   | 10.30 hs |	:material-google-classroom: Presencial | Repaso  Teóricas 1 &ndash; 7 | |	F. Agüero |
+| Mar, 10 Nov  | 9 hs |	:material-google-classroom: Virtual | Repaso Teóricas 8 &ndash; 12 | |	L. Chemes |
+| Jue, 12 Nov  | 9 hs |	:fontawesome-solid-triangle-exclamation: Confirmar | PARO DOCENTE - Repaso Teóricas 1 &ndash; 7 | | F. Agüero |
 | Mar, 17 Nov  | 9 hs |	:material-google-classroom: Presencial | Examen | | 	F. Agüero<br>L. Chemes<br> |
 | Jue, 19 Nov  | 9 hs | | LIBRE | | |
 | Mar, 24 Nov  | 9 hs |	:material-google-classroom: Presencial | Revisión Parciales | | 	F. Agüero<br>L. Chemes<br> |
