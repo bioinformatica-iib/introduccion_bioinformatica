@@ -17,6 +17,7 @@ theme:
   logo: 'img/logo-unsam-negro.png'  # este logo es el que aparece al lado del nombre del curso
   favicon: img/logo-unsam-negro.png # este logo es el que aparece en la pestaña del chrome
   name: material
+  variant: classic # Zensical: mantiene el aspecto de Material for MkDocs
   font: 
     text: Cabin
     display: Saira
@@ -53,16 +54,9 @@ theme:
 plugins:
   - search
   - mkdocs-video 
-  - awesome-pages
   - glightbox:
-      touchNavigation: true
-      loop: false
-      effect: zoom
-      slide_effect: slide
       width: "100%"
       height: auto
-      zoomable: true
-      draggable: true
       auto_caption: false
       caption_position: bottom
 
