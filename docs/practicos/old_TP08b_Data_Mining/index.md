@@ -4,7 +4,7 @@ icon: fontawesome/solid/hammer
 tags: 
   - practicos
 ---
-![Image](img/banner.jpg){ width="250", align="left" }
+![Image](img/banner.jpg){ width="250" align="left" }
 
 # **TP 8b**. Data Mining { markdown data-toc-label = 'TP 10b' }
 

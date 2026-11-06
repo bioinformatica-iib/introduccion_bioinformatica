@@ -5,7 +5,7 @@ tags:
   - practicos
 ---
 
-![Image](img/banner.jpg){ width="250", align="left" }
+![Image](img/banner.jpg){ width="250" align="left" }
 
 # **TP 9**. Perfiles de secuencias y PSI-BLAST { markdown data-toc-label = 'TP 9' }
 

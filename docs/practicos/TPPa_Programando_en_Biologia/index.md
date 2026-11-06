@@ -5,7 +5,7 @@ tags:
   - practicos
 ---
 
-![Image](img/banner_python.png){ width="250", align="left" }
+![Image](img/banner_python.png){ width="250" align="left" }
 
 # **TPP**. Python - Programando en biología - Parte 1 { markdown data-toc-label = 'TPP' }
 

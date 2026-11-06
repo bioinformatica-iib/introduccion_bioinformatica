@@ -4,7 +4,7 @@ icon: fontawesome/solid/hammer
 tags: 
   - practicos
 ---
-![Image](img/featured.png){ width="250", align="left" }
+![Image](img/featured.png){ width="250" align="left" }
 
 # **TP 11**. Motivos lineales { markdown data-toc-label = 'TP 11' }
 
@@ -59,7 +59,7 @@ La evidencia experimental recolectada de la literatura indica que:
 
 * Existen tres leucinas que **se encuentran en una misma cara de la hélice** que interactúan con un bolsillo hidrofóbico en la superficie del receptor nuclear (Figura 1).
 
-![Image](img/NRBox.png){ width="500", align="left" }
+![Image](img/NRBox.png){ width="500" align="left" }
 
 **Figura 1.** Fragmento de la proteína PGC-1 alfa unido al receptor nuclear PPAR-gamma. Se muestra en naranja el backbone de la proteína representado en *Cartoon* y en azul las tres leucinas que median la interacción representadas en *Sticks* (PDB:3CS8) y que conforman el motivo NRBox.
 

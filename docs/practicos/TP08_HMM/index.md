@@ -6,7 +6,7 @@ tags:
 ---
 
 <!--
-![Image](img/banner.jpg){ width="250", align="left" }
+![Image](img/banner.jpg){ width="250" align="left" }
 -->
 
 # **TP 08**. Hidden Markov Models (HMMs) { markdown data-toc-label = 'TP 08' }

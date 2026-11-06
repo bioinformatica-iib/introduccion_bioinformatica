@@ -4,7 +4,7 @@ icon: fontawesome/solid/hammer
 tags: 
   - practicos
 ---
-![Image](img/featured.png){ width="250", align="left" }
+![Image](img/featured.png){ width="250" align="left" }
 # **TP 12**. Modelado por Homología y AlphaFold3 { markdown data-toc-label = 'TP 12' }
 
 <br>

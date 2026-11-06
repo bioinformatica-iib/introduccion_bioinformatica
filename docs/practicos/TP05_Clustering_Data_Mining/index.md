@@ -4,7 +4,7 @@ icon: fontawesome/solid/hammer
 tags: 
   - practicos
 ---
-![Image](img/clustering2.png){ width="250", align="left" }
+![Image](img/clustering2.png){ width="250" align="left" }
 
 # **TP 5**. Clustering y Data Mining { markdown data-toc-label = 'TP 05' }
 

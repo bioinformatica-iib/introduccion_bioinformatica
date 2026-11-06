@@ -4,7 +4,7 @@ icon: fontawesome/solid/hammer
 tags: 
   - practicos
 ---
-![Banner](img/banner.jpg){ width="250", align="left" }
+![Banner](img/banner.jpg){ width="250" align="left" }
 
 # **TP 2**. EMBOSS { markdown data-toc-label='TP 2' }
 

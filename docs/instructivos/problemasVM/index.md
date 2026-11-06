@@ -17,7 +17,7 @@
 
 * *Habilitar PAE/NX* está tildado y la máquina virtual se queda congelada en una pantalla similar a la siguiente:
 
-![ERROR1b](./img/error1b.png){ width="400", align=center }
+![ERROR1b](./img/error1b.png){ width="400" align=center }
 
 !!! info "Solución:"
 
@@ -35,18 +35,18 @@
 
 ## En sistema aparece cartel que dice: *el hardware de virtualización está habilitado en la sección de aceleración de la página de Sistema...*
 
-![ERROR2a](./img/error2a.png){ width="400", align=center }
+![ERROR2a](./img/error2a.png){ width="400" align=center }
 
 !!! info "Solución:"
 
     * Accedan a la pestaña de `Aceleración` y asegúrense de que no haya ninguna interfaz de paravirtualización seleccionada.
 
-    ![ERROR2b](./img/error2b.png){ width="400", align=center }
+    ![ERROR2b](./img/error2b.png){ width="400" align=center }
 
 
 ## Error: "Could not open medium"
 
-![ERROR3](./img/error3.png){ width="200", align=center }
+![ERROR3](./img/error3.png){ width="200" align=center }
 
 * Es posible que hayan movido el archivo vmdk.
 

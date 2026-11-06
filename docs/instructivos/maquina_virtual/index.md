@@ -193,7 +193,7 @@ Virtual Box es un virtualizador de entornos. Nos permite generar *máquinas virt
 
 1. Abrimos Virtual Box:
 
-    ![VM New](./img/vm00.png){ width="400", align=center }
+    ![VM New](./img/vm00.png){ width="400" align=center }
 
 2. Hacemos click en `New` o `Nueva`
 
@@ -204,7 +204,7 @@ Virtual Box es un virtualizador de entornos. Nos permite generar *máquinas virt
     * **Type o Tipo:** Es el tipo de virtualización. Elijan Linux.
     * **Version o Versión:** Es la versión del sistema operativo. Ubuntu 32 bits.
 
-    ![VM1](./img/vm01.png){ width="400", align=center }
+    ![VM1](./img/vm01.png){ width="400" align=center }
 
 4. En el mismo panel deberemos indicar la cantidad de memoria RAM que vamos a *prestarle* a la máquina virtual.
 
@@ -212,17 +212,17 @@ Virtual Box es un virtualizador de entornos. Nos permite generar *máquinas virt
 
     Estos valores dependerán de la cantidad de RAM física que tenga nuestro *host*. Cuanto más RAM le demos a la máquina virtual, más rápido va a andar. Para las tareas que realizaremos, darle entre 2 y 4 GB de ram (2048-4096 MB) estará bien.
 
-    ![VM2](./img/vm02.png){ width="400", align=center }
+    ![VM2](./img/vm02.png){ width="400" align=center }
 
 5. Y finalmente el disco duro. Aquí es donde entra nuestro archivo **IBioinfo-Lubuntu.vmdk**:
 
-    ![VM3](./img/vm03.png){ width="400", align=center }
+    ![VM3](./img/vm03.png){ width="400" align=center }
    
     Haciendo click en el icono de la carpeta a la derecha, agregaremos nuestro disco virtual:
     
     *Añadir* --> elegimos nuestro VMDK
 
-    ![VM4](./img/vm04.png){ width="400", align=center }
+    ![VM4](./img/vm04.png){ width="400" align=center }
 
 6. Con esto habremos finalizado la creación y podremos comenzar. Si todo salió bien, deberán ver una entrada con su máquina virtual recientemente creada en el Inicio del Virtual Box.
 

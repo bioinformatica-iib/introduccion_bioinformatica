@@ -5,7 +5,7 @@ tags:
   - practicos
 ---
 
-![Image](img/banner.jpg){ width="250", align="left" }
+![Image](img/banner.jpg){ width="250" align="left" }
 
 # **TP 6**. Quimioinformática { markdown data-toc-label = 'TP 6' }
 
@@ -105,7 +105,7 @@ Para cualquier trabajo quimioinformático, la notación que usemos para las mol�
 
 <br>
 
-![Image](img/13321_2020_466_Fig1_HTML.jpg){ width="600", align="Center" }
+![Image](img/13321_2020_466_Fig1_HTML.jpg){ width="600" align="Center" }
 
 <br>
 
@@ -322,7 +322,7 @@ La primera que vamos a ver es PubChem, que es una base de datos químicos abiert
 
 <br>
 
-![Image](img/PubChem_logo_splash.png){ width="250", align="center" }
+![Image](img/PubChem_logo_splash.png){ width="250" align="center" }
 
 <br>
 
@@ -343,7 +343,7 @@ La segunda base de datos que vamos a ver es ChEMBL, es una base de datos curada 
 
 <br>
 
-![Image](img/ChEMBL.png){ width="250", align="center" }
+![Image](img/ChEMBL.png){ width="250" align="center" }
 
 <br>
 
@@ -379,7 +379,7 @@ En 2013 la empresa Digital Science (dueña de SureChem) transfirió esta base de
 
 <br>
 
-![Image](img/SureChem.jpg){ width="600", align="center" }
+![Image](img/SureChem.jpg){ width="600" align="center" }
 
 <br>
 

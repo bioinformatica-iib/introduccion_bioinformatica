@@ -5,7 +5,7 @@ tags:
   - practicos
 ---
 
-![Image](img/featured.png){ width="250", align="left" }
+![Image](img/featured.png){ width="250" align="left" }
 
 
 # **TP 6**. Filogenias, árboles filogenéticos y filogenómica

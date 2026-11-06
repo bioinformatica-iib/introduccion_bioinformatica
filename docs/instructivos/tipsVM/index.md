@@ -2,7 +2,7 @@
 
 Si maximizamos la ventana a *pantalla completa*, será como estar usando la máquina virtual solamente. Esto para algunos puede resultar más cómodo. Pueden probarlo presionando las teclas ++ctrl++ **derecho** + ++f++ juntas. Con volver a presionar esas teclas salen de la *pantalla completa*.
 
-![TIP4](./img/tip4.png){ width="400", align=center }
+![TIP4](./img/tip4.png){ width="400" align=center }
 
 ## Acceso a la línea de comandos
 Para acceder a la línea de comandos hay varias formas:
@@ -17,26 +17,26 @@ Para cambiar el layout del teclado (en que tecla está el @, el |, los paréntes
 
 1. Click derecho en el panel:
 
-    ![TIP4](./img/tip4.png){ width="400", align=center }
+    ![TIP4](./img/tip4.png){ width="400" align=center }
 
 2. Seleccionar *Añadir/quitar elementos del panel*
 
-    ![TIP5](./img/tip5.png){ width="200", align=center }
+    ![TIP5](./img/tip5.png){ width="200" align=center }
 
 3. Seleccionar *Añadir* :material-arrow-right:
  *Agente de distribución del teclado*
 
-    ![TIP6](./img/tip6.png){ width="400", align=center }
+    ![TIP6](./img/tip6.png){ width="400" align=center }
 
 4. Hacer click en *Añadir* y cerrar la ventana.
 
     En el panel aparecerá al lado del botón de apagado la bandera española, click derecho sobre la bandera y seleccionar la primera opción: Configuración de **Agente de distribución de teclado**
 
-    ![TIP7](./img/tip7.png){ width="400", align=center }
+    ![TIP7](./img/tip7.png){ width="400" align=center }
 
 5. Se abrirá una ventana. Destildar la opción: *Mantener las distribuciones del sistema* y se habilitarán las opciones:
 
-    ![TIP8](./img/tip8.png){ width="400", align=center }
+    ![TIP8](./img/tip8.png){ width="400" align=center }
 
 6. En Distribuciones del teclado elegir Añadir y busca en la lista el teclado correspondiente.
 
@@ -50,7 +50,7 @@ Para cambiar el layout del teclado (en que tecla está el @, el |, los paréntes
 
 7. Selecciona el que corresponda y haz click en Aceptar. Volverá a la ventana anterior donde puedes subir la configuración que desees usar (o quitar la que no quieres usar).
 
-    ![TIP9](./img/tip9.png){ width="400", align=center }
+    ![TIP9](./img/tip9.png){ width="400" align=center }
 
 **8.** Si dejaste más de una configuración, haciendo click sobre la banderita en el panel podés cambiar a las distintas configuraciones (va cambiando la etiqueta).
 
@@ -61,7 +61,7 @@ Para copiar y pegar de la máquina host (es decir, sus **compus físicas**) a la
 1. Con la máquina virtual abierta
 2. Van a *Devices*/*Dispositivos* :material-arrow-right: *Shared Clipboard*/*Portapapeles Compartido* y seleccionan *Bidirectional*/*Bidireccional*
 
-    ![TIP11](./img/tip11.png){ width="400", align=center }
+    ![TIP11](./img/tip11.png){ width="400" align=center }
 
 
 ## Compartir una carpeta con la máquina host
@@ -73,7 +73,7 @@ Una manera simple de compartir archivos entre la máquina *host* (es decir, sus 
 
     Se les abrirá una ventana, donde deben elegir la carpetita con el símbolo más que está a la derecha para agregar una carpeta compartida y se les abrirá una nueva ventana.
 
-    ![TIP12b](./img/tip12b.png){ width="400", align=center }
+    ![TIP12b](./img/tip12b.png){ width="400" align=center }
 
     * **Folder Path:** Indican la ruta a la carpeta que van a compartir en la máquina *host* (SU computadora).
     * **Folder Name:** El nombre con el que aparecerá la carpeta en la máquina virtual
@@ -84,7 +84,7 @@ Una manera simple de compartir archivos entre la máquina *host* (es decir, sus 
 
 4. Deberían ver algo similar a lo siguiente:
 
-    ![TIP12a](./img/tip12a.png){ width="400", align=center }
+    ![TIP12a](./img/tip12a.png){ width="400" align=center }
 
 5. Click en Ok.
 
@@ -110,7 +110,7 @@ Es necesario que la máquina virtual tenga acceso a internet. Puede ser que esto
 
 2. Habilitan en la pestaña *Adapter 1* la opción **Enable Network Adapter**
 
-    ![TIP10](./img/tip10.png){ width="400", align=center }
+    ![TIP10](./img/tip10.png){ width="400" align=center }
 
 **Enable Network Adapter** tiene que estar tildado.
 
@@ -123,11 +123,11 @@ Por defecto, la pantalla de la máquina virtual debería agrandarse según el ta
 
 3. Click en **Ajustes del monitor**
 
-    ![TIP1A](./img/tip1a.png){ width="400", align=center }
+    ![TIP1A](./img/tip1a.png){ width="400" align=center }
 
 4. Pasar la resolución a la mayor posible (podemos usar la misma que usamos en el sistema operativo del host)
 
-    ![TIP1B](./img/tip1b.png){ width="400", align=center }
+    ![TIP1B](./img/tip1b.png){ width="400" align=center }
 
 5. Click en **Aplicar** y, si estamos conformes, en **Guardar**.
 
@@ -140,8 +140,8 @@ Por defecto, la pantalla de la máquina virtual debería agrandarse según el ta
     3. Click en **Administrador de energía**
     4. Click en la pestaña Pantalla y luego mover las tres barras hasta la izquierda como se muestra en la siguiente imagen:
 
-        ![TIP2](./img/tip2.png){ width="400", align=center }
+        ![TIP2](./img/tip2.png){ width="400" align=center }
 
     5. Click en la pestaña Seguridad y luego seleccionar "Nunca" en la lista desplegable que aparece al lado de **Bloquear sesión automáticamente** y luego destildar donde dice "Bloquear la pantalla cuando el sistema vaya a suspensión". Tiene que quedar como se ve en la siguiente imagen:
 
-        ![TIP3](./img/tip3.png){ width="400", align=center }
+        ![TIP3](./img/tip3.png){ width="400" align=center }

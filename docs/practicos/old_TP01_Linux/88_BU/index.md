@@ -1,4 +1,4 @@
-![Image](img/featured.png){ width="250", align=left }
+![Image](img/featured.png){ width="250" align=left }
 # TP1. Titulo del Trabajo Práctico { markdown data-toc-label='Label que aparece en Table Of Contents' }
 [:fontawesome-solid-download: Materiales](#){ .md-button .md-button--primary }
 <!--

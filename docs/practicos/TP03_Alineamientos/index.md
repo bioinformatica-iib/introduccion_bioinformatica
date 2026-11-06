@@ -4,7 +4,7 @@ icon: fontawesome/solid/hammer
 tags: 
   - practicos
 ---
-![Image](img/banner.jpg){ width="250", align="left" }
+![Image](img/banner.jpg){ width="250" align="left" }
 
 # **TP 3**. Alineamientos de secuencias de a pares { markdown data-toc-label = 'TP 3' }
 

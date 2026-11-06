@@ -4,7 +4,7 @@ icon: fontawesome/solid/hammer
 tags: 
   - practicos
 ---
-![Image](images/featured.jpeg){ width="250", align="left" }
+![Image](images/featured.jpeg){ width="250" align="left" }
 
 # **TP 7**. Short Read Mapping { markdown data-toc-label = 'TP 07' }
 

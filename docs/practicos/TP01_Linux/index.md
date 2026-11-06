@@ -4,7 +4,7 @@ icon: octicons/terminal-16
 tags: 
   - practicos
 ---
-![Image](img/banner.jpg){ width="250", align="left" }
+![Image](img/banner.jpg){ width="250" align="left" }
 
 # **TP 1**. Introducción a Ubuntu, Bash y Programación { markdown data-toc-label = 'TP 1' }
 
