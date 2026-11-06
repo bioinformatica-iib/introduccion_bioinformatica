@@ -76,3 +76,8 @@
   font-weight: 500;
 }
 */
+/* Zensical muestra los tags del front matter como etiquetas arriba de cada
+   página; las ocultamos para que el sitio se vea como antes (DECISIONS C12) */
+.md-tags {
+  display: none;
+}
