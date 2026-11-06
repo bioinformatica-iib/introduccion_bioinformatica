@@ -2,7 +2,7 @@
 
 Acá una breve guía de cómo usar este sitio. Para mas referencias sobre como usar tablas, incluir código, advertencias, diagramas, emojis, iconos, etc. ver 
 
- * Referencia Material for Mkdocs: https://squidfunk.github.io/mkdocs-material/reference/
+ * Referencia Zensical (cómo escribir contenido): https://zensical.org/docs/authoring/markdown/
 
 
 ## Como editar y actualizar el sitio
@@ -77,10 +77,11 @@ git push
 ```
 
 ### Para actualizar la web
-Una vez que se hacen cambios y se realiza un commit, para que esto aparezca en el sitio web hay que hacer el deployment corriendo en el mismo directorio:
+Hacer push no publica el sitio (GitHub solo verifica que se genere sin errores). Para publicar los cambios:
+GitHub > Actions > docs > *Run workflow* (rama `main`), o desde la terminal:
 
 ```
-mkdocs gh-deploy
+gh workflow run docs
 ```
 
 Los cambios deberían aparecer en breve en la página web de la materia: https://bioinformatica-iib.github.io/introduccion_bioinformatica/

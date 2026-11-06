@@ -1,4 +1,4 @@
-![build-deployment](https://github.com/bioinformatica-iib/introduccion_bioinformatica/actions/workflows/pages/pages-build-deployment/badge.svg)
+![build-deployment](https://github.com/bioinformatica-iib/introduccion_bioinformatica/actions/workflows/docs.yml/badge.svg)
 
 # Introduccion a la Bioinformática
 
@@ -20,12 +20,12 @@ Este es el repositorio que genera la página web de la materia. Tiene el siguien
 Las ediciones menores / rápidas se pueden hacer editando directamente en github. 
 
 Para más información ver:
- * [README](HOWTO/README.md) para ver como instalar y configurar el entorno (conda, python, mkdocs)
+ * [INSTALAR](HOWTO/INSTALAR.md) para ver como instalar el entorno (uv + Zensical), previsualizar y publicar el sitio
     - esto les va a permitir previsualizar los cambios antes de subirlos
  * [USO](HOWTO/USO.md) para ver cómo editar páginas, recomendaciones, subir cambios al repo, etc.
     - sobre como escribir markdown + extensiones para agregar tablas, formatos, secciones, etc.
 
 
-[Hecho con Material for Mkdocs](https://squidfunk.github.io/mkdocs-material/)
+[Hecho con Zensical](https://zensical.org)
    
 

@@ -1,128 +1,76 @@
 # INSTALAR
 
-Como instalar todo el entorno (poetry + sitio + material-mkdocs + dependencias) para poder editar el sitio localmente y ver los cambios en tiempo real y hacer pruebas antes de subirlos. 
+Cómo preparar el entorno para editar el sitio localmente, verlo en tiempo real
+y probar cambios antes de publicarlos. El sitio se genera con
+[Zensical](https://zensical.org) (sucesor de Material for MkDocs) y el entorno
+lo maneja [uv](https://docs.astral.sh/uv/).
 
-## Instalación en Ubuntu / Linux
+## Instalación (una sola vez)
 
-Acabo de instalar esto siguiendo los pasos de abajo y estan bastante bien, pero lo pongo detallado por si ayuda:
+1. Instalar uv (Linux / macOS / WSL; para Windows ver la
+   [documentación de uv](https://docs.astral.sh/uv/getting-started/installation/)):
 
-* Clonar el repositorio en una carpeta de tu PC (nombre por defecto: `introduccion_bioinformatica`)
-* Instalar Poetry segun las instrucciones de su [página](https://python-poetry.org/docs/). En Linux el comando por defecto es:
+    ```bash
+    curl -LsSf https://astral.sh/uv/install.sh | sh
+    ```
 
-```
-curl -sSL curl -sSL https://install.python-poetry.org | python3 -
-```
+2. Clonar el repositorio y crear el entorno:
 
-* En mi caso tuve que instalar *curl* antes siguiendo las instrucciones de la consola de Ubuntu y en el comando anterior tuve que reemplazar **python** por **python3**, que era la versión que tenía en la PC
+    ```bash
+    git clone https://github.com/bioinformatica-iib/introduccion_bioinformatica.git
+    cd introduccion_bioinformatica
+    uv sync
+    ```
 
-```
-#Esto hay que correrlo solo si es necesario. En un principio la de arriba deberia alcanzar
-sudo apt install curl
-```
+`uv sync` crea la carpeta `.venv/` **dentro del repositorio** con las versiones
+exactas que figuran en `uv.lock` (y descarga Python si hace falta). No instala
+nada en el Python del sistema ni en otros entornos (no hace falta conda).
+Borrar `.venv/` elimina todo.
 
-* Poetry me pidió que corra un comando para agregar poetry al *environment* asi que lo hice (esto hay que hacerlo cada vez que abris una consola nueva hasta que reinicias la compu, ahi ya es automático)
+## Previsualizar el sitio
 
-```
-source $HOME/.poetry/env
-```
-
-* Una vez instalado Poetry, ir a la carpeta del repositorio de GIT (`introduccion_bioinformatica`) y correr:
-
-```
-poetry install 
-```
-
-* Esto va a instalar todos los requisitos de nuestra página en el sistema
-* Luego cada vez que se quiera probar el sitio localmente ir a la misma carpeta y correr:
-
-```
-poetry shell 
-mkdocs serve
-``` 
-
-* La página web ahora está en http://127.0.0.1:8000 y se updatea en tiempo real frente a cualquier cambio en los archivos del arbol (*.yml, *.md, etc.).
-
-
-
-
-## Como actualizar paquetes, plugins, etc.
-
-El sistema tiene todos los paquetes necesarios listados en el archivo
-`pyproject.toml`. Además, `poetry` que es nuestro manejador de paquetes, se
-encarga de escribir un lockfile (`poetry.lock`) con todas las versiones de los
-paquetes que necesitamos, versiones específicas, checksums, etc. Y todas las
-dependencias!!! Este archivo no hay que tocarlo, se actualiza solo. 
-
-**PERO** justamente `poetry.lock` nos impide actualizar cosas. Esto es por
-diseño, es para que todos los que corremos el sitio lo hagamos con las mismas
-versiones de paquetes, plugins, etc. Esto es bueno! Pero si queremos actualizar
-algo, necesitamos hacerlo en pasos. 
-
-### 1 - Editar pyproject.toml 
-
-Para actualizar algo (ej mkdocs-material, la nueva version es 9.5.31), o agregar
-algun plugin nuevo (ej mkdocs-video 1.5.0) editamos `pyproject.toml`, y editamos
-la linea correspondiente, o agregamos una nueva, siguiendo la sintaxis de
-[Version
-specifiers](https://packaging.python.org/en/latest/specifications/version-specifiers/#)
-de Python. 
-
-```
-mkdocs-material = "^9.5.31"
-mkdocs-video = "^1.5.0"
+```bash
+cd introduccion_bioinformatica
+uv run zensical serve
 ```
 
-### 2 - Actualizar poetry.lock
+El sitio queda en http://localhost:8000 y se actualiza solo cada vez que se
+guarda un archivo (`.md`, `mkdocs.yml`, etc.).
 
-Ahora tenemos que generar una nueva version de poetry.lock, esto lo hacemos asi: 
+Alternativa: activar el entorno una vez por terminal y usar los comandos directamente:
 
-```
-poetry lock --no-update
-```
-
-### 3 - Actualizar los paquetes 
-
-Ahora corremos poetry install para instalar todo. 
-
-```
-poetry install 
+```bash
+source .venv/bin/activate
+zensical serve
 ```
 
-### 4 - Probar que todo funcione OK
+Si después de un `git pull` cambió `uv.lock`, `uv run` actualiza el entorno solo.
 
-Correr el servidor mkdocs y ver si las paginas se generan bien, que no aparezcan warnings, fallas, etc. 
+## Publicar
 
-```
-mkdocs serve
-```
+Hacer `git push` **no publica** el sitio: GitHub solamente verifica que se
+genere sin errores (pestaña *Actions*, workflow `docs`). Para publicar:
 
-## En mas detalle
+* en GitHub: *Actions* → *docs* → *Run workflow* (rama `main`), o
+* desde la terminal: `gh workflow run docs`
 
-`cursos-unsam-mkdocs-template` es un template, asi que hay que copiarlo o forkear. mkdocs es un
-generador de sitios estáticos, y Material for Mkdocs es un conjunto de aditivos
-para hacer que escribir y publicar contenido sea fácil divertido y los sitios
-sean profesionales y se vean bien en cualquier dispositivo. 
+Los cambios aparecen en https://bioinformatica-iib.github.io/introduccion_bioinformatica/ en uno o dos minutos.
 
-Todas las dependencias (paquetes y adicionales) están manejadas por
-[poetry](https://python-poetry.org) y el esqueleto ya tiene lo necesario para
-ser generado y publicado en [netlify](https://www.netlify.com/). 
+## Actualizar Zensical u otros paquetes
 
-Poetry hace facil correr todo el sitio localmente si es que quieren editar e ir
-viendo como queda. Para eso, **instalar poetry** (seguir instrucciones en la
-página), y luego: 
-```
-cd cursos-unsam-mkdocs-fork
-poetry install 
+Los paquetes están en `pyproject.toml` (sección `dependencies`) y las versiones
+exactas en `uv.lock`, que no se edita a mano.
+
+```bash
+# actualizar zensical a la última versión: editar la versión en pyproject.toml, y luego
+uv lock --upgrade-package zensical
+uv run zensical build --clean   # verificar que todo se genere sin errores
+git add pyproject.toml uv.lock && git commit -m "actualizo zensical a X.Y.Z"
 ```
 
-Asi que después de esto, si quieren correr el sitio localmente:
-```
-poetry shell 
-mkdocs serve
-``` 
+## Configuración
 
-Esto activa el entorno python con todas las dependencias y luego corre mkdocs
-para generar el sitio. Pueden navegarlo en http://127.0.0.1:8000. 
-
-Netlify usa `requirements.txt` y `netlify.toml` (además del resto) para poder
-generar el sitio.
+La configuración del sitio sigue en `mkdocs.yml` (Zensical lo lee directamente).
+Documentación: [configuración](https://zensical.org/docs/setup/basics/) y
+[cómo escribir contenido](https://zensical.org/docs/authoring/markdown/)
+(notas, pestañas, tablas, íconos, fórmulas, etc.).
