@@ -1,25 +1,18 @@
-[tool.poetry]
-name = "introduccion-bioinformatica-unsa,"
-version = "06.2025"
-description = "Sitio Introduccion a la Bioinformatica UNSAM - Material for Mkdocs"
-authors = ["Fernán Agüero <fernan@iib.unsam.edu.ar>"]
+# Entorno para generar el sitio con Zensical (https://zensical.org).
+#   uv sync                 # una vez: crea .venv/ con las versiones de uv.lock
+#   uv run zensical serve   # previsualizar en http://localhost:8000
+[project]
+name = "introduccion-bioinformatica-site"
+version = "2026.11"
+description = "Sitio web del curso (introduccion_bioinformatica), generado con Zensical"
+authors = [{ name = "Fernán Agüero", email = "fernan@iib.unsam.edu.ar" }]
 license = "MIT"
-readme = "README.md"
-package-mode = false
+requires-python = ">=3.12"
+dependencies = [
+    "zensical==0.1.0",
+    # 3.11.3 rompe toc con data-toc-label sin valor (ver zensical-migration DECISIONS D13)
+    "markdown!=3.11.3",
+]
 
-[tool.poetry.dependencies]
-python = ">=3.9,<4.0"
-mkdocs-material = ">=9.6.9"
-mkdocs-video = ">=1.5.0"
-pymdown-extensions = ">=10.14"
-mkdocs-pymdownx-material-extras = ">=2.0.3"
-fontawesome-markdown = ">=0.2.6"
-mkdocs-awesome-pages-plugin = ">=2.10.1"
-mkdocs-git-revision-date-plugin = ">=0.3.2"
-conda-lock = "^3.0.1"
-mkdocs-glightbox = "^0.4.0"
-
-
-[build-system]
-requires = ["poetry-core>=2.0.0"]
-build-backend = "poetry.core.masonry.api"
+[tool.uv]
+package = false

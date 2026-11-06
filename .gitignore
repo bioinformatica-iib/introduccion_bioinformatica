@@ -11,3 +11,6 @@ venv/condabin
 oryx-build-commands.txt
 mambaforge.sh
 Miniforge3-Linux-x86_64.sh
+
+# uv
+.venv/
