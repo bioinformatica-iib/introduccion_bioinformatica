@@ -6,7 +6,7 @@ tags:
 ---
 ![Image](img/banner.jpg){ width="250" align="left" }
 
-# **TP 2**. Conceptos avanzados de programación en Bash { markdown data-toc-label = 'TP 2' }
+# **TP 2**. Conceptos avanzados de programación en Bash { markdown data-toc-label='TP 2' }
 
 <!--
 [:fontawesome-solid-download: Materiales](data/datos.zip){ .md-button .md-button--primary }

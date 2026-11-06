@@ -6,7 +6,7 @@ tags:
 ---
 ![Image](img/featured.png){ width="250" align="left" }
 
-# **TP 12b**. Modelado usando AlphaFold2 { markdown data-toc-label = 'TP 9b' }
+# **TP 12b**. Modelado usando AlphaFold2 { markdown data-toc-label='TP 9b' }
 
 <br>
 <br>

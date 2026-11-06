@@ -7,7 +7,7 @@ tags:
 
 ![Image](img/banner.jpg){ width="250" align="left" }
 
-# **TP 4**. Búsqueda de secuencias por similitud { markdown data-toc-label = 'TP 4' }
+# **TP 4**. Búsqueda de secuencias por similitud { markdown data-toc-label='TP 4' }
 
 <br>
 <br>

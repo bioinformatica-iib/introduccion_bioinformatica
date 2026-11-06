@@ -7,7 +7,7 @@ tags:
 
 ![Image](img/banner_python.png){ width="250" align="left" }
 
-# **TPP**. Python - Programando en biología - Parte 2 { markdown data-toc-label = 'TPP' }
+# **TPP**. Python - Programando en biología - Parte 2 { markdown data-toc-label='TPP' }
 
 <br>
 <br>

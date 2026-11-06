@@ -5,7 +5,7 @@ tags:
   - practicos
 ---
 ![Image](img/featured.jpg){ width="250" align="left" }
-# **TP 13**. Genómica comparativa: ACT { markdown data-toc-label = 'TP 13' }
+# **TP 13**. Genómica comparativa: ACT { markdown data-toc-label='TP 13' }
 
 <br>
 <br>

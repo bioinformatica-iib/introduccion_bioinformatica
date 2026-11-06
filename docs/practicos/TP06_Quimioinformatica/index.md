@@ -7,7 +7,7 @@ tags:
 
 ![Image](img/banner.jpg){ width="250" align="left" }
 
-# **TP 6**. Quimioinformática { markdown data-toc-label = 'TP 6' }
+# **TP 6**. Quimioinformática { markdown data-toc-label='TP 6' }
 
 <br>
 <br>
