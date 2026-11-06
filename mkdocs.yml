@@ -5,6 +5,14 @@ site_description: "Sitio Web del Curso Introducción a la Bioinformática"
 #site_author: "Nombre Apellido"
 site_url: https://bioinformatica-iib.github.io/introduccion_bioinformatica/
 
+# páginas que no se publican (copias de respaldo, versiones viejas, pruebas)
+# los archivos siguen en el repo; sintaxis tipo .gitignore
+exclude_docs: |
+  88_BU/
+  old_*/
+  77_useful_code/
+  practicos/tpsGrid.md
+
 # repository
 # --- si el sitio está alojado en un repo, describirlo acá 
 # repo_name: 'introduccion_bioinformatica'
