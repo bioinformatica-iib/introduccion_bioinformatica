@@ -46,4 +46,4 @@ https://www.youtube.com/watch?v=pmTpAYENm7I
   * :fontawesome-solid-file-pdf: Selecting the Right Similarity-Scoring Matrix. Pearson, W. R. (2013) [Curr. Prot. Bioinformatics Chapter 3: Unit 3.5](https://fasta.bioch.virginia.edu/wrpearson/papers/wrp_cpbio_0305.pdf)
   * :fontawesome-solid-file-pdf: An Introduction to Similarity ("Homology") Searching. Pearson, W. R. (2013) [Curr. Prot. Bioinformatics Chapter 3: Unit 3.1](https://fasta.bioch.virginia.edu/wrpearson/papers/wrp_cpbio_0301.pdf)
   * :material-wikipedia: [Multiple Sequence Alignment](https://en.wikipedia.org/wiki/Multiple_sequence_alignment)
-  
+  * :paperclip: Nguyen VA, Boyd-Graber J, Altschul SF. Dirichlet mixtures, the Dirichlet process, and the structure of protein space. [J Comput Biol. 2013 20:1-18](https://doi.org/10.1089/cmb.2012.0244). PMID: 23294268; PMCID: PMC3541698.
